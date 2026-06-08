@@ -1,358 +1,38 @@
 [
     {
-        "ticker": "JUSTDIAL",
-        "currentPrice": 518.0,
-        "triggerPrice": 533.81,
-        "distanceRemaining": -2.96,
-        "fibLevelMatch": "N/A",
-        "patternZone": "Fib confluence: 50.0% (0.2% away)",
-        "notificationTrigger": false,
-        "positionSizing": {
-            "sharesToBuy": 96,
-            "strictStopLoss": 491.1,
-            "pivotTargetExit": 640.57,
-            "allocatedAmount": 50000.0
-        },
-        "wickTouches": 5,
-        "timeframe": "monthly",
-        "confluenceScore": 10
-    },
-    {
-        "ticker": "CCAVENUE",
-        "currentPrice": 13.869999885559082,
-        "triggerPrice": 14.2,
-        "distanceRemaining": -2.32,
-        "fibLevelMatch": "N/A",
-        "patternZone": "Fib confluence: 61.8% (0.7% away)",
-        "notificationTrigger": false,
-        "positionSizing": {
-            "sharesToBuy": 3604,
-            "strictStopLoss": 13.07,
-            "pivotTargetExit": 17.05,
-            "allocatedAmount": 50000.0
-        },
-        "wickTouches": 4,
-        "timeframe": "monthly",
-        "confluenceScore": 10
-    },
-    {
-        "ticker": "DALBHARAT",
-        "currentPrice": 1676.9000244140625,
-        "triggerPrice": 1714.11,
-        "distanceRemaining": -2.17,
-        "fibLevelMatch": "N/A",
-        "patternZone": "No Fib within 2% (closest: 78.6% at 7.3%)",
-        "notificationTrigger": false,
-        "positionSizing": {
-            "sharesToBuy": 29,
-            "strictStopLoss": 1576.98,
-            "pivotTargetExit": 2056.93,
-            "allocatedAmount": 50000.0
-        },
-        "wickTouches": 10,
-        "timeframe": "monthly",
-        "confluenceScore": 6
-    },
-    {
-        "ticker": "DCMSHRIRAM",
-        "currentPrice": 1011.0,
-        "triggerPrice": 1030.91,
-        "distanceRemaining": -1.93,
-        "fibLevelMatch": "N/A",
-        "patternZone": "Fib confluence: 78.6% (0.4% away)",
-        "notificationTrigger": false,
-        "positionSizing": {
-            "sharesToBuy": 49,
-            "strictStopLoss": 948.44,
-            "pivotTargetExit": 1237.09,
-            "allocatedAmount": 50000.0
-        },
-        "wickTouches": 6,
-        "timeframe": "monthly",
-        "confluenceScore": 10
-    },
-    {
-        "ticker": "GODREJCP",
-        "currentPrice": 996.7999877929688,
-        "triggerPrice": 1015.24,
-        "distanceRemaining": -1.82,
-        "fibLevelMatch": "N/A",
-        "patternZone": "Fib confluence: 78.6% (1.4% away)",
-        "notificationTrigger": false,
-        "positionSizing": {
-            "sharesToBuy": 50,
-            "strictStopLoss": 934.02,
-            "pivotTargetExit": 1218.28,
-            "allocatedAmount": 50000.0
-        },
-        "wickTouches": 8,
-        "timeframe": "monthly",
-        "confluenceScore": 8
-    },
-    {
-        "ticker": "BAYERCROP",
-        "currentPrice": 4316.10009765625,
-        "triggerPrice": 4383.25,
-        "distanceRemaining": -1.53,
-        "fibLevelMatch": "N/A",
-        "patternZone": "Fib confluence: 78.6% (1.3% away)",
-        "notificationTrigger": false,
-        "positionSizing": {
-            "sharesToBuy": 11,
-            "strictStopLoss": 4032.59,
-            "pivotTargetExit": 5259.9,
-            "allocatedAmount": 50000.0
-        },
-        "wickTouches": 18,
-        "timeframe": "monthly",
-        "confluenceScore": 8
-    },
-    {
-        "ticker": "JYOTHYLAB",
-        "currentPrice": 199.82000732421875,
-        "triggerPrice": 202.9,
-        "distanceRemaining": -1.52,
-        "fibLevelMatch": "N/A",
-        "patternZone": "No Fib within 2% (closest: 78.6% at 5.0%)",
-        "notificationTrigger": false,
-        "positionSizing": {
-            "sharesToBuy": 250,
-            "strictStopLoss": 186.67,
-            "pivotTargetExit": 243.48,
-            "allocatedAmount": 50000.0
-        },
-        "wickTouches": 7,
-        "timeframe": "monthly",
-        "confluenceScore": 6
-    },
-    {
-        "ticker": "SAFARI",
-        "currentPrice": 1610.0,
-        "triggerPrice": 1632.18,
-        "distanceRemaining": -1.36,
-        "fibLevelMatch": "N/A",
-        "patternZone": "Fib confluence: 78.6% (1.5% away)",
-        "notificationTrigger": false,
-        "positionSizing": {
-            "sharesToBuy": 31,
-            "strictStopLoss": 1501.6,
-            "pivotTargetExit": 1958.61,
-            "allocatedAmount": 50000.0
-        },
-        "wickTouches": 5,
-        "timeframe": "monthly",
-        "confluenceScore": 8
-    },
-    {
-        "ticker": "BLUESTARCO",
-        "currentPrice": 1588.9000244140625,
-        "triggerPrice": 1610.28,
-        "distanceRemaining": -1.33,
-        "fibLevelMatch": "N/A",
-        "patternZone": "Fib confluence: 61.8% (1.4% away)",
-        "notificationTrigger": false,
-        "positionSizing": {
-            "sharesToBuy": 31,
-            "strictStopLoss": 1481.46,
-            "pivotTargetExit": 1932.34,
-            "allocatedAmount": 50000.0
-        },
-        "wickTouches": 4,
-        "timeframe": "monthly",
-        "confluenceScore": 9
-    },
-    {
-        "ticker": "INFY",
-        "currentPrice": 1191.699951171875,
-        "triggerPrice": 1205.73,
-        "distanceRemaining": -1.16,
-        "fibLevelMatch": "N/A",
-        "patternZone": "No Fib within 2% (closest: 78.6% at 5.3%)",
-        "notificationTrigger": false,
-        "positionSizing": {
-            "sharesToBuy": 41,
-            "strictStopLoss": 1109.27,
-            "pivotTargetExit": 1446.88,
-            "allocatedAmount": 50000.0
-        },
-        "wickTouches": 6,
-        "timeframe": "monthly",
-        "confluenceScore": 6
-    },
-    {
-        "ticker": "JKCEMENT",
-        "currentPrice": 4864.5,
-        "triggerPrice": 4914.28,
-        "distanceRemaining": -1.01,
-        "fibLevelMatch": "N/A",
-        "patternZone": "No Fib within 2% (closest: 78.6% at 3.2%)",
-        "notificationTrigger": false,
-        "positionSizing": {
-            "sharesToBuy": 10,
-            "strictStopLoss": 4521.13,
-            "pivotTargetExit": 5897.13,
-            "allocatedAmount": 50000.0
-        },
-        "wickTouches": 19,
-        "timeframe": "monthly",
-        "confluenceScore": 6
-    },
-    {
-        "ticker": "APOLLOTYRE",
-        "currentPrice": 392.0,
-        "triggerPrice": 395.83,
-        "distanceRemaining": -0.97,
-        "fibLevelMatch": "N/A",
-        "patternZone": "No Fib within 2% (closest: 78.6% at 3.5%)",
-        "notificationTrigger": true,
-        "positionSizing": {
-            "sharesToBuy": 127,
-            "strictStopLoss": 364.16,
-            "pivotTargetExit": 475.0,
-            "allocatedAmount": 50000.0
-        },
-        "wickTouches": 7,
-        "timeframe": "monthly",
-        "confluenceScore": 6
-    },
-    {
-        "ticker": "SHREECEM",
-        "currentPrice": 23790.0,
-        "triggerPrice": 23986.64,
-        "distanceRemaining": -0.82,
-        "fibLevelMatch": "N/A",
-        "patternZone": "Fib confluence: 61.8% (0.2% away)",
-        "notificationTrigger": true,
-        "positionSizing": {
-            "sharesToBuy": 2,
-            "strictStopLoss": 22067.71,
-            "pivotTargetExit": 28783.97,
-            "allocatedAmount": 50000.0
-        },
-        "wickTouches": 9,
-        "timeframe": "monthly",
-        "confluenceScore": 10
-    },
-    {
-        "ticker": "BRITANNIA",
-        "currentPrice": 5054.0,
-        "triggerPrice": 5083.11,
-        "distanceRemaining": -0.57,
-        "fibLevelMatch": "N/A",
-        "patternZone": "Fib confluence: 61.8% (1.7% away)",
-        "notificationTrigger": true,
-        "positionSizing": {
-            "sharesToBuy": 9,
-            "strictStopLoss": 4676.46,
-            "pivotTargetExit": 6099.74,
-            "allocatedAmount": 50000.0
-        },
-        "wickTouches": 10,
-        "timeframe": "monthly",
-        "confluenceScore": 9
-    },
-    {
         "ticker": "ASTRAL",
-        "currentPrice": 1536.0999755859375,
+        "currentPrice": 1541.5,
+        "ema50": 1554.59,
+        "ema200": 1526.61,
         "triggerPrice": 1543.96,
-        "distanceRemaining": -0.51,
+        "distanceRemaining": 0.16,
         "fibLevelMatch": "N/A",
-        "patternZone": "Fib confluence: 38.2% (1.2% away)",
+        "patternZone": "Strong Fib confluence: 38.2% (1.2% match) \u2713",
         "notificationTrigger": true,
         "positionSizing": {
             "sharesToBuy": 32,
             "strictStopLoss": 1420.44,
-            "pivotTargetExit": 1852.75,
+            "pivotTargetExit": 1891.35,
             "allocatedAmount": 50000.0
         },
         "wickTouches": 7,
-        "timeframe": "monthly",
-        "confluenceScore": 8
-    },
-    {
-        "ticker": "GSFC",
-        "currentPrice": 160.16000366210938,
-        "triggerPrice": 160.87,
-        "distanceRemaining": -0.44,
-        "fibLevelMatch": "N/A",
-        "patternZone": "Fib confluence: 50.0% (0.7% away)",
-        "notificationTrigger": true,
-        "positionSizing": {
-            "sharesToBuy": 312,
-            "strictStopLoss": 148.0,
-            "pivotTargetExit": 193.04,
-            "allocatedAmount": 50000.0
-        },
-        "wickTouches": 4,
-        "timeframe": "monthly",
-        "confluenceScore": 9
-    },
-    {
-        "ticker": "BSOFT",
-        "currentPrice": 325.1499938964844,
-        "triggerPrice": 326.01,
-        "distanceRemaining": -0.26,
-        "fibLevelMatch": "N/A",
-        "patternZone": "No Fib within 2% (closest: 78.6% at 22.5%)",
-        "notificationTrigger": true,
-        "positionSizing": {
-            "sharesToBuy": 153,
-            "strictStopLoss": 299.93,
-            "pivotTargetExit": 391.21,
-            "allocatedAmount": 50000.0
-        },
-        "wickTouches": 12,
-        "timeframe": "monthly",
-        "confluenceScore": 6
-    },
-    {
-        "ticker": "SUPREMEIND",
-        "currentPrice": 3554.699951171875,
-        "triggerPrice": 3562.82,
-        "distanceRemaining": -0.23,
-        "fibLevelMatch": "N/A",
-        "patternZone": "No Fib within 2% (closest: 61.8% at 3.5%)",
-        "notificationTrigger": true,
-        "positionSizing": {
-            "sharesToBuy": 14,
-            "strictStopLoss": 3277.79,
-            "pivotTargetExit": 4275.38,
-            "allocatedAmount": 50000.0
-        },
-        "wickTouches": 14,
-        "timeframe": "monthly",
-        "confluenceScore": 6
-    },
-    {
-        "ticker": "UTIAMC",
-        "currentPrice": 919.7000122070312,
-        "triggerPrice": 921.65,
-        "distanceRemaining": -0.21,
-        "fibLevelMatch": "N/A",
-        "patternZone": "Fib confluence: 78.6% (1.6% away)",
-        "notificationTrigger": true,
-        "positionSizing": {
-            "sharesToBuy": 54,
-            "strictStopLoss": 847.92,
-            "pivotTargetExit": 1105.98,
-            "allocatedAmount": 50000.0
-        },
-        "wickTouches": 10,
         "timeframe": "monthly",
         "confluenceScore": 8
     },
     {
         "ticker": "ORIENTCEM",
-        "currentPrice": 132.39999389648438,
+        "currentPrice": 132.59,
+        "ema50": 140.6,
+        "ema200": 177.02,
         "triggerPrice": 132.29,
-        "distanceRemaining": 0.08,
+        "distanceRemaining": 0.22,
         "fibLevelMatch": "N/A",
-        "patternZone": "Fib confluence: 61.8% (1.2% away)",
+        "patternZone": "Strong Fib confluence: 61.8% (1.2% match) \u2713",
         "notificationTrigger": true,
         "positionSizing": {
             "sharesToBuy": 377,
             "strictStopLoss": 121.71,
-            "pivotTargetExit": 158.75,
+            "pivotTargetExit": 162.06,
             "allocatedAmount": 50000.0
         },
         "wickTouches": 5,
@@ -360,35 +40,59 @@
         "confluenceScore": 9
     },
     {
-        "ticker": "HCLTECH",
-        "currentPrice": 1154.5999755859375,
-        "triggerPrice": 1149.32,
-        "distanceRemaining": 0.46,
+        "ticker": "GSFC",
+        "currentPrice": 160.0,
+        "ema50": 167.63,
+        "ema200": 177.35,
+        "triggerPrice": 160.87,
+        "distanceRemaining": 0.54,
         "fibLevelMatch": "N/A",
-        "patternZone": "No Fib within 2% (closest: 78.6% at 9.6%)",
-        "notificationTrigger": true,
+        "patternZone": "Strong Fib confluence: 50.0% (0.7% match) \u2713",
+        "notificationTrigger": false,
         "positionSizing": {
-            "sharesToBuy": 43,
-            "strictStopLoss": 1057.38,
-            "pivotTargetExit": 1379.19,
+            "sharesToBuy": 310,
+            "strictStopLoss": 148.0,
+            "pivotTargetExit": 197.06,
             "allocatedAmount": 50000.0
         },
-        "wickTouches": 3,
+        "wickTouches": 4,
         "timeframe": "monthly",
-        "confluenceScore": 6
+        "confluenceScore": 8
+    },
+    {
+        "ticker": "SHREECEM",
+        "currentPrice": 23795.0,
+        "ema50": 24862.8,
+        "ema200": 26385.37,
+        "triggerPrice": 23986.64,
+        "distanceRemaining": 0.8,
+        "fibLevelMatch": "N/A",
+        "patternZone": "Strong Fib confluence: 61.8% (0.2% match) \u2713",
+        "notificationTrigger": false,
+        "positionSizing": {
+            "sharesToBuy": 2,
+            "strictStopLoss": 22067.71,
+            "pivotTargetExit": 29383.63,
+            "allocatedAmount": 50000.0
+        },
+        "wickTouches": 9,
+        "timeframe": "monthly",
+        "confluenceScore": 10
     },
     {
         "ticker": "BALKRISIND",
-        "currentPrice": 2155.800048828125,
+        "currentPrice": 2158.3,
+        "ema50": 2210.65,
+        "ema200": 2317.99,
         "triggerPrice": 2139.81,
-        "distanceRemaining": 0.75,
+        "distanceRemaining": 0.86,
         "fibLevelMatch": "N/A",
-        "patternZone": "Fib confluence: 61.8% (0.5% away)",
-        "notificationTrigger": true,
+        "patternZone": "Strong Fib confluence: 61.8% (0.5% match) \u2713",
+        "notificationTrigger": false,
         "positionSizing": {
             "sharesToBuy": 23,
             "strictStopLoss": 1968.62,
-            "pivotTargetExit": 2567.77,
+            "pivotTargetExit": 2621.27,
             "allocatedAmount": 50000.0
         },
         "wickTouches": 12,
@@ -396,129 +100,43 @@
         "confluenceScore": 10
     },
     {
-        "ticker": "TRIVENI",
-        "currentPrice": 378.1499938964844,
-        "triggerPrice": 375.33,
-        "distanceRemaining": 0.75,
-        "fibLevelMatch": "N/A",
-        "patternZone": "No Fib within 2% (closest: 61.8% at 2.7%)",
-        "notificationTrigger": true,
-        "positionSizing": {
-            "sharesToBuy": 132,
-            "strictStopLoss": 345.3,
-            "pivotTargetExit": 450.39,
-            "allocatedAmount": 50000.0
-        },
-        "wickTouches": 13,
-        "timeframe": "monthly",
-        "confluenceScore": 6
-    },
-    {
-        "ticker": "KEC",
-        "currentPrice": 492.45001220703125,
-        "triggerPrice": 487.62,
-        "distanceRemaining": 0.99,
-        "fibLevelMatch": "N/A",
-        "patternZone": "No Fib within 2% (closest: 78.6% at 24.5%)",
-        "notificationTrigger": true,
-        "positionSizing": {
-            "sharesToBuy": 101,
-            "strictStopLoss": 448.61,
-            "pivotTargetExit": 585.15,
-            "allocatedAmount": 50000.0
-        },
-        "wickTouches": 5,
-        "timeframe": "monthly",
-        "confluenceScore": 6
-    },
-    {
-        "ticker": "HDFCLIFE",
-        "currentPrice": 570.25,
-        "triggerPrice": 564.13,
-        "distanceRemaining": 1.08,
-        "fibLevelMatch": "N/A",
-        "patternZone": "Fib confluence: 78.6% (2.0% away)",
-        "notificationTrigger": false,
-        "positionSizing": {
-            "sharesToBuy": 87,
-            "strictStopLoss": 519.0,
-            "pivotTargetExit": 676.95,
-            "allocatedAmount": 50000.0
-        },
-        "wickTouches": 9,
-        "timeframe": "monthly",
-        "confluenceScore": 8
-    },
-    {
         "ticker": "ABBOTINDIA",
-        "currentPrice": 26035.0,
+        "currentPrice": 25995.0,
+        "ema50": 26688.97,
+        "ema200": 28045.21,
         "triggerPrice": 25731.88,
-        "distanceRemaining": 1.18,
+        "distanceRemaining": 1.02,
         "fibLevelMatch": "N/A",
-        "patternZone": "Fib confluence: 78.6% (0.3% away)",
+        "patternZone": "Strong Fib confluence: 78.6% (0.3% match) \u2713",
         "notificationTrigger": false,
         "positionSizing": {
             "sharesToBuy": 1,
             "strictStopLoss": 23673.33,
-            "pivotTargetExit": 30878.25,
+            "pivotTargetExit": 31521.55,
             "allocatedAmount": 50000.0
         },
         "wickTouches": 16,
         "timeframe": "monthly",
-        "confluenceScore": 10
+        "confluenceScore": 9
     },
     {
-        "ticker": "SUNTV",
-        "currentPrice": 512.6500244140625,
-        "triggerPrice": 505.71,
-        "distanceRemaining": 1.37,
+        "ticker": "MASTEK",
+        "currentPrice": 1634.7,
+        "ema50": 1654.93,
+        "ema200": 1898.61,
+        "triggerPrice": 1614.85,
+        "distanceRemaining": 1.23,
         "fibLevelMatch": "N/A",
-        "patternZone": "No Fib within 2% (closest: 78.6% at 2.1%)",
+        "patternZone": "Strong Fib confluence: 38.2% (0.3% match) \u2713",
         "notificationTrigger": false,
         "positionSizing": {
-            "sharesToBuy": 97,
-            "strictStopLoss": 465.25,
-            "pivotTargetExit": 606.85,
+            "sharesToBuy": 30,
+            "strictStopLoss": 1485.66,
+            "pivotTargetExit": 1978.19,
             "allocatedAmount": 50000.0
         },
         "wickTouches": 6,
         "timeframe": "monthly",
-        "confluenceScore": 6
-    },
-    {
-        "ticker": "MRF",
-        "currentPrice": 123300.0,
-        "triggerPrice": 121457.25,
-        "distanceRemaining": 1.52,
-        "fibLevelMatch": "N/A",
-        "patternZone": "No Fib within 2% (closest: 78.6% at 7.2%)",
-        "notificationTrigger": false,
-        "positionSizing": {
-            "sharesToBuy": 0,
-            "strictStopLoss": 111740.67,
-            "pivotTargetExit": 145748.71,
-            "allocatedAmount": 50000.0
-        },
-        "wickTouches": 13,
-        "timeframe": "monthly",
-        "confluenceScore": 6
-    },
-    {
-        "ticker": "CENTRALBK",
-        "currentPrice": 30.579999923706055,
-        "triggerPrice": 29.89,
-        "distanceRemaining": 2.31,
-        "fibLevelMatch": "N/A",
-        "patternZone": "No Fib within 2% (closest: 78.6% at 6.1%)",
-        "notificationTrigger": false,
-        "positionSizing": {
-            "sharesToBuy": 1635,
-            "strictStopLoss": 27.5,
-            "pivotTargetExit": 35.87,
-            "allocatedAmount": 50000.0
-        },
-        "wickTouches": 8,
-        "timeframe": "monthly",
-        "confluenceScore": 6
+        "confluenceScore": 9
     }
 ]
