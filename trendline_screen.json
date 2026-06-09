@@ -2,8 +2,8 @@
     {
         "ticker": "UCOBANK",
         "currentPrice": 26.04,
-        "ema50": 25.65,
-        "ema200": 27.7,
+        "ema50": 25.64,
+        "ema200": 27.72,
         "triggerPrice": 26.04,
         "distanceRemaining": 0.02,
         "fibLevelMatch": "N/A",
@@ -22,8 +22,8 @@
     {
         "ticker": "GODREJCP",
         "currentPrice": 1013.2,
-        "ema50": 1045.67,
-        "ema200": 1115.31,
+        "ema50": 1046.99,
+        "ema200": 1116.34,
         "triggerPrice": 1015.24,
         "distanceRemaining": 0.2,
         "fibLevelMatch": "N/A",
@@ -42,7 +42,7 @@
     {
         "ticker": "TATAPOWER",
         "currentPrice": 398.65,
-        "ema50": 413.08,
+        "ema50": 413.67,
         "ema200": 398.69,
         "triggerPrice": 397.8,
         "distanceRemaining": 0.21,
@@ -62,8 +62,8 @@
     {
         "ticker": "MASTEK",
         "currentPrice": 1622.1,
-        "ema50": 1652.85,
-        "ema200": 1895.65,
+        "ema50": 1654.1,
+        "ema200": 1898.4,
         "triggerPrice": 1614.85,
         "distanceRemaining": 0.45,
         "fibLevelMatch": "N/A",
@@ -82,8 +82,8 @@
     {
         "ticker": "DCMSHRIRAM",
         "currentPrice": 1025.2,
-        "ema50": 1111.11,
-        "ema200": 1148.11,
+        "ema50": 1114.62,
+        "ema200": 1149.35,
         "triggerPrice": 1030.91,
         "distanceRemaining": 0.55,
         "fibLevelMatch": "N/A",
@@ -102,8 +102,8 @@
     {
         "ticker": "BALKRISIND",
         "currentPrice": 2127.8,
-        "ema50": 2205.0,
-        "ema200": 2315.47,
+        "ema50": 2208.15,
+        "ema200": 2317.36,
         "triggerPrice": 2139.81,
         "distanceRemaining": 0.56,
         "fibLevelMatch": "N/A",
@@ -122,8 +122,8 @@
     {
         "ticker": "JUSTDIAL",
         "currentPrice": 529.85,
-        "ema50": 538.76,
-        "ema200": 653.24,
+        "ema50": 539.13,
+        "ema200": 654.48,
         "triggerPrice": 533.81,
         "distanceRemaining": 0.74,
         "fibLevelMatch": "N/A",
@@ -142,8 +142,8 @@
     {
         "ticker": "ORIENTCEM",
         "currentPrice": 133.44,
-        "ema50": 140.28,
-        "ema200": 176.57,
+        "ema50": 140.56,
+        "ema200": 177.01,
         "triggerPrice": 132.29,
         "distanceRemaining": 0.87,
         "fibLevelMatch": "N/A",
@@ -162,9 +162,9 @@
     {
         "ticker": "MRF",
         "currentPrice": 122750.0,
-        "ema50": 129384.34,
-        "ema200": 138620.8,
-        "triggerPrice": 121457.25,
+        "ema50": 129655.13,
+        "ema200": 138780.31,
+        "triggerPrice": 121457.26,
         "distanceRemaining": 1.06,
         "fibLevelMatch": "N/A",
         "patternZone": "Strong Fib confluence: 100.0% (0.4% match) \u2713",
@@ -172,7 +172,7 @@
         "positionSizing": {
             "sharesToBuy": 0,
             "strictStopLoss": 111740.67,
-            "pivotTargetExit": 148785.13,
+            "pivotTargetExit": 148785.14,
             "allocatedAmount": 50000.0
         },
         "wickTouches": 13,
@@ -182,7 +182,7 @@
     {
         "ticker": "ASTRAL",
         "currentPrice": 1526.0,
-        "ema50": 1552.32,
+        "ema50": 1553.4,
         "ema200": 1526.31,
         "triggerPrice": 1543.96,
         "distanceRemaining": 1.16,
@@ -202,8 +202,8 @@
     {
         "ticker": "GSFC",
         "currentPrice": 163.07,
-        "ema50": 167.47,
-        "ema200": 177.21,
+        "ema50": 167.65,
+        "ema200": 177.35,
         "triggerPrice": 160.87,
         "distanceRemaining": 1.37,
         "fibLevelMatch": "N/A",
@@ -222,8 +222,8 @@
     {
         "ticker": "ABBOTINDIA",
         "currentPrice": 26105.0,
-        "ema50": 26657.97,
-        "ema200": 28023.79,
+        "ema50": 26680.54,
+        "ema200": 28043.08,
         "triggerPrice": 25731.88,
         "distanceRemaining": 1.45,
         "fibLevelMatch": "N/A",
