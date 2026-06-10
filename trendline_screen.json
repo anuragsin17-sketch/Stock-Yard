@@ -124,7 +124,7 @@
         "currentPrice": 122595.0,
         "ema50": 129118.05,
         "ema200": 138399.67,
-        "triggerPrice": 121457.25,
+        "triggerPrice": 121457.26,
         "distanceRemaining": 0.94,
         "fibLevelMatch": "N/A",
         "patternZone": "Strong Fib confluence: 100.0% (0.4% match) \u2713",
@@ -132,7 +132,7 @@
         "positionSizing": {
             "sharesToBuy": 0,
             "strictStopLoss": 111740.67,
-            "pivotTargetExit": 148785.13,
+            "pivotTargetExit": 148785.14,
             "allocatedAmount": 50000.0
         },
         "wickTouches": 13,
