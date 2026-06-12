@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 Angel One Order Handler API
 Receives order confirmation from dashboard and places on Angel One
@@ -291,7 +291,7 @@ def place_order():
             telegram_msg = f"? *ORDER REJECTED*\n\n?? *Symbol:* {symbol}\n?? *Quantity:* {quantity}\n?? *Entry Price:* ?{entry_price}\n?? *Order Value:* ?{order_value:,.0f}\n\n?? *Reason:* {validation['reason']}{shortfall_msg}"
             
             if validation['balance_info']:
-                telegram_msg += f"\n\n?? *Account Status:*\n� Margin Available: ?{validation['balance_info']['margin_available']:,.0f}\n� Margin Required: ?{order_value:,.0f}"
+                telegram_msg += f"\n\n?? *Account Status:*\n? Margin Available: ?{validation['balance_info']['margin_available']:,.0f}\n? Margin Required: ?{order_value:,.0f}"
             
             send_telegram_notification(telegram_msg)
             
@@ -683,7 +683,7 @@ def sync_trades():
                     trade['pnl_percent'] = pnl_percent
                 
                 newly_closed.append(trade)
-                logger.info(f"Closed trade: {ticker} - P&L: ₹{trade.get('pnl', 0):,.2f}")
+                logger.info(f"Closed trade: {ticker} - P&L: ?{trade.get('pnl', 0):,.2f}")
             else:
                 # Trade still open
                 updated_radar.append(trade)
