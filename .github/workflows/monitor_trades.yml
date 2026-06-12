@@ -1,6 +1,8 @@
 name: Trade Monitor - Every 30 Min (Market Hours)
 
 on:
+  repository_dispatch:
+    types: [sync_radar]
   schedule:
     - cron: '15,45 3 * * 1-5'
     - cron: '0,30  4 * * 1-5'
@@ -54,7 +56,7 @@ jobs:
         git add radar_trades.json
         git diff --staged --quiet || git commit -m "data: radar trades update $(date -u '+%Y-%m-%d %H:%M UTC')"
         git push
-        echo "✅ radar_trades.json pushed to Stock-Yard-Public"
+        echo "radar_trades.json pushed to Stock-Yard-Public"
 
     - name: Save state to backend repo
       run: |
