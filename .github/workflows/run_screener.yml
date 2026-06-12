@@ -2,99 +2,64 @@ name: Stock Yard Screener
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
   schedule:
-    # Market hours: 9:15 AM - 3:30 PM IST = 3:45 UTC - 10:00 UTC
-    # Run every 30 minutes during market hours (Monday-Friday)
-    - cron: '0,30 4-9 * * 1-5'
+    # IST Market Hours: 9:15 AM - 3:30 PM IST = 3:45 AM - 10:00 AM UTC
+    - cron: '0,15,30,45 4-9 * * 1-5'
     - cron: '0 10 * * 1-5'
 
 permissions:
   contents: write
 
 jobs:
-  screen-stocks:
+  screen-and-notify:
     runs-on: ubuntu-latest
-    
+
     steps:
-    - name: Checkout
+    - name: Checkout backend repo
       uses: actions/checkout@v4
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-    
+
     - name: Setup Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.11'
-    
+
     - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install pandas yfinance requests numpy openpyxl scipy pyotp smartapi-python
-    
+      run: pip install pandas yfinance requests numpy scipy
+
     - name: Run trendline scanner
       env:
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
       run: |
         echo "Running trendline scanner..."
-        python update_feed.py || python update_trendline_prices.py || echo "Scanner failed"
-    
-    - name: Auto-Execute Trades
+        python update_feed.py || echo "Scanner completed with errors"
+        python update_trendline_prices_live.py || echo "Live prices completed"
+
+    - name: Push data files to Stock-Yard-Public
       env:
-        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        ANGEL_API_KEY: ${{ secrets.ANGEL_API_KEY }}
-        ANGEL_CLIENT_ID: ${{ secrets.ANGEL_CLIENT_ID }}
-        ANGEL_PASSWORD: ${{ secrets.ANGEL_PASSWORD }}
-        ANGEL_TOTP_SECRET: ${{ secrets.ANGEL_TOTP_SECRET }}
+        PUBLIC_REPO_TOKEN: ${{ secrets.PUBLIC_REPO_TOKEN }}
       run: |
-        echo "Auto-executing trades from signals..."
-        python3 << 'PYEOF'
-        import json
-        import subprocess
-        import os
-        
-        try:
-          with open('trendline_screen.json') as f:
-            stocks = json.load(f)
-        except:
-          stocks = []
-        
-        print(f"Found {len(stocks)} signals")
-        
-        critical = [s for s in stocks if s.get('notificationTrigger', False)]
-        print(f"Critical signals: {len(critical)}")
-        
-        for stock in critical[:5]:
-          ticker = stock.get('ticker', 'N/A')
-          price = stock.get('currentPrice', 0)
-          target = stock.get('positionSizing', {}).get('pivotTargetExit', 0)
-          stoploss = stock.get('positionSizing', {}).get('strictStopLoss', 0)
-          qty = stock.get('positionSizing', {}).get('sharesToBuy', 10)
-          
-          if price and target and stoploss:
-            print(f"Executing: {ticker}")
-            try:
-              result = subprocess.run([
-                'python3', 'angel_trade_full.py',
-                ticker, str(price), str(target), str(stoploss), str(qty), 'GitHub'
-              ], capture_output=True, text=True, timeout=60, env=os.environ.copy())
-              
-              if result.returncode == 0:
-                print(f"Success: {ticker}")
-              else:
-                print(f"Failed: {ticker}")
-            except Exception as e:
-              print(f"Error: {e}")
-        PYEOF
-    
-    - name: Commit results
+        # Clone the public repo
+        git clone https://x-access-token:${PUBLIC_REPO_TOKEN}@github.com/anuragsin17-sketch/Stock-Yard-Public.git public_repo
+
+        # Copy only data files — NEVER index.html
+        cp -f trendline_screen.json public_repo/trendline_screen.json || true
+        cp -f data.json             public_repo/data.json             || true
+        cp -f alerted_today.json    public_repo/alerted_today.json    || true
+
+        # Commit and push
+        cd public_repo
+        git config user.name  "Stock Yard Bot"
+        git config user.email "bot@stockyard.io"
+        git add trendline_screen.json data.json alerted_today.json
+        git diff --staged --quiet || git commit -m "data: screener update $(date -u '+%Y-%m-%d %H:%M UTC')"
+        git push
+        echo "✅ Data files pushed to Stock-Yard-Public"
+
+    - name: Save state to backend repo
       run: |
-        git config --global user.name "GitHub Action"
-        git config --global user.email "action@github.com"
-        git add radar_trades.json trendline_screen.json || true
-        git commit -m "Auto-update: $(date -u '+%Y-%m-%d %H:%M:%S UTC')" || true
-        git push || true
+        git config user.name  "Stock Yard Bot"
+        git config user.email "bot@stockyard.io"
+        git add trendline_screen.json alerted_today.json previous_stocks.json angel_orders.json || true
+        git diff --staged --quiet || git commit -m "state: screener run $(date -u '+%Y-%m-%d %H:%M UTC')"
+        git push

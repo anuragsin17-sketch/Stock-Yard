@@ -8,7 +8,7 @@ from geometric_engine import MacroInstitutionalEngine
 
 BASE_URL = "https://anuragsin17-sketch.github.io/Stock-Yard-Public"
 
-def send_telegram_alert(message: str) -> None:
+def send_telegram_alert(message: str, reply_markup: dict = None) -> None:
     telegram_bot_token = os.getenv('TELEGRAM_BOT_TOKEN')
     telegram_chat_id = os.getenv('TELEGRAM_CHAT_ID')
     if not telegram_bot_token or not telegram_chat_id:
@@ -16,7 +16,13 @@ def send_telegram_alert(message: str) -> None:
         return
     try:
         url = f"https://api.telegram.org/bot{telegram_bot_token}/sendMessage"
-        payload = {'chat_id': telegram_chat_id, 'text': message, 'parse_mode': 'Markdown'}
+        payload = {
+            'chat_id': telegram_chat_id,
+            'text': message,
+            'parse_mode': 'Markdown'
+        }
+        if reply_markup:
+            payload['reply_markup'] = reply_markup
         response = requests.post(url, json=payload, timeout=10)
         if response.status_code == 200:
             print("Telegram alert sent")
@@ -160,16 +166,30 @@ def synchronize_production_database():
             )
 
             alert = (
-                f"CRITICAL TRENDLINE ENTRY\n\n"
-                f"Stock: {ticker}\n"
+                f"🎯 *CRITICAL TRENDLINE ENTRY*\n\n"
+                f"Stock: *{ticker}*\n"
                 f"Current: Rs{record['currentPrice']:,.2f}\n"
                 f"Trigger: Rs{price:,.2f} ({dist:.2f}% away)\n"
                 f"Stop Loss: Rs{stop:,.2f} (Monthly Close)\n"
                 f"Target: Rs{target:,.2f} (+20%)\n"
-                f"Qty: {qty} shares\n\n"
-                f"Tap to confirm trade:\n{confirm_url}"
+                f"Qty: {qty} shares"
             )
-            send_telegram_alert(alert)
+
+            # Inline keyboard - Confirm Trade opens dashboard, Skip does nothing
+            buttons = {
+                'inline_keyboard': [[
+                    {
+                        'text': '✅ Confirm Trade',
+                        'url': confirm_url
+                    },
+                    {
+                        'text': '⏭️ Skip',
+                        'url': f"{BASE_URL}/"
+                    }
+                ]]
+            }
+
+            send_telegram_alert(alert, reply_markup=buttons)
             new_alerts.append(ticker)
             alerted_today[ticker] = datetime.now().strftime('%H:%M')
             print(f"   Critical alert sent for {ticker}")

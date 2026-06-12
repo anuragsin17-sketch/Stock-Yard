@@ -9,10 +9,10 @@ permissions:
 
 jobs:
   execute-trade:
-    runs-on: self-hosted  # Runs on your PC instead of GitHub servers
+    runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
+    - name: Checkout backend repo
       uses: actions/checkout@v4
 
     - name: Setup Python
@@ -21,8 +21,7 @@ jobs:
         python-version: '3.11'
 
     - name: Install dependencies
-      run: |
-        pip install smartapi-python pyotp requests logzero websocket-client
+      run: pip install smartapi-python pyotp requests logzero websocket-client
 
     - name: Log trade request
       run: |
@@ -31,7 +30,7 @@ jobs:
         echo "Action      : ${{ github.event.client_payload.action }}"
         echo "Entry Price : ₹${{ github.event.client_payload.price }}"
         echo "Quantity    : ${{ github.event.client_payload.quantity }}"
-        echo "Time        : $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
+        echo "Time        : $(date '+%Y-%m-%d %H:%M:%S UTC')"
 
     - name: Execute trade on Angel One
       env:
@@ -45,18 +44,29 @@ jobs:
         TRADE_ACTION:       ${{ github.event.client_payload.action }}
         TRADE_PRICE:        ${{ github.event.client_payload.price }}
         TRADE_QUANTITY:     ${{ github.event.client_payload.quantity }}
-      run: |
-        echo "🚀 Executing trade on self-hosted runner..."
-        python angel_trade.py
-        echo "✅ Trade execution completed"
+      run: python angel_trade.py
 
-    - name: Commit order log
-      run: |
-        git config --global user.name "GitHub Action"
-        git config --global user.email "action@github.com"
-        git add radar_trades.json 2>$null
-        git commit -m "📊 Order log: ${{ github.event.client_payload.action }} ${{ github.event.client_payload.symbol }}" 2>$null
-        if ($LASTEXITCODE -eq 0) { git push }
+    - name: Push updated radar_trades.json to Stock-Yard-Public
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      shell: pwsh
+        PUBLIC_REPO_TOKEN: ${{ secrets.PUBLIC_REPO_TOKEN }}
+      run: |
+        git clone https://x-access-token:${PUBLIC_REPO_TOKEN}@github.com/anuragsin17-sketch/Stock-Yard-Public.git public_repo
+
+        cp -f radar_trades.json   public_repo/radar_trades.json   || true
+        cp -f angel_orders.json   public_repo/angel_orders.json   || true
+
+        cd public_repo
+        git config user.name  "Stock Yard Bot"
+        git config user.email "bot@stockyard.io"
+        git add radar_trades.json angel_orders.json
+        git diff --staged --quiet || git commit -m "trade: ${{ github.event.client_payload.action }} ${{ github.event.client_payload.symbol }} $(date -u '+%H:%M UTC')"
+        git push
+        echo "✅ Trade data pushed to Stock-Yard-Public"
+
+    - name: Save state to backend repo
+      run: |
+        git config user.name  "Stock Yard Bot"
+        git config user.email "bot@stockyard.io"
+        git add radar_trades.json angel_orders.json || true
+        git diff --staged --quiet || git commit -m "order: ${{ github.event.client_payload.symbol }} placed"
+        git push

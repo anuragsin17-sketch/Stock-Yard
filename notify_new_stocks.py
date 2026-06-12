@@ -17,16 +17,19 @@ BASE_URL = "https://anuragsin17-sketch.github.io/Stock-Yard-Public"
 PREV_FILE = "previous_stocks.json"
 
 
-def send_telegram(message: str) -> bool:
+def send_telegram(message: str, reply_markup: dict = None) -> bool:
     token = os.getenv("TELEGRAM_BOT_TOKEN")
     chat_id = os.getenv("TELEGRAM_CHAT_ID")
     if not token or not chat_id:
         print("⚠️  Telegram not configured — skipping")
         return False
     try:
+        payload = {"chat_id": chat_id, "text": message, "parse_mode": "Markdown"}
+        if reply_markup:
+            payload["reply_markup"] = reply_markup
         resp = requests.post(
             f"https://api.telegram.org/bot{token}/sendMessage",
-            json={"chat_id": chat_id, "text": message, "parse_mode": "Markdown"},
+            json=payload,
             timeout=10,
         )
         if resp.status_code == 200:
@@ -155,13 +158,26 @@ def notify_trendline_new(prev_trendline: set) -> tuple:
             f"📍 Entry Trigger: ₹{trigger:,.2f} _({dist:.2f}% away)_\n"
             f"🛑 Stop Loss: ₹{stop:,.2f} _(monthly close)_\n"
             f"✅ Target: ₹{target:,.2f} _(+20%)_\n"
-            f"📐 Fib: {fib} | Score: {score}/10 | Wicks: {wicks}\n\n"
-            f"[📉 View Chart]({chart_url})"
+            f"📐 Fib: {fib} | Score: {score}/10 | Wicks: {wicks}"
         )
-        if is_critical:
-            msg += f" | [📥 Confirm Trade]({confirm_url})"
 
-        if send_telegram(msg):
+        buttons = None
+        if is_critical:
+            buttons = {
+                'inline_keyboard': [[
+                    {'text': '✅ Confirm Trade', 'url': confirm_url},
+                    {'text': '⏭️ Skip', 'url': f"{BASE_URL}/"}
+                ]]
+            }
+        else:
+            buttons = {
+                'inline_keyboard': [[
+                    {'text': '📉 View Chart', 'url': chart_url},
+                    {'text': '📱 Open App', 'url': f"{BASE_URL}/"}
+                ]]
+            }
+
+        if send_telegram(msg, reply_markup=buttons):
             sent += 1
 
     return sent, current_symbols

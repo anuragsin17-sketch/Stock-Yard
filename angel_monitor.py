@@ -11,7 +11,6 @@ Stock Yard Trade Monitor
 import os
 import json
 import requests
-import yfinance as yf
 from datetime import datetime
 
 TELEGRAM_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN')
@@ -44,88 +43,49 @@ def send_telegram(message: str) -> bool:
 
 def send_telegram_with_action(ticker: str, entry_price: float, current_price: float, 
                               target_price: float, stoploss_price: float, source: str) -> bool:
-    """Send Telegram with secure token for order confirmation"""
+    """Send Telegram with Confirm/Skip inline buttons"""
     if not TELEGRAM_TOKEN or not TELEGRAM_CHAT:
         print("⚠️ Telegram not configured")
         return False
     
     try:
-        import secrets
-        from datetime import datetime, timedelta
-        from cryptography.fernet import Fernet
+        BASE_URL = "https://anuragsin17-sketch.github.io/Stock-Yard-Public"
+        qty = max(1, int(50000 / entry_price))
         
-        # Get encryption key from env or generate
-        encryption_key = os.environ.get('ENCRYPTION_KEY')
-        if encryption_key:
-            cipher_suite = Fernet(encryption_key.encode() if isinstance(encryption_key, str) else encryption_key)
-        else:
-            cipher_suite = None
+        confirm_url = (
+            f"{BASE_URL}/?confirm={ticker}"
+            f"&price={entry_price}&qty={qty}"
+            f"&stop={stoploss_price}&target={target_price}&source={source}"
+        )
         
-        # Generate secure token (32 random chars)
-        token = secrets.token_urlsafe(24)
-        token_expires = datetime.now() + timedelta(minutes=3)  # 3 minutes
-        
-        # Save token for verification (encrypted)
-        tokens_file = 'active_trade_tokens_encrypted.json'
-        tokens = {}
-        if os.path.exists(tokens_file):
-            try:
-                with open(tokens_file) as f:
-                    tokens = json.load(f)
-            except:
-                tokens = {}
-        
-        token_data = {
-            'ticker': ticker,
-            'entry_price': entry_price,
-            'target_price': target_price,
-            'stop_loss': stoploss_price,
-            'source': source,
-            'expires_at': token_expires.isoformat(),
-            'created_at': datetime.now().isoformat()
-        }
-        
-        # Encrypt token data if cipher available
-        if cipher_suite:
-            json_data = json.dumps(token_data).encode()
-            encrypted = cipher_suite.encrypt(json_data).decode()
-            tokens[token] = encrypted
-        else:
-            tokens[token] = token_data
-        
-        with open(tokens_file, 'w') as f:
-            json.dump(tokens, f, indent=2)
-        
-        url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
-        
-        # Message with secure token (user must enter manually)
         message = (
             f"🎯 *TRADE TRIGGERED - {source.upper()}*\n\n"
             f"Stock: *{ticker}*\n"
-            f"Entry Price: ₹{entry_price:,.2f}\n"
-            f"Current Price: ₹{current_price:,.2f}\n"
+            f"Entry: ₹{entry_price:,.2f}\n"
+            f"Current: ₹{current_price:,.2f}\n"
             f"Target: ₹{target_price:,.2f} _(+20%)_\n"
-            f"Stop Loss: ₹{stoploss_price:,.2f} _(8% loss)_\n"
-            f"Time: {datetime.now().strftime('%Y-%m-%d %H:%M IST')}\n\n"
-            f"🔐 *CONFIRMATION TOKEN:*\n"
-            f"`{token}`\n\n"
-            f"⏰ Token expires in 3 minutes\n\n"
-            f"📱 To confirm trade:\n"
-            f"1. Open dashboard\n"
-            f"2. Go to Pending Trades\n"
-            f"3. Paste token to verify\n"
-            f"4. Adjust quantity\n"
-            f"5. Click Confirm"
+            f"Stop Loss: ₹{stoploss_price:,.2f}\n"
+            f"Qty: {qty} shares\n"
+            f"Time: {datetime.now().strftime('%Y-%m-%d %H:%M IST')}"
         )
         
+        buttons = {
+            'inline_keyboard': [[
+                {'text': '✅ Confirm Trade', 'url': confirm_url},
+                {'text': '⏭️ Skip', 'url': f"{BASE_URL}/"}
+            ]]
+        }
+        
+        url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
         resp = requests.post(url, json={
             'chat_id': TELEGRAM_CHAT,
             'text': message,
-            'parse_mode': 'Markdown'
+            'parse_mode': 'Markdown',
+            'reply_markup': buttons
         }, timeout=10)
         
         if resp.status_code == 200:
-            print("✅ Telegram with secure token sent")
+            print("✅ Telegram with buttons sent")
             return True
         print(f"❌ Telegram failed: {resp.text[:200]}")
     except Exception as e:
@@ -134,15 +94,27 @@ def send_telegram_with_action(ticker: str, entry_price: float, current_price: fl
 
 
 def get_live_price(ticker: str) -> float:
-    """Get current price via yfinance"""
+    """Get current price from Angel One API"""
     try:
-        symbol = ticker + '.NS' if not ticker.endswith('.NS') else ticker
-        data = yf.download(symbol, period='1d', interval='1m',
-                           progress=False, auto_adjust=True)
-        if not data.empty:
-            return float(data['Close'].iloc[-1])
+        # Call the backend endpoint to get live quote
+        symbol = ticker.replace('.NS', '')  # Remove .NS suffix for API call
+        
+        api_url = f"http://32.194.58.75:5000/api/get-quote?symbol={symbol}"
+        
+        response = requests.get(api_url, timeout=5)
+        
+        if response.status_code == 200:
+            data = response.json()
+            if data.get('success'):
+                ltp = float(data.get('ltp', 0))
+                if ltp > 0:
+                    return ltp
+        
+        print(f"Price fetch error for {ticker}: API returned {response.status_code}")
+        
     except Exception as e:
         print(f"Price fetch error for {ticker}: {e}")
+    
     return None
 
 
@@ -193,6 +165,18 @@ def check_trendline_stocks_for_entry():
     
     radar_trades = load_radar()
     changed = False
+    
+    # Load stocks already in dashboard tabs
+    main_data = load_json(DATA_FILE)
+    volume_stocks = main_data.get('volume_breakout_stocks', []) if isinstance(main_data, dict) else []
+    golden_stocks = main_data.get('golden_stocks', []) if isinstance(main_data, dict) else []
+    
+    # Load orders already placed (prevent duplicate orders)
+    orders_data = load_json('angel_orders.json')
+    ordered_stocks = set()
+    if isinstance(orders_data, list):
+        ordered_stocks = {o.get('symbol', '') for o in orders_data if o.get('symbol')}
+    print(f"  Already ordered: {len(ordered_stocks)} stocks - {', '.join(sorted(ordered_stocks)[:5])}")
 
     for stock in trendline_data:
         ticker = stock.get('ticker', '')
@@ -204,8 +188,24 @@ def check_trendline_stocks_for_entry():
         if not ticker or entry_price <= 0:
             continue
 
+        # CRITICAL: Skip if already ordered in angel_orders.json
+        if ticker in ordered_stocks:
+            print(f"  ⊘ {ticker}: Already has order in Angel One (skip)")
+            continue
+
         # Skip if already in radar
         if any(t.get('ticker') == ticker and t.get('source') == 'Trendline' for t in radar_trades):
+            print(f"  ⊘ {ticker}: Already in Radar (skip)")
+            continue
+        
+        # Skip if already in Volume tab
+        if any(v.get('symbol') == ticker for v in volume_stocks):
+            print(f"  ⊘ {ticker}: Already in Volume tab (skip)")
+            continue
+        
+        # Skip if already in Trendline tab
+        if any(g.get('symbol') == ticker for g in golden_stocks):
+            print(f"  ⊘ {ticker}: Already in Trendline tab (skip)")
             continue
 
         # Get live price
@@ -244,6 +244,7 @@ def check_trendline_stocks_for_entry():
 
     if changed:
         save_radar(radar_trades)
+    
     return changed
 
 
@@ -315,10 +316,76 @@ def monitor_radar_positions():
     return changed
 
 
+def sync_angel_one_positions():
+    """Fetch open positions from Angel One via EC2 and sync to radar_trades.json"""
+    print("\n🔄 Syncing Angel One open positions...")
+    try:
+        response = requests.get('http://32.194.58.75:5000/api/sync-trades', timeout=15)
+        if response.status_code != 200:
+            print(f"  ⚠️ Sync endpoint returned {response.status_code}")
+            return False
+
+        data = response.json()
+        if not data.get('success'):
+            print(f"  ⚠️ Sync failed: {data.get('error')}")
+            return False
+
+        angel_positions = data.get('open_trades', [])
+        print(f"  Angel One open positions: {len(angel_positions)}")
+
+        if not angel_positions:
+            return False
+
+        radar_trades = load_radar()
+        changed = False
+
+        for pos in angel_positions:
+            ticker = pos.get('ticker', '').replace('-EQ', '')
+            if not ticker:
+                continue
+
+            # Check if already in radar
+            existing = next((t for t in radar_trades if t.get('ticker') == ticker and t.get('status') in ('Open', 'Triggered')), None)
+            if existing:
+                # Update current price and quantity from Angel One
+                existing['current_price'] = pos.get('current_price', existing.get('current_price', 0))
+                existing['quantity'] = pos.get('quantity', existing.get('quantity', 0))
+                existing['is_angel_synced'] = True
+                changed = True
+                print(f"  ✅ Updated {ticker} from Angel One")
+            else:
+                # New position in Angel One not in Radar — add it
+                radar_trades.append({
+                    'ticker': ticker,
+                    'entry_price': pos.get('entry_price', pos.get('current_price', 0)),
+                    'current_price': pos.get('current_price', 0),
+                    'target': pos.get('target', 0),
+                    'stop_loss': pos.get('stop_loss', 0),
+                    'quantity': pos.get('quantity', 0),
+                    'status': 'Open',
+                    'source': 'Angel One',
+                    'is_angel_synced': True,
+                    'triggered_at': datetime.now().isoformat()
+                })
+                changed = True
+                print(f"  ✅ Added {ticker} from Angel One to Radar")
+
+        if changed:
+            save_radar(radar_trades)
+        return changed
+
+    except Exception as e:
+        print(f"  ⚠️ Angel One sync error: {e}")
+        return False
+
+
 def main():
     print(f"\n{'='*60}")
     print(f"TRADE MONITOR - {datetime.now().strftime('%Y-%m-%d %H:%M IST')}")
     print(f"{'='*60}")
+
+    # Sync Angel One open positions to Radar first
+    angel_changed = sync_angel_one_positions()
 
     # Check Trendline stocks for entry hits ONLY
     tl_changed = check_trendline_stocks_for_entry()
@@ -326,7 +393,7 @@ def main():
     # Monitor Radar positions for target/stoploss
     radar_changed = monitor_radar_positions()
 
-    if tl_changed or radar_changed:
+    if angel_changed or tl_changed or radar_changed:
         print(f"\n✅ Updates saved to radar_trades.json")
     else:
         print(f"\n✅ No changes")
