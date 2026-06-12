@@ -591,7 +591,7 @@ def sync_trades():
         logger.info(f"Found {len(angel_orders)} orders in Angel One")
         
         # Get all positions (filled orders) from Angel One
-        holdings_response = smart.getHoldings()
+        holdings_response = smart.holding()
         logger.info(f"Holdings response: {holdings_response}")
         
         angel_positions = []
