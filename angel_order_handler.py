@@ -762,7 +762,137 @@ def sync_trades():
         logger.error(f"Trade sync error: {e}", exc_info=True)
         return jsonify({'success': False, 'error': str(e)}), 500
 
-if __name__ == '__main__':
+
+# ─── GROWW PORTFOLIO SYNC ──────────────────────────────────────────────────────
+# Read-only: fetches open holdings from Groww and returns them in the same
+# format as /api/sync-trades so the Radar tab can merge both brokers.
+
+GROWW_API_KEY = os.environ.get(
+    'GROWW_API_KEY',
+    'eyJraWQiOiJaTUtjVXciLCJhbGciOiJFUzI1NiJ9.eyJleHAiOjI1Njk3NTE5MTksImlhdCI6MTc4MTM1MTkxOSwibmJmIjoxNzgxMzUxOTE5LCJzdWIiOiJ7XCJ0b2tlblJlZklkXCI6XCI1MmEzYTI2OC04ZDg0LTQyMTQtYTk3NS05OGViNzQxMzEzNjRcIixcInZlbmRvckludGVncmF0aW9uS2V5XCI6XCJlMzFmZjIzYjA4NmI0MDZjODg3NGIyZjZkODQ5NTMxM1wiLFwidXNlckFjY291bnRJZFwiOlwiOTk0NzM2NGItMTk4Ny00Y2M1LTg5MDUtNWUyMDUyZGE3NzRhXCIsXCJkZXZpY2VJZFwiOlwiNWQyN2NkZjktMjY0Yy01ZDQ5LTljNzYtNDRhN2VhNmJiZTYxXCIsXCJzZXNzaW9uSWRcIjpcIjhhODcxNDgyLTg5MWYtNGJjMC05M2U5LWZkZDgxMDI0ZmI1MVwiLFwiYWRkaXRpb25hbERhdGFcIjpcIno1NC9NZzltdjE2WXdmb0gvS0EwYkVzYjVJNkRZbXJ3UGwwUnBXZkdQNjlSTkczdTlLa2pWZDNoWjU1ZStNZERhWXBOVi9UOUxIRmtQejFFQisybTdRPT1cIixcInJvbGVcIjpcImF1dGgtdG90cFwiLFwic291cmNlSXBBZGRyZXNzXCI6XCIyNDAxOjQ5MDA6ODgzZTozNWI0OmM4MTc6YzVjOjUwNjE6MTc0NSwxNzIuNjkuMTE5LjEwMywzNS4yNDEuMjMuMTIzXCIsXCJ0d29GYUV4cGlyeVRzXCI6MjU2OTc1MTkxOTk3MSxcInZlbmRvck5hbWVcIjpcImdyb3d3QXBpXCJ9IiwiaXNzIjoiYXBleC1hdXRoLXByb2QtYXBwIn0.LTyWeU_WSdAJSEWJsf7c3AbFvapzvowzTwgn2fP2ZT8ZVaaM6CPu1o-ePJ-HvpWWSS5RBDjCqo0FW4q1kZ8RPg'
+)
+
+@app.route('/api/sync-groww', methods=['GET'])
+def sync_groww():
+    """
+    Fetch open holdings from Groww (read-only).
+    Returns positions in the same schema as /api/sync-trades.
+    """
+    try:
+        headers = {
+            'Authorization': f'Bearer {GROWW_API_KEY}',
+            'Content-Type': 'application/json',
+        }
+
+        # 1. Fetch holdings (long-term DEMAT positions)
+        holdings_resp = requests.get(
+            'https://api.groww.in/v1/holdings/user',
+            headers=headers, timeout=10
+        )
+        logger.info(f"Groww holdings status: {holdings_resp.status_code}")
+
+        holdings = []
+        if holdings_resp.status_code == 200:
+            data = holdings_resp.json()
+            # Groww returns list directly or nested under 'holdingsSummary'
+            if isinstance(data, list):
+                holdings = data
+            elif isinstance(data, dict):
+                holdings = data.get('holdingsSummary', data.get('holdings', data.get('data', [])))
+            if not isinstance(holdings, list):
+                holdings = []
+
+        # 2. Fetch intraday positions (if any)
+        positions = []
+        try:
+            pos_resp = requests.get(
+                'https://api.groww.in/v1/positions',
+                headers=headers, timeout=10
+            )
+            if pos_resp.status_code == 200:
+                pos_data = pos_resp.json()
+                if isinstance(pos_data, list):
+                    positions = pos_data
+                elif isinstance(pos_data, dict):
+                    positions = pos_data.get('positions', pos_data.get('data', []))
+                if not isinstance(positions, list):
+                    positions = []
+        except Exception as pe:
+            logger.warning(f"Groww positions fetch failed: {pe}")
+
+        logger.info(f"Groww: {len(holdings)} holdings, {len(positions)} intraday positions")
+
+        # 3. Normalize to radar format
+        open_trades = []
+
+        for h in holdings:
+            # Groww field names vary — handle both snake_case and camelCase
+            symbol = (
+                h.get('tradingSymbol') or h.get('trading_symbol') or
+                h.get('symbol') or h.get('isin', '')
+            ).replace('-EQ', '').replace('.NS', '')
+            if not symbol:
+                continue
+
+            qty = int(h.get('quantity') or h.get('holdingQuantity') or h.get('totalQuantity') or 0)
+            if qty <= 0:
+                continue
+
+            avg_price = float(h.get('averagePrice') or h.get('average_price') or h.get('ltp') or 0)
+            ltp = float(h.get('ltp') or h.get('lastTradedPrice') or avg_price)
+
+            open_trades.append({
+                'ticker':        symbol,
+                'source':        'Groww',
+                'quantity':      qty,
+                'entry_price':   round(avg_price, 2),
+                'current_price': round(ltp, 2),
+                'status':        'Open',
+                'triggered_at':  datetime.now().isoformat(),
+            })
+
+        for p in positions:
+            symbol = (
+                p.get('tradingSymbol') or p.get('trading_symbol') or p.get('symbol') or ''
+            ).replace('-EQ', '').replace('.NS', '')
+            if not symbol:
+                continue
+
+            qty = int(p.get('quantity') or p.get('netQuantity') or 0)
+            if qty <= 0:
+                continue
+
+            # Skip if already added from holdings
+            if any(t['ticker'] == symbol for t in open_trades):
+                continue
+
+            avg_price = float(p.get('buyAverage') or p.get('average_price') or p.get('ltp') or 0)
+            ltp = float(p.get('ltp') or p.get('lastTradedPrice') or avg_price)
+
+            open_trades.append({
+                'ticker':        symbol,
+                'source':        'Groww',
+                'quantity':      qty,
+                'entry_price':   round(avg_price, 2),
+                'current_price': round(ltp, 2),
+                'status':        'Open',
+                'triggered_at':  datetime.now().isoformat(),
+            })
+
+        logger.info(f"Groww sync returning {len(open_trades)} open positions")
+        return jsonify({
+            'success':    True,
+            'source':     'Groww',
+            'open_trades': open_trades,
+            'count':      len(open_trades),
+        }), 200
+
+    except Exception as e:
+        logger.error(f"Groww sync error: {e}", exc_info=True)
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+
+
     # Check if credentials are configured
     creds = load_credentials()
     if not creds:
