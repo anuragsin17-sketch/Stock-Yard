@@ -57,7 +57,7 @@ def calculate_emas(ticker: str) -> dict:
 
 
 def synchronize_production_database():
-    engine = MacroInstitutionalEngine(position_size=50000.0, sl_pct=8.0, touch_tolerance=2.0)
+    engine = MacroInstitutionalEngine(position_size=50000.0, sl_pct=8.0, touch_tolerance=10.0)
     print("Connecting to NSE network...")
 
     try:
@@ -104,6 +104,7 @@ def synchronize_production_database():
                     "distanceRemaining": data["currentSignal"]["distanceRemaining"],
                     "fibLevelMatch": data["currentSignal"].get("fibLevelMatch", "N/A"),
                     "patternZone": data["currentSignal"].get("confluenceNote", "Trendline Support"),
+                    "signalStatus": data["currentSignal"]["signalStatus"],
                     "notificationTrigger": data["currentSignal"]["notificationTrigger"],
                     "positionSizing": {
                         "sharesToBuy": data["positionSizing"]["sharesToBuy"],
