@@ -9,6 +9,13 @@ if os.path.exists("data.json"):
     with open("data.json", "r", encoding="utf-8") as f:
         latest_data = json.load(f)
 
+    # Write data.json to the frontend repo root (same dir as index.html)
+    # so the dashboard can fetch it asynchronously without needing GitHub Pages rebuild
+    data_json_str = json.dumps(latest_data, indent=2)
+    with open("data.json", "w", encoding="utf-8") as f:
+        f.write(data_json_str)
+    print(f"data.json written ({len(data_json_str)//1024} KB) for async dashboard loading")
+
     # Read the HTML file
     with open("index.html", "r", encoding="utf-8") as f:
         html_content = f.read()
