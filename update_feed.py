@@ -8,7 +8,7 @@ from geometric_engine import MacroInstitutionalEngine
 
 BASE_URL = "https://anuragsin17-sketch.github.io/Stock-Yard-Public"
 
-def send_telegram_alert(message: str, reply_markup: dict = None) -> None:
+def send_telegram_alert(message: str) -> None:
     telegram_bot_token = os.getenv('TELEGRAM_BOT_TOKEN')
     telegram_chat_id = os.getenv('TELEGRAM_CHAT_ID')
     if not telegram_bot_token or not telegram_chat_id:
@@ -21,8 +21,6 @@ def send_telegram_alert(message: str, reply_markup: dict = None) -> None:
             'text': message,
             'parse_mode': 'Markdown'
         }
-        if reply_markup:
-            payload['reply_markup'] = reply_markup
         response = requests.post(url, json=payload, timeout=10)
         if response.status_code == 200:
             print("Telegram alert sent")
@@ -56,7 +54,19 @@ def calculate_emas(ticker: str) -> dict:
         return {"ema50": None, "ema200": None}
 
 
-def synchronize_production_database():
+def calculate_52w(ticker: str) -> dict:
+    """Calculate 52-week high and low for a given ticker"""
+    try:
+        stock = yf.Ticker(ticker)
+        hist = stock.history(period="1y")
+        if hist.empty:
+            return {"week52High": None, "week52Low": None}
+        return {
+            "week52High": round(float(hist['High'].max()), 2),
+            "week52Low":  round(float(hist['Low'].min()), 2),
+        }
+    except Exception:
+        return {"week52High": None, "week52Low": None}
     engine = MacroInstitutionalEngine(position_size=50000.0, sl_pct=8.0, touch_tolerance=10.0)
     print("Connecting to NSE network...")
 
@@ -92,14 +102,17 @@ def synchronize_production_database():
         try:
             data = engine.process_ticker_geometry(stock)
             if data:
-                # Calculate EMAs
+                # Calculate EMAs and 52W
                 emas = calculate_emas(stock)
+                w52  = calculate_52w(stock)
                 
                 record = {
                     "ticker": data["ticker"],
                     "currentPrice": data["currentSignal"]["currentPrice"],
                     "ema50": emas["ema50"],
                     "ema200": emas["ema200"],
+                    "week52High": w52["week52High"],
+                    "week52Low":  w52["week52Low"],
                     "triggerPrice": data["currentSignal"]["triggerPrice"],
                     "distanceRemaining": data["currentSignal"]["distanceRemaining"],
                     "fibLevelMatch": data["currentSignal"].get("fibLevelMatch", "N/A"),
@@ -159,38 +172,19 @@ def synchronize_production_database():
             qty = record['positionSizing']['sharesToBuy']
             dist = record['distanceRemaining']
 
-            # Deep link - opens dashboard and auto-triggers confirm dialog
-            confirm_url = (
-                f"{BASE_URL}/?confirm={ticker}"
-                f"&price={price}&qty={qty}"
-                f"&stop={stop}&target={target}&source=Trendline"
-            )
-
+            # Plain notification — no inline buttons, no credential URLs
             alert = (
                 f"🎯 *CRITICAL TRENDLINE ENTRY*\n\n"
                 f"Stock: *{ticker}*\n"
-                f"Current: Rs{record['currentPrice']:,.2f}\n"
-                f"Trigger: Rs{price:,.2f} ({dist:.2f}% away)\n"
-                f"Stop Loss: Rs{stop:,.2f} (Monthly Close)\n"
-                f"Target: Rs{target:,.2f} (+20%)\n"
-                f"Qty: {qty} shares"
+                f"Current: ₹{record['currentPrice']:,.2f}\n"
+                f"Trigger: ₹{price:,.2f} ({dist:.2f}% away)\n"
+                f"Stop Loss: ₹{stop:,.2f} (Monthly Close)\n"
+                f"Target: ₹{target:,.2f}\n"
+                f"Qty: {qty} shares\n\n"
+                f"Open dashboard to place order."
             )
 
-            # Inline keyboard - Confirm Trade opens dashboard, Skip does nothing
-            buttons = {
-                'inline_keyboard': [[
-                    {
-                        'text': '✅ Confirm Trade',
-                        'url': confirm_url
-                    },
-                    {
-                        'text': '⏭️ Skip',
-                        'url': f"{BASE_URL}/"
-                    }
-                ]]
-            }
-
-            send_telegram_alert(alert, reply_markup=buttons)
+            send_telegram_alert(alert)
             new_alerts.append(ticker)
             alerted_today[ticker] = datetime.now().strftime('%H:%M')
             print(f"   Critical alert sent for {ticker}")

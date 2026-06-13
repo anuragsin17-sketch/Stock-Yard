@@ -27,18 +27,33 @@ logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 
+# API key for authenticating dashboard requests — set as env var on EC2
+STOCKYARD_API_KEY = os.environ.get('STOCKYARD_API_KEY', '')
+
 # Enable CORS for all routes (allow browser requests from GitHub Pages)
 CORS(app, resources={
     r"/api/*": {
-        "origins": ["*"],
+        "origins": ["https://anuragsin17-sketch.github.io"],
         "methods": ["GET", "POST", "OPTIONS"],
-        "allow_headers": ["Content-Type"]
+        "allow_headers": ["Content-Type", "X-API-Key"]
     },
     r"/health": {
         "origins": ["*"],
         "methods": ["GET", "OPTIONS"]
     }
 })
+
+def check_api_key():
+    """Validate X-API-Key header. Returns True if valid."""
+    if not STOCKYARD_API_KEY:
+        # If key not configured on EC2, log warning but allow (backward compat)
+        logger.warning("STOCKYARD_API_KEY not set — endpoint is unprotected")
+        return True
+    provided = request.headers.get('X-API-Key', '')
+    if provided != STOCKYARD_API_KEY:
+        logger.warning(f"Invalid API key attempt from {request.remote_addr}")
+        return False
+    return True
 
 # Load Angel One credentials from environment variables
 def load_credentials():
@@ -61,9 +76,12 @@ def load_credentials():
 def send_telegram_notification(message):
     """Send Telegram notification"""
     try:
-        # Hardcoded credentials (since env vars aren't loading in systemd)
-        token = "8253327701:AAGNFzBJ8QwKw8x8Hg-tlvWHg18DD4lgogQ"
-        chat_id = "8901309420"
+        # Load from environment variables only — never hardcode tokens
+        token = os.environ.get('TELEGRAM_BOT_TOKEN', '')
+        chat_id = os.environ.get('TELEGRAM_CHAT_ID', '')
+        if not token or not chat_id:
+            logger.warning("Telegram not configured (env vars missing)")
+            return False
         
         url = f"https://api.telegram.org/bot{token}/sendMessage"
         payload = {
@@ -257,6 +275,8 @@ def health_check():
 @app.route('/api/place-order', methods=['POST'])
 def place_order():
     """Place order on Angel One with pre-validation"""
+    if not check_api_key():
+        return jsonify({'success': False, 'error': 'Unauthorized'}), 401
     try:
         data = request.json
         symbol = data.get('symbol')
@@ -590,6 +610,8 @@ def get_quote():
 @app.route('/api/sync-trades', methods=['GET'])
 def sync_trades():
     """Fetch all open orders from Angel One and sync with our tracking"""
+    if not check_api_key():
+        return jsonify({'success': False, 'error': 'Unauthorized'}), 401
     try:
         logger.info("Starting trade sync with Angel One...")
         

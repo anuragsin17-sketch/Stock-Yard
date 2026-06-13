@@ -18,8 +18,8 @@ import pyotp
 app = Flask(__name__)
 
 # Configuration
-TELEGRAM_BOT_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN', '8253327701:AAGNFzBJ8QwKw8x8Hg-tlvWHg18DD4lgogQ')
-TELEGRAM_CHAT_ID = os.environ.get('TELEGRAM_CHAT_ID', '8901309420')
+TELEGRAM_BOT_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN', '')
+TELEGRAM_CHAT_ID = os.environ.get('TELEGRAM_CHAT_ID', '')
 
 # Angel One credentials
 ANGEL_API_KEY = os.environ.get('ANGEL_API_KEY', '')
