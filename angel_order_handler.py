@@ -607,6 +607,43 @@ def get_quote():
         logger.error(f"Quote endpoint error: {e}", exc_info=True)
         return jsonify({'success': False, 'error': str(e)}), 500
 
+@app.route('/api/get-52w', methods=['GET'])
+def get_52w():
+    """Get 52-week high/low for a stock symbol using yfinance"""
+    try:
+        symbol = request.args.get('symbol', '').strip()
+
+        if not symbol:
+            logger.warning("52W request: No symbol provided")
+            return jsonify({'success': False, 'error': 'No symbol provided'}), 400
+
+        logger.info(f"Fetching 52W high/low for: {symbol}")
+
+        import yfinance as yf
+        yf_symbol = symbol.upper().replace('-EQ', '') + '.NS'
+        ticker_obj = yf.Ticker(yf_symbol)
+        hist = ticker_obj.history(period='1y', interval='1d')
+
+        if hist.empty:
+            logger.warning(f"52W fetch: No data returned for {yf_symbol}")
+            return jsonify({'success': False, 'error': f'No data found for symbol: {symbol}'}), 404
+
+        week_52_high = round(float(hist['High'].max()), 2)
+        week_52_low  = round(float(hist['Low'].min()), 2)
+
+        logger.info(f"52W data for {symbol}: High={week_52_high}, Low={week_52_low}")
+        return jsonify({
+            'success': True,
+            'symbol': symbol.upper().replace('-EQ', ''),
+            'week_52_high': week_52_high,
+            'week_52_low': week_52_low
+        }), 200
+
+    except Exception as e:
+        logger.error(f"52W endpoint error: {e}", exc_info=True)
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+
 @app.route('/api/sync-trades', methods=['GET'])
 def sync_trades():
     """Fetch all open orders from Angel One and sync with our tracking"""
@@ -766,11 +803,78 @@ def sync_trades():
 # ─── GROWW PORTFOLIO SYNC ──────────────────────────────────────────────────────
 # Read-only: fetches open holdings from Groww and returns them in the same
 # format as /api/sync-trades so the Radar tab can merge both brokers.
+#
+# Auth: Groww uses API Key + Secret to generate a short-lived access token.
+# Checksum = SHA256(secret + timestamp_epoch_seconds)
+# POST https://api.groww.in/v1/token/api/access
+#   Authorization: Bearer <GROWW_USER_API_KEY>
+#   body: {"key_type":"approval","checksum":"...","timestamp":"..."}
 
-GROWW_API_KEY = os.environ.get(
-    'GROWW_API_KEY',
-    'eyJraWQiOiJaTUtjVXciLCJhbGciOiJFUzI1NiJ9.eyJleHAiOjI1Njk3NTE5MTksImlhdCI6MTc4MTM1MTkxOSwibmJmIjoxNzgxMzUxOTE5LCJzdWIiOiJ7XCJ0b2tlblJlZklkXCI6XCI1MmEzYTI2OC04ZDg0LTQyMTQtYTk3NS05OGViNzQxMzEzNjRcIixcInZlbmRvckludGVncmF0aW9uS2V5XCI6XCJlMzFmZjIzYjA4NmI0MDZjODg3NGIyZjZkODQ5NTMxM1wiLFwidXNlckFjY291bnRJZFwiOlwiOTk0NzM2NGItMTk4Ny00Y2M1LTg5MDUtNWUyMDUyZGE3NzRhXCIsXCJkZXZpY2VJZFwiOlwiNWQyN2NkZjktMjY0Yy01ZDQ5LTljNzYtNDRhN2VhNmJiZTYxXCIsXCJzZXNzaW9uSWRcIjpcIjhhODcxNDgyLTg5MWYtNGJjMC05M2U5LWZkZDgxMDI0ZmI1MVwiLFwiYWRkaXRpb25hbERhdGFcIjpcIno1NC9NZzltdjE2WXdmb0gvS0EwYkVzYjVJNkRZbXJ3UGwwUnBXZkdQNjlSTkczdTlLa2pWZDNoWjU1ZStNZERhWXBOVi9UOUxIRmtQejFFQisybTdRPT1cIixcInJvbGVcIjpcImF1dGgtdG90cFwiLFwic291cmNlSXBBZGRyZXNzXCI6XCIyNDAxOjQ5MDA6ODgzZTozNWI0OmM4MTc6YzVjOjUwNjE6MTc0NSwxNzIuNjkuMTE5LjEwMywzNS4yNDEuMjMuMTIzXCIsXCJ0d29GYUV4cGlyeVRzXCI6MjU2OTc1MTkxOTk3MSxcInZlbmRvck5hbWVcIjpcImdyb3d3QXBpXCJ9IiwiaXNzIjoiYXBleC1hdXRoLXByb2QtYXBwIn0.LTyWeU_WSdAJSEWJsf7c3AbFvapzvowzTwgn2fP2ZT8ZVaaM6CPu1o-ePJ-HvpWWSS5RBDjCqo0FW4q1kZ8RPg'
-)
+import hashlib
+
+GROWW_USER_API_KEY = os.environ.get('GROWW_USER_API_KEY', '')   # API Key from Groww Cloud
+GROWW_API_SECRET   = os.environ.get('GROWW_API_SECRET',   '')   # API Secret from Groww Cloud
+
+# Cache the access token so we don't re-generate on every request
+_groww_access_token = None
+_groww_token_expiry = 0   # epoch seconds
+
+def get_groww_access_token():
+    """
+    Exchange Groww API Key + Secret for a short-lived access token.
+    Caches the token until 5 minutes before expiry.
+    Returns the access token string, or None on failure.
+    """
+    global _groww_access_token, _groww_token_expiry
+    import time
+
+    now = int(time.time())
+
+    # Return cached token if still valid
+    if _groww_access_token and now < _groww_token_expiry - 300:
+        return _groww_access_token
+
+    if not GROWW_USER_API_KEY or not GROWW_API_SECRET:
+        logger.error("Groww: GROWW_USER_API_KEY or GROWW_API_SECRET not set in environment")
+        return None
+
+    try:
+        timestamp = str(now)
+        # Checksum = SHA256(secret + timestamp)
+        checksum = hashlib.sha256((GROWW_API_SECRET + timestamp).encode('utf-8')).hexdigest()
+
+        resp = requests.post(
+            'https://api.groww.in/v1/token/api/access',
+            headers={
+                'Authorization': f'Bearer {GROWW_USER_API_KEY}',
+                'Content-Type': 'application/json',
+                'X-API-VERSION': '1.0',
+            },
+            json={'key_type': 'approval', 'checksum': checksum, 'timestamp': timestamp},
+            timeout=10
+        )
+        logger.info(f"Groww token response: {resp.status_code} | {resp.text[:300]}")
+
+        if resp.status_code == 200:
+            data = resp.json()
+            token = data.get('token') or data.get('payload', {}).get('token')
+            expiry_str = data.get('expiry') or data.get('payload', {}).get('expiry', '')
+            if token:
+                _groww_access_token = token
+                # Parse expiry or default to 6 hours from now
+                try:
+                    from datetime import datetime as _dt
+                    expiry_dt = _dt.fromisoformat(expiry_str.replace('Z', '+00:00'))
+                    _groww_token_expiry = int(expiry_dt.timestamp())
+                except Exception:
+                    _groww_token_expiry = now + 21600  # 6h fallback
+                logger.info("Groww access token obtained successfully")
+                return token
+        logger.error(f"Groww token fetch failed: {resp.status_code} {resp.text}")
+        return None
+    except Exception as e:
+        logger.error(f"Groww token error: {e}", exc_info=True)
+        return None
 
 @app.route('/api/sync-groww', methods=['GET'])
 def sync_groww():
@@ -779,42 +883,55 @@ def sync_groww():
     Returns positions in the same schema as /api/sync-trades.
     """
     try:
+        access_token = get_groww_access_token()
+        if not access_token:
+            return jsonify({'success': False, 'error': 'Could not obtain Groww access token — check GROWW_USER_API_KEY and GROWW_API_SECRET env vars'}), 401
+
         headers = {
-            'Authorization': f'Bearer {GROWW_API_KEY}',
+            'Authorization': f'Bearer {access_token}',
             'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'X-API-VERSION': '1.0',
         }
 
         # 1. Fetch holdings (long-term DEMAT positions)
+        # Real Groww response: {"status":"SUCCESS","payload":{"holdings":[...]}}
         holdings_resp = requests.get(
             'https://api.groww.in/v1/holdings/user',
             headers=headers, timeout=10
         )
         logger.info(f"Groww holdings status: {holdings_resp.status_code}")
+        logger.info(f"Groww holdings raw response: {holdings_resp.text[:500]}")
 
         holdings = []
         if holdings_resp.status_code == 200:
             data = holdings_resp.json()
-            # Groww returns list directly or nested under 'holdingsSummary'
             if isinstance(data, list):
                 holdings = data
             elif isinstance(data, dict):
-                holdings = data.get('holdingsSummary', data.get('holdings', data.get('data', [])))
+                # Real API wraps under payload.holdings
+                payload = data.get('payload', data)
+                holdings = payload.get('holdings', payload.get('holdingsSummary', payload.get('data', [])))
             if not isinstance(holdings, list):
                 holdings = []
 
-        # 2. Fetch intraday positions (if any)
+        # 2. Fetch intraday/CNC positions
+        # Real Groww response: {"status":"SUCCESS","payload":{"positions":[...]}}
         positions = []
         try:
             pos_resp = requests.get(
-                'https://api.groww.in/v1/positions',
+                'https://api.groww.in/v1/positions/user',  # correct endpoint
                 headers=headers, timeout=10
             )
+            logger.info(f"Groww positions status: {pos_resp.status_code}")
+            logger.info(f"Groww positions raw response: {pos_resp.text[:500]}")
             if pos_resp.status_code == 200:
                 pos_data = pos_resp.json()
                 if isinstance(pos_data, list):
                     positions = pos_data
                 elif isinstance(pos_data, dict):
-                    positions = pos_data.get('positions', pos_data.get('data', []))
+                    payload = pos_data.get('payload', pos_data)
+                    positions = payload.get('positions', payload.get('data', []))
                 if not isinstance(positions, list):
                     positions = []
         except Exception as pe:
@@ -823,22 +940,22 @@ def sync_groww():
         logger.info(f"Groww: {len(holdings)} holdings, {len(positions)} intraday positions")
 
         # 3. Normalize to radar format
+        # Real Groww field names: trading_symbol, quantity, average_price (snake_case)
         open_trades = []
 
         for h in holdings:
-            # Groww field names vary — handle both snake_case and camelCase
             symbol = (
-                h.get('tradingSymbol') or h.get('trading_symbol') or
-                h.get('symbol') or h.get('isin', '')
-            ).replace('-EQ', '').replace('.NS', '')
+                h.get('trading_symbol') or h.get('tradingSymbol') or
+                h.get('symbol') or ''
+            ).replace('-EQ', '').replace('.NS', '').strip()
             if not symbol:
                 continue
 
-            qty = int(h.get('quantity') or h.get('holdingQuantity') or h.get('totalQuantity') or 0)
+            qty = int(h.get('quantity') or 0)
             if qty <= 0:
                 continue
 
-            avg_price = float(h.get('averagePrice') or h.get('average_price') or h.get('ltp') or 0)
+            avg_price = float(h.get('average_price') or h.get('averagePrice') or 0)
             ltp = float(h.get('ltp') or h.get('lastTradedPrice') or avg_price)
 
             open_trades.append({
@@ -853,12 +970,12 @@ def sync_groww():
 
         for p in positions:
             symbol = (
-                p.get('tradingSymbol') or p.get('trading_symbol') or p.get('symbol') or ''
-            ).replace('-EQ', '').replace('.NS', '')
+                p.get('trading_symbol') or p.get('tradingSymbol') or p.get('symbol') or ''
+            ).replace('-EQ', '').replace('.NS', '').strip()
             if not symbol:
                 continue
 
-            qty = int(p.get('quantity') or p.get('netQuantity') or 0)
+            qty = int(p.get('quantity') or p.get('net_carry_forward_quantity') or 0)
             if qty <= 0:
                 continue
 
@@ -866,7 +983,8 @@ def sync_groww():
             if any(t['ticker'] == symbol for t in open_trades):
                 continue
 
-            avg_price = float(p.get('buyAverage') or p.get('average_price') or p.get('ltp') or 0)
+            # Groww positions: average buy price is net_price or credit_price
+            avg_price = float(p.get('net_price') or p.get('credit_price') or p.get('average_price') or 0)
             ltp = float(p.get('ltp') or p.get('lastTradedPrice') or avg_price)
 
             open_trades.append({
