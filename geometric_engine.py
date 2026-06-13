@@ -222,10 +222,10 @@ class MacroInstitutionalEngine:
             # 12. RECOMMENDED LOGIC: Target (22.5% above trendline entry - improved from 20%)
             target_price = trigger_price * self.target_multiplier
 
-            # 13. Signal status - RECOMMENDED LOGIC: Stricter CRITICAL threshold (≤0.5%)
+            # 13. Signal status — CRITICAL ≤0.5%, WATCHLIST up to touch_tolerance
             if abs(pct_distance) <= 0.5:
                 signal_status = "CRITICAL_TOUCH"
-            elif abs(pct_distance) <= 1.5:
+            elif abs(pct_distance) <= self.touch_tolerance:
                 signal_status = "WATCHLIST"
             else:
                 return None
