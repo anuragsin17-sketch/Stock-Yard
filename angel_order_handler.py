@@ -287,11 +287,21 @@ def place_order():
             
             # Send rejection Telegram notification
             order_value = entry_price * quantity
-            shortfall_msg = f" (Need ?{validation['shortfall']:,.0f} more)" if validation['shortfall'] > 0 else ""
-            telegram_msg = f"? *ORDER REJECTED*\n\n?? *Symbol:* {symbol}\n?? *Quantity:* {quantity}\n?? *Entry Price:* ?{entry_price}\n?? *Order Value:* ?{order_value:,.0f}\n\n?? *Reason:* {validation['reason']}{shortfall_msg}"
-            
+            shortfall_msg = f" (Need \u20b9{validation['shortfall']:,.0f} more)" if validation['shortfall'] > 0 else ""
+            telegram_msg = (
+                f"\u274c *ORDER REJECTED*\n\n"
+                f"\U0001f4c8 *Symbol:* {symbol}\n"
+                f"\U0001f4e6 *Quantity:* {quantity}\n"
+                f"\U0001f4b0 *Entry Price:* \u20b9{entry_price:,.2f}\n"
+                f"\U0001f4b8 *Order Value:* \u20b9{order_value:,.0f}\n"
+                f"\u26a0\ufe0f *Reason:* {validation['reason']}{shortfall_msg}"
+            )
             if validation['balance_info']:
-                telegram_msg += f"\n\n?? *Account Status:*\n? Margin Available: ?{validation['balance_info']['margin_available']:,.0f}\n? Margin Required: ?{order_value:,.0f}"
+                telegram_msg += (
+                    f"\n\n\U0001f4ca *Account Status:*\n"
+                    f"\u20b9 Margin Available: \u20b9{validation['balance_info']['margin_available']:,.0f}\n"
+                    f"\u20b9 Margin Required: \u20b9{order_value:,.0f}"
+                )
             
             send_telegram_notification(telegram_msg)
             
@@ -372,7 +382,19 @@ def place_order():
         
         # Send Telegram notification ONLY AFTER order is confirmed
         trade_value = entry_price * quantity
-        message = f"? *ORDER PLACED*\n\n?? *Symbol:* {symbol}\n?? *Quantity:* {quantity}\n?? *Entry Price:* ?{entry_price}\n?? *Target:* ?{target_price}\n?? *Stop Loss:* ?{stop_loss}\n?? *Order Value:* ?{trade_value:,.0f}\n?? *Order ID:* `{order_id}`"
+        source = data.get('source', 'Dashboard')
+        message = (
+            f"\u2705 *ORDER PLACED*\n\n"
+            f"\U0001f4c8 *Symbol:* {symbol}\n"
+            f"\U0001f4e6 *Quantity:* {quantity} shares\n"
+            f"\U0001f4b0 *Entry Price:* \u20b9{entry_price:,.2f}\n"
+            f"\U0001f3af *Target:* \u20b9{target_price:,.2f}\n"
+            f"\U0001f6d1 *Stop Loss:* \u20b9{stop_loss:,.2f}\n"
+            f"\U0001f4b8 *Order Value:* \u20b9{trade_value:,.0f}\n"
+            f"\U0001f9fe *Order ID:* `{order_id}`\n"
+            f"\U0001f4cd *Source:* {source}\n\n"
+            f"Position is now being tracked in Radar tab."
+        )
         send_telegram_notification(message)
         
         # Save order to file
