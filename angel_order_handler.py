@@ -33,7 +33,12 @@ STOCKYARD_API_KEY = os.environ.get('STOCKYARD_API_KEY', '')
 # Enable CORS for all routes (allow browser requests from GitHub Pages)
 CORS(app, resources={
     r"/api/*": {
-        "origins": ["https://anuragsin17-sketch.github.io"],
+        "origins": [
+            "https://anuragsin17-sketch.github.io",
+            "https://32-194-58-75.nip.io",
+            "http://localhost:8080",
+            "http://localhost:3000"
+        ],
         "methods": ["GET", "POST", "OPTIONS"],
         "allow_headers": ["Content-Type", "X-API-Key"]
     },
