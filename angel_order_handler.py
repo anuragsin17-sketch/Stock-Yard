@@ -647,8 +647,7 @@ def get_52w():
 @app.route('/api/sync-trades', methods=['GET'])
 def sync_trades():
     """Fetch all open orders from Angel One and sync with our tracking"""
-    if not check_api_key():
-        return jsonify({'success': False, 'error': 'Unauthorized'}), 401
+    # Read-only endpoint — no API key required
     try:
         logger.info("Starting trade sync with Angel One...")
         
