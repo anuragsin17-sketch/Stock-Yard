@@ -33,12 +33,7 @@ STOCKYARD_API_KEY = os.environ.get('STOCKYARD_API_KEY', '')
 # Enable CORS for all routes (allow browser requests from GitHub Pages)
 CORS(app, resources={
     r"/api/*": {
-        "origins": [
-            "https://anuragsin17-sketch.github.io",
-            "https://32-194-58-75.nip.io",
-            "http://localhost:8080",
-            "http://localhost:3000"
-        ],
+        "origins": ["*"],
         "methods": ["GET", "POST", "OPTIONS"],
         "allow_headers": ["Content-Type", "X-API-Key"]
     },
@@ -1029,7 +1024,7 @@ def sync_groww():
         return jsonify({'success': False, 'error': str(e)}), 500
 
 
-
+if __name__ == '__main__':
     # Check if credentials are configured
     creds = load_credentials()
     if not creds:
