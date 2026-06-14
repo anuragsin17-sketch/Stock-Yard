@@ -189,7 +189,8 @@ def check_watchlist():
         if ltp <= threshold:
             # Price is within 5% of prev day low — ALERT
             print(f"  🔔 {ticker}: IN ALERT ZONE ({dist_pct:+.1f}% from prev low) — sending alert")
-            msg, buttons = build_alert_message(entry, ltp)            if send_telegram(msg, reply_markup=buttons):
+            msg, buttons = build_alert_message(entry, ltp)
+            if send_telegram(msg, reply_markup=buttons):
                 entry['alerted']       = True
                 entry['alert_sent_at'] = datetime.now().isoformat()
                 entry['alert_ltp']     = ltp
