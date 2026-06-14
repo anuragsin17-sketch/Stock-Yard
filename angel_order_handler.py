@@ -104,34 +104,37 @@ def send_telegram_notification(message):
         return False
 
 def get_angel_session():
-    """Get authenticated SmartConnect session"""
+    """Get authenticated SmartConnect session — cached for 4 hours to avoid rate limits"""
+    global _angel_session, _angel_session_expiry
+    import time
+    now = int(time.time())
+
+    # Return cached session if still valid
+    if _angel_session and now < _angel_session_expiry:
+        logger.info("Reusing cached Angel One session")
+        return _angel_session
+
     credentials = load_credentials()
-    
     if not credentials:
         logger.error("Cannot create session: credentials not configured")
         return None
-    
+
     try:
-        logger.info("Creating SmartConnect session...")
+        logger.info("Creating new SmartConnect session...")
         smart = SmartConnect(api_key=credentials.get('ANGEL_API_KEY'))
-        logger.info("SmartConnect object created, generating TOTP...")
-        
         totp = pyotp.TOTP(credentials.get('ANGEL_TOTP_SECRET')).now()
-        logger.info(f"TOTP generated: {totp}")
-        
-        logger.info("Calling generateSession...")
         session = smart.generateSession(
             credentials.get('ANGEL_CLIENT_ID'),
             credentials.get('ANGEL_PASSWORD'),
             totp
         )
-        logger.info(f"Session response received: {type(session)}")
-        
         if not isinstance(session, dict) or not session.get('status'):
             logger.error(f"Session generation failed: {session}")
             return None
-        
-        logger.info("Angel One session created successfully")
+
+        _angel_session = smart
+        _angel_session_expiry = now + 14400  # cache for 4 hours
+        logger.info("Angel One session created and cached for 4 hours")
         return smart
     except Exception as e:
         logger.error(f"Session error: {e}", exc_info=True)
@@ -821,6 +824,10 @@ def sync_trades():
 # Update GROWW_USER_API_KEY in the systemd override each day.
 
 GROWW_USER_API_KEY = os.environ.get('GROWW_USER_API_KEY', '')
+
+# Angel One session cache — reuse session for 4 hours to avoid rate limits
+_angel_session = None
+_angel_session_expiry = 0
 
 def get_groww_access_token():
     """Return the Groww access token directly from env var."""
