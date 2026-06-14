@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>COALINDIA — Trendline Chart</title>
+<script src="https://cdn.jsdelivr.net/npm/lightweight-charts@4.1.3/dist/lightweight-charts.standalone.production.js"></script>
+<style>
+* { box-sizing:border-box; margin:0; padding:0 }
+body { background:#080c14; color:#e2e8f0; font-family:'Segoe UI',sans-serif; padding:20px }
+h1 { color:#10b981; font-size:22px; margin-bottom:4px }
+.sub { color:#64748b; font-size:13px; margin-bottom:16px }
+.info-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin-bottom:20px }
+.info-card { background:#111625; border:1px solid #1f2937; border-radius:8px; padding:14px }
+.info-card .lbl { font-size:10px; color:#6b7280; text-transform:uppercase; margin-bottom:4px }
+.info-card .val { font-size:16px; font-weight:700; color:#f1f5f9 }
+#chart { width:100%; height:600px; border:1px solid #1f2937; border-radius:8px }
+.legend { display:flex; gap:16px; margin-top:10px; flex-wrap:wrap; font-size:12px }
+.legend-item { display:flex; align-items:center; gap:6px }
+.dot { width:12px; height:12px; border-radius:50% }
+</style>
+</head>
+<body>
+<h1>COALINDIA — Trendline Detection</h1>
+<p class="sub">Monthly Chart | Algorithm trendline vs price | Generated 2026-06-14 04:49</p>
+
+<div class="info-grid">
+  <div class="info-card">
+    <div class="lbl">Current Price</div>
+    <div class="val">₹443.50</div>
+  </div>
+  <div class="info-card">
+    <div class="lbl">Trendline (now)</div>
+    <div class="val" style="color:#3b82f6">₹432.68</div>
+  </div>
+  <div class="info-card">
+    <div class="lbl">Distance to TL</div>
+    <div class="val" style="color:#10b981">
+      +2.5%
+    </div>
+  </div>
+  <div class="info-card">
+    <div class="lbl">Wick Touches</div>
+    <div class="val">25</div>
+  </div>
+  <div class="info-card">
+    <div class="lbl">Anchors</div>
+    <div class="val" style="font-size:12px">2023-02 → 2025-02</div>
+  </div>
+  <div class="info-card">
+    <div class="lbl">Signals (1yr)</div>
+    <div class="val" style="color:#10b981">9</div>
+  </div>
+</div>
+
+<div id="chart"></div>
+
+<div class="legend">
+  <div class="legend-item"><div class="dot" style="background:#26a69a"></div> Green candle (close > open)</div>
+  <div class="legend-item"><div class="dot" style="background:#ef5350"></div> Red candle (close < open)</div>
+  <div class="legend-item"><div class="dot" style="background:#3b82f6"></div> Algorithm Trendline</div>
+  <div class="legend-item"><div class="dot" style="background:#f59e0b"></div> Wick Touch (within 8%)</div>
+  <div class="legend-item"><div class="dot" style="background:#10b981"></div> Entry Signal (within 5%)</div>
+  <div class="legend-item"><div class="dot" style="background:#f43f5e"></div> Anchor Points</div>
+</div>
+
+<script>
+const chart = LightweightCharts.createChart(document.getElementById('chart'), {
+    width: document.getElementById('chart').clientWidth,
+    height: 600,
+    layout: { background: { color: '#080c14' }, textColor: '#94a3b8' },
+    grid: { vertLines: { color: '#1e2a38' }, horzLines: { color: '#1e2a38' } },
+    crosshair: { mode: LightweightCharts.CrosshairMode.Normal },
+    timeScale: { timeVisible: true, borderColor: '#1e2a38', fixLeftEdge: true },
+});
+
+// Candlestick series
+const candleSeries = chart.addCandlestickSeries({
+    upColor: '#26a69a', downColor: '#ef5350',
+    borderDownColor: '#ef5350', borderUpColor: '#26a69a',
+    wickDownColor: '#ef5350', wickUpColor: '#26a69a',
+});
+
+const dates = ["2016-07", "2016-08", "2016-09", "2016-10", "2016-11", "2016-12", "2017-01", "2017-02", "2017-03", "2017-04", "2017-05", "2017-06", "2017-07", "2017-08", "2017-09", "2017-10", "2017-11", "2017-12", "2018-01", "2018-02", "2018-03", "2018-04", "2018-05", "2018-06", "2018-07", "2018-08", "2018-09", "2018-10", "2018-11", "2018-12", "2019-01", "2019-02", "2019-03", "2019-04", "2019-05", "2019-06", "2019-07", "2019-08", "2019-09", "2019-10", "2019-11", "2019-12", "2020-01", "2020-02", "2020-03", "2020-04", "2020-05", "2020-06", "2020-07", "2020-08", "2020-09", "2020-10", "2020-11", "2020-12", "2021-01", "2021-02", "2021-03", "2021-04", "2021-05", "2021-06", "2021-07", "2021-08", "2021-09", "2021-10", "2021-11", "2021-12", "2022-01", "2022-02", "2022-03", "2022-04", "2022-05", "2022-06", "2022-07", "2022-08", "2022-09", "2022-10", "2022-11", "2022-12", "2023-01", "2023-02", "2023-03", "2023-04", "2023-05", "2023-06", "2023-07", "2023-08", "2023-09", "2023-10", "2023-11", "2023-12", "2024-01", "2024-02", "2024-03", "2024-04", "2024-05", "2024-06", "2024-07", "2024-08", "2024-09", "2024-10", "2024-11", "2024-12", "2025-01", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02", "2026-03", "2026-04", "2026-05", "2026-06"];
+const opens = [145.04, 152.6, 154.82, 149.72, 151.3, 143.28, 139.04, 143.65, 149.68, 144.16, 136.28, 129.55, 120.86, 123.1, 117.26, 133.42, 141.13, 135.56, 129.55, 147.83, 153.1, 147.83, 148.69, 152.87, 137.29, 136.69, 150.0, 138.91, 138.23, 128.34, 129.49, 120.54, 122.93, 131.17, 138.91, 140.48, 140.06, 113.07, 101.78, 110.18, 112.93, 113.04, 116.43, 100.26, 95.11, 83.33, 89.19, 85.34, 79.79, 78.01, 81.14, 70.33, 68.83, 80.37, 86.37, 80.63, 99.19, 86.73, 87.75, 98.01, 96.73, 95.21, 96.73, 125.37, 111.58, 103.87, 105.52, 116.09, 125.24, 135.77, 134.95, 143.67, 136.65, 156.97, 175.5, 159.51, 184.97, 182.09, 180.78, 181.77, 175.93, 174.87, 190.39, 188.18, 189.08, 187.86, 191.73, 245.34, 260.3, 298.83, 328.38, 355.33, 385.1, 383.95, 399.43, 452.8, 416.18, 470.38, 467.98, 454.66, 403.73, 385.23, 353.14, 369.89, 345.7, 371.67, 359.99, 372.74, 366.72, 350.37, 360.63, 374.57, 375.29, 371.98, 393.79, 434.26, 417.9, 464.0, 481.45, 456.55];
+const highs = [155.61, 162.16, 157.09, 152.46, 156.3, 145.34, 148.47, 153.99, 151.95, 146.2, 140.12, 133.12, 130.66, 124.87, 134.18, 145.31, 144.01, 136.13, 153.2, 156.13, 154.75, 153.88, 158.32, 156.36, 145.93, 156.39, 151.2, 150.88, 141.83, 132.78, 130.27, 123.52, 133.2, 142.3, 144.86, 149.54, 141.25, 117.89, 114.81, 116.62, 119.85, 117.04, 118.22, 102.49, 99.27, 91.56, 89.19, 89.94, 82.58, 86.45, 82.91, 71.89, 77.65, 93.13, 94.92, 103.97, 100.34, 88.81, 105.37, 108.87, 99.43, 97.95, 129.98, 137.81, 117.8, 108.67, 120.57, 122.03, 146.07, 154.38, 144.22, 149.17, 156.93, 173.95, 180.11, 185.57, 197.25, 186.92, 184.96, 181.77, 185.37, 191.74, 202.48, 190.64, 193.82, 198.6, 247.25, 265.74, 298.36, 332.47, 361.41, 423.82, 409.19, 407.47, 446.07, 463.7, 462.12, 477.9, 469.76, 458.21, 408.09, 392.14, 367.65, 373.21, 384.75, 379.33, 389.84, 382.6, 368.03, 363.03, 386.72, 383.69, 375.62, 407.02, 455.53, 435.64, 476.0, 491.25, 487.0, 484.45];
+const lows  = [143.44, 148.59, 146.85, 143.49, 134.06, 130.91, 137.63, 141.94, 133.48, 134.53, 127.83, 119.75, 119.5, 115.12, 117.26, 132.36, 131.1, 128.57, 129.35, 137.98, 130.54, 142.54, 134.24, 134.29, 134.92, 136.48, 137.94, 136.33, 124.72, 119.14, 117.16, 113.58, 121.75, 127.53, 126.46, 138.11, 108.55, 97.89, 98.66, 100.34, 107.86, 101.91, 99.16, 90.9, 65.67, 79.16, 72.7, 76.96, 74.83, 76.93, 68.41, 65.79, 68.2, 79.54, 79.89, 80.28, 81.04, 81.42, 86.57, 94.68, 93.06, 87.59, 93.16, 110.43, 100.82, 94.1, 105.34, 106.77, 125.24, 134.36, 121.62, 129.08, 130.45, 151.98, 155.65, 158.99, 169.51, 170.77, 168.3, 166.75, 169.56, 174.63, 187.86, 182.34, 185.29, 185.41, 191.69, 235.24, 254.19, 297.53, 319.87, 349.85, 352.74, 376.35, 382.19, 361.18, 408.44, 437.45, 422.92, 386.51, 357.51, 345.92, 332.61, 326.31, 329.25, 332.62, 345.98, 358.31, 350.09, 344.43, 360.44, 364.48, 355.15, 367.34, 393.05, 401.3, 416.0, 427.5, 428.4, 439.65];
+const closes= [151.99, 154.54, 149.35, 150.51, 143.0, 139.02, 143.28, 149.17, 135.61, 136.28, 129.33, 120.32, 122.7, 116.94, 133.42, 141.1, 135.86, 129.53, 147.56, 152.29, 139.55, 148.69, 154.56, 137.92, 136.22, 149.19, 138.91, 138.86, 127.77, 125.61, 120.7, 122.66, 127.45, 138.91, 139.65, 139.82, 112.63, 101.78, 110.1, 114.34, 113.07, 116.43, 100.1, 92.77, 77.15, 89.19, 84.86, 79.79, 77.62, 80.69, 69.67, 68.59, 75.4, 86.4, 80.31, 97.09, 83.15, 87.79, 97.45, 96.76, 94.55, 96.23, 122.13, 111.2, 102.78, 98.76, 114.51, 121.5, 135.21, 135.06, 142.49, 137.1, 156.04, 173.44, 158.95, 184.19, 170.18, 179.42, 179.26, 171.73, 174.5, 190.39, 197.05, 188.67, 187.25, 187.9, 245.34, 261.17, 284.36, 326.82, 353.03, 379.58, 381.67, 399.43, 431.87, 416.0, 459.13, 461.54, 453.02, 401.43, 369.77, 353.7, 364.51, 345.09, 372.04, 359.99, 371.2, 366.2, 351.63, 350.18, 374.71, 373.46, 361.45, 393.79, 435.0, 425.03, 450.45, 481.45, 457.9, 443.5];
+
+const candleData = dates.map((d, i) => ({
+    time: d + '-01',
+    open: opens[i], high: highs[i], low: lows[i], close: closes[i]
+}));
+candleSeries.setData(candleData);
+
+// Trendline
+const tlLine = [-358.48, -351.83, -345.18, -338.54, -331.89, -325.24, -318.59, -311.94, -305.29, -298.64, -292.0, -285.35, -278.7, -272.05, -265.4, -258.75, -252.11, -245.46, -238.81, -232.16, -225.51, -218.86, -212.22, -205.57, -198.92, -192.27, -185.62, -178.97, -172.32, -165.68, -159.03, -152.38, -145.73, -139.08, -132.43, -125.79, -119.14, -112.49, -105.84, -99.19, -92.54, -85.89, -79.25, -72.6, -65.95, -59.3, -52.65, -46.0, -39.36, -32.71, -26.06, -19.41, -12.76, -6.11, 0.54, 7.18, 13.83, 20.48, 27.13, 33.78, 40.43, 47.07, 53.72, 60.37, 67.02, 73.67, 80.32, 86.96, 93.61, 100.26, 106.91, 113.56, 120.21, 126.86, 133.5, 140.15, 146.8, 153.45, 160.1, 166.75, 173.39, 180.04, 186.69, 193.34, 199.99, 206.64, 213.29, 219.93, 226.58, 233.23, 239.88, 246.53, 253.18, 259.82, 266.47, 273.12, 279.77, 286.42, 293.07, 299.72, 306.36, 313.01, 319.66, 326.31, 332.96, 339.61, 346.25, 352.9, 359.55, 366.2, 372.85, 379.5, 386.14, 392.79, 399.44, 406.09, 412.74, 419.39, 426.04, 432.68];
+const tlData = dates.map((d, i) => tlLine[i] ? {time: d+'-01', value: tlLine[i]} : null).filter(Boolean);
+if (tlData.length > 0) {
+    const tlSeries = chart.addLineSeries({
+        color: '#3b82f6', lineWidth: 2, lineStyle: 0,
+        title: 'Trendline'
+    });
+    tlSeries.setData(tlData);
+}
+
+// Wick touches
+const wickDates  = ["2023-01", "2023-02", "2023-03", "2023-04", "2023-05", "2023-06", "2023-07", "2023-10", "2025-01", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-12", "2026-01", "2026-02", "2026-03", "2026-04", "2026-05", "2026-06"];
+const wickPrices = [168.3, 166.75, 169.56, 174.63, 187.86, 182.34, 185.29, 235.24, 332.61, 326.31, 329.25, 332.62, 345.98, 358.31, 350.09, 344.43, 360.44, 364.48, 367.34, 393.05, 401.3, 416.0, 427.5, 428.4, 439.65];
+if (wickDates.length > 0) {
+    const wickSeries = chart.addLineSeries({
+        color: 'transparent', lineWidth: 0, lastValueVisible: false, priceLineVisible: false
+    });
+    const wickMarkers = wickDates.map((d, i) => ({
+        time: d + '-01', position: 'belowBar', color: '#f59e0b',
+        shape: 'circle', text: 'Touch'
+    }));
+    candleSeries.setMarkers(wickMarkers);
+}
+
+// Signal markers
+const sigDates  = ["2023-03", "2023-04", "2023-09", "2025-03", "2025-04", "2025-05", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-04", "2026-05", "2026-06"];
+const sigLabels = ["+1.4%", "+4.1%", "-0.2%", "+0.2%", "+0.5%", "+3.8%", "+3.6%", "+1.2%", "+3.9%", "+4.4%", "+1.0%", "+3.8%", "+1.9%", "+0.6%", "+1.6%"];
+const anchorDates = ["2023-02", "2025-02"];
+
+const allMarkers = [];
+
+// Wick touch markers
+wickDates.forEach((d, i) => {
+    allMarkers.push({ time: d+'-01', position: 'belowBar', color: '#f59e0b', shape: 'circle', text: '' });
+});
+
+// Signal markers
+sigDates.forEach((d, i) => {
+    allMarkers.push({ time: d+'-01', position: 'aboveBar', color: '#10b981', shape: 'arrowDown', text: 'SIGNAL '+sigLabels[i] });
+});
+
+// Anchor markers
+anchorDates.forEach(d => {
+    allMarkers.push({ time: d+'-01', position: 'belowBar', color: '#f43f5e', shape: 'square', text: 'ANCHOR' });
+});
+
+// Sort and set
+allMarkers.sort((a,b) => a.time.localeCompare(b.time));
+candleSeries.setMarkers(allMarkers);
+
+// Resize
+window.addEventListener('resize', () => {
+    chart.applyOptions({ width: document.getElementById('chart').clientWidth });
+});
+</script>
+</body>
+</html>

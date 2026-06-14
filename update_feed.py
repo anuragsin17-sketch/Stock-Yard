@@ -127,7 +127,8 @@ def calculate_52w(ticker: str) -> dict:
                     },
                     "wickTouches": data["trendlineDetails"]["wickTouches"],
                     "timeframe": data["trendlineDetails"].get("timeframe", "monthly"),
-                    "confluenceScore": data["currentSignal"]["confluenceScore"]
+                    "confluenceScore": data["currentSignal"]["confluenceScore"],
+                    "fibonacciLevels": data.get("fibGrid", {}),
                 }
 
                 compiled_screen_data.append(record)
@@ -192,6 +193,57 @@ def calculate_52w(ticker: str) -> dict:
     # Save alerted_today to prevent spam on next run
     with open(alerted_today_file, 'w') as f:
         json.dump({'date': today_str, 'stocks': alerted_today}, f)
+
+    # ── Fibonacci level touch alerts (separate dedup key: TICKER_FIB_38.2%) ──
+    FIB_TOLERANCE = 1.5  # % within which we consider price "touching" a fib level
+    fib_alerted_file = 'fib_alerted_today.json'
+    fib_alerted = {}
+    if os.path.exists(fib_alerted_file):
+        try:
+            with open(fib_alerted_file, 'r') as f:
+                fd = json.load(f)
+                if fd.get('date') == today_str:
+                    fib_alerted = fd.get('alerts', {})
+        except Exception:
+            fib_alerted = {}
+
+    fib_dirty = False
+    for record in compiled_screen_data:
+        fibs = record.get('fibonacciLevels') or {}
+        if not fibs:
+            continue
+        ticker = record['ticker']
+        price  = record['currentPrice']
+        for level, fib_price in fibs.items():
+            if not fib_price or fib_price <= 0:
+                continue
+            dist_pct = abs((price - fib_price) / fib_price) * 100
+            if dist_pct <= FIB_TOLERANCE:
+                alert_key = f"{ticker}_FIB_{level}"
+                if alert_key in fib_alerted:
+                    print(f"   Skipping fib alert {alert_key} — already sent today")
+                    continue
+                stop   = record['positionSizing']['strictStopLoss']
+                target = record['positionSizing']['pivotTargetExit']
+                alert = (
+                    f"📐 *FIBONACCI LEVEL TOUCH*\n\n"
+                    f"Stock: *{ticker}*\n"
+                    f"Fib Level: *{level}* @ ₹{fib_price:,.2f}\n"
+                    f"Current Price: ₹{price:,.2f} ({dist_pct:.1f}% away)\n"
+                    f"Trendline Trigger: ₹{record['triggerPrice']:,.2f}\n"
+                    f"Stop Loss: ₹{stop:,.2f}\n"
+                    f"Target: ₹{target:,.2f}\n\n"
+                    f"_Price approaching key Fibonacci support zone._"
+                )
+                send_telegram_alert(alert)
+                fib_alerted[alert_key] = datetime.now().strftime('%H:%M')
+                fib_dirty = True
+                print(f"   Fib alert sent: {ticker} at {level} (₹{fib_price:.2f})")
+
+    if fib_dirty:
+        with open(fib_alerted_file, 'w') as f:
+            json.dump({'date': today_str, 'alerts': fib_alerted}, f)
+
 
     # Send summary only if there are signals
     if compiled_screen_data:

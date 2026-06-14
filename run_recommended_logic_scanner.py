@@ -680,7 +680,7 @@ def main():
     
     # Save HTML
     output_file = 'recommended_logic_performance.html'
-    with open(output_file, 'w') as f:
+    with open(output_file, 'w', encoding='utf-8') as f:
         f.write(html_content)
     
     print(f"\n✅ Dashboard saved: {output_file}\n")

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CARTRADE — Trendline Chart</title>
+<script src="https://cdn.jsdelivr.net/npm/lightweight-charts@4.1.3/dist/lightweight-charts.standalone.production.js"></script>
+<style>
+* { box-sizing:border-box; margin:0; padding:0 }
+body { background:#080c14; color:#e2e8f0; font-family:'Segoe UI',sans-serif; padding:20px }
+h1 { color:#10b981; font-size:22px; margin-bottom:4px }
+.sub { color:#64748b; font-size:13px; margin-bottom:16px }
+.info-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin-bottom:20px }
+.info-card { background:#111625; border:1px solid #1f2937; border-radius:8px; padding:14px }
+.info-card .lbl { font-size:10px; color:#6b7280; text-transform:uppercase; margin-bottom:4px }
+.info-card .val { font-size:16px; font-weight:700; color:#f1f5f9 }
+#chart { width:100%; height:600px; border:1px solid #1f2937; border-radius:8px }
+.legend { display:flex; gap:16px; margin-top:10px; flex-wrap:wrap; font-size:12px }
+.legend-item { display:flex; align-items:center; gap:6px }
+.dot { width:12px; height:12px; border-radius:50% }
+</style>
+</head>
+<body>
+<h1>CARTRADE — Trendline Detection</h1>
+<p class="sub">Monthly Chart | Algorithm trendline vs price | Generated 2026-06-14 04:54</p>
+
+<div class="info-grid">
+  <div class="info-card">
+    <div class="lbl">Current Price</div>
+    <div class="val">₹2,345.30</div>
+  </div>
+  <div class="info-card">
+    <div class="lbl">Trendline (now)</div>
+    <div class="val" style="color:#3b82f6">₹1678.09</div>
+  </div>
+  <div class="info-card">
+    <div class="lbl">Distance to TL</div>
+    <div class="val" style="color:#f59e0b">
+      +39.8%
+    </div>
+  </div>
+  <div class="info-card">
+    <div class="lbl">Wick Touches</div>
+    <div class="val">12</div>
+  </div>
+  <div class="info-card">
+    <div class="lbl">Anchors</div>
+    <div class="val" style="font-size:12px">2024-03 → 2026-04</div>
+  </div>
+  <div class="info-card">
+    <div class="lbl">Signals (1yr)</div>
+    <div class="val" style="color:#10b981">2</div>
+  </div>
+</div>
+
+<div id="chart"></div>
+
+<div class="legend">
+  <div class="legend-item"><div class="dot" style="background:#26a69a"></div> Green candle (close > open)</div>
+  <div class="legend-item"><div class="dot" style="background:#ef5350"></div> Red candle (close < open)</div>
+  <div class="legend-item"><div class="dot" style="background:#3b82f6"></div> Algorithm Trendline</div>
+  <div class="legend-item"><div class="dot" style="background:#f59e0b"></div> Wick Touch (within 8%)</div>
+  <div class="legend-item"><div class="dot" style="background:#10b981"></div> Entry Signal (within 5%)</div>
+  <div class="legend-item"><div class="dot" style="background:#f43f5e"></div> Anchor Points</div>
+</div>
+
+<script>
+const chart = LightweightCharts.createChart(document.getElementById('chart'), {
+    width: document.getElementById('chart').clientWidth,
+    height: 600,
+    layout: { background: { color: '#080c14' }, textColor: '#94a3b8' },
+    grid: { vertLines: { color: '#1e2a38' }, horzLines: { color: '#1e2a38' } },
+    crosshair: { mode: LightweightCharts.CrosshairMode.Normal },
+    timeScale: { timeVisible: true, borderColor: '#1e2a38', fixLeftEdge: true },
+});
+
+// Candlestick series
+const candleSeries = chart.addCandlestickSeries({
+    upColor: '#26a69a', downColor: '#ef5350',
+    borderDownColor: '#ef5350', borderUpColor: '#26a69a',
+    wickDownColor: '#ef5350', wickUpColor: '#26a69a',
+});
+
+const dates = ["2021-09", "2021-10", "2021-11", "2021-12", "2022-01", "2022-02", "2022-03", "2022-04", "2022-05", "2022-06", "2022-07", "2022-08", "2022-09", "2022-10", "2022-11", "2022-12", "2023-01", "2023-02", "2023-03", "2023-04", "2023-05", "2023-06", "2023-07", "2023-08", "2023-09", "2023-10", "2023-11", "2023-12", "2024-01", "2024-02", "2024-03", "2024-04", "2024-05", "2024-06", "2024-07", "2024-08", "2024-09", "2024-10", "2024-11", "2024-12", "2025-01", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02", "2026-03", "2026-04", "2026-05", "2026-06"];
+const opens = [1490.05, 1234.0, 1199.9, 922.0, 846.5, 733.0, 540.0, 584.65, 635.0, 622.75, 599.6, 695.0, 649.3, 610.0, 548.0, 485.3, 473.0, 519.0, 469.5, 385.0, 423.5, 416.9, 484.8, 502.55, 554.5, 550.3, 673.0, 770.0, 720.0, 732.35, 793.95, 656.0, 701.75, 918.35, 780.0, 874.1, 851.0, 972.45, 1085.0, 1360.0, 1487.55, 1652.0, 1528.0, 1620.0, 1704.3, 1525.0, 1706.1, 2188.2, 2421.9, 2450.0, 3029.9, 3118.6, 2795.0, 2631.0, 1711.0, 1710.0, 1623.4, 1744.6];
+const highs = [1544.0, 1462.0, 1213.0, 982.75, 890.95, 768.45, 647.45, 684.4, 694.75, 723.75, 735.95, 699.9, 733.0, 630.0, 553.55, 517.95, 508.75, 560.0, 510.8, 444.0, 448.3, 552.0, 584.8, 576.0, 614.1, 699.5, 877.0, 792.5, 758.0, 802.0, 799.55, 743.9, 973.6, 918.35, 941.75, 964.2, 1034.3, 1090.6, 1395.0, 1716.9, 1765.95, 1836.85, 1889.0, 1789.0, 1868.5, 1736.0, 2219.0, 2534.8, 2755.0, 3180.0, 3290.5, 3158.7, 2962.0, 2648.1, 1850.0, 1895.1, 2115.0, 2494.9];
+const lows  = [1211.0, 1155.0, 902.5, 805.0, 650.0, 460.0, 493.0, 577.65, 552.2, 545.15, 573.0, 595.0, 605.15, 542.6, 477.95, 445.05, 454.7, 463.1, 340.15, 385.0, 407.0, 413.9, 484.1, 484.1, 539.05, 543.75, 656.65, 706.0, 688.95, 672.05, 623.9, 650.35, 701.75, 754.0, 771.0, 817.5, 830.0, 837.2, 1060.0, 1322.3, 1294.0, 1393.0, 1472.85, 1362.5, 1485.0, 1506.4, 1656.0, 2035.4, 2222.2, 2410.4, 2805.6, 2605.5, 2265.2, 1748.5, 1615.0, 1600.0, 1606.0, 1720.1];
+const closes= [1236.1, 1197.5, 919.1, 848.3, 725.15, 540.0, 579.6, 649.85, 622.75, 592.1, 697.85, 644.4, 613.0, 545.15, 481.0, 468.65, 501.5, 468.35, 389.05, 423.5, 417.0, 482.5, 501.4, 550.05, 550.3, 672.85, 765.65, 713.7, 729.4, 789.65, 638.05, 701.75, 869.65, 779.65, 867.75, 848.2, 964.45, 1080.85, 1355.6, 1485.7, 1651.4, 1528.55, 1644.95, 1704.3, 1553.0, 1700.7, 2186.5, 2398.0, 2450.1, 3019.5, 3087.7, 2826.2, 2649.3, 1801.0, 1650.0, 1623.4, 1735.2, 2345.3];
+
+const candleData = dates.map((d, i) => ({
+    time: d + '-01',
+    open: opens[i], high: highs[i], low: lows[i], close: closes[i]
+}));
+candleSeries.setData(candleData);
+
+// Trendline
+const tlLine = [-547.42, -508.38, -469.33, -430.29, -391.24, -352.2, -313.16, -274.11, -235.07, -196.02, -156.98, -117.94, -78.89, -39.85, -0.8, 38.24, 77.28, 116.33, 155.37, 194.42, 233.46, 272.5, 311.55, 350.59, 389.64, 428.68, 467.72, 506.77, 545.81, 584.86, 623.9, 662.94, 701.99, 741.03, 780.08, 819.12, 858.16, 897.21, 936.25, 975.3, 1014.34, 1053.38, 1092.43, 1131.47, 1170.52, 1209.56, 1248.6, 1287.65, 1326.69, 1365.74, 1404.78, 1443.82, 1482.87, 1521.91, 1560.96, 1600.0, 1639.04, 1678.09];
+const tlData = dates.map((d, i) => tlLine[i] ? {time: d+'-01', value: tlLine[i]} : null).filter(Boolean);
+if (tlData.length > 0) {
+    const tlSeries = chart.addLineSeries({
+        color: '#3b82f6', lineWidth: 2, lineStyle: 0,
+        title: 'Trendline'
+    });
+    tlSeries.setData(tlData);
+}
+
+// Wick touches
+const wickDates  = ["2024-03", "2024-04", "2024-05", "2024-06", "2024-07", "2024-08", "2024-09", "2024-10", "2026-03", "2026-04", "2026-05", "2026-06"];
+const wickPrices = [623.9, 650.35, 701.75, 754.0, 771.0, 817.5, 830.0, 837.2, 1615.0, 1600.0, 1606.0, 1720.1];
+if (wickDates.length > 0) {
+    const wickSeries = chart.addLineSeries({
+        color: 'transparent', lineWidth: 0, lastValueVisible: false, priceLineVisible: false
+    });
+    const wickMarkers = wickDates.map((d, i) => ({
+        time: d + '-01', position: 'belowBar', color: '#f59e0b',
+        shape: 'circle', text: 'Touch'
+    }));
+    candleSeries.setMarkers(wickMarkers);
+}
+
+// Signal markers
+const sigDates  = ["2024-04", "2024-05", "2026-05", "2026-06"];
+const sigLabels = ["W+0.4%", "W+4.6%", "W-2.0%", "W+2.5%"];
+const anchorDates = ["2024-03", "2026-04"];
+
+const allMarkers = [];
+
+// Wick touch markers
+wickDates.forEach((d, i) => {
+    allMarkers.push({ time: d+'-01', position: 'belowBar', color: '#f59e0b', shape: 'circle', text: '' });
+});
+
+// Signal markers
+sigDates.forEach((d, i) => {
+    allMarkers.push({ time: d+'-01', position: 'aboveBar', color: '#10b981', shape: 'arrowDown', text: 'SIGNAL '+sigLabels[i] });
+});
+
+// Anchor markers
+anchorDates.forEach(d => {
+    allMarkers.push({ time: d+'-01', position: 'belowBar', color: '#f43f5e', shape: 'square', text: 'ANCHOR' });
+});
+
+// Sort and set
+allMarkers.sort((a,b) => a.time.localeCompare(b.time));
+candleSeries.setMarkers(allMarkers);
+
+// Resize
+window.addEventListener('resize', () => {
+    chart.applyOptions({ width: document.getElementById('chart').clientWidth });
+});
+</script>
+</body>
+</html>

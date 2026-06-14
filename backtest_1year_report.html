@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nifty 50 — 1-Year Trendline Backtest</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#080c14;color:#e2e8f0;font-family:'Segoe UI',sans-serif;padding:24px;font-size:13px}
+h1{text-align:center;color:#10b981;font-size:24px;margin-bottom:6px;font-weight:700}
+.sub{text-align:center;color:#64748b;font-size:12px;margin-bottom:24px}
+.pill-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:28px}
+.pill{background:#111625;border:1px solid #1f2937;padding:5px 14px;border-radius:20px;font-size:11px;color:#94a3b8}
+.pill b{color:#10b981}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:28px}
+.card{background:#111625;border:1px solid #1f2937;border-radius:10px;padding:18px;text-align:center}
+.card-val{font-size:26px;font-weight:700;margin-bottom:4px}
+.card-lbl{font-size:10px;color:#6b7280;text-transform:uppercase;letter-spacing:.05em}
+.section{background:#111625;border:1px solid #1f2937;border-radius:10px;padding:20px;margin-bottom:20px}
+.section h2{font-size:14px;font-weight:700;color:#f1f5f9;margin-bottom:14px}
+table{width:100%;border-collapse:collapse;font-size:11px}
+th{background:#0d1520;color:#64748b;padding:8px 10px;text-align:left;font-weight:600;border-bottom:1px solid #1f2937;white-space:nowrap}
+td{padding:7px 10px;border-bottom:1px solid #111825;white-space:nowrap}
+tr:hover td{background:#131d2e}
+.sub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.sub-card{background:#0d1520;border:1px solid #1a2535;border-radius:8px;padding:14px}
+.sub-card h3{font-size:11px;font-weight:700;margin-bottom:8px}
+.sub-stat{display:flex;justify-content:space-between;font-size:11px;margin-bottom:4px}
+.sub-stat .val{font-weight:600}
+input.search{background:#0d1520;border:1px solid #1f2937;color:#e2e8f0;padding:6px 12px;border-radius:6px;font-size:11px;width:240px;margin-bottom:12px;outline:none}
+</style>
+</head>
+<body>
+<h1>📊 Nifty 50 — 1-Year Trendline Backtest</h1>
+<p class="sub">Entry AT trendline support | SL 8.0% | Target 23.0% | 2025-06-14 → 2026-06-14</p>
+
+<div class="pill-row">
+  <div class="pill">Period <b>1 Year</b></div>
+  <div class="pill">Universe <b>Nifty 50</b></div>
+  <div class="pill">SL <b>8.0%</b></div>
+  <div class="pill">Target <b>23.0%</b></div>
+  <div class="pill">Position Size <b>₹50,000</b></div>
+  <div class="pill">Timeout <b>365 days</b></div>
+  <div class="pill">Entry Window <b>±1.0%</b></div>
+  <div class="pill">Generated <b>14 Jun 2026 03:47</b></div>
+</div>
+
+<div class="grid">
+  <div class="card">
+    <div class="card-val" style="color:#10b981">16</div>
+    <div class="card-lbl">Total Signals</div>
+  </div>
+  <div class="card">
+    <div class="card-val" style="color:#ef4444">25.0%</div>
+    <div class="card-lbl">Win Rate</div>
+  </div>
+  <div class="card">
+    <div class="card-val" style="color:#ef4444">0.6x</div>
+    <div class="card-lbl">Profit Factor</div>
+  </div>
+  <div class="card">
+    <div class="card-val" style="color:#ef4444">₹-22,443</div>
+    <div class="card-lbl">Total P&L</div>
+  </div>
+  <div class="card">
+    <div class="card-val" style="color:#ef4444">-2.83%</div>
+    <div class="card-lbl">Avg Return / Trade</div>
+  </div>
+  <div class="card">
+    <div class="card-val" style="color:#60a5fa">142.3d</div>
+    <div class="card-lbl">Avg Hold Days</div>
+  </div>
+  <div class="card">
+    <div class="card-val" style="color:#22c55e">2</div>
+    <div class="card-lbl">Target Hits 🎯</div>
+  </div>
+  <div class="card">
+    <div class="card-val" style="color:#ef4444">9</div>
+    <div class="card-lbl">Stop Losses 🛑</div>
+  </div>
+  <div class="card">
+    <div class="card-val" style="color:#eab308">5</div>
+    <div class="card-lbl">Timeouts ⏰</div>
+  </div>
+  <div class="card">
+    <div class="card-val" style="color:#60a5fa">0</div>
+    <div class="card-lbl">Still Open 📂</div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>📊 Performance by Signal Type</h2>
+  <div class="sub-grid">
+    <div class="sub-card">
+      <h3 style="color:#f43f5e">🎯 CRITICAL TOUCH (≤1% of trendline)</h3>
+      <div class="sub-stat"><span>Count</span><span class="val">16</span></div>
+      <div class="sub-stat"><span>Win Rate</span><span class="val" style="color:#eab308">25.0%</span></div>
+      <div class="sub-stat"><span>Avg Return</span><span class="val" style="color:#ef4444">-2.83%</span></div>
+      <div class="sub-stat"><span>Total P&L</span><span class="val" style="color:#ef4444">₹-22,443</span></div>
+    </div>
+    <div class="sub-card">
+      <h3 style="color:#fbbf24">👀 WATCHLIST (1–5% of trendline)</h3>
+      <div class="sub-stat"><span>Count</span><span class="val">0</span></div>
+      <div class="sub-stat"><span>Win Rate</span><span class="val" style="color:#eab308">0%</span></div>
+      <div class="sub-stat"><span>Avg Return</span><span class="val" style="color:#22c55e">0%</span></div>
+      <div class="sub-stat"><span>Total P&L</span><span class="val" style="color:#22c55e">₹0</span></div>
+    </div>
+    <div class="sub-card">
+      <h3 style="color:#60a5fa">📊 MONITORING (5–10% of trendline)</h3>
+      <div class="sub-stat"><span>Count</span><span class="val">0</span></div>
+      <div class="sub-stat"><span>Win Rate</span><span class="val" style="color:#eab308">0%</span></div>
+      <div class="sub-stat"><span>Avg Return</span><span class="val" style="color:#22c55e">0%</span></div>
+      <div class="sub-stat"><span>Total P&L</span><span class="val" style="color:#22c55e">₹0</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>📋 All Trades — 16 total</h2>
+  <input class="search" type="text" id="searchBox" onkeyup="filterTable()" placeholder="Search symbol, outcome, status...">
+  <div style="overflow-x:auto;max-height:600px;overflow-y:auto">
+  <table id="tradesTable">
+    <thead><tr>
+      <th>Symbol</th><th>Entry</th><th>Exit</th><th>Entry ₹</th><th>Exit ₹</th>
+      <th>Signal</th><th>Dist%</th><th>Fib Level</th><th>Fib Score</th><th>Wicks</th>
+      <th>Outcome</th><th>Hold</th><th>P&L%</th><th>P&L ₹</th>
+    </tr></thead>
+    <tbody id="tradesBody">
+        <tr>
+            <td style="font-weight:700;color:#f1f5f9">HINDUNILVR</td>
+            <td>2026-04-01</td>
+            <td>2026-06-12</td>
+            <td style="color:#60a5fa">₹2,262.31</td>
+            <td style="color:#ef4444">₹2,168.80</td>
+            <td style="color:#f43f5e;font-size:10px;font-weight:600">CRITICAL TOUCH</td>
+            <td>0.5%</td>
+            <td><span style="color:#22c55e;font-size:10px">78.6%</span></td>
+            <td style="color:#a78bfa">8/10</td>
+            <td>31</td>
+            <td style="color:#eab308;font-weight:700">TIMEOUT</td>
+            <td>72d</td>
+            <td style="color:#ef4444;font-weight:700">-4.13%</td>
+            <td style="color:#ef4444">₹-2,057</td>
+        </tr>
+        <tr>
+            <td style="font-weight:700;color:#f1f5f9">WIPRO</td>
+            <td>2026-04-01</td>
+            <td>2026-06-01</td>
+            <td style="color:#60a5fa">₹199.41</td>
+            <td style="color:#ef4444">₹180.14</td>
+            <td style="color:#f43f5e;font-size:10px;font-weight:600">CRITICAL TOUCH</td>
+            <td>0.62%</td>
+            <td><span style="color:#22c55e;font-size:10px">50.0%</span></td>
+            <td style="color:#a78bfa">10/10</td>
+            <td>6</td>
+            <td style="color:#ef4444;font-weight:700">STOP LOSS</td>
+            <td>61d</td>
+            <td style="color:#ef4444;font-weight:700">-9.66%</td>
+            <td style="color:#ef4444">₹-4,818</td>
+        </tr>
+        <tr>
+            <td style="font-weight:700;color:#f1f5f9">APOLLOHOSP</td>
+            <td>2026-03-01</td>
+            <td>2026-06-12</td>
+            <td style="color:#60a5fa">₹7,368.78</td>
+            <td style="color:#22c55e">₹8,498.00</td>
+            <td style="color:#f43f5e;font-size:10px;font-weight:600">CRITICAL TOUCH</td>
+            <td>0.68%</td>
+            <td><span style="color:#94a3b8;font-size:10px">23.6%</span></td>
+            <td style="color:#a78bfa">5/10</td>
+            <td>39</td>
+            <td style="color:#eab308;font-weight:700">TIMEOUT</td>
+            <td>103d</td>
+            <td style="color:#22c55e;font-weight:700">+15.32%</td>
+            <td style="color:#22c55e">₹6,775</td>
+        </tr>
+        <tr>
+            <td style="font-weight:700;color:#f1f5f9">MARUTI</td>
+            <td>2026-03-01</td>
+            <td>2026-06-12</td>
+            <td style="color:#60a5fa">₹12,364.11</td>
+            <td style="color:#22c55e">₹13,366.00</td>
+            <td style="color:#f43f5e;font-size:10px;font-weight:600">CRITICAL TOUCH</td>
+            <td>0.47%</td>
+            <td><span style="color:#94a3b8;font-size:10px">78.6%</span></td>
+            <td style="color:#a78bfa">7/10</td>
+            <td>28</td>
+            <td style="color:#eab308;font-weight:700">TIMEOUT</td>
+            <td>103d</td>
+            <td style="color:#22c55e;font-weight:700">+8.1%</td>
+            <td style="color:#22c55e">₹4,008</td>
+        </tr>
+        <tr>
+            <td style="font-weight:700;color:#f1f5f9">ICICIBANK</td>
+            <td>2026-01-01</td>
+            <td>2026-03-01</td>
+            <td style="color:#60a5fa">₹1,346.29</td>
+            <td style="color:#ef4444">₹1,205.90</td>
+            <td style="color:#f43f5e;font-size:10px;font-weight:600">CRITICAL TOUCH</td>
+            <td>0.65%</td>
+            <td><span style="color:#22c55e;font-size:10px">78.6%</span></td>
+            <td style="color:#a78bfa">10/10</td>
+            <td>41</td>
+            <td style="color:#ef4444;font-weight:700">STOP LOSS</td>
+            <td>59d</td>
+            <td style="color:#ef4444;font-weight:700">-10.43%</td>
+            <td style="color:#ef4444">₹-5,194</td>
+        </tr>
+        <tr>
+            <td style="font-weight:700;color:#f1f5f9">TCS</td>
+            <td>2026-01-01</td>
+            <td>2026-02-01</td>
+            <td style="color:#60a5fa">₹3,022.93</td>
+            <td style="color:#ef4444">₹2,602.12</td>
+            <td style="color:#f43f5e;font-size:10px;font-weight:600">CRITICAL TOUCH</td>
+            <td>0.14%</td>
+            <td><span style="color:#22c55e;font-size:10px">50.0%</span></td>
+            <td style="color:#a78bfa">8/10</td>
+            <td>10</td>
+            <td style="color:#ef4444;font-weight:700">STOP LOSS</td>
+            <td>31d</td>
+            <td style="color:#ef4444;font-weight:700">-13.92%</td>
+            <td style="color:#ef4444">₹-6,733</td>
+        </tr>
+        <tr>
+            <td style="font-weight:700;color:#f1f5f9">ICICIBANK</td>
+            <td>2025-12-01</td>
+            <td>2026-03-01</td>
+            <td style="color:#60a5fa">₹1,330.70</td>
+            <td style="color:#ef4444">₹1,205.90</td>
+            <td style="color:#f43f5e;font-size:10px;font-weight:600">CRITICAL TOUCH</td>
+            <td>0.92%</td>
+            <td><span style="color:#22c55e;font-size:10px">78.6%</span></td>
+            <td style="color:#a78bfa">9/10</td>
+            <td>40</td>
+            <td style="color:#ef4444;font-weight:700">STOP LOSS</td>
+            <td>90d</td>
+            <td style="color:#ef4444;font-weight:700">-9.38%</td>
+            <td style="color:#ef4444">₹-4,618</td>
+        </tr>
+        <tr>
+            <td style="font-weight:700;color:#f1f5f9">TECHM</td>
+            <td>2025-11-01</td>
+            <td>2026-02-01</td>
+            <td style="color:#60a5fa">₹1,502.75</td>
+            <td style="color:#ef4444">₹1,357.80</td>
+            <td style="color:#f43f5e;font-size:10px;font-weight:600">CRITICAL TOUCH</td>
+            <td>0.97%</td>
+            <td><span style="color:#94a3b8;font-size:10px">23.6%</span></td>
+            <td style="color:#a78bfa">7/10</td>
+            <td>38</td>
+            <td style="color:#ef4444;font-weight:700">STOP LOSS</td>
+            <td>92d</td>
+            <td style="color:#ef4444;font-weight:700">-9.65%</td>
+            <td style="color:#ef4444">₹-4,783</td>
+        </tr>
+        <tr>
+            <td style="font-weight:700;color:#f1f5f9">WIPRO</td>
+            <td>2025-11-01</td>
+            <td>2026-02-01</td>
+            <td style="color:#60a5fa">₹241.01</td>
+            <td style="color:#ef4444">₹200.96</td>
+            <td style="color:#f43f5e;font-size:10px;font-weight:600">CRITICAL TOUCH</td>
+            <td>0.93%</td>
+            <td><span style="color:#22c55e;font-size:10px">50.0%</span></td>
+            <td style="color:#a78bfa">7/10</td>
+            <td>24</td>
+            <td style="color:#ef4444;font-weight:700">STOP LOSS</td>
+            <td>92d</td>
+            <td style="color:#ef4444;font-weight:700">-16.62%</td>
+            <td style="color:#ef4444">₹-8,290</td>
+        </tr>
+        <tr>
+            <td style="font-weight:700;color:#f1f5f9">ASIANPAINT</td>
+            <td>2025-10-01</td>
+            <td>2026-03-01</td>
+            <td style="color:#60a5fa">₹2,511.98</td>
+            <td style="color:#ef4444">₹2,165.20</td>
+            <td style="color:#f43f5e;font-size:10px;font-weight:600">CRITICAL TOUCH</td>
+            <td>0.2%</td>
+            <td><span style="color:#22c55e;font-size:10px">23.6%</span></td>
+            <td style="color:#a78bfa">8/10</td>
+            <td>19</td>
+            <td style="color:#ef4444;font-weight:700">STOP LOSS</td>
+            <td>151d</td>
+            <td style="color:#ef4444;font-weight:700">-13.81%</td>
+            <td style="color:#ef4444">₹-6,589</td>
+        </tr>
+        <tr>
+            <td style="font-weight:700;color:#f1f5f9">ADANIENT</td>
+            <td>2025-09-01</td>
+            <td>2025-11-01</td>
+            <td style="color:#60a5fa">₹2,502.85</td>
+            <td style="color:#ef4444">₹2,279.18</td>
+            <td style="color:#f43f5e;font-size:10px;font-weight:600">CRITICAL TOUCH</td>
+            <td>0.08%</td>
+            <td><span style="color:#22c55e;font-size:10px">50.0%</span></td>
+            <td style="color:#a78bfa">7/10</td>
+            <td>8</td>
+            <td style="color:#ef4444;font-weight:700">STOP LOSS</td>
+            <td>61d</td>
+            <td style="color:#ef4444;font-weight:700">-8.94%</td>
+            <td style="color:#ef4444">₹-4,250</td>
+        </tr>
+        <tr>
+            <td style="font-weight:700;color:#f1f5f9">COALINDIA</td>
+            <td>2025-08-01</td>
+            <td>2026-04-01</td>
+            <td style="color:#60a5fa">₹352.81</td>
+            <td style="color:#22c55e">₹433.96</td>
+            <td style="color:#f43f5e;font-size:10px;font-weight:600">CRITICAL TOUCH</td>
+            <td>0.75%</td>
+            <td><span style="color:#22c55e;font-size:10px">61.8%</span></td>
+            <td style="color:#a78bfa">10/10</td>
+            <td>13</td>
+            <td style="color:#22c55e;font-weight:700">TARGET HIT</td>
+            <td>243d</td>
+            <td style="color:#22c55e;font-weight:700">+23.0%</td>
+            <td style="color:#22c55e">₹11,442</td>
+        </tr>
+        <tr>
+            <td style="font-weight:700;color:#f1f5f9">TECHM</td>
+            <td>2025-08-01</td>
+            <td>2026-06-12</td>
+            <td style="color:#60a5fa">₹1,452.90</td>
+            <td style="color:#ef4444">₹1,429.20</td>
+            <td style="color:#f43f5e;font-size:10px;font-weight:600">CRITICAL TOUCH</td>
+            <td>0.91%</td>
+            <td><span style="color:#94a3b8;font-size:10px">38.2%</span></td>
+            <td style="color:#a78bfa">5/10</td>
+            <td>35</td>
+            <td style="color:#eab308;font-weight:700">TIMEOUT</td>
+            <td>315d</td>
+            <td style="color:#ef4444;font-weight:700">-1.63%</td>
+            <td style="color:#ef4444">₹-806</td>
+        </tr>
+        <tr>
+            <td style="font-weight:700;color:#f1f5f9">ADANIENT</td>
+            <td>2025-07-01</td>
+            <td>2026-01-01</td>
+            <td style="color:#60a5fa">₹2,406.90</td>
+            <td style="color:#ef4444">₹2,019.50</td>
+            <td style="color:#f43f5e;font-size:10px;font-weight:600">CRITICAL TOUCH</td>
+            <td>0.94%</td>
+            <td><span style="color:#22c55e;font-size:10px">38.2%</span></td>
+            <td style="color:#a78bfa">8/10</td>
+            <td>8</td>
+            <td style="color:#ef4444;font-weight:700">STOP LOSS</td>
+            <td>184d</td>
+            <td style="color:#ef4444;font-weight:700">-16.1%</td>
+            <td style="color:#ef4444">₹-7,748</td>
+        </tr>
+        <tr>
+            <td style="font-weight:700;color:#f1f5f9">COALINDIA</td>
+            <td>2025-07-01</td>
+            <td>2026-04-01</td>
+            <td style="color:#60a5fa">₹348.40</td>
+            <td style="color:#22c55e">₹428.53</td>
+            <td style="color:#f43f5e;font-size:10px;font-weight:600">CRITICAL TOUCH</td>
+            <td>0.93%</td>
+            <td><span style="color:#22c55e;font-size:10px">61.8%</span></td>
+            <td style="color:#a78bfa">10/10</td>
+            <td>12</td>
+            <td style="color:#22c55e;font-weight:700">TARGET HIT</td>
+            <td>274d</td>
+            <td style="color:#22c55e;font-weight:700">+23.0%</td>
+            <td style="color:#22c55e">₹11,459</td>
+        </tr>
+        <tr>
+            <td style="font-weight:700;color:#f1f5f9">TECHM</td>
+            <td>2025-07-01</td>
+            <td>2026-06-12</td>
+            <td style="color:#60a5fa">₹1,436.28</td>
+            <td style="color:#ef4444">₹1,429.20</td>
+            <td style="color:#f43f5e;font-size:10px;font-weight:600">CRITICAL TOUCH</td>
+            <td>0.96%</td>
+            <td><span style="color:#94a3b8;font-size:10px">38.2%</span></td>
+            <td style="color:#a78bfa">7/10</td>
+            <td>34</td>
+            <td style="color:#eab308;font-weight:700">TIMEOUT</td>
+            <td>346d</td>
+            <td style="color:#ef4444;font-weight:700">-0.49%</td>
+            <td style="color:#ef4444">₹-241</td>
+        </tr></tbody>
+  </table>
+  </div>
+</div>
+
+<script>
+function filterTable() {
+  const q = document.getElementById('searchBox').value.toLowerCase();
+  document.querySelectorAll('#tradesBody tr').forEach(r => {
+    r.style.display = r.textContent.toLowerCase().includes(q) ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>

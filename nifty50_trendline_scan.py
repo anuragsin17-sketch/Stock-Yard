@@ -102,6 +102,9 @@ def run_scan(write_to_json=True, position_size=50000.0):
                     'patternZone':        sig['confluenceNote'],
                     'wickTouches':        tl['wickTouches'],
                     'timeframe':          'monthly',
+                    # 52W H/L from Yahoo Finance (already downloaded for trendline)
+                    'week52High':         result.get('week52High'),
+                    'week52Low':          result.get('week52Low'),
                     'positionSizing': {
                         'allocatedAmount': sizing['allocatedAmount'],
                         'sharesToBuy':     sizing['sharesToBuy'],

@@ -195,6 +195,10 @@ class MacroInstitutionalEngine:
             # Fibonacci levels
             fib_grid, fib_score, fib_note = self._calc_fib_levels(ref_df, a2, trigger_price)
 
+            # 52-week high/low from the post-COVID data
+            w52_high = round(float(ref_df['High'].tail(12).max()), 2)
+            w52_low  = round(float(ref_df['Low'].tail(12).min()), 2)
+
             return {
                 "ticker": ticker.replace(".NS", ""),
                 "currentSignal": {
@@ -208,6 +212,8 @@ class MacroInstitutionalEngine:
                     "confluenceNote":     fib_note,
                     "notificationTrigger": notification,
                 },
+                "week52High": w52_high,
+                "week52Low":  w52_low,
                 "positionSizing": {
                     "allocatedAmount":  float(self.capital_per_trade),
                     "sharesToBuy":      shares,

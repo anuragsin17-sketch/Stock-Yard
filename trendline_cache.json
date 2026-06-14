@@ -1,8 +1,503 @@
 {
-  "built_at": "2026-06-14 06:31",
+  "built_at": "2026-06-14 05:38",
   "total": 752,
-  "found": 492,
-  "errors": [],
+  "found": 494,
+  "errors": [
+    "360ONE",
+    "3MINDIA",
+    "ABB",
+    "ACMESOLAR",
+    "AIAENG",
+    "AUBANK",
+    "AADHARHFC",
+    "AAVAS",
+    "ABBOTINDIA",
+    "ACE",
+    "ACUTAAS",
+    "ADANIENSOL",
+    "ADANIENT",
+    "ADANIGREEN",
+    "ADANIPORTS",
+    "ADANIPOWER",
+    "ABCAPITAL",
+    "ABREL",
+    "ABSLAMC",
+    "AEGISLOG",
+    "AJANTPHARM",
+    "ALKEM",
+    "ABDL",
+    "ARE&M",
+    "AMBER",
+    "ANANDRATHI",
+    "ANANTRAJ",
+    "ANGELONE",
+    "ANURAS",
+    "APARINDS",
+    "APOLLOTYRE",
+    "ASAHIINDIA",
+    "ASHOKLEY",
+    "ASIANPAINT",
+    "ASTERDM",
+    "ASTRAL",
+    "ATUL",
+    "AUROPHARMA",
+    "DMART",
+    "AXISBANK",
+    "BEML",
+    "BLS",
+    "BSE",
+    "BAJAJ-AUTO",
+    "BAJFINANCE",
+    "BAJAJFINSV",
+    "BAJAJHLDNG",
+    "BALRAMCHIN",
+    "BANDHANBNK",
+    "BANKBARODA",
+    "BANKINDIA",
+    "MAHABANK",
+    "BERGEPAINT",
+    "BDL",
+    "BEL",
+    "BHEL",
+    "BPCL",
+    "BHARTIARTL",
+    "BIKAJI",
+    "BIOCON",
+    "BLUEJET",
+    "BLUESTARCO",
+    "BBTC",
+    "BOSCHLTD",
+    "BRIGADE",
+    "BRITANNIA",
+    "CCL",
+    "CESC",
+    "CRISIL",
+    "CANFINHOME",
+    "CANBK",
+    "CAPLIPOINT",
+    "CARBORUNIV",
+    "CARTRADE",
+    "CASTROLIND",
+    "CEATLTD",
+    "CEMPRO",
+    "CENTRALBK",
+    "CDSL",
+    "CHALET",
+    "CHAMBLFERT",
+    "CHENNPETRO",
+    "CHOLAHLDNG",
+    "CHOLAFIN",
+    "CIPLA",
+    "CUB",
+    "COCHINSHIP",
+    "COLPAL",
+    "CAMS",
+    "CONCOR",
+    "COROMANDEL",
+    "CRAFTSMAN",
+    "CREDITACC",
+    "CROMPTON",
+    "CUMMINSIND",
+    "CYIENT",
+    "DCMSHRIRAM",
+    "DLF",
+    "DABUR",
+    "DATAPATTNS",
+    "DEEPAKFERT",
+    "DELHIVERY",
+    "DIVISLAB",
+    "LALPATHLAB",
+    "DRREDDY",
+    "EIHOTEL",
+    "EICHERMOT",
+    "ELECON",
+    "ENDURANCE",
+    "ERIS",
+    "ETERNAL",
+    "EXIDEIND",
+    "NYKAA",
+    "FEDERALBNK",
+    "FACT",
+    "FINCABLES",
+    "FSL",
+    "FORCEMOT",
+    "FORTIS",
+    "GAIL",
+    "GVT&D",
+    "GMRAIRPORT",
+    "GABRIEL",
+    "GALLANTT",
+    "GRSE",
+    "GICRE",
+    "GILLETTE",
+    "GLAND",
+    "GLENMARK",
+    "MEDANTA",
+    "GPIL",
+    "GODFRYPHLP",
+    "GODREJCP",
+    "GODREJIND",
+    "GODREJPROP",
+    "GRANULES",
+    "GRAPHITE",
+    "GRAVITA",
+    "GESHIP",
+    "GMDCLTD",
+    "HEG",
+    "HBLENGINE",
+    "HDFCAMC",
+    "HEROMOTOCO",
+    "HSCL",
+    "HINDALCO",
+    "HAL",
+    "HINDCOPPER",
+    "HINDPETRO",
+    "HINDUNILVR",
+    "HINDZINC",
+    "POWERINDIA",
+    "HOMEFIRST",
+    "HONASA",
+    "HUDCO",
+    "HYUNDAI",
+    "ICICIGI",
+    "IDBI",
+    "IDFCFIRSTB",
+    "IFCI",
+    "IIFL",
+    "IRB",
+    "IRCON",
+    "ITI",
+    "INDIACEM",
+    "INDIANB",
+    "INDHOTEL",
+    "IOC",
+    "IOB",
+    "IRCTC",
+    "IRFC",
+    "IGL",
+    "INDUSINDBK",
+    "NAUKRI",
+    "INOXWIND",
+    "INDIGO",
+    "IGIL",
+    "IKS",
+    "IPCALAB",
+    "JBCHEPHARM",
+    "JBMA",
+    "JKTYRE",
+    "JMFINANCIL",
+    "JSWDULUX",
+    "JSWENERGY",
+    "JSWINFRA",
+    "JPPOWER",
+    "J&KBANK",
+    "JINDALSTEL",
+    "JIOFIN",
+    "JUBLINGREA",
+    "JUBLPHARMA",
+    "KEI",
+    "KAJARIACER",
+    "KPIL",
+    "KALYANKJIL",
+    "KFINTECH",
+    "KIRLOSENG",
+    "KOTAKBANK",
+    "KIMS",
+    "LTF",
+    "LTTS",
+    "LICHSGFIN",
+    "LTFOODS",
+    "LT",
+    "LEMONTREE",
+    "LICI",
+    "LLOYDSME",
+    "LODHA",
+    "LUPIN",
+    "MMTC",
+    "MRF",
+    "MGL",
+    "M&MFIN",
+    "M&M",
+    "MANAPPURAM",
+    "MRPL",
+    "MANKIND",
+    "MARICO",
+    "MARUTI",
+    "MFSL",
+    "MAXHEALTH",
+    "MAZDOCK",
+    "MINDACORP",
+    "MSUMI",
+    "MOTILALOFS",
+    "MCX",
+    "NATCOPHARM",
+    "NBCC",
+    "NCC",
+    "NLCINDIA",
+    "NMDC",
+    "NSLNISP",
+    "NH",
+    "NESTLEIND",
+    "NETWEB",
+    "NEULANDLAB",
+    "NEWGEN",
+    "NAM-INDIA",
+    "NUVOCO",
+    "OBEROIRLTY",
+    "ONGC",
+    "OLECTRA",
+    "PAYTM",
+    "POLICYBZR",
+    "PCBL",
+    "PGEL",
+    "PNBHOUSING",
+    "PTCIL",
+    "PVRINOX",
+    "PARADEEP",
+    "PETRONET",
+    "PFIZER",
+    "PHOENIXLTD",
+    "PIDILITIND",
+    "PPLPHARMA",
+    "POLYMED",
+    "POLYCAB",
+    "POONAWALLA",
+    "PFC",
+    "POWERGRID",
+    "PRESTIGE",
+    "PNB",
+    "RRKABEL",
+    "RBLBANK",
+    "RECLTD",
+    "RITES",
+    "RADICO",
+    "RAILTEL",
+    "RKFORGE",
+    "REDINGTON",
+    "RPOWER",
+    "SBFC",
+    "SBILIFE",
+    "SJVN",
+    "SAILIFE",
+    "SAMMAANCAP",
+    "MOTHERSON",
+    "SARDAEN",
+    "SCHAEFFLER",
+    "SCHNEIDER",
+    "SCI",
+    "SHREECEM",
+    "SHYAMMETL",
+    "SIEMENS",
+    "SOBHA",
+    "SOLARINDS",
+    "SONACOMS",
+    "STARHEALTH",
+    "SBIN",
+    "SUNPHARMA",
+    "SUNTV",
+    "SUPREMEIND",
+    "SUZLON",
+    "SWANCORP",
+    "SYRMA",
+    "TBOTEK",
+    "TVSMOTOR",
+    "TATACHEM",
+    "TATACONSUM",
+    "TATAINVEST",
+    "TATAPOWER",
+    "TTML",
+    "TECHM",
+    "TECHNOE",
+    "TEGA",
+    "TEJASNET",
+    "NIACL",
+    "RAMCOCEM",
+    "THERMAX",
+    "TIMKEN",
+    "TITAGARH",
+    "TITAN",
+    "TORNTPHARM",
+    "TORNTPOWER",
+    "TRENT",
+    "TRITURBINE",
+    "UCOBANK",
+    "UNOMINDA",
+    "UPL",
+    "UTIAMC",
+    "ULTRACEMCO",
+    "UNIONBANK",
+    "UNITDSPR",
+    "USHAMART",
+    "VEDL",
+    "VIJAYA",
+    "VMM",
+    "IDEA",
+    "VOLTAS",
+    "WAAREEENER",
+    "WELCORP",
+    "WELSPUNLIV",
+    "WOCKPHARMA",
+    "YESBANK",
+    "ZFCVINDIA",
+    "ZENTEC",
+    "ZENSARTECH",
+    "ZYDUSLIFE",
+    "ZYDUSWELL",
+    "AXISCADES",
+    "AVL",
+    "AHLUCONT",
+    "AKUMS",
+    "APLLTD",
+    "ALIVUS",
+    "APOLLO",
+    "ACI",
+    "ARVINDFASN",
+    "ARVIND",
+    "ASHAPURMIN",
+    "ASHOKA",
+    "ASTRAMICRO",
+    "AURIONPRO",
+    "AVALON",
+    "AZAD",
+    "BANCOINDIA",
+    "BBOX",
+    "CMSINFO",
+    "CSBBANK",
+    "CAMPUS",
+    "CENTURYPLY",
+    "CUPID",
+    "DCBBANK",
+    "DATAMATICS",
+    "DIACABS",
+    "DBL",
+    "AGARWALEYE",
+    "DYNAMATECH",
+    "EPL",
+    "EDELWEISS",
+    "EMIL",
+    "ELECTCAST",
+    "EMBDL",
+    "EQUITASBNK",
+    "ETHOSLTD",
+    "FEDFINA",
+    "FIEMIND",
+    "FINPIPE",
+    "GRWRHITECH",
+    "GODREJAGRO",
+    "GOKEX",
+    "GOKULAGRO",
+    "GREAVESCOT",
+    "GPPL",
+    "HGINFRA",
+    "HCG",
+    "HEMIPROP",
+    "HERITGFOOD",
+    "HCC",
+    "IIFLCAPS",
+    "INOXINDIA",
+    "INDIAGLYCO",
+    "INDIASHLTR",
+    "ICIL",
+    "INOXGREEN",
+    "JKPAPER",
+    "JAIBALAJI",
+    "JAMNAAUTO",
+    "JAYNECOIND",
+    "JSLL",
+    "JLHL",
+    "JUSTDIAL",
+    "JYOTHYLAB",
+    "KNRCON",
+    "KRBL",
+    "KSB",
+    "KTKBANK",
+    "KSCL",
+    "KIRLOSBROS",
+    "KIRLPNU",
+    "KITEX",
+    "LLOYDSENGG",
+    "LLOYDSENT",
+    "LUMAXTECH",
+    "MOIL",
+    "MSTCLTD",
+    "MTARTECH",
+    "MAHSCOOTER",
+    "MANORAMA",
+    "MARKSANS",
+    "MEDPLUS",
+    "METROPOLIS",
+    "MIDHANI",
+    "NESCO",
+    "NFL",
+    "NAZARA",
+    "ORIENTCEM",
+    "PNGJL",
+    "PCJEWELLER",
+    "PTC",
+    "PARAS",
+    "PGIL",
+    "POWERMECH",
+    "PRICOLLTD",
+    "PRIVISCL",
+    "PRUDENT",
+    "PURVA",
+    "QPOWER",
+    "QUESS",
+    "RALLIS",
+    "RCF",
+    "RATEGAIN",
+    "RATNAMANI",
+    "RTNINDIA",
+    "RTNPOWER",
+    "REFEX",
+    "SKFINDIA",
+    "SKYGOLD",
+    "SMLMAH",
+    "SAFARI",
+    "SAMHI",
+    "SANDUMA",
+    "SANSERA",
+    "SENCO",
+    "SHAILY",
+    "SHARDACROP",
+    "SHILPAMED",
+    "SHRIPISTON",
+    "SKIPPER",
+    "SOUTHBANK",
+    "STARCEMENT",
+    "STLTECH",
+    "STAR",
+    "STYRENIX",
+    "SUBROS",
+    "SUDARSCHEM",
+    "SUNTECK",
+    "SUPRIYA",
+    "SURYAROSNI",
+    "TARC",
+    "TDPOWERSYS",
+    "TSFINV",
+    "TMB",
+    "TEXRAIL",
+    "THOMASCOOK",
+    "THYROCARE",
+    "TIMETECHNO",
+    "TIPSMUSIC",
+    "TRIVENI",
+    "UJJIVANSFB",
+    "VGUARD",
+    "VMART",
+    "VIPIND",
+    "V2RETAIL",
+    "WABAG",
+    "DBREALTY",
+    "VARROC",
+    "VIYASH",
+    "VOLTAMP",
+    "WELENT",
+    "WESTLIFE",
+    "YATHARTH",
+    "KIRIINDUS"
+  ],
   "trendlines": {
     "360ONE": {
       "slope": 6.070024,
@@ -22,16 +517,16 @@
         "78.6%": 570.85,
         "100.0%": 373.47
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "3MINDIA": {
-      "slope": 210.898882,
-      "intercept": 13545.2805,
+      "slope": 210.898836,
+      "intercept": 13545.2838,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2023-01-01",
       "a2_date": "2026-04-01",
-      "a1_price": 20504.94,
+      "a1_price": 20504.95,
       "a2_price": 28730.0,
       "n_touches": 19,
       "fib_levels": {
@@ -42,11 +537,11 @@
         "78.6%": 29974.41,
         "100.0%": 28730.0
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "ABB": {
-      "slope": 73.693539,
-      "intercept": 206.6054,
+      "slope": 73.693545,
+      "intercept": 206.605,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2022-03-01",
@@ -62,7 +557,7 @@
         "78.6%": 5304.98,
         "100.0%": 4628.22
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "ACMESOLAR": {
       "slope": 2.357119,
@@ -82,11 +577,11 @@
         "78.6%": 231.91,
         "100.0%": 195.73
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "AIAENG": {
-      "slope": 37.532905,
-      "intercept": 587.8637,
+      "slope": 37.532902,
+      "intercept": 587.8639,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2022-03-01",
@@ -102,11 +597,11 @@
         "78.6%": 3578.47,
         "100.0%": 3252.7
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "AUBANK": {
-      "slope": 5.288927,
-      "intercept": 176.8004,
+      "slope": 5.288926,
+      "intercept": 176.8005,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2020-05-01",
@@ -122,7 +617,7 @@
         "78.6%": 615.26,
         "100.0%": 488.85
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "AADHARHFC": {
       "slope": 6.007143,
@@ -142,7 +637,7 @@
         "78.6%": 450.02,
         "100.0%": 430.15
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "AAVAS": {
       "slope": 1.708572,
@@ -162,16 +657,16 @@
         "78.6%": 1153.38,
         "100.0%": 1060.4
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "ABBOTINDIA": {
-      "slope": 195.988304,
-      "intercept": 11038.8421,
+      "slope": 195.988319,
+      "intercept": 11038.841,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2021-02-01",
       "a2_date": "2026-04-01",
-      "a1_price": 12998.73,
+      "a1_price": 12998.72,
       "a2_price": 25150.0,
       "n_touches": 18,
       "fib_levels": {
@@ -182,7 +677,7 @@
         "78.6%": 25819.82,
         "100.0%": 25150.0
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "ACE": {
       "slope": 12.419799,
@@ -202,10 +697,10 @@
         "78.6%": 792.53,
         "100.0%": 745.1
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "ACUTAAS": {
-      "slope": 4.83203,
+      "slope": 4.832029,
       "intercept": 360.554,
       "last_idx": 56,
       "last_date": "2026-06-01",
@@ -222,7 +717,7 @@
         "78.6%": 676.16,
         "100.0%": 500.68
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "ADANIENSOL": {
       "slope": 17.575002,
@@ -242,7 +737,7 @@
         "78.6%": 931.06,
         "100.0%": 744.9
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "ADANIENT": {
       "slope": 23.218311,
@@ -262,7 +757,7 @@
         "78.6%": 2032.04,
         "100.0%": 1752.22
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "ADANIGREEN": {
       "slope": 9.311428,
@@ -282,7 +777,7 @@
         "78.6%": 931.88,
         "100.0%": 765.0
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "ADANIPORTS": {
       "slope": 21.421895,
@@ -302,7 +797,7 @@
         "78.6%": 1408.82,
         "100.0%": 1286.58
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "ADANIPOWER": {
       "slope": 2.903429,
@@ -322,7 +817,7 @@
         "78.6%": 155.09,
         "100.0%": 128.1
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "ABCAPITAL": {
       "slope": 9.90643,
@@ -342,11 +837,11 @@
         "78.6%": 306.59,
         "100.0%": 287.7
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "ABREL": {
-      "slope": 10.155037,
-      "intercept": 237.7776,
+      "slope": 10.155038,
+      "intercept": 237.7775,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2020-05-01",
@@ -362,7 +857,7 @@
         "78.6%": 1129.63,
         "100.0%": 583.05
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "ABSLAMC": {
       "slope": 23.775949,
@@ -382,10 +877,10 @@
         "78.6%": 796.92,
         "100.0%": 708.0
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "AEGISLOG": {
-      "slope": 5.553006,
+      "slope": 5.553004,
       "intercept": 35.6749,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -402,11 +897,11 @@
         "78.6%": 435.31,
         "100.0%": 274.45
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "AJANTPHARM": {
-      "slope": 7.242023,
-      "intercept": 826.9114,
+      "slope": 7.242011,
+      "intercept": 826.9116,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2022-05-01",
@@ -422,7 +917,7 @@
         "78.6%": 1580.06,
         "100.0%": 1080.38
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "ALKEM": {
       "slope": 61.059878,
@@ -442,7 +937,7 @@
         "78.6%": 4728.66,
         "100.0%": 4413.54
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "ABDL": {
       "slope": 9.582513,
@@ -462,7 +957,7 @@
         "78.6%": 438.78,
         "100.0%": 382.1
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "ARE&M": {
       "slope": 5.555229,
@@ -482,7 +977,7 @@
         "78.6%": 731.42,
         "100.0%": 670.0
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "AMBER": {
       "slope": 109.454545,
@@ -502,7 +997,7 @@
         "78.6%": 6165.23,
         "100.0%": 5400.5
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "ANANDRATHI": {
       "slope": 56.060072,
@@ -522,7 +1017,7 @@
         "78.6%": 1460.91,
         "100.0%": 1351.2
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "ANANTRAJ": {
       "slope": 1.469533,
@@ -542,7 +1037,7 @@
         "78.6%": 236.14,
         "100.0%": 42.66
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "ANGELONE": {
       "slope": 3.756894,
@@ -562,7 +1057,7 @@
         "78.6%": 237.63,
         "100.0%": 206.76
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "ANURAS": {
       "slope": 1.380286,
@@ -582,10 +1077,10 @@
         "78.6%": 774.89,
         "100.0%": 600.61
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "APARINDS": {
-      "slope": 142.365569,
+      "slope": 142.36557,
       "intercept": -3022.2243,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -602,11 +1097,11 @@
         "78.6%": 8628.35,
         "100.0%": 6801.0
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "APOLLOTYRE": {
       "slope": 4.184983,
-      "intercept": 59.7963,
+      "intercept": 59.7962,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2022-03-01",
@@ -622,10 +1117,10 @@
         "78.6%": 378.88,
         "100.0%": 365.3
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "ASAHIINDIA": {
-      "slope": 8.019658,
+      "slope": 8.019657,
       "intercept": 121.9091,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -642,7 +1137,7 @@
         "78.6%": 570.12,
         "100.0%": 498.83
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "ASHOKLEY": {
       "slope": 1.260664,
@@ -662,7 +1157,7 @@
         "78.6%": 117.68,
         "100.0%": 92.06
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "ASIANPAINT": {
       "slope": 9.985432,
@@ -682,7 +1177,7 @@
         "78.6%": 2257.05,
         "100.0%": 2115.0
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "ASTERDM": {
       "slope": 2.712026,
@@ -702,7 +1197,7 @@
         "78.6%": 275.5,
         "100.0%": 152.03
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "ASTRAL": {
       "slope": 13.795713,
@@ -722,7 +1217,7 @@
         "78.6%": 1344.48,
         "100.0%": 1228.98
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "ATUL": {
       "slope": 21.999214,
@@ -742,11 +1237,11 @@
         "78.6%": 5907.07,
         "100.0%": 5560.5
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "AUROPHARMA": {
-      "slope": 19.847089,
-      "intercept": -283.2962,
+      "slope": 19.84709,
+      "intercept": -283.2963,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2023-02-01",
@@ -762,7 +1257,7 @@
         "78.6%": 1201.02,
         "100.0%": 1106.0
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "DMART": {
       "slope": 26.134906,
@@ -782,7 +1277,7 @@
         "78.6%": 3684.43,
         "100.0%": 3340.0
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "AXISBANK": {
       "slope": 11.62219,
@@ -802,11 +1297,11 @@
         "78.6%": 1201.81,
         "100.0%": 1150.3
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "BEML": {
-      "slope": 11.043906,
-      "intercept": 168.0341,
+      "slope": 11.043918,
+      "intercept": 168.0337,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2022-06-01",
@@ -822,7 +1317,7 @@
         "78.6%": 1015.46,
         "100.0%": 554.57
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "BLS": {
       "slope": 3.499689,
@@ -842,7 +1337,7 @@
         "78.6%": 238.18,
         "100.0%": 218.9
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "BSE": {
       "slope": 94.194039,
@@ -862,11 +1357,11 @@
         "78.6%": 2540.51,
         "100.0%": 2021.5
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "BAJAJ-AUTO": {
-      "slope": 20.51612,
-      "intercept": 2290.3128,
+      "slope": 20.516137,
+      "intercept": 2290.3125,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2020-11-01",
@@ -882,7 +1377,7 @@
         "78.6%": 4751.77,
         "100.0%": 2700.64
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "BAJFINANCE": {
       "slope": 8.760627,
@@ -902,7 +1397,7 @@
         "78.6%": 831.63,
         "100.0%": 787.9
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "BAJAJFINSV": {
       "slope": 16.892459,
@@ -922,11 +1417,11 @@
         "78.6%": 1653.28,
         "100.0%": 1597.0
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "BAJAJHLDNG": {
-      "slope": 98.253697,
-      "intercept": 1513.7338,
+      "slope": 98.253677,
+      "intercept": 1513.7352,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2022-06-01",
@@ -942,7 +1437,7 @@
         "78.6%": 9089.4,
         "100.0%": 8588.0
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "BALRAMCHIN": {
       "slope": 4.615579,
@@ -962,7 +1457,7 @@
         "78.6%": 429.9,
         "100.0%": 393.55
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "BANDHANBNK": {
       "slope": 0.725016,
@@ -982,7 +1477,7 @@
         "78.6%": 151.03,
         "100.0%": 134.25
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "BANKBARODA": {
       "slope": 3.397641,
@@ -1002,7 +1497,7 @@
         "78.6%": 242.83,
         "100.0%": 233.45
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "BANKINDIA": {
       "slope": 3.074417,
@@ -1022,7 +1517,7 @@
         "78.6%": 134.37,
         "100.0%": 130.26
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "MAHABANK": {
       "slope": 1.001748,
@@ -1042,11 +1537,11 @@
         "78.6%": 58.18,
         "100.0%": 50.17
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "BERGEPAINT": {
-      "slope": 0.582776,
-      "intercept": 349.7229,
+      "slope": 0.582775,
+      "intercept": 349.723,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2020-05-01",
@@ -1062,7 +1557,7 @@
         "78.6%": 423.04,
         "100.0%": 391.1
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "BDL": {
       "slope": 22.133498,
@@ -1082,7 +1577,7 @@
         "78.6%": 1170.57,
         "100.0%": 1086.0
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "BEL": {
       "slope": 2.120015,
@@ -1102,11 +1597,11 @@
         "78.6%": 166.62,
         "100.0%": 83.63
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "BHEL": {
-      "slope": 4.628308,
-      "intercept": -91.5218,
+      "slope": 4.628309,
+      "intercept": -91.5219,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2023-02-01",
@@ -1122,11 +1617,11 @@
         "78.6%": 251.81,
         "100.0%": 204.69
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "BPCL": {
-      "slope": 1.233552,
-      "intercept": 89.3255,
+      "slope": 1.233553,
+      "intercept": 89.3254,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2022-06-01",
@@ -1142,7 +1637,7 @@
         "78.6%": 192.45,
         "100.0%": 141.13
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "BHARTIARTL": {
       "slope": 26.793742,
@@ -1162,7 +1657,7 @@
         "78.6%": 1786.15,
         "100.0%": 1740.5
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "BIKAJI": {
       "slope": 7.023002,
@@ -1182,7 +1677,7 @@
         "78.6%": 617.42,
         "100.0%": 592.55
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "BIOCON": {
       "slope": 4.195256,
@@ -1202,7 +1697,7 @@
         "78.6%": 322.67,
         "100.0%": 290.61
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "BLUEJET": {
       "slope": 0.247112,
@@ -1222,7 +1717,7 @@
         "78.6%": 367.06,
         "100.0%": 325.0
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "BLUESTARCO": {
       "slope": 22.928139,
@@ -1242,7 +1737,7 @@
         "78.6%": 1552.48,
         "100.0%": 1450.0
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "BBTC": {
       "slope": 15.257075,
@@ -1262,11 +1757,11 @@
         "78.6%": 1392.8,
         "100.0%": 1314.6
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "BOSCHLTD": {
-      "slope": 358.272982,
-      "intercept": 3172.6183,
+      "slope": 358.273001,
+      "intercept": 3172.6169,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2022-05-01",
@@ -1282,7 +1777,7 @@
         "78.6%": 30929.76,
         "100.0%": 28610.0
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "BRIGADE": {
       "slope": 7.311319,
@@ -1302,7 +1797,7 @@
         "78.6%": 647.01,
         "100.0%": 601.0
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "BRITANNIA": {
       "slope": 43.763507,
@@ -1322,10 +1817,10 @@
         "78.6%": 4851.81,
         "100.0%": 4447.71
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "CCL": {
-      "slope": 6.011034,
+      "slope": 6.011033,
       "intercept": 159.8885,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -1342,7 +1837,7 @@
         "78.6%": 638.45,
         "100.0%": 520.55
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "CESC": {
       "slope": 2.549561,
@@ -1362,11 +1857,11 @@
         "78.6%": 134.26,
         "100.0%": 115.13
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "CRISIL": {
-      "slope": 33.844597,
-      "intercept": 1214.5576,
+      "slope": 33.84459,
+      "intercept": 1214.5577,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2021-04-01",
@@ -1379,14 +1874,14 @@
         "38.2%": 4127.59,
         "50.0%": 4036.66,
         "61.8%": 3945.73,
-        "78.6%": 3816.28,
+        "78.6%": 3816.27,
         "100.0%": 3651.37
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "CANFINHOME": {
-      "slope": 17.06827,
-      "intercept": -439.8472,
+      "slope": 17.068266,
+      "intercept": -439.8469,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2025-02-01",
@@ -1402,7 +1897,7 @@
         "78.6%": 808.79,
         "100.0%": 772.0
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "CANBK": {
       "slope": 3.418671,
@@ -1422,11 +1917,11 @@
         "78.6%": 123.1,
         "100.0%": 117.9
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "CAPLIPOINT": {
-      "slope": 25.825302,
-      "intercept": -336.2625,
+      "slope": 25.825301,
+      "intercept": -336.2624,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2023-03-01",
@@ -1442,11 +1937,11 @@
         "78.6%": 1695.85,
         "100.0%": 1497.33
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "CARBORUNIV": {
       "slope": 7.671208,
-      "intercept": 190.5443,
+      "intercept": 190.5442,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2020-05-01",
@@ -1462,7 +1957,7 @@
         "78.6%": 827.48,
         "100.0%": 735.2
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "CARTRADE": {
       "slope": 39.043999,
@@ -1482,10 +1977,10 @@
         "78.6%": 1791.51,
         "100.0%": 1600.0
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "CASTROLIND": {
-      "slope": 0.949985,
+      "slope": 0.949986,
       "intercept": 57.1034,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -1502,11 +1997,11 @@
         "78.6%": 126.05,
         "100.0%": 90.35
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "CEATLTD": {
-      "slope": 50.816727,
-      "intercept": -457.3353,
+      "slope": 50.816721,
+      "intercept": -457.335,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2022-06-01",
@@ -1522,10 +2017,10 @@
         "78.6%": 1988.23,
         "100.0%": 1321.25
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "CEMPRO": {
-      "slope": 11.078923,
+      "slope": 11.078922,
       "intercept": -284.5882,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -1542,18 +2037,18 @@
         "78.6%": 663.67,
         "100.0%": 502.02
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "CENTRALBK": {
-      "slope": 0.296378,
-      "intercept": 7.9564,
+      "slope": 0.282265,
+      "intercept": 8.0411,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2020-10-01",
-      "a2_date": "2022-06-01",
+      "a2_date": "2022-07-01",
       "a1_price": 9.73,
       "a2_price": 15.66,
-      "n_touches": 8,
+      "n_touches": 6,
       "fib_levels": {
         "23.6%": 60.32,
         "38.2%": 51.79,
@@ -1562,10 +2057,10 @@
         "78.6%": 28.17,
         "100.0%": 15.66
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "CDSL": {
-      "slope": 19.149652,
+      "slope": 19.149651,
       "intercept": -243.3252,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -1582,7 +2077,7 @@
         "78.6%": 1177.25,
         "100.0%": 1116.3
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "CHALET": {
       "slope": 9.641283,
@@ -1602,10 +2097,10 @@
         "78.6%": 718.89,
         "100.0%": 691.35
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "CHAMBLFERT": {
-      "slope": 4.627932,
+      "slope": 4.627933,
       "intercept": 71.1668,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -1622,10 +2117,10 @@
         "78.6%": 417.57,
         "100.0%": 399.75
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "CHENNPETRO": {
-      "slope": 9.301034,
+      "slope": 9.301036,
       "intercept": -122.2124,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -1642,7 +2137,7 @@
         "78.6%": 569.45,
         "100.0%": 426.55
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "CHOLAHLDNG": {
       "slope": 22.070455,
@@ -1662,7 +2157,7 @@
         "78.6%": 1413.05,
         "100.0%": 1305.0
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "CHOLAFIN": {
       "slope": 16.546938,
@@ -1682,7 +2177,7 @@
         "78.6%": 1392.58,
         "100.0%": 1299.4
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "CIPLA": {
       "slope": 9.010541,
@@ -1702,7 +2197,7 @@
         "78.6%": 1213.97,
         "100.0%": 1154.87
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "CUB": {
       "slope": 0.200821,
@@ -1722,7 +2217,7 @@
         "78.6%": 124.58,
         "100.0%": 92.32
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "COCHINSHIP": {
       "slope": 1.926346,
@@ -1742,7 +2237,7 @@
         "78.6%": 732.41,
         "100.0%": 131.06
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "COLPAL": {
       "slope": 10.384284,
@@ -1762,11 +2257,11 @@
         "78.6%": 1858.09,
         "100.0%": 1761.24
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "CAMS": {
-      "slope": 6.352981,
-      "intercept": 204.8092,
+      "slope": 6.352983,
+      "intercept": 204.8091,
       "last_idx": 67,
       "last_date": "2026-06-01",
       "a1_date": "2023-03-01",
@@ -1782,7 +2277,7 @@
         "78.6%": 661.37,
         "100.0%": 611.4
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "CONCOR": {
       "slope": 1.452076,
@@ -1802,7 +2297,7 @@
         "78.6%": 446.18,
         "100.0%": 421.45
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "COROMANDEL": {
       "slope": 12.659135,
@@ -1822,11 +2317,11 @@
         "78.6%": 1371.01,
         "100.0%": 1009.73
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "CRAFTSMAN": {
-      "slope": 68.643862,
-      "intercept": 1139.3062,
+      "slope": 68.643871,
+      "intercept": 1139.306,
       "last_idx": 62,
       "last_date": "2026-06-01",
       "a1_date": "2022-02-01",
@@ -1842,7 +2337,7 @@
         "78.6%": 4220.37,
         "100.0%": 2718.11
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "CREDITACC": {
       "slope": 25.914285,
@@ -1862,7 +2357,7 @@
         "78.6%": 1210.37,
         "100.0%": 1113.0
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "CROMPTON": {
       "slope": 0.44524,
@@ -1882,11 +2377,11 @@
         "78.6%": 237.32,
         "100.0%": 217.4
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "CUMMINSIND": {
-      "slope": 49.680301,
-      "intercept": -436.4978,
+      "slope": 49.680295,
+      "intercept": -436.4974,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2023-09-01",
@@ -1902,7 +2397,7 @@
         "78.6%": 3305.24,
         "100.0%": 2544.32
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "CYIENT": {
       "slope": 8.389804,
@@ -1922,7 +2417,7 @@
         "78.6%": 801.49,
         "100.0%": 750.3
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "DCMSHRIRAM": {
       "slope": 10.157365,
@@ -1942,7 +2437,7 @@
         "78.6%": 1026.4,
         "100.0%": 945.1
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "DLF": {
       "slope": 5.201987,
@@ -1962,7 +2457,7 @@
         "78.6%": 517.35,
         "100.0%": 489.4
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:33"
     },
     "DABUR": {
       "slope": 0.092034,
@@ -1982,7 +2477,7 @@
         "78.6%": 422.0,
         "100.0%": 403.35
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:34"
     },
     "DATAPATTNS": {
       "slope": 78.389179,
@@ -2002,7 +2497,7 @@
         "78.6%": 2685.47,
         "100.0%": 2131.0
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:34"
     },
     "DEEPAKFERT": {
       "slope": 17.630954,
@@ -2022,7 +2517,7 @@
         "78.6%": 1019.97,
         "100.0%": 866.4
       },
-      "built_at": "2026-06-14 06:27"
+      "built_at": "2026-06-14 05:34"
     },
     "DELHIVERY": {
       "slope": 13.792001,
@@ -2042,7 +2537,7 @@
         "78.6%": 398.64,
         "100.0%": 374.45
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "DIVISLAB": {
       "slope": 52.921602,
@@ -2062,7 +2557,7 @@
         "78.6%": 4111.62,
         "100.0%": 3314.47
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "LALPATHLAB": {
       "slope": 11.523165,
@@ -2082,11 +2577,11 @@
         "78.6%": 1368.32,
         "100.0%": 1272.6
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "DRREDDY": {
-      "slope": 10.703172,
-      "intercept": 465.2675,
+      "slope": 10.703183,
+      "intercept": 465.2672,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2022-03-01",
@@ -2102,7 +2597,7 @@
         "78.6%": 945.6,
         "100.0%": 818.47
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "EIHOTEL": {
       "slope": 3.168741,
@@ -2122,11 +2617,11 @@
         "78.6%": 286.26,
         "100.0%": 271.15
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "EICHERMOT": {
-      "slope": 55.587525,
-      "intercept": 793.2241,
+      "slope": 55.587508,
+      "intercept": 793.2247,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2022-03-01",
@@ -2142,7 +2637,7 @@
         "78.6%": 3913.91,
         "100.0%": 2738.79
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "ELECON": {
       "slope": 5.881031,
@@ -2162,11 +2657,11 @@
         "78.6%": 399.44,
         "100.0%": 351.0
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "ENDURANCE": {
-      "slope": 17.710088,
-      "intercept": 623.5406,
+      "slope": 17.710084,
+      "intercept": 623.5408,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2022-03-01",
@@ -2182,7 +2677,7 @@
         "78.6%": 1970.49,
         "100.0%": 1668.44
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "ERIS": {
       "slope": 21.25215,
@@ -2202,7 +2697,7 @@
         "78.6%": 1035.58,
         "100.0%": 800.29
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "ETERNAL": {
       "slope": 0.625,
@@ -2222,7 +2717,7 @@
         "78.6%": 113.71,
         "100.0%": 44.35
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "EXIDEIND": {
       "slope": 3.315853,
@@ -2242,7 +2737,7 @@
         "78.6%": 313.28,
         "100.0%": 287.0
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "NYKAA": {
       "slope": 1.767391,
@@ -2262,7 +2757,7 @@
         "78.6%": 182.87,
         "100.0%": 154.9
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "FEDERALBNK": {
       "slope": 2.521426,
@@ -2282,10 +2777,10 @@
         "78.6%": 199.52,
         "100.0%": 171.62
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "FACT": {
-      "slope": 1.953079,
+      "slope": 1.953078,
       "intercept": 31.2991,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -2302,7 +2797,7 @@
         "78.6%": 318.18,
         "100.0%": 82.08
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "FINCABLES": {
       "slope": 8.38162,
@@ -2322,7 +2817,7 @@
         "78.6%": 804.38,
         "100.0%": 700.8
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "FSL": {
       "slope": 2.900444,
@@ -2342,7 +2837,7 @@
         "78.6%": 219.13,
         "100.0%": 202.0
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "FORCEMOT": {
       "slope": 239.72379,
@@ -2362,7 +2857,7 @@
         "78.6%": 10463.94,
         "100.0%": 6111.51
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "FORTIS": {
       "slope": 10.822921,
@@ -2382,7 +2877,7 @@
         "78.6%": 530.16,
         "100.0%": 373.84
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "GAIL": {
       "slope": 1.418335,
@@ -2402,7 +2897,7 @@
         "78.6%": 142.24,
         "100.0%": 134.36
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "GVT&D": {
       "slope": 1.225081,
@@ -2422,7 +2917,7 @@
         "78.6%": 1194.76,
         "100.0%": 98.25
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "GMRAIRPORT": {
       "slope": 1.258462,
@@ -2442,7 +2937,7 @@
         "78.6%": 88.4,
         "100.0%": 84.11
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "GABRIEL": {
       "slope": 29.308904,
@@ -2462,7 +2957,7 @@
         "78.6%": 872.38,
         "100.0%": 795.7
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "GALLANTT": {
       "slope": 18.610338,
@@ -2482,7 +2977,7 @@
         "78.6%": 592.92,
         "100.0%": 496.25
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "GRSE": {
       "slope": 3.136853,
@@ -2502,7 +2997,7 @@
         "78.6%": 908.9,
         "100.0%": 199.7
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "GICRE": {
       "slope": 1.464761,
@@ -2522,16 +3017,16 @@
         "78.6%": 201.74,
         "100.0%": 117.43
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "GILLETTE": {
-      "slope": 91.820129,
-      "intercept": 686.7708,
+      "slope": 91.820155,
+      "intercept": 686.769,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2023-03-01",
       "a2_date": "2026-03-01",
-      "a1_price": 3900.48,
+      "a1_price": 3900.47,
       "a2_price": 7206.0,
       "n_touches": 8,
       "fib_levels": {
@@ -2542,7 +3037,7 @@
         "78.6%": 7468.68,
         "100.0%": 7206.0
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "GLAND": {
       "slope": 21.448801,
@@ -2562,11 +3057,11 @@
         "78.6%": 1749.59,
         "100.0%": 1573.6
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "GLENMARK": {
-      "slope": 36.233266,
-      "intercept": -829.1504,
+      "slope": 36.23327,
+      "intercept": -829.1505,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2023-01-01",
@@ -2582,7 +3077,7 @@
         "78.6%": 1529.53,
         "100.0%": 1272.38
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "MEDANTA": {
       "slope": 13.947457,
@@ -2602,7 +3097,7 @@
         "78.6%": 1024.91,
         "100.0%": 956.0
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "GPIL": {
       "slope": 8.463718,
@@ -2622,7 +3117,7 @@
         "78.6%": 242.35,
         "100.0%": 221.21
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "GODFRYPHLP": {
       "slope": 3.426889,
@@ -2642,11 +3137,11 @@
         "78.6%": 1067.64,
         "100.0%": 289.72
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "GODREJCP": {
-      "slope": 6.771677,
-      "intercept": 474.7061,
+      "slope": 6.771676,
+      "intercept": 474.7062,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2022-03-01",
@@ -2662,7 +3157,7 @@
         "78.6%": 1000.8,
         "100.0%": 962.27
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "GODREJIND": {
       "slope": 9.7,
@@ -2682,7 +3177,7 @@
         "78.6%": 854.72,
         "100.0%": 744.2
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "GODREJPROP": {
       "slope": 12.647059,
@@ -2702,7 +3197,7 @@
         "78.6%": 1518.11,
         "100.0%": 1005.0
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "GRANULES": {
       "slope": 6.229916,
@@ -2722,7 +3217,7 @@
         "78.6%": 502.8,
         "100.0%": 420.71
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "GRAPHITE": {
       "slope": 5.073111,
@@ -2742,11 +3237,11 @@
         "78.6%": 453.81,
         "100.0%": 358.9
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "GRAVITA": {
-      "slope": 24.787791,
-      "intercept": -441.6308,
+      "slope": 24.787792,
+      "intercept": -441.6309,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2022-07-01",
@@ -2762,10 +3257,10 @@
         "78.6%": 1144.46,
         "100.0%": 723.4
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "GESHIP": {
-      "slope": 13.965177,
+      "slope": 13.965179,
       "intercept": -53.2046,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -2782,7 +3277,7 @@
         "78.6%": 987.95,
         "100.0%": 770.74
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "GMDCLTD": {
       "slope": 4.575848,
@@ -2802,10 +3297,10 @@
         "78.6%": 340.0,
         "100.0%": 222.41
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "HEG": {
-      "slope": 1.921896,
+      "slope": 1.921895,
       "intercept": 109.4915,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -2822,7 +3317,7 @@
         "78.6%": 286.59,
         "100.0%": 176.76
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "HBLENGINE": {
       "slope": 2.455944,
@@ -2842,11 +3337,11 @@
         "78.6%": 306.78,
         "100.0%": 85.61
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "HDFCAMC": {
-      "slope": 39.620845,
-      "intercept": -654.6884,
+      "slope": 39.620846,
+      "intercept": -654.6885,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2023-03-01",
@@ -2862,11 +3357,11 @@
         "78.6%": 2298.03,
         "100.0%": 2158.39
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "HEROMOTOCO": {
-      "slope": 13.573097,
-      "intercept": 1558.6842,
+      "slope": 13.573116,
+      "intercept": 1558.6838,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2022-03-01",
@@ -2882,7 +3377,7 @@
         "78.6%": 2939.52,
         "100.0%": 2033.74
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "HSCL": {
       "slope": 2.74992,
@@ -2902,7 +3397,7 @@
         "78.6%": 209.66,
         "100.0%": 79.72
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "HINDALCO": {
       "slope": 8.156677,
@@ -2922,7 +3417,7 @@
         "78.6%": 545.34,
         "100.0%": 373.63
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "HAL": {
       "slope": 60.747503,
@@ -2942,10 +3437,10 @@
         "78.6%": 3769.54,
         "100.0%": 3479.1
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "HINDCOPPER": {
-      "slope": 3.607494,
+      "slope": 3.607493,
       "intercept": -33.8654,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -2962,10 +3457,10 @@
         "78.6%": 305.9,
         "100.0%": 182.58
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "HINDPETRO": {
-      "slope": 1.626205,
+      "slope": 1.626206,
       "intercept": 76.9596,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -2982,7 +3477,7 @@
         "78.6%": 222.98,
         "100.0%": 145.26
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "HINDUNILVR": {
       "slope": 2.911533,
@@ -3002,11 +3497,11 @@
         "78.6%": 2105.0,
         "100.0%": 2022.5
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "HINDZINC": {
-      "slope": 8.715092,
-      "intercept": -150.0654,
+      "slope": 8.71509,
+      "intercept": -150.0653,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2024-03-01",
@@ -3022,7 +3517,7 @@
         "78.6%": 440.25,
         "100.0%": 364.13
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "POWERINDIA": {
       "slope": 452.503676,
@@ -3042,7 +3537,7 @@
         "78.6%": 20963.24,
         "100.0%": 16111.0
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "HOMEFIRST": {
       "slope": 7.733434,
@@ -3062,7 +3557,7 @@
         "78.6%": 963.07,
         "100.0%": 889.54
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "HONASA": {
       "slope": 5.089,
@@ -3082,7 +3577,7 @@
         "78.6%": 289.05,
         "100.0%": 248.4
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "HUDCO": {
       "slope": 3.389053,
@@ -3102,7 +3597,7 @@
         "78.6%": 174.49,
         "100.0%": 157.88
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "HYUNDAI": {
       "slope": 10.924074,
@@ -3122,11 +3617,11 @@
         "78.6%": 1732.17,
         "100.0%": 1658.0
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "ICICIGI": {
-      "slope": 16.235347,
-      "intercept": 454.3913,
+      "slope": 16.23535,
+      "intercept": 454.3911,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2023-03-01",
@@ -3142,7 +3637,7 @@
         "78.6%": 1682.9,
         "100.0%": 1623.34
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "IDBI": {
       "slope": 0.730575,
@@ -3162,7 +3657,7 @@
         "78.6%": 72.8,
         "100.0%": 61.01
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "IDFCFIRSTB": {
       "slope": 0.689215,
@@ -3182,7 +3677,7 @@
         "78.6%": 59.72,
         "100.0%": 52.29
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "IFCI": {
       "slope": 0.18,
@@ -3202,7 +3697,7 @@
         "78.6%": 26.04,
         "100.0%": 8.25
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "IIFL": {
       "slope": 3.897791,
@@ -3222,7 +3717,7 @@
         "78.6%": 361.7,
         "100.0%": 277.74
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "IRB": {
       "slope": 0.262379,
@@ -3242,10 +3737,10 @@
         "78.6%": 17.89,
         "100.0%": 12.25
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "IRCON": {
-      "slope": 0.076645,
+      "slope": 0.076646,
       "intercept": 29.674,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -3262,7 +3757,7 @@
         "78.6%": 97.96,
         "100.0%": 31.67
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "ITI": {
       "slope": 4.179167,
@@ -3282,7 +3777,7 @@
         "78.6%": 254.74,
         "100.0%": 237.0
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "INDIACEM": {
       "slope": 2.040947,
@@ -3302,7 +3797,7 @@
         "78.6%": 235.38,
         "100.0%": 167.2
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "INDIANB": {
       "slope": 20.761769,
@@ -3322,10 +3817,10 @@
         "78.6%": 804.62,
         "100.0%": 784.64
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "INDHOTEL": {
-      "slope": 7.921618,
+      "slope": 7.921619,
       "intercept": -5.3565,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -3342,7 +3837,7 @@
         "78.6%": 590.03,
         "100.0%": 565.0
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "IOC": {
       "slope": 1.769141,
@@ -3362,7 +3857,7 @@
         "78.6%": 134.3,
         "100.0%": 130.22
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "IOB": {
       "slope": 0.349231,
@@ -3382,11 +3877,11 @@
         "78.6%": 32.31,
         "100.0%": 31.2
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "IRCTC": {
-      "slope": 3.846493,
-      "intercept": 219.549,
+      "slope": 3.846491,
+      "intercept": 219.5491,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2020-11-01",
@@ -3402,7 +3897,7 @@
         "78.6%": 511.62,
         "100.0%": 492.65
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "IRFC": {
       "slope": 1.722804,
@@ -3422,7 +3917,7 @@
         "78.6%": 90.86,
         "100.0%": 86.09
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "IGL": {
       "slope": 0.070294,
@@ -3442,7 +3937,7 @@
         "78.6%": 163.49,
         "100.0%": 147.26
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "INDUSINDBK": {
       "slope": 12.041667,
@@ -3462,11 +3957,11 @@
         "78.6%": 794.88,
         "100.0%": 750.5
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "NAUKRI": {
-      "slope": 6.728918,
-      "intercept": 417.089,
+      "slope": 6.72892,
+      "intercept": 417.0889,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2023-03-01",
@@ -3482,7 +3977,7 @@
         "78.6%": 938.15,
         "100.0%": 908.3
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "INOXWIND": {
       "slope": 1.428378,
@@ -3502,7 +3997,7 @@
         "78.6%": 82.16,
         "100.0%": 75.05
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "INDIGO": {
       "slope": 55.550686,
@@ -3522,11 +4017,11 @@
         "78.6%": 4077.76,
         "100.0%": 3895.2
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "IGIL": {
-      "slope": 0.704046,
-      "intercept": 276.3546,
+      "slope": 0.704048,
+      "intercept": 276.3545,
       "last_idx": 17,
       "last_date": "2026-06-01",
       "a1_date": "2025-03-01",
@@ -3542,7 +4037,7 @@
         "78.6%": 306.95,
         "100.0%": 284.8
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "IKS": {
       "slope": 2.290905,
@@ -3562,7 +4057,7 @@
         "78.6%": 1369.62,
         "100.0%": 1262.0
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "IPCALAB": {
       "slope": 20.202218,
@@ -3582,11 +4077,11 @@
         "78.6%": 1342.91,
         "100.0%": 1251.6
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "JBCHEPHARM": {
-      "slope": 21.173242,
-      "intercept": 95.0728,
+      "slope": 21.173241,
+      "intercept": 95.0729,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2022-06-01",
@@ -3602,7 +4097,7 @@
         "78.6%": 1461.82,
         "100.0%": 1365.47
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "JBMA": {
       "slope": 7.08308,
@@ -3622,7 +4117,7 @@
         "78.6%": 528.7,
         "100.0%": 477.0
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "JKTYRE": {
       "slope": 5.108412,
@@ -3642,7 +4137,7 @@
         "78.6%": 239.34,
         "100.0%": 137.9
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "JMFINANCIL": {
       "slope": 0.134839,
@@ -3662,11 +4157,11 @@
         "78.6%": 83.54,
         "100.0%": 53.23
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "JSWDULUX": {
-      "slope": 24.561545,
-      "intercept": 939.3918,
+      "slope": 24.561555,
+      "intercept": 939.3911,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2024-03-01",
@@ -3682,11 +4177,11 @@
         "78.6%": 2793.16,
         "100.0%": 2658.7
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "JSWENERGY": {
-      "slope": 6.440333,
-      "intercept": -18.0829,
+      "slope": 6.440332,
+      "intercept": -18.0828,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2023-02-01",
@@ -3702,7 +4197,7 @@
         "78.6%": 466.74,
         "100.0%": 426.3
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "JSWINFRA": {
       "slope": 1.126966,
@@ -3722,7 +4217,7 @@
         "78.6%": 246.77,
         "100.0%": 233.42
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "JPPOWER": {
       "slope": 0.222222,
@@ -3742,7 +4237,7 @@
         "78.6%": 15.58,
         "100.0%": 13.15
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "J&KBANK": {
       "slope": 0.465681,
@@ -3762,10 +4257,10 @@
         "78.6%": 49.24,
         "100.0%": 22.73
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "JINDALSTEL": {
-      "slope": 13.590085,
+      "slope": 13.590086,
       "intercept": -52.7171,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -3782,7 +4277,7 @@
         "78.6%": 846.95,
         "100.0%": 721.92
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "JIOFIN": {
       "slope": 2.079941,
@@ -3802,7 +4297,7 @@
         "78.6%": 230.51,
         "100.0%": 223.3
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "JUBLINGREA": {
       "slope": 5.440483,
@@ -3822,7 +4317,7 @@
         "78.6%": 586.99,
         "100.0%": 537.3
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "JUBLPHARMA": {
       "slope": 14.531344,
@@ -3842,7 +4337,7 @@
         "78.6%": 838.62,
         "100.0%": 786.05
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:34"
     },
     "KEI": {
       "slope": 144.795225,
@@ -3862,11 +4357,11 @@
         "78.6%": 4099.22,
         "100.0%": 3724.29
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:35"
     },
     "KAJARIACER": {
       "slope": 8.535826,
-      "intercept": 272.0922,
+      "intercept": 272.0921,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2020-05-01",
@@ -3882,7 +4377,7 @@
         "78.6%": 950.32,
         "100.0%": 869.6
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:35"
     },
     "KPIL": {
       "slope": 14.999065,
@@ -3902,7 +4397,7 @@
         "78.6%": 1077.27,
         "100.0%": 1007.1
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:35"
     },
     "KALYANKJIL": {
       "slope": 4.552977,
@@ -3922,7 +4417,7 @@
         "78.6%": 248.43,
         "100.0%": 100.14
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:35"
     },
     "KFINTECH": {
       "slope": 13.586534,
@@ -3942,10 +4437,10 @@
         "78.6%": 817.72,
         "100.0%": 784.95
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:35"
     },
     "KIRLOSENG": {
-      "slope": 1.746916,
+      "slope": 1.746915,
       "intercept": 77.0502,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -3962,7 +4457,7 @@
         "78.6%": 398.38,
         "100.0%": 117.23
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:35"
     },
     "KOTAKBANK": {
       "slope": 1.627098,
@@ -3982,7 +4477,7 @@
         "78.6%": 358.13,
         "100.0%": 345.5
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:35"
     },
     "KIMS": {
       "slope": 5.30625,
@@ -4002,7 +4497,7 @@
         "78.6%": 445.96,
         "100.0%": 350.0
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:35"
     },
     "LTF": {
       "slope": 7.109375,
@@ -4022,11 +4517,11 @@
         "78.6%": 247.4,
         "100.0%": 232.51
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:35"
     },
     "LTTS": {
-      "slope": 28.454195,
-      "intercept": 956.1893,
+      "slope": 28.454194,
+      "intercept": 956.1894,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2020-05-01",
@@ -4042,7 +4537,7 @@
         "78.6%": 3153.75,
         "100.0%": 2976.44
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:35"
     },
     "LICHSGFIN": {
       "slope": 4.158231,
@@ -4062,11 +4557,11 @@
         "78.6%": 488.71,
         "100.0%": 458.9
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:35"
     },
     "LTFOODS": {
       "slope": 7.182255,
-      "intercept": -163.3192,
+      "intercept": -163.3193,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2023-03-01",
@@ -4082,11 +4577,11 @@
         "78.6%": 362.15,
         "100.0%": 332.26
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:35"
     },
     "LT": {
-      "slope": 41.603974,
-      "intercept": 302.4125,
+      "slope": 41.603972,
+      "intercept": 302.4127,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2022-06-01",
@@ -4102,7 +4597,7 @@
         "78.6%": 3438.75,
         "100.0%": 3256.29
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:35"
     },
     "LEMONTREE": {
       "slope": 1.222286,
@@ -4122,11 +4617,11 @@
         "78.6%": 105.77,
         "100.0%": 99.61
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:35"
     },
     "LICI": {
-      "slope": 2.779552,
-      "intercept": 232.8906,
+      "slope": 2.779551,
+      "intercept": 232.8907,
       "last_idx": 48,
       "last_date": "2026-06-01",
       "a1_date": "2023-03-01",
@@ -4142,7 +4637,7 @@
         "78.6%": 375.26,
         "100.0%": 360.75
       },
-      "built_at": "2026-06-14 06:28"
+      "built_at": "2026-06-14 05:35"
     },
     "LLOYDSME": {
       "slope": 20.429078,
@@ -4162,7 +4657,7 @@
         "78.6%": 1223.15,
         "100.0%": 1042.28
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "LODHA": {
       "slope": 7.830654,
@@ -4182,7 +4677,7 @@
         "78.6%": 720.16,
         "100.0%": 650.8
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "LUPIN": {
       "slope": 42.002641,
@@ -4202,7 +4697,7 @@
         "78.6%": 1977.44,
         "100.0%": 1836.8
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "MMTC": {
       "slope": 0.68,
@@ -4222,16 +4717,16 @@
         "78.6%": 54.71,
         "100.0%": 50.1
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "MRF": {
-      "slope": 1165.030152,
-      "intercept": 36952.7989,
+      "slope": 1165.030373,
+      "intercept": 36952.7828,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2022-02-01",
       "a2_date": "2026-05-01",
-      "a1_price": 62583.46,
+      "a1_price": 62583.45,
       "a2_price": 122000.0,
       "n_touches": 14,
       "fib_levels": {
@@ -4242,11 +4737,11 @@
         "78.6%": 124557.3,
         "100.0%": 122000.0
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "MGL": {
-      "slope": 5.928886,
-      "intercept": 479.0491,
+      "slope": 5.928888,
+      "intercept": 479.0489,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2022-02-01",
@@ -4262,7 +4757,7 @@
         "78.6%": 969.98,
         "100.0%": 900.0
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "M&MFIN": {
       "slope": 2.851215,
@@ -4282,7 +4777,7 @@
         "78.6%": 287.28,
         "100.0%": 272.65
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "M&M": {
       "slope": 50.03133,
@@ -4302,10 +4797,10 @@
         "78.6%": 3003.64,
         "100.0%": 2896.0
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "MANAPPURAM": {
-      "slope": 2.017862,
+      "slope": 2.017863,
       "intercept": 26.5729,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -4322,7 +4817,7 @@
         "78.6%": 177.9,
         "100.0%": 135.54
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "MRPL": {
       "slope": 0.826474,
@@ -4342,7 +4837,7 @@
         "78.6%": 97.01,
         "100.0%": 47.49
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "MANKIND": {
       "slope": 8.118327,
@@ -4362,7 +4857,7 @@
         "78.6%": 2065.68,
         "100.0%": 1909.7
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "MARICO": {
       "slope": 8.266572,
@@ -4382,7 +4877,7 @@
         "78.6%": 631.35,
         "100.0%": 572.15
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "MARUTI": {
       "slope": 111.794107,
@@ -4402,7 +4897,7 @@
         "78.6%": 12732.36,
         "100.0%": 12201.0
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "MFSL": {
       "slope": 18.92143,
@@ -4422,7 +4917,7 @@
         "78.6%": 1084.1,
         "100.0%": 864.0
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "MAXHEALTH": {
       "slope": 12.404466,
@@ -4442,7 +4937,7 @@
         "78.6%": 947.51,
         "100.0%": 903.0
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "MAZDOCK": {
       "slope": 1.896768,
@@ -4462,7 +4957,7 @@
         "78.6%": 887.8,
         "100.0%": 108.07
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "MINDACORP": {
       "slope": 8.983397,
@@ -4482,7 +4977,7 @@
         "78.6%": 481.35,
         "100.0%": 443.78
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "MSUMI": {
       "slope": 0.110487,
@@ -4502,7 +4997,7 @@
         "78.6%": 35.25,
         "100.0%": 30.25
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "MOTILALOFS": {
       "slope": 9.637051,
@@ -4522,7 +5017,7 @@
         "78.6%": 677.84,
         "100.0%": 614.9
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "MCX": {
       "slope": 28.424123,
@@ -4542,7 +5037,7 @@
         "78.6%": 1435.04,
         "100.0%": 878.28
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "NATCOPHARM": {
       "slope": 9.549842,
@@ -4562,7 +5057,7 @@
         "78.6%": 880.52,
         "100.0%": 786.24
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "NBCC": {
       "slope": 1.585996,
@@ -4582,7 +5077,7 @@
         "78.6%": 83.72,
         "100.0%": 77.18
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "NCC": {
       "slope": 1.798358,
@@ -4602,11 +5097,11 @@
         "78.6%": 138.94,
         "100.0%": 130.0
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "NLCINDIA": {
       "slope": 5.001785,
-      "intercept": -109.0022,
+      "intercept": -109.0023,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2023-03-01",
@@ -4622,7 +5117,7 @@
         "78.6%": 225.33,
         "100.0%": 181.1
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "NMDC": {
       "slope": 0.359739,
@@ -4642,7 +5137,7 @@
         "78.6%": 35.77,
         "100.0%": 21.63
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "NSLNISP": {
       "slope": 0.08,
@@ -4662,7 +5157,7 @@
         "78.6%": 37.45,
         "100.0%": 33.01
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "NH": {
       "slope": 23.408084,
@@ -4682,11 +5177,11 @@
         "78.6%": 1677.45,
         "100.0%": 1589.0
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "NESTLEIND": {
-      "slope": 6.734471,
-      "intercept": 674.5181,
+      "slope": 6.734472,
+      "intercept": 674.518,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2020-09-01",
@@ -4702,7 +5197,7 @@
         "78.6%": 1231.88,
         "100.0%": 1159.4
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "NETWEB": {
       "slope": 28.498892,
@@ -4722,7 +5217,7 @@
         "78.6%": 1941.03,
         "100.0%": 1250.04
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "NEULANDLAB": {
       "slope": 275.399673,
@@ -4742,7 +5237,7 @@
         "78.6%": 12956.27,
         "100.0%": 11500.0
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "NEWGEN": {
       "slope": 6.500603,
@@ -4762,7 +5257,7 @@
         "78.6%": 430.36,
         "100.0%": 401.05
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "NAM-INDIA": {
       "slope": 12.303011,
@@ -4782,7 +5277,7 @@
         "78.6%": 591.78,
         "100.0%": 486.83
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "NUVOCO": {
       "slope": 0.355556,
@@ -4802,11 +5297,11 @@
         "78.6%": 295.4,
         "100.0%": 276.25
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "OBEROIRLTY": {
-      "slope": 15.799094,
-      "intercept": 267.7453,
+      "slope": 15.799093,
+      "intercept": 267.7454,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2020-05-01",
@@ -4822,7 +5317,7 @@
         "78.6%": 1467.02,
         "100.0%": 1389.48
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "ONGC": {
       "slope": 3.303974,
@@ -4842,11 +5337,11 @@
         "78.6%": 237.87,
         "100.0%": 218.91
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "OLECTRA": {
       "slope": 12.883813,
-      "intercept": -48.1508,
+      "intercept": -48.1507,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2020-12-01",
@@ -4862,7 +5357,7 @@
         "78.6%": 980.3,
         "100.0%": 866.6
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "PAYTM": {
       "slope": 28.20909,
@@ -4882,7 +5377,7 @@
         "78.6%": 993.17,
         "100.0%": 930.6
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "POLICYBZR": {
       "slope": 25.195,
@@ -4902,7 +5397,7 @@
         "78.6%": 1467.04,
         "100.0%": 1364.0
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "PCBL": {
       "slope": 3.363394,
@@ -4922,7 +5417,7 @@
         "78.6%": 245.01,
         "100.0%": 226.5
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "PGEL": {
       "slope": 11.598297,
@@ -4942,7 +5437,7 @@
         "78.6%": 466.81,
         "100.0%": 436.55
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "PNBHOUSING": {
       "slope": 10.281573,
@@ -4962,7 +5457,7 @@
         "78.6%": 809.94,
         "100.0%": 729.6
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "PTCIL": {
       "slope": 338.7643,
@@ -4982,7 +5477,7 @@
         "78.6%": 15644.33,
         "100.0%": 14499.0
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "PVRINOX": {
       "slope": 2.886778,
@@ -5002,7 +5497,7 @@
         "78.6%": 950.76,
         "100.0%": 907.4
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "PARADEEP": {
       "slope": 1.402468,
@@ -5022,10 +5517,10 @@
         "78.6%": 108.0,
         "100.0%": 99.7
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "PETRONET": {
-      "slope": 0.273929,
+      "slope": 0.273931,
       "intercept": 158.7504,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -5042,7 +5537,7 @@
         "78.6%": 208.1,
         "100.0%": 166.97
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "PFIZER": {
       "slope": 13.479091,
@@ -5062,10 +5557,10 @@
         "78.6%": 4083.88,
         "100.0%": 3596.63
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "PHOENIXLTD": {
-      "slope": 10.70887,
+      "slope": 10.708871,
       "intercept": 214.9653,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -5082,11 +5577,11 @@
         "78.6%": 904.88,
         "100.0%": 589.78
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "PIDILITIND": {
-      "slope": 9.133265,
-      "intercept": 601.4049,
+      "slope": 9.133264,
+      "intercept": 601.405,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2020-08-01",
@@ -5102,7 +5597,7 @@
         "78.6%": 1322.11,
         "100.0%": 1259.0
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "PPLPHARMA": {
       "slope": 1.965656,
@@ -5122,7 +5617,27 @@
         "78.6%": 146.03,
         "100.0%": 132.3
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
+    },
+    "POLYMED": {
+      "slope": 13.958994,
+      "intercept": 190.9114,
+      "last_idx": 74,
+      "last_date": "2026-06-01",
+      "a1_date": "2020-05-01",
+      "a2_date": "2026-03-01",
+      "a1_price": 204.87,
+      "a2_price": 1182.0,
+      "n_touches": 3,
+      "fib_levels": {
+        "23.6%": 1585.39,
+        "38.2%": 1508.3,
+        "50.0%": 1446.0,
+        "61.8%": 1383.7,
+        "78.6%": 1294.99,
+        "100.0%": 1182.0
+      },
+      "built_at": "2026-06-14 05:35"
     },
     "POLYCAB": {
       "slope": 79.107864,
@@ -5142,7 +5657,7 @@
         "78.6%": 5664.57,
         "100.0%": 4529.65
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "POONAWALLA": {
       "slope": 7.833333,
@@ -5162,7 +5677,7 @@
         "78.6%": 384.12,
         "100.0%": 361.2
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "PFC": {
       "slope": 0.927537,
@@ -5182,7 +5697,7 @@
         "78.6%": 167.82,
         "100.0%": 67.45
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "POWERGRID": {
       "slope": 2.857987,
@@ -5202,7 +5717,7 @@
         "78.6%": 263.86,
         "100.0%": 247.22
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "PRESTIGE": {
       "slope": 18.441275,
@@ -5222,7 +5737,7 @@
         "78.6%": 1180.89,
         "100.0%": 1090.0
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "PNB": {
       "slope": 1.498423,
@@ -5242,7 +5757,7 @@
         "78.6%": 98.88,
         "100.0%": 95.72
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "RRKABEL": {
       "slope": 33.15275,
@@ -5262,7 +5777,7 @@
         "78.6%": 1486.42,
         "100.0%": 1281.3
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "RBLBANK": {
       "slope": 2.344302,
@@ -5282,7 +5797,7 @@
         "78.6%": 193.27,
         "100.0%": 145.57
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "RECLTD": {
       "slope": 1.116178,
@@ -5302,7 +5817,7 @@
         "78.6%": 178.69,
         "100.0%": 63.79
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "RITES": {
       "slope": 0.543168,
@@ -5322,7 +5837,7 @@
         "78.6%": 159.67,
         "100.0%": 97.49
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "RADICO": {
       "slope": 28.327146,
@@ -5342,11 +5857,11 @@
         "78.6%": 1907.58,
         "100.0%": 1425.29
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "RAILTEL": {
       "slope": 1.128996,
-      "intercept": 66.4111,
+      "intercept": 66.4112,
       "last_idx": 63,
       "last_date": "2026-06-01",
       "a1_date": "2022-03-01",
@@ -5362,10 +5877,10 @@
         "78.6%": 203.3,
         "100.0%": 93.51
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "RKFORGE": {
-      "slope": 7.018867,
+      "slope": 7.018866,
       "intercept": -38.9293,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -5382,7 +5897,7 @@
         "78.6%": 496.13,
         "100.0%": 459.41
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "REDINGTON": {
       "slope": 2.422338,
@@ -5402,7 +5917,7 @@
         "78.6%": 206.13,
         "100.0%": 173.09
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "RPOWER": {
       "slope": 0.22931,
@@ -5422,7 +5937,7 @@
         "78.6%": 23.48,
         "100.0%": 9.05
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "SBFC": {
       "slope": 0.027692,
@@ -5442,11 +5957,11 @@
         "78.6%": 84.65,
         "100.0%": 79.6
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "SBILIFE": {
-      "slope": 12.664881,
-      "intercept": 670.1598,
+      "slope": 12.664878,
+      "intercept": 670.1599,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2020-10-01",
@@ -5462,7 +5977,7 @@
         "78.6%": 1480.09,
         "100.0%": 1303.4
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "SJVN": {
       "slope": 0.300084,
@@ -5482,7 +5997,7 @@
         "78.6%": 52.87,
         "100.0%": 22.9
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "SAILIFE": {
       "slope": 14.775,
@@ -5502,7 +6017,7 @@
         "78.6%": 882.36,
         "100.0%": 783.85
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "SAMMAANCAP": {
       "slope": 0.599696,
@@ -5522,7 +6037,7 @@
         "78.6%": 118.01,
         "100.0%": 97.61
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "MOTHERSON": {
       "slope": 1.687972,
@@ -5542,7 +6057,7 @@
         "78.6%": 113.3,
         "100.0%": 102.82
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "SARDAEN": {
       "slope": 12.446307,
@@ -5562,7 +6077,7 @@
         "78.6%": 489.67,
         "100.0%": 453.1
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "SCHAEFFLER": {
       "slope": 79.247159,
@@ -5582,7 +6097,7 @@
         "78.6%": 3691.18,
         "100.0%": 3489.69
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "SCHNEIDER": {
       "slope": 1.268421,
@@ -5602,7 +6117,7 @@
         "78.6%": 375.49,
         "100.0%": 91.7
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "SCI": {
       "slope": 6.214558,
@@ -5622,7 +6137,7 @@
         "78.6%": 230.61,
         "100.0%": 193.0
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "SHREECEM": {
       "slope": 110.63405,
@@ -5642,10 +6157,10 @@
         "78.6%": 23334.31,
         "100.0%": 22550.0
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "SHYAMMETL": {
-      "slope": 13.768134,
+      "slope": 13.768133,
       "intercept": -25.0155,
       "last_idx": 59,
       "last_date": "2026-06-01",
@@ -5662,11 +6177,11 @@
         "78.6%": 803.35,
         "100.0%": 746.0
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:35"
     },
     "SIEMENS": {
-      "slope": 33.23413,
-      "intercept": 532.8451,
+      "slope": 33.234131,
+      "intercept": 532.845,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2020-05-01",
@@ -5682,7 +6197,7 @@
         "78.6%": 3063.82,
         "100.0%": 2826.0
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:36"
     },
     "SOBHA": {
       "slope": 19.494677,
@@ -5702,7 +6217,7 @@
         "78.6%": 1225.66,
         "100.0%": 1130.0
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:36"
     },
     "SOLARINDS": {
       "slope": 264.668284,
@@ -5722,11 +6237,11 @@
         "78.6%": 10702.29,
         "100.0%": 8477.43
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:36"
     },
     "SONACOMS": {
-      "slope": 0.333056,
-      "intercept": 384.3443,
+      "slope": 0.333055,
+      "intercept": 384.3444,
       "last_idx": 59,
       "last_date": "2026-06-01",
       "a1_date": "2022-12-01",
@@ -5742,7 +6257,7 @@
         "78.6%": 448.25,
         "100.0%": 401.0
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:36"
     },
     "STARHEALTH": {
       "slope": 9.916667,
@@ -5762,11 +6277,11 @@
         "78.6%": 452.87,
         "100.0%": 416.55
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:36"
     },
     "SBIN": {
-      "slope": 18.753773,
-      "intercept": -451.6609,
+      "slope": 18.753777,
+      "intercept": -451.6612,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2025-03-01",
@@ -5782,11 +6297,11 @@
         "78.6%": 953.96,
         "100.0%": 917.36
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:36"
     },
     "SUNPHARMA": {
-      "slope": 16.651742,
-      "intercept": 326.8109,
+      "slope": 16.65174,
+      "intercept": 326.811,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2020-10-01",
@@ -5802,11 +6317,11 @@
         "78.6%": 1010.12,
         "100.0%": 759.76
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:36"
     },
     "SUNTV": {
-      "slope": 2.499709,
-      "intercept": 298.4212,
+      "slope": 2.499708,
+      "intercept": 298.4213,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2022-06-01",
@@ -5822,7 +6337,7 @@
         "78.6%": 509.38,
         "100.0%": 480.9
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:36"
     },
     "SUPREMEIND": {
       "slope": 37.470404,
@@ -5842,7 +6357,7 @@
         "78.6%": 3373.06,
         "100.0%": 3182.0
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:36"
     },
     "SUZLON": {
       "slope": 0.867778,
@@ -5862,7 +6377,7 @@
         "78.6%": 42.52,
         "100.0%": 38.19
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:36"
     },
     "SWANCORP": {
       "slope": 3.501525,
@@ -5882,10 +6397,10 @@
         "78.6%": 314.16,
         "100.0%": 295.65
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:36"
     },
     "SYRMA": {
-      "slope": 6.170299,
+      "slope": 6.170301,
       "intercept": 221.3971,
       "last_idx": 45,
       "last_date": "2026-06-01",
@@ -5902,7 +6417,7 @@
         "78.6%": 489.98,
         "100.0%": 375.65
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:36"
     },
     "TBOTEK": {
       "slope": 0.745456,
@@ -5922,7 +6437,7 @@
         "78.6%": 1082.27,
         "100.0%": 1004.2
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:36"
     },
     "TVSMOTOR": {
       "slope": 48.629438,
@@ -5942,7 +6457,7 @@
         "78.6%": 2540.37,
         "100.0%": 2154.9
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:36"
     },
     "TATACHEM": {
       "slope": 4.854965,
@@ -5962,11 +6477,11 @@
         "78.6%": 629.38,
         "100.0%": 571.51
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:36"
     },
     "TATACONSUM": {
-      "slope": 9.764988,
-      "intercept": 322.2117,
+      "slope": 9.764991,
+      "intercept": 322.2116,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2023-03-01",
@@ -5982,11 +6497,11 @@
         "78.6%": 955.27,
         "100.0%": 869.05
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:36"
     },
     "TATAINVEST": {
-      "slope": 10.246154,
-      "intercept": -191.3917,
+      "slope": 10.246155,
+      "intercept": -191.3918,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2023-03-01",
@@ -6002,7 +6517,7 @@
         "78.6%": 583.65,
         "100.0%": 536.09
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:36"
     },
     "TATAPOWER": {
       "slope": 4.667226,
@@ -6022,7 +6537,7 @@
         "78.6%": 368.69,
         "100.0%": 342.5
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:36"
     },
     "TTML": {
       "slope": 0.438769,
@@ -6042,10 +6557,10 @@
         "78.6%": 35.18,
         "100.0%": 31.22
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:36"
     },
     "TECHM": {
-      "slope": 14.334666,
+      "slope": 14.334667,
       "intercept": 378.4003,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -6062,10 +6577,10 @@
         "78.6%": 1099.79,
         "100.0%": 894.45
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:36"
     },
     "TECHNOE": {
-      "slope": 2.943882,
+      "slope": 2.943881,
       "intercept": 156.7608,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -6082,7 +6597,7 @@
         "78.6%": 557.0,
         "100.0%": 215.64
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:36"
     },
     "TEGA": {
       "slope": 24.870203,
@@ -6102,7 +6617,7 @@
         "78.6%": 1601.77,
         "100.0%": 1522.2
       },
-      "built_at": "2026-06-14 06:29"
+      "built_at": "2026-06-14 05:36"
     },
     "TEJASNET": {
       "slope": 3.900052,
@@ -6122,7 +6637,7 @@
         "78.6%": 365.79,
         "100.0%": 294.0
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "NIACL": {
       "slope": 0.942916,
@@ -6142,7 +6657,7 @@
         "78.6%": 130.54,
         "100.0%": 116.97
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "RAMCOCEM": {
       "slope": 5.617971,
@@ -6162,7 +6677,7 @@
         "78.6%": 878.36,
         "100.0%": 786.84
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "THERMAX": {
       "slope": 33.104475,
@@ -6182,7 +6697,7 @@
         "78.6%": 3241.81,
         "100.0%": 2742.7
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "TIMKEN": {
       "slope": 88.722517,
@@ -6202,7 +6717,7 @@
         "78.6%": 3009.04,
         "100.0%": 2800.5
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "TITAGARH": {
       "slope": 2.793366,
@@ -6222,10 +6737,10 @@
         "78.6%": 464.13,
         "100.0%": 74.92
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "TITAN": {
-      "slope": 39.196308,
+      "slope": 39.196307,
       "intercept": 755.3401,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -6242,11 +6757,11 @@
         "78.6%": 3581.71,
         "100.0%": 3303.1
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "TORNTPHARM": {
-      "slope": 13.523049,
-      "intercept": 933.9471,
+      "slope": 13.523044,
+      "intercept": 933.9473,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2021-03-01",
@@ -6262,7 +6777,7 @@
         "78.6%": 2102.03,
         "100.0%": 1393.73
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "TORNTPOWER": {
       "slope": 23.660736,
@@ -6282,7 +6797,7 @@
         "78.6%": 1314.55,
         "100.0%": 1175.82
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "TRENT": {
       "slope": 25.455052,
@@ -6302,7 +6817,7 @@
         "78.6%": 2354.6,
         "100.0%": 2180.44
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "TRITURBINE": {
       "slope": 6.332359,
@@ -6322,7 +6837,7 @@
         "78.6%": 505.23,
         "100.0%": 428.35
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "UCOBANK": {
       "slope": 0.259268,
@@ -6342,7 +6857,7 @@
         "78.6%": 23.27,
         "100.0%": 21.86
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "UNOMINDA": {
       "slope": 15.588873,
@@ -6362,10 +6877,10 @@
         "78.6%": 1034.28,
         "100.0%": 992.46
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "UPL": {
-      "slope": 5.090763,
+      "slope": 5.090762,
       "intercept": 203.7059,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -6382,11 +6897,11 @@
         "78.6%": 590.28,
         "100.0%": 565.15
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "UTIAMC": {
-      "slope": 4.201473,
-      "intercept": 439.4097,
+      "slope": 4.201477,
+      "intercept": 439.4096,
       "last_idx": 67,
       "last_date": "2026-06-01",
       "a1_date": "2021-04-01",
@@ -6402,11 +6917,11 @@
         "78.6%": 717.56,
         "100.0%": 519.24
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "ULTRACEMCO": {
-      "slope": 117.394815,
-      "intercept": 1989.9682,
+      "slope": 117.394825,
+      "intercept": 1989.9675,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2022-06-01",
@@ -6422,7 +6937,7 @@
         "78.6%": 10816.56,
         "100.0%": 10325.0
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "UNIONBANK": {
       "slope": 3.668943,
@@ -6442,7 +6957,7 @@
         "78.6%": 159.54,
         "100.0%": 156.21
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "UNITDSPR": {
       "slope": 13.038467,
@@ -6462,7 +6977,7 @@
         "78.6%": 1254.37,
         "100.0%": 1210.8
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "USHAMART": {
       "slope": 5.850364,
@@ -6482,7 +6997,7 @@
         "78.6%": 323.58,
         "100.0%": 276.34
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "VEDL": {
       "slope": 3.463843,
@@ -6502,11 +7017,11 @@
         "78.6%": 381.33,
         "100.0%": 268.7
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "VIJAYA": {
-      "slope": 14.302198,
-      "intercept": 89.9835,
+      "slope": 14.302197,
+      "intercept": 89.9836,
       "last_idx": 56,
       "last_date": "2026-06-01",
       "a1_date": "2023-04-01",
@@ -6522,7 +7037,7 @@
         "78.6%": 972.08,
         "100.0%": 848.0
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "VMM": {
       "slope": 0.213846,
@@ -6542,7 +7057,7 @@
         "78.6%": 105.32,
         "100.0%": 98.77
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "IDEA": {
       "slope": 0.032708,
@@ -6562,7 +7077,7 @@
         "78.6%": 7.55,
         "100.0%": 6.12
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "VOLTAS": {
       "slope": 13.192803,
@@ -6582,7 +7097,7 @@
         "78.6%": 1257.98,
         "100.0%": 1183.08
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "WAAREEENER": {
       "slope": 60.116054,
@@ -6602,7 +7117,7 @@
         "78.6%": 2649.96,
         "100.0%": 2403.0
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "WELCORP": {
       "slope": 3.694945,
@@ -6622,7 +7137,7 @@
         "78.6%": 347.51,
         "100.0%": 171.81
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "WELSPUNLIV": {
       "slope": 1.276182,
@@ -6642,7 +7157,7 @@
         "78.6%": 115.42,
         "100.0%": 107.1
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "WOCKPHARMA": {
       "slope": 9.728572,
@@ -6662,7 +7177,7 @@
         "78.6%": 567.54,
         "100.0%": 213.25
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "YESBANK": {
       "slope": 0.128372,
@@ -6682,7 +7197,7 @@
         "78.6%": 17.79,
         "100.0%": 16.02
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "ZFCVINDIA": {
       "slope": 275.461274,
@@ -6702,7 +7217,7 @@
         "78.6%": 13235.68,
         "100.0%": 12302.0
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "ZENTEC": {
       "slope": 28.330894,
@@ -6722,7 +7237,7 @@
         "78.6%": 1364.67,
         "100.0%": 1223.0
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "ZENSARTECH": {
       "slope": 3.877446,
@@ -6742,7 +7257,7 @@
         "78.6%": 358.66,
         "100.0%": 192.55
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "ZYDUSLIFE": {
       "slope": 11.191937,
@@ -6762,10 +7277,10 @@
         "78.6%": 896.34,
         "100.0%": 835.5
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "ZYDUSWELL": {
-      "slope": 1.292773,
+      "slope": 1.292774,
       "intercept": 231.7854,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -6782,7 +7297,7 @@
         "78.6%": 341.04,
         "100.0%": 283.5
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "AXISCADES": {
       "slope": 45.885718,
@@ -6802,7 +7317,7 @@
         "78.6%": 1308.91,
         "100.0%": 1063.3
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "AVL": {
       "slope": 12.217195,
@@ -6822,7 +7337,7 @@
         "78.6%": 465.29,
         "100.0%": 436.55
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "AHLUCONT": {
       "slope": 6.150868,
@@ -6842,7 +7357,7 @@
         "78.6%": 700.76,
         "100.0%": 645.15
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "AKUMS": {
       "slope": 0.477776,
@@ -6862,11 +7377,11 @@
         "78.6%": 457.39,
         "100.0%": 409.3
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "APLLTD": {
-      "slope": 5.239417,
-      "intercept": 263.8014,
+      "slope": 5.239418,
+      "intercept": 263.8013,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2023-03-01",
@@ -6882,7 +7397,7 @@
         "78.6%": 672.86,
         "100.0%": 635.8
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "ALIVUS": {
       "slope": 1.35165,
@@ -6902,7 +7417,7 @@
         "78.6%": 549.52,
         "100.0%": 337.56
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "APOLLO": {
       "slope": 0.175371,
@@ -6922,7 +7437,7 @@
         "78.6%": 84.4,
         "100.0%": 10.88
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "ACI": {
       "slope": 0.62915,
@@ -6942,7 +7457,7 @@
         "78.6%": 535.44,
         "100.0%": 507.85
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "ARVINDFASN": {
       "slope": 4.140275,
@@ -6962,7 +7477,7 @@
         "78.6%": 393.76,
         "100.0%": 366.2
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "ARVIND": {
       "slope": 6.732377,
@@ -6982,7 +7497,7 @@
         "78.6%": 326.17,
         "100.0%": 274.8
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "ASHAPURMIN": {
       "slope": 12.832182,
@@ -7002,7 +7517,7 @@
         "78.6%": 526.34,
         "100.0%": 455.1
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "ASHOKA": {
       "slope": 0.77125,
@@ -7022,7 +7537,7 @@
         "78.6%": 109.6,
         "100.0%": 101.0
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "ASTRAMICRO": {
       "slope": 22.339805,
@@ -7042,7 +7557,7 @@
         "78.6%": 985.35,
         "100.0%": 851.0
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "AURIONPRO": {
       "slope": 15.990056,
@@ -7062,7 +7577,7 @@
         "78.6%": 768.18,
         "100.0%": 719.6
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "AVALON": {
       "slope": 20.723529,
@@ -7082,7 +7597,7 @@
         "78.6%": 973.9,
         "100.0%": 777.3
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "AZAD": {
       "slope": 18.231823,
@@ -7102,7 +7617,7 @@
         "78.6%": 1571.86,
         "100.0%": 1360.0
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "BANCOINDIA": {
       "slope": 16.337334,
@@ -7122,7 +7637,7 @@
         "78.6%": 538.4,
         "100.0%": 495.04
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "BBOX": {
       "slope": 10.002368,
@@ -7142,10 +7657,10 @@
         "78.6%": 585.26,
         "100.0%": 444.3
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "CMSINFO": {
-      "slope": 1.417595,
+      "slope": 1.417596,
       "intercept": 191.0202,
       "last_idx": 53,
       "last_date": "2026-06-01",
@@ -7162,7 +7677,7 @@
         "78.6%": 274.78,
         "100.0%": 261.9
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "CSBBANK": {
       "slope": 2.963888,
@@ -7182,7 +7697,7 @@
         "78.6%": 344.57,
         "100.0%": 324.8
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "CAMPUS": {
       "slope": 0.124548,
@@ -7202,10 +7717,10 @@
         "78.6%": 224.89,
         "100.0%": 215.2
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "CENTURYPLY": {
-      "slope": 7.418327,
+      "slope": 7.418328,
       "intercept": 91.7987,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -7222,7 +7737,7 @@
         "78.6%": 665.03,
         "100.0%": 618.5
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:36"
     },
     "CUPID": {
       "slope": 0.032005,
@@ -7242,7 +7757,7 @@
         "78.6%": 36.13,
         "100.0%": 2.4
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "DCBBANK": {
       "slope": 4.750881,
@@ -7262,11 +7777,11 @@
         "78.6%": 166.81,
         "100.0%": 156.64
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "DATAMATICS": {
-      "slope": 9.784315,
-      "intercept": -62.6864,
+      "slope": 9.784314,
+      "intercept": -62.6863,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2022-12-01",
@@ -7282,7 +7797,7 @@
         "78.6%": 676.08,
         "100.0%": 632.0
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "DIACABS": {
       "slope": 3.908621,
@@ -7302,7 +7817,7 @@
         "78.6%": 136.29,
         "100.0%": 115.57
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "DBL": {
       "slope": 6.564025,
@@ -7322,7 +7837,7 @@
         "78.6%": 406.65,
         "100.0%": 382.05
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "AGARWALEYE": {
       "slope": 7.4,
@@ -7342,11 +7857,11 @@
         "78.6%": 421.43,
         "100.0%": 401.0
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "DYNAMATECH": {
-      "slope": 110.951864,
-      "intercept": -1215.7673,
+      "slope": 110.951861,
+      "intercept": -1215.7671,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2022-06-01",
@@ -7362,7 +7877,7 @@
         "78.6%": 7032.15,
         "100.0%": 5441.34
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "EPL": {
       "slope": 1.276185,
@@ -7382,7 +7897,7 @@
         "78.6%": 199.23,
         "100.0%": 186.64
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "EDELWEISS": {
       "slope": 2.025886,
@@ -7402,7 +7917,7 @@
         "78.6%": 75.96,
         "100.0%": 57.96
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "EMIL": {
       "slope": 0.685294,
@@ -7422,7 +7937,7 @@
         "78.6%": 94.36,
         "100.0%": 84.9
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "ELECTCAST": {
       "slope": 0.680027,
@@ -7442,7 +7957,7 @@
         "78.6%": 69.63,
         "100.0%": 25.07
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "EMBDL": {
       "slope": 0.013,
@@ -7462,7 +7977,7 @@
         "78.6%": 47.27,
         "100.0%": 39.46
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "EQUITASBNK": {
       "slope": 0.325498,
@@ -7482,7 +7997,7 @@
         "78.6%": 56.75,
         "100.0%": 51.25
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "ETHOSLTD": {
       "slope": 26.871251,
@@ -7502,7 +8017,7 @@
         "78.6%": 2117.69,
         "100.0%": 1919.4
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "FEDFINA": {
       "slope": 3.551818,
@@ -7522,11 +8037,11 @@
         "78.6%": 129.21,
         "100.0%": 119.07
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "FIEMIND": {
-      "slope": 22.402008,
-      "intercept": -107.7496,
+      "slope": 22.402005,
+      "intercept": -107.7495,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2023-03-01",
@@ -7542,7 +8057,7 @@
         "78.6%": 1518.62,
         "100.0%": 1236.37
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "FINPIPE": {
       "slope": 1.168477,
@@ -7562,11 +8077,11 @@
         "78.6%": 158.85,
         "100.0%": 147.54
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "GRWRHITECH": {
-      "slope": 77.88678,
-      "intercept": -521.7406,
+      "slope": 77.886773,
+      "intercept": -521.7403,
       "last_idx": 51,
       "last_date": "2026-06-01",
       "a1_date": "2024-05-01",
@@ -7582,7 +8097,7 @@
         "78.6%": 3452.37,
         "100.0%": 2671.62
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "GODREJAGRO": {
       "slope": 3.89063,
@@ -7602,7 +8117,7 @@
         "78.6%": 538.33,
         "100.0%": 506.1
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "GOKEX": {
       "slope": 7.999092,
@@ -7622,7 +8137,7 @@
         "78.6%": 601.41,
         "100.0%": 531.0
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "GOKULAGRO": {
       "slope": 4.704545,
@@ -7642,7 +8157,7 @@
         "78.6%": 172.17,
         "100.0%": 151.0
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "GREAVESCOT": {
       "slope": 0.874257,
@@ -7662,7 +8177,7 @@
         "78.6%": 136.25,
         "100.0%": 119.99
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "GPPL": {
       "slope": 1.879989,
@@ -7682,7 +8197,7 @@
         "78.6%": 148.43,
         "100.0%": 141.55
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "HGINFRA": {
       "slope": 4.009221,
@@ -7702,7 +8217,7 @@
         "78.6%": 483.11,
         "100.0%": 429.5
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "HCG": {
       "slope": 8.304166,
@@ -7722,7 +8237,7 @@
         "78.6%": 545.55,
         "100.0%": 513.3
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "HEMIPROP": {
       "slope": 0.869444,
@@ -7742,11 +8257,11 @@
         "78.6%": 122.47,
         "100.0%": 111.2
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "HERITGFOOD": {
-      "slope": 4.446079,
-      "intercept": -23.1216,
+      "slope": 4.44608,
+      "intercept": -23.1217,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2023-03-01",
@@ -7762,7 +8277,7 @@
         "78.6%": 311.52,
         "100.0%": 292.55
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "HCC": {
       "slope": 0.139231,
@@ -7782,7 +8297,7 @@
         "78.6%": 16.0,
         "100.0%": 13.65
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "IIFLCAPS": {
       "slope": 5.726957,
@@ -7802,7 +8317,7 @@
         "78.6%": 267.79,
         "100.0%": 240.4
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "INOXINDIA": {
       "slope": 15.43502,
@@ -7822,10 +8337,10 @@
         "78.6%": 1262.32,
         "100.0%": 1066.92
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "INDIAGLYCO": {
-      "slope": 4.600315,
+      "slope": 4.600316,
       "intercept": 102.3203,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -7842,7 +8357,7 @@
         "78.6%": 520.49,
         "100.0%": 332.34
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "INDIASHLTR": {
       "slope": 7.773566,
@@ -7862,7 +8377,7 @@
         "78.6%": 689.66,
         "100.0%": 603.54
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "ICIL": {
       "slope": 4.115511,
@@ -7882,7 +8397,7 @@
         "78.6%": 245.0,
         "100.0%": 218.31
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "INOXGREEN": {
       "slope": 2.598182,
@@ -7902,10 +8417,10 @@
         "78.6%": 146.17,
         "100.0%": 132.58
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "JKPAPER": {
-      "slope": 3.468915,
+      "slope": 3.468914,
       "intercept": 58.5571,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -7922,7 +8437,7 @@
         "78.6%": 325.53,
         "100.0%": 304.85
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "JAIBALAJI": {
       "slope": 0.1764,
@@ -7942,7 +8457,7 @@
         "78.6%": 61.87,
         "100.0%": 7.16
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "JAMNAAUTO": {
       "slope": 2.997315,
@@ -7962,7 +8477,7 @@
         "78.6%": 114.62,
         "100.0%": 109.22
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "JAYNECOIND": {
       "slope": 0.478302,
@@ -7982,7 +8497,27 @@
         "78.6%": 47.05,
         "100.0%": 28.0
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
+    },
+    "JSLL": {
+      "slope": 10.390729,
+      "intercept": 25.6443,
+      "last_idx": 48,
+      "last_date": "2026-06-01",
+      "a1_date": "2022-11-01",
+      "a2_date": "2025-06-01",
+      "a1_price": 77.6,
+      "a2_price": 399.71,
+      "n_touches": 3,
+      "fib_levels": {
+        "23.6%": 1718.7,
+        "38.2%": 1466.64,
+        "50.0%": 1262.92,
+        "61.8%": 1059.2,
+        "78.6%": 769.16,
+        "100.0%": 399.71
+      },
+      "built_at": "2026-06-14 05:37"
     },
     "JLHL": {
       "slope": 5.080956,
@@ -8002,7 +8537,7 @@
         "78.6%": 1224.12,
         "100.0%": 1177.1
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "JUSTDIAL": {
       "slope": 2.245455,
@@ -8022,7 +8557,7 @@
         "78.6%": 503.68,
         "100.0%": 480.5
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "JYOTHYLAB": {
       "slope": 1.4727,
@@ -8042,7 +8577,7 @@
         "78.6%": 213.62,
         "100.0%": 196.15
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "KNRCON": {
       "slope": 0.270458,
@@ -8062,7 +8597,7 @@
         "78.6%": 114.61,
         "100.0%": 108.65
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "KRBL": {
       "slope": 1.858533,
@@ -8082,7 +8617,7 @@
         "78.6%": 299.23,
         "100.0%": 274.65
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "KSB": {
       "slope": 10.83243,
@@ -8102,7 +8637,7 @@
         "78.6%": 671.89,
         "100.0%": 576.23
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "KTKBANK": {
       "slope": 2.822751,
@@ -8122,7 +8657,7 @@
         "78.6%": 188.85,
         "100.0%": 164.47
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "KSCL": {
       "slope": 6.877725,
@@ -8142,7 +8677,7 @@
         "78.6%": 773.56,
         "100.0%": 705.1
       },
-      "built_at": "2026-06-14 06:30"
+      "built_at": "2026-06-14 05:37"
     },
     "KIRLOSBROS": {
       "slope": 7.764504,
@@ -8162,11 +8697,11 @@
         "78.6%": 761.69,
         "100.0%": 242.81
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "KIRLPNU": {
-      "slope": 18.216906,
-      "intercept": 422.3483,
+      "slope": 18.216909,
+      "intercept": 422.3482,
       "last_idx": 37,
       "last_date": "2026-06-01",
       "a1_date": "2023-11-01",
@@ -8182,7 +8717,7 @@
         "78.6%": 1140.71,
         "100.0%": 987.07
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "KITEX": {
       "slope": 0.634478,
@@ -8202,7 +8737,7 @@
         "78.6%": 104.39,
         "100.0%": 44.72
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "LLOYDSENGG": {
       "slope": 0.641626,
@@ -8222,7 +8757,7 @@
         "78.6%": 46.39,
         "100.0%": 37.4
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "LLOYDSENT": {
       "slope": 0.292767,
@@ -8242,7 +8777,7 @@
         "78.6%": 48.25,
         "100.0%": 40.69
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "LUMAXTECH": {
       "slope": 8.882354,
@@ -8262,10 +8797,10 @@
         "78.6%": 757.41,
         "100.0%": 446.86
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "MOIL": {
-      "slope": 1.162515,
+      "slope": 1.162517,
       "intercept": 95.2756,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -8282,11 +8817,11 @@
         "78.6%": 219.55,
         "100.0%": 125.5
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "MSTCLTD": {
-      "slope": 4.159173,
-      "intercept": 66.8487,
+      "slope": 4.159174,
+      "intercept": 66.8486,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2023-03-01",
@@ -8302,7 +8837,7 @@
         "78.6%": 408.09,
         "100.0%": 362.15
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "MTARTECH": {
       "slope": 5.762309,
@@ -8322,7 +8857,7 @@
         "78.6%": 2716.49,
         "100.0%": 1155.6
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "MAHSCOOTER": {
       "slope": 202.082492,
@@ -8342,7 +8877,7 @@
         "78.6%": 10774.08,
         "100.0%": 8705.65
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "MANORAMA": {
       "slope": 34.51454,
@@ -8362,7 +8897,7 @@
         "78.6%": 1184.16,
         "100.0%": 1060.6
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "MARKSANS": {
       "slope": 2.600286,
@@ -8382,7 +8917,7 @@
         "78.6%": 178.41,
         "100.0%": 155.0
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "MEDPLUS": {
       "slope": 5.404412,
@@ -8402,10 +8937,10 @@
         "78.6%": 794.1,
         "100.0%": 732.0
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "METROPOLIS": {
-      "slope": 3.256957,
+      "slope": 3.256956,
       "intercept": 176.9367,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -8422,11 +8957,11 @@
         "78.6%": 451.54,
         "100.0%": 411.44
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "MIDHANI": {
       "slope": 2.552483,
-      "intercept": 84.7168,
+      "intercept": 84.7169,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2022-06-01",
@@ -8442,7 +8977,7 @@
         "78.6%": 306.36,
         "100.0%": 265.94
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "NESCO": {
       "slope": 14.274501,
@@ -8462,7 +8997,7 @@
         "78.6%": 1009.62,
         "100.0%": 838.29
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "NFL": {
       "slope": 0.605808,
@@ -8482,7 +9017,7 @@
         "78.6%": 67.21,
         "100.0%": 63.35
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "NAZARA": {
       "slope": 2.390312,
@@ -8502,7 +9037,7 @@
         "78.6%": 236.74,
         "100.0%": 215.7
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "ORIENTCEM": {
       "slope": 1.273411,
@@ -8522,7 +9057,7 @@
         "78.6%": 128.31,
         "100.0%": 121.85
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "PNGJL": {
       "slope": 2.654547,
@@ -8542,7 +9077,7 @@
         "78.6%": 552.95,
         "100.0%": 503.0
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "PCJEWELLER": {
       "slope": 0.034118,
@@ -8562,7 +9097,7 @@
         "78.6%": 5.66,
         "100.0%": 1.86
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "PTC": {
       "slope": 2.399157,
@@ -8582,7 +9117,7 @@
         "78.6%": 164.64,
         "100.0%": 146.97
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "PARAS": {
       "slope": 14.675955,
@@ -8602,10 +9137,10 @@
         "78.6%": 692.79,
         "100.0%": 580.5
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "PGIL": {
-      "slope": 3.63815,
+      "slope": 3.638149,
       "intercept": 36.617,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -8622,10 +9157,10 @@
         "78.6%": 548.79,
         "100.0%": 160.31
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "POWERMECH": {
-      "slope": 29.903392,
+      "slope": 29.903393,
       "intercept": -405.4409,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -8642,7 +9177,7 @@
         "78.6%": 1951.35,
         "100.0%": 1717.7
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "PRICOLLTD": {
       "slope": 9.138068,
@@ -8662,7 +9197,7 @@
         "78.6%": 537.91,
         "100.0%": 508.95
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "PRIVISCL": {
       "slope": 32.802834,
@@ -8682,7 +9217,7 @@
         "78.6%": 1841.61,
         "100.0%": 1365.34
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "PRUDENT": {
       "slope": 39.439647,
@@ -8702,7 +9237,7 @@
         "78.6%": 2298.41,
         "100.0%": 2121.0
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "PURVA": {
       "slope": 2.886223,
@@ -8722,7 +9257,7 @@
         "78.6%": 179.78,
         "100.0%": 160.69
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "QPOWER": {
       "slope": 34.830102,
@@ -8742,10 +9277,10 @@
         "78.6%": 765.04,
         "100.0%": 581.0
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "QUESS": {
-      "slope": 0.249249,
+      "slope": 0.24925,
       "intercept": 146.4041,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -8762,7 +9297,7 @@
         "78.6%": 182.48,
         "100.0%": 164.1
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "RALLIS": {
       "slope": 0.903153,
@@ -8782,7 +9317,7 @@
         "78.6%": 227.04,
         "100.0%": 212.77
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "RCF": {
       "slope": 1.087118,
@@ -8802,7 +9337,7 @@
         "78.6%": 112.52,
         "100.0%": 106.0
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "RATEGAIN": {
       "slope": 4.488889,
@@ -8822,10 +9357,10 @@
         "78.6%": 515.11,
         "100.0%": 437.0
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "RATNAMANI": {
-      "slope": 20.630851,
+      "slope": 20.63085,
       "intercept": 492.3405,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -8842,7 +9377,7 @@
         "78.6%": 2237.92,
         "100.0%": 1936.5
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "RTNINDIA": {
       "slope": 0.327143,
@@ -8862,7 +9397,7 @@
         "78.6%": 28.03,
         "100.0%": 24.4
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "RTNPOWER": {
       "slope": 0.131111,
@@ -8882,7 +9417,7 @@
         "78.6%": 8.18,
         "100.0%": 7.52
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "REFEX": {
       "slope": 2.685865,
@@ -8902,11 +9437,11 @@
         "78.6%": 162.62,
         "100.0%": 43.76
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "SKFINDIA": {
-      "slope": 3.125574,
-      "intercept": 1182.0843,
+      "slope": 3.125572,
+      "intercept": 1182.0844,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2020-05-01",
@@ -8922,7 +9457,7 @@
         "78.6%": 1483.84,
         "100.0%": 1404.0
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "SKYGOLD": {
       "slope": 8.679576,
@@ -8942,10 +9477,10 @@
         "78.6%": 350.27,
         "100.0%": 285.0
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "SMLMAH": {
-      "slope": 15.810157,
+      "slope": 15.810156,
       "intercept": 104.9153,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -8962,7 +9497,7 @@
         "78.6%": 1947.69,
         "100.0%": 1021.9
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "SAFARI": {
       "slope": 19.123716,
@@ -8982,7 +9517,7 @@
         "78.6%": 1434.55,
         "100.0%": 1363.1
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "SAMHI": {
       "slope": 0.536364,
@@ -9002,7 +9537,7 @@
         "78.6%": 136.53,
         "100.0%": 127.0
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "SANDUMA": {
       "slope": 4.493405,
@@ -9022,7 +9557,7 @@
         "78.6%": 188.36,
         "100.0%": 170.51
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:37"
     },
     "SANSERA": {
       "slope": 13.686151,
@@ -9042,7 +9577,7 @@
         "78.6%": 1017.01,
         "100.0%": 817.14
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "SENCO": {
       "slope": 2.911958,
@@ -9062,7 +9597,7 @@
         "78.6%": 295.9,
         "100.0%": 276.0
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "SHAILY": {
       "slope": 52.206297,
@@ -9082,7 +9617,7 @@
         "78.6%": 2083.98,
         "100.0%": 1770.9
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "SHARDACROP": {
       "slope": 10.471114,
@@ -9102,7 +9637,7 @@
         "78.6%": 627.75,
         "100.0%": 447.36
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "SHILPAMED": {
       "slope": 4.362785,
@@ -9122,11 +9657,11 @@
         "78.6%": 328.3,
         "100.0%": 259.5
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "SHRIPISTON": {
-      "slope": 3.696419,
-      "intercept": 214.816,
+      "slope": 3.696416,
+      "intercept": 214.8161,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2020-10-01",
@@ -9142,7 +9677,7 @@
         "78.6%": 1050.07,
         "100.0%": 310.92
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "SKIPPER": {
       "slope": 6.719016,
@@ -9162,7 +9697,7 @@
         "78.6%": 381.8,
         "100.0%": 327.05
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "SOUTHBANK": {
       "slope": 1.03443,
@@ -9182,7 +9717,7 @@
         "78.6%": 36.4,
         "100.0%": 33.38
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "STARCEMENT": {
       "slope": 2.581774,
@@ -9202,7 +9737,7 @@
         "78.6%": 206.47,
         "100.0%": 196.53
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "STLTECH": {
       "slope": 2.86,
@@ -9222,7 +9757,7 @@
         "78.6%": 211.99,
         "100.0%": 84.6
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "STAR": {
       "slope": 14.796998,
@@ -9242,11 +9777,11 @@
         "78.6%": 867.59,
         "100.0%": 768.65
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "STYRENIX": {
-      "slope": 8.533616,
-      "intercept": 267.4523,
+      "slope": 8.533612,
+      "intercept": 267.4524,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2020-09-01",
@@ -9262,11 +9797,11 @@
         "78.6%": 1175.98,
         "100.0%": 566.13
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "SUBROS": {
-      "slope": 9.986293,
-      "intercept": -70.5599,
+      "slope": 9.986289,
+      "intercept": -70.5597,
       "last_idx": 74,
       "last_date": "2026-06-01",
       "a1_date": "2023-02-01",
@@ -9282,7 +9817,7 @@
         "78.6%": 533.22,
         "100.0%": 348.86
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "SUDARSCHEM": {
       "slope": 10.132166,
@@ -9302,7 +9837,7 @@
         "78.6%": 812.75,
         "100.0%": 726.4
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "SUNTECK": {
       "slope": 1.839967,
@@ -9322,10 +9857,10 @@
         "78.6%": 299.37,
         "100.0%": 270.75
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "SUPRIYA": {
-      "slope": 10.449384,
+      "slope": 10.449385,
       "intercept": 23.0308,
       "last_idx": 53,
       "last_date": "2026-06-01",
@@ -9342,7 +9877,7 @@
         "78.6%": 660.95,
         "100.0%": 545.5
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "SURYAROSNI": {
       "slope": 2.566829,
@@ -9362,7 +9897,7 @@
         "78.6%": 207.72,
         "100.0%": 187.35
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "TARC": {
       "slope": 2.098611,
@@ -9382,7 +9917,7 @@
         "78.6%": 117.0,
         "100.0%": 109.1
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "TDPOWERSYS": {
       "slope": 6.576219,
@@ -9402,10 +9937,10 @@
         "78.6%": 524.95,
         "100.0%": 292.25
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "TSFINV": {
-      "slope": 7.165037,
+      "slope": 7.165038,
       "intercept": -183.2722,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -9422,14 +9957,14 @@
         "78.6%": 330.51,
         "100.0%": 232.3
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "TMB": {
-      "slope": 1.190052,
-      "intercept": 364.5455,
+      "slope": 1.149017,
+      "intercept": 365.9408,
       "last_idx": 44,
       "last_date": "2026-06-01",
-      "a1_date": "2023-04-01",
+      "a1_date": "2023-03-01",
       "a2_date": "2025-08-01",
       "a1_price": 371.69,
       "a2_price": 405.01,
@@ -9442,7 +9977,7 @@
         "78.6%": 487.81,
         "100.0%": 405.01
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "TEXRAIL": {
       "slope": 0.987193,
@@ -9462,7 +9997,7 @@
         "78.6%": 89.33,
         "100.0%": 78.05
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "THOMASCOOK": {
       "slope": 0.922322,
@@ -9482,10 +10017,10 @@
         "78.6%": 92.69,
         "100.0%": 86.35
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "THYROCARE": {
-      "slope": 4.088695,
+      "slope": 4.088694,
       "intercept": -15.0852,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -9502,7 +10037,7 @@
         "78.6%": 254.03,
         "100.0%": 177.08
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "TIMETECHNO": {
       "slope": 3.33115,
@@ -9522,10 +10057,10 @@
         "78.6%": 164.1,
         "100.0%": 154.0
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "TIPSMUSIC": {
-      "slope": 9.596443,
+      "slope": 9.596444,
       "intercept": -200.1975,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -9542,7 +10077,7 @@
         "78.6%": 533.71,
         "100.0%": 481.15
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "TRIVENI": {
       "slope": 4.695049,
@@ -9562,7 +10097,7 @@
         "78.6%": 345.79,
         "100.0%": 321.5
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "UJJIVANSFB": {
       "slope": 1.311429,
@@ -9582,10 +10117,10 @@
         "78.6%": 52.71,
         "100.0%": 49.24
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "VGUARD": {
-      "slope": 2.000879,
+      "slope": 2.00088,
       "intercept": 147.9376,
       "last_idx": 74,
       "last_date": "2026-06-01",
@@ -9602,7 +10137,7 @@
         "78.6%": 301.12,
         "100.0%": 290.0
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "VMART": {
       "slope": 2.039655,
@@ -9622,7 +10157,7 @@
         "78.6%": 514.16,
         "100.0%": 457.9
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "VIPIND": {
       "slope": 1.09874,
@@ -9642,7 +10177,7 @@
         "78.6%": 292.53,
         "100.0%": 278.25
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "V2RETAIL": {
       "slope": 0.077581,
@@ -9662,7 +10197,7 @@
         "78.6%": 60.14,
         "100.0%": 6.7
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "WABAG": {
       "slope": 22.172879,
@@ -9682,7 +10217,7 @@
         "78.6%": 1156.46,
         "100.0%": 1033.0
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "DBREALTY": {
       "slope": 1.190769,
@@ -9702,7 +10237,7 @@
         "78.6%": 97.37,
         "100.0%": 83.5
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "VARROC": {
       "slope": 6.026545,
@@ -9722,7 +10257,7 @@
         "78.6%": 492.93,
         "100.0%": 462.0
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "VIYASH": {
       "slope": 4.099048,
@@ -9742,7 +10277,7 @@
         "78.6%": 199.36,
         "100.0%": 178.13
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "VOLTAMP": {
       "slope": 62.944232,
@@ -9762,7 +10297,7 @@
         "78.6%": 4951.31,
         "100.0%": 2312.09
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "WELENT": {
       "slope": 8.018125,
@@ -9782,7 +10317,7 @@
         "78.6%": 445.13,
         "100.0%": 412.0
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "WESTLIFE": {
       "slope": 1.834765,
@@ -9802,7 +10337,7 @@
         "78.6%": 423.12,
         "100.0%": 398.4
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "YATHARTH": {
       "slope": 0.088235,
@@ -9822,7 +10357,7 @@
         "78.6%": 462.08,
         "100.0%": 345.6
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     },
     "KIRIINDUS": {
       "slope": 2.129729,
@@ -9842,7 +10377,7 @@
         "78.6%": 357.51,
         "100.0%": 333.8
       },
-      "built_at": "2026-06-14 06:31"
+      "built_at": "2026-06-14 05:38"
     }
   }
 }
