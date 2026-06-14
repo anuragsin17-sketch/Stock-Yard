@@ -96,6 +96,7 @@ jobs:
       run: |
         git config user.name  "Stock Yard Bot"
         git config user.email "bot@stockyard.io"
+        git pull --rebase origin main || true
         # Always save cache and scan output
         git add trendline_cache.json trendline_screen.json alerted_today.json || true
         git add previous_stocks.json || true

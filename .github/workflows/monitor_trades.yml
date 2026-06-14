@@ -62,6 +62,7 @@ jobs:
       run: |
         git config user.name  "Stock Yard Bot"
         git config user.email "bot@stockyard.io"
+        git pull --rebase origin main || true
         git add radar_trades.json || true
         git diff --staged --quiet || git commit -m "state: trade monitor $(date -u '+%Y-%m-%d %H:%M UTC')"
         git push
