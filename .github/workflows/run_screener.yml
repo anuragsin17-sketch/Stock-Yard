@@ -2,16 +2,23 @@ name: Stock Yard Screener
 
 on:
   workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Run mode: scan (fast) or build (full rebuild)'
+        required: false
+        default: 'scan'
   schedule:
-    # IST Market Hours: 9:15 AM - 3:30 PM IST = 3:45 AM - 10:00 AM UTC
-    - cron: '0,15,30,45 4-9 * * 1-5'
-    - cron: '0 10 * * 1-5'
+    # Weekly cache build: Sunday 2:00 AM UTC (7:30 AM IST)
+    - cron: '0 2 * * 0'
+    # Daily fast scan: Mon-Sat every 30 min during market hours (3:45-10:00 UTC = 9:15-3:30 IST)
+    - cron: '15,45 3-9 * * 1-6'
+    - cron: '0 10 * * 1-6'
 
 permissions:
   contents: write
 
 jobs:
-  screen-and-notify:
+  screener:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,40 +33,71 @@ jobs:
     - name: Install dependencies
       run: pip install pandas yfinance requests numpy scipy
 
-    - name: Run trendline scanner
+    - name: Determine run mode
+      id: mode
+      run: |
+        # Sunday = weekly build, all other days = fast scan
+        DAY=$(date -u +%u)   # 7=Sunday
+        INPUT_MODE="${{ github.event.inputs.mode }}"
+        if [ "$INPUT_MODE" = "build" ]; then
+          echo "mode=build" >> $GITHUB_OUTPUT
+          echo "Running FULL BUILD (manual trigger)"
+        elif [ "$DAY" = "7" ]; then
+          echo "mode=build" >> $GITHUB_OUTPUT
+          echo "Running FULL BUILD (Sunday weekly rebuild)"
+        else
+          echo "mode=scan" >> $GITHUB_OUTPUT
+          echo "Running FAST SCAN (daily)"
+        fi
+
+    - name: Run full trendline cache build (weekly)
+      if: steps.mode.outputs.mode == 'build'
       env:
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
       run: |
-        echo "Running trendline scanner..."
-        python update_feed.py || echo "Scanner completed with errors"
-        python update_trendline_prices_live.py || echo "Live prices completed"
+        echo "=== WEEKLY CACHE BUILD ==="
+        python trendline_screener_v2.py --build --force
+        echo "Cache build complete"
+
+    - name: Run fast daily scan
+      env:
+        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
+      run: |
+        echo "=== DAILY SCAN ==="
+        # If no cache exists (first run), build it first
+        if [ ! -f trendline_cache.json ]; then
+          echo "No cache found — building for first time..."
+          python trendline_screener_v2.py --build --force
+        fi
+        python trendline_screener_v2.py --scan
+        echo "Scan complete"
 
     - name: Push data files to Stock-Yard-Public
       env:
         PUBLIC_REPO_TOKEN: ${{ secrets.PUBLIC_REPO_TOKEN }}
       run: |
-        # Clone the public repo
         git clone https://x-access-token:${PUBLIC_REPO_TOKEN}@github.com/anuragsin17-sketch/Stock-Yard-Public.git public_repo
 
-        # Copy only data files — NEVER index.html
         cp -f trendline_screen.json public_repo/trendline_screen.json || true
         cp -f data.json             public_repo/data.json             || true
         cp -f alerted_today.json    public_repo/alerted_today.json    || true
 
-        # Commit and push
         cd public_repo
         git config user.name  "Stock Yard Bot"
         git config user.email "bot@stockyard.io"
         git add trendline_screen.json data.json alerted_today.json
         git diff --staged --quiet || git commit -m "data: screener update $(date -u '+%Y-%m-%d %H:%M UTC')"
         git push
-        echo "✅ Data files pushed to Stock-Yard-Public"
+        echo "Pushed to Stock-Yard-Public"
 
     - name: Save state to backend repo
       run: |
         git config user.name  "Stock Yard Bot"
         git config user.email "bot@stockyard.io"
-        git add trendline_screen.json alerted_today.json previous_stocks.json angel_orders.json || true
-        git diff --staged --quiet || git commit -m "state: screener run $(date -u '+%Y-%m-%d %H:%M UTC')"
+        # Always save cache and scan output
+        git add trendline_cache.json trendline_screen.json alerted_today.json || true
+        git add previous_stocks.json || true
+        git diff --staged --quiet || git commit -m "state: screener $(date -u '+%Y-%m-%d %H:%M UTC')"
         git push
