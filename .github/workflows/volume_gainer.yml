@@ -67,6 +67,16 @@ jobs:
         python volume_gainer_tracker.py
         echo "Tracker complete"
 
+    - name: Run 2-month backfill (first run only — no existing watchlist)
+      if: steps.mode.outputs.mode == 'track' && !hashFiles('volume_gainer_watchlist.json')
+      env:
+        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
+      run: |
+        echo "=== FIRST RUN DETECTED: No watchlist found — running 60-day backfill ==="
+        python volume_gainer_backfill.py
+        echo "Backfill complete"
+
     - name: Run intraday monitor (check if price near prev day low)
       if: steps.mode.outputs.mode == 'monitor'
       env:
@@ -82,7 +92,7 @@ jobs:
         git config user.name  "Stock Yard Bot"
         git config user.email "bot@stockyard.io"
         git pull --rebase origin main || true
-        git add volume_gainer_watchlist.json || true
+        git add volume_gainer_watchlist.json 2>/dev/null || true
         git diff --staged --quiet || git commit -m "data: volume gainer watchlist $(date -u '+%Y-%m-%d %H:%M UTC')"
         git push
 
@@ -90,8 +100,13 @@ jobs:
       env:
         PUBLIC_REPO_TOKEN: ${{ secrets.PUBLIC_REPO_TOKEN }}
       run: |
+        # Only push if watchlist file exists
+        if [ ! -f volume_gainer_watchlist.json ]; then
+          echo "No watchlist file yet — skipping push"
+          exit 0
+        fi
         git clone https://x-access-token:${PUBLIC_REPO_TOKEN}@github.com/anuragsin17-sketch/Stock-Yard-Public.git public_repo
-        cp -f volume_gainer_watchlist.json public_repo/volume_gainer_watchlist.json || true
+        cp -f volume_gainer_watchlist.json public_repo/volume_gainer_watchlist.json
         cd public_repo
         git config user.name  "Stock Yard Bot"
         git config user.email "bot@stockyard.io"
