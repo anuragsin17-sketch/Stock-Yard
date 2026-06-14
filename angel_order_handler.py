@@ -803,77 +803,19 @@ def sync_trades():
 # Read-only: fetches open holdings from Groww and returns them in the same
 # format as /api/sync-trades so the Radar tab can merge both brokers.
 #
-# Auth: Groww uses API Key + Secret to generate a short-lived access token.
-# Checksum = SHA256(secret + timestamp_epoch_seconds)
-# POST https://api.groww.in/v1/token/api/access
-#   Authorization: Bearer <GROWW_USER_API_KEY>
-#   body: {"key_type":"approval","checksum":"...","timestamp":"..."}
+# Auth: GROWW_USER_API_KEY is the daily access token issued by Groww.
+# It is used directly as a Bearer token — no exchange needed.
+# Update GROWW_USER_API_KEY in the systemd override each day.
 
-import hashlib
-
-GROWW_USER_API_KEY = os.environ.get('GROWW_USER_API_KEY', '')   # API Key from Groww Cloud
-GROWW_API_SECRET   = os.environ.get('GROWW_API_SECRET',   '')   # API Secret from Groww Cloud
-
-# Cache the access token so we don't re-generate on every request
-_groww_access_token = None
-_groww_token_expiry = 0   # epoch seconds
+GROWW_USER_API_KEY = os.environ.get('GROWW_USER_API_KEY', '')
 
 def get_groww_access_token():
-    """
-    Exchange Groww API Key + Secret for a short-lived access token.
-    Caches the token until 5 minutes before expiry.
-    Returns the access token string, or None on failure.
-    """
-    global _groww_access_token, _groww_token_expiry
-    import time
-
-    now = int(time.time())
-
-    # Return cached token if still valid
-    if _groww_access_token and now < _groww_token_expiry - 300:
-        return _groww_access_token
-
-    if not GROWW_USER_API_KEY or not GROWW_API_SECRET:
-        logger.error("Groww: GROWW_USER_API_KEY or GROWW_API_SECRET not set in environment")
+    """Return the Groww access token directly from env var."""
+    if not GROWW_USER_API_KEY:
+        logger.error("Groww: GROWW_USER_API_KEY not set in environment")
         return None
-
-    try:
-        timestamp = str(now)
-        # Checksum = SHA256(secret + timestamp)
-        checksum = hashlib.sha256((GROWW_API_SECRET + timestamp).encode('utf-8')).hexdigest()
-
-        resp = requests.post(
-            'https://api.groww.in/v1/token/api/access',
-            headers={
-                'Authorization': f'Bearer {GROWW_USER_API_KEY}',
-                'Content-Type': 'application/json',
-                'X-API-VERSION': '1.0',
-            },
-            json={'key_type': 'approval', 'checksum': checksum, 'timestamp': timestamp},
-            timeout=10
-        )
-        logger.info(f"Groww token response: {resp.status_code} | {resp.text[:300]}")
-
-        if resp.status_code == 200:
-            data = resp.json()
-            token = data.get('token') or data.get('payload', {}).get('token')
-            expiry_str = data.get('expiry') or data.get('payload', {}).get('expiry', '')
-            if token:
-                _groww_access_token = token
-                # Parse expiry or default to 6 hours from now
-                try:
-                    from datetime import datetime as _dt
-                    expiry_dt = _dt.fromisoformat(expiry_str.replace('Z', '+00:00'))
-                    _groww_token_expiry = int(expiry_dt.timestamp())
-                except Exception:
-                    _groww_token_expiry = now + 21600  # 6h fallback
-                logger.info("Groww access token obtained successfully")
-                return token
-        logger.error(f"Groww token fetch failed: {resp.status_code} {resp.text}")
-        return None
-    except Exception as e:
-        logger.error(f"Groww token error: {e}", exc_info=True)
-        return None
+    logger.info("Groww: using access token from GROWW_USER_API_KEY env var")
+    return GROWW_USER_API_KEY
 
 @app.route('/api/save-radar', methods=['POST', 'OPTIONS'])
 def save_radar():
