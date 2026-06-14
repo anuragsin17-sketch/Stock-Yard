@@ -40,7 +40,9 @@ BASE_URL       = 'https://anuragsin17-sketch.github.io/Stock-Yard-Public'
 
 MIN_GAIN_PCT   = 10.0   # minimum % gain to qualify
 TOP_N          = 15     # max stocks to track
-ALERT_BUFFER   = 0.05   # 5% above prev low = alert zone
+ALERT_BUFFER   = 0.05   # 5% above signal low = alert zone entry
+SL_PCT         = 0.07   # 7% SL below entry
+TARGET_PCT     = 0.20   # 20% target above entry
 
 
 def send_telegram(message: str) -> bool:
@@ -192,15 +194,19 @@ def update_watchlist(new_gainers: list) -> tuple:
             continue
 
         alert_threshold = round(g['prev_day_low'] * (1 + ALERT_BUFFER), 2)
+        sl_price        = round(g['prev_day_low'] * (1 - SL_PCT), 2)
+        target_price    = round(g['prev_day_low'] * (1 + TARGET_PCT), 2)
         entry = {
             'ticker':          g['ticker'],
-            'company':         g['ticker'],  # yfinance doesn't give name in bulk — ticker is fine
+            'company':         g['ticker'],
             'added_date':      today_str,
             'gain_pct':        g['gain_pct'],
             'close_price':     g['close_price'],
             'prev_close':      g['prev_close'],
             'prev_day_low':    g['prev_day_low'],
-            'alert_threshold': alert_threshold,  # LTP <= this → send alert
+            'alert_threshold': alert_threshold,
+            'sl_price':        sl_price,
+            'target_price':    target_price,
             'vol_ratio':       g['vol_ratio'],
             'alerted':         False,
             'alert_sent_at':   None

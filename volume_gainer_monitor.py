@@ -36,6 +36,8 @@ WATCHLIST_FILE  = 'volume_gainer_watchlist.json'
 EC2_QUOTE_URL   = 'https://32-194-58-75.nip.io/api/get-quote'
 BASE_URL        = 'https://anuragsin17-sketch.github.io/Stock-Yard-Public'
 ALERT_BUFFER    = 0.05   # alert when within 5% above prev day low
+SL_PCT          = 0.07   # 7% stop loss below entry
+TARGET_PCT      = 0.20   # 20% target above entry
 
 
 def send_telegram(message: str, reply_markup: dict = None) -> bool:
@@ -115,20 +117,18 @@ def save_watchlist(watchlist: list):
         json.dump(watchlist, f, indent=2)
 
 
-def build_alert_message(entry: dict, ltp: float) -> tuple:
+def build_alert_message(watch: dict, ltp: float) -> tuple:
     """Returns (message_str, reply_markup_dict)"""
-    ticker       = entry['ticker']
-    prev_low     = entry['prev_day_low']
-    threshold    = entry['alert_threshold']
-    gain_pct     = entry['gain_pct']
-    added_date   = entry['added_date']
-    close_price  = entry['close_price']
+    ticker       = watch['ticker']
+    prev_low     = watch['prev_day_low']
+    threshold    = watch['alert_threshold']
+    gain_pct     = watch['gain_pct']
+    added_date   = watch['added_date']
 
-    dist_pct = ((ltp - prev_low) / prev_low) * 100  # positive = above low
+    dist_pct = ((ltp - prev_low) / prev_low) * 100
 
-    # Entry suggestion: buy near prev low
-    target_price = round(close_price * 1.15, 2)   # 15% from the big move day close
-    stop_price   = round(prev_low * 0.92, 2)       # 8% below prev low
+    target_price = watch.get('target_price') or round(prev_low * (1 + TARGET_PCT), 2)
+    stop_price   = watch.get('sl_price')     or round(prev_low * (1 - SL_PCT), 2)
 
     qty          = max(1, int(50000 / ltp))
     confirm_url  = (
@@ -189,8 +189,7 @@ def check_watchlist():
         if ltp <= threshold:
             # Price is within 5% of prev day low — ALERT
             print(f"  🔔 {ticker}: IN ALERT ZONE ({dist_pct:+.1f}% from prev low) — sending alert")
-            msg, buttons = build_alert_message(entry, ltp)
-            if send_telegram(msg, reply_markup=buttons):
+            msg, buttons = build_alert_message(entry, ltp)            if send_telegram(msg, reply_markup=buttons):
                 entry['alerted']       = True
                 entry['alert_sent_at'] = datetime.now().isoformat()
                 entry['alert_ltp']     = ltp
