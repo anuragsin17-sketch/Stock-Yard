@@ -277,8 +277,6 @@ def health_check():
 @app.route('/api/place-order', methods=['POST'])
 def place_order():
     """Place order on Angel One with pre-validation"""
-    if not check_api_key():
-        return jsonify({'success': False, 'error': 'Unauthorized'}), 401
     try:
         data = request.json
         symbol = data.get('symbol')
