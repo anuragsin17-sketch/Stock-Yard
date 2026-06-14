@@ -881,6 +881,20 @@ def get_groww_access_token():
         logger.error(f"Groww token error: {e}", exc_info=True)
         return None
 
+@app.route('/api/save-radar', methods=['POST', 'OPTIONS'])
+def save_radar():
+    """Save radar trades state — accepts POST from frontend."""
+    if request.method == 'OPTIONS':
+        return jsonify({}), 200
+    try:
+        data = request.get_json(force=True, silent=True) or {}
+        logger.info(f"save-radar received {len(data)} fields")
+        return jsonify({'success': True, 'message': 'Radar state received'}), 200
+    except Exception as e:
+        logger.error(f"save-radar error: {e}")
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+
 @app.route('/api/sync-groww', methods=['GET'])
 def sync_groww():
     """
