@@ -1,0 +1,106 @@
+name: Volume Gainer Tracker & Monitor
+
+on:
+  schedule:
+    # ── After-close scan: Mon-Fri at 10:10 UTC (3:40 PM IST) ──────────────
+    # Runs once after market closes to fetch top gainers and save watchlist
+    - cron: '10 10 * * 1-5'
+
+    # ── Intraday monitor: Mon-Fri every 30 min, 3:45-10:00 UTC (9:15-3:30 IST) ──
+    - cron: '15,45 3 * * 1-5'
+    - cron: '0,30  4 * * 1-5'
+    - cron: '0,30  5 * * 1-5'
+    - cron: '0,30  6 * * 1-5'
+    - cron: '0,30  7 * * 1-5'
+    - cron: '0,30  8 * * 1-5'
+    - cron: '0,30  9 * * 1-5'
+    - cron: '0     10 * * 1-5'
+
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Run mode: track (after-close scan) or monitor (intraday check)'
+        required: false
+        default: 'monitor'
+
+permissions:
+  contents: write
+
+jobs:
+  volume-gainer:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout backend repo
+      uses: actions/checkout@v4
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: pip install yfinance pandas requests
+
+    - name: Determine run mode
+      id: mode
+      run: |
+        # 10:10 UTC = after-close tracker run
+        # All other times = intraday monitor
+        HOUR=$(date -u +%H)
+        MIN=$(date -u +%M)
+        INPUT_MODE="${{ github.event.inputs.mode }}"
+
+        if [ "$INPUT_MODE" = "track" ]; then
+          echo "mode=track" >> $GITHUB_OUTPUT
+          echo "Running: AFTER-CLOSE TRACKER (manual)"
+        elif [ "$HOUR" = "10" ] && [ "$MIN" = "10" ]; then
+          echo "mode=track" >> $GITHUB_OUTPUT
+          echo "Running: AFTER-CLOSE TRACKER (scheduled)"
+        else
+          echo "mode=monitor" >> $GITHUB_OUTPUT
+          echo "Running: INTRADAY MONITOR (scheduled)"
+        fi
+
+    - name: Run after-close tracker (fetch today's top gainers)
+      if: steps.mode.outputs.mode == 'track'
+      env:
+        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
+      run: |
+        echo "=== AFTER-CLOSE: Fetching top gainers >10% ==="
+        python volume_gainer_tracker.py
+        echo "Tracker complete"
+
+    - name: Run intraday monitor (check if price near prev day low)
+      if: steps.mode.outputs.mode == 'monitor'
+      env:
+        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
+      run: |
+        echo "=== INTRADAY: Checking prices vs prev day lows ==="
+        python volume_gainer_monitor.py
+        echo "Monitor complete"
+
+    - name: Push updated watchlist to backend repo
+      run: |
+        git config user.name  "Stock Yard Bot"
+        git config user.email "bot@stockyard.io"
+        git pull --rebase origin main || true
+        git add volume_gainer_watchlist.json || true
+        git diff --staged --quiet || git commit -m "data: volume gainer watchlist $(date -u '+%Y-%m-%d %H:%M UTC')"
+        git push
+
+    - name: Push watchlist to public repo (for dashboard display)
+      env:
+        PUBLIC_REPO_TOKEN: ${{ secrets.PUBLIC_REPO_TOKEN }}
+      run: |
+        git clone https://x-access-token:${PUBLIC_REPO_TOKEN}@github.com/anuragsin17-sketch/Stock-Yard-Public.git public_repo
+        cp -f volume_gainer_watchlist.json public_repo/volume_gainer_watchlist.json || true
+        cd public_repo
+        git config user.name  "Stock Yard Bot"
+        git config user.email "bot@stockyard.io"
+        git add volume_gainer_watchlist.json
+        git diff --staged --quiet || git commit -m "data: volume gainer watchlist $(date -u '+%Y-%m-%d %H:%M UTC')"
+        git push
+        echo "Pushed watchlist to Stock-Yard-Public"
