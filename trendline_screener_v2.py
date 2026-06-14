@@ -165,22 +165,25 @@ def fit_trendline(data):
 
 
 def _calc_fib(post, a2, lows):
-    """Calculate Fibonacci levels from last anchor to swing high."""
+    """
+    Calculate Fibonacci retracement levels from ATH to ATL of the full dataset.
+    Grid: ATH = 0%, ATL = 100% (standard macro retracement top-down).
+    """
     try:
-        data_after  = post.iloc[a2:]
-        highs_after = data_after['High'].values.flatten().astype(float)
-        mx = argrelextrema(highs_after, np.greater, order=3)[0]
-        sh = float(highs_after[mx].max()) if len(mx)>0 else float(highs_after.max())
-        lp = float(lows[a2])
-        fr = sh - lp
+        all_highs = post['High'].values.flatten().astype(float)
+        all_lows  = post['Low'].values.flatten().astype(float)
+        ath = float(all_highs.max())   # All-Time High (0%)
+        atl = float(all_lows.min())    # All-Time Low (100%)
+        fr  = ath - atl
         if fr <= 0: return {}
         return {
-            '23.6%':  round(sh-fr*0.236, 2),
-            '38.2%':  round(sh-fr*0.382, 2),
-            '50.0%':  round(sh-fr*0.500, 2),
-            '61.8%':  round(sh-fr*0.618, 2),
-            '78.6%':  round(sh-fr*0.786, 2),
-            '100.0%': round(sh-fr*1.000, 2),
+            '0.0%':   round(ath, 2),
+            '23.6%':  round(ath - fr * 0.236, 2),
+            '38.2%':  round(ath - fr * 0.382, 2),
+            '50.0%':  round(ath - fr * 0.500, 2),
+            '61.8%':  round(ath - fr * 0.618, 2),
+            '78.6%':  round(ath - fr * 0.786, 2),
+            '100.0%': round(atl, 2),
         }
     except Exception: return {}
 
@@ -283,6 +286,7 @@ def fib_confluence(fib_levels, trigger_price):
     if not fib_levels: return 5, 'No fib'
     min_d, closest = float('inf'), None
     for lvl, price in fib_levels.items():
+        if lvl == '0.0%': continue  # skip ATH level
         d = abs((trigger_price-price)/price)*100
         if d < min_d: min_d, closest = d, lvl
     if min_d <= 1.5:
