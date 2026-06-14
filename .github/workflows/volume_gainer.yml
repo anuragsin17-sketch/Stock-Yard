@@ -6,15 +6,10 @@ on:
     # Runs once after market closes to fetch top gainers and save watchlist
     - cron: '10 10 * * 1-5'
 
-    # ── Intraday monitor: Mon-Fri every 30 min, 3:45-10:00 UTC (9:15-3:30 IST) ──
-    - cron: '15,45 3 * * 1-5'
-    - cron: '0,30  4 * * 1-5'
-    - cron: '0,30  5 * * 1-5'
-    - cron: '0,30  6 * * 1-5'
-    - cron: '0,30  7 * * 1-5'
-    - cron: '0,30  8 * * 1-5'
-    - cron: '0,30  9 * * 1-5'
-    - cron: '0     10 * * 1-5'
+    # ── Intraday monitor: Mon-Fri every hour, 3:45-10:00 UTC (9:15-3:30 IST) ──
+    - cron: '15 3 * * 1-5'
+    - cron: '0 4-9 * * 1-5'
+    - cron: '0 10 * * 1-5'
 
   workflow_dispatch:
     inputs:

@@ -10,8 +10,8 @@ on:
   schedule:
     # Weekly cache build: Sunday 2:00 AM UTC (7:30 AM IST)
     - cron: '0 2 * * 0'
-    # Daily fast scan: Mon-Sat every 30 min during market hours (3:45-10:00 UTC = 9:15-3:30 IST)
-    - cron: '15,45 3-9 * * 1-6'
+    # Daily fast scan: Mon-Sat every hour during market hours (3:45-10:00 UTC = 9:15-3:30 IST)
+    - cron: '15 4-9 * * 1-6'
     - cron: '0 10 * * 1-6'
 
 permissions:
