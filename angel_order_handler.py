@@ -17,11 +17,13 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from datetime import datetime, timedelta
 
-# Configure logging for systemd
+# Configure logging for systemd — force UTF-8 so emojis render correctly
+import io
+utf8_stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
-    stream=sys.stdout
+    stream=utf8_stdout
 )
 logger = logging.getLogger(__name__)
 
@@ -788,6 +790,19 @@ def sync_trades():
         
         return jsonify({
             'success': True,
+            'open_trades': [
+                {
+                    'ticker':        p.get('tradingsymbol', '').replace('-EQ', '').strip(),
+                    'source':        'Angel One',
+                    'quantity':      int(p.get('quantity', 0)),
+                    'entry_price':   round(float(p.get('averageprice', 0) or p.get('averagePrice', 0) or 0), 2),
+                    'current_price': round(float(p.get('ltp', 0) or p.get('close', 0) or 0), 2),
+                    'status':        'Open',
+                    'triggered_at':  datetime.now().isoformat(),
+                }
+                for p in angel_positions
+                if p.get('tradingsymbol') and int(p.get('quantity', 0)) > 0
+            ],
             'radar_trades': len(updated_radar),
             'closed_trades': len(newly_closed),
             'total_positions': len(angel_positions),
