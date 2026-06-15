@@ -131,11 +131,7 @@ def build_alert_message(watch: dict, ltp: float) -> tuple:
     stop_price   = watch.get('sl_price')     or round(prev_low * (1 - SL_PCT), 2)
 
     qty          = max(1, int(50000 / ltp))
-    confirm_url  = (
-        f"{BASE_URL}/?confirm={ticker}"
-        f"&price={ltp}&qty={qty}"
-        f"&stop={stop_price}&target={target_price}&source=VolumeGainer"
-    )
+    app_url   = f"{BASE_URL}/"
     chart_url = f"https://in.tradingview.com/chart/?symbol=NSE:{ticker}"
 
     msg = (
@@ -147,13 +143,13 @@ def build_alert_message(watch: dict, ltp: float) -> tuple:
         f"📅 Added: {added_date} _(gained +{gain_pct}% that day)_\n"
         f"🎯 Target: ₹{target_price:,.2f} | 🛑 SL: ₹{stop_price:,.2f}\n\n"
         f"_Price is within 5% of previous day low — potential retest entry._\n\n"
-        f"[📉 Chart]({chart_url}) | [📱 Dashboard]({BASE_URL}/)"
+        f"[📉 Chart]({chart_url}) | [📱 Open App]({app_url})"
     )
 
     buttons = {
         'inline_keyboard': [[
-            {'text': '✅ Confirm Trade', 'url': confirm_url},
-            {'text': '📉 View Chart',    'url': chart_url}
+            {'text': '📱 Open App',   'url': app_url},
+            {'text': '📉 View Chart', 'url': chart_url}
         ]]
     }
 
