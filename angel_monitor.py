@@ -289,7 +289,7 @@ def monitor_radar_positions():
 
 
 def sync_angel_one_positions():
-    """Fetch open positions from Angel One via EC2 and sync to radar_trades.json"""
+    """Fetch open positions from Angel One via EC2 and REPLACE radar_trades.json with only current positions"""
     print("\n🔄 Syncing Angel One open positions...")
     try:
         response = requests.get('http://32.194.58.75:5000/api/sync-trades', timeout=15)
@@ -305,46 +305,54 @@ def sync_angel_one_positions():
         angel_positions = data.get('open_trades', [])
         print(f"  Angel One open positions: {len(angel_positions)}")
 
-        if not angel_positions:
-            return False
+        # Load existing radar to preserve manually added trades with order_id
+        existing = load_radar()
+        # Keep only trades that have a real order_id (placed via Angel One broker)
+        order_trades = {t['order_id']: t for t in existing if t.get('order_id')}
 
-        radar_trades = load_radar()
-        changed = False
+        new_radar = []
 
         for pos in angel_positions:
             ticker = pos.get('ticker', '').replace('-EQ', '')
             if not ticker:
                 continue
 
-            # Check if already in radar
-            existing = next((t for t in radar_trades if t.get('ticker') == ticker and t.get('status') in ('Open', 'Triggered')), None)
-            if existing:
-                # Update current price and quantity from Angel One
-                existing['current_price'] = pos.get('current_price', existing.get('current_price', 0))
-                existing['quantity'] = pos.get('quantity', existing.get('quantity', 0))
-                existing['is_angel_synced'] = True
-                changed = True
-                print(f"  ✅ Updated {ticker} from Angel One")
-            else:
-                # New position in Angel One not in Radar — add it
-                radar_trades.append({
-                    'ticker': ticker,
-                    'entry_price': pos.get('entry_price', pos.get('current_price', 0)),
-                    'current_price': pos.get('current_price', 0),
-                    'target': pos.get('target', 0),
-                    'stop_loss': pos.get('stop_loss', 0),
-                    'quantity': pos.get('quantity', 0),
-                    'status': 'Open',
-                    'source': 'Angel One',
-                    'is_angel_synced': True,
-                    'triggered_at': datetime.now().isoformat()
-                })
-                changed = True
-                print(f"  ✅ Added {ticker} from Angel One to Radar")
+            entry_price = float(pos.get('entry_price', pos.get('current_price', 0)) or 0)
+            # Apply defaults: SL = 7% below, Target = 25% above entry
+            saved_target = float(pos.get('target', 0) or 0)
+            saved_sl     = float(pos.get('stop_loss', 0) or 0)
+            target    = saved_target if saved_target > 0 else round(entry_price * 1.25, 2)
+            stop_loss = saved_sl     if saved_sl     > 0 else round(entry_price * 0.93, 2)
 
-        if changed:
-            save_radar(radar_trades)
-        return changed
+            # Preserve any existing override (user-set SL/target)
+            existing_entry = next((t for t in existing if t.get('ticker') == ticker
+                                   and t.get('source') in ('Angel One', 'Groww', 'angel one')), None)
+            if existing_entry:
+                target    = float(existing_entry.get('target', target) or target) or target
+                stop_loss = float(existing_entry.get('stop_loss', stop_loss) or stop_loss) or stop_loss
+
+            new_radar.append({
+                'ticker':       ticker,
+                'entry_price':  entry_price,
+                'current_price': float(pos.get('current_price', 0) or 0),
+                'target':       target,
+                'stop_loss':    stop_loss,
+                'quantity':     int(pos.get('quantity', 0) or 0),
+                'status':       'Open',
+                'source':       'Angel One',
+                'is_angel_synced': True,
+                'triggered_at': (existing_entry or {}).get('triggered_at', datetime.now().isoformat())
+            })
+            print(f"  ✅ {ticker}: entry={entry_price}, target={target}, sl={stop_loss}")
+
+        # Add back any order_id trades not in current positions (may have been closed manually)
+        for order_id, t in order_trades.items():
+            if not any(r['ticker'] == t['ticker'] for r in new_radar):
+                new_radar.append(t)
+
+        save_radar(new_radar)
+        print(f"  ✅ radar_trades.json rebuilt with {len(new_radar)} Angel One positions")
+        return True
 
     except Exception as e:
         print(f"  ⚠️ Angel One sync error: {e}")
@@ -355,6 +363,23 @@ def main():
     print(f"\n{'='*60}")
     print(f"TRADE MONITOR - {datetime.now().strftime('%Y-%m-%d %H:%M IST')}")
     print(f"{'='*60}")
+
+    # ── Step 1: Clean radar_trades.json — keep only broker-synced trades ──
+    print("\n🧹 Cleaning radar_trades.json...")
+    allowed_sources = {'Angel One', 'angel one', 'Groww', 'groww', 'LocalTest', 'Telegram'}
+    radar = load_radar()
+    before = len(radar)
+    radar = [t for t in radar if (
+        t.get('order_id') or
+        t.get('is_angel_synced') or
+        t.get('source', '') in allowed_sources
+    )]
+    after = len(radar)
+    if after != before:
+        save_radar(radar)
+        print(f"  Cleaned: {before} → {after} trades (removed {before-after} non-broker entries)")
+    else:
+        print(f"  No cleanup needed ({after} trades)")
 
     # Sync Angel One open positions to Radar first
     angel_changed = sync_angel_one_positions()
