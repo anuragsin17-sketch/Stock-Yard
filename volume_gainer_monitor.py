@@ -182,9 +182,9 @@ def check_watchlist():
         dist_pct = ((ltp - prev_low) / prev_low) * 100
         print(f"  {ticker}: LTP=₹{ltp:,.2f}  prev_low=₹{prev_low:,.2f}  dist={dist_pct:+.1f}%  threshold=₹{threshold:,.2f}")
 
-        if ltp <= threshold:
-            # Price is within 5% of prev day low — ALERT
-            print(f"  🔔 {ticker}: IN ALERT ZONE ({dist_pct:+.1f}% from prev low) — sending alert")
+        if prev_low * 0.98 <= ltp <= prev_low * 1.02:
+            # Price is within ±2% of prev day low — ALERT
+            print(f"  🔔 {ticker}: IN ALERT ZONE ({dist_pct:+.1f}% from prev low, within ±2%) — sending alert")
             msg, buttons = build_alert_message(entry, ltp)
             if send_telegram(msg, reply_markup=buttons):
                 entry['alerted']       = True
@@ -193,7 +193,7 @@ def check_watchlist():
                 entry['alert_dist_pct'] = round(dist_pct, 2)
                 alerts_sent += 1
         else:
-            print(f"  {ticker}: not in zone yet ({dist_pct:+.1f}% above prev low, need ≤5%)")
+            print(f"  {ticker}: not in zone yet ({dist_pct:+.1f}% from prev low, need within ±2%)")
 
     save_watchlist(watchlist)
     print(f"\n✅ Done — {alerts_sent} alert(s) sent")

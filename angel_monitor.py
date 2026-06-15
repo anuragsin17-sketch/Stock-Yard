@@ -215,8 +215,10 @@ def check_trendline_stocks_for_entry():
 
         print(f"  {ticker}: Entry ₹{entry_price:.2f} | Current ₹{current_price:.2f}")
 
-        # Check if price hit entry (within 1%)
-        if current_price >= entry_price * 0.99:
+        # Check if price hit entry (within ±2% of entry price)
+        lower = entry_price * 0.98
+        upper = entry_price * 1.02
+        if lower <= current_price <= upper:
             print(f"  ✅ Entry hit! Moving to Radar...")
 
             # Add to radar
