@@ -985,6 +985,63 @@ def sync_groww():
         return jsonify({'success': False, 'error': str(e)}), 500
 
 
+@app.route('/api/set-groww-token', methods=['POST', 'OPTIONS'])
+def set_groww_token():
+    """
+    Update GROWW_USER_API_KEY at runtime without SSH.
+    POST body: { "token": "<bearer token>", "secret": "<admin secret>" }
+    The admin secret must match ADMIN_SECRET env var on EC2 (set once, never changes).
+    """
+    if request.method == 'OPTIONS':
+        return _cors_preflight()
+
+    try:
+        data = request.get_json(force=True) or {}
+        token  = (data.get('token') or '').strip()
+        secret = (data.get('secret') or '').strip()
+
+        # Validate admin secret (set ADMIN_SECRET env var on EC2 once)
+        admin_secret = os.environ.get('ADMIN_SECRET', '')
+        if not admin_secret:
+            return jsonify({'success': False, 'error': 'ADMIN_SECRET not configured on server'}), 500
+        if secret != admin_secret:
+            return jsonify({'success': False, 'error': 'Invalid admin secret'}), 403
+        if not token:
+            return jsonify({'success': False, 'error': 'No token provided'}), 400
+
+        # Write token to systemd override file and restart service
+        override_dir  = '/etc/systemd/system/angel-api.service.d'
+        override_file = f'{override_dir}/groww.conf'
+        content = f'[Service]\nEnvironment="GROWW_USER_API_KEY={token}"\n'
+
+        import subprocess
+        subprocess.run(['sudo', 'mkdir', '-p', override_dir], check=True)
+        # Write via tee (needs sudo)
+        proc = subprocess.run(
+            ['sudo', 'tee', override_file],
+            input=content.encode(),
+            capture_output=True
+        )
+        if proc.returncode != 0:
+            raise Exception(f"tee failed: {proc.stderr.decode()}")
+
+        subprocess.run(['sudo', 'systemctl', 'daemon-reload'], check=True)
+        subprocess.run(['sudo', 'systemctl', 'restart', 'angel-api'], check=True)
+
+        # Update in-process env var so current process picks it up immediately
+        os.environ['GROWW_USER_API_KEY'] = token
+        global GROWW_USER_API_KEY
+        GROWW_USER_API_KEY = token
+
+        logger.info("Groww token updated successfully via API")
+        return jsonify({'success': True, 'message': 'Groww token updated and service restarted'}), 200
+
+    except Exception as e:
+        logger.error(f"set-groww-token error: {e}", exc_info=True)
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+
+
 if __name__ == '__main__':
     # Check if credentials are configured
     creds = load_credentials()
