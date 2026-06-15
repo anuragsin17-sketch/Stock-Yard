@@ -52,12 +52,6 @@ def send_telegram_with_action(ticker: str, entry_price: float, current_price: fl
         BASE_URL = "https://anuragsin17-sketch.github.io/Stock-Yard-Public"
         qty = max(1, int(50000 / entry_price))
         
-        confirm_url = (
-            f"{BASE_URL}/?confirm={ticker}"
-            f"&price={entry_price}&qty={qty}"
-            f"&stop={stoploss_price}&target={target_price}&source={source}"
-        )
-        
         message = (
             f"🎯 *TRADE TRIGGERED - {source.upper()}*\n\n"
             f"Stock: *{ticker}*\n"
@@ -69,19 +63,11 @@ def send_telegram_with_action(ticker: str, entry_price: float, current_price: fl
             f"Time: {datetime.now().strftime('%Y-%m-%d %H:%M IST')}"
         )
         
-        buttons = {
-            'inline_keyboard': [[
-                {'text': '✅ Confirm Trade', 'url': confirm_url},
-                {'text': '⏭️ Skip', 'url': f"{BASE_URL}/"}
-            ]]
-        }
-        
         url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
         resp = requests.post(url, json={
             'chat_id': TELEGRAM_CHAT,
             'text': message,
-            'parse_mode': 'Markdown',
-            'reply_markup': buttons
+            'parse_mode': 'Markdown'
         }, timeout=10)
         
         if resp.status_code == 200:
@@ -219,22 +205,8 @@ def check_trendline_stocks_for_entry():
         lower = entry_price * 0.98
         upper = entry_price * 1.02
         if lower <= current_price <= upper:
-            print(f"  ✅ Entry hit! Moving to Radar...")
-
-            # Add to radar
-            radar_trades.append({
-                'ticker': ticker,
-                'source': 'Trendline',
-                'entry_price': round(entry_price, 2),
-                'target': round(target_price, 2),
-                'stop_loss': round(stoploss_price, 2),
-                'current_price': round(current_price, 2),
-                'status': 'Triggered',
-                'triggered_at': datetime.now().isoformat()
-            })
-            changed = True
-
-            # Send Telegram with Confirm Trade button
+            print(f"  ✅ Entry hit! Sending Telegram alert only (user takes trade manually)")
+            # Telegram alert only — do NOT add to radar_trades.json
             send_telegram_with_action(
                 ticker=ticker,
                 entry_price=entry_price,
@@ -244,10 +216,8 @@ def check_trendline_stocks_for_entry():
                 source='Trendline'
             )
 
-    if changed:
-        save_radar(radar_trades)
-    
-    return changed
+    # Trendline stocks only trigger Telegram alerts — user takes trades manually
+    return False
 
 
 def monitor_radar_positions():
