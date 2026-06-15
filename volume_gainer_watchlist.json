@@ -556,8 +556,10 @@
     "sl_price": 163.97,
     "target_price": 211.57,
     "vol_ratio": 10.15,
-    "alerted": false,
-    "alert_sent_at": null
+    "alerted": true,
+    "alert_sent_at": "2026-06-15T07:50:46.842410",
+    "alert_ltp": 182.83999633789062,
+    "alert_dist_pct": 3.7
   },
   {
     "ticker": "THERMAX",
