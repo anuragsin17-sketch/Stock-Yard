@@ -1,0 +1,56 @@
+name: Fib Price Alert - Every 5 Min (Market Hours)
+
+on:
+  schedule:
+    # Every 5 minutes, Mon-Fri 09:15–15:30 IST (03:45–10:00 UTC)
+    - cron: '*/5 4-9 * * 1-5'
+    - cron: '0,5,10,15,20,25,30 10 * * 1-5'
+    # Pre-market warm-up at 09:10 IST (03:40 UTC)
+    - cron: '40 3 * * 1-5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fib-alert:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout backend repo
+      uses: actions/checkout@v4
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+
+    - name: Install dependencies
+      run: pip install yfinance requests pyotp numpy pandas
+
+    - name: Restore trendline cache
+      run: |
+        # Try to pull latest cache from repo (committed by weekly build)
+        git pull --rebase origin main || true
+        if [ -f trendline_cache.json ]; then
+          echo "Cache found: $(python -c "import json; d=json.load(open('trendline_cache.json')); print(d.get('built_at','?'), '|', d.get('found','?'), 'trendlines')")"
+        else
+          echo "No cache — alert will skip gracefully"
+        fi
+
+    - name: Run fib price alert
+      env:
+        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
+      run: |
+        python fib_price_alert.py
+
+    - name: Save alert state
+      run: |
+        git config user.name  "Stock Yard Bot"
+        git config user.email "bot@stockyard.io"
+        git pull --rebase origin main || true
+        git add alerted_5min.json || true
+        git diff --staged --quiet || git commit -m "state: fib alert $(date -u '+%H:%M UTC')"
+        git push || true
