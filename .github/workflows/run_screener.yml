@@ -103,7 +103,10 @@ jobs:
       run: |
         git config user.name  "Stock Yard Bot"
         git config user.email "bot@stockyard.io"
-        git pull --rebase origin main || true
+        # Stash any unstaged changes before pulling
+        git stash || true
+        git pull --rebase origin main || git pull --strategy=ours origin main || true
+        git stash pop || true
         # Only save trendline_screen.json if it has actual stocks (prevent committing empty file)
         TL_COUNT=$(python -c "import json; d=json.load(open('trendline_screen.json')); print(len(d) if isinstance(d,list) else 0)" 2>/dev/null || echo "0")
         echo "Saving state — trendline_screen.json has $TL_COUNT stocks"
@@ -115,4 +118,5 @@ jobs:
           echo "Skipping trendline_screen.json commit (empty)"
         fi
         git diff --staged --quiet || git commit -m "state: screener $(date -u '+%Y-%m-%d %H:%M UTC') [$TL_COUNT stocks]"
-        git push
+        # Push with retry on conflict
+        git push || (git pull --rebase origin main && git push) || true
