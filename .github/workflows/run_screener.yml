@@ -78,6 +78,13 @@ jobs:
       env:
         PUBLIC_REPO_TOKEN: ${{ secrets.PUBLIC_REPO_TOKEN }}
       run: |
+        # Safety guard: only push trendline_screen.json if it has actual stocks
+        TL_COUNT=$(python -c "import json; d=json.load(open('trendline_screen.json')); print(len(d) if isinstance(d,list) else 0)" 2>/dev/null || echo "0")
+        echo "trendline_screen.json has $TL_COUNT stocks"
+        if [ "$TL_COUNT" -eq "0" ]; then
+          echo "WARNING: trendline_screen.json is empty — skipping push to avoid wiping public data"
+          exit 0
+        fi
         git clone https://x-access-token:${PUBLIC_REPO_TOKEN}@github.com/anuragsin17-sketch/Stock-Yard-Public.git public_repo
 
         cp -f trendline_screen.json public_repo/trendline_screen.json || true
