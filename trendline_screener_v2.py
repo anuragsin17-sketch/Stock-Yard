@@ -333,17 +333,20 @@ def get_trendline_price_today(tl):
     return round(tl['slope'] * current_idx + tl['intercept'], 2)
 
 
-def fib_confluence(fib_levels, trigger_price):
+def fib_confluence(fib_levels, trigger_price, dist_to_trendline_pct=None):
     """
     Score trendline trigger price against dual-timeframe 50%+61.8% confluence pockets.
 
     Priority order:
-      10 — inside BOTH 61.8% AND 50% pockets simultaneously (ultra-confluence)
+      10 — (61.8% OR 50% pocket) AND trendline within 3%  → ULTRA-CONFLUENCE
        9 — inside 61.8% pocket (weekly + monthly Golden Ratio agree)
        8 — inside 50% pocket (weekly + monthly agree)
        7 — within 1.5% of weekly OR monthly 61.8%
        6 — within 1.5% of weekly OR monthly 50%
        5 — no meaningful confluence
+
+    dist_to_trendline_pct: abs % distance of trigger from trendline (optional).
+                           When provided, enables score-10 ULTRA condition.
     """
     if not fib_levels: return 5, 'No fib'
 
@@ -354,9 +357,12 @@ def fib_confluence(fib_levels, trigger_price):
 
     in_618 = p618_lo > 0 and p618_lo <= trigger_price <= p618_hi
     in_500 = p500_lo > 0 and p500_lo <= trigger_price <= p500_hi
+    near_tl = dist_to_trendline_pct is not None and dist_to_trendline_pct <= 3.0
 
-    if in_618 and in_500:
-        return 10, 'W/M 61.8%+50% Ultra-Pocket ✓✓'
+    # Score 10: Fib pocket (61.8% OR 50%) + trendline touch within 3%
+    if (in_618 or in_500) and near_tl:
+        pocket_name = '61.8%+TL' if in_618 else '50%+TL'
+        return 10, f'Ultra: {pocket_name} Pocket & TL Touch ({dist_to_trendline_pct:.1f}%) ✓✓'
 
     if in_618:
         w618 = fib_levels.get('61.8%_W', 0)
@@ -479,7 +485,7 @@ def daily_scan(notify=True):
         shares      = max(1, int(POSITION_SIZE // entry_price))
 
         fib_levels = tl.get('fib_levels', {})
-        fib_score, fib_note = fib_confluence(fib_levels, tl_price)
+        fib_score, fib_note = fib_confluence(fib_levels, tl_price, abs(dist_low))
 
         # Find closest fib level for display (use weekly grid if available)
         fib_match = None

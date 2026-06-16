@@ -110,10 +110,14 @@ def mark_alerted(alerts, sym, level_key):
 
 # ─── FIB SCORING ─────────────────────────────────────────────────────────────
 
-def score_fib(fib_levels, price):
+def score_fib(fib_levels, price, tl_dist_pct=None):
     """
     Returns (score, label, pocket_name)
-    Uses the pocket boundaries stored by _calc_fib in trendline_cache.json.
+
+    Score 10 (ULTRA): price in 61.8% OR 50% pocket AND trendline within 3%
+    Score  9: price in 61.8% pocket (W+M)
+    Score  8: price in 50% pocket (W+M)
+    Score  0: no pocket match
     """
     if not fib_levels:
         return 0, '', ''
@@ -125,15 +129,22 @@ def score_fib(fib_levels, price):
 
     in_618 = p618_lo > 0 and p618_lo <= price <= p618_hi
     in_500 = p500_lo > 0 and p500_lo <= price <= p500_hi
+    near_tl = tl_dist_pct is not None and tl_dist_pct <= 3.0
 
-    if in_618 and in_500:
+    # Score 10: fib pocket (either) + trendline within 3%
+    if (in_618 or in_500) and near_tl:
         w618 = fib_levels.get('61.8%_W', 0)
         m618 = fib_levels.get('61.8%_M', 0)
         w500 = fib_levels.get('50.0%_W', 0)
         m500 = fib_levels.get('50.0%_M', 0)
-        return (10,
-                f'61.8%+50% Ultra-Pocket | W618:₹{w618:.0f} M618:₹{m618:.0f} | W50:₹{w500:.0f} M50:₹{m500:.0f}',
-                'ultra')
+        pocket_name = 'ultra'
+        if in_618 and in_500:
+            label = f'61.8%+50%+TL | W618:₹{w618:.0f} M618:₹{m618:.0f} | W50:₹{w500:.0f} M50:₹{m500:.0f}'
+        elif in_618:
+            label = f'61.8%+TL Touch | W618:₹{w618:.0f} M618:₹{m618:.0f} | TL dist:{tl_dist_pct:.1f}%'
+        else:
+            label = f'50%+TL Touch | W50:₹{w500:.0f} M50:₹{m500:.0f} | TL dist:{tl_dist_pct:.1f}%'
+        return 10, label, pocket_name
 
     if in_618:
         w618 = fib_levels.get('61.8%_W', 0)
@@ -297,8 +308,8 @@ def run():
 
         fib = tl.get('fib_levels', {})
 
-        # ── Fib pocket check
-        score, label, pocket = score_fib(fib, price)
+        # ── Fib pocket check — pass trendline distance for ULTRA scoring
+        score, label, pocket = score_fib(fib, price, tl_dist if tl_dist < 99 else None)
 
         # ── Trendline proximity check
         last_date = tl.get('last_date', '')
