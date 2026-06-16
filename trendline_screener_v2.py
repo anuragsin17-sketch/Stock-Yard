@@ -166,21 +166,20 @@ def fit_trendline(data):
 
 def _calc_fib(post, a2, lows):
     """
-    Dual-timeframe Fibonacci grid.
-    Weekly proxy  = last 52 monthly bars (high/low range).
-    Monthly       = last 24 monthly bars (high/low range).
-    Confluence pocket = 50%–61.8% zone where both timeframes agree (±2% buffer).
-    Returns a flat dict for backward-compat storage + nested grids for scoring.
+    Weekly-only Fibonacci grid (last 52 monthly bars = ~4yr proxy).
+    Pockets: 61.8%, 50%, 78.6%, 100% — each ±2% around weekly level.
+    Score 10 = any pocket + trendline within 3%.
     """
     try:
         highs = post['High'].values.flatten().astype(float)
         lows_ = post['Low'].values.flatten().astype(float)
 
-        # ── Weekly proxy (52 bars)
         w = min(52, len(post))
-        wh = float(highs[-w:].max());  wl = float(lows_[-w:].min())
+        wh = float(highs[-w:].max())
+        wl = float(lows_[-w:].min())
         wd = wh - wl
         if wd <= 0: return {}
+
         w_fib = {
             '0.0%':    round(wh, 2),
             '23.6%':   round(wh - wd * 0.236, 2),
@@ -193,46 +192,26 @@ def _calc_fib(post, a2, lows):
             'Ext_61.8%': round(wh + wd * 0.618, 2),
         }
 
-        # ── Monthly (24 bars)
-        m = min(24, len(post))
-        mh = float(highs[-m:].max());  ml = float(lows_[-m:].min())
-        md = mh - ml
-        if md <= 0: return {}
-        m_fib = {
-            '0.0%':    round(mh, 2),
-            '23.6%':   round(mh - md * 0.236, 2),
-            '38.2%':   round(mh - md * 0.382, 2),
-            '50.0%':   round(mh - md * 0.500, 2),
-            '61.8%':   round(mh - md * 0.618, 2),
-            '78.6%':   round(mh - md * 0.786, 2),
-            '100.0%':  round(ml, 2),
-            'Ext_23.6%': round(mh + md * 0.236, 2),
-            'Ext_61.8%': round(mh + md * 0.618, 2),
-        }
+        def pocket(lvl_price):
+            return round(lvl_price * 0.98, 2), round(lvl_price * 1.02, 2)
 
-        # ── Confluence pockets (50% and 61.8%) — lower of the two TFs to higher + 2% buffer
-        w_618 = w_fib['61.8%'];  m_618 = m_fib['61.8%']
-        w_500 = w_fib['50.0%'];  m_500 = m_fib['50.0%']
-
-        pocket_618_low  = round(min(w_618, m_618) * 0.98, 2)
-        pocket_618_high = round(max(w_618, m_618) * 1.02, 2)
-        pocket_500_low  = round(min(w_500, m_500) * 0.98, 2)
-        pocket_500_high = round(max(w_500, m_500) * 1.02, 2)
+        p618lo, p618hi = pocket(w_fib['61.8%'])
+        p500lo, p500hi = pocket(w_fib['50.0%'])
+        p786lo, p786hi = pocket(w_fib['78.6%'])
+        p100lo, p100hi = pocket(w_fib['100.0%'])
 
         return {
-            # Nested grids
-            '_weekly':  w_fib,
-            '_monthly': m_fib,
-            # Pocket boundaries (used by fib_confluence)
-            'pocket_618_low':  pocket_618_low,
-            'pocket_618_high': pocket_618_high,
-            'pocket_500_low':  pocket_500_low,
-            'pocket_500_high': pocket_500_high,
-            # Flat representative levels (for frontend display / backward compat)
-            '50.0%_W': w_fib['50.0%'],
-            '50.0%_M': m_fib['50.0%'],
-            '61.8%_W': w_fib['61.8%'],
-            '61.8%_M': m_fib['61.8%'],
+            '_weekly': w_fib,
+            # Pockets
+            'pocket_618_low':  p618lo, 'pocket_618_high': p618hi,
+            'pocket_500_low':  p500lo, 'pocket_500_high': p500hi,
+            'pocket_786_low':  p786lo, 'pocket_786_high': p786hi,
+            'pocket_100_low':  p100lo, 'pocket_100_high': p100hi,
+            # Flat levels for frontend
+            '61.8%_W':   w_fib['61.8%'],
+            '50.0%_W':   w_fib['50.0%'],
+            '78.6%_W':   w_fib['78.6%'],
+            '100.0%_W':  w_fib['100.0%'],
             'Ext_23.6%_W': w_fib['Ext_23.6%'],
             'Ext_61.8%_W': w_fib['Ext_61.8%'],
         }
@@ -335,56 +314,70 @@ def get_trendline_price_today(tl):
 
 def fib_confluence(fib_levels, trigger_price, dist_to_trendline_pct=None):
     """
-    Clean pocket-based scoring — NO distance tolerance.
+    Weekly-only scoring. NO distance tolerance. Pure pocket membership.
 
-    Score 10 — ULTRA: price inside 61.8% OR 50% pocket AND trendline within 3%
-    Score  9 — price inside W+M 61.8% pocket
-    Score  8 — price inside W+M 50% pocket
-    Score  7 — trendline touch within 3% (no pocket match)
-    Score  5 — trendline touch > 3% (monitoring only)
-
-    dist_to_trendline_pct: abs % distance of current price from trendline.
+    Score 10 — ULTRA: price inside 61.8% OR 50% OR 78.6% OR 100% pocket
+                       AND trendline within 3%
+    Score  9 — inside 61.8% pocket (no TL touch yet)
+    Score  8 — inside 50% pocket (no TL touch yet)
+    Score  7 — inside 78.6% pocket OR TL touch ≤3% (no pocket)
+    Score  6 — inside 100% pocket (deep value zone)
+    Score  5 — monitoring
     """
     if not fib_levels:
         near_tl = dist_to_trendline_pct is not None and dist_to_trendline_pct <= 3.0
         return (7, 'TL Touch') if near_tl else (5, 'Monitoring')
 
-    p618_lo = fib_levels.get('pocket_618_low',  0)
-    p618_hi = fib_levels.get('pocket_618_high', 0)
-    p500_lo = fib_levels.get('pocket_500_low',  0)
-    p500_hi = fib_levels.get('pocket_500_high', 0)
+    p618_lo = fib_levels.get('pocket_618_low',  0); p618_hi = fib_levels.get('pocket_618_high', 0)
+    p500_lo = fib_levels.get('pocket_500_low',  0); p500_hi = fib_levels.get('pocket_500_high', 0)
+    p786_lo = fib_levels.get('pocket_786_low',  0); p786_hi = fib_levels.get('pocket_786_high', 0)
+    p100_lo = fib_levels.get('pocket_100_low',  0); p100_hi = fib_levels.get('pocket_100_high', 0)
 
     in_618 = p618_lo > 0 and p618_lo <= trigger_price <= p618_hi
     in_500 = p500_lo > 0 and p500_lo <= trigger_price <= p500_hi
+    in_786 = p786_lo > 0 and p786_lo <= trigger_price <= p786_hi
+    in_100 = p100_lo > 0 and p100_lo <= trigger_price <= p100_hi
     near_tl = dist_to_trendline_pct is not None and dist_to_trendline_pct <= 3.0
 
-    # Score 10: pocket (either) + TL within 3%
-    if (in_618 or in_500) and near_tl:
-        pocket = '61.8%+TL' if in_618 else '50%+TL'
-        return 10, f'Ultra: {pocket} Pocket & TL ({dist_to_trendline_pct:.1f}%) ✓✓'
+    # Score 10: any of the 4 pockets + TL within 3%
+    if near_tl and (in_618 or in_500 or in_786 or in_100):
+        if in_618:   lvl = '61.8%'
+        elif in_500: lvl = '50.0%'
+        elif in_786: lvl = '78.6%'
+        else:        lvl = '100%'
+        w = fib_levels.get(f'{lvl}_W', fib_levels.get('61.8%_W', 0))
+        return 10, f'Ultra: {lvl} + TL ({dist_to_trendline_pct:.1f}%) ✓✓'
 
-    # Score 9: inside 61.8% pocket
+    # Score 9: 61.8% pocket, no TL yet
     if in_618:
         w618 = fib_levels.get('61.8%_W', 0)
-        m618 = fib_levels.get('61.8%_M', 0)
-        wd = abs((trigger_price-w618)/w618)*100 if w618 else 99
-        md = abs((trigger_price-m618)/m618)*100 if m618 else 99
-        return 9, f'W/M 61.8% Pocket ({wd:.1f}%/{md:.1f}%) ✓'
+        d = abs((trigger_price-w618)/w618)*100 if w618 else 0
+        return 9, f'61.8% Pocket (W:{w618:.0f}, {d:.1f}% away) ✓'
 
-    # Score 8: inside 50% pocket
+    # Score 8: 50% pocket, no TL yet
     if in_500:
         w500 = fib_levels.get('50.0%_W', 0)
-        m500 = fib_levels.get('50.0%_M', 0)
-        wd = abs((trigger_price-w500)/w500)*100 if w500 else 99
-        md = abs((trigger_price-m500)/m500)*100 if m500 else 99
-        return 8, f'W/M 50% Pocket ({wd:.1f}%/{md:.1f}%) ✓'
+        d = abs((trigger_price-w500)/w500)*100 if w500 else 0
+        return 8, f'50% Pocket (W:{w500:.0f}, {d:.1f}% away) ✓'
 
-    # Score 7: trendline touch within 3%, no pocket
+    # Score 7: 78.6% pocket OR TL touch ≤3%
+    if in_786:
+        w786 = fib_levels.get('78.6%_W', 0)
+        d = abs((trigger_price-w786)/w786)*100 if w786 else 0
+        return 7, f'78.6% Pocket (W:{w786:.0f}, {d:.1f}% away) ✓'
+
     if near_tl:
         return 7, f'TL Touch ({dist_to_trendline_pct:.1f}%)'
 
-    # Score 5: monitoring — trendline touch > 3%
-    return 5, f'Monitoring ({dist_to_trendline_pct:.1f}% from TL)'
+    # Score 6: 100% zone
+    if in_100:
+        w100 = fib_levels.get('100.0%_W', 0)
+        d = abs((trigger_price-w100)/w100)*100 if w100 else 0
+        return 6, f'100% Zone (W:{w100:.0f}, {d:.1f}% away)'
+
+    # Score 5: monitoring
+    d_str = f'{dist_to_trendline_pct:.1f}%' if dist_to_trendline_pct else '—'
+    return 5, f'Monitoring (TL dist {d_str})'
 
 
 def daily_scan(notify=True):
@@ -521,6 +514,10 @@ def daily_scan(notify=True):
             'fib_618_monthly':    fib_levels.get('61.8%_M'),
             'fib_500_weekly':     fib_levels.get('50.0%_W'),
             'fib_500_monthly':    fib_levels.get('50.0%_M'),
+            'fib_786_weekly':     fib_levels.get('78.6%_W'),
+            'fib_786_monthly':    fib_levels.get('78.6%_M'),
+            'fib_100_weekly':     fib_levels.get('100.0%_W'),
+            'fib_100_monthly':    fib_levels.get('100.0%_M'),
             'fib_target_1':       fib_levels.get('Ext_23.6%_W'),
             'fib_target_2':       fib_levels.get('Ext_61.8%_W'),
             'trendlineSlope':     tl['slope'],
