@@ -335,20 +335,19 @@ def get_trendline_price_today(tl):
 
 def fib_confluence(fib_levels, trigger_price, dist_to_trendline_pct=None):
     """
-    Score trendline trigger price against dual-timeframe 50%+61.8% confluence pockets.
+    Clean pocket-based scoring — NO distance tolerance.
 
-    Priority order:
-      10 — (61.8% OR 50% pocket) AND trendline within 3%  → ULTRA-CONFLUENCE
-       9 — inside 61.8% pocket (weekly + monthly Golden Ratio agree)
-       8 — inside 50% pocket (weekly + monthly agree)
-       7 — within 1.5% of weekly OR monthly 61.8%
-       6 — within 1.5% of weekly OR monthly 50%
-       5 — no meaningful confluence
+    Score 10 — ULTRA: price inside 61.8% OR 50% pocket AND trendline within 3%
+    Score  9 — price inside W+M 61.8% pocket
+    Score  8 — price inside W+M 50% pocket
+    Score  7 — trendline touch within 3% (no pocket match)
+    Score  5 — trendline touch > 3% (monitoring only)
 
-    dist_to_trendline_pct: abs % distance of trigger from trendline (optional).
-                           When provided, enables score-10 ULTRA condition.
+    dist_to_trendline_pct: abs % distance of current price from trendline.
     """
-    if not fib_levels: return 5, 'No fib'
+    if not fib_levels:
+        near_tl = dist_to_trendline_pct is not None and dist_to_trendline_pct <= 3.0
+        return (7, 'TL Touch') if near_tl else (5, 'Monitoring')
 
     p618_lo = fib_levels.get('pocket_618_low',  0)
     p618_hi = fib_levels.get('pocket_618_high', 0)
@@ -359,11 +358,12 @@ def fib_confluence(fib_levels, trigger_price, dist_to_trendline_pct=None):
     in_500 = p500_lo > 0 and p500_lo <= trigger_price <= p500_hi
     near_tl = dist_to_trendline_pct is not None and dist_to_trendline_pct <= 3.0
 
-    # Score 10: Fib pocket (61.8% OR 50%) + trendline touch within 3%
+    # Score 10: pocket (either) + TL within 3%
     if (in_618 or in_500) and near_tl:
-        pocket_name = '61.8%+TL' if in_618 else '50%+TL'
-        return 10, f'Ultra: {pocket_name} Pocket & TL Touch ({dist_to_trendline_pct:.1f}%) ✓✓'
+        pocket = '61.8%+TL' if in_618 else '50%+TL'
+        return 10, f'Ultra: {pocket} Pocket & TL ({dist_to_trendline_pct:.1f}%) ✓✓'
 
+    # Score 9: inside 61.8% pocket
     if in_618:
         w618 = fib_levels.get('61.8%_W', 0)
         m618 = fib_levels.get('61.8%_M', 0)
@@ -371,6 +371,7 @@ def fib_confluence(fib_levels, trigger_price, dist_to_trendline_pct=None):
         md = abs((trigger_price-m618)/m618)*100 if m618 else 99
         return 9, f'W/M 61.8% Pocket ({wd:.1f}%/{md:.1f}%) ✓'
 
+    # Score 8: inside 50% pocket
     if in_500:
         w500 = fib_levels.get('50.0%_W', 0)
         m500 = fib_levels.get('50.0%_M', 0)
@@ -378,21 +379,12 @@ def fib_confluence(fib_levels, trigger_price, dist_to_trendline_pct=None):
         md = abs((trigger_price-m500)/m500)*100 if m500 else 99
         return 8, f'W/M 50% Pocket ({wd:.1f}%/{md:.1f}%) ✓'
 
-    # Single-timeframe proximity check (61.8% first, then 50%)
-    w_fib = fib_levels.get('_weekly',  {})
-    m_fib = fib_levels.get('_monthly', {})
+    # Score 7: trendline touch within 3%, no pocket
+    if near_tl:
+        return 7, f'TL Touch ({dist_to_trendline_pct:.1f}%)'
 
-    best_s, best_note = 5, 'No confluence'
-    for tf_label, fib in [('W', w_fib), ('M', m_fib)]:
-        for lvl_key, score_base in [('61.8%', 7), ('50.0%', 6)]:
-            price = fib.get(lvl_key, 0)
-            if price <= 0: continue
-            d = abs((trigger_price - price) / price) * 100
-            if d <= 1.5 and score_base > best_s:
-                best_s    = score_base
-                best_note = f'{tf_label} {lvl_key} ({d:.1f}%)'
-
-    return best_s, best_note
+    # Score 5: monitoring — trendline touch > 3%
+    return 5, f'Monitoring ({dist_to_trendline_pct:.1f}% from TL)'
 
 
 def daily_scan(notify=True):

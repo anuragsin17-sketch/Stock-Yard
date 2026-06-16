@@ -112,15 +112,17 @@ def mark_alerted(alerts, sym, level_key):
 
 def score_fib(fib_levels, price, tl_dist_pct=None):
     """
-    Returns (score, label, pocket_name)
+    Clean pocket-based scoring — NO distance tolerance.
 
-    Score 10 (ULTRA): price in 61.8% OR 50% pocket AND trendline within 3%
+    Score 10: price in 61.8% OR 50% pocket AND trendline within 3%
     Score  9: price in 61.8% pocket (W+M)
     Score  8: price in 50% pocket (W+M)
-    Score  0: no pocket match
+    Score  7: trendline touch within 3% (no pocket)
+    Score  0: none of the above
     """
     if not fib_levels:
-        return 0, '', ''
+        near_tl = tl_dist_pct is not None and tl_dist_pct <= 3.0
+        return (7, 'TL Touch', 'tl') if near_tl else (0, '', '')
 
     p618_lo = fib_levels.get('pocket_618_low',  0)
     p618_hi = fib_levels.get('pocket_618_high', 0)
@@ -131,38 +133,32 @@ def score_fib(fib_levels, price, tl_dist_pct=None):
     in_500 = p500_lo > 0 and p500_lo <= price <= p500_hi
     near_tl = tl_dist_pct is not None and tl_dist_pct <= 3.0
 
-    # Score 10: fib pocket (either) + trendline within 3%
+    # Score 10: pocket + TL within 3%
     if (in_618 or in_500) and near_tl:
-        w618 = fib_levels.get('61.8%_W', 0)
-        m618 = fib_levels.get('61.8%_M', 0)
-        w500 = fib_levels.get('50.0%_W', 0)
-        m500 = fib_levels.get('50.0%_M', 0)
-        pocket_name = 'ultra'
+        w618 = fib_levels.get('61.8%_W', 0); m618 = fib_levels.get('61.8%_M', 0)
+        w500 = fib_levels.get('50.0%_W', 0); m500 = fib_levels.get('50.0%_M', 0)
         if in_618 and in_500:
-            label = f'61.8%+50%+TL | W618:₹{w618:.0f} M618:₹{m618:.0f} | W50:₹{w500:.0f} M50:₹{m500:.0f}'
+            label = f'61.8%+50%+TL | W618:Rs{w618:.0f} M618:Rs{m618:.0f} W50:Rs{w500:.0f} M50:Rs{m500:.0f}'
         elif in_618:
-            label = f'61.8%+TL Touch | W618:₹{w618:.0f} M618:₹{m618:.0f} | TL dist:{tl_dist_pct:.1f}%'
+            label = f'61.8%+TL | W:Rs{w618:.0f} M:Rs{m618:.0f} | TL:{tl_dist_pct:.1f}%'
         else:
-            label = f'50%+TL Touch | W50:₹{w500:.0f} M50:₹{m500:.0f} | TL dist:{tl_dist_pct:.1f}%'
-        return 10, label, pocket_name
+            label = f'50%+TL | W:Rs{w500:.0f} M:Rs{m500:.0f} | TL:{tl_dist_pct:.1f}%'
+        return 10, label, 'ultra'
 
     if in_618:
-        w618 = fib_levels.get('61.8%_W', 0)
-        m618 = fib_levels.get('61.8%_M', 0)
-        wd = abs((price - w618) / w618 * 100) if w618 else 99
-        md = abs((price - m618) / m618 * 100) if m618 else 99
-        return (9,
-                f'W/M 61.8% Pocket | W:₹{w618:.0f}({wd:.1f}%) M:₹{m618:.0f}({md:.1f}%)',
-                '618')
+        w618 = fib_levels.get('61.8%_W', 0); m618 = fib_levels.get('61.8%_M', 0)
+        wd = abs((price-w618)/w618*100) if w618 else 99
+        md = abs((price-m618)/m618*100) if m618 else 99
+        return 9, f'W/M 61.8% Pocket | W:Rs{w618:.0f}({wd:.1f}%) M:Rs{m618:.0f}({md:.1f}%)', '618'
 
     if in_500:
-        w500 = fib_levels.get('50.0%_W', 0)
-        m500 = fib_levels.get('50.0%_M', 0)
-        wd = abs((price - w500) / w500 * 100) if w500 else 99
-        md = abs((price - m500) / m500 * 100) if m500 else 99
-        return (8,
-                f'W/M 50% Pocket | W:₹{w500:.0f}({wd:.1f}%) M:₹{m500:.0f}({md:.1f}%)',
-                '500')
+        w500 = fib_levels.get('50.0%_W', 0); m500 = fib_levels.get('50.0%_M', 0)
+        wd = abs((price-w500)/w500*100) if w500 else 99
+        md = abs((price-m500)/m500*100) if m500 else 99
+        return 8, f'W/M 50% Pocket | W:Rs{w500:.0f}({wd:.1f}%) M:Rs{m500:.0f}({md:.1f}%)', '500'
+
+    if near_tl:
+        return 7, f'TL Touch ({tl_dist_pct:.1f}%)', 'tl'
 
     return 0, '', ''
 
