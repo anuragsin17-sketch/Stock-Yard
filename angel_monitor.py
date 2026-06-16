@@ -136,10 +136,136 @@ def save_radar(trades: list):
     save_json(RADAR_FILE, trades)
 
 
-def check_volume_stocks_for_entry():
-    """Volume stocks are NOT monitored - only for reference"""
-    print("\n📊 Skipping Volume Breakout stocks (monitoring Trendline only)")
-    return False
+def check_gtt_exits():
+    """
+    Check all active GTT orders on Angel One.
+    If triggered (target or SL hit) → close trade in radar + send Telegram.
+    If buy order expired/cancelled → cancel GTT to avoid accidental short sell.
+    """
+    print("\n🎯 Checking GTT exit orders...")
+
+    radar_trades = load_radar()
+    if not radar_trades:
+        print("  No trades in Radar")
+        return False
+
+    # Only trades that have a GTT id
+    gtt_trades = [t for t in radar_trades if t.get('gtt_id') and t.get('gtt_status') == 'ACTIVE']
+    if not gtt_trades:
+        print("  No active GTT orders to check")
+        return False
+
+    print(f"  Checking {len(gtt_trades)} active GTT orders...")
+
+    # Connect to Angel One
+    try:
+        creds = {}
+        if os.path.exists('.env'):
+            with open('.env') as f:
+                for line in f:
+                    line = line.strip()
+                    if line and '=' in line and not line.startswith('#'):
+                        k, v = line.split('=', 1)
+                        creds[k.strip()] = v.strip()
+
+        from SmartApi import SmartConnect
+        import pyotp
+        smart = SmartConnect(api_key=creds.get('ANGEL_API_KEY', ''))
+        totp  = pyotp.TOTP(creds.get('ANGEL_TOTP_SECRET', '')).now()
+        session = smart.generateSession(
+            creds.get('ANGEL_CLIENT_ID', ''),
+            creds.get('ANGEL_PASSWORD', ''),
+            totp
+        )
+        if not (isinstance(session, dict) and session.get('status')):
+            print("  Angel One session failed for GTT check")
+            return False
+    except Exception as e:
+        print(f"  Cannot connect to Angel One: {e}")
+        return False
+
+    changed = False
+
+    for trade in radar_trades:
+        gtt_id = trade.get('gtt_id')
+        if not gtt_id or trade.get('gtt_status') != 'ACTIVE':
+            continue
+
+        ticker      = trade.get('ticker', '')
+        entry_price = float(trade.get('entry_price', 0))
+        target      = float(trade.get('target', 0))
+        stop_loss   = float(trade.get('stop_loss', 0))
+        quantity    = int(trade.get('quantity', 0))
+
+        try:
+            # Fetch GTT rule status
+            gtt_result = smart.gttDetails(gtt_id)
+            if not (isinstance(gtt_result, dict) and gtt_result.get('status')):
+                continue
+
+            gtt_data   = gtt_result.get('data', {})
+            gtt_status = gtt_data.get('status', '').upper()  # ACTIVE / TRIGGERED / CANCELLED / EXPIRED
+
+            if gtt_status in ('TRIGGERED', 'FORALL'):
+                # Determine which leg triggered (target or SL)
+                exit_price   = float(gtt_data.get('triggerprice', [{}])[0].get('price', 0) or 0)
+                triggered_leg = gtt_data.get('triggerprice', [])
+
+                # Find which leg fired — compare triggered price to target vs SL
+                if exit_price >= target * 0.99:
+                    exit_reason = 'Target Hit'
+                    icon = '🎯'
+                    exit_price  = target
+                else:
+                    exit_reason = 'Stop Loss Hit'
+                    icon = '🛑'
+                    exit_price  = stop_loss
+
+                pnl_pct = round((exit_price - entry_price) / entry_price * 100, 2)
+
+                # Update trade record
+                trade['status']     = 'Closed'
+                trade['exit_price'] = round(exit_price, 2)
+                trade['closed_at']  = datetime.now().isoformat()
+                trade['pnl_pct']    = pnl_pct
+                trade['exit_reason']= exit_reason
+                trade['gtt_status'] = 'TRIGGERED'
+                changed = True
+
+                # Telegram exit notification
+                msg = (
+                    f"{icon} *POSITION CLOSED — {exit_reason}*\n\n"
+                    f"Stock: *{ticker}*\n"
+                    f"Entry: ₹{entry_price:,.2f}\n"
+                    f"Exit:  ₹{exit_price:,.2f}\n"
+                    f"P&L:   *{pnl_pct:+.2f}%*\n"
+                    f"Qty:   {quantity} shares\n"
+                    f"GTT:   {gtt_id}\n"
+                    f"Time:  {datetime.now().strftime('%Y-%m-%d %H:%M IST')}"
+                )
+                send_telegram(msg)
+                print(f"  {icon} GTT triggered: {ticker} | {exit_reason} | P&L {pnl_pct:+.2f}%")
+
+            elif gtt_status in ('CANCELLED', 'EXPIRED', 'REJECTED'):
+                trade['gtt_status'] = gtt_status
+                changed = True
+                msg = (
+                    f"⚠️ *GTT {gtt_status} — {ticker}*\n\n"
+                    f"GTT ID: {gtt_id}\n"
+                    f"Entry: ₹{entry_price:,.2f}\n"
+                    f"Target: ₹{target:,.2f} | SL: ₹{stop_loss:,.2f}\n"
+                    f"Action needed: Re-place GTT manually on Angel One\n"
+                    f"Time: {datetime.now().strftime('%Y-%m-%d %H:%M IST')}"
+                )
+                send_telegram(msg)
+                print(f"  ⚠️ GTT {gtt_status}: {ticker}")
+
+        except Exception as e:
+            print(f"  GTT check error for {ticker}: {e}")
+
+    if changed:
+        save_radar(radar_trades)
+    return changed
 
 
 def check_trendline_stocks_for_entry():
@@ -384,13 +510,16 @@ def main():
     # Sync Angel One open positions to Radar first
     angel_changed = sync_angel_one_positions()
 
+    # Check GTT exit orders (target/SL triggered)
+    gtt_changed = check_gtt_exits()
+
     # Check Trendline stocks for entry hits ONLY
     tl_changed = check_trendline_stocks_for_entry()
 
     # Monitor Radar positions for target/stoploss
     radar_changed = monitor_radar_positions()
 
-    if angel_changed or tl_changed or radar_changed:
+    if angel_changed or gtt_changed or tl_changed or radar_changed:
         print(f"\n✅ Updates saved to radar_trades.json")
     else:
         print(f"\n✅ No changes")

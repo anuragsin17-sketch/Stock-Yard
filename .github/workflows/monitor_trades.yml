@@ -1,12 +1,13 @@
-name: Trade Monitor - Every Hour (Market Hours)
+name: Trade Monitor - Every 30 Min (Market Hours)
 
 on:
   repository_dispatch:
     types: [sync_radar]
   schedule:
+    # Every 30 min Mon-Fri, market hours 09:15-15:30 IST (03:45-10:00 UTC)
     - cron: '15 3 * * 1-5'
-    - cron: '0 4-9 * * 1-5'
-    - cron: '0 10 * * 1-5'
+    - cron: '0,30 4-9 * * 1-5'
+    - cron: '0,30 10 * * 1-5'
   workflow_dispatch:
 
 permissions:

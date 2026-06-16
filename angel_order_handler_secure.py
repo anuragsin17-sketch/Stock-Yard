@@ -468,14 +468,103 @@ def place_order():
             json.dump(radar_trades, f, indent=2)
         
         logger.info(f"📍 Stock added to Radar: {symbol}")
-        
+
+        # ====== PLACE GTT OCO (TARGET + STOPLOSS) ======
+
+        gtt_id = None
+        gtt_error = None
+        try:
+            # Angel One GTT API — OCO (One Cancels Other)
+            # Triggers a SELL when price hits target OR stop_loss
+            gtt_params = {
+                "tradingsymbol":  trading_symbol,
+                "symboltoken":    symbol_token,
+                "exchange":       "NSE",
+                "producttype":    "DELIVERY",
+                "transactiontype": "SELL",
+                "qty":            quantity,
+                "type":           "TWO_LEG",   # OCO = two-leg GTT
+                "price":          int(entry_price),  # reference price
+                "triggerprice": [
+                    {
+                        "triggertype": "ABOVE",         # target hit
+                        "price":       round(target_price, 2),
+                        "orderprice":  round(target_price * 0.995, 2),  # limit slightly below trigger
+                    },
+                    {
+                        "triggertype": "BELOW",         # stop loss hit
+                        "price":       round(stop_loss, 2),
+                        "orderprice":  round(stop_loss * 0.995, 2),  # limit slightly below SL
+                    }
+                ]
+            }
+
+            gtt_result = smart.gttCreateRule(gtt_params)
+            if isinstance(gtt_result, dict) and gtt_result.get('status'):
+                gtt_id = gtt_result.get('data', {}).get('id') or gtt_result.get('data')
+                logger.info(f"✅ GTT OCO placed: {gtt_id} | T:{target_price} / SL:{stop_loss}")
+            else:
+                gtt_error = str(gtt_result)
+                logger.warning(f"⚠️ GTT placement failed: {gtt_error}")
+        except Exception as e:
+            gtt_error = str(e)
+            logger.warning(f"⚠️ GTT exception: {e}")
+
+        # Save GTT id to radar trade
+        if gtt_id:
+            for t in radar_trades:
+                if t.get('order_id') == order_id:
+                    t['gtt_id'] = gtt_id
+                    t['gtt_status'] = 'ACTIVE'
+            with open(radar_file, 'w') as f:
+                json.dump(radar_trades, f, indent=2)
+
+        # ====== TELEGRAM: BUY + GTT NOTIFICATION ======
+
+        TELEGRAM_TOKEN_ENV = os.environ.get('TELEGRAM_BOT_TOKEN', '')
+        TELEGRAM_CHAT_ENV  = os.environ.get('TELEGRAM_CHAT_ID', '')
+        APP_URL = 'https://anuragsin17-sketch.github.io/Stock-Yard-Public'
+        chart_url = f"https://in.tradingview.com/chart/?symbol=NSE:{symbol}"
+
+        if TELEGRAM_TOKEN_ENV and TELEGRAM_CHAT_ENV:
+            try:
+                pnl_risk   = round((stop_loss   - entry_price) / entry_price * 100, 1)
+                pnl_target = round((target_price - entry_price) / entry_price * 100, 1)
+                rr = abs(pnl_target / pnl_risk) if pnl_risk else 0
+
+                gtt_line = (f"✅ GTT OCO Armed — ID: {gtt_id}"
+                            if gtt_id else
+                            f"⚠️ GTT not placed — set manually ({gtt_error or 'error'})")
+
+                msg = (
+                    f"📥 *BUY ORDER PLACED — {symbol}*\n\n"
+                    f"📋 Order ID: `{order_id}`\n"
+                    f"💰 Entry: ₹{entry_price:,.2f} × {quantity} shares\n"
+                    f"💼 Capital: ₹{capital_required:,.0f}\n\n"
+                    f"🎯 Target: ₹{target_price:,.2f} ({pnl_target:+.1f}%)\n"
+                    f"🛑 Stop Loss: ₹{stop_loss:,.2f} ({pnl_risk:+.1f}%)\n"
+                    f"📐 R:R = 1:{rr:.1f}\n\n"
+                    f"{gtt_line}\n\n"
+                    f"[Chart]({chart_url}) | [App]({APP_URL}/)"
+                )
+                requests.post(
+                    f'https://api.telegram.org/bot{TELEGRAM_TOKEN_ENV}/sendMessage',
+                    json={'chat_id': TELEGRAM_CHAT_ENV, 'text': msg,
+                          'parse_mode': 'Markdown', 'disable_web_page_preview': True},
+                    timeout=10
+                )
+                logger.info(f"📲 Telegram sent for {symbol}")
+            except Exception as e:
+                logger.warning(f"Telegram error: {e}")
+
         return jsonify({
             'success': True,
             'order_id': order_id,
-            'symbol': symbol,
+            'gtt_id':   gtt_id,
+            'symbol':   symbol,
             'quantity': quantity,
-            'capital': capital_required,
-            'message': f'Order placed successfully! ID: {order_id}'
+            'capital':  capital_required,
+            'message':  f'Order placed! ID: {order_id}' + (f' | GTT: {gtt_id}' if gtt_id else ' | GTT failed — set manually')
         }), 200
         
     except Exception as e:
