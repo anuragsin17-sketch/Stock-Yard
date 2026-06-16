@@ -401,7 +401,7 @@ def daily_scan(notify=True):
     current_prices = {}
     current_lows   = {}
 
-    # Download today's daily bar for all stocks at once
+    # Download last 5 days daily bars — use last valid close/low (handles after-hours NaN)
     batch_size = 100
     for i in range(0, len(tickers_ns), batch_size):
         batch = tickers_ns[i:i+batch_size]
@@ -413,11 +413,12 @@ def daily_scan(notify=True):
                 sym = ticker.replace('.NS','')
                 try:
                     if len(batch) == 1:
-                        cp = float(data['Close'].iloc[-1])
-                        cl = float(data['Low'].iloc[-1])
+                        df_t = data[['Close','Low']].dropna()
                     else:
-                        cp = float(data[ticker]['Close'].iloc[-1])
-                        cl = float(data[ticker]['Low'].iloc[-1])
+                        df_t = data[ticker][['Close','Low']].dropna()
+                    if df_t.empty: continue
+                    cp = float(df_t['Close'].iloc[-1])
+                    cl = float(df_t['Low'].iloc[-1])
                     if cp > 0:
                         current_prices[sym] = cp
                         current_lows[sym]   = cl
