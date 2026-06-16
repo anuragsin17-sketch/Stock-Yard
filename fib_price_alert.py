@@ -111,39 +111,36 @@ def mark_alerted(alerts, sym, level_key):
 # ─── FIB SCORING ─────────────────────────────────────────────────────────────
 
 def score_fib(fib_levels, price, tl_dist_pct=None):
-    """Score 10 = any TL touch ≤3% (pocket label shown if applicable)."""
+    """
+    Score 10: within +-2% of fib level (61.8/50/78.6/100%) AND TL <=3%
+    Score  9: within +-1% of any fib level, no TL yet
+    Score  8: monitoring
+    """
     near_tl = tl_dist_pct is not None and tl_dist_pct <= 3.0
 
-    if near_tl:
-        if not fib_levels: return 10, f'TL Touch ({tl_dist_pct:.1f}%)', 'tl'
-        p618_lo=fib_levels.get('pocket_618_low',0); p618_hi=fib_levels.get('pocket_618_high',0)
-        p500_lo=fib_levels.get('pocket_500_low',0); p500_hi=fib_levels.get('pocket_500_high',0)
-        p786_lo=fib_levels.get('pocket_786_low',0); p786_hi=fib_levels.get('pocket_786_high',0)
-        p100_lo=fib_levels.get('pocket_100_low',0); p100_hi=fib_levels.get('pocket_100_high',0)
-        in_618=p618_lo>0 and p618_lo<=price<=p618_hi
-        in_500=p500_lo>0 and p500_lo<=price<=p500_hi
-        in_786=p786_lo>0 and p786_lo<=price<=p786_hi
-        in_100=p100_lo>0 and p100_lo<=price<=p100_hi
-        if in_618:   return 10,f'61.8% Pocket + TL ({tl_dist_pct:.1f}%) ✓✓','ultra'
-        elif in_500: return 10,f'50% Pocket + TL ({tl_dist_pct:.1f}%) ✓✓','ultra'
-        elif in_786: return 10,f'78.6% Pocket + TL ({tl_dist_pct:.1f}%) ✓✓','ultra'
-        elif in_100: return 10,f'100% Zone + TL ({tl_dist_pct:.1f}%) ✓✓','ultra'
-        else:        return 10,f'TL Touch ({tl_dist_pct:.1f}%) ✓','tl'
+    KEY_LEVELS = []
+    if fib_levels:
+        w_fib = fib_levels.get('_weekly', {})
+        for k, wk in [('61.8%','61.8%'), ('50.0%','50.0%'), ('78.6%','78.6%'), ('100%','100.0%')]:
+            p = fib_levels.get(f'{wk}_W') or w_fib.get(wk, 0) or w_fib.get(k, 0)
+            if p > 0:
+                KEY_LEVELS.append((k, p))
 
-    if not fib_levels: return 0,'',''
-    p618_lo=fib_levels.get('pocket_618_low',0); p618_hi=fib_levels.get('pocket_618_high',0)
-    p500_lo=fib_levels.get('pocket_500_low',0); p500_hi=fib_levels.get('pocket_500_high',0)
-    p786_lo=fib_levels.get('pocket_786_low',0); p786_hi=fib_levels.get('pocket_786_high',0)
-    p100_lo=fib_levels.get('pocket_100_low',0); p100_hi=fib_levels.get('pocket_100_high',0)
-    in_618=p618_lo>0 and p618_lo<=price<=p618_hi
-    in_500=p500_lo>0 and p500_lo<=price<=p500_hi
-    in_786=p786_lo>0 and p786_lo<=price<=p786_hi
-    in_100=p100_lo>0 and p100_lo<=price<=p100_hi
-    if in_618: return 9,f'61.8% Pocket (W:{fib_levels.get("61.8%_W",0):.0f})','618'
-    if in_500: return 8,f'50% Pocket (W:{fib_levels.get("50.0%_W",0):.0f})','500'
-    if in_786: return 7,f'78.6% Pocket (W:{fib_levels.get("78.6%_W",0):.0f})','786'
-    if in_100: return 6,f'100% Zone (W:{fib_levels.get("100.0%_W",0):.0f})','100'
-    return 0,'',''
+    in_2pct = None; in_1pct = None
+    for lvl_name, lvl_price in KEY_LEVELS:
+        d = abs((price - lvl_price) / lvl_price * 100)
+        if d <= 2.0 and in_2pct is None: in_2pct = (lvl_name, lvl_price, round(d, 2))
+        if d <= 1.0 and in_1pct is None: in_1pct = (lvl_name, lvl_price, round(d, 2))
+
+    if in_2pct and near_tl:
+        lvl, lp, d = in_2pct
+        return 10, f'{lvl} + TL ({tl_dist_pct:.1f}%) +-{d:.1f}%', 'ultra'
+
+    if in_1pct:
+        lvl, lp, d = in_1pct
+        return 9, f'{lvl} Level (+-{d:.1f}%) -- Watch for TL', lvl
+
+    return 8, 'Monitoring', ''
 
 
 # ─── LIVE PRICE FETCH ─────────────────────────────────────────────────────────
