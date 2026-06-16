@@ -104,8 +104,15 @@ jobs:
         git config user.name  "Stock Yard Bot"
         git config user.email "bot@stockyard.io"
         git pull --rebase origin main || true
-        # Always save cache and scan output
-        git add trendline_cache.json trendline_screen.json alerted_today.json || true
+        # Only save trendline_screen.json if it has actual stocks (prevent committing empty file)
+        TL_COUNT=$(python -c "import json; d=json.load(open('trendline_screen.json')); print(len(d) if isinstance(d,list) else 0)" 2>/dev/null || echo "0")
+        echo "Saving state — trendline_screen.json has $TL_COUNT stocks"
+        git add trendline_cache.json alerted_today.json || true
         git add previous_stocks.json || true
-        git diff --staged --quiet || git commit -m "state: screener $(date -u '+%Y-%m-%d %H:%M UTC')"
+        if [ "$TL_COUNT" -gt "0" ]; then
+          git add trendline_screen.json || true
+        else
+          echo "Skipping trendline_screen.json commit (empty)"
+        fi
+        git diff --staged --quiet || git commit -m "state: screener $(date -u '+%Y-%m-%d %H:%M UTC') [$TL_COUNT stocks]"
         git push
