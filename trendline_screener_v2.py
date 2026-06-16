@@ -314,69 +314,63 @@ def get_trendline_price_today(tl):
 
 def fib_confluence(fib_levels, trigger_price, dist_to_trendline_pct=None):
     """
-    Weekly-only scoring. NO distance tolerance. Pure pocket membership.
-
-    Score 10 — ULTRA: price inside 61.8% OR 50% OR 78.6% OR 100% pocket
-                       AND trendline within 3%
-    Score  9 — inside 61.8% pocket (no TL touch yet)
-    Score  8 — inside 50% pocket (no TL touch yet)
-    Score  7 — inside 78.6% pocket OR TL touch ≤3% (no pocket)
-    Score  6 — inside 100% pocket (deep value zone)
-    Score  5 — monitoring
+    Score 10 — ANY trendline touch ≤3% (with or without fib pocket).
+               Label tells which pocket if price is in one.
+    Score  9 — inside 61.8% pocket, no TL touch yet
+    Score  8 — inside 50% pocket, no TL touch yet
+    Score  7 — inside 78.6% pocket, no TL touch yet
+    Score  6 — inside 100% zone, no TL touch yet
+    Score  5 — monitoring (TL > 3%, no pocket)
     """
-    if not fib_levels:
-        near_tl = dist_to_trendline_pct is not None and dist_to_trendline_pct <= 3.0
-        return (7, 'TL Touch') if near_tl else (5, 'Monitoring')
-
-    p618_lo = fib_levels.get('pocket_618_low',  0); p618_hi = fib_levels.get('pocket_618_high', 0)
-    p500_lo = fib_levels.get('pocket_500_low',  0); p500_hi = fib_levels.get('pocket_500_high', 0)
-    p786_lo = fib_levels.get('pocket_786_low',  0); p786_hi = fib_levels.get('pocket_786_high', 0)
-    p100_lo = fib_levels.get('pocket_100_low',  0); p100_hi = fib_levels.get('pocket_100_high', 0)
-
-    in_618 = p618_lo > 0 and p618_lo <= trigger_price <= p618_hi
-    in_500 = p500_lo > 0 and p500_lo <= trigger_price <= p500_hi
-    in_786 = p786_lo > 0 and p786_lo <= trigger_price <= p786_hi
-    in_100 = p100_lo > 0 and p100_lo <= trigger_price <= p100_hi
     near_tl = dist_to_trendline_pct is not None and dist_to_trendline_pct <= 3.0
 
-    # Score 10: any of the 4 pockets + TL within 3%
-    if near_tl and (in_618 or in_500 or in_786 or in_100):
-        if in_618:   lvl = '61.8%'
-        elif in_500: lvl = '50.0%'
-        elif in_786: lvl = '78.6%'
-        else:        lvl = '100%'
-        w = fib_levels.get(f'{lvl}_W', fib_levels.get('61.8%_W', 0))
-        return 10, f'Ultra: {lvl} + TL ({dist_to_trendline_pct:.1f}%) ✓✓'
-
-    # Score 9: 61.8% pocket, no TL yet
-    if in_618:
-        w618 = fib_levels.get('61.8%_W', 0)
-        d = abs((trigger_price-w618)/w618)*100 if w618 else 0
-        return 9, f'61.8% Pocket (W:{w618:.0f}, {d:.1f}% away) ✓'
-
-    # Score 8: 50% pocket, no TL yet
-    if in_500:
-        w500 = fib_levels.get('50.0%_W', 0)
-        d = abs((trigger_price-w500)/w500)*100 if w500 else 0
-        return 8, f'50% Pocket (W:{w500:.0f}, {d:.1f}% away) ✓'
-
-    # Score 7: 78.6% pocket OR TL touch ≤3%
-    if in_786:
-        w786 = fib_levels.get('78.6%_W', 0)
-        d = abs((trigger_price-w786)/w786)*100 if w786 else 0
-        return 7, f'78.6% Pocket (W:{w786:.0f}, {d:.1f}% away) ✓'
-
+    # Score 10: trendline touch ≤3% — always ULTRA
     if near_tl:
-        return 7, f'TL Touch ({dist_to_trendline_pct:.1f}%)'
+        if not fib_levels:
+            return 10, f'TL Touch ({dist_to_trendline_pct:.1f}%) ✓'
+        p618_lo=fib_levels.get('pocket_618_low',0);  p618_hi=fib_levels.get('pocket_618_high',0)
+        p500_lo=fib_levels.get('pocket_500_low',0);  p500_hi=fib_levels.get('pocket_500_high',0)
+        p786_lo=fib_levels.get('pocket_786_low',0);  p786_hi=fib_levels.get('pocket_786_high',0)
+        p100_lo=fib_levels.get('pocket_100_low',0);  p100_hi=fib_levels.get('pocket_100_high',0)
+        in_618=p618_lo>0 and p618_lo<=trigger_price<=p618_hi
+        in_500=p500_lo>0 and p500_lo<=trigger_price<=p500_hi
+        in_786=p786_lo>0 and p786_lo<=trigger_price<=p786_hi
+        in_100=p100_lo>0 and p100_lo<=trigger_price<=p100_hi
+        if in_618:   label=f'61.8% Pocket + TL ({dist_to_trendline_pct:.1f}%) ✓✓'
+        elif in_500: label=f'50% Pocket + TL ({dist_to_trendline_pct:.1f}%) ✓✓'
+        elif in_786: label=f'78.6% Pocket + TL ({dist_to_trendline_pct:.1f}%) ✓✓'
+        elif in_100: label=f'100% Zone + TL ({dist_to_trendline_pct:.1f}%) ✓✓'
+        else:        label=f'TL Touch ({dist_to_trendline_pct:.1f}%) ✓'
+        return 10, label
 
-    # Score 6: 100% zone
+    if not fib_levels:
+        d_str=f'{dist_to_trendline_pct:.1f}%' if dist_to_trendline_pct else '—'
+        return 5, f'Monitoring (TL dist {d_str})'
+
+    p618_lo=fib_levels.get('pocket_618_low',0);  p618_hi=fib_levels.get('pocket_618_high',0)
+    p500_lo=fib_levels.get('pocket_500_low',0);  p500_hi=fib_levels.get('pocket_500_high',0)
+    p786_lo=fib_levels.get('pocket_786_low',0);  p786_hi=fib_levels.get('pocket_786_high',0)
+    p100_lo=fib_levels.get('pocket_100_low',0);  p100_hi=fib_levels.get('pocket_100_high',0)
+    in_618=p618_lo>0 and p618_lo<=trigger_price<=p618_hi
+    in_500=p500_lo>0 and p500_lo<=trigger_price<=p500_hi
+    in_786=p786_lo>0 and p786_lo<=trigger_price<=p786_hi
+    in_100=p100_lo>0 and p100_lo<=trigger_price<=p100_hi
+
+    # No TL touch yet — score by pocket depth (approaching)
+    if in_618:
+        w618=fib_levels.get('61.8%_W',0); d=abs((trigger_price-w618)/w618)*100 if w618 else 0
+        return 9, f'61.8% Pocket (W:{w618:.0f}, {d:.1f}% from level)'
+    if in_500:
+        w500=fib_levels.get('50.0%_W',0); d=abs((trigger_price-w500)/w500)*100 if w500 else 0
+        return 8, f'50% Pocket (W:{w500:.0f}, {d:.1f}% from level)'
+    if in_786:
+        w786=fib_levels.get('78.6%_W',0); d=abs((trigger_price-w786)/w786)*100 if w786 else 0
+        return 7, f'78.6% Pocket (W:{w786:.0f}, {d:.1f}% from level)'
     if in_100:
-        w100 = fib_levels.get('100.0%_W', 0)
-        d = abs((trigger_price-w100)/w100)*100 if w100 else 0
-        return 6, f'100% Zone (W:{w100:.0f}, {d:.1f}% away)'
+        w100=fib_levels.get('100.0%_W',0); d=abs((trigger_price-w100)/w100)*100 if w100 else 0
+        return 6, f'100% Zone (W:{w100:.0f}, {d:.1f}% from level)'
 
-    # Score 5: monitoring
-    d_str = f'{dist_to_trendline_pct:.1f}%' if dist_to_trendline_pct else '—'
+    d_str=f'{dist_to_trendline_pct:.1f}%' if dist_to_trendline_pct else '—'
     return 5, f'Monitoring (TL dist {d_str})'
 
 

@@ -111,38 +111,39 @@ def mark_alerted(alerts, sym, level_key):
 # ─── FIB SCORING ─────────────────────────────────────────────────────────────
 
 def score_fib(fib_levels, price, tl_dist_pct=None):
-    """
-    Weekly-only. Score 10 = price in {61.8%, 50%, 78.6%, 100%} pocket + TL ≤3%.
-    """
-    if not fib_levels:
-        near_tl = tl_dist_pct is not None and tl_dist_pct <= 3.0
-        return (7, 'TL Touch', 'tl') if near_tl else (0, '', '')
-
-    p618_lo = fib_levels.get('pocket_618_low',  0); p618_hi = fib_levels.get('pocket_618_high', 0)
-    p500_lo = fib_levels.get('pocket_500_low',  0); p500_hi = fib_levels.get('pocket_500_high', 0)
-    p786_lo = fib_levels.get('pocket_786_low',  0); p786_hi = fib_levels.get('pocket_786_high', 0)
-    p100_lo = fib_levels.get('pocket_100_low',  0); p100_hi = fib_levels.get('pocket_100_high', 0)
-
-    in_618 = p618_lo > 0 and p618_lo <= price <= p618_hi
-    in_500 = p500_lo > 0 and p500_lo <= price <= p500_hi
-    in_786 = p786_lo > 0 and p786_lo <= price <= p786_hi
-    in_100 = p100_lo > 0 and p100_lo <= price <= p100_hi
+    """Score 10 = any TL touch ≤3% (pocket label shown if applicable)."""
     near_tl = tl_dist_pct is not None and tl_dist_pct <= 3.0
 
-    # Score 10: any of the 4 pockets + TL within 3%
-    if near_tl and (in_618 or in_500 or in_786 or in_100):
-        if in_618:   lvl = '61.8%'
-        elif in_500: lvl = '50.0%'
-        elif in_786: lvl = '78.6%'
-        else:        lvl = '100%'
-        return 10, f'Ultra: {lvl} Pocket + TL ({tl_dist_pct:.1f}%) ✓✓', 'ultra'
+    if near_tl:
+        if not fib_levels: return 10, f'TL Touch ({tl_dist_pct:.1f}%)', 'tl'
+        p618_lo=fib_levels.get('pocket_618_low',0); p618_hi=fib_levels.get('pocket_618_high',0)
+        p500_lo=fib_levels.get('pocket_500_low',0); p500_hi=fib_levels.get('pocket_500_high',0)
+        p786_lo=fib_levels.get('pocket_786_low',0); p786_hi=fib_levels.get('pocket_786_high',0)
+        p100_lo=fib_levels.get('pocket_100_low',0); p100_hi=fib_levels.get('pocket_100_high',0)
+        in_618=p618_lo>0 and p618_lo<=price<=p618_hi
+        in_500=p500_lo>0 and p500_lo<=price<=p500_hi
+        in_786=p786_lo>0 and p786_lo<=price<=p786_hi
+        in_100=p100_lo>0 and p100_lo<=price<=p100_hi
+        if in_618:   return 10,f'61.8% Pocket + TL ({tl_dist_pct:.1f}%) ✓✓','ultra'
+        elif in_500: return 10,f'50% Pocket + TL ({tl_dist_pct:.1f}%) ✓✓','ultra'
+        elif in_786: return 10,f'78.6% Pocket + TL ({tl_dist_pct:.1f}%) ✓✓','ultra'
+        elif in_100: return 10,f'100% Zone + TL ({tl_dist_pct:.1f}%) ✓✓','ultra'
+        else:        return 10,f'TL Touch ({tl_dist_pct:.1f}%) ✓','tl'
 
-    if in_618: return 9,  f'61.8% Pocket (W:{fib_levels.get("61.8%_W",0):.0f})', '618'
-    if in_500: return 8,  f'50.0% Pocket (W:{fib_levels.get("50.0%_W",0):.0f})', '500'
-    if in_786: return 7,  f'78.6% Deep Pocket (W:{fib_levels.get("78.6%_W",0):.0f})', '786'
-    if near_tl: return 7, f'TL Touch ({tl_dist_pct:.1f}%)', 'tl'
-    if in_100: return 6,  f'100% Zone (W:{fib_levels.get("100.0%_W",0):.0f})', '100'
-    return 0, '', ''
+    if not fib_levels: return 0,'',''
+    p618_lo=fib_levels.get('pocket_618_low',0); p618_hi=fib_levels.get('pocket_618_high',0)
+    p500_lo=fib_levels.get('pocket_500_low',0); p500_hi=fib_levels.get('pocket_500_high',0)
+    p786_lo=fib_levels.get('pocket_786_low',0); p786_hi=fib_levels.get('pocket_786_high',0)
+    p100_lo=fib_levels.get('pocket_100_low',0); p100_hi=fib_levels.get('pocket_100_high',0)
+    in_618=p618_lo>0 and p618_lo<=price<=p618_hi
+    in_500=p500_lo>0 and p500_lo<=price<=p500_hi
+    in_786=p786_lo>0 and p786_lo<=price<=p786_hi
+    in_100=p100_lo>0 and p100_lo<=price<=p100_hi
+    if in_618: return 9,f'61.8% Pocket (W:{fib_levels.get("61.8%_W",0):.0f})','618'
+    if in_500: return 8,f'50% Pocket (W:{fib_levels.get("50.0%_W",0):.0f})','500'
+    if in_786: return 7,f'78.6% Pocket (W:{fib_levels.get("78.6%_W",0):.0f})','786'
+    if in_100: return 6,f'100% Zone (W:{fib_levels.get("100.0%_W",0):.0f})','100'
+    return 0,'',''
 
 
 # ─── LIVE PRICE FETCH ─────────────────────────────────────────────────────────
