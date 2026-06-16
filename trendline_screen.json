@@ -1,7 +1,7 @@
 [
   {
     "ticker": "LUPIN",
-    "currentPrice": 2277.6,
+    "currentPrice": 2277.8,
     "currentLow": 2255.1,
     "triggerPrice": 2256.83,
     "distanceRemaining": 0.08,
@@ -37,7 +37,7 @@
   },
   {
     "ticker": "ERIS",
-    "currentPrice": 1379.1,
+    "currentPrice": 1376.5,
     "currentLow": 1370.0,
     "triggerPrice": 1374.1,
     "distanceRemaining": 0.3,
@@ -73,7 +73,7 @@
   },
   {
     "ticker": "IRB",
-    "currentPrice": 21.32,
+    "currentPrice": 21.3,
     "currentLow": 21.09,
     "triggerPrice": 21.17,
     "distanceRemaining": 0.38,
@@ -109,7 +109,7 @@
   },
   {
     "ticker": "RAMCOCEM",
-    "currentPrice": 882.85,
+    "currentPrice": 882.15,
     "currentLow": 877.4,
     "triggerPrice": 871.11,
     "distanceRemaining": 0.72,
@@ -145,7 +145,7 @@
   },
   {
     "ticker": "DRREDDY",
-    "currentPrice": 1277.7,
+    "currentPrice": 1276.9,
     "currentLow": 1269.1,
     "triggerPrice": 1257.3,
     "distanceRemaining": 0.94,
@@ -181,7 +181,7 @@
   },
   {
     "ticker": "ABBOTINDIA",
-    "currentPrice": 26065.0,
+    "currentPrice": 26100.0,
     "currentLow": 25830.0,
     "triggerPrice": 25541.98,
     "distanceRemaining": 1.13,
@@ -217,7 +217,7 @@
   },
   {
     "ticker": "TECHM",
-    "currentPrice": 1446.0,
+    "currentPrice": 1446.8,
     "currentLow": 1422.9,
     "triggerPrice": 1439.17,
     "distanceRemaining": 1.13,
@@ -253,7 +253,7 @@
   },
   {
     "ticker": "SARDAEN",
-    "currentPrice": 524.6,
+    "currentPrice": 523.5,
     "currentLow": 521.5,
     "triggerPrice": 515.33,
     "distanceRemaining": 1.2,
@@ -289,7 +289,7 @@
   },
   {
     "ticker": "BRITANNIA",
-    "currentPrice": 5213.5,
+    "currentPrice": 5217.5,
     "currentLow": 5169.5,
     "triggerPrice": 5104.17,
     "distanceRemaining": 1.28,
@@ -325,7 +325,7 @@
   },
   {
     "ticker": "DELHIVERY",
-    "currentPrice": 451.8,
+    "currentPrice": 451.3,
     "currentLow": 449.65,
     "triggerPrice": 443.41,
     "distanceRemaining": 1.41,
@@ -361,7 +361,7 @@
   },
   {
     "ticker": "ALKEM",
-    "currentPrice": 5349.5,
+    "currentPrice": 5348.0,
     "currentLow": 5312.5,
     "triggerPrice": 5390.5,
     "distanceRemaining": 1.45,
@@ -397,7 +397,7 @@
   },
   {
     "ticker": "TORNTPOWER",
-    "currentPrice": 1404.8,
+    "currentPrice": 1408.4,
     "currentLow": 1385.0,
     "triggerPrice": 1365.1,
     "distanceRemaining": 1.46,
@@ -433,7 +433,7 @@
   },
   {
     "ticker": "GPIL",
-    "currentPrice": 277.9,
+    "currentPrice": 276.85,
     "currentLow": 276.0,
     "triggerPrice": 271.99,
     "distanceRemaining": 1.47,
@@ -469,7 +469,7 @@
   },
   {
     "ticker": "JYOTHYLAB",
-    "currentPrice": 205.31,
+    "currentPrice": 204.99,
     "currentLow": 203.68,
     "triggerPrice": 200.57,
     "distanceRemaining": 1.55,
@@ -505,7 +505,7 @@
   },
   {
     "ticker": "M&M",
-    "currentPrice": 3135.0,
+    "currentPrice": 3137.9,
     "currentLow": 3108.0,
     "triggerPrice": 3046.09,
     "distanceRemaining": 2.03,
@@ -541,7 +541,7 @@
   },
   {
     "ticker": "ONGC",
-    "currentPrice": 248.1,
+    "currentPrice": 248.2,
     "currentLow": 243.5,
     "triggerPrice": 248.65,
     "distanceRemaining": 2.07,
@@ -577,7 +577,7 @@
   },
   {
     "ticker": "SWANCORP",
-    "currentPrice": 316.8,
+    "currentPrice": 315.95,
     "currentLow": 312.7,
     "triggerPrice": 306.15,
     "distanceRemaining": 2.14,
@@ -613,7 +613,7 @@
   },
   {
     "ticker": "CEATLTD",
-    "currentPrice": 3428.2,
+    "currentPrice": 3424.7,
     "currentLow": 3380.0,
     "triggerPrice": 3303.1,
     "distanceRemaining": 2.33,
@@ -649,7 +649,7 @@
   },
   {
     "ticker": "UNITDSPR",
-    "currentPrice": 1298.6,
+    "currentPrice": 1299.0,
     "currentLow": 1268.1,
     "triggerPrice": 1236.88,
     "distanceRemaining": 2.52,
@@ -685,7 +685,7 @@
   },
   {
     "ticker": "LTFOODS",
-    "currentPrice": 382.0,
+    "currentPrice": 381.5,
     "currentLow": 378.0,
     "triggerPrice": 368.17,
     "distanceRemaining": 2.67,
@@ -721,7 +721,7 @@
   },
   {
     "ticker": "GILLETTE",
-    "currentPrice": 7713.0,
+    "currentPrice": 7715.5,
     "currentLow": 7682.0,
     "triggerPrice": 7481.46,
     "distanceRemaining": 2.68,
@@ -757,7 +757,7 @@
   },
   {
     "ticker": "VGUARD",
-    "currentPrice": 306.35,
+    "currentPrice": 305.75,
     "currentLow": 304.0,
     "triggerPrice": 296.0,
     "distanceRemaining": 2.7,
@@ -793,7 +793,7 @@
   },
   {
     "ticker": "IRCTC",
-    "currentPrice": 522.7,
+    "currentPrice": 522.9,
     "currentLow": 518.6,
     "triggerPrice": 504.19,
     "distanceRemaining": 2.86,
@@ -829,7 +829,7 @@
   },
   {
     "ticker": "PVRINOX",
-    "currentPrice": 949.8,
+    "currentPrice": 948.9,
     "currentLow": 944.6,
     "triggerPrice": 916.06,
     "distanceRemaining": 3.12,
@@ -865,7 +865,7 @@
   },
   {
     "ticker": "TIMKEN",
-    "currentPrice": 3652.6,
+    "currentPrice": 3634.3,
     "currentLow": 3528.6,
     "triggerPrice": 3421.56,
     "distanceRemaining": 3.13,
@@ -900,8 +900,80 @@
     "anchor2Date": "2025-11"
   },
   {
+    "ticker": "AGARWALEYE",
+    "currentPrice": 438.45,
+    "currentLow": 437.0,
+    "triggerPrice": 423.2,
+    "distanceRemaining": 3.26,
+    "signalStatus": "MONITORING",
+    "notificationTrigger": false,
+    "confluenceScore": 9,
+    "patternZone": "Fib 61.8% (1.0%) \u2713",
+    "wickTouches": 5,
+    "timeframe": "monthly",
+    "ema50": null,
+    "ema200": null,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 118,
+      "entryPrice": 423.2,
+      "strictStopLoss": 389.34,
+      "pivotTargetExit": 520.54
+    },
+    "fibonacciLevels": {
+      "0.0%": 568.0,
+      "23.6%": 511.12,
+      "38.2%": 475.94,
+      "50.0%": 447.5,
+      "61.8%": 419.06,
+      "78.6%": 378.57,
+      "100.0%": 327.0
+    },
+    "fibMatchLevel": "61.8%",
+    "fibMatchPrice": 419.06,
+    "trendlineSlope": 7.4,
+    "anchor1Date": "2025-05",
+    "anchor2Date": "2026-03"
+  },
+  {
+    "ticker": "ACI",
+    "currentPrice": 527.45,
+    "currentLow": 525.25,
+    "triggerPrice": 508.48,
+    "distanceRemaining": 3.3,
+    "signalStatus": "MONITORING",
+    "notificationTrigger": false,
+    "confluenceScore": 7,
+    "patternZone": "Near 78.6% (2.7%)",
+    "wickTouches": 13,
+    "timeframe": "monthly",
+    "ema50": null,
+    "ema200": null,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 98,
+      "entryPrice": 508.48,
+      "strictStopLoss": 467.8,
+      "pivotTargetExit": 625.43
+    },
+    "fibonacciLevels": {
+      "0.0%": 827.29,
+      "23.6%": 727.5,
+      "38.2%": 665.77,
+      "50.0%": 615.88,
+      "61.8%": 565.99,
+      "78.6%": 494.96,
+      "100.0%": 404.48
+    },
+    "fibMatchLevel": "78.6%",
+    "fibMatchPrice": 494.96,
+    "trendlineSlope": 0.629149,
+    "anchor1Date": "2023-08",
+    "anchor2Date": "2026-05"
+  },
+  {
     "ticker": "NATCOPHARM",
-    "currentPrice": 851.0,
+    "currentPrice": 851.5,
     "currentLow": 841.7,
     "triggerPrice": 872.19,
     "distanceRemaining": 3.5,
@@ -937,7 +1009,7 @@
   },
   {
     "ticker": "STARCEMENT",
-    "currentPrice": 213.47,
+    "currentPrice": 213.77,
     "currentLow": 211.43,
     "triggerPrice": 204.28,
     "distanceRemaining": 3.5,
@@ -973,7 +1045,7 @@
   },
   {
     "ticker": "POONAWALLA",
-    "currentPrice": 404.0,
+    "currentPrice": 403.45,
     "currentLow": 398.45,
     "triggerPrice": 384.7,
     "distanceRemaining": 3.57,
@@ -1009,7 +1081,7 @@
   },
   {
     "ticker": "SCHAEFFLER",
-    "currentPrice": 4161.0,
+    "currentPrice": 4163.0,
     "currentLow": 4026.6,
     "triggerPrice": 3885.92,
     "distanceRemaining": 3.62,
@@ -1042,42 +1114,6 @@
     "trendlineSlope": 79.247181,
     "anchor1Date": "2025-04",
     "anchor2Date": "2026-01"
-  },
-  {
-    "ticker": "ACI",
-    "currentPrice": 529.35,
-    "currentLow": 527.05,
-    "triggerPrice": 508.48,
-    "distanceRemaining": 3.65,
-    "signalStatus": "MONITORING",
-    "notificationTrigger": false,
-    "confluenceScore": 7,
-    "patternZone": "Near 78.6% (2.7%)",
-    "wickTouches": 13,
-    "timeframe": "monthly",
-    "ema50": null,
-    "ema200": null,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 98,
-      "entryPrice": 508.48,
-      "strictStopLoss": 467.8,
-      "pivotTargetExit": 625.43
-    },
-    "fibonacciLevels": {
-      "0.0%": 827.29,
-      "23.6%": 727.5,
-      "38.2%": 665.77,
-      "50.0%": 615.88,
-      "61.8%": 565.99,
-      "78.6%": 494.96,
-      "100.0%": 404.48
-    },
-    "fibMatchLevel": "78.6%",
-    "fibMatchPrice": 494.96,
-    "trendlineSlope": 0.629149,
-    "anchor1Date": "2023-08",
-    "anchor2Date": "2026-05"
   },
   {
     "ticker": "MRF",
@@ -1116,44 +1152,8 @@
     "anchor2Date": "2026-05"
   },
   {
-    "ticker": "AGARWALEYE",
-    "currentPrice": 439.95,
-    "currentLow": 439.25,
-    "triggerPrice": 423.2,
-    "distanceRemaining": 3.79,
-    "signalStatus": "MONITORING",
-    "notificationTrigger": false,
-    "confluenceScore": 9,
-    "patternZone": "Fib 61.8% (1.0%) \u2713",
-    "wickTouches": 5,
-    "timeframe": "monthly",
-    "ema50": null,
-    "ema200": null,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 118,
-      "entryPrice": 423.2,
-      "strictStopLoss": 389.34,
-      "pivotTargetExit": 520.54
-    },
-    "fibonacciLevels": {
-      "0.0%": 568.0,
-      "23.6%": 511.12,
-      "38.2%": 475.94,
-      "50.0%": 447.5,
-      "61.8%": 419.06,
-      "78.6%": 378.57,
-      "100.0%": 327.0
-    },
-    "fibMatchLevel": "61.8%",
-    "fibMatchPrice": 419.06,
-    "trendlineSlope": 7.4,
-    "anchor1Date": "2025-05",
-    "anchor2Date": "2026-03"
-  },
-  {
     "ticker": "BHARTIARTL",
-    "currentPrice": 1849.6,
+    "currentPrice": 1853.0,
     "currentLow": 1837.2,
     "triggerPrice": 1767.29,
     "distanceRemaining": 3.96,
@@ -1189,7 +1189,7 @@
   },
   {
     "ticker": "SUPREMEIND",
-    "currentPrice": 3565.2,
+    "currentPrice": 3566.7,
     "currentLow": 3550.6,
     "triggerPrice": 3406.82,
     "distanceRemaining": 4.22,
@@ -1261,7 +1261,7 @@
   },
   {
     "ticker": "CHALET",
-    "currentPrice": 756.35,
+    "currentPrice": 756.4,
     "currentLow": 751.0,
     "triggerPrice": 720.27,
     "distanceRemaining": 4.27,
@@ -1297,7 +1297,7 @@
   },
   {
     "ticker": "UNOMINDA",
-    "currentPrice": 1089.9,
+    "currentPrice": 1089.5,
     "currentLow": 1085.6,
     "triggerPrice": 1039.23,
     "distanceRemaining": 4.46,
@@ -1333,7 +1333,7 @@
   },
   {
     "ticker": "JIOFIN",
-    "currentPrice": 242.39,
+    "currentPrice": 241.95,
     "currentLow": 239.86,
     "triggerPrice": 229.54,
     "distanceRemaining": 4.5,
@@ -1369,7 +1369,7 @@
   },
   {
     "ticker": "ICICIGI",
-    "currentPrice": 1778.9,
+    "currentPrice": 1783.6,
     "currentLow": 1732.0,
     "triggerPrice": 1655.81,
     "distanceRemaining": 4.6,
@@ -1405,7 +1405,7 @@
   },
   {
     "ticker": "IOB",
-    "currentPrice": 34.05,
+    "currentPrice": 34.03,
     "currentLow": 33.82,
     "triggerPrice": 32.25,
     "distanceRemaining": 4.87,
@@ -1441,7 +1441,7 @@
   },
   {
     "ticker": "GPPL",
-    "currentPrice": 154.99,
+    "currentPrice": 154.94,
     "currentLow": 154.37,
     "triggerPrice": 147.19,
     "distanceRemaining": 4.88,
@@ -1477,7 +1477,7 @@
   },
   {
     "ticker": "GODREJCP",
-    "currentPrice": 1033.2,
+    "currentPrice": 1034.5,
     "currentLow": 1023.7,
     "triggerPrice": 975.81,
     "distanceRemaining": 4.91,
