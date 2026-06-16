@@ -166,24 +166,75 @@ def fit_trendline(data):
 
 def _calc_fib(post, a2, lows):
     """
-    Calculate Fibonacci retracement levels from ATH to ATL of the full dataset.
-    Grid: ATH = 0%, ATL = 100% (standard macro retracement top-down).
+    Dual-timeframe Fibonacci grid.
+    Weekly proxy  = last 52 monthly bars (high/low range).
+    Monthly       = last 24 monthly bars (high/low range).
+    Confluence pocket = 50%–61.8% zone where both timeframes agree (±2% buffer).
+    Returns a flat dict for backward-compat storage + nested grids for scoring.
     """
     try:
-        all_highs = post['High'].values.flatten().astype(float)
-        all_lows  = post['Low'].values.flatten().astype(float)
-        ath = float(all_highs.max())   # All-Time High (0%)
-        atl = float(all_lows.min())    # All-Time Low (100%)
-        fr  = ath - atl
-        if fr <= 0: return {}
+        highs = post['High'].values.flatten().astype(float)
+        lows_ = post['Low'].values.flatten().astype(float)
+
+        # ── Weekly proxy (52 bars)
+        w = min(52, len(post))
+        wh = float(highs[-w:].max());  wl = float(lows_[-w:].min())
+        wd = wh - wl
+        if wd <= 0: return {}
+        w_fib = {
+            '0.0%':    round(wh, 2),
+            '23.6%':   round(wh - wd * 0.236, 2),
+            '38.2%':   round(wh - wd * 0.382, 2),
+            '50.0%':   round(wh - wd * 0.500, 2),
+            '61.8%':   round(wh - wd * 0.618, 2),
+            '78.6%':   round(wh - wd * 0.786, 2),
+            '100.0%':  round(wl, 2),
+            'Ext_23.6%': round(wh + wd * 0.236, 2),
+            'Ext_61.8%': round(wh + wd * 0.618, 2),
+        }
+
+        # ── Monthly (24 bars)
+        m = min(24, len(post))
+        mh = float(highs[-m:].max());  ml = float(lows_[-m:].min())
+        md = mh - ml
+        if md <= 0: return {}
+        m_fib = {
+            '0.0%':    round(mh, 2),
+            '23.6%':   round(mh - md * 0.236, 2),
+            '38.2%':   round(mh - md * 0.382, 2),
+            '50.0%':   round(mh - md * 0.500, 2),
+            '61.8%':   round(mh - md * 0.618, 2),
+            '78.6%':   round(mh - md * 0.786, 2),
+            '100.0%':  round(ml, 2),
+            'Ext_23.6%': round(mh + md * 0.236, 2),
+            'Ext_61.8%': round(mh + md * 0.618, 2),
+        }
+
+        # ── Confluence pockets (50% and 61.8%) — lower of the two TFs to higher + 2% buffer
+        w_618 = w_fib['61.8%'];  m_618 = m_fib['61.8%']
+        w_500 = w_fib['50.0%'];  m_500 = m_fib['50.0%']
+
+        pocket_618_low  = round(min(w_618, m_618) * 0.98, 2)
+        pocket_618_high = round(max(w_618, m_618) * 1.02, 2)
+        pocket_500_low  = round(min(w_500, m_500) * 0.98, 2)
+        pocket_500_high = round(max(w_500, m_500) * 1.02, 2)
+
         return {
-            '0.0%':   round(ath, 2),
-            '23.6%':  round(ath - fr * 0.236, 2),
-            '38.2%':  round(ath - fr * 0.382, 2),
-            '50.0%':  round(ath - fr * 0.500, 2),
-            '61.8%':  round(ath - fr * 0.618, 2),
-            '78.6%':  round(ath - fr * 0.786, 2),
-            '100.0%': round(atl, 2),
+            # Nested grids
+            '_weekly':  w_fib,
+            '_monthly': m_fib,
+            # Pocket boundaries (used by fib_confluence)
+            'pocket_618_low':  pocket_618_low,
+            'pocket_618_high': pocket_618_high,
+            'pocket_500_low':  pocket_500_low,
+            'pocket_500_high': pocket_500_high,
+            # Flat representative levels (for frontend display / backward compat)
+            '50.0%_W': w_fib['50.0%'],
+            '50.0%_M': m_fib['50.0%'],
+            '61.8%_W': w_fib['61.8%'],
+            '61.8%_M': m_fib['61.8%'],
+            'Ext_23.6%_W': w_fib['Ext_23.6%'],
+            'Ext_61.8%_W': w_fib['Ext_61.8%'],
         }
     except Exception: return {}
 
@@ -283,18 +334,59 @@ def get_trendline_price_today(tl):
 
 
 def fib_confluence(fib_levels, trigger_price):
+    """
+    Score trendline trigger price against dual-timeframe 50%+61.8% confluence pockets.
+
+    Priority order:
+      10 — inside BOTH 61.8% AND 50% pockets simultaneously (ultra-confluence)
+       9 — inside 61.8% pocket (weekly + monthly Golden Ratio agree)
+       8 — inside 50% pocket (weekly + monthly agree)
+       7 — within 1.5% of weekly OR monthly 61.8%
+       6 — within 1.5% of weekly OR monthly 50%
+       5 — no meaningful confluence
+    """
     if not fib_levels: return 5, 'No fib'
-    min_d, closest = float('inf'), None
-    for lvl, price in fib_levels.items():
-        if lvl == '0.0%': continue  # skip ATH level
-        d = abs((trigger_price-price)/price)*100
-        if d < min_d: min_d, closest = d, lvl
-    if min_d <= 1.5:
-        s = 10 if min_d<=0.3 else (9 if min_d<=0.7 else 8)
-        if closest=='61.8%': s=min(10,s+1)
-        return s, f"Fib {closest} ({min_d:.1f}%) ✓"
-    elif min_d<=3.0: return 7, f"Near {closest} ({min_d:.1f}%)"
-    else:            return 5, f"Nearest {closest} ({min_d:.1f}%)"
+
+    p618_lo = fib_levels.get('pocket_618_low',  0)
+    p618_hi = fib_levels.get('pocket_618_high', 0)
+    p500_lo = fib_levels.get('pocket_500_low',  0)
+    p500_hi = fib_levels.get('pocket_500_high', 0)
+
+    in_618 = p618_lo > 0 and p618_lo <= trigger_price <= p618_hi
+    in_500 = p500_lo > 0 and p500_lo <= trigger_price <= p500_hi
+
+    if in_618 and in_500:
+        return 10, 'W/M 61.8%+50% Ultra-Pocket ✓✓'
+
+    if in_618:
+        w618 = fib_levels.get('61.8%_W', 0)
+        m618 = fib_levels.get('61.8%_M', 0)
+        wd = abs((trigger_price-w618)/w618)*100 if w618 else 99
+        md = abs((trigger_price-m618)/m618)*100 if m618 else 99
+        return 9, f'W/M 61.8% Pocket ({wd:.1f}%/{md:.1f}%) ✓'
+
+    if in_500:
+        w500 = fib_levels.get('50.0%_W', 0)
+        m500 = fib_levels.get('50.0%_M', 0)
+        wd = abs((trigger_price-w500)/w500)*100 if w500 else 99
+        md = abs((trigger_price-m500)/m500)*100 if m500 else 99
+        return 8, f'W/M 50% Pocket ({wd:.1f}%/{md:.1f}%) ✓'
+
+    # Single-timeframe proximity check (61.8% first, then 50%)
+    w_fib = fib_levels.get('_weekly',  {})
+    m_fib = fib_levels.get('_monthly', {})
+
+    best_s, best_note = 5, 'No confluence'
+    for tf_label, fib in [('W', w_fib), ('M', m_fib)]:
+        for lvl_key, score_base in [('61.8%', 7), ('50.0%', 6)]:
+            price = fib.get(lvl_key, 0)
+            if price <= 0: continue
+            d = abs((trigger_price - price) / price) * 100
+            if d <= 1.5 and score_base > best_s:
+                best_s    = score_base
+                best_note = f'{tf_label} {lvl_key} ({d:.1f}%)'
+
+    return best_s, best_note
 
 
 def daily_scan(notify=True):
@@ -389,13 +481,17 @@ def daily_scan(notify=True):
         fib_levels = tl.get('fib_levels', {})
         fib_score, fib_note = fib_confluence(fib_levels, tl_price)
 
-        # Find closest fib
+        # Find closest fib level for display (use weekly grid if available)
         fib_match = None
         fib_match_price = None
         if fib_levels:
+            w_fib = fib_levels.get('_weekly', {})
+            search_grid = w_fib if w_fib else fib_levels
             min_d = float('inf')
-            for lvl, price in fib_levels.items():
-                d = abs((tl_price-price)/price)*100
+            for lvl, price in search_grid.items():
+                if lvl.startswith('_') or lvl.startswith('Ext') or lvl == '0.0%': continue
+                if not isinstance(price, (int, float)): continue
+                d = abs((tl_price - price) / price) * 100
                 if d < min_d: min_d, fib_match, fib_match_price = d, lvl, price
 
         signal = {
@@ -422,6 +518,13 @@ def daily_scan(notify=True):
             'fibonacciLevels':    fib_levels,
             'fibMatchLevel':      fib_match,
             'fibMatchPrice':      fib_match_price,
+            # New dual-timeframe pocket fields
+            'fib_618_weekly':     fib_levels.get('61.8%_W'),
+            'fib_618_monthly':    fib_levels.get('61.8%_M'),
+            'fib_500_weekly':     fib_levels.get('50.0%_W'),
+            'fib_500_monthly':    fib_levels.get('50.0%_M'),
+            'fib_target_1':       fib_levels.get('Ext_23.6%_W'),
+            'fib_target_2':       fib_levels.get('Ext_61.8%_W'),
             'trendlineSlope':     tl['slope'],
             'anchor1Date':        tl['a1_date'][:7],
             'anchor2Date':        tl['a2_date'][:7],
