@@ -61,21 +61,21 @@ def get_symbol_token(smart, symbol):
     return r['tradingsymbol'], r['symboltoken']
 
 def place_gtt(smart, trading_symbol, symbol_token, quantity, entry_price, target_price, stop_loss):
-    """Place GTT OCO order."""
+    """Place GTT OCO order using correct Angel One API format."""
     gtt_params = {
-        "tradingsymbol":   trading_symbol,
-        "symboltoken":     symbol_token,
-        "exchange":        "NSE",
-        "producttype":     "DELIVERY",
-        "transactiontype": "SELL",
-        "qty":             str(quantity),
-        "disclosedqty":    str(quantity),
-        "triggerprice":    round(target_price, 2),
-        "price":           round(target_price * 0.995, 2),
-        "timeperiod":      365,
-        "type":            "TWO_LEG",
-        "triggerprice2":   round(stop_loss, 2),
-        "price2":          round(stop_loss * 0.995, 2),
+        "tradingsymbol":        trading_symbol,
+        "symboltoken":          symbol_token,
+        "exchange":             "NSE",
+        "producttype":          "DELIVERY",
+        "transactiontype":      "SELL",
+        "qty":                  str(quantity),
+        "disclosedqty":         str(quantity),
+        "price":                round(target_price * 0.995, 2),  # limit price for target leg
+        "triggerprice":         round(target_price, 2),          # target trigger
+        "timeperiod":           365,
+        "gttType":              "OCO",
+        "stoplossprice":        round(stop_loss * 0.995, 2),     # SL limit price
+        "stoplosstriggerprice": round(stop_loss, 2),             # SL trigger price
     }
     result = smart.gttCreateRule(gtt_params)
     return str(result) if result else None

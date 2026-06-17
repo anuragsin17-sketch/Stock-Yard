@@ -474,23 +474,21 @@ def place_order():
         gtt_id = None
         gtt_error = None
         try:
-            # Angel One GTT API — correct params format
+            # Angel One GTT OCO — correct params format
             gtt_params = {
-                "tradingsymbol":   trading_symbol,
-                "symboltoken":     symbol_token,
-                "exchange":        "NSE",
-                "producttype":     "DELIVERY",
-                "transactiontype": "SELL",
-                "qty":             str(quantity),
-                "disclosedqty":    str(quantity),
-                "triggerprice":    round(target_price, 2),   # primary trigger = target
-                "price":           round(target_price * 0.995, 2),
-                "timeperiod":      365,
-                # Two-leg: target and stoploss
-                "type":            "TWO_LEG",
-                "triggerprice":    round(target_price, 2),
-                "triggerprice2":   round(stop_loss, 2),
-                "price2":          round(stop_loss * 0.995, 2),
+                "tradingsymbol":        trading_symbol,
+                "symboltoken":          symbol_token,
+                "exchange":             "NSE",
+                "producttype":          "DELIVERY",
+                "transactiontype":      "SELL",
+                "qty":                  str(quantity),
+                "disclosedqty":         str(quantity),
+                "price":                round(target_price * 0.995, 2),
+                "triggerprice":         round(target_price, 2),
+                "timeperiod":           365,
+                "gttType":              "OCO",
+                "stoplossprice":        round(stop_loss * 0.995, 2),
+                "stoplosstriggerprice": round(stop_loss, 2),
             }
 
             # gttCreateRule returns the GTT id directly (int/str), not a dict
