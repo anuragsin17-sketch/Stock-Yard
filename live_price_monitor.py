@@ -29,6 +29,18 @@ warnings.filterwarnings('ignore')
 # ─── CONFIG ──────────────────────────────────────────────────────────────────
 TELEGRAM_TOKEN   = os.environ.get('TELEGRAM_BOT_TOKEN', '')
 TELEGRAM_CHAT    = os.environ.get('TELEGRAM_CHAT_ID', '')
+
+# Also try .env file if env vars not set
+if not TELEGRAM_TOKEN and os.path.exists('.env'):
+    try:
+        with open('.env') as _f:
+            for _line in _f:
+                _line = _line.strip()
+                if '=' in _line and not _line.startswith('#'):
+                    _k, _v = _line.split('=', 1)
+                    if _k.strip() == 'TELEGRAM_BOT_TOKEN': TELEGRAM_TOKEN = _v.strip()
+                    if _k.strip() == 'TELEGRAM_CHAT_ID':   TELEGRAM_CHAT  = _v.strip()
+    except: pass
 APP_URL          = 'https://anuragsin17-sketch.github.io/Stock-Yard-Public'
 TL_CACHE_FILE    = 'trendline_cache.json'
 VOL_WATCH_FILE   = 'volume_gainer_watchlist.json'
