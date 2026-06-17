@@ -1,13 +1,7 @@
-name: Fib Price Alert - Every 5 Min (Market Hours)
+name: Fib Price Alert - Every 5 Min (Market Hours) [DISABLED - EC2 handles this]
 
 on:
-  schedule:
-    # Every 5 minutes, Mon-Fri 09:15–15:30 IST (03:45–10:00 UTC)
-    - cron: '*/5 4-9 * * 1-5'
-    - cron: '0,5,10,15,20,25,30 10 * * 1-5'
-    # Pre-market warm-up at 09:10 IST (03:40 UTC)
-    - cron: '40 3 * * 1-5'
-  workflow_dispatch:
+  workflow_dispatch:  # Manual trigger only — EC2 cron runs this every 1-5 min
 
 permissions:
   contents: write
