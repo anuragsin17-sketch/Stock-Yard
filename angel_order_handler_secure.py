@@ -474,38 +474,33 @@ def place_order():
         gtt_id = None
         gtt_error = None
         try:
-            # Angel One GTT API — OCO (One Cancels Other)
-            # Triggers a SELL when price hits target OR stop_loss
+            # Angel One GTT API — correct params format
             gtt_params = {
-                "tradingsymbol":  trading_symbol,
-                "symboltoken":    symbol_token,
-                "exchange":       "NSE",
-                "producttype":    "DELIVERY",
+                "tradingsymbol":   trading_symbol,
+                "symboltoken":     symbol_token,
+                "exchange":        "NSE",
+                "producttype":     "DELIVERY",
                 "transactiontype": "SELL",
-                "qty":            quantity,
-                "type":           "TWO_LEG",   # OCO = two-leg GTT
-                "price":          int(entry_price),  # reference price
-                "triggerprice": [
-                    {
-                        "triggertype": "ABOVE",         # target hit
-                        "price":       round(target_price, 2),
-                        "orderprice":  round(target_price * 0.995, 2),  # limit slightly below trigger
-                    },
-                    {
-                        "triggertype": "BELOW",         # stop loss hit
-                        "price":       round(stop_loss, 2),
-                        "orderprice":  round(stop_loss * 0.995, 2),  # limit slightly below SL
-                    }
-                ]
+                "qty":             str(quantity),
+                "disclosedqty":    str(quantity),
+                "triggerprice":    round(target_price, 2),   # primary trigger = target
+                "price":           round(target_price * 0.995, 2),
+                "timeperiod":      365,
+                # Two-leg: target and stoploss
+                "type":            "TWO_LEG",
+                "triggerprice":    round(target_price, 2),
+                "triggerprice2":   round(stop_loss, 2),
+                "price2":          round(stop_loss * 0.995, 2),
             }
 
-            gtt_result = smart.gttCreateRule(gtt_params)
-            if isinstance(gtt_result, dict) and gtt_result.get('status'):
-                gtt_id = gtt_result.get('data', {}).get('id') or gtt_result.get('data')
-                logger.info(f"✅ GTT OCO placed: {gtt_id} | T:{target_price} / SL:{stop_loss}")
+            # gttCreateRule returns the GTT id directly (int/str), not a dict
+            result = smart.gttCreateRule(gtt_params)
+            if result:
+                gtt_id = str(result)
+                logger.info(f"✅ GTT placed: {gtt_id} | Target:{target_price} SL:{stop_loss}")
             else:
-                gtt_error = str(gtt_result)
-                logger.warning(f"⚠️ GTT placement failed: {gtt_error}")
+                gtt_error = "Empty response from gttCreateRule"
+                logger.warning(f"⚠️ GTT empty response")
         except Exception as e:
             gtt_error = str(e)
             logger.warning(f"⚠️ GTT exception: {e}")
