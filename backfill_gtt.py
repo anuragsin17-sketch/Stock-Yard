@@ -61,7 +61,12 @@ def get_symbol_token(smart, symbol):
     return r['tradingsymbol'], r['symboltoken']
 
 def place_gtt(smart, trading_symbol, symbol_token, quantity, entry_price, target_price, stop_loss):
-    """Place GTT OCO order using correct Angel One API format."""
+    """Place GTT OCO SELL order — target + stoploss.
+
+    NOTE: smart.gttCreateRule() hits the wrong URL (/gtt-test/...) in some
+    SmartAPI library versions.  We call the correct endpoint directly using
+    the session's auth headers to avoid that routing bug.
+    """
     gtt_params = {
         "tradingsymbol":        trading_symbol,
         "symboltoken":          symbol_token,
@@ -70,15 +75,40 @@ def place_gtt(smart, trading_symbol, symbol_token, quantity, entry_price, target
         "transactiontype":      "SELL",
         "qty":                  str(quantity),
         "disclosedqty":         str(quantity),
-        "price":                round(target_price * 0.995, 2),  # limit price for target leg
-        "triggerprice":         round(target_price, 2),          # target trigger
         "timeperiod":           365,
         "gttType":              "OCO",
-        "stoplossprice":        round(stop_loss * 0.995, 2),     # SL limit price
-        "stoplosstriggerprice": round(stop_loss, 2),             # SL trigger price
+        # Target leg — trigger when price rises to target
+        "triggerprice":         round(target_price, 2),
+        "price":                round(target_price * 0.995, 2),  # limit slightly below trigger
+        # SL leg — trigger when price falls to stop_loss
+        "stoplosstriggerprice": round(stop_loss, 2),
+        "stoplossprice":        round(stop_loss * 0.995, 2),     # limit slightly below SL trigger
     }
-    result = smart.gttCreateRule(gtt_params)
-    return str(result) if result else None
+
+    # Build auth headers directly from the SmartConnect session object so we
+    # bypass the library's incorrect URL routing.
+    headers = {
+        'Content-Type':    'application/json',
+        'Accept':          'application/json',
+        'X-UserType':      'USER',
+        'X-SourceID':      'WEB',
+        'X-ClientLocalIP': getattr(smart, 'clientLocalIP', '127.0.0.1'),
+        'X-ClientPublicIP': getattr(smart, 'clientPublicIP', '127.0.0.1'),
+        'X-MACAddress':    getattr(smart, 'macAddress', ''),
+        'X-PrivateKey':    smart.api_key,
+        'Authorization':   f'Bearer {smart.access_token}',
+    }
+
+    url = 'https://apiconnect.angelone.in/gtt-service/rest/secure/angelbroking/gtt/v1/createRule'
+    resp = requests.post(url, json=gtt_params, headers=headers, timeout=15)
+    resp.raise_for_status()
+    data = resp.json()
+    print(f"  GTT API response: {data}")
+
+    # API returns {"status": true, "message": "SUCCESS", "data": <gtt_id>}
+    if data.get('status') and data.get('data'):
+        return str(data['data'])
+    raise Exception(f"GTT API returned: {data}")
 
 def main():
     print(f"\n{'='*60}")

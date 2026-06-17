@@ -470,11 +470,12 @@ def place_order():
         logger.info(f"📍 Stock added to Radar: {symbol}")
 
         # ====== PLACE GTT OCO (TARGET + STOPLOSS) ======
+        # NOTE: smart.gttCreateRule() hits the wrong URL (/gtt-test/...) in
+        # some SmartAPI library versions.  Call the correct endpoint directly.
 
         gtt_id = None
         gtt_error = None
         try:
-            # Angel One GTT OCO — correct params format
             gtt_params = {
                 "tradingsymbol":        trading_symbol,
                 "symboltoken":          symbol_token,
@@ -483,22 +484,42 @@ def place_order():
                 "transactiontype":      "SELL",
                 "qty":                  str(quantity),
                 "disclosedqty":         str(quantity),
-                "price":                round(target_price * 0.995, 2),
-                "triggerprice":         round(target_price, 2),
                 "timeperiod":           365,
                 "gttType":              "OCO",
-                "stoplossprice":        round(stop_loss * 0.995, 2),
+                # Target leg
+                "triggerprice":         round(target_price, 2),
+                "price":                round(target_price * 0.995, 2),
+                # SL leg
                 "stoplosstriggerprice": round(stop_loss, 2),
+                "stoplossprice":        round(stop_loss * 0.995, 2),
             }
 
-            # gttCreateRule returns the GTT id directly (int/str), not a dict
-            result = smart.gttCreateRule(gtt_params)
-            if result:
-                gtt_id = str(result)
+            # Build auth headers from the live session — bypasses SDK URL bug
+            gtt_headers = {
+                'Content-Type':    'application/json',
+                'Accept':          'application/json',
+                'X-UserType':      'USER',
+                'X-SourceID':      'WEB',
+                'X-ClientLocalIP': getattr(smart, 'clientLocalIP', '127.0.0.1'),
+                'X-ClientPublicIP': getattr(smart, 'clientPublicIP', '127.0.0.1'),
+                'X-MACAddress':    getattr(smart, 'macAddress', ''),
+                'X-PrivateKey':    smart.api_key,
+                'Authorization':   f'Bearer {smart.access_token}',
+            }
+
+            gtt_url = 'https://apiconnect.angelone.in/gtt-service/rest/secure/angelbroking/gtt/v1/createRule'
+            gtt_resp = requests.post(gtt_url, json=gtt_params, headers=gtt_headers, timeout=15)
+            gtt_resp.raise_for_status()
+            gtt_data = gtt_resp.json()
+            logger.info(f"GTT API response: {gtt_data}")
+
+            # Response: {"status": true, "message": "SUCCESS", "data": <gtt_id>}
+            if gtt_data.get('status') and gtt_data.get('data'):
+                gtt_id = str(gtt_data['data'])
                 logger.info(f"✅ GTT placed: {gtt_id} | Target:{target_price} SL:{stop_loss}")
             else:
-                gtt_error = "Empty response from gttCreateRule"
-                logger.warning(f"⚠️ GTT empty response")
+                gtt_error = f"GTT API returned: {gtt_data}"
+                logger.warning(f"⚠️ GTT failed: {gtt_error}")
         except Exception as e:
             gtt_error = str(e)
             logger.warning(f"⚠️ GTT exception: {e}")
