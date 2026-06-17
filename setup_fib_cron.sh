@@ -29,7 +29,12 @@ cat >> "$CRON_FILE" << 'CRON'
 */5 4-9 * * 1-5 cd /home/ubuntu/Stock-Yard && python fib_price_alert.py >> logs/fib_alert.log 2>&1
 0,5,10,15,20,25,30 10 * * 1-5 cd /home/ubuntu/Stock-Yard && python fib_price_alert.py >> logs/fib_alert.log 2>&1
 40 3 * * 1-5 cd /home/ubuntu/Stock-Yard && python fib_price_alert.py >> logs/fib_alert.log 2>&1
-# Rotate log at midnight (keep last 500 lines)
+# Stock Yard — Live price monitor every 1 min (market hours) — trendline + volume
+* 4-9 * * 1-5 cd /home/ubuntu/Stock-Yard && python live_price_monitor.py >> logs/live_monitor.log 2>&1
+0-30 10 * * 1-5 cd /home/ubuntu/Stock-Yard && python live_price_monitor.py >> logs/live_monitor.log 2>&1
+45 3 * * 1-5 cd /home/ubuntu/Stock-Yard && python live_price_monitor.py >> logs/live_monitor.log 2>&1
+# Rotate logs at midnight (keep last 1000 lines)
+0 0 * * * tail -1000 /home/ubuntu/Stock-Yard/logs/live_monitor.log > /home/ubuntu/Stock-Yard/logs/live_monitor.log.tmp && mv /home/ubuntu/Stock-Yard/logs/live_monitor.log.tmp /home/ubuntu/Stock-Yard/logs/live_monitor.log
 0 0 * * * tail -500 /home/ubuntu/Stock-Yard/logs/fib_alert.log > /home/ubuntu/Stock-Yard/logs/fib_alert.log.tmp && mv /home/ubuntu/Stock-Yard/logs/fib_alert.log.tmp /home/ubuntu/Stock-Yard/logs/fib_alert.log
 CRON
 

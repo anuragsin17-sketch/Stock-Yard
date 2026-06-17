@@ -39,12 +39,13 @@ jobs:
           echo "No cache — alert will skip gracefully"
         fi
 
-    - name: Run fib price alert
+    - name: Run fib price alert + live monitor
       env:
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
       run: |
         python fib_price_alert.py
+        python live_price_monitor.py
 
     - name: Save alert state
       run: |
