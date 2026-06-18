@@ -180,23 +180,24 @@ def get_angel_session():
     return None
 
 
-def fetch_ltps(smart, tickers: set) -> dict:
-    """Fetch LTP for all tickers from Angel One. Returns {ticker: ltp}."""
+def fetch_ltps(tickers: set) -> dict:
+    """Fetch LTP for all tickers via the local angel-api /api/get-quote endpoint.
+    This endpoint handles Angel One → yfinance fallback automatically, so prices
+    are available both during and after market hours.
+    """
     prices = {}
-    ticker_list = sorted(tickers)
+    LOCAL_QUOTE_API = 'http://127.0.0.1:5000/api/get-quote'
 
-    # Angel One getQuote handles one ticker at a time — batch with small sleep
-    for ticker in ticker_list:
+    for ticker in sorted(tickers):
         try:
-            quote = smart.getQuote('NSE', ticker + '-EQ')
-            if isinstance(quote, dict) and quote.get('status'):
-                data = quote.get('data', {})
-                if isinstance(data, list) and data:
-                    data = data[0]
-                ltp = float(data.get('ltp', 0))
-                if ltp > 0:
-                    prices[ticker] = ltp
-            time.sleep(0.05)  # 50ms between calls to avoid rate limit
+            r = requests.get(LOCAL_QUOTE_API, params={'symbol': ticker}, timeout=10)
+            if r.status_code == 200:
+                data = r.json()
+                if data.get('success'):
+                    ltp = float(data.get('ltp', 0))
+                    if ltp > 0:
+                        prices[ticker] = ltp
+            time.sleep(0.1)  # small delay to avoid hammering the local API
         except Exception as e:
             logger.debug(f"Quote error {ticker}: {e}")
 
@@ -220,9 +221,6 @@ def main():
     else:
         logger.warning("pytz/zoneinfo not available — using system time. Ensure TZ=Asia/Kolkata is set.")
 
-    smart = None
-    session_ts = 0
-
     while True:
         try:
             now_ist = _now_ist()
@@ -245,20 +243,10 @@ def main():
                     continue
                 logger.info(f"Post-close window (IST {now_time.strftime('%H:%M')}): fetching closing prices...")
 
-            # Refresh session every 4 hours
-            now_ts = time.time()
-            if smart is None or (now_ts - session_ts) > 14400:
-                smart = get_angel_session()
-                session_ts = now_ts
-                if not smart:
-                    logger.error("Cannot get session — sleeping 60s")
-                    time.sleep(60)
-                    continue
-
             tickers = load_active_tickers()
             logger.info(f"Fetching LTP for {len(tickers)} tickers...")
 
-            prices = fetch_ltps(smart, tickers)
+            prices = fetch_ltps(tickers)
             logger.info(f"Got {len(prices)} prices")
 
             if prices:
