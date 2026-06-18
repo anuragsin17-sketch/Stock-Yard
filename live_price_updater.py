@@ -32,11 +32,18 @@ UPDATE_INTERVAL = 60  # seconds
 
 MARKET_OPEN  = dtime(9, 15)
 MARKET_CLOSE = dtime(15, 35)
+CLOSE_FETCH_DONE = False  # run one post-close fetch per day
 
 
 def is_market_hours():
     now = datetime.now().time()
     return MARKET_OPEN <= now <= MARKET_CLOSE
+
+
+def is_post_close_window():
+    """True for 30 min after market close — do one final price fetch."""
+    now = datetime.now().time()
+    return MARKET_CLOSE <= now <= dtime(16, 0)
 
 
 def load_active_tickers():
@@ -171,10 +178,28 @@ def main():
 
     while True:
         try:
-            if not is_market_hours():
+            now_time = datetime.now().time()
+            in_market = is_market_hours()
+            in_post_close = is_post_close_window()
+
+            global CLOSE_FETCH_DONE
+
+            # Reset flag each morning
+            if now_time < MARKET_OPEN:
+                CLOSE_FETCH_DONE = False
+
+            if not in_market and not in_post_close:
                 logger.info("Outside market hours — sleeping 5 min")
                 time.sleep(300)
                 continue
+
+            # Post-close: only do one fetch per day
+            if in_post_close and not in_market:
+                if CLOSE_FETCH_DONE:
+                    logger.info("Post-close fetch done for today — sleeping 5 min")
+                    time.sleep(300)
+                    continue
+                logger.info("Post-close: fetching closing prices for DynamoDB...")
 
             # Refresh session every 4 hours
             now_ts = time.time()
@@ -194,6 +219,9 @@ def main():
 
             if prices:
                 write_to_dynamodb(prices)
+                if in_post_close and not in_market:
+                    CLOSE_FETCH_DONE = True
+                    logger.info("Post-close fetch complete — closing prices stored in DynamoDB")
 
             # Also write to local cache file for fallback
             cache_file = '/home/ubuntu/live_prices_cache.json'
