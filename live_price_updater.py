@@ -47,8 +47,8 @@ UPDATE_INTERVAL = 60  # seconds
 
 MARKET_OPEN  = dtime(9, 15)
 MARKET_CLOSE = dtime(15, 35)
-# Allow post-close fetches until 18:30 IST so service restarts after 16:00 still work
-POST_CLOSE_CUTOFF = dtime(18, 30)
+# Allow post-close fetches until 19:30 IST so service restarts after 16:00 still work
+POST_CLOSE_CUTOFF = dtime(19, 30)
 
 
 def _now_ist():
