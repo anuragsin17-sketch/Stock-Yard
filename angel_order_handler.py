@@ -851,6 +851,174 @@ def save_radar():
         return jsonify({'success': False, 'error': str(e)}), 500
 
 
+# ── DynamoDB-backed endpoints ─────────────────────────────────────────────────
+# These replace the old pattern of fetching raw JSON from GitHub Pages CDN.
+# The dashboard calls these instead, getting faster + always-fresh data.
+
+def _get_dynamo_helper():
+    """Lazy import dynamodb_helper so the app starts even without boto3."""
+    try:
+        import dynamodb_helper as dh
+        return dh
+    except ImportError:
+        logger.warning("dynamodb_helper not available — boto3 may not be installed")
+        return None
+
+
+@app.route('/api/signals', methods=['GET'])
+def get_signals():
+    """
+    Return stock signals from DynamoDB.
+    Query params:
+      type = TRENDLINE | VOLUME | GOLDEN  (default: all three)
+    Falls back to local JSON files if DynamoDB unavailable.
+    """
+    try:
+        signal_type = request.args.get('type', '').upper()
+        dh = _get_dynamo_helper()
+
+        if dh:
+            types = [signal_type] if signal_type in ('TRENDLINE', 'VOLUME', 'GOLDEN') else ['TRENDLINE', 'VOLUME', 'GOLDEN']
+            result = {}
+            for st in types:
+                result[st.lower()] = dh.read_signals(st)
+            logger.info(f"DynamoDB signals served: {[(k, len(v)) for k, v in result.items()]}")
+            return jsonify({'success': True, 'source': 'dynamodb', 'data': result}), 200
+
+        # Fallback: read local JSON files
+        logger.warning("DynamoDB unavailable — falling back to JSON files")
+        fallback = {}
+        for fname, key in [('trendline_screen.json', 'trendline'), ('data.json', 'volume')]:
+            if os.path.exists(fname):
+                with open(fname) as f:
+                    raw = json.load(f)
+                fallback[key] = raw if isinstance(raw, list) else raw.get('volume_gainer_stocks', raw.get('stocks', []))
+        return jsonify({'success': True, 'source': 'json_fallback', 'data': fallback}), 200
+
+    except Exception as e:
+        logger.error(f"get_signals error: {e}", exc_info=True)
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+
+@app.route('/api/radar', methods=['GET', 'POST', 'OPTIONS'])
+def radar_endpoint():
+    """
+    GET  /api/radar               — return all trades from DynamoDB
+    GET  /api/radar?status=Open   — filter by status
+    POST /api/radar               — write a single trade to DynamoDB
+    """
+    if request.method == 'OPTIONS':
+        return jsonify({}), 200
+
+    dh = _get_dynamo_helper()
+
+    if request.method == 'GET':
+        try:
+            status_filter = request.args.get('status')
+            if dh:
+                trades = dh.read_trades(status_filter)
+                logger.info(f"DynamoDB radar served: {len(trades)} trades")
+                return jsonify({'success': True, 'source': 'dynamodb', 'trades': trades}), 200
+
+            # Fallback to JSON
+            radar_file = '/home/ubuntu/radar_trades.json'
+            if not os.path.exists(radar_file):
+                radar_file = 'radar_trades.json'
+            if os.path.exists(radar_file):
+                with open(radar_file) as f:
+                    trades = json.load(f)
+                if status_filter:
+                    trades = [t for t in trades if t.get('status') == status_filter]
+                return jsonify({'success': True, 'source': 'json_fallback', 'trades': trades}), 200
+            return jsonify({'success': True, 'source': 'empty', 'trades': []}), 200
+
+        except Exception as e:
+            logger.error(f"radar GET error: {e}", exc_info=True)
+            return jsonify({'success': False, 'error': str(e)}), 500
+
+    if request.method == 'POST':
+        try:
+            trade = request.get_json(force=True) or {}
+            if not trade.get('ticker'):
+                return jsonify({'success': False, 'error': 'ticker required'}), 400
+            if dh:
+                trade_id = dh.write_trade(trade)
+                logger.info(f"DynamoDB: trade written {trade.get('ticker')} id={trade_id}")
+                return jsonify({'success': True, 'trade_id': trade_id}), 200
+            return jsonify({'success': False, 'error': 'DynamoDB not available'}), 503
+        except Exception as e:
+            logger.error(f"radar POST error: {e}", exc_info=True)
+            return jsonify({'success': False, 'error': str(e)}), 500
+
+
+@app.route('/api/prices', methods=['GET'])
+def get_prices():
+    """
+    GET /api/prices                           — return all cached LTPs
+    GET /api/prices?tickers=INFY,TCS,SBIN    — return specific tickers
+    Used by dashboard for bulk LTP fetch (replaces per-card EC2 calls).
+    """
+    try:
+        tickers_param = request.args.get('tickers', '')
+        tickers = [t.strip().upper() for t in tickers_param.split(',') if t.strip()] if tickers_param else None
+
+        dh = _get_dynamo_helper()
+        if dh:
+            prices = dh.read_prices(tickers)
+            logger.info(f"DynamoDB prices served: {len(prices)} tickers")
+            return jsonify({'success': True, 'source': 'dynamodb', 'prices': prices}), 200
+
+        # Fallback: fetch live from Angel One for each ticker
+        if tickers:
+            smart = get_angel_session()
+            prices = {}
+            for ticker in tickers[:20]:  # cap at 20 to avoid timeout
+                try:
+                    quote = smart.getQuote('NSE', ticker + '-EQ') if smart else None
+                    if quote and quote.get('status'):
+                        data = quote.get('data', {})
+                        if isinstance(data, list) and data:
+                            data = data[0]
+                        ltp = float(data.get('ltp', 0))
+                        if ltp > 0:
+                            prices[ticker] = ltp
+                except Exception:
+                    pass
+            return jsonify({'success': True, 'source': 'angel_live', 'prices': prices}), 200
+
+        return jsonify({'success': True, 'source': 'empty', 'prices': {}}), 200
+
+    except Exception as e:
+        logger.error(f"get_prices error: {e}", exc_info=True)
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+
+@app.route('/api/prices/update', methods=['POST'])
+def update_prices():
+    """
+    POST /api/prices/update
+    Body: { "prices": { "INFY": 1800.5, "TCS": 3400.0 } }
+    Called by the live price updater cron to batch-write LTPs to DynamoDB.
+    """
+    try:
+        body = request.get_json(force=True) or {}
+        prices = body.get('prices', {})
+        if not prices:
+            return jsonify({'success': False, 'error': 'No prices provided'}), 400
+
+        dh = _get_dynamo_helper()
+        if dh:
+            dh.write_prices_bulk(prices)
+            logger.info(f"Bulk price update: {len(prices)} tickers")
+            return jsonify({'success': True, 'updated': len(prices)}), 200
+
+        return jsonify({'success': False, 'error': 'DynamoDB not available'}), 503
+
+    except Exception as e:
+        logger.error(f"update_prices error: {e}", exc_info=True)
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+
 @app.route('/api/sync-groww', methods=['GET'])
 def sync_groww():
     """
