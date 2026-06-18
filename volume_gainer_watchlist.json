@@ -360,8 +360,10 @@
     "sl_price": 2498.26,
     "target_price": 3223.56,
     "vol_ratio": 0.0,
-    "alerted": false,
-    "alert_sent_at": null
+    "alerted": true,
+    "alert_sent_at": "2026-06-18T09:10:51.615539",
+    "alert_ltp": 2739.89990234375,
+    "alert_dist_pct": 2.0
   },
   {
     "ticker": "SUPRIYA",
