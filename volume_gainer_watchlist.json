@@ -304,8 +304,10 @@
     "sl_price": 15925.32,
     "target_price": 20548.8,
     "vol_ratio": 14.65,
-    "alerted": false,
-    "alert_sent_at": null
+    "alerted": true,
+    "alert_sent_at": "2026-06-18T10:15:20.327568",
+    "alert_ltp": 17441.0,
+    "alert_dist_pct": 1.85
   },
   {
     "ticker": "RUBICON",
