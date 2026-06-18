@@ -181,26 +181,65 @@ def get_angel_session():
 
 
 def fetch_ltps(tickers: set) -> dict:
-    """Fetch LTP for all tickers via the local angel-api /api/get-quote endpoint.
-    This endpoint handles Angel One → yfinance fallback automatically, so prices
-    are available both during and after market hours.
+    """Fetch LTP for all tickers using yfinance batch download.
+    Batch fetching is far faster than 158 sequential API calls.
+    Falls back to sequential local /api/get-quote if yfinance batch fails.
     """
     prices = {}
-    LOCAL_QUOTE_API = 'http://127.0.0.1:5000/api/get-quote'
+    ticker_list = sorted(tickers)
 
-    for ticker in sorted(tickers):
+    # --- Primary: yfinance batch (all tickers in one request, ~5s total) ---
+    try:
+        import yfinance as yf
+        yf_symbols = [t + '.NS' for t in ticker_list]
+        # Use period='1d' interval='1m' to get latest price
+        data = yf.download(
+            yf_symbols,
+            period='2d',
+            interval='1d',
+            auto_adjust=True,
+            progress=False,
+            threads=True
+        )
+        if not data.empty:
+            close = data['Close'] if 'Close' in data else None
+            if close is not None:
+                # Get last valid close for each ticker
+                last_row = close.iloc[-1]
+                for sym in yf_symbols:
+                    ticker = sym.replace('.NS', '')
+                    val = last_row.get(sym)
+                    if val is not None and float(val) > 0:
+                        prices[ticker] = round(float(val), 2)
+        if prices:
+            logger.info(f"yfinance batch fetched {len(prices)}/{len(ticker_list)} prices")
+            return prices
+    except Exception as e:
+        logger.warning(f"yfinance batch failed: {e} — falling back to local API")
+
+    # --- Fallback: sequential local /api/get-quote ---
+    LOCAL_QUOTE_API = 'http://127.0.0.1:5000/api/get-quote'
+    failed = 0
+    for ticker in ticker_list:
         try:
-            r = requests.get(LOCAL_QUOTE_API, params={'symbol': ticker}, timeout=10)
+            r = requests.get(LOCAL_QUOTE_API, params={'symbol': ticker}, timeout=30)
             if r.status_code == 200:
-                data = r.json()
-                if data.get('success'):
-                    ltp = float(data.get('ltp', 0))
+                d = r.json()
+                if d.get('success'):
+                    ltp = float(d.get('ltp', 0))
                     if ltp > 0:
                         prices[ticker] = ltp
-            time.sleep(0.1)  # small delay to avoid hammering the local API
+                    else:
+                        failed += 1
+                else:
+                    failed += 1
+            else:
+                failed += 1
         except Exception as e:
-            logger.debug(f"Quote error {ticker}: {e}")
-
+            logger.warning(f"Quote error {ticker}: {e}")
+            failed += 1
+    if failed:
+        logger.info(f"Fallback API: {len(prices)} succeeded, {failed} failed")
     return prices
 
 
