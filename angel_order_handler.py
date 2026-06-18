@@ -868,32 +868,61 @@ def _get_dynamo_helper():
 @app.route('/api/signals', methods=['GET'])
 def get_signals():
     """
-    Return stock signals from DynamoDB.
+    Return stock signals with live LTPs merged in — single API call.
     Query params:
-      type = TRENDLINE | VOLUME | GOLDEN  (default: all three)
+      type = TRENDLINE | VOLUME | GOLDEN  (default: TRENDLINE + VOLUME)
+    Response: { success, source, data: { trendline: [...], volume: [...] } }
+    Each signal has ltp field merged from LivePrices table.
     Falls back to local JSON files if DynamoDB unavailable.
     """
     try:
         signal_type = request.args.get('type', '').upper()
         dh = _get_dynamo_helper()
 
+        result = {}
+        source = 'dynamodb'
+
         if dh:
-            types = [signal_type] if signal_type in ('TRENDLINE', 'VOLUME', 'GOLDEN') else ['TRENDLINE', 'VOLUME', 'GOLDEN']
-            result = {}
+            types = [signal_type] if signal_type in ('TRENDLINE', 'VOLUME', 'GOLDEN') else ['TRENDLINE', 'VOLUME']
             for st in types:
                 result[st.lower()] = dh.read_signals(st)
-            logger.info(f"DynamoDB signals served: {[(k, len(v)) for k, v in result.items()]}")
-            return jsonify({'success': True, 'source': 'dynamodb', 'data': result}), 200
 
-        # Fallback: read local JSON files
-        logger.warning("DynamoDB unavailable — falling back to JSON files")
-        fallback = {}
-        for fname, key in [('trendline_screen.json', 'trendline'), ('data.json', 'volume')]:
-            if os.path.exists(fname):
-                with open(fname) as f:
-                    raw = json.load(f)
-                fallback[key] = raw if isinstance(raw, list) else raw.get('volume_gainer_stocks', raw.get('stocks', []))
-        return jsonify({'success': True, 'source': 'json_fallback', 'data': fallback}), 200
+            # Merge live LTPs from LivePrices table into signals
+            try:
+                all_tickers = []
+                for signals in result.values():
+                    for s in signals:
+                        t = (s.get('ticker') or s.get('symbol') or '').upper()
+                        if t:
+                            all_tickers.append(t)
+                if all_tickers:
+                    prices = dh.read_prices(all_tickers)
+                    for signals in result.values():
+                        for s in signals:
+                            t = (s.get('ticker') or s.get('symbol') or '').upper()
+                            if t in prices:
+                                s['ltp'] = prices[t]
+            except Exception as e:
+                logger.warning(f"LTP merge failed (signals still returned): {e}")
+
+            logger.info(f"DynamoDB signals: {[(k, len(v)) for k, v in result.items()]}")
+        else:
+            # Fallback: read local JSON files
+            logger.warning("DynamoDB unavailable — falling back to JSON files")
+            source = 'json_fallback'
+            for fname, key in [
+                ('trendline_screen.json', 'trendline'),
+                ('volume_gainer_watchlist.json', 'volume'),
+            ]:
+                paths = [fname, f'/home/ubuntu/stock-yard-backend/{fname}', f'/home/ubuntu/{fname}']
+                for p in paths:
+                    if os.path.exists(p):
+                        with open(p) as f:
+                            raw = json.load(f)
+                        result[key] = raw if isinstance(raw, list) else raw.get('volume_gainer_stocks', raw.get('stocks', []))
+                        break
+
+        return jsonify({'success': True, 'source': source, 'data': result}), 200
 
     except Exception as e:
         logger.error(f"get_signals error: {e}", exc_info=True)
