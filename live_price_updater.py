@@ -9,6 +9,9 @@ The dashboard then reads /api/prices in one bulk call instead of N individual ca
 Run as systemd service or cron:
   systemd: live-prices.service
   cron:    */1 9-16 * * 1-5 python3 /home/ubuntu/live_price_updater.py
+
+NOTE: All time comparisons use IST (Asia/Kolkata) explicitly.
+      EC2 may run on UTC — never rely on system timezone for market hours.
 """
 import os
 import sys
@@ -17,6 +20,16 @@ import json
 import pyotp
 import logging
 from datetime import datetime, time as dtime
+
+try:
+    from zoneinfo import ZoneInfo          # Python 3.9+
+    IST = ZoneInfo('Asia/Kolkata')
+except ImportError:
+    try:
+        import pytz
+        IST = pytz.timezone('Asia/Kolkata')
+    except ImportError:
+        IST = None  # fallback: assume system time is IST
 
 logging.basicConfig(
     level=logging.INFO,
@@ -28,22 +41,52 @@ logger = logging.getLogger(__name__)
 RADAR_FILE    = '/home/ubuntu/radar_trades.json'
 TRENDLINE_FILE = '/home/ubuntu/stock-yard-backend/trendline_screen.json'
 DATA_FILE     = '/home/ubuntu/stock-yard-backend/data.json'
+# Persists post-close fetch state across restarts; keyed by YYYY-MM-DD (IST)
+CLOSE_FETCH_STATE_FILE = '/tmp/live_price_close_fetch.json'
 UPDATE_INTERVAL = 60  # seconds
 
 MARKET_OPEN  = dtime(9, 15)
 MARKET_CLOSE = dtime(15, 35)
-CLOSE_FETCH_DONE = False  # run one post-close fetch per day
+# Allow post-close fetches until 18:30 IST so service restarts after 16:00 still work
+POST_CLOSE_CUTOFF = dtime(18, 30)
+
+
+def _now_ist():
+    """Return current datetime in IST regardless of system timezone."""
+    if IST is not None:
+        return datetime.now(tz=IST)
+    return datetime.now()
 
 
 def is_market_hours():
-    now = datetime.now().time()
+    now = _now_ist().time()
     return MARKET_OPEN <= now <= MARKET_CLOSE
 
 
 def is_post_close_window():
-    """True for 30 min after market close — do one final price fetch."""
-    now = datetime.now().time()
-    return MARKET_CLOSE <= now <= dtime(16, 0)
+    """True between market close (15:35) and POST_CLOSE_CUTOFF (18:30) IST."""
+    now = _now_ist().time()
+    return MARKET_CLOSE < now <= POST_CLOSE_CUTOFF
+
+
+def _load_close_fetch_state():
+    """Return today's IST date string if post-close fetch was already done, else None."""
+    try:
+        with open(CLOSE_FETCH_STATE_FILE) as f:
+            state = json.load(f)
+        return state.get('done_date')
+    except Exception:
+        return None
+
+
+def _mark_close_fetch_done():
+    """Persist today's IST date so restarts know the post-close fetch already ran."""
+    today = _now_ist().strftime('%Y-%m-%d')
+    try:
+        with open(CLOSE_FETCH_STATE_FILE, 'w') as f:
+            json.dump({'done_date': today}, f)
+    except Exception as e:
+        logger.warning(f"Could not persist close-fetch state: {e}")
 
 
 def load_active_tickers():
@@ -172,34 +215,35 @@ def write_to_dynamodb(prices: dict):
 
 def main():
     logger.info("Live Price Updater starting...")
+    if IST is not None:
+        logger.info(f"Timezone: IST (Asia/Kolkata). Current IST time: {_now_ist().strftime('%H:%M:%S')}")
+    else:
+        logger.warning("pytz/zoneinfo not available — using system time. Ensure TZ=Asia/Kolkata is set.")
 
     smart = None
     session_ts = 0
 
     while True:
         try:
-            now_time = datetime.now().time()
+            now_ist = _now_ist()
+            now_time = now_ist.time()
             in_market = is_market_hours()
             in_post_close = is_post_close_window()
 
-            global CLOSE_FETCH_DONE
-
-            # Reset flag each morning
-            if now_time < MARKET_OPEN:
-                CLOSE_FETCH_DONE = False
-
             if not in_market and not in_post_close:
-                logger.info("Outside market hours — sleeping 5 min")
+                logger.info(f"Outside market hours (IST {now_time.strftime('%H:%M')}) — sleeping 5 min")
                 time.sleep(300)
                 continue
 
-            # Post-close: only do one fetch per day
+            # Post-close: only do one fetch per day (persisted across restarts)
             if in_post_close and not in_market:
-                if CLOSE_FETCH_DONE:
+                today_ist = now_ist.strftime('%Y-%m-%d')
+                done_date = _load_close_fetch_state()
+                if done_date == today_ist:
                     logger.info("Post-close fetch done for today — sleeping 5 min")
                     time.sleep(300)
                     continue
-                logger.info("Post-close: fetching closing prices for DynamoDB...")
+                logger.info(f"Post-close window (IST {now_time.strftime('%H:%M')}): fetching closing prices...")
 
             # Refresh session every 4 hours
             now_ts = time.time()
@@ -220,7 +264,7 @@ def main():
             if prices:
                 write_to_dynamodb(prices)
                 if in_post_close and not in_market:
-                    CLOSE_FETCH_DONE = True
+                    _mark_close_fetch_done()
                     logger.info("Post-close fetch complete — closing prices stored in DynamoDB")
 
             # Also write to local cache file for fallback

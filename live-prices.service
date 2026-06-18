@@ -1,0 +1,18 @@
+[Unit]
+Description=Stock Yard Live Price Updater
+After=network.target angel-api.service
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/stock-yard-backend
+EnvironmentFile=/etc/systemd/system/angel-api.service.d/env.conf
+Environment=TZ=Asia/Kolkata
+ExecStart=/usr/bin/python3 /home/ubuntu/stock-yard-backend/live_price_updater.py
+Restart=always
+RestartSec=30
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
