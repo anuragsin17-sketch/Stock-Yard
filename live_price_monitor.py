@@ -45,7 +45,7 @@ APP_URL          = 'https://anuragsin17-sketch.github.io/Stock-Yard-Public'
 TL_CACHE_FILE    = 'trendline_cache.json'
 VOL_WATCH_FILE   = 'volume_gainer_watchlist.json'
 STATE_FILE       = 'alerted_1min.json'
-COOLDOWN_MINUTES = 30        # don't re-alert same stock+type for 30 min
+COOLDOWN_MINUTES = 30        # don't re-alert same stock+type for 30 min (kept for reference)
 TL_ALERT_PCT     = 1.0       # trendline: ±1% of trendline price
 VOL_ALERT_PCT    = 1.0       # volume:    ±1% of prev day low
 
@@ -94,8 +94,12 @@ def can_alert(alerts, sym, alert_type):
     key = f"{sym}_{alert_type}"
     last = alerts.get(key)
     if not last: return True
-    elapsed = (datetime.now() - datetime.fromisoformat(last)).total_seconds() / 60
-    return elapsed >= COOLDOWN_MINUTES
+    # Once per day — if already alerted today, skip
+    try:
+        last_date = datetime.fromisoformat(last).date()
+        return last_date != date.today()
+    except:
+        return True
 
 def mark_alerted(alerts, sym, alert_type):
     alerts[f"{sym}_{alert_type}"] = datetime.now().isoformat()

@@ -275,12 +275,11 @@ def check_once():
                 print(f"  🟢 ENTRY: {ticker} ({c['strategy']}) dist={dist_pct:+.1f}%")
 
         elif not in_zone and was_in:
-            msg = exit_msg(ticker, c['strategy'], ltp, trigger, dist_pct)
-            if send_telegram(msg):
-                state[state_key] = {'in_zone': False, 'strategy': c['strategy'],
-                                    'exit_at': _now_ist().isoformat(), 'exit_ltp': ltp}
-                exit_sent += 1
-                print(f"  🔴 EXIT:  {ticker} ({c['strategy']}) dist={dist_pct:+.1f}%")
+            # EXIT alert disabled — just update state silently
+            state[state_key] = {'in_zone': False, 'strategy': c['strategy'],
+                                'exit_at': _now_ist().isoformat(), 'exit_ltp': ltp}
+            exit_sent += 1
+            print(f"  🔴 EXIT (silent):  {ticker} ({c['strategy']}) dist={dist_pct:+.1f}%")
         else:
             state[state_key] = {**prev, 'in_zone': in_zone, 'last_ltp': ltp,
                                  'last_check': _now_ist().isoformat()}
