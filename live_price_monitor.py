@@ -44,7 +44,7 @@ if not TELEGRAM_TOKEN and os.path.exists('.env'):
 APP_URL          = 'https://anuragsin17-sketch.github.io/Stock-Yard-Public'
 TL_CACHE_FILE    = 'trendline_cache.json'
 VOL_WATCH_FILE   = 'volume_gainer_watchlist.json'
-STATE_FILE       = 'alerted_1min.json'
+STATE_FILE       = '/home/ubuntu/Stock-Yard/alerted_1min.json'
 COOLDOWN_MINUTES = 30        # don't re-alert same stock+type for 30 min (kept for reference)
 TL_ALERT_PCT     = 1.0       # trendline: ±1% of trendline price
 VOL_ALERT_PCT    = 1.0       # volume:    ±1% of prev day low
