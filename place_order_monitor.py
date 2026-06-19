@@ -70,12 +70,11 @@ def send_telegram(msg: str, buttons: dict = None) -> bool:
 
 
 def get_ltps(tickers: list) -> dict:
-    """Fetch LTPs via DynamoDB bulk endpoint first, fallback to local EC2 API."""
+    """Fetch LTPs via DynamoDB bulk endpoint, fallback to yfinance batch."""
     prices = {}
     EC2_PRICES_URL = 'https://32-194-58-75.nip.io/api/prices'
-    EC2_QUOTE_URL  = 'http://127.0.0.1:5000/api/get-quote'
 
-    # Primary: DynamoDB bulk endpoint (same as live_price_updater writes to)
+    # Primary: DynamoDB bulk endpoint
     try:
         resp = requests.get(EC2_PRICES_URL,
                            params={'tickers': ','.join(tickers)},
@@ -92,18 +91,23 @@ def get_ltps(tickers: list) -> dict:
     except Exception as e:
         print(f"  DynamoDB bulk error: {e}")
 
-    # Fallback: local angel-api /api/get-quote (Angel One → yfinance fallback built-in)
-    print("  Falling back to local /api/get-quote...")
-    for ticker in tickers:
-        try:
-            r = requests.get(EC2_QUOTE_URL, params={'symbol': ticker}, timeout=15)
-            if r.status_code == 200:
-                d = r.json()
-                if d.get('success') and float(d.get('ltp', 0)) > 0:
-                    prices[ticker.upper()] = round(float(d['ltp']), 2)
-            time.sleep(0.2)  # avoid hammering local API
-        except Exception as e:
-            print(f"  Quote error {ticker}: {e}")
+    # Fallback: yfinance batch (works everywhere including GitHub Actions)
+    print("  Falling back to yfinance batch...")
+    try:
+        import yfinance as yf
+        symbols = [t + '.NS' for t in tickers]
+        data = yf.download(symbols, period='2d', interval='1d',
+                           auto_adjust=True, progress=False, threads=True)
+        if not data.empty and 'Close' in data:
+            last = data['Close'].iloc[-1]
+            for sym in symbols:
+                val = last.get(sym)
+                if val and float(val) > 0:
+                    prices[sym.replace('.NS', '')] = round(float(val), 2)
+        if prices:
+            print(f"  yfinance batch: {len(prices)} prices")
+    except Exception as e:
+        print(f"  yfinance batch error: {e}")
 
     return prices
 
