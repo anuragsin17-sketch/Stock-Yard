@@ -40,6 +40,13 @@ CHECK_INTERVAL   = 300     # 5 minutes
 MARKET_OPEN      = dtime(9, 15)
 MARKET_CLOSE     = dtime(15, 35)
 
+# When run from GitHub Actions the EC2 state file is absent.
+# Skip alerting in that case to avoid re-sending alerts the EC2 service already sent.
+RUNNING_AS_SERVICE = (
+    os.path.exists(STATE_FILE) or
+    os.environ.get('PLACE_ORDER_SERVICE_MODE', '') == '1'
+)
+
 
 def _now_ist():
     if IST:
@@ -217,6 +224,10 @@ def check_once():
     print(f"\n{'='*50}")
     print(f"PLACE ORDER CHECK — {_now_ist().strftime('%H:%M:%S IST')}")
 
+    if not RUNNING_AS_SERVICE:
+        print("  Not running as EC2 service — skipping alerts to avoid duplicates with the service.")
+        return
+
     candidates = load_candidates()
     if not candidates:
         print("No candidates — skipping")
@@ -230,7 +241,16 @@ def check_once():
     entry_sent = 0
     exit_sent  = 0
 
+    # Deduplicate candidates by ticker — if the same ticker appears in both
+    # Trendline and Volume sources, only keep one (Trendline takes priority).
+    seen_tickers: dict = {}
     for c in candidates:
+        tk = c['ticker']
+        if tk not in seen_tickers or c['strategy'] == 'Trendline':
+            seen_tickers[tk] = c
+    deduped_candidates = list(seen_tickers.values())
+
+    for c in deduped_candidates:
         ticker   = c['ticker']
         trigger  = c['trigger']
         ltp = ltp_map.get(ticker)
@@ -239,7 +259,9 @@ def check_once():
 
         dist_pct  = (ltp - trigger) / trigger * 100
         in_zone   = ENTRY_ZONE_LOW <= dist_pct <= ENTRY_ZONE_HIGH
-        state_key = f"{ticker}_{c['strategy']}"
+        # State keyed by ticker only — prevents double-alerting same stock
+        # from two strategies (Trendline + Volume).
+        state_key = ticker
         prev      = state.get(state_key, {})
         was_in    = prev.get('in_zone', False)
 
@@ -247,14 +269,16 @@ def check_once():
             msg, buttons = entry_msg(ticker, c['strategy'], ltp, trigger, dist_pct,
                                      c['target'], c['sl'], c['extra'])
             if send_telegram(msg, buttons):
-                state[state_key] = {'in_zone': True, 'entry_at': _now_ist().isoformat(), 'entry_ltp': ltp}
+                state[state_key] = {'in_zone': True, 'strategy': c['strategy'],
+                                    'entry_at': _now_ist().isoformat(), 'entry_ltp': ltp}
                 entry_sent += 1
                 print(f"  🟢 ENTRY: {ticker} ({c['strategy']}) dist={dist_pct:+.1f}%")
 
         elif not in_zone and was_in:
             msg = exit_msg(ticker, c['strategy'], ltp, trigger, dist_pct)
             if send_telegram(msg):
-                state[state_key] = {'in_zone': False, 'exit_at': _now_ist().isoformat(), 'exit_ltp': ltp}
+                state[state_key] = {'in_zone': False, 'strategy': c['strategy'],
+                                    'exit_at': _now_ist().isoformat(), 'exit_ltp': ltp}
                 exit_sent += 1
                 print(f"  🔴 EXIT:  {ticker} ({c['strategy']}) dist={dist_pct:+.1f}%")
         else:
