@@ -519,19 +519,20 @@ def get_quote():
                 import yfinance as yf
                 yf_symbol = symbol.replace('-EQ', '') + '.NS'
                 ticker_obj = yf.Ticker(yf_symbol)
-                hist = ticker_obj.history(period='1d', interval='1m')
+                hist = ticker_obj.history(period='2d', interval='1d')
                 if not hist.empty:
-                    ltp = float(hist['Close'].iloc[-1])
-                    logger.info(f"yfinance fallback (no session) for {symbol}: LTP={ltp}")
+                    ltp        = float(hist['Close'].iloc[-1])
+                    prev_close = float(hist['Close'].iloc[-2]) if len(hist) >= 2 else ltp
+                    logger.info(f"yfinance fallback (no session) for {symbol}: LTP={ltp}, PrevClose={prev_close}")
                     return jsonify({
                         'success': True,
                         'symbol': symbol,
                         'ltp': ltp,
-                        'open': float(hist['Open'].iloc[0]),
-                        'high': float(hist['High'].max()),
-                        'low': float(hist['Low'].min()),
-                        'close': ltp,
-                        'volume': 0,
+                        'open': float(hist['Open'].iloc[-1]),
+                        'high': float(hist['High'].iloc[-1]),
+                        'low': float(hist['Low'].iloc[-1]),
+                        'close': prev_close,   # yesterday's close for Day P&L
+                        'volume': int(hist['Volume'].iloc[-1]) if 'Volume' in hist.columns else 0,
                         'timestamp': datetime.now().isoformat(),
                         'source': 'yfinance'
                     }), 200
@@ -586,19 +587,24 @@ def get_quote():
                 import yfinance as yf
                 yf_symbol = symbol.replace('-EQ', '') + '.NS'
                 ticker_obj = yf.Ticker(yf_symbol)
-                hist = ticker_obj.history(period='1d', interval='1m')
+                # Use 2d history so we get yesterday's close as prev_close
+                hist = ticker_obj.history(period='2d', interval='1d')
                 if not hist.empty:
-                    ltp = float(hist['Close'].iloc[-1])
-                    logger.info(f"yfinance fallback for {symbol}: LTP={ltp}")
+                    ltp        = float(hist['Close'].iloc[-1])
+                    prev_close = float(hist['Close'].iloc[-2]) if len(hist) >= 2 else ltp
+                    open_p     = float(hist['Open'].iloc[-1])
+                    high_p     = float(hist['High'].iloc[-1])
+                    low_p      = float(hist['Low'].iloc[-1])
+                    logger.info(f"yfinance fallback for {symbol}: LTP={ltp}, PrevClose={prev_close}")
                     return jsonify({
                         'success': True,
                         'symbol': symbol,
                         'ltp': ltp,
-                        'open': float(hist['Open'].iloc[0]) if not hist.empty else 0,
-                        'high': float(hist['High'].max()) if not hist.empty else 0,
-                        'low': float(hist['Low'].min()) if not hist.empty else 0,
-                        'close': ltp,
-                        'volume': 0,
+                        'open': open_p,
+                        'high': high_p,
+                        'low': low_p,
+                        'close': prev_close,   # yesterday's close — used for Day P&L
+                        'volume': int(hist['Volume'].iloc[-1]) if 'Volume' in hist.columns else 0,
                         'timestamp': datetime.now().isoformat(),
                         'source': 'yfinance'
                     }), 200
