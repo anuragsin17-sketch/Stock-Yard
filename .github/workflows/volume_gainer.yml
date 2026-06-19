@@ -45,18 +45,22 @@ jobs:
     - name: Determine run mode
       id: mode
       run: |
-        # 10:10 UTC = after-close tracker run
-        # All other times = intraday monitor
+        # 10:10 UTC cron = after-close tracker run
+        # Use a ±20-min window so cron delays don't cause missed scans
         HOUR=$(date -u +%H)
         MIN=$(date -u +%M)
+        TOTAL_MIN=$((HOUR * 60 + MIN))
+        TARGET_MIN=$((10 * 60 + 10))   # 10:10 UTC = 610 min
+        DIFF=$(( TOTAL_MIN - TARGET_MIN ))
+        if [ $DIFF -lt 0 ]; then DIFF=$(( -DIFF )); fi
         INPUT_MODE="${{ github.event.inputs.mode }}"
 
         if [ "$INPUT_MODE" = "track" ]; then
           echo "mode=track" >> $GITHUB_OUTPUT
           echo "Running: AFTER-CLOSE TRACKER (manual)"
-        elif [ "$HOUR" = "10" ] && [ "$MIN" = "10" ]; then
+        elif [ "$DIFF" -le 20 ]; then
           echo "mode=track" >> $GITHUB_OUTPUT
-          echo "Running: AFTER-CLOSE TRACKER (scheduled)"
+          echo "Running: AFTER-CLOSE TRACKER (scheduled, within ±20 min of 10:10 UTC)"
         else
           echo "mode=monitor" >> $GITHUB_OUTPUT
           echo "Running: INTRADAY MONITOR (scheduled)"
@@ -98,7 +102,10 @@ jobs:
       run: |
         git config user.name  "Stock Yard Bot"
         git config user.email "bot@stockyard.io"
-        git pull --rebase origin main || true
+        # Stash any local changes before rebasing so pull never fails silently
+        git stash --include-untracked || true
+        git pull --rebase origin main
+        git stash pop || true
         git add volume_gainer_watchlist.json 2>/dev/null || true
         git add place_order_state.json 2>/dev/null || true
         git diff --staged --quiet || git commit -m "data: volume gainer watchlist + place order state $(date -u '+%Y-%m-%d %H:%M UTC')"
