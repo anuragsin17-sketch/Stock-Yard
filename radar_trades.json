@@ -1,20 +1,8 @@
 [
   {
-    "ticker": "ELECTCAST",
-    "entry_price": 78.96,
-    "current_price": 80.94,
-    "target": 98.58,
-    "stop_loss": 73.34,
-    "quantity": 1900,
-    "status": "Open",
-    "source": "Angel One",
-    "is_angel_synced": true,
-    "triggered_at": "2026-06-17T08:35:33.827516"
-  },
-  {
     "ticker": "NATCOPHARM",
     "entry_price": 853.97,
-    "current_price": 883.5,
+    "current_price": 882.3,
     "target": 1066.0,
     "stop_loss": 793.1,
     "quantity": 300,
@@ -26,7 +14,7 @@
   {
     "ticker": "PRAJIND",
     "entry_price": 337.84,
-    "current_price": 343.15,
+    "current_price": 338.55,
     "target": 421.73,
     "stop_loss": 313.76,
     "quantity": 400,
