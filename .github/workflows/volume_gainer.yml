@@ -88,9 +88,6 @@ jobs:
 
     - name: Run intraday monitor (check if price near prev day low)
       if: steps.mode.outputs.mode == 'monitor'
-      env:
-        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-        TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
       run: |
         echo "=== INTRADAY: Checking prices vs prev day lows ==="
         python volume_gainer_monitor.py
