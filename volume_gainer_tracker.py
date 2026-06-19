@@ -39,7 +39,7 @@ NIFTY500_FILE  = 'Stock List.csv'
 BASE_URL       = 'https://anuragsin17-sketch.github.io/Stock-Yard-Public'
 
 MIN_GAIN_PCT   = 10.0   # minimum % gain to qualify
-TOP_N          = 15     # max stocks to track
+TOP_N          = 20     # max stocks to track per day
 ALERT_BUFFER   = 0.05   # 5% above signal low = alert zone entry
 SL_PCT         = 0.07   # 7% SL below entry
 TARGET_PCT     = 0.20   # 20% target above entry
