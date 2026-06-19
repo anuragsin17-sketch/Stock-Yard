@@ -90,6 +90,8 @@ jobs:
       run: |
         echo "=== INTRADAY: Checking prices vs prev day lows ==="
         python volume_gainer_monitor.py
+        echo "=== PLACE ORDER: Checking entry/exit zones for both strategies ==="
+        python place_order_monitor.py
         echo "Monitor complete"
 
     - name: Push updated watchlist to backend repo
@@ -98,7 +100,8 @@ jobs:
         git config user.email "bot@stockyard.io"
         git pull --rebase origin main || true
         git add volume_gainer_watchlist.json 2>/dev/null || true
-        git diff --staged --quiet || git commit -m "data: volume gainer watchlist $(date -u '+%Y-%m-%d %H:%M UTC')"
+        git add place_order_state.json 2>/dev/null || true
+        git diff --staged --quiet || git commit -m "data: volume gainer watchlist + place order state $(date -u '+%Y-%m-%d %H:%M UTC')"
         git push
 
     - name: Push watchlist to public repo (for dashboard display)

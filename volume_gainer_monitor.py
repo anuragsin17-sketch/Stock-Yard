@@ -6,22 +6,10 @@ Runs DURING market hours every 30 min (Mon-Fri, 9:15-15:30 IST).
 
 What it does:
   1. Loads volume_gainer_watchlist.json
-  2. For each unalerted stock, fetches live LTP via EC2 /api/get-quote
-     (falls back to yfinance if EC2 unavailable)
-  3. If LTP <= alert_threshold (within 5% of prev day's low) → send Telegram alert
-  4. Marks stock as alerted so no repeat spam
-  5. Keeps alerted stocks in watchlist for history — they are not removed
-
-Alert message includes:
-  - Stock name, current price, prev day low
-  - % distance from prev day low
-  - How much it gained on the day it was added
-  - TradingView chart link + dashboard link
-  - Confirm Trade button
-
-Alert dedup:
-  - Once alerted=True, never alerts again for same stock/event
-  - Watchlist persists across days — new entries added each evening by tracker
+  2. For each stock, fetches live LTP
+  3. ENTRY alert: LTP within ±2% of prev_day_low → "Added to Place Order tab"
+  4. EXIT alert:  LTP moves back outside ±2% after being in zone → "Exited Place Order tab"
+  5. Dedupes alerts — once entry alert sent, won't resend until exit+re-entry cycle
 """
 
 import os
@@ -38,6 +26,7 @@ BASE_URL        = 'https://anuragsin17-sketch.github.io/Stock-Yard-Public'
 ALERT_BUFFER    = 0.05   # alert when within 5% above prev day low
 SL_PCT          = 0.07   # 7% stop loss below entry
 TARGET_PCT      = 0.20   # 20% target above entry
+ENTRY_ZONE_PCT  = 0.02   # ±2% of prev_day_low = Place Order zone
 
 
 def send_telegram(message: str, reply_markup: dict = None) -> bool:
@@ -117,43 +106,54 @@ def save_watchlist(watchlist: list):
         json.dump(watchlist, f, indent=2)
 
 
-def build_alert_message(watch: dict, ltp: float) -> tuple:
-    """Returns (message_str, reply_markup_dict)"""
+def build_entry_alert(watch: dict, ltp: float) -> tuple:
+    """Returns (message_str, reply_markup_dict) for ENTRY into Place Order zone."""
     ticker       = watch['ticker']
     prev_low     = watch['prev_day_low']
-    threshold    = watch['alert_threshold']
     gain_pct     = watch['gain_pct']
     added_date   = watch['added_date']
-
-    dist_pct = ((ltp - prev_low) / prev_low) * 100
-
+    dist_pct     = ((ltp - prev_low) / prev_low) * 100
     target_price = watch.get('target_price') or round(prev_low * (1 + TARGET_PCT), 2)
     stop_price   = watch.get('sl_price')     or round(prev_low * (1 - SL_PCT), 2)
-
-    qty          = max(1, int(50000 / ltp))
-    app_url   = f"{BASE_URL}/"
-    chart_url = f"https://in.tradingview.com/chart/?symbol=NSE:{ticker}"
+    app_url      = f"{BASE_URL}/"
+    chart_url    = f"https://in.tradingview.com/chart/?symbol=NSE:{ticker}"
 
     msg = (
-        f"🔔 *VOLUME GAINER — PREV LOW ZONE*\n\n"
-        f"📈 *{ticker}*\n"
-        f"💰 Current LTP: ₹{ltp:,.2f}\n"
-        f"📉 Prev Day Low: ₹{prev_low:,.2f}\n"
-        f"📊 Distance from Low: *{dist_pct:+.1f}%*\n\n"
-        f"📅 Added: {added_date} _(gained +{gain_pct}% that day)_\n"
-        f"🎯 Target: ₹{target_price:,.2f} | 🛑 SL: ₹{stop_price:,.2f}\n\n"
-        f"_Price is within 5% of previous day low — potential retest entry._\n\n"
+        f"🟢 *PLACE ORDER — ENTRY ZONE*\n\n"
+        f"📊 *{ticker}* (Volume)\n"
+        f"💰 LTP: ₹{ltp:,.2f} | Entry: ₹{prev_low:,.2f} ({dist_pct:+.1f}%)\n"
+        f"🎯 Target: ₹{target_price:,.2f} (+{TARGET_PCT*100:.0f}%)\n"
+        f"🛑 SL: ₹{stop_price:,.2f} (-{SL_PCT*100:.0f}%)\n\n"
+        f"📅 Added: {added_date} _(+{gain_pct:.1f}% signal day)_\n\n"
+        f"_Stock is within ±2% of signal day low — ready to buy._\n\n"
         f"[📉 Chart]({chart_url}) | [📱 Open App]({app_url})"
     )
-
     buttons = {
         'inline_keyboard': [[
             {'text': '📱 Open App',   'url': app_url},
             {'text': '📉 View Chart', 'url': chart_url}
         ]]
     }
-
     return msg, buttons
+
+
+def build_exit_alert(watch: dict, ltp: float) -> str:
+    """Returns message string when stock exits the Place Order zone."""
+    ticker   = watch['ticker']
+    prev_low = watch['prev_day_low']
+    dist_pct = ((ltp - prev_low) / prev_low) * 100
+    direction = "moved up ↑" if dist_pct > 0 else "dropped below ↓"
+    return (
+        f"🔴 *PLACE ORDER — EXIT*\n\n"
+        f"📊 *{ticker}* (Volume)\n"
+        f"💰 LTP: ₹{ltp:,.2f} | Entry: ₹{prev_low:,.2f} ({dist_pct:+.1f}%)\n\n"
+        f"_Price has {direction} the ±2% entry zone._"
+    )
+
+
+# Keep legacy function name for backward compatibility
+def build_alert_message(watch: dict, ltp: float) -> tuple:
+    return build_entry_alert(watch, ltp)
 
 
 def check_watchlist():
@@ -162,41 +162,58 @@ def check_watchlist():
         print("Watchlist is empty — nothing to monitor")
         return
 
-    pending = [e for e in watchlist if not e.get('alerted', False)]
-    print(f"Monitoring {len(pending)} unalerted stocks ({len(watchlist)} total in watchlist)")
+    print(f"Monitoring {len(watchlist)} stocks")
 
-    alerts_sent = 0
+    entry_sent = 0
+    exit_sent  = 0
+
     for entry in watchlist:
-        if entry.get('alerted', False):
-            continue
-
-        ticker    = entry['ticker']
-        threshold = entry['alert_threshold']  # prev_low * 1.05
-        prev_low  = entry['prev_day_low']
+        ticker   = entry['ticker']
+        prev_low = entry['prev_day_low']
 
         ltp = get_ltp(ticker)
         if not ltp:
             print(f"  {ticker}: could not get LTP — skipping")
             continue
 
-        dist_pct = ((ltp - prev_low) / prev_low) * 100
-        print(f"  {ticker}: LTP=₹{ltp:,.2f}  prev_low=₹{prev_low:,.2f}  dist={dist_pct:+.1f}%  threshold=₹{threshold:,.2f}")
+        dist_pct   = ((ltp - prev_low) / prev_low) * 100
+        in_zone    = abs(dist_pct) <= ENTRY_ZONE_PCT * 100   # within ±2%
+        was_in_zone = entry.get('in_place_order_zone', False)
 
-        if prev_low * 0.98 <= ltp <= prev_low * 1.02:
-            # Price is within ±2% of prev day low — ALERT
-            print(f"  🔔 {ticker}: IN ALERT ZONE ({dist_pct:+.1f}% from prev low, within ±2%) — sending alert")
-            msg, buttons = build_alert_message(entry, ltp)
+        print(f"  {ticker}: LTP=₹{ltp:,.2f}  prev_low=₹{prev_low:,.2f}  dist={dist_pct:+.1f}%  "
+              f"zone={'✅' if in_zone else '❌'}  was_zone={'✅' if was_in_zone else '❌'}")
+
+        if in_zone and not was_in_zone:
+            # ── ENTRY into Place Order zone ──────────────────────────────
+            print(f"  🟢 {ticker}: ENTERED zone → sending entry alert")
+            msg, buttons = build_entry_alert(entry, ltp)
             if send_telegram(msg, reply_markup=buttons):
+                entry['in_place_order_zone']       = True
+                entry['place_order_entry_at']      = datetime.now().isoformat()
+                entry['place_order_entry_ltp']     = ltp
+                # Also mark legacy alerted field for backward compat
                 entry['alerted']       = True
-                entry['alert_sent_at'] = datetime.now().isoformat()
+                entry['alert_sent_at'] = entry['place_order_entry_at']
                 entry['alert_ltp']     = ltp
                 entry['alert_dist_pct'] = round(dist_pct, 2)
-                alerts_sent += 1
+                entry_sent += 1
+
+        elif not in_zone and was_in_zone:
+            # ── EXIT from Place Order zone ────────────────────────────────
+            print(f"  🔴 {ticker}: EXITED zone → sending exit alert")
+            msg = build_exit_alert(entry, ltp)
+            if send_telegram(msg):
+                entry['in_place_order_zone']    = False
+                entry['place_order_exit_at']    = datetime.now().isoformat()
+                entry['place_order_exit_ltp']   = ltp
+                exit_sent += 1
+
         else:
-            print(f"  {ticker}: not in zone yet ({dist_pct:+.1f}% from prev low, need within ±2%)")
+            # No state change — update LTP silently
+            entry['in_place_order_zone'] = in_zone
 
     save_watchlist(watchlist)
-    print(f"\n✅ Done — {alerts_sent} alert(s) sent")
+    print(f"\n✅ Done — {entry_sent} entry alert(s), {exit_sent} exit alert(s)")
 
 
 def print_watchlist_status():

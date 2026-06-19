@@ -500,20 +500,10 @@ def daily_scan(notify=True):
         signals.append(signal)
 
         # Telegram notification for CRITICAL new touches
-        if notify and status == 'CRITICAL_TOUCH' and sym not in prev_alerted:
-            chart_url = f"https://in.tradingview.com/chart/?symbol=NSE:{sym}"
-            msg = (
-                f"🎯 *TRENDLINE TOUCH — {sym}*\n\n"
-                f"💰 Price: ₹{cp:,.2f} | Low: ₹{cl:,.2f}\n"
-                f"📍 Trendline: ₹{entry_price:,.2f} ({dist_low:+.1f}%)\n"
-                f"🛑 SL: ₹{stop_loss:,.2f} (-{SL_PCT}%)\n"
-                f"✅ Target: ₹{target:,.2f} (+{TARGET_PCT}%)\n"
-                f"📐 {fib_note} | Wicks: {tl['n_touches']}\n\n"
-                f"[View Chart]({chart_url}) | [Open App]({APP_URL}/)"
-            )
-            send_telegram(msg)
-            prev_alerted.add(sym)
-            print(f"  📲 Telegram sent for {sym}")
+        # Telegram alert removed — Place Order monitor handles all entry/exit alerts
+        # (prevents duplicate alerts from trendline screener + place_order_monitor)
+        if notify and status == 'CRITICAL_TOUCH':
+            prev_alerted.add(sym)  # still track to avoid re-alerting if re-enabled
 
     # Sort: CRITICAL first, then by distance
     signals.sort(key=lambda x: (
