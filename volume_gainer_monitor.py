@@ -24,8 +24,8 @@ WATCHLIST_FILE  = 'volume_gainer_watchlist.json'
 EC2_QUOTE_URL   = 'https://32-194-58-75.nip.io/api/get-quote'
 BASE_URL        = 'https://anuragsin17-sketch.github.io/Stock-Yard-Public'
 ALERT_BUFFER    = 0.05   # alert when within 5% above prev day low
-SL_PCT          = 0.07   # 7% stop loss below entry
-TARGET_PCT      = 0.20   # 20% target above entry
+SL_PCT          = 0.04   # 4% stop loss below entry
+TARGET_PCT      = 0.15   # 15% target above entry
 ENTRY_ZONE_PCT  = 0.02   # ±2% of prev_day_low = Place Order zone
 
 
