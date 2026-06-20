@@ -17,6 +17,7 @@ import json
 import requests
 import yfinance as yf
 from datetime import datetime
+from decimal import Decimal
 
 TELEGRAM_TOKEN  = os.environ.get('TELEGRAM_BOT_TOKEN', '')
 TELEGRAM_CHAT   = os.environ.get('TELEGRAM_CHAT_ID', '')
@@ -27,6 +28,8 @@ ALERT_BUFFER    = 0.05   # alert when within 5% above prev day low
 SL_PCT          = 0.04   # 4% stop loss below entry
 TARGET_PCT      = 0.15   # 15% target above entry
 ENTRY_ZONE_PCT  = 0.02   # ±2% of prev_day_low = Place Order zone
+ENTRY_ZONE_LOW  = -0.10  # -10%  \  show in Volume tab
+ENTRY_ZONE_HIGH =  0.04  #  +4%  /
 
 
 def send_telegram(message: str, reply_markup: dict = None) -> bool:
@@ -164,8 +167,9 @@ def check_watchlist():
 
     print(f"Monitoring {len(watchlist)} stocks")
 
-    entry_sent = 0
-    exit_sent  = 0
+    entry_sent  = 0
+    exit_sent   = 0
+    db_updates  = []   # entries to bulk-upsert to DynamoDB
 
     for entry in watchlist:
         ticker   = entry['ticker']
@@ -176,44 +180,82 @@ def check_watchlist():
             print(f"  {ticker}: could not get LTP — skipping")
             continue
 
-        dist_pct   = ((ltp - prev_low) / prev_low) * 100
-        in_zone    = abs(dist_pct) <= ENTRY_ZONE_PCT * 100   # within ±2%
-        was_in_zone = entry.get('in_place_order_zone', False)
+        dist_pct      = ((ltp - prev_low) / prev_low) * 100
+        in_entry_zone = ENTRY_ZONE_LOW * 100 <= dist_pct <= ENTRY_ZONE_HIGH * 100  # -10% to +4%
+        in_zone       = abs(dist_pct) <= ENTRY_ZONE_PCT * 100   # ±2% for Telegram alert
+        was_in_zone   = entry.get('in_place_order_zone', False)
 
         print(f"  {ticker}: LTP=₹{ltp:,.2f}  prev_low=₹{prev_low:,.2f}  dist={dist_pct:+.1f}%  "
-              f"zone={'✅' if in_zone else '❌'}  was_zone={'✅' if was_in_zone else '❌'}")
+              f"entry_zone={'✅' if in_entry_zone else '❌'}  alert_zone={'✅' if in_zone else '❌'}")
 
+        # ── Always update LTP + zone flag ────────────────────────────────────
+        entry['ltp']            = round(ltp, 2)
+        entry['dist_pct']       = round(dist_pct, 2)
+        entry['in_entry_zone']  = in_entry_zone
+        entry['ltp_updated_at'] = datetime.now().isoformat()
+        db_updates.append(entry)
+
+        # ── Telegram alerts (unchanged logic) ────────────────────────────────
         if in_zone and not was_in_zone:
-            # ── ENTRY into Place Order zone ──────────────────────────────
-            print(f"  🟢 {ticker}: ENTERED zone → sending entry alert")
+            print(f"  🟢 {ticker}: ENTERED alert zone → sending entry alert")
             msg, buttons = build_entry_alert(entry, ltp)
             if send_telegram(msg, reply_markup=buttons):
-                entry['in_place_order_zone']       = True
-                entry['place_order_entry_at']      = datetime.now().isoformat()
-                entry['place_order_entry_ltp']     = ltp
-                # Also mark legacy alerted field for backward compat
-                entry['alerted']       = True
-                entry['alert_sent_at'] = entry['place_order_entry_at']
-                entry['alert_ltp']     = ltp
-                entry['alert_dist_pct'] = round(dist_pct, 2)
+                entry['in_place_order_zone']   = True
+                entry['place_order_entry_at']  = datetime.now().isoformat()
+                entry['place_order_entry_ltp'] = ltp
+                entry['alerted']               = True
+                entry['alert_sent_at']         = entry['place_order_entry_at']
+                entry['alert_ltp']             = ltp
+                entry['alert_dist_pct']        = round(dist_pct, 2)
                 entry_sent += 1
-
         elif not in_zone and was_in_zone:
-            # ── EXIT from Place Order zone ────────────────────────────────
-            print(f"  🔴 {ticker}: EXITED zone → sending exit alert")
+            print(f"  🔴 {ticker}: EXITED alert zone → sending exit alert")
             msg = build_exit_alert(entry, ltp)
             if send_telegram(msg):
-                entry['in_place_order_zone']    = False
-                entry['place_order_exit_at']    = datetime.now().isoformat()
-                entry['place_order_exit_ltp']   = ltp
+                entry['in_place_order_zone'] = False
+                entry['place_order_exit_at'] = datetime.now().isoformat()
+                entry['place_order_exit_ltp'] = ltp
                 exit_sent += 1
-
         else:
-            # No state change — update LTP silently
             entry['in_place_order_zone'] = in_zone
 
     save_watchlist(watchlist)
-    print(f"\n✅ Done — {entry_sent} entry alert(s), {exit_sent} exit alert(s)")
+
+    # ── Bulk upsert LTP + in_entry_zone flag to DynamoDB ─────────────────────
+    if db_updates:
+        upsert_to_dynamodb(db_updates)
+
+    print(f"\n✅ Done — {entry_sent} entry alert(s), {exit_sent} exit alert(s), {len(db_updates)} DB updates")
+
+
+def upsert_to_dynamodb(entries: list):
+    """Upsert ltp + in_entry_zone flag for each entry into DynamoDB StockSignals."""
+    try:
+        import boto3
+        AWS_REGION = os.environ.get('AWS_REGION', 'us-east-1')
+        db    = boto3.resource('dynamodb', region_name=AWS_REGION)
+        table = db.Table('StockSignals')
+
+        def dec(v):
+            if isinstance(v, float): return Decimal(str(round(v, 6)))
+            if isinstance(v, dict):  return {k: dec(x) for k, x in v.items()}
+            if isinstance(v, list):  return [dec(x) for x in v]
+            return v
+
+        with table.batch_writer() as batch:
+            for e in entries:
+                ticker = (e.get('ticker') or '').upper()
+                if not ticker: continue
+                item = dec({k: v for k, v in e.items() if v is not None})
+                item['signal_type'] = 'VOLUME'
+                item['ticker']      = ticker
+                item['updated_at']  = datetime.utcnow().isoformat()
+                batch.put_item(Item=item)
+
+        zone_count = sum(1 for e in entries if e.get('in_entry_zone'))
+        print(f"  ✅ DynamoDB: updated {len(entries)} stocks ({zone_count} in entry zone)")
+    except Exception as e:
+        print(f"  ⚠️ DynamoDB upsert error: {e}")
 
 
 def print_watchlist_status():
