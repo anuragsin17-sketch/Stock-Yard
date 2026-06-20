@@ -1,0 +1,62 @@
+name: Volume Gainer Backfill (2 months)
+
+on:
+  workflow_dispatch:   # run manually from GitHub Actions UI
+
+permissions:
+  contents: write
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+    - name: Checkout backend repo
+      uses: actions/checkout@v4
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: pip install yfinance pandas requests boto3
+
+    - name: Run 2-month backfill
+      env:
+        AWS_REGION:             ${{ secrets.AWS_REGION }}
+        AWS_ACCESS_KEY_ID:      ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY:  ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        TELEGRAM_BOT_TOKEN:     ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        TELEGRAM_CHAT_ID:       ${{ secrets.TELEGRAM_CHAT_ID }}
+      run: |
+        echo "=== Running 2-month volume backfill ==="
+        python volume_backfill_2months.py
+        echo "=== Backfill complete ==="
+
+    - name: Commit updated watchlist
+      run: |
+        git config user.name  "Stock Yard Bot"
+        git config user.email "bot@stockyard.io"
+        git stash --include-untracked || true
+        git pull --rebase origin main
+        git stash pop || true
+        git add volume_gainer_watchlist.json 2>/dev/null || true
+        git diff --staged --quiet || git commit -m "data: volume backfill 2mo $(date -u '+%Y-%m-%d %H:%M UTC')"
+        git push
+
+    - name: Push updated watchlist to public repo
+      env:
+        PUBLIC_REPO_TOKEN: ${{ secrets.PUBLIC_REPO_TOKEN }}
+      run: |
+        if [ ! -f volume_gainer_watchlist.json ]; then exit 0; fi
+        git clone https://x-access-token:${PUBLIC_REPO_TOKEN}@github.com/anuragsin17-sketch/Stock-Yard-Public.git public_repo
+        cp -f volume_gainer_watchlist.json public_repo/volume_gainer_watchlist.json
+        cd public_repo
+        git config user.name  "Stock Yard Bot"
+        git config user.email "bot@stockyard.io"
+        git add volume_gainer_watchlist.json
+        git diff --staged --quiet || git commit -m "data: volume backfill 2mo $(date -u '+%Y-%m-%d %H:%M UTC')"
+        git push
+        echo "Pushed watchlist to Stock-Yard-Public"
