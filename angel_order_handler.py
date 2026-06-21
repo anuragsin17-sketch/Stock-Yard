@@ -618,38 +618,56 @@ def get_quote():
 
 @app.route('/api/get-52w', methods=['GET'])
 def get_52w():
-    """Get 52-week high/low for a stock symbol using yfinance"""
+    """Get ATH + 2020 low for fib calculation (2020 low -> ATH, same as trendline screener)"""
     try:
         symbol = request.args.get('symbol', '').strip()
 
         if not symbol:
-            logger.warning("52W request: No symbol provided")
             return jsonify({'success': False, 'error': 'No symbol provided'}), 400
 
-        logger.info(f"Fetching 52W high/low for: {symbol}")
+        logger.info(f"Fetching ATH + 2020 low for: {symbol}")
 
         import yfinance as yf
         yf_symbol = symbol.upper().replace('-EQ', '') + '.NS'
         ticker_obj = yf.Ticker(yf_symbol)
-        hist = ticker_obj.history(period='1y', interval='1d')
+
+        # Full history for ATH + 2020 low
+        hist = ticker_obj.history(period='max', interval='1mo')
 
         if hist.empty:
-            logger.warning(f"52W fetch: No data returned for {yf_symbol}")
             return jsonify({'success': False, 'error': f'No data found for symbol: {symbol}'}), 404
 
-        week_52_high = round(float(hist['High'].max()), 2)
-        week_52_low  = round(float(hist['Low'].min()), 2)
+        # 2020 COVID low: min Low in calendar year 2020
+        mask_2020 = (hist.index.year == 2020)
+        if mask_2020.any():
+            low_2020 = round(float(hist.loc[mask_2020, 'Low'].min()), 2)
+        else:
+            low_2020 = round(float(hist['Low'].min()), 2)
 
-        logger.info(f"52W data for {symbol}: High={week_52_high}, Low={week_52_low}")
+        # ATH: max High from 2020 onwards
+        mask_post = hist.index >= '2020-01-01'
+        if mask_post.any():
+            ath = round(float(hist.loc[mask_post, 'High'].max()), 2)
+        else:
+            ath = round(float(hist['High'].max()), 2)
+
+        # Also include 52W for backward compat
+        hist_1y = ticker_obj.history(period='1y', interval='1d')
+        week_52_high = round(float(hist_1y['High'].max()), 2) if not hist_1y.empty else ath
+        week_52_low  = round(float(hist_1y['Low'].min()), 2)  if not hist_1y.empty else low_2020
+
+        logger.info(f"{symbol}: ATH={ath}, 2020_low={low_2020}, 52W_H={week_52_high}, 52W_L={week_52_low}")
         return jsonify({
-            'success': True,
-            'symbol': symbol.upper().replace('-EQ', ''),
+            'success':      True,
+            'symbol':       symbol.upper().replace('-EQ', ''),
+            'ath':          ath,
+            'low_2020':     low_2020,
             'week_52_high': week_52_high,
-            'week_52_low': week_52_low
+            'week_52_low':  week_52_low,
         }), 200
 
     except Exception as e:
-        logger.error(f"52W endpoint error: {e}", exc_info=True)
+        logger.error(f"get-52w error: {e}", exc_info=True)
         return jsonify({'success': False, 'error': str(e)}), 500
 
 
