@@ -640,13 +640,9 @@ def get_52w():
         post_mask = hist.index >= '2020-01-01'
         ath = round(float(hist.loc[post_mask, 'High'].max()), 2) if post_mask.any() else round(float(hist['High'].max()), 2)
 
-        # 2020 COVID low: use Feb-Apr 2020 (the crash period) for most accurate low
-        crash_mask = (hist.index >= '2020-02-01') & (hist.index <= '2020-04-30')
-        if crash_mask.any():
-            low_2020 = round(float(hist.loc[crash_mask, 'Low'].min()), 2)
-        else:
-            year_mask = hist.index.year == 2020
-            low_2020 = round(float(hist.loc[year_mask, 'Low'].min()), 2) if year_mask.any() else round(float(hist['Low'].min()), 2)
+        # 2020 COVID low: full calendar year 2020 minimum (unadjusted — gives true structural low)
+        year_mask = (hist.index.year == 2020)
+        low_2020 = round(float(hist.loc[year_mask, 'Low'].min()), 2) if year_mask.any() else round(float(hist['Low'].min()), 2)
 
         # 52W for backward compat (also unadjusted)
         hist_1y = hist[hist.index >= (hist.index[-1] - pd.Timedelta(days=365))]

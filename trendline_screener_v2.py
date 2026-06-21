@@ -181,13 +181,9 @@ def _calc_fib(post, a2, lows):
         lows_ = post['Low'].values.flatten().astype(float)
         dates = post.index
 
-        # 2020 COVID crash low: use Feb-Apr 2020 (unadjusted monthly gives correct values)
-        crash_mask = (dates >= pd.Timestamp('2020-02-01')) & (dates <= pd.Timestamp('2020-04-30'))
-        if crash_mask.any():
-            covid_low = float(lows_[crash_mask].min())
-        else:
-            mask_2020 = (dates >= pd.Timestamp('2020-01-01')) & (dates <= pd.Timestamp('2020-12-31'))
-            covid_low = float(lows_[mask_2020].min()) if mask_2020.any() else float(lows_.min())
+        # 2020 COVID low: full calendar year 2020 minimum (unadjusted — gives true structural low)
+        mask_2020 = (dates >= pd.Timestamp('2020-01-01')) & (dates <= pd.Timestamp('2020-12-31'))
+        covid_low = float(lows_[mask_2020].min()) if mask_2020.any() else float(lows_.min())
 
         # ATH: highest high from 2020 onwards
         mask_post  = dates >= pd.Timestamp('2020-01-01')
