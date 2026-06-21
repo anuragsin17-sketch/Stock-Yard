@@ -181,10 +181,13 @@ def _calc_fib(post, a2, lows):
         lows_ = post['Low'].values.flatten().astype(float)
         dates = post.index
 
-        # 2020 COVID low: minimum low in calendar year 2020
-        mask_2020 = (dates >= pd.Timestamp('2020-01-01')) & (dates <= pd.Timestamp('2020-12-31'))
-        lows_2020  = lows_[mask_2020]
-        covid_low  = float(lows_2020.min()) if len(lows_2020) > 0 else float(lows_.min())
+        # 2020 COVID crash low: use Feb-Apr 2020 (unadjusted monthly gives correct values)
+        crash_mask = (dates >= pd.Timestamp('2020-02-01')) & (dates <= pd.Timestamp('2020-04-30'))
+        if crash_mask.any():
+            covid_low = float(lows_[crash_mask].min())
+        else:
+            mask_2020 = (dates >= pd.Timestamp('2020-01-01')) & (dates <= pd.Timestamp('2020-12-31'))
+            covid_low = float(lows_[mask_2020].min()) if mask_2020.any() else float(lows_.min())
 
         # ATH: highest high from 2020 onwards
         mask_post  = dates >= pd.Timestamp('2020-01-01')
@@ -280,7 +283,7 @@ def build_cache(force=False):
 
         try:
             mdf = yf.download(ticker, period='10y', interval='1mo',
-                              auto_adjust=True, progress=False, timeout=30)
+                              auto_adjust=False, progress=False, timeout=30)
             if isinstance(mdf.columns, pd.MultiIndex):
                 mdf.columns = mdf.columns.get_level_values(0)
             mdf = mdf.dropna()

@@ -618,45 +618,42 @@ def get_quote():
 
 @app.route('/api/get-52w', methods=['GET'])
 def get_52w():
-    """Get ATH + 2020 low for fib calculation (2020 low -> ATH, same as trendline screener)"""
+    """Get ATH + 2020 COVID low using unadjusted NSE prices (matches Screener.in/TradingView)."""
     try:
         symbol = request.args.get('symbol', '').strip()
-
         if not symbol:
             return jsonify({'success': False, 'error': 'No symbol provided'}), 400
 
-        logger.info(f"Fetching ATH + 2020 low for: {symbol}")
+        logger.info(f"Fetching ATH + 2020 low (unadjusted) for: {symbol}")
 
         import yfinance as yf
         yf_symbol = symbol.upper().replace('-EQ', '') + '.NS'
         ticker_obj = yf.Ticker(yf_symbol)
 
-        # Full history for ATH + 2020 low
-        hist = ticker_obj.history(period='max', interval='1mo')
+        # Use unadjusted prices — matches NSE bhavcopy / Screener.in / TradingView
+        hist = ticker_obj.history(period='max', interval='1d', auto_adjust=False)
 
         if hist.empty:
-            return jsonify({'success': False, 'error': f'No data found for symbol: {symbol}'}), 404
+            return jsonify({'success': False, 'error': f'No data found for {symbol}'}), 404
 
-        # 2020 COVID low: min Low in calendar year 2020
-        mask_2020 = (hist.index.year == 2020)
-        if mask_2020.any():
-            low_2020 = round(float(hist.loc[mask_2020, 'Low'].min()), 2)
+        # ATH: all-time high from unadjusted daily data (post-2020)
+        post_mask = hist.index >= '2020-01-01'
+        ath = round(float(hist.loc[post_mask, 'High'].max()), 2) if post_mask.any() else round(float(hist['High'].max()), 2)
+
+        # 2020 COVID low: use Feb-Apr 2020 (the crash period) for most accurate low
+        crash_mask = (hist.index >= '2020-02-01') & (hist.index <= '2020-04-30')
+        if crash_mask.any():
+            low_2020 = round(float(hist.loc[crash_mask, 'Low'].min()), 2)
         else:
-            low_2020 = round(float(hist['Low'].min()), 2)
+            year_mask = hist.index.year == 2020
+            low_2020 = round(float(hist.loc[year_mask, 'Low'].min()), 2) if year_mask.any() else round(float(hist['Low'].min()), 2)
 
-        # ATH: max High from 2020 onwards
-        mask_post = hist.index >= '2020-01-01'
-        if mask_post.any():
-            ath = round(float(hist.loc[mask_post, 'High'].max()), 2)
-        else:
-            ath = round(float(hist['High'].max()), 2)
-
-        # Also include 52W for backward compat
-        hist_1y = ticker_obj.history(period='1y', interval='1d')
+        # 52W for backward compat (also unadjusted)
+        hist_1y = hist[hist.index >= (hist.index[-1] - pd.Timedelta(days=365))]
         week_52_high = round(float(hist_1y['High'].max()), 2) if not hist_1y.empty else ath
         week_52_low  = round(float(hist_1y['Low'].min()), 2)  if not hist_1y.empty else low_2020
 
-        logger.info(f"{symbol}: ATH={ath}, 2020_low={low_2020}, 52W_H={week_52_high}, 52W_L={week_52_low}")
+        logger.info(f"{symbol}: ATH={ath}, 2020_low={low_2020}")
         return jsonify({
             'success':      True,
             'symbol':       symbol.upper().replace('-EQ', ''),
