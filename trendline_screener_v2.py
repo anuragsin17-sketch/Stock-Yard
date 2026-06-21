@@ -166,15 +166,15 @@ def fit_trendline(data):
 
 def _calc_fib(post, a2, lows):
     """
-    Fibonacci grid from 2020 COVID low to ATH (post-2020).
-    0%   = 2020 low (COVID crash base)
-    100% = ATH since 2020
-    Retracement levels drawn from ATH downward:
-      76.4% = ATH - range * 0.236
-      61.8% = ATH - range * 0.382
-      50.0% = ATH - range * 0.500
-      38.2% = ATH - range * 0.618
-      23.6% = ATH - range * 0.764
+    Fibonacci grid matching reverse fib standard (ATH -> 2020 COVID low).
+    0%   = ATH (absolute ceiling, 0 retracement from top)
+    100% = 2020 COVID low (absolute floor)
+    Levels drawn from ATH downward:
+      23.6% = ATH - range * 0.236   Minor support
+      38.2% = ATH - range * 0.382   High-volume overhead zone
+      50.0% = ATH - range * 0.500   Macro equilibrium anchor
+      61.8% = ATH - range * 0.618   Golden ratio — institutional zone
+      78.6% = ATH - range * 0.786   Critical containment belt
     """
     try:
         highs = post['High'].values.flatten().astype(float)
@@ -196,14 +196,15 @@ def _calc_fib(post, a2, lows):
             return {}
 
         # Retracement levels (drawn from ATH down to COVID low)
+        # 0% = ATH (top), 100% = 2020 low (base) — matches standard reverse fib
         fib = {
-            '100.0%': round(ath, 2),           # ATH
-            '76.4%':  round(ath - rng * 0.236, 2),
-            '61.8%':  round(ath - rng * 0.382, 2),
-            '50.0%':  round(ath - rng * 0.500, 2),
-            '38.2%':  round(ath - rng * 0.618, 2),
-            '23.6%':  round(ath - rng * 0.764, 2),
-            '0.0%':   round(covid_low, 2),      # 2020 COVID low
+            '0.0%':   round(ath, 2),                    # ATH — Absolute ceiling
+            '23.6%':  round(ath - rng * 0.236, 2),      # Minor support
+            '38.2%':  round(ath - rng * 0.382, 2),      # High-volume overhead zone
+            '50.0%':  round(ath - rng * 0.500, 2),      # Macro equilibrium anchor
+            '61.8%':  round(ath - rng * 0.618, 2),      # Golden ratio — institutional zone
+            '78.6%':  round(ath - rng * 0.786, 2),      # Critical containment belt
+            '100.0%': round(covid_low, 2),               # 2020 low — Absolute floor
         }
 
         # Extension levels (above ATH)
@@ -215,7 +216,7 @@ def _calc_fib(post, a2, lows):
 
         p618lo, p618hi = pocket(fib['61.8%'])
         p500lo, p500hi = pocket(fib['50.0%'])
-        p786lo, p786hi = pocket(fib['76.4%'])  # using 76.4 as "golden pocket" deep level
+        p786lo, p786hi = pocket(fib['78.6%'])
         p382lo, p382hi = pocket(fib['38.2%'])
         p100lo, p100hi = pocket(fib['100.0%'])
 
@@ -224,16 +225,16 @@ def _calc_fib(post, a2, lows):
             'ath':        round(ath, 2),
             'covid_low':  round(covid_low, 2),
             # Flat levels for frontend display
-            '100.0%_W':   fib['100.0%'],
-            '76.4%_W':    fib['76.4%'],
-            '61.8%_W':    fib['61.8%'],
-            '50.0%_W':    fib['50.0%'],
-            '38.2%_W':    fib['38.2%'],
+            '0.0%_W':     fib['0.0%'],     # ATH
             '23.6%_W':    fib['23.6%'],
-            '0.0%_W':     fib['0.0%'],
+            '38.2%_W':    fib['38.2%'],
+            '50.0%_W':    fib['50.0%'],
+            '61.8%_W':    fib['61.8%'],    # Golden
+            '78.6%_W':    fib['78.6%'],
+            '100.0%_W':   fib['100.0%'],   # 2020 low
             'Ext_23.6%_W': fib['Ext_23.6%'],
             'Ext_61.8%_W': fib['Ext_61.8%'],
-            # Pocket ranges (±2%)
+            # Pocket ranges (±2% around each level)
             'pocket_618_low':  p618lo, 'pocket_618_high': p618hi,
             'pocket_500_low':  p500lo, 'pocket_500_high': p500hi,
             'pocket_786_low':  p786lo, 'pocket_786_high': p786hi,
@@ -349,8 +350,8 @@ def fib_confluence(fib_levels, trigger_price, dist_to_trendline_pct=None):
     KEY_LEVELS = []
     if fib_levels:
         w_fib = fib_levels.get('_weekly', {})
-        # Use new 2020-low → ATH levels; fall back to old keys
-        for k in ['61.8%', '50.0%', '38.2%', '76.4%', '100.0%', '23.6%']:
+        # Standard reverse fib: 0%=ATH, 23.6%, 38.2%, 50%, 61.8%, 78.6%, 100%=2020low
+        for k in ['23.6%', '38.2%', '50.0%', '61.8%', '78.6%', '100.0%']:
             p = fib_levels.get(f'{k}_W') or w_fib.get(k, 0)
             if p > 0:
                 KEY_LEVELS.append((k, p))
@@ -513,13 +514,13 @@ def daily_scan(notify=True):
             'fib_levels':         fib_levels,
             'fib_ath':            fib_levels.get('ath'),
             'fib_covid_low':      fib_levels.get('covid_low'),
-            'fib_100_weekly':     fib_levels.get('100.0%_W'),  # ATH
-            'fib_618_weekly':     fib_levels.get('61.8%_W'),
-            'fib_500_weekly':     fib_levels.get('50.0%_W'),
-            'fib_382_weekly':     fib_levels.get('38.2%_W'),
-            'fib_764_weekly':     fib_levels.get('76.4%_W'),
+            'fib_000_weekly':     fib_levels.get('0.0%_W'),      # ATH
             'fib_236_weekly':     fib_levels.get('23.6%_W'),
-            'fib_000_weekly':     fib_levels.get('0.0%_W'),    # 2020 low
+            'fib_382_weekly':     fib_levels.get('38.2%_W'),
+            'fib_500_weekly':     fib_levels.get('50.0%_W'),
+            'fib_618_weekly':     fib_levels.get('61.8%_W'),     # Golden
+            'fib_786_weekly':     fib_levels.get('78.6%_W'),
+            'fib_100_weekly':     fib_levels.get('100.0%_W'),    # 2020 low
             'fib_618_monthly':    None,
             'fib_500_monthly':    None,
             'fib_786_monthly':    None,
