@@ -166,56 +166,82 @@ def fit_trendline(data):
 
 def _calc_fib(post, a2, lows):
     """
-    Weekly-only Fibonacci grid (last 52 monthly bars = ~4yr proxy).
-    Pockets: 61.8%, 50%, 78.6%, 100% — each ±2% around weekly level.
-    Score 10 = any pocket + trendline within 3%.
+    Fibonacci grid from 2020 COVID low to ATH (post-2020).
+    0%   = 2020 low (COVID crash base)
+    100% = ATH since 2020
+    Retracement levels drawn from ATH downward:
+      76.4% = ATH - range * 0.236
+      61.8% = ATH - range * 0.382
+      50.0% = ATH - range * 0.500
+      38.2% = ATH - range * 0.618
+      23.6% = ATH - range * 0.764
     """
     try:
         highs = post['High'].values.flatten().astype(float)
         lows_ = post['Low'].values.flatten().astype(float)
+        dates = post.index
 
-        w = min(52, len(post))
-        wh = float(highs[-w:].max())
-        wl = float(lows_[-w:].min())
-        wd = wh - wl
-        if wd <= 0: return {}
+        # 2020 COVID low: minimum low in calendar year 2020
+        mask_2020 = (dates >= pd.Timestamp('2020-01-01')) & (dates <= pd.Timestamp('2020-12-31'))
+        lows_2020  = lows_[mask_2020]
+        covid_low  = float(lows_2020.min()) if len(lows_2020) > 0 else float(lows_.min())
 
-        w_fib = {
-            '0.0%':    round(wh, 2),
-            '23.6%':   round(wh - wd * 0.236, 2),
-            '38.2%':   round(wh - wd * 0.382, 2),
-            '50.0%':   round(wh - wd * 0.500, 2),
-            '61.8%':   round(wh - wd * 0.618, 2),
-            '78.6%':   round(wh - wd * 0.786, 2),
-            '100.0%':  round(wl, 2),
-            'Ext_23.6%': round(wh + wd * 0.236, 2),
-            'Ext_61.8%': round(wh + wd * 0.618, 2),
+        # ATH: highest high from 2020 onwards
+        mask_post  = dates >= pd.Timestamp('2020-01-01')
+        highs_post = highs[mask_post]
+        ath        = float(highs_post.max()) if len(highs_post) > 0 else float(highs.max())
+
+        rng = ath - covid_low
+        if rng <= 0:
+            return {}
+
+        # Retracement levels (drawn from ATH down to COVID low)
+        fib = {
+            '100.0%': round(ath, 2),           # ATH
+            '76.4%':  round(ath - rng * 0.236, 2),
+            '61.8%':  round(ath - rng * 0.382, 2),
+            '50.0%':  round(ath - rng * 0.500, 2),
+            '38.2%':  round(ath - rng * 0.618, 2),
+            '23.6%':  round(ath - rng * 0.764, 2),
+            '0.0%':   round(covid_low, 2),      # 2020 COVID low
         }
 
-        def pocket(lvl_price):
-            return round(lvl_price * 0.98, 2), round(lvl_price * 1.02, 2)
+        # Extension levels (above ATH)
+        fib['Ext_23.6%'] = round(ath + rng * 0.236, 2)
+        fib['Ext_61.8%'] = round(ath + rng * 0.618, 2)
 
-        p618lo, p618hi = pocket(w_fib['61.8%'])
-        p500lo, p500hi = pocket(w_fib['50.0%'])
-        p786lo, p786hi = pocket(w_fib['78.6%'])
-        p100lo, p100hi = pocket(w_fib['100.0%'])
+        def pocket(p):
+            return round(p * 0.98, 2), round(p * 1.02, 2)
+
+        p618lo, p618hi = pocket(fib['61.8%'])
+        p500lo, p500hi = pocket(fib['50.0%'])
+        p786lo, p786hi = pocket(fib['76.4%'])  # using 76.4 as "golden pocket" deep level
+        p382lo, p382hi = pocket(fib['38.2%'])
+        p100lo, p100hi = pocket(fib['100.0%'])
 
         return {
-            '_weekly': w_fib,
-            # Pockets
+            '_weekly': fib,   # keep _weekly key for compatibility
+            'ath':        round(ath, 2),
+            'covid_low':  round(covid_low, 2),
+            # Flat levels for frontend display
+            '100.0%_W':   fib['100.0%'],
+            '76.4%_W':    fib['76.4%'],
+            '61.8%_W':    fib['61.8%'],
+            '50.0%_W':    fib['50.0%'],
+            '38.2%_W':    fib['38.2%'],
+            '23.6%_W':    fib['23.6%'],
+            '0.0%_W':     fib['0.0%'],
+            'Ext_23.6%_W': fib['Ext_23.6%'],
+            'Ext_61.8%_W': fib['Ext_61.8%'],
+            # Pocket ranges (±2%)
             'pocket_618_low':  p618lo, 'pocket_618_high': p618hi,
             'pocket_500_low':  p500lo, 'pocket_500_high': p500hi,
             'pocket_786_low':  p786lo, 'pocket_786_high': p786hi,
+            'pocket_382_low':  p382lo, 'pocket_382_high': p382hi,
             'pocket_100_low':  p100lo, 'pocket_100_high': p100hi,
-            # Flat levels for frontend
-            '61.8%_W':   w_fib['61.8%'],
-            '50.0%_W':   w_fib['50.0%'],
-            '78.6%_W':   w_fib['78.6%'],
-            '100.0%_W':  w_fib['100.0%'],
-            'Ext_23.6%_W': w_fib['Ext_23.6%'],
-            'Ext_61.8%_W': w_fib['Ext_61.8%'],
         }
-    except Exception: return {}
+    except Exception:
+        return {}
 
 
 def build_cache(force=False):
@@ -323,8 +349,9 @@ def fib_confluence(fib_levels, trigger_price, dist_to_trendline_pct=None):
     KEY_LEVELS = []
     if fib_levels:
         w_fib = fib_levels.get('_weekly', {})
-        for k, wk in [('61.8%','61.8%'), ('50.0%','50.0%'), ('78.6%','78.6%'), ('100%','100.0%')]:
-            p = fib_levels.get(f'{wk}_W') or w_fib.get(wk, 0) or w_fib.get(k, 0)
+        # Use new 2020-low → ATH levels; fall back to old keys
+        for k in ['61.8%', '50.0%', '38.2%', '76.4%', '100.0%', '23.6%']:
+            p = fib_levels.get(f'{k}_W') or w_fib.get(k, 0)
             if p > 0:
                 KEY_LEVELS.append((k, p))
 
@@ -482,15 +509,21 @@ def daily_scan(notify=True):
             'fibonacciLevels':    fib_levels,
             'fibMatchLevel':      fib_match,
             'fibMatchPrice':      fib_match_price,
-            # New dual-timeframe pocket fields
+            # Fibonacci levels (2020 low → ATH)
+            'fib_levels':         fib_levels,
+            'fib_ath':            fib_levels.get('ath'),
+            'fib_covid_low':      fib_levels.get('covid_low'),
+            'fib_100_weekly':     fib_levels.get('100.0%_W'),  # ATH
             'fib_618_weekly':     fib_levels.get('61.8%_W'),
-            'fib_618_monthly':    fib_levels.get('61.8%_M'),
             'fib_500_weekly':     fib_levels.get('50.0%_W'),
-            'fib_500_monthly':    fib_levels.get('50.0%_M'),
-            'fib_786_weekly':     fib_levels.get('78.6%_W'),
-            'fib_786_monthly':    fib_levels.get('78.6%_M'),
-            'fib_100_weekly':     fib_levels.get('100.0%_W'),
-            'fib_100_monthly':    fib_levels.get('100.0%_M'),
+            'fib_382_weekly':     fib_levels.get('38.2%_W'),
+            'fib_764_weekly':     fib_levels.get('76.4%_W'),
+            'fib_236_weekly':     fib_levels.get('23.6%_W'),
+            'fib_000_weekly':     fib_levels.get('0.0%_W'),    # 2020 low
+            'fib_618_monthly':    None,
+            'fib_500_monthly':    None,
+            'fib_786_monthly':    None,
+            'fib_100_monthly':    None,
             'fib_target_1':       fib_levels.get('Ext_23.6%_W'),
             'fib_target_2':       fib_levels.get('Ext_61.8%_W'),
             'trendlineSlope':     tl['slope'],
