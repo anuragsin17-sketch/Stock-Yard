@@ -346,6 +346,17 @@ def main():
             'alerted':         False,
             'alert_sent_at':   None,
         }
+
+        # Fetch 52W H/L for display (best-effort)
+        try:
+            t52   = yf.Ticker(sym + '.NS')
+            h52   = t52.history(period='1y', interval='1d', auto_adjust=False)
+            if not h52.empty:
+                entry['week_52_high'] = round(float(h52['High'].max()), 2)
+                entry['week_52_low']  = round(float(h52['Low'].min()),  2)
+        except Exception:
+            pass
+
         watchlist.append(entry)
         new_entries.append(entry)
         print(f"  ✅ {sym}: +{g['gain_pct']}%  prev_low=₹{prev_low:,.2f}  "
