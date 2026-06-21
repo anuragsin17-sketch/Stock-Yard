@@ -105,6 +105,21 @@ def setup():
         'Tags': [{'Key': 'app', 'Value': 'stock-yard'}],
     })
 
+    # ── Table 4: ManualStocks ─────────────────────────────────
+    # Stores user-added manual stocks from the trendline tab.
+    # PK: symbol (ADANIENT, TCS, etc.)
+    create_table_safe(dynamodb, {
+        'TableName': 'ManualStocks',
+        'KeySchema': [
+            {'AttributeName': 'symbol', 'KeyType': 'HASH'},
+        ],
+        'AttributeDefinitions': [
+            {'AttributeName': 'symbol', 'AttributeType': 'S'},
+        ],
+        'BillingMode': 'PAY_PER_REQUEST',
+        'Tags': [{'Key': 'app', 'Value': 'stock-yard'}],
+    })
+
     print(f"\n{'='*55}")
     print(f"  ✅ All tables ready")
     print(f"{'='*55}")
@@ -114,6 +129,7 @@ def setup():
   │ StockSignals    │ trendline + volume signals    │
   │ RadarTrades     │ open + closed trades          │
   │ LivePrices      │ latest LTP per ticker         │
+  │ ManualStocks    │ user-added manual stocks      │
   └─────────────────┴──────────────────────────────┘
 
   Billing: PAY_PER_REQUEST (free tier: 25 RCU + 25 WCU)

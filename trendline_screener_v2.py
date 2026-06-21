@@ -556,6 +556,26 @@ def daily_scan(notify=True):
     # Save output
     with open(OUTPUT_FILE, 'w') as f: json.dump(signals, f, indent=2)
 
+    # Sync TRENDLINE signals to DynamoDB
+    try:
+        from dynamodb_helper import write_signals as _ws
+        _ws('TRENDLINE', signals)
+    except Exception as e:
+        logger.warning(f"DynamoDB TRENDLINE sync failed: {e}") if hasattr(logger,'warning') else print(f"⚠️ DynamoDB sync: {e}")
+
+    # Sync GOLDEN stocks from data.json to DynamoDB (if file exists)
+    try:
+        if os.path.exists('data.json'):
+            with open('data.json') as f:
+                d = json.load(f)
+            golden = d.get('golden_stocks', [])
+            if golden:
+                from dynamodb_helper import write_signals as _ws
+                _ws('GOLDEN', golden)
+                print(f"  ✅ Synced {len(golden)} GOLDEN stocks to DynamoDB")
+    except Exception as e:
+        print(f"  ⚠️ GOLDEN DynamoDB sync failed: {e}")
+
     # Save alerted list for today
     with open('alerted_today.json', 'w') as f:
         json.dump({'date': datetime.now().strftime('%Y-%m-%d'),

@@ -953,6 +953,69 @@ def get_signals():
         return jsonify({'success': False, 'error': str(e)}), 500
 
 
+# ── Manual Stocks ─────────────────────────────────────────────────────────────
+MANUAL_TABLE = 'ManualStocks'
+
+@app.route('/api/manual-stocks', methods=['GET', 'POST', 'DELETE', 'OPTIONS'])
+def manual_stocks():
+    """
+    GET    /api/manual-stocks          — return all manual stocks
+    POST   /api/manual-stocks          — save/upsert a manual stock (body: stock dict)
+    DELETE /api/manual-stocks?symbol=X — delete a manual stock by symbol
+    """
+    if request.method == 'OPTIONS':
+        return jsonify({'success': True}), 200
+    try:
+        import boto3
+        from decimal import Decimal
+
+        AWS_REGION = os.environ.get('AWS_REGION', 'us-east-1')
+        db    = boto3.resource('dynamodb', region_name=AWS_REGION)
+        table = db.Table(MANUAL_TABLE)
+
+        def _dec(obj):
+            if isinstance(obj, float): return Decimal(str(round(obj, 6)))
+            if isinstance(obj, dict):  return {k: _dec(v) for k, v in obj.items()}
+            if isinstance(obj, list):  return [_dec(i) for i in obj]
+            return obj
+
+        def _flt(obj):
+            from decimal import Decimal as D
+            if isinstance(obj, D): return float(obj)
+            if isinstance(obj, dict): return {k: _flt(v) for k, v in obj.items()}
+            if isinstance(obj, list): return [_flt(i) for i in obj]
+            return obj
+
+        if request.method == 'GET':
+            resp = table.scan()
+            items = _flt(resp.get('Items', []))
+            items.sort(key=lambda x: x.get('addedAt',''), reverse=True)
+            return jsonify({'success': True, 'stocks': items}), 200
+
+        elif request.method == 'POST':
+            stock = request.json
+            if not stock or not stock.get('symbol'):
+                return jsonify({'success': False, 'error': 'symbol required'}), 400
+            item = _dec(stock)
+            item['symbol']    = stock['symbol'].upper()
+            item['updatedAt'] = datetime.utcnow().isoformat()
+            table.put_item(Item=item)
+            logger.info(f"Manual stock saved: {stock['symbol']}")
+            return jsonify({'success': True}), 200
+
+        elif request.method == 'DELETE':
+            symbol = request.args.get('symbol', '').upper()
+            if not symbol:
+                return jsonify({'success': False, 'error': 'symbol required'}), 400
+            table.delete_item(Key={'symbol': symbol})
+            logger.info(f"Manual stock deleted: {symbol}")
+            return jsonify({'success': True}), 200
+
+    except Exception as e:
+        logger.error(f"manual_stocks error: {e}", exc_info=True)
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+
 @app.route('/api/radar', methods=['GET', 'POST', 'OPTIONS'])
 def radar_endpoint():
     """
