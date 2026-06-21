@@ -341,11 +341,14 @@ def get_trendline_price_today(tl):
 
 def fib_confluence(fib_levels, trigger_price, dist_to_trendline_pct=None):
     """
-    Score 10 - price within +-2% of fib level (61.8/50/78.6/100%) AND TL <=3%
-    Score  9 - price within +-1% of any fib level, no TL yet
-    Score  8 - monitoring
+    Score assignment:
+    Score 10 : Price within 3% of trendline (trendline touch only)
+    Score  9 : Price within ±3% of key fib level (23.6%, 38.2%, 50.0%, 61.8%)
+    Score  8 : Price within ±3% of key fib level AND within 2% of trendline (strongest — dual confluence)
+    Only scores 8/9/10 are shown in the UI.
     """
-    near_tl = dist_to_trendline_pct is not None and dist_to_trendline_pct <= 3.0
+    near_tl_3pct = dist_to_trendline_pct is not None and dist_to_trendline_pct <= 3.0
+    near_tl_2pct = dist_to_trendline_pct is not None and dist_to_trendline_pct <= 2.0
 
     KEY_LEVELS = []
     if fib_levels:
@@ -356,29 +359,33 @@ def fib_confluence(fib_levels, trigger_price, dist_to_trendline_pct=None):
             if p > 0:
                 KEY_LEVELS.append((k, p))
 
-    # Find closest fib level and distance
-    in_2pct  = None  # within +-2%
-    in_1pct  = None  # within +-1%
+    # Find closest fib level within ±3%
+    in_fib_3pct = None
     for lvl_name, lvl_price in KEY_LEVELS:
-        d = abs((trigger_price - lvl_price) / lvl_price * 100)
-        if d <= 2.0 and in_2pct is None:
-            in_2pct = (lvl_name, lvl_price, round(d, 2))
-        if d <= 1.0 and in_1pct is None:
-            in_1pct = (lvl_name, lvl_price, round(d, 2))
+        d = abs((trigger_price - lvl_price) / max(1e-9, lvl_price) * 100)
+        if d <= 3.0:
+            in_fib_3pct = (lvl_name, lvl_price, round(d, 2))
+            break  # take nearest
 
-    # Score 10: within +-2% of any fib level AND TL <=3%
-    if in_2pct and near_tl:
-        lvl_name, lvl_price, d = in_2pct
-        return 10, f'{lvl_name} + TL ({dist_to_trendline_pct:.1f}%) +-{d:.1f}% ✓✓'
+    # Score 8: fib ±3% AND trendline ≤2% (best quality — dual confluence)
+    if in_fib_3pct and near_tl_2pct:
+        lvl_name, lvl_price, d = in_fib_3pct
+        tl_str = f'{dist_to_trendline_pct:.1f}%' if dist_to_trendline_pct is not None else '--'
+        return 8, f'{lvl_name} Level (+-{d:.1f}%) + TL ({tl_str}) ✓✓'
 
-    # Score 9: within +-1% of any fib level (no TL yet)
-    if in_1pct:
-        lvl_name, lvl_price, d = in_1pct
+    # Score 9: fib ±3% only (no trendline touch yet)
+    if in_fib_3pct:
+        lvl_name, lvl_price, d = in_fib_3pct
         return 9, f'{lvl_name} Level (+-{d:.1f}%) — Watch for TL'
 
-    # Score 8: monitoring
+    # Score 10: trendline ≤3% only (no fib confluence)
+    if near_tl_3pct:
+        tl_str = f'{dist_to_trendline_pct:.1f}%' if dist_to_trendline_pct is not None else '--'
+        return 10, f'Trendline Touch ({tl_str}) — No Fib'
+
+    # Below threshold — not shown in UI
     d_str = f'{dist_to_trendline_pct:.1f}%' if dist_to_trendline_pct else '--'
-    return 8, f'Monitoring (TL dist {d_str})'
+    return 7, f'Monitoring (TL dist {d_str})'
 
 def daily_scan(notify=True):
     """
