@@ -558,7 +558,7 @@ def daily_scan(notify=True):
         from dynamodb_helper import write_signals as _ws
         _ws('TRENDLINE', signals)
     except Exception as e:
-        logger.warning(f"DynamoDB TRENDLINE sync failed: {e}") if hasattr(logger,'warning') else print(f"⚠️ DynamoDB sync: {e}")
+        print(f"⚠️ DynamoDB TRENDLINE sync: {e}")
 
     # Sync GOLDEN stocks from data.json to DynamoDB (if file exists)
     try:

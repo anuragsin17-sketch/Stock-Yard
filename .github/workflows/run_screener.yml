@@ -31,7 +31,7 @@ jobs:
         python-version: '3.11'
 
     - name: Install dependencies
-      run: pip install pandas yfinance requests numpy scipy
+      run: pip install pandas yfinance requests numpy scipy boto3
 
     - name: Determine run mode
       id: mode
@@ -55,6 +55,9 @@ jobs:
       env:
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
+        AWS_REGION:             ${{ secrets.AWS_REGION }}
+        AWS_ACCESS_KEY_ID:      ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY:  ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: |
         echo "=== WEEKLY CACHE BUILD ==="
         python trendline_screener_v2.py --build --force
@@ -64,6 +67,9 @@ jobs:
       env:
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
+        AWS_REGION:             ${{ secrets.AWS_REGION }}
+        AWS_ACCESS_KEY_ID:      ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY:  ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: |
         echo "=== DAILY SCAN ==="
         # If no cache exists (first run), build it first
