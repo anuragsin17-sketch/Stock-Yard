@@ -341,44 +341,42 @@ def get_trendline_price_today(tl):
 def fib_confluence(fib_levels, trigger_price, dist_to_trendline_pct=None):
     """
     Score assignment:
-    Score 10 : Price within 3% of trendline (trendline touch only)
-    Score  9 : Price within ±3% of key fib level (23.6%, 38.2%, 50.0%, 61.8%)
-    Score  8 : Price within ±3% of key fib level AND within 2% of trendline (strongest — dual confluence)
+    Score 10 : Price within 5% of trendline (trendline touch only)
+    Score  9 : Price within ±5% of key fib level (38.2%, 50%, 61.8%, 78.6%, 100%)
+    Score  8 : Price within ±5% of key fib level AND within 5% of trendline (dual confluence — best)
     Only scores 8/9/10 are shown in the UI.
     """
-    near_tl_3pct = dist_to_trendline_pct is not None and dist_to_trendline_pct <= 3.0
-    near_tl_2pct = dist_to_trendline_pct is not None and dist_to_trendline_pct <= 2.0
+    near_tl_5pct = dist_to_trendline_pct is not None and dist_to_trendline_pct <= 5.0
 
     KEY_LEVELS = []
     if fib_levels:
         w_fib = fib_levels.get('_weekly', {})
-        # Standard reverse fib: 0%=ATH, 23.6%, 38.2%, 50%, 61.8%, 78.6%, 100%=2020low
-        for k in ['23.6%', '38.2%', '50.0%', '61.8%', '78.6%', '100.0%']:
+        for k in ['38.2%', '50.0%', '61.8%', '78.6%', '100.0%']:
             p = fib_levels.get(f'{k}_W') or w_fib.get(k, 0)
             if p > 0:
                 KEY_LEVELS.append((k, p))
 
-    # Find closest fib level within ±3%
-    in_fib_3pct = None
+    # Find closest fib level within ±5%
+    in_fib_5pct = None
     for lvl_name, lvl_price in KEY_LEVELS:
         d = abs((trigger_price - lvl_price) / max(1e-9, lvl_price) * 100)
-        if d <= 3.0:
-            in_fib_3pct = (lvl_name, lvl_price, round(d, 2))
-            break  # take nearest
+        if d <= 5.0:
+            in_fib_5pct = (lvl_name, lvl_price, round(d, 2))
+            break
 
-    # Score 8: fib ±3% AND trendline ≤2% (best quality — dual confluence)
-    if in_fib_3pct and near_tl_2pct:
-        lvl_name, lvl_price, d = in_fib_3pct
+    # Score 8: fib ±5% AND trendline ≤5% (dual confluence — best quality)
+    if in_fib_5pct and near_tl_5pct:
+        lvl_name, lvl_price, d = in_fib_5pct
         tl_str = f'{dist_to_trendline_pct:.1f}%' if dist_to_trendline_pct is not None else '--'
         return 8, f'{lvl_name} Level (+-{d:.1f}%) + TL ({tl_str}) ✓✓'
 
-    # Score 9: fib ±3% only (no trendline touch yet)
-    if in_fib_3pct:
-        lvl_name, lvl_price, d = in_fib_3pct
+    # Score 9: fib ±5% only
+    if in_fib_5pct:
+        lvl_name, lvl_price, d = in_fib_5pct
         return 9, f'{lvl_name} Level (+-{d:.1f}%) — Watch for TL'
 
-    # Score 10: trendline ≤3% only (no fib confluence)
-    if near_tl_3pct:
+    # Score 10: trendline ≤5% only
+    if near_tl_5pct:
         tl_str = f'{dist_to_trendline_pct:.1f}%' if dist_to_trendline_pct is not None else '--'
         return 10, f'Trendline Touch ({tl_str}) — No Fib'
 
