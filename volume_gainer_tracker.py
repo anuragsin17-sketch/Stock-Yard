@@ -236,14 +236,31 @@ def load_watchlist() -> list:
         try:
             with open(WATCHLIST_FILE) as f:
                 data = json.load(f)
-            return data if isinstance(data, list) else []
+            # Support both plain array and {last_scan_run, stocks} object
+            if isinstance(data, list):
+                return data
+            if isinstance(data, dict) and 'stocks' in data:
+                return data['stocks']
         except Exception:
             pass
     return []
 
-def save_watchlist(watchlist: list):
+def save_watchlist(watchlist: list, last_run_info: dict = None):
+    data = watchlist
+    if last_run_info:
+        # Wrap in object with metadata so dashboard can read last_scan_run
+        data = {'last_scan_run': last_run_info, 'stocks': watchlist}
+    else:
+        # Check if existing file has metadata wrapper — preserve it
+        try:
+            with open(WATCHLIST_FILE) as f:
+                existing = json.load(f)
+            if isinstance(existing, dict) and 'stocks' in existing:
+                data = {**existing, 'stocks': watchlist}
+        except Exception:
+            data = watchlist
     with open(WATCHLIST_FILE, 'w') as f:
-        json.dump(watchlist, f, indent=2)
+        json.dump(data, f, indent=2)
     print(f"✅ Saved {len(watchlist)} stocks to {WATCHLIST_FILE}")
 
 def push_to_dynamodb(new_entries: list):
@@ -363,7 +380,12 @@ def main():
         print(f"  ✅ {sym}: +{g['gain_pct']}%  prev_low=₹{prev_low:,.2f}  "
               f"target=₹{entry['target_price']:,.2f}  sl=₹{entry['sl_price']:,.2f}")
 
-    save_watchlist(watchlist)
+    save_watchlist(watchlist, last_run_info={
+        'timestamp': datetime.now().strftime('%Y-%m-%d %H:%M IST'),
+        'date': date_str,
+        'new_stocks': len(new_entries),
+        'total': len(watchlist)
+    })
 
     # ── Step 5: Push to DynamoDB ──────────────────────────────────────────────
     if new_entries:
