@@ -714,12 +714,13 @@ def get_52w():
 def sync_trades():
     """Fetch open holdings from Angel One and return them for Radar tab sync.
     
-    Also fetches today's completed SELL orders from the order book so the
-    frontend can record accurate exit prices when a position is auto-closed.
+    Also fetches today's completed positions (buy+sell) so the frontend can
+    record accurate entry AND exit prices when a position is auto-closed.
     
     Returns:
       open_trades    — positions currently held (from holding())
-      closed_trades  — positions sold today with actual exit price (from orderBook())
+      closed_trades  — positions sold today with actual entry+exit price (from position())
+      sell_exit_map  — {TICKER: exit_price} from order book for quick lookup
     """
     def _build_sell_exit_map(angel_orders):
         """
@@ -811,7 +812,51 @@ def sync_trades():
             logger.warning(f"orderBook() failed (non-fatal): {e}")
             errors.append(f"orderBook() failed: {e}")
 
-        return open_trades, sell_exit_map, errors
+        # ── Position book — today's closed positions with BUY+SELL avg ───
+        # Returns both entry (netbuyavgprice) and exit (netsellprice) for
+        # stocks fully closed today. This is what Angel One's Positions tab shows.
+        closed_from_positions = {}
+        try:
+            position_response = smart.position()
+            pos_data = []
+            if isinstance(position_response, dict) and position_response.get('status'):
+                pos_data = position_response.get('data', []) or []
+                if not isinstance(pos_data, list):
+                    pos_data = []
+            logger.info(f"Found {len(pos_data)} entries in position book")
+
+            open_tickers = {t['ticker'].upper() for t in open_trades}
+            for pos in pos_data:
+                ticker = (pos.get('tradingsymbol') or '').replace('-EQ', '').strip().upper()
+                if not ticker or ticker in open_tickers:
+                    continue
+                net_qty  = int(pos.get('netqty', 0) or 0)
+                # Only fully closed positions (net qty = 0)
+                if net_qty != 0:
+                    continue
+                buy_avg  = float(pos.get('netbuyavgprice') or pos.get('buyavgprice') or 0)
+                sell_avg = float(pos.get('netsellprice') or pos.get('sellavgprice') or 0)
+                qty      = int(pos.get('netbuyqty') or pos.get('buyqty') or 0)
+                if buy_avg > 0 and sell_avg > 0:
+                    # Position data overrides order book (more accurate — includes avg buy price)
+                    sell_exit_map[ticker] = round(sell_avg, 2)
+                    closed_from_positions[ticker] = {
+                        'ticker':      ticker,
+                        'entry_price': round(buy_avg, 2),
+                        'exit_price':  round(sell_avg, 2),
+                        'quantity':    qty,
+                        'source':      'Angel One',
+                        'status':      'Closed',
+                        'exit_source': 'Angel One positions',
+                        'closed_at':   datetime.now().isoformat(),
+                    }
+                    logger.info(f"Position closed today: {ticker} "
+                                f"buy=₹{buy_avg} sell=₹{sell_avg} qty={qty}")
+        except Exception as e:
+            logger.warning(f"position() failed (non-fatal): {e}")
+            errors.append(f"position() failed: {e}")
+
+        return open_trades, sell_exit_map, closed_from_positions, errors
 
     try:
         logger.info("Starting trade sync with Angel One...")
@@ -821,23 +866,32 @@ def sync_trades():
             logger.error("Trade sync failed: Could not connect to Angel One")
             return jsonify({'success': False, 'error': 'Failed to connect to Angel One'}), 401
 
-        open_trades, sell_exit_map, errors = _do_sync(smart)
+        open_trades, sell_exit_map, closed_from_positions, errors = _do_sync(smart)
 
         # Retry with fresh session if first attempt failed
         if not open_trades and errors:
             logger.warning("First sync attempt returned errors — retrying with fresh session")
             smart = get_angel_session(force_refresh=True)
             if smart:
-                open_trades, sell_exit_map, errors = _do_sync(smart)
+                open_trades, sell_exit_map, closed_from_positions, errors = _do_sync(smart)
             else:
                 return jsonify({'success': False, 'error': 'Session refresh failed'}), 401
 
-        # ── Build closed_trades list using actual SELL exit prices ────────
-        # Stocks that are in sell_exit_map but NOT in open holdings = sold today
+        # ── Build closed_trades list — prefer position() data (has entry+exit+qty) ──
+        # Fall back to sell_exit_map (order book, exit only) for anything not in positions
         open_tickers = {t['ticker'].upper() for t in open_trades}
         closed_trades_list = []
-        for ticker, exit_price in sell_exit_map.items():
+        seen = set()
+
+        # First: add position-based closed trades (most complete data)
+        for ticker, pos_data in closed_from_positions.items():
             if ticker not in open_tickers:
+                closed_trades_list.append(pos_data)
+                seen.add(ticker)
+
+        # Then: add order-book-only exits for tickers not in positions
+        for ticker, exit_price in sell_exit_map.items():
+            if ticker not in open_tickers and ticker not in seen:
                 closed_trades_list.append({
                     'ticker':     ticker,
                     'exit_price': exit_price,
