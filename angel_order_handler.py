@@ -770,9 +770,9 @@ def sync_trades():
             
             # Check if position still held - NORMALIZE SYMBOL FORMAT
             # Angel One returns "INFY-EQ" but radar_trades has "INFY"
-            normalized_ticker = ticker.rstrip('-EQ')  # Remove -EQ suffix for comparison
+            normalized_ticker = ticker.replace('-EQ', '').strip().upper()
             for position in angel_positions:
-                position_symbol = position.get('tradingsymbol', '').rstrip('-EQ')
+                position_symbol = position.get('tradingsymbol', '').replace('-EQ', '').strip().upper()
                 quantity_held = int(position.get('quantity', 0))
                 
                 if normalized_ticker.upper() == position_symbol.upper():
@@ -835,7 +835,7 @@ def sync_trades():
                     'source':        'Angel One',
                     'quantity':      int(p.get('quantity', 0)),
                     'entry_price':   round(float(p.get('averageprice', 0) or p.get('averagePrice', 0) or 0), 2),
-                    'current_price': round(float(p.get('ltp', 0) or p.get('close', 0) or 0), 2),
+                    'current_price': round(float(p.get('ltp', 0) or p.get('lastprice', 0) or p.get('close', 0) or 0), 2),
                     'status':        'Open',
                     'triggered_at':  datetime.now().isoformat(),
                 }
