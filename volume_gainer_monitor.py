@@ -152,13 +152,30 @@ def load_watchlist() -> list:
     if os.path.exists(WATCHLIST_FILE):
         try:
             with open(WATCHLIST_FILE) as f:
-                return json.load(f)
+                data = json.load(f)
+            # Support both plain list and {last_scan_run, stocks} object formats
+            if isinstance(data, dict) and 'stocks' in data:
+                return data['stocks']
+            if isinstance(data, list):
+                return data
         except Exception:
             pass
     return []
 
 
 def save_watchlist(watchlist: list):
+    # Preserve the {last_scan_run, stocks} wrapper if it exists
+    try:
+        if os.path.exists(WATCHLIST_FILE):
+            with open(WATCHLIST_FILE) as f:
+                existing = json.load(f)
+            if isinstance(existing, dict) and 'stocks' in existing:
+                existing['stocks'] = watchlist
+                with open(WATCHLIST_FILE, 'w') as f:
+                    json.dump(existing, f, indent=2)
+                return
+    except Exception:
+        pass
     with open(WATCHLIST_FILE, 'w') as f:
         json.dump(watchlist, f, indent=2)
 
