@@ -94,6 +94,60 @@ def get_ltp(ticker: str) -> float:
     return get_ltp_yfinance(ticker)
 
 
+def bulk_fetch_ltps(tickers: list) -> dict:
+    """Fetch LTPs for all tickers in one batch — much faster than one-by-one.
+    
+    Strategy:
+    1. Try EC2 DynamoDB bulk endpoint (fastest — single HTTPS call)
+    2. Fall back to yfinance batch download (all tickers in one call, ~15s)
+    Returns {TICKER: ltp} dict.
+    """
+    prices = {}
+    EC2_PRICES_URL = 'https://32-194-58-75.nip.io/api/prices'
+
+    # Primary: EC2 DynamoDB bulk prices endpoint
+    try:
+        resp = requests.get(EC2_PRICES_URL,
+                            params={'tickers': ','.join(tickers)},
+                            timeout=12, verify=False)
+        if resp.status_code == 200:
+            data = resp.json()
+            if data.get('success') and data.get('prices'):
+                for ticker, ltp in data['prices'].items():
+                    if ltp and float(ltp) > 0:
+                        prices[ticker.upper()] = round(float(ltp), 2)
+        if len(prices) >= len(tickers) * 0.8:   # got at least 80% — good enough
+            print(f"  EC2 bulk: {len(prices)}/{len(tickers)} prices")
+            return prices
+    except Exception as e:
+        print(f"  EC2 bulk error: {e}")
+
+    # Fallback: yfinance batch (all tickers in a single download call)
+    print(f"  yfinance batch fallback for {len(tickers)} tickers...")
+    try:
+        symbols = [t + '.NS' for t in tickers]
+        data = yf.download(symbols, period='2d', interval='1d',
+                           auto_adjust=True, progress=False, threads=True)
+        if not data.empty and 'Close' in data:
+            last_row = data['Close'].iloc[-1]
+            for sym in symbols:
+                val = last_row.get(sym) if hasattr(last_row, 'get') else last_row.get(sym, None)
+                if val is not None and float(val) > 0:
+                    prices[sym.replace('.NS', '')] = round(float(val), 2)
+        print(f"  yfinance batch: {len(prices)}/{len(tickers)} prices")
+    except Exception as e:
+        print(f"  yfinance batch error: {e}")
+        # Last resort: individual yfinance per missing ticker
+        missing = [t for t in tickers if t not in prices]
+        print(f"  Individual fallback for {len(missing)} missing tickers...")
+        for ticker in missing:
+            ltp = get_ltp_yfinance(ticker)
+            if ltp:
+                prices[ticker] = ltp
+
+    return prices
+
+
 def load_watchlist() -> list:
     if os.path.exists(WATCHLIST_FILE):
         try:
@@ -167,17 +221,23 @@ def check_watchlist():
 
     print(f"Monitoring {len(watchlist)} stocks")
 
+    # ── Bulk fetch all LTPs in one call (replaces serial one-by-one fetches) ──
+    all_tickers = [e['ticker'] for e in watchlist if e.get('ticker')]
+    print(f"Bulk fetching LTPs for {len(all_tickers)} tickers...")
+    ltp_map = bulk_fetch_ltps(all_tickers)
+    print(f"Got {len(ltp_map)} LTPs")
+
     entry_sent  = 0
     exit_sent   = 0
-    db_updates  = []   # entries to bulk-upsert to DynamoDB
+    db_updates  = []
 
     for entry in watchlist:
         ticker   = entry['ticker']
         prev_low = entry['prev_day_low']
 
-        ltp = get_ltp(ticker)
+        ltp = ltp_map.get(ticker.upper())
         if not ltp:
-            print(f"  {ticker}: could not get LTP — skipping")
+            print(f"  {ticker}: no LTP in bulk result — skipping")
             continue
 
         dist_pct      = ((ltp - prev_low) / prev_low) * 100
