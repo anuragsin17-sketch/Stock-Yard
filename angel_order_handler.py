@@ -3,6 +3,7 @@
 Angel One Order Handler API
 Receives order confirmation from dashboard and places on Angel One
 Designed to run as a systemd service on EC2 with environment variable credentials
+v2.1 — order book exit price lookup for accurate closed trade P&L
 """
 
 import os
