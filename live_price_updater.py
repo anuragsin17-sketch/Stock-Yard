@@ -181,65 +181,62 @@ def get_angel_session():
 
 
 def fetch_ltps(tickers: set) -> dict:
-    """Fetch LTP for all tickers using yfinance batch download.
-    Batch fetching is far faster than 158 sequential API calls.
-    Falls back to sequential local /api/get-quote if yfinance batch fails.
+    """Fetch LTP for all tickers.
+    Primary: local Angel One /api/get-quote (real-time intraday LTP).
+    Fallback: yfinance 1-minute interval for the latest trade price.
+    Note: yfinance 1d/daily interval gives EOD close — NOT live intraday price.
     """
     prices = {}
     ticker_list = sorted(tickers)
 
-    # --- Primary: yfinance batch (all tickers in one request, ~5s total) ---
-    try:
-        import yfinance as yf
-        yf_symbols = [t + '.NS' for t in ticker_list]
-        # Use period='1d' interval='1m' to get latest price
-        data = yf.download(
-            yf_symbols,
-            period='2d',
-            interval='1d',
-            auto_adjust=True,
-            progress=False,
-            threads=True
-        )
-        if not data.empty:
-            close = data['Close'] if 'Close' in data else None
-            if close is not None:
-                # Get last valid close for each ticker
-                last_row = close.iloc[-1]
-                for sym in yf_symbols:
-                    ticker = sym.replace('.NS', '')
-                    val = last_row.get(sym)
-                    if val is not None and float(val) > 0:
-                        prices[ticker] = round(float(val), 2)
-        if prices:
-            logger.info(f"yfinance batch fetched {len(prices)}/{len(ticker_list)} prices")
-            return prices
-    except Exception as e:
-        logger.warning(f"yfinance batch failed: {e} — falling back to local API")
-
-    # --- Fallback: sequential local /api/get-quote ---
+    # --- Primary: local Angel One /api/get-quote (real-time) ---
     LOCAL_QUOTE_API = 'http://127.0.0.1:5000/api/get-quote'
-    failed = 0
+    failed_tickers = []
     for ticker in ticker_list:
         try:
-            r = requests.get(LOCAL_QUOTE_API, params={'symbol': ticker}, timeout=30)
+            r = requests.get(LOCAL_QUOTE_API, params={'symbol': ticker}, timeout=10)
             if r.status_code == 200:
                 d = r.json()
                 if d.get('success'):
                     ltp = float(d.get('ltp', 0))
                     if ltp > 0:
                         prices[ticker] = ltp
-                    else:
-                        failed += 1
-                else:
-                    failed += 1
-            else:
-                failed += 1
+                        continue
+            failed_tickers.append(ticker)
+        except Exception:
+            failed_tickers.append(ticker)
+
+    if prices:
+        logger.info(f"Angel One /api/get-quote: {len(prices)} prices fetched, {len(failed_tickers)} failed")
+
+    # --- Fallback for failed tickers: yfinance 1-minute interval ---
+    if failed_tickers:
+        try:
+            import yfinance as yf
+            yf_symbols = [t + '.NS' for t in failed_tickers]
+            # Use 1m interval over 1d period to get latest intraday trade price
+            data = yf.download(
+                yf_symbols,
+                period='1d',
+                interval='1m',
+                auto_adjust=True,
+                progress=False,
+                threads=True
+            )
+            if not data.empty:
+                close = data['Close'] if 'Close' in data else None
+                if close is not None:
+                    last_row = close.dropna(how='all').iloc[-1] if len(close.dropna(how='all')) > 0 else None
+                    if last_row is not None:
+                        for sym in yf_symbols:
+                            ticker = sym.replace('.NS', '')
+                            val = last_row.get(sym)
+                            if val is not None and float(val) > 0:
+                                prices[ticker] = round(float(val), 2)
+            logger.info(f"yfinance fallback: recovered {sum(1 for t in failed_tickers if t in prices)}/{len(failed_tickers)}")
         except Exception as e:
-            logger.warning(f"Quote error {ticker}: {e}")
-            failed += 1
-    if failed:
-        logger.info(f"Fallback API: {len(prices)} succeeded, {failed} failed")
+            logger.warning(f"yfinance fallback failed: {e}")
+
     return prices
 
 
