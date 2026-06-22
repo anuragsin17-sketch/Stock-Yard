@@ -517,7 +517,8 @@ def get_quote():
             # Fallback to yfinance when Angel One session unavailable
             try:
                 import yfinance as yf
-                yf_symbol = symbol.replace('-EQ', '') + '.NS'
+                clean_sym = symbol.replace('-EQ', '').replace('.NS', '').replace('.BO', '').strip().upper()
+                yf_symbol = clean_sym + '.NS'
                 ticker_obj = yf.Ticker(yf_symbol)
                 # Use 1m interval to get latest intraday traded price (NOT daily EOD close)
                 hist_1m = ticker_obj.history(period='1d', interval='1m')
@@ -550,9 +551,9 @@ def get_quote():
         else:
             quote_symbol = symbol
         
-        # Fetch quote from Angel One
+        # Fetch quote from Angel One using ltpData
         try:
-            quote_data = smart.getQuote("NSE", quote_symbol)
+            quote_data = smart.ltpData("NSE", quote_symbol, "")
             logger.info(f"Quote response for {symbol}: {quote_data}")
             
             if isinstance(quote_data, dict) and quote_data.get('status'):
@@ -561,35 +562,32 @@ def get_quote():
                     data = data[0]
                 
                 ltp = float(data.get('ltp', 0))
-                open_price = float(data.get('open', 0))
-                high = float(data.get('high', 0))
-                low = float(data.get('low', 0))
-                close = float(data.get('close', 0))
-                volume = int(data.get('volume', 0))
                 
                 if ltp > 0:
-                    logger.info(f"Quote fetched for {symbol}: LTP={ltp}, Volume={volume}")
+                    logger.info(f"Quote fetched for {symbol}: LTP={ltp}")
                     return jsonify({
                         'success': True,
                         'symbol': symbol,
                         'ltp': ltp,
-                        'open': open_price,
-                        'high': high,
-                        'low': low,
-                        'close': close,
-                        'volume': volume,
+                        'open': float(data.get('open', 0)),
+                        'high': float(data.get('high', 0)),
+                        'low': float(data.get('low', 0)),
+                        'close': float(data.get('close', 0)),
+                        'volume': int(data.get('tradeVolume', data.get('volume', 0))),
                         'timestamp': datetime.now().isoformat()
                     }), 200
             
-            logger.warning(f"Angel One returned no LTP for {symbol}: {quote_data} — trying yfinance")
+            logger.warning(f"Angel One ltpData returned no LTP for {symbol}: {quote_data} — trying yfinance")
 
         except Exception as e:
-            logger.error(f"getQuote API failed for {symbol}: {e}", exc_info=True)
+            logger.error(f"ltpData API failed for {symbol}: {e}", exc_info=True)
 
         # Fallback to yfinance (covers both invalid Angel One response AND exception)
         try:
             import yfinance as yf
-            yf_symbol = symbol.replace('-EQ', '') + '.NS'
+            # Normalize: strip any existing .NS / -EQ suffix before adding .NS
+            clean_sym = symbol.replace('-EQ', '').replace('.NS', '').replace('.BO', '').strip().upper()
+            yf_symbol = clean_sym + '.NS'
             ticker_obj = yf.Ticker(yf_symbol)
             # 1m interval = latest intraday price. Fall back to 1d if market closed/weekend
             hist_1m = ticker_obj.history(period='1d', interval='1m')
@@ -1109,7 +1107,7 @@ def get_prices():
             prices = {}
             for ticker in tickers[:20]:  # cap at 20 to avoid timeout
                 try:
-                    quote = smart.getQuote('NSE', ticker + '-EQ') if smart else None
+                    quote = smart.ltpData('NSE', ticker + '-EQ', '') if smart else None
                     if quote and quote.get('status'):
                         data = quote.get('data', {})
                         if isinstance(data, list) and data:
