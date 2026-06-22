@@ -117,19 +117,19 @@ def fetch_bhavcopy(date: datetime) -> pd.DataFrame:
 
 def parse_bhavcopy(df: pd.DataFrame) -> pd.DataFrame:
     """Normalise bhavcopy columns, keep only EQ series."""
-    # Normalise column names — NSE changes them occasionally
-    df.columns = [c.strip().upper().replace(' ', '_') for c in df.columns]
+    # Normalise column names — NSE changed format in 2026 to camelCase
+    df.columns = [c.strip() for c in df.columns]
 
-    # Map possible column name variants
+    # Map new NSE format (2026+) and old format column names
     col_map = {
-        'SYMBOL': ['SYMBOL', 'TCKRSYMBOL', 'SCRIP_CD'],
-        'CLOSE':  ['CLOSE', 'CLOSE_PRICE', 'CLOSEPRICE', 'CL'],
-        'PREV':   ['PREVCLOSE', 'PREV_CLOSE', 'PREVIOUSCLOSE', 'PREV_CL', 'PCLOSE'],
-        'OPEN':   ['OPEN', 'OPEN_PRICE', 'OP'],
-        'LOW':    ['LOW', 'LOW_PRICE', 'LO'],
-        'HIGH':   ['HIGH', 'HIGH_PRICE', 'HI'],
-        'VOLUME': ['TOTTRDQTY', 'VOLUME', 'TTL_TRD_QNTY', 'DELIV_QTY'],
-        'SERIES': ['SERIES', 'SRS'],
+        'SYMBOL': ['TckrSymb', 'SYMBOL', 'TCKRSYMBOL', 'SCRIP_CD'],
+        'CLOSE':  ['ClsPric', 'CLOSE', 'CLOSE_PRICE', 'CLOSEPRICE', 'CL'],
+        'PREV':   ['PrvsClsgPric', 'PREVCLOSE', 'PREV_CLOSE', 'PREVIOUSCLOSE', 'PREV_CL', 'PCLOSE'],
+        'OPEN':   ['OpnPric', 'OPEN', 'OPEN_PRICE', 'OP'],
+        'LOW':    ['LwPric', 'LOW', 'LOW_PRICE', 'LO'],
+        'HIGH':   ['HghPric', 'HIGH', 'HIGH_PRICE', 'HI'],
+        'VOLUME': ['TtlTradgVol', 'TOTTRDQTY', 'VOLUME', 'TTL_TRD_QNTY', 'DELIV_QTY'],
+        'SERIES': ['SctySrs', 'SERIES', 'SRS'],
     }
 
     rename = {}
@@ -152,7 +152,7 @@ def parse_bhavcopy(df: pd.DataFrame) -> pd.DataFrame:
         df = df[df['SERIES'].str.strip() == 'EQ'].copy()
 
     # Ensure numeric
-    for col in ['CLOSE', 'OPEN', 'LOW', 'VOLUME', 'HIGH']:
+    for col in ['CLOSE', 'OPEN', 'LOW', 'VOLUME', 'HIGH', 'PREV']:
         if col in df.columns:
             df[col] = pd.to_numeric(df[col], errors='coerce')
 
@@ -169,7 +169,8 @@ def find_gainers(df: pd.DataFrame, min_gain: float) -> list:
     gainers = []
     for _, row in df.iterrows():
         close  = float(row['CLOSE'])
-        prev   = float(row.get('PREV', row.get('OPEN', 0)))  # prefer PREVCLOSE
+        # Use PREV (PrvsClsgPric) for accurate gain calculation — never OPEN
+        prev   = float(row['PREV']) if 'PREV' in row.index and pd.notna(row['PREV']) and float(row['PREV']) > 0 else 0
 
         if prev <= 0 or close <= 0:
             continue
