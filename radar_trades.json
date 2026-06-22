@@ -1,56 +1,8 @@
 [
   {
-    "ticker": "BAYERCROP",
-    "entry_price": 4253.63,
-    "current_price": 4153.6,
-    "target": 5317.04,
-    "stop_loss": 3955.88,
-    "quantity": 90,
-    "status": "Open",
-    "source": "Angel One",
-    "is_angel_synced": true,
-    "triggered_at": "2026-06-22T09:20:06.237074"
-  },
-  {
-    "ticker": "FACT",
-    "entry_price": 888.57,
-    "current_price": 913.7,
-    "target": 1110.71,
-    "stop_loss": 826.37,
-    "quantity": 300,
-    "status": "Open",
-    "source": "Angel One",
-    "is_angel_synced": true,
-    "triggered_at": "2026-06-22T09:20:06.237105"
-  },
-  {
-    "ticker": "LALPATHLAB",
-    "entry_price": 1649.28,
-    "current_price": 1669.7,
-    "target": 2061.6,
-    "stop_loss": 1533.83,
-    "quantity": 100,
-    "status": "Open",
-    "source": "Angel One",
-    "is_angel_synced": true,
-    "triggered_at": "2026-06-22T09:20:06.237114"
-  },
-  {
-    "ticker": "WHIRLPOOL",
-    "entry_price": 808.8,
-    "current_price": 819.0,
-    "target": 1011.0,
-    "stop_loss": 752.18,
-    "quantity": 300,
-    "status": "Open",
-    "source": "Angel One",
-    "is_angel_synced": true,
-    "triggered_at": "2026-06-22T09:20:06.237122"
-  },
-  {
     "ticker": "PRAJIND",
     "entry_price": 338.81,
-    "current_price": 340.45,
+    "current_price": 342.25,
     "target": 421.73,
     "stop_loss": 313.76,
     "quantity": 550,
@@ -62,7 +14,7 @@
   {
     "ticker": "JYOTHYLAB",
     "entry_price": 202.28,
-    "current_price": 204.98,
+    "current_price": 204.5,
     "target": 252.49,
     "stop_loss": 187.85,
     "quantity": 500,
@@ -74,7 +26,7 @@
   {
     "ticker": "NATCOPHARM",
     "entry_price": 853.97,
-    "current_price": 885.0,
+    "current_price": 882.5,
     "target": 1066.0,
     "stop_loss": 793.1,
     "quantity": 300,
