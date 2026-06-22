@@ -409,10 +409,10 @@ def monitor_radar_positions():
 
 
 def sync_angel_one_positions():
-    """Fetch open positions from Angel One via EC2 and REPLACE radar_trades.json with only current positions"""
+    """Fetch open positions from Angel One via EC2 and REPLACE radar_trades.json with only current positions.
+    Uses actual SELL order prices from Angel One order book for accurate exit P&L."""
     print("\n🔄 Syncing Angel One open positions...")
     try:
-        # Use HTTPS nip.io domain — reachable from GitHub Actions (not internal HTTP)
         response = requests.get('https://32-194-58-75.nip.io/api/sync-trades',
                                 timeout=15, verify=False)
         if response.status_code != 200:
@@ -425,28 +425,29 @@ def sync_angel_one_positions():
             return False
 
         angel_positions = data.get('open_trades', [])
-        print(f"  Angel One open positions: {len(angel_positions)}")
+        # sell_exit_map: {TICKER: actual_exit_price} from Angel One order book
+        sell_exit_map   = data.get('sell_exit_map', {})
+        closed_today    = data.get('closed_trades', [])
 
-        # Load existing radar to preserve manually added trades with order_id
+        print(f"  Angel One open positions : {len(angel_positions)}")
+        if sell_exit_map:
+            print(f"  Sell exits from order book: {sell_exit_map}")
+
         existing = load_radar()
-        # Keep only trades that have a real order_id (placed via Angel One broker)
         order_trades = {t['order_id']: t for t in existing if t.get('order_id')}
 
         new_radar = []
-
         for pos in angel_positions:
             ticker = pos.get('ticker', '').replace('-EQ', '')
             if not ticker:
                 continue
 
-            entry_price = float(pos.get('entry_price', pos.get('current_price', 0)) or 0)
-            # Apply defaults: SL = 7% below, Target = 25% above entry
+            entry_price  = float(pos.get('entry_price', pos.get('current_price', 0)) or 0)
             saved_target = float(pos.get('target', 0) or 0)
             saved_sl     = float(pos.get('stop_loss', 0) or 0)
-            target    = saved_target if saved_target > 0 else round(entry_price * 1.25, 2)
-            stop_loss = saved_sl     if saved_sl     > 0 else round(entry_price * 0.93, 2)
+            target       = saved_target if saved_target > 0 else round(entry_price * 1.25, 2)
+            stop_loss    = saved_sl     if saved_sl     > 0 else round(entry_price * 0.93, 2)
 
-            # Preserve any existing override (user-set SL/target)
             existing_entry = next((t for t in existing if t.get('ticker') == ticker
                                    and t.get('source') in ('Angel One', 'Groww', 'angel one')), None)
             if existing_entry:
@@ -454,23 +455,53 @@ def sync_angel_one_positions():
                 stop_loss = float(existing_entry.get('stop_loss', stop_loss) or stop_loss) or stop_loss
 
             new_radar.append({
-                'ticker':       ticker,
-                'entry_price':  entry_price,
-                'current_price': float(pos.get('current_price', 0) or 0),
-                'target':       target,
-                'stop_loss':    stop_loss,
-                'quantity':     int(pos.get('quantity', 0) or 0),
-                'status':       'Open',
-                'source':       'Angel One',
+                'ticker':          ticker,
+                'entry_price':     entry_price,
+                'current_price':   float(pos.get('current_price', 0) or 0),
+                'target':          target,
+                'stop_loss':       stop_loss,
+                'quantity':        int(pos.get('quantity', 0) or 0),
+                'status':          'Open',
+                'source':          'Angel One',
                 'is_angel_synced': True,
-                'triggered_at': (existing_entry or {}).get('triggered_at', datetime.now().isoformat())
+                'triggered_at':    (existing_entry or {}).get('triggered_at', datetime.now().isoformat())
             })
-            print(f"  ✅ {ticker}: entry={entry_price}, target={target}, sl={stop_loss}")
+            print(f"  ✅ {ticker}: entry=₹{entry_price}, target=₹{target}, sl=₹{stop_loss}")
 
-        # Add back any order_id trades not in current positions (may have been closed manually)
+        # Add back order_id trades not in current positions
         for order_id, t in order_trades.items():
             if not any(r['ticker'] == t['ticker'] for r in new_radar):
                 new_radar.append(t)
+
+        # ── Handle auto-closed trades using ACTUAL exit prices ────────────
+        # For each trade that was in radar but is now gone from holdings,
+        # look up its actual exit price from the Angel One order book.
+        if sell_exit_map:
+            existing_open_tickers = {t.get('ticker', '').upper() for t in existing
+                                     if t.get('status') in ('Open', 'Triggered', None, '')}
+            new_open_tickers      = {t.get('ticker', '').upper() for t in new_radar}
+
+            for ticker_up, exit_price in sell_exit_map.items():
+                # Stock was open in radar but not in new holdings → sold today
+                if ticker_up in existing_open_tickers and ticker_up not in new_open_tickers:
+                    old_trade = next((t for t in existing
+                                      if t.get('ticker', '').upper() == ticker_up), None)
+                    if old_trade:
+                        entry  = float(old_trade.get('entry_price', 0) or 0)
+                        qty    = int(old_trade.get('quantity', 0) or 0)
+                        pnl    = round((exit_price - entry) * qty, 2) if entry > 0 else 0
+                        pnl_pct= round((exit_price - entry) / entry * 100, 2) if entry > 0 else 0
+                        outcome= 'Target Hit' if pnl >= 0 else 'Stop Loss'
+                        print(f"  🎯 Auto-closed {ticker_up}: entry=₹{entry} "
+                              f"exit=₹{exit_price} (from order book) P&L={pnl_pct:+.2f}%")
+                        send_telegram(
+                            f"{'🎯' if pnl >= 0 else '🛑'} *POSITION CLOSED — {ticker_up}*\n\n"
+                            f"Entry : ₹{entry:,.2f}\n"
+                            f"Exit  : ₹{exit_price:,.2f} _(Angel One order book)_\n"
+                            f"P&L   : *{pnl_pct:+.2f}%* (₹{pnl:+,.0f})\n"
+                            f"Qty   : {qty} shares\n"
+                            f"Time  : {datetime.now().strftime('%d %b %Y %H:%M IST')}"
+                        )
 
         save_radar(new_radar)
         print(f"  ✅ radar_trades.json rebuilt with {len(new_radar)} Angel One positions")

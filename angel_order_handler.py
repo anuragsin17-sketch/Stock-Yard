@@ -713,14 +713,48 @@ def get_52w():
 def sync_trades():
     """Fetch open holdings from Angel One and return them for Radar tab sync.
     
-    Returns open_trades list even if orderBook() fails — as long as holding() works.
-    If the cached session is stale, automatically retries with a fresh session.
-    Never returns 500 due to a single Angel One API call failing.
+    Also fetches today's completed SELL orders from the order book so the
+    frontend can record accurate exit prices when a position is auto-closed.
+    
+    Returns:
+      open_trades    — positions currently held (from holding())
+      closed_trades  — positions sold today with actual exit price (from orderBook())
     """
+    def _build_sell_exit_map(angel_orders):
+        """
+        Build {TICKER: avg_exit_price} from completed SELL orders today.
+        If the same ticker was sold in multiple lots, averages the fill prices.
+        """
+        from collections import defaultdict
+        sell_map = defaultdict(lambda: {'total_value': 0.0, 'total_qty': 0})
+        for o in (angel_orders or []):
+            if (str(o.get('transactiontype', '')).upper() != 'SELL'):
+                continue
+            if str(o.get('status', '')).upper() not in ('COMPLETE', 'FILLED', 'TRADED'):
+                continue
+            ticker = (o.get('tradingsymbol') or '').replace('-EQ', '').strip().upper()
+            if not ticker:
+                continue
+            avg_price = float(o.get('averageprice') or o.get('averagePrice') or 0)
+            filled    = int(o.get('filledshares') or o.get('filled_shares') or
+                           o.get('qty') or o.get('quantity') or 0)
+            if avg_price > 0 and filled > 0:
+                sell_map[ticker]['total_value'] += avg_price * filled
+                sell_map[ticker]['total_qty']   += filled
+                logger.info(f"  SELL order: {ticker} qty={filled} @ ₹{avg_price}")
+
+        # Compute weighted average exit price per ticker
+        result = {}
+        for ticker, data in sell_map.items():
+            if data['total_qty'] > 0:
+                result[ticker] = round(data['total_value'] / data['total_qty'], 2)
+        return result
+
     def _do_sync(smart):
-        """Inner sync — returns (open_trades, error_msg). open_trades may be partial."""
-        open_trades = []
-        errors = []
+        """Inner sync — returns (open_trades, sell_exit_map, errors)."""
+        open_trades   = []
+        sell_exit_map = {}
+        errors        = []
 
         # ── Holdings (positions currently held) ──────────────────────────
         try:
@@ -732,7 +766,6 @@ def sync_trades():
                 if not isinstance(angel_positions, list):
                     angel_positions = []
             elif isinstance(holdings_response, list):
-                # Some SmartAPI versions return a list directly
                 angel_positions = holdings_response
             logger.info(f"Found {len(angel_positions)} holdings in Angel One")
 
@@ -759,7 +792,7 @@ def sync_trades():
             logger.error(err, exc_info=True)
             errors.append(err)
 
-        # ── Order book (pending/open orders — optional, non-fatal) ───────
+        # ── Order book — fetch SELL exits AND open orders ─────────────────
         try:
             orders_response = smart.orderBook()
             angel_orders = []
@@ -767,13 +800,17 @@ def sync_trades():
                 angel_orders = orders_response.get('data', []) or []
                 if not isinstance(angel_orders, list):
                     angel_orders = []
-            logger.info(f"Found {len(angel_orders)} orders in Angel One order book")
+            logger.info(f"Found {len(angel_orders)} orders in order book")
+
+            # Build sell exit price map from completed SELL orders
+            sell_exit_map = _build_sell_exit_map(angel_orders)
+            if sell_exit_map:
+                logger.info(f"Sell exit prices found for: {list(sell_exit_map.keys())}")
         except Exception as e:
             logger.warning(f"orderBook() failed (non-fatal): {e}")
-            angel_orders = []
             errors.append(f"orderBook() failed: {e}")
 
-        return open_trades, angel_orders, errors
+        return open_trades, sell_exit_map, errors
 
     try:
         logger.info("Starting trade sync with Angel One...")
@@ -783,19 +820,33 @@ def sync_trades():
             logger.error("Trade sync failed: Could not connect to Angel One")
             return jsonify({'success': False, 'error': 'Failed to connect to Angel One'}), 401
 
-        open_trades, angel_orders, errors = _do_sync(smart)
+        open_trades, sell_exit_map, errors = _do_sync(smart)
 
-        # If holding() failed and we got nothing, try once more with a fresh session
-        # (handles stale cached JWT tokens)
+        # Retry with fresh session if first attempt failed
         if not open_trades and errors:
             logger.warning("First sync attempt returned errors — retrying with fresh session")
             smart = get_angel_session(force_refresh=True)
             if smart:
-                open_trades, angel_orders, errors = _do_sync(smart)
+                open_trades, sell_exit_map, errors = _do_sync(smart)
             else:
                 return jsonify({'success': False, 'error': 'Session refresh failed'}), 401
 
-        # ── Update local radar_trades.json (background bookkeeping) ──────
+        # ── Build closed_trades list using actual SELL exit prices ────────
+        # Stocks that are in sell_exit_map but NOT in open holdings = sold today
+        open_tickers = {t['ticker'].upper() for t in open_trades}
+        closed_trades_list = []
+        for ticker, exit_price in sell_exit_map.items():
+            if ticker not in open_tickers:
+                closed_trades_list.append({
+                    'ticker':     ticker,
+                    'exit_price': exit_price,
+                    'source':     'Angel One',
+                    'closed_at':  datetime.now().isoformat(),
+                    'status':     'Closed',
+                })
+                logger.info(f"Auto-closed: {ticker} exit=₹{exit_price}")
+
+        # ── Update local radar_trades.json ────────────────────────────────
         try:
             radar_trades = []
             try:
@@ -816,18 +867,18 @@ def sync_trades():
             logger.warning(f"radar_trades.json update failed (non-fatal): {e}")
 
         return jsonify({
-            'success':       True,
-            'open_trades':   open_trades,
-            'radar_trades':  len(open_trades),
-            'closed_trades': 0,
+            'success':         True,
+            'open_trades':     open_trades,
+            'closed_trades':   closed_trades_list,   # ← actual exit prices from order book
+            'sell_exit_map':   sell_exit_map,         # ← {TICKER: exit_price} for direct lookup
+            'radar_trades':    len(open_trades),
             'total_positions': len(open_trades),
-            'message':       f'Synced {len(open_trades)} open positions from Angel One',
-            'warnings':      errors if errors else [],
+            'message':         f'Synced {len(open_trades)} open, {len(closed_trades_list)} closed today',
+            'warnings':        errors if errors else [],
         }), 200
 
     except Exception as e:
         logger.error(f"Trade sync error: {e}", exc_info=True)
-        # Clear session cache so next call gets a fresh auth
         global _angel_session, _angel_session_expiry
         _angel_session = None
         _angel_session_expiry = 0
