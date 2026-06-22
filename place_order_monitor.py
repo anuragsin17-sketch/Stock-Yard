@@ -197,7 +197,9 @@ def load_candidates() -> list:
         if os.path.exists(path):
             try:
                 with open(path) as f:
-                    vol_stocks = json.load(f)
+                    raw = json.load(f)
+                # Support both plain list and {last_scan_run, stocks} wrapper
+                vol_stocks = raw['stocks'] if isinstance(raw, dict) and 'stocks' in raw else raw
                 for s in (vol_stocks or []):
                     ticker  = s.get('ticker') or ''
                     trigger = s.get('prev_day_low') or 0
@@ -289,6 +291,13 @@ def check_once():
 
 
 def main():
+    # When invoked from GitHub Actions (not EC2 service), run once and exit.
+    # The infinite loop is only needed when running as a systemd service on EC2.
+    if not RUNNING_AS_SERVICE:
+        print("Running from GitHub Actions — single check then exit")
+        check_once()
+        return
+
     print("Place Order Monitor starting...")
     print(f"Checking every {CHECK_INTERVAL//60} min during market hours (IST)")
 
