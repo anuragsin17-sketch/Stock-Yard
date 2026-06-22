@@ -21,10 +21,10 @@
       "alert_sent_at": "2026-06-15T07:50:46.842410",
       "alert_ltp": 182.83999633789062,
       "alert_dist_pct": 3.7,
-      "ltp": 180.05,
-      "dist_pct": 2.12,
+      "ltp": 173.89,
+      "dist_pct": -1.37,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304206"
     },
     {
       "ticker": "FACT",
@@ -40,10 +40,10 @@
       "vol_ratio": 67.83,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 884.85,
-      "dist_pct": -2.37,
+      "ltp": 903.0,
+      "dist_pct": -0.37,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304488"
     },
     {
       "ticker": "SHAILY",
@@ -62,8 +62,9 @@
       "alert_dist_pct": 2.0,
       "ltp": 2803.8,
       "dist_pct": 4.37,
-      "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "in_entry_zone": true,
+      "ltp_updated_at": "2026-06-22T21:21:48.304507",
+      "in_place_order_zone": false
     },
     {
       "ticker": "TTML",
@@ -80,8 +81,9 @@
       "alert_sent_at": null,
       "ltp": 44.19,
       "dist_pct": 4.67,
-      "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "in_entry_zone": true,
+      "ltp_updated_at": "2026-06-22T21:21:48.304514",
+      "in_place_order_zone": false
     },
     {
       "ticker": "GOKULAGRO",
@@ -99,7 +101,8 @@
       "ltp": 221.77,
       "dist_pct": 5.6,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304573",
+      "in_place_order_zone": false
     },
     {
       "ticker": "PTCIL",
@@ -119,7 +122,8 @@
       "ltp": 18333.0,
       "dist_pct": 7.06,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304587",
+      "in_place_order_zone": false
     },
     {
       "ticker": "COHANCE",
@@ -137,7 +141,8 @@
       "ltp": 405.85,
       "dist_pct": 7.08,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304599",
+      "in_place_order_zone": false
     },
     {
       "ticker": "IDBI",
@@ -156,7 +161,8 @@
       "ltp": 82.98,
       "dist_pct": 7.32,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304618",
+      "in_place_order_zone": false
     },
     {
       "ticker": "SANSERA",
@@ -174,7 +180,8 @@
       "ltp": 2945.8,
       "dist_pct": 7.51,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304631",
+      "in_place_order_zone": false
     },
     {
       "ticker": "GLAND",
@@ -192,7 +199,8 @@
       "ltp": 2199.0,
       "dist_pct": 8.11,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304641",
+      "in_place_order_zone": false
     },
     {
       "ticker": "AARTIIND",
@@ -211,7 +219,8 @@
       "ltp": 484.5,
       "dist_pct": 8.15,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304649",
+      "in_place_order_zone": false
     },
     {
       "ticker": "CUMMINSIND",
@@ -229,7 +238,8 @@
       "ltp": 5865.0,
       "dist_pct": 8.56,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304658",
+      "in_place_order_zone": false
     },
     {
       "ticker": "ARE&M",
@@ -247,7 +257,8 @@
       "ltp": 844.65,
       "dist_pct": 8.64,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304666",
+      "in_place_order_zone": false
     },
     {
       "ticker": "THERMAX",
@@ -265,7 +276,8 @@
       "ltp": 4702.4,
       "dist_pct": 9.21,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304674",
+      "in_place_order_zone": false
     },
     {
       "ticker": "KALYANKJIL",
@@ -284,7 +296,8 @@
       "ltp": 383.5,
       "dist_pct": 9.27,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304683",
+      "in_place_order_zone": false
     },
     {
       "ticker": "WELSPUNLIV",
@@ -303,7 +316,8 @@
       "ltp": 162.23,
       "dist_pct": 9.76,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304691",
+      "in_place_order_zone": false
     },
     {
       "ticker": "ASHOKLEY",
@@ -321,7 +335,8 @@
       "ltp": 156.66,
       "dist_pct": 9.78,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304699",
+      "in_place_order_zone": false
     },
     {
       "ticker": "SUPRIYA",
@@ -339,7 +354,8 @@
       "ltp": 932.2,
       "dist_pct": 9.92,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304708",
+      "in_place_order_zone": false
     },
     {
       "ticker": "VIYASH",
@@ -357,7 +373,8 @@
       "ltp": 254.95,
       "dist_pct": 10.27,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304716",
+      "in_place_order_zone": false
     },
     {
       "ticker": "BATAINDIA",
@@ -376,7 +393,8 @@
       "ltp": 747.7,
       "dist_pct": 10.6,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304725",
+      "in_place_order_zone": false
     },
     {
       "ticker": "KPRMILL",
@@ -395,7 +413,8 @@
       "ltp": 1159.75,
       "dist_pct": 10.74,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304734",
+      "in_place_order_zone": false
     },
     {
       "ticker": "NEWGEN",
@@ -413,7 +432,8 @@
       "ltp": 481.95,
       "dist_pct": 10.79,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304742",
+      "in_place_order_zone": false
     },
     {
       "ticker": "JSLL",
@@ -431,7 +451,8 @@
       "ltp": 557.2,
       "dist_pct": 11.08,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304750",
+      "in_place_order_zone": false
     },
     {
       "ticker": "TMCV",
@@ -449,7 +470,8 @@
       "ltp": 402.1,
       "dist_pct": 11.23,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304758",
+      "in_place_order_zone": false
     },
     {
       "ticker": "BANDHANBNK",
@@ -467,7 +489,8 @@
       "ltp": 208.09,
       "dist_pct": 11.87,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304766",
+      "in_place_order_zone": false
     },
     {
       "ticker": "NAZARA",
@@ -485,7 +508,8 @@
       "ltp": 297.35,
       "dist_pct": 12.97,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304774",
+      "in_place_order_zone": false
     },
     {
       "ticker": "FSL",
@@ -503,7 +527,8 @@
       "ltp": 244.7,
       "dist_pct": 13.2,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304781",
+      "in_place_order_zone": false
     },
     {
       "ticker": "INOXINDIA",
@@ -521,7 +546,8 @@
       "ltp": 1917.8,
       "dist_pct": 13.35,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304789",
+      "in_place_order_zone": false
     },
     {
       "ticker": "GABRIEL",
@@ -540,7 +566,8 @@
       "ltp": 1197.4,
       "dist_pct": 13.42,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304798",
+      "in_place_order_zone": false
     },
     {
       "ticker": "SONATSOFTW",
@@ -559,7 +586,8 @@
       "ltp": 297.4,
       "dist_pct": 13.64,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304806",
+      "in_place_order_zone": false
     },
     {
       "ticker": "THANGAMAYL",
@@ -577,7 +605,8 @@
       "ltp": 5454.6,
       "dist_pct": 14.78,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304814",
+      "in_place_order_zone": false
     },
     {
       "ticker": "RELAXO",
@@ -595,7 +624,8 @@
       "ltp": 355.85,
       "dist_pct": 14.79,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304823",
+      "in_place_order_zone": false
     },
     {
       "ticker": "ICIL",
@@ -614,7 +644,8 @@
       "ltp": 394.6,
       "dist_pct": 15.01,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304831",
+      "in_place_order_zone": false
     },
     {
       "ticker": "DATAPATTNS",
@@ -632,7 +663,8 @@
       "ltp": 4822.1,
       "dist_pct": 16.02,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304839",
+      "in_place_order_zone": false
     },
     {
       "ticker": "AIIL",
@@ -650,7 +682,8 @@
       "ltp": 543.8,
       "dist_pct": 16.27,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304847",
+      "in_place_order_zone": false
     },
     {
       "ticker": "ALKYLAMINE",
@@ -668,7 +701,8 @@
       "ltp": 1845.4,
       "dist_pct": 16.7,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304856",
+      "in_place_order_zone": false
     },
     {
       "ticker": "LALPATHLAB",
@@ -686,7 +720,8 @@
       "ltp": 1635.8,
       "dist_pct": 17.68,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304864",
+      "in_place_order_zone": false
     },
     {
       "ticker": "KIRLPNU",
@@ -705,7 +740,8 @@
       "ltp": 1950.0,
       "dist_pct": 17.87,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304873",
+      "in_place_order_zone": false
     },
     {
       "ticker": "TEGA",
@@ -723,7 +759,8 @@
       "ltp": 1794.9,
       "dist_pct": 17.91,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304881",
+      "in_place_order_zone": false
     },
     {
       "ticker": "CARTRADE",
@@ -741,7 +778,8 @@
       "ltp": 2558.6,
       "dist_pct": 18.41,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304889",
+      "in_place_order_zone": false
     },
     {
       "ticker": "IFCI",
@@ -759,7 +797,8 @@
       "ltp": 85.73,
       "dist_pct": 18.58,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304897",
+      "in_place_order_zone": false
     },
     {
       "ticker": "IXIGO",
@@ -777,7 +816,8 @@
       "ltp": 189.98,
       "dist_pct": 18.64,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304905",
+      "in_place_order_zone": false
     },
     {
       "ticker": "MARKSANS",
@@ -795,7 +835,8 @@
       "ltp": 259.67,
       "dist_pct": 19.11,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304914",
+      "in_place_order_zone": false
     },
     {
       "ticker": "HONAUT",
@@ -813,7 +854,8 @@
       "ltp": 37460.0,
       "dist_pct": 19.36,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304923",
+      "in_place_order_zone": false
     },
     {
       "ticker": "JSFB",
@@ -831,7 +873,8 @@
       "ltp": 460.1,
       "dist_pct": 20.02,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304931",
+      "in_place_order_zone": false
     },
     {
       "ticker": "APOLLO",
@@ -849,7 +892,8 @@
       "ltp": 433.15,
       "dist_pct": 20.32,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304939",
+      "in_place_order_zone": false
     },
     {
       "ticker": "LLOYDSENGG",
@@ -868,7 +912,8 @@
       "ltp": 86.84,
       "dist_pct": 20.95,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304948",
+      "in_place_order_zone": false
     },
     {
       "ticker": "ZEEL",
@@ -886,7 +931,8 @@
       "ltp": 113.36,
       "dist_pct": 21.23,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304955",
+      "in_place_order_zone": false
     },
     {
       "ticker": "THOMASCOOK",
@@ -904,7 +950,8 @@
       "ltp": 111.6,
       "dist_pct": 21.3,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304963",
+      "in_place_order_zone": false
     },
     {
       "ticker": "RAIN",
@@ -922,7 +969,8 @@
       "ltp": 191.0,
       "dist_pct": 21.58,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304972",
+      "in_place_order_zone": false
     },
     {
       "ticker": "BALAMINES",
@@ -940,7 +988,8 @@
       "ltp": 2138.2,
       "dist_pct": 23.16,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304981",
+      "in_place_order_zone": false
     },
     {
       "ticker": "SCI",
@@ -958,7 +1007,8 @@
       "ltp": 312.15,
       "dist_pct": 24.11,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304989",
+      "in_place_order_zone": false
     },
     {
       "ticker": "ADVENZYMES",
@@ -976,7 +1026,8 @@
       "ltp": 373.7,
       "dist_pct": 24.96,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.304997",
+      "in_place_order_zone": false
     },
     {
       "ticker": "AEGISLOG",
@@ -994,7 +1045,8 @@
       "ltp": 1007.8,
       "dist_pct": 25.95,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.305005",
+      "in_place_order_zone": false
     },
     {
       "ticker": "MTARTECH",
@@ -1012,7 +1064,8 @@
       "ltp": 8374.5,
       "dist_pct": 26.41,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.305013",
+      "in_place_order_zone": false
     },
     {
       "ticker": "CRAFTSMAN",
@@ -1030,7 +1083,8 @@
       "ltp": 9806.5,
       "dist_pct": 27.28,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.305022",
+      "in_place_order_zone": false
     },
     {
       "ticker": "ARVIND",
@@ -1048,7 +1102,8 @@
       "ltp": 516.6,
       "dist_pct": 27.56,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.305030",
+      "in_place_order_zone": false
     },
     {
       "ticker": "ASHAPURMIN",
@@ -1066,7 +1121,8 @@
       "ltp": 708.15,
       "dist_pct": 29.8,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.305038",
+      "in_place_order_zone": false
     },
     {
       "ticker": "WEWORK",
@@ -1084,7 +1140,8 @@
       "ltp": 630.55,
       "dist_pct": 29.93,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.305047",
+      "in_place_order_zone": false
     },
     {
       "ticker": "RUBICON",
@@ -1102,7 +1159,8 @@
       "ltp": 1361.8,
       "dist_pct": 30.4,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.305055",
+      "in_place_order_zone": false
     },
     {
       "ticker": "AEQUS",
@@ -1120,7 +1178,8 @@
       "ltp": 222.13,
       "dist_pct": 30.66,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.305063",
+      "in_place_order_zone": false
     },
     {
       "ticker": "TRITURBINE",
@@ -1138,7 +1197,8 @@
       "ltp": 672.3,
       "dist_pct": 31.09,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.305071",
+      "in_place_order_zone": false
     },
     {
       "ticker": "SPARC",
@@ -1156,7 +1216,8 @@
       "ltp": 238.09,
       "dist_pct": 32.4,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.305078",
+      "in_place_order_zone": false
     },
     {
       "ticker": "PWL",
@@ -1174,7 +1235,8 @@
       "ltp": 122.61,
       "dist_pct": 36.54,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.305086",
+      "in_place_order_zone": false
     },
     {
       "ticker": "SAREGAMA",
@@ -1192,7 +1254,8 @@
       "ltp": 465.9,
       "dist_pct": 37.29,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.305095",
+      "in_place_order_zone": false
     },
     {
       "ticker": "PARAS",
@@ -1210,7 +1273,8 @@
       "ltp": 1408.65,
       "dist_pct": 39.89,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.305104",
+      "in_place_order_zone": false
     },
     {
       "ticker": "MSTCLTD",
@@ -1228,7 +1292,8 @@
       "ltp": 692.75,
       "dist_pct": 41.06,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.305112",
+      "in_place_order_zone": false
     },
     {
       "ticker": "RRKABEL",
@@ -1246,7 +1311,8 @@
       "ltp": 2321.1,
       "dist_pct": 44.86,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.305120",
+      "in_place_order_zone": false
     },
     {
       "ticker": "GRWRHITECH",
@@ -1264,7 +1330,8 @@
       "ltp": 6785.5,
       "dist_pct": 52.45,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.305129",
+      "in_place_order_zone": false
     },
     {
       "ticker": "CEMPRO",
@@ -1282,7 +1349,8 @@
       "ltp": 1252.0,
       "dist_pct": 53.82,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.305138",
+      "in_place_order_zone": false
     },
     {
       "ticker": "BBOX",
@@ -1300,7 +1368,8 @@
       "ltp": 1023.0,
       "dist_pct": 75.77,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-21T03:14:18.450076"
+      "ltp_updated_at": "2026-06-22T21:21:48.305146",
+      "in_place_order_zone": false
     },
     {
       "ticker": "KIRLOSENG",
@@ -1351,7 +1420,12 @@
       "alerted": false,
       "alert_sent_at": null,
       "week_52_high": 66.65,
-      "week_52_low": 52.35
+      "week_52_low": 52.35,
+      "ltp": 65.38,
+      "dist_pct": 19.52,
+      "in_entry_zone": false,
+      "ltp_updated_at": "2026-06-22T21:21:48.305159",
+      "in_place_order_zone": false
     },
     {
       "ticker": "BLACKROSE",
@@ -1368,7 +1442,12 @@
       "alerted": false,
       "alert_sent_at": null,
       "week_52_high": 113.8,
-      "week_52_low": 80.05
+      "week_52_low": 80.05,
+      "ltp": 112.14,
+      "dist_pct": 21.34,
+      "in_entry_zone": false,
+      "ltp_updated_at": "2026-06-22T21:21:48.305168",
+      "in_place_order_zone": false
     },
     {
       "ticker": "EMSLIMITED",
