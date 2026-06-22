@@ -567,57 +567,73 @@ def get_quote():
                 close = float(data.get('close', 0))
                 volume = int(data.get('volume', 0))
                 
-                logger.info(f"? Quote fetched for {symbol}: LTP={ltp}, Volume={volume}")
-                
-                return jsonify({
-                    'success': True,
-                    'symbol': symbol,
-                    'ltp': ltp,
-                    'open': open_price,
-                    'high': high,
-                    'low': low,
-                    'close': close,
-                    'volume': volume,
-                    'timestamp': datetime.now().isoformat()
-                }), 200
-            else:
-                logger.warning(f"Quote fetch failed for {symbol}: Invalid response {quote_data}")
-                return jsonify({'success': False, 'error': f'Invalid quote response: {quote_data}'}), 500
-        
-        except Exception as e:
-            logger.error(f"getQuote API failed for {symbol}: {e}", exc_info=True)
-            # Fallback to yfinance if Angel One fails
-            try:
-                import yfinance as yf
-                yf_symbol = symbol.replace('-EQ', '') + '.NS'
-                ticker_obj = yf.Ticker(yf_symbol)
-                # Use 1m interval to get latest intraday traded price (NOT daily EOD close)
-                hist_1m = ticker_obj.history(period='1d', interval='1m')
-                # Prev close from daily data for Day P&L calculation
-                hist_1d = ticker_obj.history(period='2d', interval='1d')
-                prev_close = float(hist_1d['Close'].iloc[-2]) if len(hist_1d) >= 2 else 0
-                if not hist_1m.empty:
-                    last = hist_1m.dropna(subset=['Close']).iloc[-1]
-                    ltp   = float(last['Close'])
-                    open_p = float(hist_1m['Open'].iloc[0])
-                    high_p = float(hist_1m['High'].max())
-                    low_p  = float(hist_1m['Low'].min())
-                    logger.info(f"yfinance fallback for {symbol}: LTP={ltp}, PrevClose={prev_close}")
+                if ltp > 0:
+                    logger.info(f"Quote fetched for {symbol}: LTP={ltp}, Volume={volume}")
                     return jsonify({
                         'success': True,
                         'symbol': symbol,
                         'ltp': ltp,
-                        'open': open_p,
-                        'high': high_p,
-                        'low': low_p,
-                        'close': prev_close,   # yesterday's close — used for Day P&L
+                        'open': open_price,
+                        'high': high,
+                        'low': low,
+                        'close': close,
+                        'volume': volume,
+                        'timestamp': datetime.now().isoformat()
+                    }), 200
+            
+            logger.warning(f"Angel One returned no LTP for {symbol}: {quote_data} — trying yfinance")
+
+        except Exception as e:
+            logger.error(f"getQuote API failed for {symbol}: {e}", exc_info=True)
+
+        # Fallback to yfinance (covers both invalid Angel One response AND exception)
+        try:
+            import yfinance as yf
+            yf_symbol = symbol.replace('-EQ', '') + '.NS'
+            ticker_obj = yf.Ticker(yf_symbol)
+            # 1m interval = latest intraday price. Fall back to 1d if market closed/weekend
+            hist_1m = ticker_obj.history(period='1d', interval='1m')
+            hist_1d = ticker_obj.history(period='5d', interval='1d')
+            prev_close = float(hist_1d['Close'].iloc[-2]) if len(hist_1d) >= 2 else 0
+            if not hist_1m.empty:
+                last = hist_1m.dropna(subset=['Close']).iloc[-1]
+                ltp_yf = float(last['Close'])
+                if ltp_yf > 0:
+                    logger.info(f"yfinance 1m fallback for {symbol}: LTP={ltp_yf}")
+                    return jsonify({
+                        'success': True,
+                        'symbol': symbol,
+                        'ltp': ltp_yf,
+                        'open': float(hist_1m['Open'].iloc[0]),
+                        'high': float(hist_1m['High'].max()),
+                        'low': float(hist_1m['Low'].min()),
+                        'close': prev_close,
                         'volume': int(hist_1m['Volume'].sum()) if 'Volume' in hist_1m.columns else 0,
                         'timestamp': datetime.now().isoformat(),
-                        'source': 'yfinance'
+                        'source': 'yfinance_1m'
                     }), 200
-            except Exception as yf_e:
-                logger.warning(f"yfinance fallback also failed for {symbol}: {yf_e}")
-            return jsonify({'success': False, 'error': f'Quote fetch failed: {e}'}), 500
+            # Outside market hours: fall back to last daily close
+            if not hist_1d.empty:
+                ltp_yf = float(hist_1d['Close'].iloc[-1])
+                prev_close = float(hist_1d['Close'].iloc[-2]) if len(hist_1d) >= 2 else ltp_yf
+                if ltp_yf > 0:
+                    logger.info(f"yfinance 1d fallback for {symbol}: LTP={ltp_yf}")
+                    return jsonify({
+                        'success': True,
+                        'symbol': symbol,
+                        'ltp': ltp_yf,
+                        'open': float(hist_1d['Open'].iloc[-1]),
+                        'high': float(hist_1d['High'].iloc[-1]),
+                        'low': float(hist_1d['Low'].iloc[-1]),
+                        'close': prev_close,
+                        'volume': int(hist_1d['Volume'].iloc[-1]) if 'Volume' in hist_1d.columns else 0,
+                        'timestamp': datetime.now().isoformat(),
+                        'source': 'yfinance_1d'
+                    }), 200
+        except Exception as yf_e:
+            logger.warning(f"yfinance fallback failed for {symbol}: {yf_e}")
+
+        return jsonify({'success': False, 'error': f'All quote sources failed for {symbol}'}), 503
     
     except Exception as e:
         logger.error(f"Quote endpoint error: {e}", exc_info=True)
