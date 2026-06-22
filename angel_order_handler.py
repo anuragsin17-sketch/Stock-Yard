@@ -27,6 +27,10 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+# Cached Angel One session (avoids re-auth on every request)
+_angel_session = None
+_angel_session_expiry = 0
+
 app = Flask(__name__)
 
 # API key for authenticating dashboard requests — set as env var on EC2
@@ -103,11 +107,18 @@ def send_telegram_notification(message):
         logger.warning(f"? Telegram error: {e}")
         return False
 
-def get_angel_session():
-    """Get authenticated SmartConnect session — cached for 4 hours to avoid rate limits"""
+def get_angel_session(force_refresh=False):
+    """Get authenticated SmartConnect session — cached for 4 hours to avoid rate limits.
+    Pass force_refresh=True to invalidate the cache and re-authenticate."""
     global _angel_session, _angel_session_expiry
     import time
     now = int(time.time())
+
+    # Force refresh clears the cache (used when a cached session causes API errors)
+    if force_refresh:
+        logger.info("Forcing session refresh — clearing cached session")
+        _angel_session = None
+        _angel_session_expiry = 0
 
     # Return cached session if still valid
     if _angel_session and now < _angel_session_expiry:
@@ -564,7 +575,20 @@ def get_quote():
                 ltp = float(data.get('ltp', 0))
                 
                 if ltp > 0:
-                    logger.info(f"Quote fetched for {symbol}: LTP={ltp}")
+                    close_val = float(data.get('close', 0))
+                    # ltpData often returns close=0 during market hours.
+                    # Fall back to yfinance for prev-day close (used for Day P&L calculation).
+                    if close_val <= 0:
+                        try:
+                            import yfinance as yf
+                            clean_sym = symbol.replace('-EQ', '').replace('.NS', '').strip().upper()
+                            hist_1d = yf.Ticker(clean_sym + '.NS').history(period='5d', interval='1d')
+                            if len(hist_1d) >= 2:
+                                close_val = round(float(hist_1d['Close'].iloc[-2]), 2)
+                                logger.info(f"Enriched prev-close for {symbol} from yfinance: {close_val}")
+                        except Exception:
+                            pass  # Day P&L will show 0 — acceptable fallback
+                    logger.info(f"Quote fetched for {symbol}: LTP={ltp}, PrevClose={close_val}")
                     return jsonify({
                         'success': True,
                         'symbol': symbol,
@@ -572,7 +596,7 @@ def get_quote():
                         'open': float(data.get('open', 0)),
                         'high': float(data.get('high', 0)),
                         'low': float(data.get('low', 0)),
-                        'close': float(data.get('close', 0)),
+                        'close': close_val,
                         'volume': int(data.get('tradeVolume', data.get('volume', 0))),
                         'timestamp': datetime.now().isoformat()
                     }), 200
@@ -687,169 +711,126 @@ def get_52w():
 
 @app.route('/api/sync-trades', methods=['GET'])
 def sync_trades():
-    """Fetch all open orders from Angel One and sync with our tracking"""
-    # Read-only endpoint — no API key required
+    """Fetch open holdings from Angel One and return them for Radar tab sync.
+    
+    Returns open_trades list even if orderBook() fails — as long as holding() works.
+    If the cached session is stale, automatically retries with a fresh session.
+    Never returns 500 due to a single Angel One API call failing.
+    """
+    def _do_sync(smart):
+        """Inner sync — returns (open_trades, error_msg). open_trades may be partial."""
+        open_trades = []
+        errors = []
+
+        # ── Holdings (positions currently held) ──────────────────────────
+        try:
+            holdings_response = smart.holding()
+            logger.info(f"Holdings response type: {type(holdings_response)}")
+            angel_positions = []
+            if isinstance(holdings_response, dict) and holdings_response.get('status'):
+                angel_positions = holdings_response.get('data', []) or []
+                if not isinstance(angel_positions, list):
+                    angel_positions = []
+            elif isinstance(holdings_response, list):
+                # Some SmartAPI versions return a list directly
+                angel_positions = holdings_response
+            logger.info(f"Found {len(angel_positions)} holdings in Angel One")
+
+            for p in angel_positions:
+                qty = int(p.get('quantity', p.get('t1quantity', 0)) or 0)
+                if qty <= 0:
+                    continue
+                ticker = (p.get('tradingsymbol') or p.get('symbolname') or '').replace('-EQ', '').strip()
+                if not ticker:
+                    continue
+                avg_price = float(p.get('averageprice') or p.get('averagePrice') or p.get('buyavgprice') or 0)
+                ltp       = float(p.get('ltp') or p.get('lastprice') or p.get('close') or avg_price or 0)
+                open_trades.append({
+                    'ticker':        ticker,
+                    'source':        'Angel One',
+                    'quantity':      qty,
+                    'entry_price':   round(avg_price, 2),
+                    'current_price': round(ltp, 2),
+                    'status':        'Open',
+                    'triggered_at':  datetime.now().isoformat(),
+                })
+        except Exception as e:
+            err = f"holding() failed: {e}"
+            logger.error(err, exc_info=True)
+            errors.append(err)
+
+        # ── Order book (pending/open orders — optional, non-fatal) ───────
+        try:
+            orders_response = smart.orderBook()
+            angel_orders = []
+            if isinstance(orders_response, dict) and orders_response.get('status'):
+                angel_orders = orders_response.get('data', []) or []
+                if not isinstance(angel_orders, list):
+                    angel_orders = []
+            logger.info(f"Found {len(angel_orders)} orders in Angel One order book")
+        except Exception as e:
+            logger.warning(f"orderBook() failed (non-fatal): {e}")
+            angel_orders = []
+            errors.append(f"orderBook() failed: {e}")
+
+        return open_trades, angel_orders, errors
+
     try:
         logger.info("Starting trade sync with Angel One...")
-        
+
         smart = get_angel_session()
         if not smart:
             logger.error("Trade sync failed: Could not connect to Angel One")
             return jsonify({'success': False, 'error': 'Failed to connect to Angel One'}), 401
-        
-        # Get all orders from Angel One
-        orders_response = smart.orderBook()
-        logger.info(f"Order book response: {orders_response}")
-        
-        if not isinstance(orders_response, dict) or not orders_response.get('status'):
-            logger.warning(f"Order book fetch failed: {orders_response}")
-            return jsonify({'success': False, 'error': 'Failed to fetch order book'}), 500
-        
-        angel_orders = orders_response.get('data', [])
-        if not isinstance(angel_orders, list):
-            angel_orders = []
-        
-        logger.info(f"Found {len(angel_orders)} orders in Angel One")
-        
-        # Get all positions (filled orders) from Angel One
-        holdings_response = smart.holding()
-        logger.info(f"Holdings response: {holdings_response}")
-        
-        angel_positions = []
-        if isinstance(holdings_response, dict) and holdings_response.get('status'):
-            angel_positions = holdings_response.get('data', [])
-            if not isinstance(angel_positions, list):
-                angel_positions = []
-        
-        logger.info(f"Found {len(angel_positions)} positions in Angel One")
-        
-        # Load our tracking files
-        radar_trades = []
-        closed_trades = []
-        
-        try:
-            with open('radar_trades.json') as f:
-                radar_trades = json.load(f)
-                if not isinstance(radar_trades, list):
-                    radar_trades = []
-        except:
-            radar_trades = []
-        
-        try:
-            with open('closed_trades.json') as f:
-                closed_trades = json.load(f)
-                if not isinstance(closed_trades, list):
-                    closed_trades = []
-        except:
-            closed_trades = []
-        
-        logger.info(f"Current radar trades: {len(radar_trades)}")
-        logger.info(f"Current closed trades: {len(closed_trades)}")
-        
-        # Track changes
-        updated_radar = []
-        newly_closed = []
-        
-        # Check each radar trade for exit
-        for trade in radar_trades:
-            ticker = trade.get('ticker', '')
-            order_id = trade.get('order_id', '')
-            quantity = trade.get('quantity', 1)
-            
-            # Find if this order exists in Angel One and has been exited
-            order_found = False
-            position_found = False
-            exit_price = None
-            
-            # Check if order still exists
-            for angel_order in angel_orders:
-                if str(angel_order.get('orderid')) == str(order_id):
-                    order_found = True
-                    logger.info(f"Order {order_id} ({ticker}) still open in Angel One")
-                    break
-            
-            # Check if position still held - NORMALIZE SYMBOL FORMAT
-            # Angel One returns "INFY-EQ" but radar_trades has "INFY"
-            normalized_ticker = ticker.replace('-EQ', '').strip().upper()
-            for position in angel_positions:
-                position_symbol = position.get('tradingsymbol', '').replace('-EQ', '').strip().upper()
-                quantity_held = int(position.get('quantity', 0))
-                
-                if normalized_ticker.upper() == position_symbol.upper():
-                    position_found = True
-                    quantity = quantity_held  # Update quantity from Angel One
-                    trade['quantity'] = quantity  # Save updated quantity back to trade record
-                    logger.info(f"Position {ticker} ({quantity} shares) still held in Angel One")
-                    break
-            
-            # If order not found and position not held -> Trade exited
-            if not order_found and not position_found:
-                logger.warning(f"Trade {ticker} (Order {order_id}) has been exited!")
-                
-                # Move to closed trades
-                trade['status'] = 'Closed'
-                trade['closed_at'] = datetime.now().isoformat()
-                
-                # Calculate P&L if possible (would need exit price from Angel One)
-                if 'current_price' in trade:
-                    entry = float(trade.get('entry_price', 0))
-                    exit_price = float(trade.get('current_price', 0))
-                    qty = int(trade.get('quantity', 1))
-                    
-                    pnl = (exit_price - entry) * qty
-                    pnl_percent = ((exit_price - entry) / entry * 100) if entry > 0 else 0
-                    
-                    trade['exit_price'] = exit_price
-                    trade['pnl'] = pnl
-                    trade['pnl_percent'] = pnl_percent
-                
-                newly_closed.append(trade)
-                logger.info(f"Closed trade: {ticker} - P&L: ?{trade.get('pnl', 0):,.2f}")
+
+        open_trades, angel_orders, errors = _do_sync(smart)
+
+        # If holding() failed and we got nothing, try once more with a fresh session
+        # (handles stale cached JWT tokens)
+        if not open_trades and errors:
+            logger.warning("First sync attempt returned errors — retrying with fresh session")
+            smart = get_angel_session(force_refresh=True)
+            if smart:
+                open_trades, angel_orders, errors = _do_sync(smart)
             else:
-                # Trade still open
-                updated_radar.append(trade)
-        
-        # Add newly closed trades to closed_trades file
-        if newly_closed:
-            closed_trades.extend(newly_closed)
-            try:
-                with open('closed_trades.json', 'w') as f:
-                    json.dump(closed_trades, f, indent=2)
-                logger.info(f"Saved {len(closed_trades)} closed trades to closed_trades.json")
-            except Exception as e:
-                logger.error(f"Error saving closed trades: {e}")
-        
-        # Update radar trades file (removing closed ones)
+                return jsonify({'success': False, 'error': 'Session refresh failed'}), 401
+
+        # ── Update local radar_trades.json (background bookkeeping) ──────
         try:
+            radar_trades = []
+            try:
+                with open('radar_trades.json') as f:
+                    radar_trades = json.load(f)
+                    if not isinstance(radar_trades, list):
+                        radar_trades = []
+            except Exception:
+                radar_trades = []
+
+            live_tickers = {t['ticker'] for t in open_trades}
+            updated_radar = [t for t in radar_trades if t.get('ticker') in live_tickers]
+
             with open('radar_trades.json', 'w') as f:
                 json.dump(updated_radar, f, indent=2)
             logger.info(f"Updated radar_trades.json with {len(updated_radar)} open trades")
         except Exception as e:
-            logger.error(f"Error saving radar trades: {e}")
-        
+            logger.warning(f"radar_trades.json update failed (non-fatal): {e}")
+
         return jsonify({
-            'success': True,
-            'open_trades': [
-                {
-                    'ticker':        p.get('tradingsymbol', '').replace('-EQ', '').strip(),
-                    'source':        'Angel One',
-                    'quantity':      int(p.get('quantity', 0)),
-                    'entry_price':   round(float(p.get('averageprice', 0) or p.get('averagePrice', 0) or 0), 2),
-                    'current_price': round(float(p.get('ltp', 0) or p.get('lastprice', 0) or p.get('close', 0) or 0), 2),
-                    'status':        'Open',
-                    'triggered_at':  datetime.now().isoformat(),
-                }
-                for p in angel_positions
-                if p.get('tradingsymbol') and int(p.get('quantity', 0)) > 0
-            ],
-            'radar_trades': len(updated_radar),
-            'closed_trades': len(newly_closed),
-            'total_positions': len(angel_positions),
-            'message': f'Synced: {len(updated_radar)} open, {len(newly_closed)} newly closed'
+            'success':       True,
+            'open_trades':   open_trades,
+            'radar_trades':  len(open_trades),
+            'closed_trades': 0,
+            'total_positions': len(open_trades),
+            'message':       f'Synced {len(open_trades)} open positions from Angel One',
+            'warnings':      errors if errors else [],
         }), 200
-        
+
     except Exception as e:
         logger.error(f"Trade sync error: {e}", exc_info=True)
+        # Clear session cache so next call gets a fresh auth
+        global _angel_session, _angel_session_expiry
+        _angel_session = None
+        _angel_session_expiry = 0
         return jsonify({'success': False, 'error': str(e)}), 500
 
 
