@@ -82,25 +82,19 @@ def send_telegram_with_action(ticker: str, entry_price: float, current_price: fl
 def get_live_price(ticker: str) -> float:
     """Get current price from Angel One API"""
     try:
-        # Call the backend endpoint to get live quote
-        symbol = ticker.replace('.NS', '')  # Remove .NS suffix for API call
-        
-        api_url = f"http://32.194.58.75:5000/api/get-quote?symbol={symbol}"
-        
-        response = requests.get(api_url, timeout=5)
-        
+        symbol = ticker.replace('.NS', '')
+        # Use HTTPS nip.io domain — reachable from GitHub Actions
+        api_url = f"https://32-194-58-75.nip.io/api/get-quote?symbol={symbol}"
+        response = requests.get(api_url, timeout=8, verify=False)
         if response.status_code == 200:
             data = response.json()
             if data.get('success'):
                 ltp = float(data.get('ltp', 0))
                 if ltp > 0:
                     return ltp
-        
         print(f"Price fetch error for {ticker}: API returned {response.status_code}")
-        
     except Exception as e:
         print(f"Price fetch error for {ticker}: {e}")
-    
     return None
 
 
@@ -418,7 +412,9 @@ def sync_angel_one_positions():
     """Fetch open positions from Angel One via EC2 and REPLACE radar_trades.json with only current positions"""
     print("\n🔄 Syncing Angel One open positions...")
     try:
-        response = requests.get('http://32.194.58.75:5000/api/sync-trades', timeout=15)
+        # Use HTTPS nip.io domain — reachable from GitHub Actions (not internal HTTP)
+        response = requests.get('https://32-194-58-75.nip.io/api/sync-trades',
+                                timeout=15, verify=False)
         if response.status_code != 200:
             print(f"  ⚠️ Sync endpoint returned {response.status_code}")
             return False
