@@ -215,6 +215,7 @@ def fetch_ltps(tickers: set) -> dict:
             import yfinance as yf
             yf_symbols = [t + '.NS' for t in failed_tickers]
             # Use 1m interval over 1d period to get latest intraday trade price
+            # NOTE: never use interval='1d' here — that gives EOD close, not live price
             data = yf.download(
                 yf_symbols,
                 period='1d',

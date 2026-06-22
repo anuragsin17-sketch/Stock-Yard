@@ -519,20 +519,24 @@ def get_quote():
                 import yfinance as yf
                 yf_symbol = symbol.replace('-EQ', '') + '.NS'
                 ticker_obj = yf.Ticker(yf_symbol)
-                hist = ticker_obj.history(period='2d', interval='1d')
-                if not hist.empty:
-                    ltp        = float(hist['Close'].iloc[-1])
-                    prev_close = float(hist['Close'].iloc[-2]) if len(hist) >= 2 else ltp
+                # Use 1m interval to get latest intraday traded price (NOT daily EOD close)
+                hist_1m = ticker_obj.history(period='1d', interval='1m')
+                # Prev close from daily data for Day P&L calculation
+                hist_1d = ticker_obj.history(period='2d', interval='1d')
+                prev_close = float(hist_1d['Close'].iloc[-2]) if len(hist_1d) >= 2 else 0
+                if not hist_1m.empty:
+                    last = hist_1m.dropna(subset=['Close']).iloc[-1]
+                    ltp = float(last['Close'])
                     logger.info(f"yfinance fallback (no session) for {symbol}: LTP={ltp}, PrevClose={prev_close}")
                     return jsonify({
                         'success': True,
                         'symbol': symbol,
                         'ltp': ltp,
-                        'open': float(hist['Open'].iloc[-1]),
-                        'high': float(hist['High'].iloc[-1]),
-                        'low': float(hist['Low'].iloc[-1]),
+                        'open': float(hist_1m['Open'].iloc[0]) if not hist_1m.empty else 0,
+                        'high': float(hist_1m['High'].max()),
+                        'low': float(hist_1m['Low'].min()),
                         'close': prev_close,   # yesterday's close for Day P&L
-                        'volume': int(hist['Volume'].iloc[-1]) if 'Volume' in hist.columns else 0,
+                        'volume': int(hist_1m['Volume'].sum()) if 'Volume' in hist_1m.columns else 0,
                         'timestamp': datetime.now().isoformat(),
                         'source': 'yfinance'
                     }), 200
@@ -587,14 +591,17 @@ def get_quote():
                 import yfinance as yf
                 yf_symbol = symbol.replace('-EQ', '') + '.NS'
                 ticker_obj = yf.Ticker(yf_symbol)
-                # Use 2d history so we get yesterday's close as prev_close
-                hist = ticker_obj.history(period='2d', interval='1d')
-                if not hist.empty:
-                    ltp        = float(hist['Close'].iloc[-1])
-                    prev_close = float(hist['Close'].iloc[-2]) if len(hist) >= 2 else ltp
-                    open_p     = float(hist['Open'].iloc[-1])
-                    high_p     = float(hist['High'].iloc[-1])
-                    low_p      = float(hist['Low'].iloc[-1])
+                # Use 1m interval to get latest intraday traded price (NOT daily EOD close)
+                hist_1m = ticker_obj.history(period='1d', interval='1m')
+                # Prev close from daily data for Day P&L calculation
+                hist_1d = ticker_obj.history(period='2d', interval='1d')
+                prev_close = float(hist_1d['Close'].iloc[-2]) if len(hist_1d) >= 2 else 0
+                if not hist_1m.empty:
+                    last = hist_1m.dropna(subset=['Close']).iloc[-1]
+                    ltp   = float(last['Close'])
+                    open_p = float(hist_1m['Open'].iloc[0])
+                    high_p = float(hist_1m['High'].max())
+                    low_p  = float(hist_1m['Low'].min())
                     logger.info(f"yfinance fallback for {symbol}: LTP={ltp}, PrevClose={prev_close}")
                     return jsonify({
                         'success': True,
@@ -604,7 +611,7 @@ def get_quote():
                         'high': high_p,
                         'low': low_p,
                         'close': prev_close,   # yesterday's close — used for Day P&L
-                        'volume': int(hist['Volume'].iloc[-1]) if 'Volume' in hist.columns else 0,
+                        'volume': int(hist_1m['Volume'].sum()) if 'Volume' in hist_1m.columns else 0,
                         'timestamp': datetime.now().isoformat(),
                         'source': 'yfinance'
                     }), 200
@@ -1075,6 +1082,9 @@ def get_prices():
         if dh:
             prices = dh.read_prices(tickers)
             logger.info(f"DynamoDB prices served: {len(prices)} tickers")
+            if len(prices) == 0 and tickers:
+                # All prices were filtered as stale — signal frontend to use fallback
+                return jsonify({'success': True, 'source': 'dynamodb_stale', 'prices': {}}), 200
             return jsonify({'success': True, 'source': 'dynamodb', 'prices': prices}), 200
 
         # Fallback: fetch live from Angel One for each ticker

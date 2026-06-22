@@ -229,12 +229,15 @@ def write_prices_bulk(prices: dict):
     print(f"  ✅ DynamoDB: wrote {len(prices)} live prices")
 
 
-def read_prices(tickers: list = None) -> dict:
+def read_prices(tickers: list = None, max_age_hours: float = 2.0) -> dict:
     """
     Read LTPs from DynamoDB.
     tickers: list of tickers to fetch (None = all)
+    max_age_hours: discard prices older than this during market hours (default 2h).
+                   Pass None to skip staleness check.
     Returns: { 'INFY': 1800.5, ... }
     """
+    from datetime import timezone
     table = _table('LivePrices')
     if tickers:
         # Batch get for specific tickers
@@ -247,7 +250,22 @@ def read_prices(tickers: list = None) -> dict:
         resp = table.scan()
         items = resp.get('Items', [])
 
-    return {item['ticker']: float(item['ltp']) for item in items if item.get('ltp')}
+    result = {}
+    now_utc = datetime.utcnow()
+    for item in items:
+        if not item.get('ltp'):
+            continue
+        # Staleness check — skip prices that are too old during market hours
+        if max_age_hours is not None and item.get('updated_at'):
+            try:
+                updated = datetime.fromisoformat(item['updated_at'].replace('Z', ''))
+                age_hours = (now_utc - updated).total_seconds() / 3600
+                if age_hours > max_age_hours:
+                    continue  # skip stale price — frontend will fall back to yfinance
+            except Exception:
+                pass  # if timestamp is unparseable, include the price anyway
+        result[item['ticker']] = float(item['ltp'])
+    return result
 
 
 def read_price(ticker: str) -> float:
