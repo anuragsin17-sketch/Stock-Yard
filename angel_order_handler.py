@@ -381,23 +381,41 @@ def place_order():
         except Exception as e:
             logger.error(f"Symbol search failed: {e}", exc_info=True)
             return jsonify({'success': False, 'error': f'Symbol search failed: {e}'}), 500
-        
+
         if not search_result.get('data'):
             logger.warning(f"Order placement failed: Symbol {symbol} not found")
             return jsonify({'success': False, 'error': f'Symbol {symbol} not found'}), 404
-        
-        # Find exact match
+
+        # Find exact match — prefer symbol with valid (non-empty) symboltoken
         scrip_data = None
+        # 1st pass: exact tradingsymbol match with valid token
         for result in search_result['data']:
-            if result.get('tradingsymbol') == symbol + '-EQ':
+            if result.get('tradingsymbol') == symbol + '-EQ' and result.get('symboltoken'):
                 scrip_data = result
                 break
-        
+        # 2nd pass: any result with valid token
+        if not scrip_data:
+            for result in search_result['data']:
+                if result.get('symboltoken'):
+                    scrip_data = result
+                    break
+        # 3rd pass: fallback to first result regardless
         if not scrip_data:
             scrip_data = search_result['data'][0]
-        
+
         trading_symbol = scrip_data.get('tradingsymbol')
-        symbol_token = scrip_data.get('symboltoken')
+        symbol_token   = scrip_data.get('symboltoken', '')
+
+        # If token is still empty, Angel One can't place this order
+        if not symbol_token:
+            logger.error(f"Order failed: no symboltoken found for {symbol}. "
+                         f"Angel One search returned: {[r.get('tradingsymbol') for r in search_result['data']]}")
+            return jsonify({
+                'success': False,
+                'error': f'Symbol {symbol} not found on Angel One (no token). '
+                         f'It may be delisted or use a different symbol name.'
+            }), 400
+
         logger.info(f"Found trading symbol: {trading_symbol}, token: {symbol_token}")
         
         # Place limit order
@@ -410,7 +428,7 @@ def place_order():
             "ordertype": "LIMIT",
             "producttype": "DELIVERY",
             "duration": "DAY",
-            "price": str(int(entry_price)),
+            "price": str(round(entry_price)),
             "quantity": str(quantity),
             "squareoff": "0",
             "stoploss": "0",
