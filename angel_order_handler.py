@@ -1193,22 +1193,66 @@ def get_prices():
 
         prices = {}
 
-        # ── Primary: Angel One live LTP via ltpData ───────────────────────
+        # ── Primary: yfinance batch (fast, live, no token needed) ────────
+        # yfinance 1m intraday data is 15-min delayed but acceptable for dashboard
+        # This is the most reliable bulk source — works always, no auth needed
+        try:
+            import yfinance as yf
+            symbols_ns = [t + '.NS' for t in tickers]
+            data_yf = yf.download(symbols_ns, period='1d', interval='1m',
+                                  auto_adjust=True, progress=False, threads=True)
+            if not data_yf.empty and 'Close' in data_yf.columns:
+                last = data_yf['Close'].iloc[-1]
+                for sym in symbols_ns:
+                    # Multi-ticker: columns are (field, ticker), single: just field
+                    try:
+                        if len(symbols_ns) == 1:
+                            val = float(data_yf['Close'].iloc[-1])
+                        else:
+                            val = float(last[sym]) if sym in last.index else 0
+                        if val > 0:
+                            prices[sym.replace('.NS', '')] = round(val, 2)
+                    except Exception:
+                        pass
+            if len(prices) >= len(tickers) * 0.7:
+                logger.info(f"yfinance 1m live prices: {len(prices)}/{len(tickers)}")
+                # Cache in DynamoDB
+                dh = _get_dynamo_helper()
+                if dh and prices:
+                    try:
+                        dh.write_prices_bulk(prices)
+                    except Exception:
+                        pass
+                return jsonify({'success': True, 'source': 'yfinance_live', 'prices': prices}), 200
+        except Exception as e:
+            logger.warning(f"yfinance 1m batch failed: {e}")
+
+        # ── Secondary: Angel One live LTP (requires token lookup per ticker) ─
         try:
             smart = get_angel_session()
             if smart:
                 for ticker in tickers:
+                    if ticker in prices:
+                        continue
                     try:
-                        quote = smart.ltpData('NSE', ticker + '-EQ', '')
-                        if quote and quote.get('status'):
-                            data = quote.get('data', {})
-                            if isinstance(data, list) and data:
-                                data = data[0]
-                            ltp = float(data.get('ltp', 0))
-                            if ltp > 0:
-                                prices[ticker] = ltp
+                        search = smart.searchScrip('NSE', ticker)
+                        token = ''
+                        if search and search.get('data'):
+                            for item in search['data']:
+                                if item.get('tradingsymbol') == ticker + '-EQ':
+                                    token = item.get('symboltoken', '')
+                                    break
+                        if token:
+                            quote_data = smart.ltpData('NSE', ticker + '-EQ', token)
+                            if quote_data and quote_data.get('status'):
+                                data = quote_data.get('data', {})
+                                if isinstance(data, list) and data:
+                                    data = data[0]
+                                ltp = float(data.get('ltp', 0))
+                                if ltp > 0:
+                                    prices[ticker] = ltp
                     except Exception:
-                        pass  # individual ticker failed — try next
+                        pass
                 if len(prices) >= len(tickers) * 0.5:
                     logger.info(f"Angel One live prices: {len(prices)}/{len(tickers)}")
                     # Update DynamoDB cache with fresh prices
