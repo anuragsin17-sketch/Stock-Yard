@@ -440,6 +440,10 @@ def place_order():
             result = smart.placeOrder(order_params)
             logger.info(f"Order result received: {result}")
         except Exception as e:
+            err_str = str(e).lower()
+            if 'cautionary' in err_str or 'surveillance' in err_str:
+                logger.error(f"Order rejected (cautionary listing): {symbol} — {e}")
+                return jsonify({'success': False, 'error': f'{symbol} is under NSE surveillance/cautionary listing — place manually in Angel One app'}), 400
             logger.error(f"Place order API call failed: {e}", exc_info=True)
             return jsonify({'success': False, 'error': f'Place order failed: {e}'}), 500
         
