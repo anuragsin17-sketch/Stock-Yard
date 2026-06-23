@@ -6,7 +6,7 @@ Runs AFTER market close (3:35 PM IST / 10:05 UTC, Mon-Fri).
 
 Strategy:
   1. Download NSE bhavcopy (all ~2000 EQ stocks) for today
-  2. Filter: close > prev_close by >= 10%  (uses open as prev_close proxy,
+  2. Filter: close > prev_close by >= 9%  (uses open as prev_close proxy,
      or falls back to yfinance for accurate prev_close)
   3. For each qualifying stock, fetch prev_day_low via yfinance
   4. Save to volume_gainer_watchlist.json + push to DynamoDB
@@ -44,7 +44,7 @@ WATCHLIST_FILE = 'volume_gainer_watchlist.json'
 BASE_URL       = 'https://anuragsin17-sketch.github.io/Stock-Yard-Public'
 DYNAMODB_URL   = os.environ.get('DYNAMODB_API_URL', 'https://32-194-58-75.nip.io')
 
-MIN_GAIN_PCT   = 10.0    # minimum % gain on day
+MIN_GAIN_PCT   = 9.0     # minimum % gain on day (lowered from 10% to catch more opportunities)
 ALERT_BUFFER   = 0.05    # 5% above prev_day_low = alert zone
 SL_PCT         = 0.04    # 4% SL below prev_day_low
 TARGET_PCT     = 0.15    # 15% target above prev_day_low
