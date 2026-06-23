@@ -6,9 +6,8 @@ Runs AFTER market close (3:35 PM IST / 10:05 UTC, Mon-Fri).
 
 Strategy:
   1. Download NSE bhavcopy (all ~2000 EQ stocks) for today
-  2. Filter: close > prev_close by >= 9%  (uses open as prev_close proxy,
-     or falls back to yfinance for accurate prev_close)
-  3. For each qualifying stock, fetch prev_day_low via yfinance
+  2. Filter: close > prev_close by >= 12%  (uses PREV column from bhavcopy)
+  3. Entry price = same day LOW - 2%
   4. Save to volume_gainer_watchlist.json + push to DynamoDB
   5. Send Telegram summary
 
@@ -22,10 +21,10 @@ Watchlist entry:
     "gain_pct":        20.0,
     "close_price":     489.9,
     "prev_close":      408.25,
-    "prev_day_low":    408.20,
-    "alert_threshold": 428.61,   prev_day_low * 1.05
-    "sl_price":        392.27,   prev_day_low * 0.96  (4% SL)
-    "target_price":    469.43,   prev_day_low * 1.15  (15% target)
+    "prev_day_low":    400.36,   same day LOW * 0.98  (LOW - 2%)
+    "alert_threshold": 420.38,   entry * 1.05
+    "sl_price":        384.35,   entry * 0.96  (4% SL)
+    "target_price":    460.41,   entry * 1.15  (15% target)
     "vol_ratio":       4.2,
     "alerted":         false,
     "alert_sent_at":   null
@@ -419,14 +418,8 @@ def main():
     if len(gainers) > 10:
         print(f"    ... and {len(gainers)-10} more")
 
-    # ── Step 3: Get prev day low from yfinance ────────────────────────────────
-    print(f"\n[4] Fetching prev day low for {len(gainers)} stocks via yfinance...")
-    tickers = [g['ticker'] for g in gainers]
-    prev_lows = get_prev_day_low_yf(tickers)
-    print(f"  Got prev_day_low for {len(prev_lows)}/{len(gainers)} stocks")
-
-    # ── Step 4: Merge into watchlist ──────────────────────────────────────────
-    print("\n[5] Merging into watchlist...")
+    # ── Step 3: Merge into watchlist ──────────────────────────────────────────
+    print("\n[4] Merging into watchlist...")
     watchlist = load_watchlist()
     existing  = {e['ticker'] for e in watchlist}
     new_entries = []
@@ -437,14 +430,13 @@ def main():
             print(f"  ⊘ {sym}: already in watchlist — skipping")
             continue
 
-        # Prefer bhavcopy LOW as prev_day_low, fall back to yfinance
-        prev_low = prev_lows.get(sym)
-        if not prev_low or prev_low <= 0:
-            # Use today's LOW from bhavcopy as proxy (not ideal but better than nothing)
-            prev_low = g.get('low', 0)
-        if not prev_low or prev_low <= 0:
-            print(f"  ✗ {sym}: no prev_day_low data — skipping")
+        # Entry price = same day LOW - 2%
+        same_day_low = g.get('low', 0)
+        if not same_day_low or same_day_low <= 0:
+            print(f"  ✗ {sym}: no same-day LOW data — skipping")
             continue
+        
+        entry_price = round(same_day_low * 0.98, 2)  # Same day LOW - 2%
 
         entry = {
             'ticker':          sym,
@@ -453,10 +445,10 @@ def main():
             'gain_pct':        g['gain_pct'],
             'close_price':     g['close'],
             'prev_close':      g['prev_close'],
-            'prev_day_low':    prev_low,
-            'alert_threshold': round(prev_low * (1 + ALERT_BUFFER), 2),
-            'sl_price':        round(prev_low * (1 - SL_PCT), 2),
-            'target_price':    round(prev_low * (1 + TARGET_PCT), 2),
+            'prev_day_low':    entry_price,           # Changed: now same day LOW - 2%
+            'alert_threshold': round(entry_price * (1 + ALERT_BUFFER), 2),
+            'sl_price':        round(entry_price * (1 - SL_PCT), 2),
+            'target_price':    round(entry_price * (1 + TARGET_PCT), 2),
             'vol_ratio':       0.0,
             'alerted':         False,
             'alert_sent_at':   None,
@@ -474,7 +466,7 @@ def main():
 
         watchlist.append(entry)
         new_entries.append(entry)
-        print(f"  ✅ {sym}: +{g['gain_pct']}%  prev_low=₹{prev_low:,.2f}  "
+        print(f"  ✅ {sym}: +{g['gain_pct']}%  entry=₹{entry_price:,.2f} (LOW-2%)  "
               f"target=₹{entry['target_price']:,.2f}  sl=₹{entry['sl_price']:,.2f}")
 
     save_watchlist(watchlist, last_run_info={
@@ -495,7 +487,7 @@ def main():
         for e in new_entries[:15]:
             lines.append(
                 f"• *{e['ticker']}* +{e['gain_pct']}% | "
-                f"Watch: ₹{e['prev_day_low']:,.0f} | "
+                f"Entry: ₹{e['prev_day_low']:,.0f} | "
                 f"Target: ₹{e['target_price']:,.0f} | "
                 f"SL: ₹{e['sl_price']:,.0f}"
             )
@@ -504,7 +496,7 @@ def main():
             f"_{len(new_entries)} new stocks added (gained >{MIN_GAIN_PCT}%)_\n\n"
             + '\n'.join(lines)
             + (f"\n\n_...and {len(new_entries)-15} more_" if len(new_entries) > 15 else "")
-            + f"\n\n🔔 Alert when price retraces to prev day low ±5%\n"
+            + f"\n\n🔔 Entry = Same day LOW - 2%\n"
             f"[Open Dashboard]({BASE_URL}/)"
         )
         send_telegram(msg)
