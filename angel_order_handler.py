@@ -1173,40 +1173,90 @@ def get_prices():
     """
     GET /api/prices                           — return all cached LTPs
     GET /api/prices?tickers=INFY,TCS,SBIN    — return specific tickers
-    Used by dashboard for bulk LTP fetch (replaces per-card EC2 calls).
+    
+    Strategy:
+    1. Try Angel One live LTP (most accurate, real-time)
+    2. Fall back to DynamoDB cache if Angel One fails
+    3. Fall back to yfinance batch if DynamoDB is stale
     """
     try:
         tickers_param = request.args.get('tickers', '')
-        tickers = [t.strip().upper() for t in tickers_param.split(',') if t.strip()] if tickers_param else None
+        tickers = [t.strip().upper() for t in tickers_param.split(',') if t.strip()] if tickers_param else []
 
+        if not tickers:
+            # No tickers specified — return from DynamoDB only
+            dh = _get_dynamo_helper()
+            if dh:
+                prices = dh.read_prices(None)
+                return jsonify({'success': True, 'source': 'dynamodb', 'prices': prices}), 200
+            return jsonify({'success': True, 'source': 'empty', 'prices': {}}), 200
+
+        prices = {}
+
+        # ── Primary: Angel One live LTP via ltpData ───────────────────────
+        try:
+            smart = get_angel_session()
+            if smart:
+                for ticker in tickers:
+                    try:
+                        quote = smart.ltpData('NSE', ticker + '-EQ', '')
+                        if quote and quote.get('status'):
+                            data = quote.get('data', {})
+                            if isinstance(data, list) and data:
+                                data = data[0]
+                            ltp = float(data.get('ltp', 0))
+                            if ltp > 0:
+                                prices[ticker] = ltp
+                    except Exception:
+                        pass  # individual ticker failed — try next
+                if len(prices) >= len(tickers) * 0.5:
+                    logger.info(f"Angel One live prices: {len(prices)}/{len(tickers)}")
+                    # Update DynamoDB cache with fresh prices
+                    dh = _get_dynamo_helper()
+                    if dh and prices:
+                        try:
+                            dh.write_prices_bulk(prices)
+                        except Exception:
+                            pass
+                    return jsonify({'success': True, 'source': 'angel_one', 'prices': prices}), 200
+        except Exception as e:
+            logger.warning(f"Angel One bulk LTP failed: {e}")
+
+        # ── Fallback 1: DynamoDB cache (with staleness check) ─────────────
         dh = _get_dynamo_helper()
         if dh:
-            prices = dh.read_prices(tickers)
-            logger.info(f"DynamoDB prices served: {len(prices)} tickers")
-            if len(prices) == 0 and tickers:
-                # All prices were filtered as stale — signal frontend to use fallback
-                return jsonify({'success': True, 'source': 'dynamodb_stale', 'prices': {}}), 200
-            return jsonify({'success': True, 'source': 'dynamodb', 'prices': prices}), 200
+            cached = dh.read_prices(tickers)
+            if cached:
+                logger.info(f"DynamoDB fallback: {len(cached)}/{len(tickers)} prices")
+                # Merge: use cached for anything Angel One missed
+                for t, p in cached.items():
+                    if t not in prices:
+                        prices[t] = p
+                if len(prices) > 0:
+                    return jsonify({'success': True, 'source': 'dynamodb', 'prices': prices}), 200
+            logger.warning(f"DynamoDB returned no prices (all stale?) — falling back to yfinance")
 
-        # Fallback: fetch live from Angel One for each ticker
-        if tickers:
-            smart = get_angel_session()
-            prices = {}
-            for ticker in tickers[:20]:  # cap at 20 to avoid timeout
-                try:
-                    quote = smart.ltpData('NSE', ticker + '-EQ', '') if smart else None
-                    if quote and quote.get('status'):
-                        data = quote.get('data', {})
-                        if isinstance(data, list) and data:
-                            data = data[0]
-                        ltp = float(data.get('ltp', 0))
-                        if ltp > 0:
-                            prices[ticker] = ltp
-                except Exception:
-                    pass
-            return jsonify({'success': True, 'source': 'angel_live', 'prices': prices}), 200
+        # ── Fallback 2: yfinance batch ────────────────────────────────────
+        try:
+            import yfinance as yf
+            symbols = [t + '.NS' for t in tickers if t not in prices]
+            if symbols:
+                data = yf.download(symbols, period='2d', interval='1d',
+                                   auto_adjust=True, progress=False, threads=True)
+                if not data.empty and 'Close' in data:
+                    last = data['Close'].iloc[-1]
+                    for sym in symbols:
+                        val = last.get(sym) if hasattr(last, 'get') else None
+                        if val and float(val) > 0:
+                            prices[sym.replace('.NS', '')] = round(float(val), 2)
+            logger.info(f"yfinance fallback: {len(prices)}/{len(tickers)} prices")
+        except Exception as e:
+            logger.warning(f"yfinance batch fallback failed: {e}")
 
-        return jsonify({'success': True, 'source': 'empty', 'prices': {}}), 200
+        if prices:
+            return jsonify({'success': True, 'source': 'yfinance', 'prices': prices}), 200
+
+        return jsonify({'success': True, 'source': 'dynamodb_stale', 'prices': {}}), 200
 
     except Exception as e:
         logger.error(f"get_prices error: {e}", exc_info=True)
