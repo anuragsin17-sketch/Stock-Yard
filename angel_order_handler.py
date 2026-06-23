@@ -448,8 +448,16 @@ def place_order():
         elif isinstance(result, dict) and result.get('status'):
             order_id = result.get('data', result.get('orderid'))
         else:
-            logger.error(f"Order placement failed: Unexpected result {result}")
-            return jsonify({'success': False, 'error': 'Order placement failed'}), 400
+            # Extract meaningful error from Angel One response
+            error_msg = 'Order placement failed'
+            if isinstance(result, dict):
+                api_msg = result.get('message', '') or result.get('errorMessage', '') or ''
+                if 'cautionary' in api_msg.lower() or 'surveillance' in api_msg.lower():
+                    error_msg = f'{symbol} is under NSE surveillance/cautionary listing — place manually in Angel One app'
+                elif api_msg:
+                    error_msg = api_msg
+            logger.error(f"Order placement failed for {symbol}: {result}")
+            return jsonify({'success': False, 'error': error_msg}), 400
         
         logger.info(f"Order placed successfully: {order_id}")
         
