@@ -37,8 +37,25 @@ app = Flask(__name__)
 # API key for authenticating dashboard requests — set as env var on EC2
 STOCKYARD_API_KEY = os.environ.get('STOCKYARD_API_KEY', '')
 
-# Enable CORS for all routes (allow browser requests from GitHub Pages)
+# Enable CORS — restrict order endpoints to GitHub Pages origin only
+# Read-only endpoints (get-quote, signals, etc.) remain open for the dashboard
+ALLOWED_ORIGINS = [
+    "https://anuragsin17-sketch.github.io",
+    "http://localhost",       # local dev
+    "http://127.0.0.1",       # local dev
+]
+
 CORS(app, resources={
+    r"/api/place-order": {
+        "origins": ALLOWED_ORIGINS,
+        "methods": ["POST", "OPTIONS"],
+        "allow_headers": ["Content-Type", "X-API-Key"]
+    },
+    r"/api/order-status/*": {
+        "origins": ALLOWED_ORIGINS,
+        "methods": ["GET", "OPTIONS"],
+        "allow_headers": ["Content-Type", "X-API-Key"]
+    },
     r"/api/*": {
         "origins": ["*"],
         "methods": ["GET", "POST", "OPTIONS"],
@@ -292,6 +309,8 @@ def health_check():
 @app.route('/api/place-order', methods=['POST'])
 def place_order():
     """Place order on Angel One with pre-validation"""
+    if not check_api_key():
+        return jsonify({'success': False, 'error': 'Unauthorized'}), 401
     try:
         data = request.json
         symbol = data.get('symbol')
@@ -478,6 +497,8 @@ def place_order():
 @app.route('/api/order-status/<order_id>', methods=['GET'])
 def order_status(order_id):
     """Get order status from Angel One"""
+    if not check_api_key():
+        return jsonify({'success': False, 'error': 'Unauthorized'}), 401
     try:
         smart = get_angel_session()
         if not smart:
