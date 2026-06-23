@@ -44,11 +44,12 @@ WATCHLIST_FILE = 'volume_gainer_watchlist.json'
 BASE_URL       = 'https://anuragsin17-sketch.github.io/Stock-Yard-Public'
 DYNAMODB_URL   = os.environ.get('DYNAMODB_API_URL', 'https://32-194-58-75.nip.io')
 
-MIN_GAIN_PCT   = 9.0     # minimum % gain on day (lowered from 10% to catch more opportunities)
+MIN_GAIN_PCT   = 12.0    # minimum % gain on day
 ALERT_BUFFER   = 0.05    # 5% above prev_day_low = alert zone
 SL_PCT         = 0.04    # 4% SL below prev_day_low
 TARGET_PCT     = 0.15    # 15% target above prev_day_low
 MAX_STOCKS     = 50      # max per day (safety cap — won't normally hit this)
+MIN_PRICE      = 10.0    # minimum stock price (₹10)
 
 # ── TELEGRAM ───────────────────────────────────────────────────────────────────
 def send_telegram(message: str) -> bool:
@@ -165,6 +166,7 @@ def find_gainers(df: pd.DataFrame, min_gain: float) -> list:
     Find stocks with close >= min_gain% above prev_close.
     Uses PREVCLOSE if available, else uses previous row (not reliable — we'll
     validate with yfinance for the actual prev close).
+    Filters out stocks with close price < MIN_PRICE (₹10).
     """
     gainers = []
     for _, row in df.iterrows():
@@ -173,6 +175,10 @@ def find_gainers(df: pd.DataFrame, min_gain: float) -> list:
         prev   = float(row['PREV']) if 'PREV' in row.index and pd.notna(row['PREV']) and float(row['PREV']) > 0 else 0
 
         if prev <= 0 or close <= 0:
+            continue
+
+        # Skip stocks below minimum price threshold
+        if close < MIN_PRICE:
             continue
 
         gain_pct = (close - prev) / prev * 100
@@ -187,7 +193,7 @@ def find_gainers(df: pd.DataFrame, min_gain: float) -> list:
             })
 
     gainers.sort(key=lambda x: x['gain_pct'], reverse=True)
-    print(f"  Found {len(gainers)} stocks with >{min_gain}% gain")
+    print(f"  Found {len(gainers)} stocks with >{min_gain}% gain and price >= ₹{MIN_PRICE}")
     return gainers
 
 
@@ -269,7 +275,7 @@ def cleanup_watchlist(watchlist: list, bhavcopy_df: pd.DataFrame) -> tuple:
 
     Expiry rules:
       1. Target hit  — today's CLOSE >= target_price    → move done, remove
-      2. Stale       — added_date older than 90 days    → too old, remove
+      2. Stale       — added_date older than 30 days    → too old, remove
 
     Returns (clean_watchlist, removed_list)
     Each removed entry gets a 'removed_reason' field for the Telegram summary.
@@ -288,7 +294,7 @@ def cleanup_watchlist(watchlist: list, bhavcopy_df: pd.DataFrame) -> tuple:
             except Exception:
                 pass
 
-    cutoff = datetime.now().date() - timedelta(days=90)
+    cutoff = datetime.now().date() - timedelta(days=30)
     clean   = []
     removed = []
 
@@ -304,7 +310,7 @@ def cleanup_watchlist(watchlist: list, bhavcopy_df: pd.DataFrame) -> tuple:
             added = datetime.now().date()
 
         if added < cutoff:
-            entry['removed_reason'] = f'stale (>{90}d old, added {added_date})'
+            entry['removed_reason'] = f'stale (>30d old, added {added_date})'
             removed.append(entry)
             print(f"  🗑  {ticker}: removed — stale signal ({added_date})")
             continue
