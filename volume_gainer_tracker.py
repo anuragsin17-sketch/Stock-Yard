@@ -263,6 +263,72 @@ def save_watchlist(watchlist: list, last_run_info: dict = None):
         json.dump(data, f, indent=2)
     print(f"✅ Saved {len(watchlist)} stocks to {WATCHLIST_FILE}")
 
+def cleanup_watchlist(watchlist: list, bhavcopy_df: pd.DataFrame) -> tuple:
+    """
+    Remove expired signals from the watchlist using today's bhavcopy prices.
+
+    Expiry rules:
+      1. Target hit  — today's CLOSE >= target_price    → move done, remove
+      2. Stale       — added_date older than 90 days    → too old, remove
+
+    Returns (clean_watchlist, removed_list)
+    Each removed entry gets a 'removed_reason' field for the Telegram summary.
+    """
+    # Build quick lookup: ticker → {low, close} from today's bhavcopy
+    today_prices = {}
+    if bhavcopy_df is not None and not bhavcopy_df.empty:
+        for _, row in bhavcopy_df.iterrows():
+            sym = str(row.get('SYMBOL', '')).strip().upper()
+            if not sym:
+                continue
+            try:
+                today_prices[sym] = {
+                    'close': float(row['CLOSE']) if 'CLOSE' in row.index and pd.notna(row['CLOSE']) else None,
+                }
+            except Exception:
+                pass
+
+    cutoff = datetime.now().date() - timedelta(days=90)
+    clean   = []
+    removed = []
+
+    for entry in watchlist:
+        ticker     = (entry.get('ticker') or '').upper()
+        target     = float(entry.get('target_price') or 0)
+        added_date = entry.get('added_date', '')
+
+        # Check age
+        try:
+            added = datetime.strptime(added_date, '%Y-%m-%d').date()
+        except Exception:
+            added = datetime.now().date()
+
+        if added < cutoff:
+            entry['removed_reason'] = f'stale (>{90}d old, added {added_date})'
+            removed.append(entry)
+            print(f"  🗑  {ticker}: removed — stale signal ({added_date})")
+            continue
+
+        prices = today_prices.get(ticker)
+        if not prices:
+            # Stock not in bhavcopy today (maybe suspended/no trade) — keep it
+            clean.append(entry)
+            continue
+
+        today_close = prices['close']
+
+        # Target hit — today's close crossed target
+        if target > 0 and today_close is not None and today_close >= target:
+            entry['removed_reason'] = f'target hit (close ₹{today_close:,.2f} >= target ₹{target:,.2f})'
+            removed.append(entry)
+            print(f"  🎯 {ticker}: removed — target hit (close={today_close:.2f} >= target={target:.2f})")
+            continue
+
+        clean.append(entry)
+
+    return clean, removed
+
+
 def push_to_dynamodb(new_entries: list):
     """Push new entries to DynamoDB via EC2 API."""
     if not new_entries:
@@ -307,7 +373,32 @@ def main():
         return
     print(f"  {len(df)} EQ stocks parsed")
 
-    print(f"\n[3] Finding stocks with >{MIN_GAIN_PCT}% gain...")
+    print(f"\n[3] Cleaning up expired signals from existing watchlist...")
+    watchlist_before_cleanup = load_watchlist()
+    print(f"  Watchlist before cleanup: {len(watchlist_before_cleanup)} stocks")
+    cleaned_watchlist, expired_entries = cleanup_watchlist(watchlist_before_cleanup, df)
+    print(f"  Removed: {len(expired_entries)} | Remaining: {len(cleaned_watchlist)}")
+
+    if expired_entries:
+        # Persist the cleaned watchlist immediately so stale entries don't linger
+        save_watchlist(cleaned_watchlist)
+        # Telegram notification for removed stocks
+        tgt_hit    = [e for e in expired_entries if 'target hit'  in e.get('removed_reason','')]
+        stale      = [e for e in expired_entries if 'stale'       in e.get('removed_reason','')]
+        lines = []
+        for e in tgt_hit:
+            lines.append(f"🎯 *{e['ticker']}* — {e['removed_reason']}")
+        for e in stale:
+            lines.append(f"🗑 *{e['ticker']}* — {e['removed_reason']}")
+        if lines:
+            send_telegram(
+                f"🧹 *WATCHLIST CLEANUP — {date_str}*\n"
+                f"_{len(expired_entries)} signals expired_\n\n"
+                + '\n'.join(lines[:20])
+                + (f"\n_...and {len(lines)-20} more_" if len(lines) > 20 else "")
+            )
+
+    print(f"\n[4] Finding stocks with >{MIN_GAIN_PCT}% gain...")
     gainers = find_gainers(df, MIN_GAIN_PCT)
     if not gainers:
         print("  No qualifying gainers today")
