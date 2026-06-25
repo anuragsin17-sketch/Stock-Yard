@@ -20,10 +20,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 247.26,
-      "dist_pct": 2.51,
+      "ltp": 244.9,
+      "dist_pct": 1.53,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-06-25T08:16:21.039824",
+      "ltp_updated_at": "2026-06-25T09:22:52.051761",
       "in_place_order_zone": false
     },
     {
@@ -40,10 +40,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 2485.7,
-      "dist_pct": 12.99,
+      "ltp": 2488.2,
+      "dist_pct": 13.1,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.039840",
+      "ltp_updated_at": "2026-06-25T09:22:52.051802",
       "in_place_order_zone": false
     },
     {
@@ -60,10 +60,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 182.3,
-      "dist_pct": 10.42,
+      "ltp": 182.14,
+      "dist_pct": 10.33,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.039848",
+      "ltp_updated_at": "2026-06-25T09:22:52.051810",
       "in_place_order_zone": false
     },
     {
@@ -80,10 +80,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 540.4,
-      "dist_pct": 7.36,
+      "ltp": 545.0,
+      "dist_pct": 8.27,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.039854",
+      "ltp_updated_at": "2026-06-25T09:22:52.051817",
       "in_place_order_zone": false
     },
     {
@@ -100,10 +100,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 280.0,
-      "dist_pct": 11.86,
+      "ltp": 279.09,
+      "dist_pct": 11.5,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.039860",
+      "ltp_updated_at": "2026-06-25T09:22:52.051822",
       "in_place_order_zone": false
     },
     {
@@ -123,7 +123,7 @@
       "ltp": 1153.0,
       "dist_pct": -14.59,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.039867",
+      "ltp_updated_at": "2026-06-25T09:22:52.051829",
       "in_place_order_zone": false
     },
     {
@@ -140,10 +140,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 921.8,
-      "dist_pct": 8.7,
+      "ltp": 925.2,
+      "dist_pct": 9.1,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.039872",
+      "ltp_updated_at": "2026-06-25T09:22:52.051834",
       "in_place_order_zone": false
     },
     {
@@ -160,10 +160,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 85.25,
-      "dist_pct": 6.56,
+      "ltp": 85.2,
+      "dist_pct": 6.5,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.039883",
+      "ltp_updated_at": "2026-06-25T09:22:52.051846",
       "in_place_order_zone": false
     },
     {
@@ -183,7 +183,7 @@
       "ltp": 450.0,
       "dist_pct": 14.81,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.039890",
+      "ltp_updated_at": "2026-06-25T09:22:52.051853",
       "in_place_order_zone": false
     },
     {
@@ -200,10 +200,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 317.0,
-      "dist_pct": 58.37,
+      "ltp": 318.0,
+      "dist_pct": 58.87,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.039896",
+      "ltp_updated_at": "2026-06-25T09:22:52.051859",
       "in_place_order_zone": false
     },
     {
@@ -220,10 +220,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 323.25,
-      "dist_pct": 35.71,
+      "ltp": 321.75,
+      "dist_pct": 35.08,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.039902",
+      "ltp_updated_at": "2026-06-25T09:22:52.051864",
       "in_place_order_zone": false
     },
     {
@@ -240,10 +240,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 209.0,
-      "dist_pct": 5.87,
+      "ltp": 210.0,
+      "dist_pct": 6.38,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.039907",
+      "ltp_updated_at": "2026-06-25T09:22:52.051870",
       "in_place_order_zone": false
     },
     {
@@ -260,10 +260,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 77.55,
-      "dist_pct": 7.26,
+      "ltp": 77.2,
+      "dist_pct": 6.78,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.039913",
+      "ltp_updated_at": "2026-06-25T09:22:52.051875",
       "in_place_order_zone": false
     },
     {
@@ -280,10 +280,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 16.16,
-      "dist_pct": 5.62,
+      "ltp": 16.09,
+      "dist_pct": 5.16,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.039918",
+      "ltp_updated_at": "2026-06-25T09:22:52.051880",
       "in_place_order_zone": false
     },
     {
@@ -300,10 +300,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 45.26,
-      "dist_pct": 14.87,
+      "ltp": 45.62,
+      "dist_pct": 15.79,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.039923",
+      "ltp_updated_at": "2026-06-25T09:22:52.051885",
       "in_place_order_zone": false
     },
     {
@@ -320,10 +320,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 401.1,
-      "dist_pct": 6.68,
+      "ltp": 399.9,
+      "dist_pct": 6.36,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.039928",
+      "ltp_updated_at": "2026-06-25T09:22:52.051890",
       "in_place_order_zone": false
     },
     {
@@ -343,7 +343,7 @@
       "ltp": 18.24,
       "dist_pct": -15.16,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.039934",
+      "ltp_updated_at": "2026-06-25T09:22:52.051895",
       "in_place_order_zone": false
     },
     {
@@ -363,7 +363,7 @@
       "ltp": 29.34,
       "dist_pct": 8.55,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.039939",
+      "ltp_updated_at": "2026-06-25T09:22:52.051900",
       "in_place_order_zone": false
     },
     {
@@ -383,7 +383,7 @@
       "ltp": 18.53,
       "dist_pct": 1.26,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-06-25T08:16:21.039945",
+      "ltp_updated_at": "2026-06-25T09:22:52.051905",
       "in_place_order_zone": false
     },
     {
@@ -400,10 +400,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 33.66,
-      "dist_pct": 6.18,
+      "ltp": 33.5,
+      "dist_pct": 5.68,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.039979",
+      "ltp_updated_at": "2026-06-25T09:22:52.051919",
       "in_place_order_zone": false
     },
     {
@@ -420,10 +420,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 284.15,
-      "dist_pct": 8.58,
+      "ltp": 284.3,
+      "dist_pct": 8.64,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.039984",
+      "ltp_updated_at": "2026-06-25T09:22:52.051924",
       "in_place_order_zone": false
     },
     {
@@ -440,10 +440,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 17.87,
-      "dist_pct": -6.83,
+      "ltp": 17.9,
+      "dist_pct": -6.67,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-06-25T08:16:21.039990",
+      "ltp_updated_at": "2026-06-25T09:22:52.051929",
       "in_place_order_zone": false
     },
     {
@@ -460,10 +460,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 718.0,
-      "dist_pct": 6.06,
+      "ltp": 724.0,
+      "dist_pct": 6.94,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.039995",
+      "ltp_updated_at": "2026-06-25T09:22:52.051934",
       "in_place_order_zone": false
     },
     {
@@ -480,10 +480,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 11.99,
-      "dist_pct": 31.9,
+      "ltp": 11.85,
+      "dist_pct": 30.36,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040001",
+      "ltp_updated_at": "2026-06-25T09:22:52.051939",
       "in_place_order_zone": false
     },
     {
@@ -500,10 +500,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 27.93,
-      "dist_pct": 4.14,
+      "ltp": 27.87,
+      "dist_pct": 3.91,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-06-25T08:16:21.040007",
+      "ltp_updated_at": "2026-06-25T09:22:52.051943",
       "in_place_order_zone": false
     },
     {
@@ -520,10 +520,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 236.49,
-      "dist_pct": 9.56,
+      "ltp": 234.49,
+      "dist_pct": 8.64,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040012",
+      "ltp_updated_at": "2026-06-25T09:22:52.051948",
       "in_place_order_zone": false
     },
     {
@@ -540,10 +540,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 23.99,
-      "dist_pct": 7.1,
+      "ltp": 23.88,
+      "dist_pct": 6.61,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040018",
+      "ltp_updated_at": "2026-06-25T09:22:52.051952",
       "in_place_order_zone": false
     },
     {
@@ -560,10 +560,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 437.4,
-      "dist_pct": 27.48,
+      "ltp": 429.15,
+      "dist_pct": 25.08,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040023",
+      "ltp_updated_at": "2026-06-25T09:22:52.051956",
       "in_place_order_zone": false
     },
     {
@@ -580,10 +580,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 161.05,
-      "dist_pct": 11.85,
+      "ltp": 161.1,
+      "dist_pct": 11.88,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040028",
+      "ltp_updated_at": "2026-06-25T09:22:52.051961",
       "in_place_order_zone": false
     },
     {
@@ -600,10 +600,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 482.1,
-      "dist_pct": 9.48,
+      "ltp": 481.75,
+      "dist_pct": 9.4,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040033",
+      "ltp_updated_at": "2026-06-25T09:22:52.051965",
       "in_place_order_zone": false
     },
     {
@@ -623,7 +623,7 @@
       "ltp": 138.0,
       "dist_pct": 15.76,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040037",
+      "ltp_updated_at": "2026-06-25T09:22:52.051970",
       "in_place_order_zone": false
     },
     {
@@ -640,10 +640,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 99.98,
-      "dist_pct": 13.14,
+      "ltp": 99.64,
+      "dist_pct": 12.75,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040042",
+      "ltp_updated_at": "2026-06-25T09:22:52.051974",
       "in_place_order_zone": false
     },
     {
@@ -660,10 +660,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 332.0,
-      "dist_pct": 17.9,
+      "ltp": 333.2,
+      "dist_pct": 18.32,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040047",
+      "ltp_updated_at": "2026-06-25T09:22:52.051979",
       "in_place_order_zone": false
     },
     {
@@ -680,10 +680,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 406.75,
-      "dist_pct": -0.6,
+      "ltp": 404.6,
+      "dist_pct": -1.12,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-06-25T08:16:21.040052",
+      "ltp_updated_at": "2026-06-25T09:22:52.051984",
       "in_place_order_zone": false
     },
     {
@@ -700,10 +700,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 247.82,
-      "dist_pct": 12.65,
+      "ltp": 248.21,
+      "dist_pct": 12.83,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040066",
+      "ltp_updated_at": "2026-06-25T09:22:52.051995",
       "in_place_order_zone": false
     },
     {
@@ -720,10 +720,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 112.55,
-      "dist_pct": -17.24,
+      "ltp": 115.0,
+      "dist_pct": -15.44,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040071",
+      "ltp_updated_at": "2026-06-25T09:22:52.052000",
       "in_place_order_zone": false
     },
     {
@@ -740,10 +740,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 400.8,
-      "dist_pct": 9.51,
+      "ltp": 398.0,
+      "dist_pct": 8.74,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040076",
+      "ltp_updated_at": "2026-06-25T09:22:52.052005",
       "in_place_order_zone": false
     },
     {
@@ -760,10 +760,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 116.31,
-      "dist_pct": 12.87,
+      "ltp": 114.63,
+      "dist_pct": 11.24,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040081",
+      "ltp_updated_at": "2026-06-25T09:22:52.052009",
       "in_place_order_zone": false
     },
     {
@@ -780,10 +780,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 475.95,
-      "dist_pct": 9.41,
+      "ltp": 472.75,
+      "dist_pct": 8.68,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040086",
+      "ltp_updated_at": "2026-06-25T09:22:52.052014",
       "in_place_order_zone": false
     },
     {
@@ -800,10 +800,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 599.2,
-      "dist_pct": -0.96,
+      "ltp": 603.5,
+      "dist_pct": -0.25,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-06-25T08:16:21.040091",
+      "ltp_updated_at": "2026-06-25T09:22:52.052018",
       "in_place_order_zone": false
     },
     {
@@ -823,7 +823,7 @@
       "ltp": 330.0,
       "dist_pct": 0.78,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-06-25T08:16:21.040120",
+      "ltp_updated_at": "2026-06-25T09:22:52.052029",
       "in_place_order_zone": false
     },
     {
@@ -840,10 +840,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 86.8,
-      "dist_pct": 12.26,
+      "ltp": 86.37,
+      "dist_pct": 11.7,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040132",
+      "ltp_updated_at": "2026-06-25T09:22:52.052040",
       "in_place_order_zone": false
     },
     {
@@ -860,10 +860,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 37.77,
-      "dist_pct": 10.05,
+      "ltp": 37.11,
+      "dist_pct": 8.13,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040137",
+      "ltp_updated_at": "2026-06-25T09:22:52.052045",
       "in_place_order_zone": false
     },
     {
@@ -880,10 +880,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 254.41,
-      "dist_pct": 5.08,
-      "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040142",
+      "ltp": 253.24,
+      "dist_pct": 4.6,
+      "in_entry_zone": true,
+      "ltp_updated_at": "2026-06-25T09:22:52.052049",
       "in_place_order_zone": false
     },
     {
@@ -900,10 +900,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 717.9,
-      "dist_pct": 6.19,
+      "ltp": 715.5,
+      "dist_pct": 5.84,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040147",
+      "ltp_updated_at": "2026-06-25T09:22:52.052054",
       "in_place_order_zone": false
     },
     {
@@ -920,10 +920,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 106.5,
-      "dist_pct": 9.57,
+      "ltp": 105.4,
+      "dist_pct": 8.44,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040153",
+      "ltp_updated_at": "2026-06-25T09:22:52.052059",
       "in_place_order_zone": false
     },
     {
@@ -940,10 +940,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 126.5,
-      "dist_pct": 9.52,
+      "ltp": 127.6,
+      "dist_pct": 10.48,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040157",
+      "ltp_updated_at": "2026-06-25T09:22:52.052063",
       "in_place_order_zone": false
     },
     {
@@ -960,10 +960,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 220.0,
-      "dist_pct": 12.23,
+      "ltp": 218.5,
+      "dist_pct": 11.47,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040162",
+      "ltp_updated_at": "2026-06-25T09:22:52.052068",
       "in_place_order_zone": false
     },
     {
@@ -980,10 +980,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 64.32,
-      "dist_pct": 8.65,
+      "ltp": 64.49,
+      "dist_pct": 8.94,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040167",
+      "ltp_updated_at": "2026-06-25T09:22:52.052072",
       "in_place_order_zone": false
     },
     {
@@ -1000,10 +1000,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 481.2,
-      "dist_pct": 11.91,
+      "ltp": 472.6,
+      "dist_pct": 9.91,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040171",
+      "ltp_updated_at": "2026-06-25T09:22:52.052077",
       "in_place_order_zone": false
     },
     {
@@ -1020,10 +1020,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 30.77,
-      "dist_pct": 2.57,
+      "ltp": 30.74,
+      "dist_pct": 2.47,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-06-25T08:16:21.040176",
+      "ltp_updated_at": "2026-06-25T09:22:52.052081",
       "in_place_order_zone": false
     },
     {
@@ -1040,10 +1040,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 191.5,
-      "dist_pct": 15.92,
+      "ltp": 189.9,
+      "dist_pct": 14.95,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040181",
+      "ltp_updated_at": "2026-06-25T09:22:52.052086",
       "in_place_order_zone": false
     },
     {
@@ -1060,10 +1060,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 42.6,
-      "dist_pct": 12.67,
+      "ltp": 42.78,
+      "dist_pct": 13.14,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040187",
+      "ltp_updated_at": "2026-06-25T09:22:52.052090",
       "in_place_order_zone": false
     },
     {
@@ -1080,10 +1080,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 1125.9,
-      "dist_pct": 13.83,
+      "ltp": 1115.7,
+      "dist_pct": 12.79,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040192",
+      "ltp_updated_at": "2026-06-25T09:22:52.052095",
       "in_place_order_zone": false
     },
     {
@@ -1100,10 +1100,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 1350.0,
-      "dist_pct": 11.66,
+      "ltp": 1348.9,
+      "dist_pct": 11.57,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040197",
+      "ltp_updated_at": "2026-06-25T09:22:52.052100",
       "in_place_order_zone": false
     },
     {
@@ -1120,10 +1120,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 5555.7,
-      "dist_pct": 16.91,
+      "ltp": 5540.0,
+      "dist_pct": 16.58,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040203",
+      "ltp_updated_at": "2026-06-25T09:22:52.052105",
       "in_place_order_zone": false
     },
     {
@@ -1140,10 +1140,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 332.6,
-      "dist_pct": 5.25,
-      "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040208",
+      "ltp": 328.5,
+      "dist_pct": 3.96,
+      "in_entry_zone": true,
+      "ltp_updated_at": "2026-06-25T09:22:52.052109",
       "in_place_order_zone": false
     },
     {
@@ -1160,10 +1160,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 3985.0,
-      "dist_pct": 5.64,
-      "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040212",
+      "ltp": 3955.2,
+      "dist_pct": 4.85,
+      "in_entry_zone": true,
+      "ltp_updated_at": "2026-06-25T09:22:52.052113",
       "in_place_order_zone": false
     },
     {
@@ -1180,10 +1180,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 385.0,
-      "dist_pct": 6.94,
+      "ltp": 385.35,
+      "dist_pct": 7.04,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040217",
+      "ltp_updated_at": "2026-06-25T09:22:52.052118",
       "in_place_order_zone": false
     },
     {
@@ -1200,10 +1200,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 1971.0,
-      "dist_pct": 5.28,
-      "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040222",
+      "ltp": 1958.5,
+      "dist_pct": 4.62,
+      "in_entry_zone": true,
+      "ltp_updated_at": "2026-06-25T09:22:52.052122",
       "in_place_order_zone": false
     },
     {
@@ -1220,10 +1220,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 758.0,
-      "dist_pct": 8.85,
+      "ltp": 756.95,
+      "dist_pct": 8.69,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040227",
+      "ltp_updated_at": "2026-06-25T09:22:52.052127",
       "in_place_order_zone": false
     },
     {
@@ -1240,10 +1240,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 489.55,
-      "dist_pct": 12.55,
+      "ltp": 485.55,
+      "dist_pct": 11.63,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040232",
+      "ltp_updated_at": "2026-06-25T09:22:52.052131",
       "in_place_order_zone": false
     },
     {
@@ -1260,10 +1260,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 475.4,
-      "dist_pct": 7.79,
+      "ltp": 473.9,
+      "dist_pct": 7.45,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040236",
+      "ltp_updated_at": "2026-06-25T09:22:52.052151",
       "in_place_order_zone": false
     },
     {
@@ -1280,10 +1280,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 17387.0,
-      "dist_pct": 1.54,
+      "ltp": 17391.0,
+      "dist_pct": 1.56,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-06-25T08:16:21.040241",
+      "ltp_updated_at": "2026-06-25T09:22:52.052156",
       "in_place_order_zone": false
     },
     {
@@ -1300,10 +1300,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 728.65,
-      "dist_pct": 4.84,
-      "in_entry_zone": true,
-      "ltp_updated_at": "2026-06-25T08:16:21.040253",
+      "ltp": 730.6,
+      "dist_pct": 5.12,
+      "in_entry_zone": false,
+      "ltp_updated_at": "2026-06-25T09:22:52.052192",
       "in_place_order_zone": false
     },
     {
@@ -1320,10 +1320,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 472.85,
-      "dist_pct": 3.47,
+      "ltp": 473.8,
+      "dist_pct": 3.68,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-06-25T08:16:21.040293",
+      "ltp_updated_at": "2026-06-25T09:22:52.052197",
       "in_place_order_zone": false
     },
     {
@@ -1340,10 +1340,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 127.1,
-      "dist_pct": 17.06,
+      "ltp": 127.19,
+      "dist_pct": 17.14,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040303",
+      "ltp_updated_at": "2026-06-25T09:22:52.052202",
       "in_place_order_zone": false
     },
     {
@@ -1360,10 +1360,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 725.9,
-      "dist_pct": 1.84,
+      "ltp": 731.4,
+      "dist_pct": 2.62,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-06-25T08:16:21.040312",
+      "ltp_updated_at": "2026-06-25T09:22:52.052207",
       "in_place_order_zone": false
     },
     {
@@ -1380,10 +1380,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 2243.2,
-      "dist_pct": 19.62,
+      "ltp": 2238.6,
+      "dist_pct": 19.37,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040329",
+      "ltp_updated_at": "2026-06-25T09:22:52.052212",
       "in_place_order_zone": false
     },
     {
@@ -1403,7 +1403,7 @@
       "ltp": 17.15,
       "dist_pct": 18.28,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040336",
+      "ltp_updated_at": "2026-06-25T09:22:52.052217",
       "in_place_order_zone": false
     },
     {
@@ -1420,10 +1420,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 25.39,
-      "dist_pct": -0.43,
+      "ltp": 25.17,
+      "dist_pct": -1.29,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-06-25T08:16:21.040343",
+      "ltp_updated_at": "2026-06-25T09:22:52.052222",
       "in_place_order_zone": false
     },
     {
@@ -1440,10 +1440,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 159.01,
-      "dist_pct": 5.19,
+      "ltp": 159.33,
+      "dist_pct": 5.4,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040360",
+      "ltp_updated_at": "2026-06-25T09:22:52.052233",
       "in_place_order_zone": false
     },
     {
@@ -1460,10 +1460,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 1174.95,
-      "dist_pct": 12.19,
+      "ltp": 1171.8,
+      "dist_pct": 11.89,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040367",
+      "ltp_updated_at": "2026-06-25T09:22:52.052238",
       "in_place_order_zone": false
     },
     {
@@ -1480,10 +1480,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 596.9,
-      "dist_pct": -2.12,
+      "ltp": 595.8,
+      "dist_pct": -2.3,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-06-25T08:16:21.040375",
+      "ltp_updated_at": "2026-06-25T09:22:52.052243",
       "in_place_order_zone": false
     },
     {
@@ -1500,10 +1500,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 507.5,
-      "dist_pct": 5.73,
-      "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040383",
+      "ltp": 500.6,
+      "dist_pct": 4.29,
+      "in_entry_zone": true,
+      "ltp_updated_at": "2026-06-25T09:22:52.052248",
       "in_place_order_zone": false
     },
     {
@@ -1520,10 +1520,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 1046.5,
-      "dist_pct": 6.79,
+      "ltp": 1040.55,
+      "dist_pct": 6.18,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040390",
+      "ltp_updated_at": "2026-06-25T09:22:52.052254",
       "in_place_order_zone": false
     },
     {
@@ -1540,10 +1540,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 130.99,
-      "dist_pct": 3.39,
+      "ltp": 129.61,
+      "dist_pct": 2.3,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-06-25T08:16:21.040397",
+      "ltp_updated_at": "2026-06-25T09:22:52.052259",
       "in_place_order_zone": false
     },
     {
@@ -1560,10 +1560,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 78.79,
-      "dist_pct": 7.78,
+      "ltp": 80.04,
+      "dist_pct": 9.49,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040404",
+      "ltp_updated_at": "2026-06-25T09:22:52.052263",
       "in_place_order_zone": false
     },
     {
@@ -1580,10 +1580,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 713.0,
-      "dist_pct": -7.16,
+      "ltp": 712.0,
+      "dist_pct": -7.29,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-06-25T08:16:21.040411",
+      "ltp_updated_at": "2026-06-25T09:22:52.052268",
       "in_place_order_zone": false
     },
     {
@@ -1600,10 +1600,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 208.25,
-      "dist_pct": -20.68,
+      "ltp": 209.0,
+      "dist_pct": -20.4,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040419",
+      "ltp_updated_at": "2026-06-25T09:22:52.052272",
       "in_place_order_zone": false
     },
     {
@@ -1620,10 +1620,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 32.74,
-      "dist_pct": 3.09,
+      "ltp": 32.63,
+      "dist_pct": 2.74,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-06-25T08:16:21.040426",
+      "ltp_updated_at": "2026-06-25T09:22:52.052276",
       "in_place_order_zone": false
     },
     {
@@ -1640,10 +1640,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 177.2,
-      "dist_pct": 3.02,
+      "ltp": 176.36,
+      "dist_pct": 2.53,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-06-25T08:16:21.040433",
+      "ltp_updated_at": "2026-06-25T09:22:52.052281",
       "in_place_order_zone": false
     },
     {
@@ -1660,10 +1660,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 719.45,
-      "dist_pct": 0.76,
+      "ltp": 716.25,
+      "dist_pct": 0.31,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-06-25T08:16:21.040441"
+      "ltp_updated_at": "2026-06-25T09:22:52.052286"
     },
     {
       "ticker": "SANDHAR",
@@ -1679,10 +1679,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 686.0,
-      "dist_pct": 9.51,
+      "ltp": 684.0,
+      "dist_pct": 9.19,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040462",
+      "ltp_updated_at": "2026-06-25T09:22:52.052310",
       "in_place_order_zone": false
     },
     {
@@ -1699,10 +1699,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 1091.1,
-      "dist_pct": 12.36,
+      "ltp": 1089.9,
+      "dist_pct": 12.24,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040471",
+      "ltp_updated_at": "2026-06-25T09:22:52.052319",
       "in_place_order_zone": false
     },
     {
@@ -1719,10 +1719,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 642.95,
-      "dist_pct": 6.28,
+      "ltp": 641.0,
+      "dist_pct": 5.96,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040478",
+      "ltp_updated_at": "2026-06-25T09:22:52.052326",
       "in_place_order_zone": false
     },
     {
@@ -1739,10 +1739,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 27.14,
-      "dist_pct": 1.04,
+      "ltp": 27.08,
+      "dist_pct": 0.82,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-06-25T08:16:21.040486",
+      "ltp_updated_at": "2026-06-25T09:22:52.052334",
       "in_place_order_zone": false
     },
     {
@@ -1759,10 +1759,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 77.71,
-      "dist_pct": 0.88,
+      "ltp": 78.03,
+      "dist_pct": 1.3,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-06-25T08:16:21.040503"
+      "ltp_updated_at": "2026-06-25T09:22:52.052350"
     },
     {
       "ticker": "WENDT",
@@ -1778,10 +1778,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 7575.5,
-      "dist_pct": 10.61,
+      "ltp": 7556.0,
+      "dist_pct": 10.32,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040519",
+      "ltp_updated_at": "2026-06-25T09:22:52.052366",
       "in_place_order_zone": false
     },
     {
@@ -1798,10 +1798,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 184.79,
-      "dist_pct": 3.0,
+      "ltp": 184.99,
+      "dist_pct": 3.11,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-06-25T08:16:21.040528",
+      "ltp_updated_at": "2026-06-25T09:22:52.052373",
       "in_place_order_zone": false
     },
     {
@@ -1818,10 +1818,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 266.7,
-      "dist_pct": 13.06,
+      "ltp": 268.4,
+      "dist_pct": 13.78,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040535",
+      "ltp_updated_at": "2026-06-25T09:22:52.052381",
       "in_place_order_zone": false
     },
     {
@@ -1838,10 +1838,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 193.31,
-      "dist_pct": 4.94,
+      "ltp": 189.0,
+      "dist_pct": 2.6,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-06-25T08:16:21.040540",
+      "ltp_updated_at": "2026-06-25T09:22:52.052389",
       "in_place_order_zone": false
     },
     {
@@ -1861,7 +1861,7 @@
       "ltp": 21.9,
       "dist_pct": -9.17,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-06-25T08:16:21.040545",
+      "ltp_updated_at": "2026-06-25T09:22:52.052396",
       "in_place_order_zone": false
     },
     {
@@ -1878,10 +1878,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 288.45,
-      "dist_pct": 7.63,
+      "ltp": 283.5,
+      "dist_pct": 5.78,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040550",
+      "ltp_updated_at": "2026-06-25T09:22:52.052404",
       "in_place_order_zone": false
     },
     {
@@ -1898,10 +1898,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 43.9,
-      "dist_pct": -7.42,
+      "ltp": 43.74,
+      "dist_pct": -7.76,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-06-25T08:16:21.040555",
+      "ltp_updated_at": "2026-06-25T09:22:52.052412",
       "in_place_order_zone": false
     },
     {
@@ -1918,10 +1918,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 86.0,
-      "dist_pct": 16.58,
+      "ltp": 83.91,
+      "dist_pct": 13.75,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040560",
+      "ltp_updated_at": "2026-06-25T09:22:52.052419",
       "in_place_order_zone": false
     },
     {
@@ -1938,10 +1938,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 466.5,
-      "dist_pct": 4.13,
+      "ltp": 466.3,
+      "dist_pct": 4.08,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-06-25T08:16:21.040565",
+      "ltp_updated_at": "2026-06-25T09:22:52.052426",
       "in_place_order_zone": false
     },
     {
@@ -1958,10 +1958,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 676.15,
-      "dist_pct": -0.15,
+      "ltp": 675.1,
+      "dist_pct": -0.3,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-06-25T08:16:21.040570",
+      "ltp_updated_at": "2026-06-25T09:22:52.052434",
       "in_place_order_zone": false
     },
     {
@@ -1978,10 +1978,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 29.4,
-      "dist_pct": 0.68,
+      "ltp": 29.41,
+      "dist_pct": 0.72,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-06-25T08:16:21.040580"
+      "ltp_updated_at": "2026-06-25T09:22:52.052448"
     },
     {
       "ticker": "GOLDIAM",
@@ -1997,10 +1997,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 461.45,
-      "dist_pct": 7.31,
+      "ltp": 457.2,
+      "dist_pct": 6.33,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040590",
+      "ltp_updated_at": "2026-06-25T09:22:52.052462",
       "in_place_order_zone": false
     },
     {
@@ -2017,10 +2017,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 452.8,
-      "dist_pct": 11.54,
+      "ltp": 456.0,
+      "dist_pct": 12.33,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040595",
+      "ltp_updated_at": "2026-06-25T09:22:52.052469",
       "in_place_order_zone": false
     },
     {
@@ -2037,10 +2037,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 30.63,
-      "dist_pct": 14.08,
+      "ltp": 30.7,
+      "dist_pct": 14.34,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040600",
+      "ltp_updated_at": "2026-06-25T09:22:52.052476",
       "in_place_order_zone": false
     },
     {
@@ -2057,10 +2057,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 240.99,
-      "dist_pct": 9.02,
+      "ltp": 240.02,
+      "dist_pct": 8.58,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040605",
+      "ltp_updated_at": "2026-06-25T09:22:52.052483",
       "in_place_order_zone": false
     },
     {
@@ -2077,10 +2077,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 372.15,
-      "dist_pct": 15.0,
+      "ltp": 369.7,
+      "dist_pct": 14.25,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040610",
+      "ltp_updated_at": "2026-06-25T09:22:52.052489",
       "in_place_order_zone": false
     },
     {
@@ -2097,10 +2097,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 587.15,
-      "dist_pct": 11.71,
+      "ltp": 589.0,
+      "dist_pct": 12.06,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040614",
+      "ltp_updated_at": "2026-06-25T09:22:52.052496",
       "in_place_order_zone": false
     },
     {
@@ -2117,10 +2117,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 960.9,
-      "dist_pct": 14.39,
+      "ltp": 957.0,
+      "dist_pct": 13.93,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040620",
+      "ltp_updated_at": "2026-06-25T09:22:52.052503",
       "in_place_order_zone": false
     },
     {
@@ -2137,10 +2137,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 2265.1,
-      "dist_pct": 7.05,
+      "ltp": 2229.9,
+      "dist_pct": 5.38,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040624",
+      "ltp_updated_at": "2026-06-25T09:22:52.052510",
       "in_place_order_zone": false
     },
     {
@@ -2157,10 +2157,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 25.25,
-      "dist_pct": 8.37,
+      "ltp": 24.94,
+      "dist_pct": 7.04,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040629",
+      "ltp_updated_at": "2026-06-25T09:22:52.052518",
       "in_place_order_zone": false
     },
     {
@@ -2177,10 +2177,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 268.2,
-      "dist_pct": 14.1,
+      "ltp": 267.9,
+      "dist_pct": 13.98,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040634",
+      "ltp_updated_at": "2026-06-25T09:22:52.052524",
       "in_place_order_zone": false
     },
     {
@@ -2197,10 +2197,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 1139.1,
-      "dist_pct": 16.09,
+      "ltp": 1128.8,
+      "dist_pct": 15.04,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040639",
+      "ltp_updated_at": "2026-06-25T09:22:52.052533",
       "in_place_order_zone": false
     },
     {
@@ -2217,10 +2217,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 642.2,
-      "dist_pct": 1.48,
+      "ltp": 647.0,
+      "dist_pct": 2.24,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-06-25T08:16:21.040643",
+      "ltp_updated_at": "2026-06-25T09:22:52.052541",
       "in_place_order_zone": false
     },
     {
@@ -2237,10 +2237,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 421.05,
-      "dist_pct": 1.46,
+      "ltp": 419.6,
+      "dist_pct": 1.11,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-06-25T08:16:21.040654",
+      "ltp_updated_at": "2026-06-25T09:22:52.052549",
       "in_place_order_zone": false
     },
     {
@@ -2257,10 +2257,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 2860.2,
-      "dist_pct": 10.3,
+      "ltp": 2850.8,
+      "dist_pct": 9.93,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040664",
+      "ltp_updated_at": "2026-06-25T09:22:52.052565",
       "in_place_order_zone": false
     },
     {
@@ -2277,10 +2277,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 147.16,
-      "dist_pct": 4.37,
+      "ltp": 145.75,
+      "dist_pct": 3.37,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-06-25T08:16:21.040669",
+      "ltp_updated_at": "2026-06-25T09:22:52.052572",
       "in_place_order_zone": false
     },
     {
@@ -2297,10 +2297,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 1151.5,
-      "dist_pct": 9.46,
+      "ltp": 1161.0,
+      "dist_pct": 10.36,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040674",
+      "ltp_updated_at": "2026-06-25T09:22:52.052580",
       "in_place_order_zone": false
     },
     {
@@ -2317,10 +2317,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 76.38,
-      "dist_pct": -5.76,
+      "ltp": 75.67,
+      "dist_pct": -6.64,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-06-25T08:16:21.040678",
+      "ltp_updated_at": "2026-06-25T09:22:52.052587",
       "in_place_order_zone": false
     },
     {
@@ -2337,10 +2337,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 2823.8,
-      "dist_pct": 5.12,
+      "ltp": 2854.7,
+      "dist_pct": 6.27,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040683",
+      "ltp_updated_at": "2026-06-25T09:22:52.052594",
       "in_place_order_zone": false
     },
     {
@@ -2357,10 +2357,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 259.7,
-      "dist_pct": 6.74,
+      "ltp": 255.48,
+      "dist_pct": 5.01,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040687",
+      "ltp_updated_at": "2026-06-25T09:22:52.052601",
       "in_place_order_zone": false
     },
     {
@@ -2377,10 +2377,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 262.1,
-      "dist_pct": 10.58,
+      "ltp": 262.66,
+      "dist_pct": 10.81,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040692",
+      "ltp_updated_at": "2026-06-25T09:22:52.052608",
       "in_place_order_zone": false
     },
     {
@@ -2397,10 +2397,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 131.44,
-      "dist_pct": 6.1,
-      "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040697",
+      "ltp": 129.13,
+      "dist_pct": 4.24,
+      "in_entry_zone": true,
+      "ltp_updated_at": "2026-06-25T09:22:52.052615",
       "in_place_order_zone": false
     },
     {
@@ -2417,10 +2417,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 2971.8,
-      "dist_pct": 7.46,
+      "ltp": 3100.0,
+      "dist_pct": 12.1,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040701",
+      "ltp_updated_at": "2026-06-25T09:22:52.052622",
       "in_place_order_zone": false
     },
     {
@@ -2440,7 +2440,7 @@
       "ltp": 45.45,
       "dist_pct": -88.63,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040706",
+      "ltp_updated_at": "2026-06-25T09:22:52.052629",
       "in_place_order_zone": false
     },
     {
@@ -2457,10 +2457,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 128.0,
-      "dist_pct": -1.33,
+      "ltp": 125.0,
+      "dist_pct": -3.64,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-06-25T08:16:21.040711",
+      "ltp_updated_at": "2026-06-25T09:22:52.052636",
       "in_place_order_zone": false
     },
     {
@@ -2477,10 +2477,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 205.0,
-      "dist_pct": 8.35,
+      "ltp": 201.87,
+      "dist_pct": 6.69,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040721",
+      "ltp_updated_at": "2026-06-25T09:22:52.052643",
       "in_place_order_zone": false
     },
     {
@@ -2497,10 +2497,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 395.0,
-      "dist_pct": 18.81,
+      "ltp": 396.25,
+      "dist_pct": 19.19,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040726",
+      "ltp_updated_at": "2026-06-25T09:22:52.052650",
       "in_place_order_zone": false
     },
     {
@@ -2517,10 +2517,10 @@
       "vol_ratio": 0.0,
       "alerted": false,
       "alert_sent_at": null,
-      "ltp": 2170.4,
-      "dist_pct": 12.46,
+      "ltp": 2175.8,
+      "dist_pct": 12.74,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040731",
+      "ltp_updated_at": "2026-06-25T09:22:52.052658",
       "in_place_order_zone": false
     },
     {
@@ -2539,10 +2539,10 @@
       "alert_sent_at": null,
       "week_52_high": 265.0,
       "week_52_low": 135.0,
-      "ltp": 240.35,
-      "dist_pct": 20.31,
+      "ltp": 239.42,
+      "dist_pct": 19.85,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040735",
+      "ltp_updated_at": "2026-06-25T09:22:52.052665",
       "in_place_order_zone": false
     },
     {
@@ -2561,10 +2561,10 @@
       "alert_sent_at": null,
       "week_52_high": 168.99,
       "week_52_low": 80.0,
-      "ltp": 138.91,
-      "dist_pct": 22.41,
+      "ltp": 138.6,
+      "dist_pct": 22.14,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-06-25T08:16:21.040741",
+      "ltp_updated_at": "2026-06-25T09:22:52.052672",
       "in_place_order_zone": false
     }
   ]
