@@ -59,9 +59,9 @@ jobs:
         AWS_ACCESS_KEY_ID:      ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY:  ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: |
-        echo "=== WEEKLY CACHE BUILD ==="
-        python trendline_screener_v2.py --build --force
-        echo "Cache build complete"
+        echo "=== WEEKLY FULL SCAN ==="
+        python nifty50_trendline_scan.py
+        echo "Full scan complete"
 
     - name: Run fast daily scan
       env:
@@ -72,12 +72,7 @@ jobs:
         AWS_SECRET_ACCESS_KEY:  ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: |
         echo "=== DAILY SCAN ==="
-        # If no cache exists (first run), build it first
-        if [ ! -f trendline_cache.json ]; then
-          echo "No cache found — building for first time..."
-          python trendline_screener_v2.py --build --force
-        fi
-        python trendline_screener_v2.py --scan
+        python nifty50_trendline_scan.py
         echo "Scan complete"
 
     - name: Push data files to Stock-Yard-Public
@@ -116,8 +111,7 @@ jobs:
         # Only save trendline_screen.json if it has actual stocks (prevent committing empty file)
         TL_COUNT=$(python -c "import json; d=json.load(open('trendline_screen.json')); print(len(d) if isinstance(d,list) else 0)" 2>/dev/null || echo "0")
         echo "Saving state — trendline_screen.json has $TL_COUNT stocks"
-        git add trendline_cache.json alerted_today.json || true
-        git add previous_stocks.json || true
+        git add alerted_today.json || true
         if [ "$TL_COUNT" -gt "0" ]; then
           git add trendline_screen.json || true
         else

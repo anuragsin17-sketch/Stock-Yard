@@ -28,8 +28,8 @@ ALERT_BUFFER    = 0.05   # alert when within 5% above prev day low
 SL_PCT          = 0.04   # 4% stop loss below entry
 TARGET_PCT      = 0.15   # 15% target above entry
 ENTRY_ZONE_PCT  = 0.02   # ±2% of prev_day_low = Place Order zone
-ENTRY_ZONE_LOW  = -0.10  # -10%  \  show in Volume tab
-ENTRY_ZONE_HIGH =  0.05  #  +5%  /
+ENTRY_ZONE_LOW  = -0.15  # -15%  \  show in Volume tab
+ENTRY_ZONE_HIGH =  0.02  #  +2%  /
 
 
 def send_telegram(message: str, reply_markup: dict = None) -> bool:
@@ -258,7 +258,7 @@ def check_watchlist():
             continue
 
         dist_pct      = ((ltp - prev_low) / prev_low) * 100
-        in_entry_zone = ENTRY_ZONE_LOW * 100 <= dist_pct <= ENTRY_ZONE_HIGH * 100  # -10% to +5%
+        in_entry_zone = ENTRY_ZONE_LOW * 100 <= dist_pct <= ENTRY_ZONE_HIGH * 100  # -15% to +2%
         in_zone       = abs(dist_pct) <= ENTRY_ZONE_PCT * 100   # ±2% for Telegram alert
         was_in_zone   = entry.get('in_place_order_zone', False)
 
