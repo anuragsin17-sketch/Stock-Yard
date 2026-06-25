@@ -103,32 +103,48 @@ class MacroInstitutionalEngine:
         return best
 
     def _calc_fib_levels(self, ref_df, a2, trigger_price):
-        """Calculate Fibonacci levels and find closest to trendline."""
+        """
+        Calculate MACRO Fibonacci levels from March 2020 low to ATH.
+        For stocks without 2020 data, use their listing date low to ATH.
+        Methodology: Historical low → ATH, then retrace from ATH (0%) down to historical low (100%).
+        """
         try:
-            lows_arr    = ref_df['Low'].values.flatten().astype(float)
-            data_after  = ref_df.iloc[a2:]
-            highs_after = data_after['High'].values.flatten().astype(float)
-            mx = argrelextrema(highs_after, np.greater, order=3)[0]
-            sh = float(highs_after[mx].max()) if len(mx) > 0 else float(highs_after.max())
-            lp = float(lows_arr[a2])
-            fr = sh - lp
-            if fr <= 0: return {}, 5, 'No fib range'
-
+            # Get March 2020 low (COVID crash low) or earliest available low
+            march_2020_mask = ref_df.index < pd.Timestamp('2020-04-01')
+            if march_2020_mask.sum() == 0:
+                # If no data before April 2020, use earliest available low (listing date low)
+                first_months = min(3, len(ref_df))
+                historical_low = float(ref_df['Low'].iloc[:first_months].min())
+            else:
+                historical_low = float(ref_df.loc[march_2020_mask, 'Low'].min())
+            
+            # Get All-Time High
+            ath_price = float(ref_df['High'].max())
+            
+            # Fibonacci range from historical low to ATH
+            fib_range = ath_price - historical_low
+            
+            if fib_range <= 0:
+                return {}, 5, 'No fib range'
+            
+            # Calculate Fibonacci retracement levels (from ATH down)
             fibs = {
-                '23.6%':  round(sh - fr*0.236, 2),
-                '38.2%':  round(sh - fr*0.382, 2),
-                '50.0%':  round(sh - fr*0.500, 2),
-                '61.8%':  round(sh - fr*0.618, 2),
-                '78.6%':  round(sh - fr*0.786, 2),
-                '100.0%': round(sh - fr*1.000, 2),
+                '23.6%':  round(ath_price - fib_range * 0.236, 2),
+                '38.2%':  round(ath_price - fib_range * 0.382, 2),
+                '50.0%':  round(ath_price - fib_range * 0.500, 2),
+                '61.8%':  round(ath_price - fib_range * 0.618, 2),
+                '78.6%':  round(ath_price - fib_range * 0.786, 2),
+                '100.0%': round(historical_low, 2),
             }
 
+            # Find closest Fibonacci level to trendline
             min_d, closest = float('inf'), None
             for lvl, price in fibs.items():
                 d = abs((trigger_price - price) / price) * 100
                 if d < min_d:
                     min_d, closest = d, lvl
 
+            # Score based on confluence with trendline
             if min_d <= 1.5:
                 score = 10 if min_d <= 0.3 else (9 if min_d <= 0.7 else 8)
                 if closest == '61.8%': score = min(10, score + 1)

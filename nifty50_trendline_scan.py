@@ -6,12 +6,18 @@ Clean rules (validated by backtest — 62.3% WR, 2.71x PF):
   - Signal when monthly LOW within 5% of ascending trendline
   - Trendline must have >= 3 wick touches & never broken (no close below)
   - Entry = trendline touch price | SL = 8% | Target = 23%
+
+Three-tier scoring system:
+  - Score 10: Trendline touch only
+  - Score 9: Fibonacci level only (50%, 61.8%, 78.6% within ±5%)
+  - Score 8: Dual confluence (Trendline + Fibonacci)
 """
 
 import json, time, os
 import pandas as pd
 from datetime import datetime
 from geometric_engine import MacroInstitutionalEngine
+from macro_fib_scanner import calculate_macro_fib
 
 # ─── STOCK LIST ──────────────────────────────────────────────────────────────
 NIFTY_50 = [
@@ -51,43 +57,79 @@ def run_scan(write_to_json=True, position_size=50000.0):
         use_recommended_logic=True
     )
 
-    print(f"\n{'='*65}")
-    print(f"  TRENDLINE SCAN  |  {datetime.now().strftime('%Y-%m-%d %H:%M')}")
+    print(f"\n{'='*70}")
+    print(f"  TRENDLINE + FIBONACCI SCAN  |  {datetime.now().strftime('%Y-%m-%d %H:%M')}")
+    print(f"  Score 10: Trendline only | Score 9: Fib only | Score 8: Both")
     print(f"  Rules: Post-2020 | Wick touch <=5% | Unbroken trendline")
-    print(f"  Entry: trendline price | SL: 8% | Target: 23%")
-    print(f"{'='*65}\n")
+    print(f"  Fib: 50%, 61.8%, 78.6% (March 2020 low to ATH)")
+    print(f"{'='*70}\n")
 
     tickers = load_stock_list()
     results = []
-    stats   = {'scanned': 0, 'found': 0, 'critical': 0, 'watchlist': 0, 'monitoring': 0}
+    stats   = {'scanned': 0, 'found': 0, 'critical': 0, 'watchlist': 0, 'monitoring': 0, 
+               'trendline_only': 0, 'fib_only': 0, 'confluence': 0}
 
     for i, ticker in enumerate(tickers, 1):
         ns_ticker = ticker + '.NS'
         try:
-            result = engine.process_ticker_geometry(ns_ticker)
+            # ──────────────────────────────────────────────────────────────
+            # STEP 1: Check for TRENDLINE signal (existing logic - untouched)
+            # ──────────────────────────────────────────────────────────────
+            trendline_result = engine.process_ticker_geometry(ns_ticker)
+            
+            # ──────────────────────────────────────────────────────────────
+            # STEP 2: Check for MACRO FIBONACCI signal (independent check)
+            # ──────────────────────────────────────────────────────────────
+            fib_result = calculate_macro_fib(ticker)
+            
             stats['scanned'] += 1
-
-            if result:
-                sig    = result['currentSignal']
-                sizing = result['positionSizing']
-                tl     = result['trendlineDetails']
-                fibs   = result.get('fibGrid', {})
+            
+            # ──────────────────────────────────────────────────────────────
+            # STEP 3: Merge results based on three-tier scoring
+            # ──────────────────────────────────────────────────────────────
+            
+            has_trendline = trendline_result is not None
+            has_fib = fib_result is not None
+            
+            if not has_trendline and not has_fib:
+                continue  # No signal at all
+            
+            # Determine score and signal type
+            if has_trendline and has_fib:
+                # Score 8: Dual confluence (both trendline + fib)
+                final_score = 8
+                signal_type = "CONFLUENCE"
+                stats['confluence'] += 1
+            elif has_trendline:
+                # Score 10: Trendline only
+                final_score = 10
+                signal_type = "TRENDLINE"
+                stats['trendline_only'] += 1
+            else:
+                # Score 9: Fibonacci only
+                final_score = 9
+                signal_type = "FIBONACCI"
+                stats['fib_only'] += 1
+            
+            # ──────────────────────────────────────────────────────────────
+            # Build result record
+            # ──────────────────────────────────────────────────────────────
+            
+            if has_trendline:
+                # Use trendline data as base
+                sig    = trendline_result['currentSignal']
+                sizing = trendline_result['positionSizing']
+                tl     = trendline_result['trendlineDetails']
+                fibs   = trendline_result.get('fibGrid', {})
                 status = sig['signalStatus']
-
-                # Find closest fib to trendline
-                fib_match = None
-                fib_match_price = None
-                fib_match_dist  = None
-                if fibs:
-                    min_d = float('inf')
-                    for lvl, price in fibs.items():
-                        d = abs((sizing['entryPrice'] - price) / price * 100)
-                        if d < min_d:
-                            min_d = d
-                            fib_match = lvl
-                            fib_match_price = price
-                            fib_match_dist  = round(d, 2)
-
+                
+                # Override score with three-tier logic
+                sig['confluenceScore'] = final_score
+                if signal_type == "CONFLUENCE":
+                    sig['confluenceNote'] = f"Confluence: Trendline + Fib {fib_result['fib_level']} ✓✓"
+                else:
+                    sig['confluenceNote'] = f"Trendline touch only"
+                
                 entry_record = {
                     # Core fields used by frontend
                     'ticker':             ticker,
@@ -98,13 +140,14 @@ def run_scan(write_to_json=True, position_size=50000.0):
                     'distanceRemaining':  sig['distanceRemaining'],
                     'signalStatus':       status,
                     'notificationTrigger': sig['notificationTrigger'],
-                    'confluenceScore':    sig['confluenceScore'],
+                    'confluenceScore':    final_score,
                     'patternZone':        sig['confluenceNote'],
                     'wickTouches':        tl['wickTouches'],
                     'timeframe':          'monthly',
-                    # 52W H/L from Yahoo Finance (already downloaded for trendline)
-                    'week52High':         result.get('week52High'),
-                    'week52Low':          result.get('week52Low'),
+                    'signalType':         signal_type,
+                    # 52W H/L
+                    'week52High':         trendline_result.get('week52High'),
+                    'week52Low':          trendline_result.get('week52Low'),
                     'positionSizing': {
                         'allocatedAmount': sizing['allocatedAmount'],
                         'sharesToBuy':     sizing['sharesToBuy'],
@@ -112,48 +155,93 @@ def run_scan(write_to_json=True, position_size=50000.0):
                         'strictStopLoss':  sizing['dynamicStopLoss'],
                         'pivotTargetExit': sizing['targetExit'],
                     },
-                    # Fibonacci levels for frontend display
+                    # Fibonacci levels
                     'fibonacciLevels':    fibs,
-                    'fibMatchLevel':      fib_match,
-                    'fibMatchPrice':      fib_match_price,
-                    'fibMatchDistancePct': fib_match_dist,
+                    'fibMatchLevel':      fib_result['fib_level'] if has_fib else None,
+                    'fibMatchPrice':      fib_result['fib_price'] if has_fib else None,
+                    'fibMatchDistancePct': fib_result['distance_pct'] if has_fib else None,
                     # Trendline metadata
                     'trendlineSlope':     tl['slope'],
                     'anchor1Date':        tl.get('anchor1Date'),
                     'anchor2Date':        tl.get('anchor2Date'),
                 }
-                results.append(entry_record)
-                stats['found'] += 1
-                if status == 'CRITICAL_TOUCH': stats['critical'] += 1
-                elif status == 'WATCHLIST':    stats['watchlist'] += 1
-                else:                          stats['monitoring'] += 1
-
-                icon = '🎯' if status == 'CRITICAL_TOUCH' else '👀' if status == 'WATCHLIST' else '📊'
-                fib_info = f"Fib:{fib_match}({fib_match_dist:.1f}%)" if fib_match else "No Fib"
-                print(f"  {i:3d}. {ticker:<14} {icon} {status:<16} "
-                      f"TL:₹{sizing['entryPrice']:,.0f} "
-                      f"Dist:{sig['distanceRemaining']:+.1f}% "
-                      f"Score:{sig['confluenceScore']}/10 {fib_info}")
+                
             else:
-                pass  # silent for no-signal stocks
+                # Fibonacci-only signal (no trendline)
+                # Build record from fib_result
+                status = "WATCHLIST"  # Fib-only signals are watchlist by default
+                
+                entry_record = {
+                    # Core fields
+                    'ticker':             ticker,
+                    'currentPrice':       fib_result['currentPrice'],
+                    'ema50':              None,
+                    'ema200':             None,
+                    'triggerPrice':       fib_result['fib_price'],
+                    'distanceRemaining':  fib_result['distance_pct'],
+                    'signalStatus':       status,
+                    'notificationTrigger': False,
+                    'confluenceScore':    final_score,
+                    'patternZone':        f"Fib {fib_result['fib_level']} support",
+                    'wickTouches':        None,
+                    'timeframe':          'monthly',
+                    'signalType':         signal_type,
+                    # 52W H/L (not available for fib-only, set to None)
+                    'week52High':         None,
+                    'week52Low':          None,
+                    'positionSizing': {
+                        'allocatedAmount': position_size,
+                        'sharesToBuy':     max(1, int(position_size // fib_result['fib_price'])),
+                        'entryPrice':      fib_result['fib_price'],
+                        'strictStopLoss':  round(fib_result['fib_price'] * 0.92, 2),  # 8% SL
+                        'pivotTargetExit': round(fib_result['fib_price'] * 1.23, 2),  # 23% target
+                    },
+                    # Fibonacci levels
+                    'fibonacciLevels':    fib_result['all_fib_levels'],
+                    'fibMatchLevel':      fib_result['fib_level'],
+                    'fibMatchPrice':      fib_result['fib_price'],
+                    'fibMatchDistancePct': fib_result['distance_pct'],
+                    # Trendline metadata (none for fib-only)
+                    'trendlineSlope':     None,
+                    'anchor1Date':        None,
+                    'anchor2Date':        None,
+                }
+            
+            results.append(entry_record)
+            stats['found'] += 1
+            if status == 'CRITICAL_TOUCH': stats['critical'] += 1
+            elif status == 'WATCHLIST':    stats['watchlist'] += 1
+            else:                          stats['monitoring'] += 1
+
+            icon = '🎯' if status == 'CRITICAL_TOUCH' else '👀' if status == 'WATCHLIST' else '📊'
+            type_icon = '🔀' if signal_type == 'CONFLUENCE' else '📈' if signal_type == 'TRENDLINE' else '📊'
+            
+            print(f"  {i:3d}. {ticker:<14} {icon}{type_icon} {status:<16} "
+                  f"Entry:₹{entry_record['triggerPrice']:,.0f} "
+                  f"Dist:{entry_record['distanceRemaining']:+.1f}% "
+                  f"Score:{final_score}/10 [{signal_type}]")
 
         except Exception as e:
             stats['scanned'] += 1
+            # Only log if it's not a common data issue
+            if 'NoneType' not in str(e):
+                print(f"  Error processing {ticker}: {e}")
 
         time.sleep(0.2)
 
-    # Sort: CRITICAL first, then WATCHLIST, then MONITORING, then by distance
+    # Sort: Score descending (10 → 9 → 8), then by distance
     results.sort(key=lambda x: (
-        0 if x['signalStatus'] == 'CRITICAL_TOUCH' else
-        1 if x['signalStatus'] == 'WATCHLIST' else 2,
-        x['distanceRemaining']
+        -x['confluenceScore'],  # Higher score first
+        x['distanceRemaining']   # Then by distance ascending
     ))
 
-    print(f"\n{'='*65}")
-    print(f"  Scanned: {stats['scanned']} | Signals: {stats['found']} | "
-          f"Critical: {stats['critical']} | Watchlist: {stats['watchlist']} | "
+    print(f"\n{'='*70}")
+    print(f"  Scanned: {stats['scanned']} | Signals: {stats['found']}")
+    print(f"  Trendline-only (10): {stats['trendline_only']} | "
+          f"Fib-only (9): {stats['fib_only']} | Confluence (8): {stats['confluence']}")
+    print(f"  Critical: {stats['critical']} | Watchlist: {stats['watchlist']} | "
           f"Monitoring: {stats['monitoring']}")
-    print(f"{'='*65}")
+    print(f"{'='*70}")
 
     if write_to_json and results:
         with open('trendline_screen.json', 'w') as f:
