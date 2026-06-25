@@ -33,7 +33,7 @@ def calculate_macro_fib(ticker):
             return None
         
         # Get the historical low (either March 2020 low or earliest available low)
-        march_2020_mask = df.index < pd.Timestamp('2020-04-01')
+        march_2020_mask = df.index < pd.Timestamp('2020-04-01', tz=df.index.tz)
         if march_2020_mask.sum() > 0:
             # Stock has March 2020 data - use COVID crash low
             historical_low = df.loc[march_2020_mask, 'Low'].min()
@@ -76,11 +76,14 @@ def calculate_macro_fib(ticker):
             '100.0%': historical_low,
         }
         
-        # Find closest Fibonacci level
+        # Find closest TARGET Fibonacci level (only check 50%, 61.8%, 78.6%, 100%)
         closest_fib = None
         min_dist = float('inf')
         
         for level, price in fib_levels.items():
+            # Only check TARGET_FIB_LEVELS
+            if level not in TARGET_FIB_LEVELS:
+                continue
             if pd.isna(price) or price <= 0:
                 continue
             dist_pct = abs((current - price) / price * 100)
@@ -91,8 +94,8 @@ def calculate_macro_fib(ticker):
         if closest_fib is None:
             return None
         
-        # Only include if within threshold of a target level
-        if closest_fib[0] in TARGET_FIB_LEVELS and min_dist <= PROXIMITY_THRESHOLD:
+        # Only include if within threshold
+        if min_dist <= PROXIMITY_THRESHOLD:
             return {
                 'ticker': ticker,
                 'currentPrice': round(current, 2),
