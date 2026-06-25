@@ -11,7 +11,7 @@ import pandas as pd
 from datetime import datetime
 
 # Target Fibonacci levels to look for (retracement from ATH)
-TARGET_FIB_LEVELS = ['50.0%', '61.8%', '78.6%']
+TARGET_FIB_LEVELS = ['50.0%', '61.8%', '78.6%', '100.0%']
 PROXIMITY_THRESHOLD = 5.0  # Within 5% of Fibonacci level
 
 def calculate_macro_fib(ticker):
@@ -73,6 +73,7 @@ def calculate_macro_fib(ticker):
             '50.0%': ath_price - (fib_range * 0.500),
             '61.8%': ath_price - (fib_range * 0.618),
             '78.6%': ath_price - (fib_range * 0.786),
+            '100.0%': historical_low,
         }
         
         # Find closest Fibonacci level
