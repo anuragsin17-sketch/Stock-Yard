@@ -4,39 +4,45 @@ import numpy as np
 from scipy.signal import argrelextrema
 from datetime import datetime
 
-# ─── CLEAN RULES (validated by backtest — 62.3% WR, 2.71x PF) ───────────────
+# ─── INTELLIGENT TRENDLINE RULES ────────────────────────────────────────────
 # 1. Data: April 2020 onwards only (post-COVID crash)
 # 2. Trendline: ascending, >= 3 wick touches (monthly LOW within 5% of line)
-# 3. No monthly close ever below trendline (unbroken)
-# 4. Signal: monthly LOW touches within 5% of trendline
-# 5. Entry: trendline touch price
-# 6. SL: 8% below entry
-# 7. Target: 23% above entry
+# 3. Allow up to 3 monthly closes below trendline (realistic for real stocks)
+# 4. When multiple valid trendlines exist, prefer the one where current price is closest
+# 5. Signal: monthly LOW touches within 4% of trendline (Score 10)
+# 6. Entry: trendline touch price
+# 7. SL: 8% below entry
+# 8. Target: 23% above entry
 # ─────────────────────────────────────────────────────────────────────────────
 
-WICK_PCT      = 5.0   # wick must be within 5% of trendline
+WICK_PCT      = 5.0   # wick must be within 5% of trendline (historical validation)
 MIN_TOUCHES   = 3     # minimum wick touches required
 POST_COVID    = '2020-04-01'
+MAX_BREAKS    = 3     # allow up to 3 monthly closes below trendline
+TOUCH_THRESHOLD = 4.0 # current signal threshold (within 4%)
 
 
 class MacroInstitutionalEngine:
-    def __init__(self, position_size=50000.0, sl_pct=8.0, touch_tolerance=5.0,
+    def __init__(self, position_size=50000.0, sl_pct=8.0, touch_tolerance=4.0,
                  use_recommended_logic=True):
         self.capital_per_trade = float(position_size)
         self.sl_pct            = float(sl_pct)
         self.sl_multiplier     = 1.0 - (float(sl_pct) / 100.0)
-        self.touch_tolerance   = float(touch_tolerance)
+        self.touch_tolerance   = float(touch_tolerance)  # default 4% for Score 10
         self.use_recommended_logic = use_recommended_logic
         self.target_multiplier = 1.23   # 23% target
 
     def _find_best_trendline(self, df):
         """
-        Find best ascending trendline on post-COVID data.
+        Find best ascending trendline using INTELLIGENT selection.
+        
         Rules:
           - Post April 2020 data only
-          - >= MIN_TOUCHES wick touches (monthly LOW within WICK_PCT)
-          - No monthly CLOSE ever below trendline (unbroken)
-          - Best scored by: touches + recency + accuracy to anchors
+          - Ascending trendline (positive slope)
+          - >= 3 wick touches (monthly LOW within 5% of line)
+          - Allow up to 3 monthly closes below trendline (realistic)
+          - When multiple valid trendlines exist, prefer the one where current price is closest
+        
         Returns: (slope, intercept, ref_df, a1, a2, n_touches) or None
         """
         data = df[df.index >= pd.Timestamp(POST_COVID)].copy()
@@ -57,7 +63,8 @@ class MacroInstitutionalEngine:
         if len(anchors) < 2:
             return None
 
-        best, best_score = None, -1
+        # Find ALL valid trendlines
+        all_valid = []
 
         for i in range(len(anchors) - 1):
             a1 = anchors[i]
@@ -69,16 +76,17 @@ class MacroInstitutionalEngine:
                 x = [float(data['Idx'].iloc[a1]), float(data['Idx'].iloc[a2])]
                 y = [lows[a1], lows[a2]]
                 slope, intercept = np.polyfit(x, y, 1)
-                if slope <= 0: continue
+                if slope <= 0: continue  # Must be ascending
 
-                # RULE: No monthly CLOSE ever below trendline (2% buffer)
-                broken = False
+                # Count breaks (monthly closes below trendline)
+                breaks = 0
                 for k in range(n):
                     tl = slope * float(data['Idx'].iloc[k]) + intercept
                     if tl > 0 and closes[k] < tl * 0.98:
-                        broken = True
-                        break
-                if broken: continue
+                        breaks += 1
+                
+                if breaks > MAX_BREAKS:  # Too many breaks
+                    continue
 
                 # Count wick touches
                 touches = []
@@ -86,21 +94,44 @@ class MacroInstitutionalEngine:
                     tl = slope * float(data['Idx'].iloc[k]) + intercept
                     if tl > 0 and abs((lows[k] - tl) / tl) * 100 <= WICK_PCT:
                         touches.append(k)
-                if len(touches) < MIN_TOUCHES: continue
+                
+                if len(touches) < MIN_TOUCHES:
+                    continue
 
-                # Score
-                tl_a1   = slope * float(data['Idx'].iloc[a1]) + intercept
-                tl_a2   = slope * float(data['Idx'].iloc[a2]) + intercept
-                acc     = 1.0 / (1.0 + abs((lows[a1]-tl_a1)/lows[a1])
-                                      + abs((lows[a2]-tl_a2)/lows[a2]))
-                recency = max(touches) / n
-                score   = len(touches)*15 + recency*25 + acc*30 + (a2-a1)*0.1
+                # Calculate current distance
+                last_idx = float(data['Idx'].iloc[-1])
+                trendline_price = slope * last_idx + intercept
+                current_low = float(data['Low'].iloc[-1])
+                distance = abs((current_low - trendline_price) / trendline_price) * 100
 
-                if score > best_score:
-                    best_score = score
-                    best = (slope, intercept, data, a1, a2, len(touches))
+                all_valid.append({
+                    'slope': slope,
+                    'intercept': intercept,
+                    'a1': a1,
+                    'a2': a2,
+                    'touches': len(touches),
+                    'breaks': breaks,
+                    'distance': distance
+                })
 
-        return best
+        if not all_valid:
+            return None
+
+        # INTELLIGENCE: Choose the best trendline
+        # Priority 1: Current price is touching (within TOUCH_THRESHOLD)
+        # Priority 2: More touches, fewer breaks
+        # Priority 3: Closer distance
+        
+        touching = [t for t in all_valid if t['distance'] <= TOUCH_THRESHOLD]
+        
+        if touching:
+            # Choose from touching trendlines: prefer more touches, fewer breaks, closer distance
+            best = max(touching, key=lambda t: (t['touches'] * 100 - t['breaks'] * 10 - t['distance']))
+        else:
+            # No touching trendlines: choose the one with most touches
+            best = max(all_valid, key=lambda t: (t['touches'] * 100 - t['breaks'] * 10))
+
+        return (best['slope'], best['intercept'], data, best['a1'], best['a2'], best['touches'])
 
     def _calc_fib_levels(self, ref_df, a2, trigger_price):
         """
@@ -164,9 +195,14 @@ class MacroInstitutionalEngine:
         Signal fires when monthly LOW touches within 5% of ascending trendline.
         """
         try:
-            # Fetch 10-year monthly data
-            df = yf.download(ticker, period="10y", interval="1mo",
+            # Fetch 8-year monthly data (10y fails for some stocks)
+            df = yf.download(ticker, period="8y", interval="1mo",
                              auto_adjust=True, progress=False)
+            
+            # Fix multi-level columns from yfinance
+            if isinstance(df.columns, pd.MultiIndex):
+                df.columns = df.columns.get_level_values(0)
+            
             if df.empty or len(df) < 12:
                 return None
             df = df.dropna()

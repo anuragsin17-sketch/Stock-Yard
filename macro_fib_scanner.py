@@ -20,7 +20,11 @@ def calculate_macro_fib(ticker):
     For stocks without 2020 data, use their listing date low to ATH.
     """
     try:
-        stock = yf.Ticker(f"{ticker}.NS")
+        # Don't add .NS if already present
+        if not ticker.endswith('.NS'):
+            ticker = f"{ticker}.NS"
+        
+        stock = yf.Ticker(ticker)
         
         # Try to get data from March 2020, but if not available, get max available history
         df = stock.history(start="2020-03-01", interval="1mo")
