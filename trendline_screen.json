@@ -522,7 +522,7 @@
       "50.0%": 1123.37,
       "61.8%": 950.94,
       "78.6%": 705.45,
-      "100.0%": 392.74
+      "100.0%": 392.73
     },
     "fibMatchLevel": null,
     "fibMatchPrice": null,
@@ -598,7 +598,7 @@
       "50.0%": 1063.2,
       "61.8%": 918.22,
       "78.6%": 711.8,
-      "100.0%": 448.86
+      "100.0%": 448.85
     },
     "fibMatchLevel": null,
     "fibMatchPrice": null,
@@ -641,7 +641,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 42.5755,
+    "trendlineSlope": 42.5756,
     "anchor1Date": "2023-03",
     "anchor2Date": "2025-02"
   },
@@ -682,44 +682,6 @@
     "trendlineSlope": 106.5389,
     "anchor1Date": "2021-05",
     "anchor2Date": "2024-01"
-  },
-  {
-    "ticker": "GODFRYPHLP",
-    "currentPrice": 2238.2,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 2149.92,
-    "distanceRemaining": 0.56,
-    "signalStatus": "CRITICAL_TOUCH",
-    "notificationTrigger": true,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 12,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 3924.86,
-    "week52Low": 1832.1,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 23,
-      "entryPrice": 2149.92,
-      "strictStopLoss": 1977.93,
-      "pivotTargetExit": 2644.4
-    },
-    "fibonacciLevels": {
-      "23.6%": 3064.51,
-      "38.2%": 2532.25,
-      "50.0%": 2102.08,
-      "61.8%": 1671.9,
-      "78.6%": 1059.45,
-      "100.0%": 279.29
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 46.7139,
-    "anchor1Date": "2023-07",
-    "anchor2Date": "2025-01"
   },
   {
     "ticker": "TORNTPOWER",
@@ -983,7 +945,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 989.0654,
+    "trendlineSlope": 989.0653,
     "anchor1Date": "2020-09",
     "anchor2Date": "2026-05"
   },
@@ -1249,7 +1211,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 16.2354,
+    "trendlineSlope": 16.2353,
     "anchor1Date": "2023-03",
     "anchor2Date": "2026-04"
   },
@@ -2579,7 +2541,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 28.6597,
+    "trendlineSlope": 28.6596,
     "anchor1Date": "2025-03",
     "anchor2Date": "2025-10"
   },
@@ -2740,7 +2702,7 @@
     "currentPrice": 1554.6,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 1337.22,
+    "triggerPrice": 1337.23,
     "distanceRemaining": 4.02,
     "signalStatus": "MONITORING",
     "notificationTrigger": false,
@@ -2754,9 +2716,9 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 37,
-      "entryPrice": 1337.22,
-      "strictStopLoss": 1230.24,
-      "pivotTargetExit": 1644.78
+      "entryPrice": 1337.23,
+      "strictStopLoss": 1230.25,
+      "pivotTargetExit": 1644.79
     },
     "fibonacciLevels": {
       "23.6%": 1287.8,
@@ -3747,9 +3709,9 @@
       "pivotTargetExit": 5175.82
     },
     "fibonacciLevels": {
-      "23.6%": 7955.54,
-      "38.2%": 6523.23,
-      "50.0%": 5365.61,
+      "23.6%": 7955.53,
+      "38.2%": 6523.22,
+      "50.0%": 5365.6,
       "61.8%": 4207.98,
       "78.6%": 2559.85,
       "100.0%": 460.43
@@ -4089,8 +4051,8 @@
       "pivotTargetExit": 3766.01
     },
     "fibonacciLevels": {
-      "23.6%": 4691.67,
-      "38.2%": 3983.26,
+      "23.6%": 4691.66,
+      "38.2%": 3983.25,
       "50.0%": 3410.7,
       "61.8%": 2838.15,
       "78.6%": 2023.0,
