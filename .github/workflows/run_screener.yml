@@ -61,6 +61,7 @@ jobs:
       run: |
         echo "=== WEEKLY FULL SCAN ==="
         python nifty50_trendline_scan.py
+        python microcap250_scan.py
         echo "Full scan complete"
 
     - name: Run fast daily scan
@@ -73,6 +74,7 @@ jobs:
       run: |
         echo "=== DAILY SCAN ==="
         python nifty50_trendline_scan.py
+        python microcap250_scan.py
         echo "Scan complete"
 
     - name: Push data files to Stock-Yard-Public
@@ -86,16 +88,24 @@ jobs:
           echo "WARNING: trendline_screen.json is empty — skipping push to avoid wiping public data"
           exit 0
         fi
+        
+        # Safety guard: only push microcap250_screen.json if it has actual stocks
+        MC250_COUNT=$(python -c "import json; d=json.load(open('microcap250_screen.json')); print(len(d) if isinstance(d,list) else 0)" 2>/dev/null || echo "0")
+        echo "microcap250_screen.json has $MC250_COUNT stocks"
+        
         git clone https://x-access-token:${PUBLIC_REPO_TOKEN}@github.com/anuragsin17-sketch/Stock-Yard-Public.git public_repo
 
         cp -f trendline_screen.json public_repo/trendline_screen.json || true
+        if [ "$MC250_COUNT" -gt "0" ]; then
+          cp -f microcap250_screen.json public_repo/microcap250_screen.json || true
+        fi
         cp -f data.json             public_repo/data.json             || true
         cp -f alerted_today.json    public_repo/alerted_today.json    || true
 
         cd public_repo
         git config user.name  "Stock Yard Bot"
         git config user.email "bot@stockyard.io"
-        git add trendline_screen.json data.json alerted_today.json
+        git add trendline_screen.json microcap250_screen.json data.json alerted_today.json
         git diff --staged --quiet || git commit -m "data: screener update $(date -u '+%Y-%m-%d %H:%M UTC')"
         git push
         echo "Pushed to Stock-Yard-Public"
@@ -110,13 +120,19 @@ jobs:
         git stash pop || true
         # Only save trendline_screen.json if it has actual stocks (prevent committing empty file)
         TL_COUNT=$(python -c "import json; d=json.load(open('trendline_screen.json')); print(len(d) if isinstance(d,list) else 0)" 2>/dev/null || echo "0")
-        echo "Saving state — trendline_screen.json has $TL_COUNT stocks"
+        MC250_COUNT=$(python -c "import json; d=json.load(open('microcap250_screen.json')); print(len(d) if isinstance(d,list) else 0)" 2>/dev/null || echo "0")
+        echo "Saving state — trendline_screen.json has $TL_COUNT stocks, microcap250_screen.json has $MC250_COUNT stocks"
         git add alerted_today.json || true
         if [ "$TL_COUNT" -gt "0" ]; then
           git add trendline_screen.json || true
         else
           echo "Skipping trendline_screen.json commit (empty)"
         fi
-        git diff --staged --quiet || git commit -m "state: screener $(date -u '+%Y-%m-%d %H:%M UTC') [$TL_COUNT stocks]"
+        if [ "$MC250_COUNT" -gt "0" ]; then
+          git add microcap250_screen.json || true
+        else
+          echo "Skipping microcap250_screen.json commit (empty)"
+        fi
+        git diff --staged --quiet || git commit -m "state: screener $(date -u '+%Y-%m-%d %H:%M UTC') [TL:$TL_COUNT MC250:$MC250_COUNT stocks]"
         # Push with retry on conflict
         git push || (git pull --rebase origin main && git push) || true
