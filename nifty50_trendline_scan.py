@@ -64,6 +64,17 @@ def run_scan(write_to_json=True, position_size=50000.0):
     print(f"  Fib: 50%, 61.8%, 78.6% (March 2020 low to ATH)")
     print(f"{'='*70}\n")
 
+    # Load trendline cache to get wickTouches for all stocks
+    trendline_cache = {}
+    if os.path.exists('trendline_cache.json'):
+        try:
+            with open('trendline_cache.json') as f:
+                cache_data = json.load(f)
+                trendline_cache = cache_data.get('trendlines', {})
+            print(f"  Loaded trendline cache: {len(trendline_cache)} stocks with trendline data\n")
+        except Exception as e:
+            print(f"  Warning: Could not load trendline_cache.json: {e}\n")
+
     tickers = load_stock_list()
     results = []
     stats   = {'scanned': 0, 'found': 0, 'critical': 0, 'watchlist': 0, 'monitoring': 0, 
@@ -123,6 +134,11 @@ def run_scan(write_to_json=True, position_size=50000.0):
                 fibs   = trendline_result.get('fibGrid', {})
                 status = sig['signalStatus']
                 
+                # Get n_touches from cache if available (more reliable than live calculation)
+                n_touches = tl.get('wickTouches')
+                if n_touches is None and ticker in trendline_cache:
+                    n_touches = trendline_cache[ticker].get('n_touches')
+                
                 # Override score with three-tier logic
                 sig['confluenceScore'] = final_score
                 if signal_type == "CONFLUENCE":
@@ -142,7 +158,7 @@ def run_scan(write_to_json=True, position_size=50000.0):
                     'notificationTrigger': sig['notificationTrigger'],
                     'confluenceScore':    final_score,
                     'patternZone':        sig['confluenceNote'],
-                    'wickTouches':        tl['wickTouches'],
+                    'wickTouches':        n_touches,
                     'timeframe':          'monthly',
                     'signalType':         signal_type,
                     # 52W H/L
@@ -171,6 +187,22 @@ def run_scan(write_to_json=True, position_size=50000.0):
                 # Build record from fib_result
                 status = "WATCHLIST"  # Fib-only signals are watchlist by default
                 
+                # BUG FIX: Always fetch wickTouches from trendline cache for display
+                # Even if no active trendline signal, show historical wick count from cache
+                wick_touches = None
+                trendline_slope = None
+                anchor1_date = None
+                anchor2_date = None
+                
+                if ticker in trendline_cache:
+                    cache_tl = trendline_cache[ticker]
+                    wick_touches = cache_tl.get('n_touches', None)
+                    trendline_slope = cache_tl.get('slope', None)
+                    anchor1_date = cache_tl.get('a1_date', None)
+                    anchor2_date = cache_tl.get('a2_date', None)
+                    if anchor1_date: anchor1_date = anchor1_date[:7]  # Format: YYYY-MM
+                    if anchor2_date: anchor2_date = anchor2_date[:7]
+                
                 entry_record = {
                     # Core fields
                     'ticker':             ticker,
@@ -183,7 +215,7 @@ def run_scan(write_to_json=True, position_size=50000.0):
                     'notificationTrigger': False,
                     'confluenceScore':    final_score,
                     'patternZone':        f"Fib {fib_result['fib_level']} support",
-                    'wickTouches':        None,
+                    'wickTouches':        wick_touches,
                     'timeframe':          'monthly',
                     'signalType':         signal_type,
                     # 52W H/L (not available for fib-only, set to None)
@@ -201,10 +233,10 @@ def run_scan(write_to_json=True, position_size=50000.0):
                     'fibMatchLevel':      fib_result['fib_level'],
                     'fibMatchPrice':      fib_result['fib_price'],
                     'fibMatchDistancePct': fib_result['distance_pct'],
-                    # Trendline metadata (none for fib-only)
-                    'trendlineSlope':     None,
-                    'anchor1Date':        None,
-                    'anchor2Date':        None,
+                    # Trendline metadata (fetch from cache if available)
+                    'trendlineSlope':     trendline_slope,
+                    'anchor1Date':        anchor1_date,
+                    'anchor2Date':        anchor2_date,
                 }
             
             results.append(entry_record)
