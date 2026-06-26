@@ -279,6 +279,14 @@ def run_scan(write_to_json=True, position_size=50000.0):
         with open('trendline_screen.json', 'w') as f:
             json.dump(results, f, indent=2)
         print(f"\n  Saved {len(results)} signals -> trendline_screen.json")
+        
+        # Sync to DynamoDB
+        try:
+            from dynamodb_helper import write_signals
+            write_signals('TRENDLINE', results)
+            print(f"  ✅ Synced {len(results)} TRENDLINE signals to DynamoDB")
+        except Exception as e:
+            print(f"  ⚠️ DynamoDB sync failed: {e}")
 
     return results, stats
 

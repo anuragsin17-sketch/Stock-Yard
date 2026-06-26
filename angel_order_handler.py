@@ -1047,8 +1047,8 @@ def get_signals():
     """
     Return stock signals with live LTPs merged in — single API call.
     Query params:
-      type = TRENDLINE | VOLUME | GOLDEN  (default: TRENDLINE + VOLUME)
-    Response: { success, source, data: { trendline: [...], volume: [...] } }
+      type = TRENDLINE | VOLUME | GOLDEN | MICROCAP250  (default: TRENDLINE + VOLUME)
+    Response: { success, source, data: { trendline: [...], volume: [...], microcap250: [...] } }
     Each signal has ltp field merged from LivePrices table.
     Falls back to local JSON files if DynamoDB unavailable.
     """
@@ -1060,7 +1060,7 @@ def get_signals():
         source = 'dynamodb'
 
         if dh:
-            types = [signal_type] if signal_type in ('TRENDLINE', 'VOLUME', 'GOLDEN') else ['TRENDLINE', 'VOLUME']
+            types = [signal_type] if signal_type in ('TRENDLINE', 'VOLUME', 'GOLDEN', 'MICROCAP250') else ['TRENDLINE', 'VOLUME']
             for st in types:
                 result[st.lower()] = dh.read_signals(st)
 
@@ -1089,6 +1089,7 @@ def get_signals():
             source = 'json_fallback'
             for fname, key in [
                 ('trendline_screen.json', 'trendline'),
+                ('microcap250_screen.json', 'microcap250'),
                 ('volume_gainer_watchlist.json', 'volume'),
             ]:
                 paths = [fname, f'/home/ubuntu/stock-yard-backend/{fname}', f'/home/ubuntu/{fname}']
