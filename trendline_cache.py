@@ -384,8 +384,26 @@ def daily_scan(cache):
 if __name__ == "__main__":
     import sys
 
-    # Load Nifty 500 list
-    nifty_df = pd.read_csv('ind_nifty500list.csv')
+    # Load stock list (try multiple filenames for compatibility)
+    stock_list_files = ['Stock List.csv', 'ind_nifty500list.csv', 'ind_nifty500list (1).csv']
+    nifty_df = None
+    
+    for csv_file in stock_list_files:
+        if os.path.exists(csv_file):
+            try:
+                nifty_df = pd.read_csv(csv_file)
+                print(f"✅ Loaded stock list from: {csv_file}")
+                break
+            except Exception as e:
+                print(f"⚠️ Failed to load {csv_file}: {e}")
+                continue
+    
+    if nifty_df is None:
+        print("❌ ERROR: No stock list CSV found. Tried:")
+        for f in stock_list_files:
+            print(f"   - {f}")
+        sys.exit(1)
+    
     tickers = [s + '.NS' for s in nifty_df['Symbol'].tolist()]
 
     force_rebuild = '--rebuild' in sys.argv
