@@ -325,16 +325,16 @@ def check_trendline_stocks_for_entry():
         lower = entry_price * 0.98
         upper = entry_price * 1.02
         if lower <= current_price <= upper:
-            print(f"  ✅ Entry hit! Sending Telegram alert only (user takes trade manually)")
-            # Telegram alert only — do NOT add to radar_trades.json
-            send_telegram_with_action(
-                ticker=ticker,
-                entry_price=entry_price,
-                current_price=current_price,
-                target_price=target_price,
-                stoploss_price=stoploss_price,
-                source='Trendline'
-            )
+            print(f"  ✅ Entry hit! (Telegram notification disabled)")
+            # Telegram alert disabled per user request
+            # send_telegram_with_action(
+            #     ticker=ticker,
+            #     entry_price=entry_price,
+            #     current_price=current_price,
+            #     target_price=target_price,
+            #     stoploss_price=stoploss_price,
+            #     source='Trendline'
+            # )
 
     # Trendline stocks only trigger Telegram alerts — user takes trades manually
     return False
