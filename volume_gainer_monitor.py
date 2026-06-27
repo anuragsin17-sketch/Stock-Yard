@@ -272,27 +272,27 @@ def check_watchlist():
         entry['ltp_updated_at'] = datetime.now().isoformat()
         db_updates.append(entry)
 
-        # ── Telegram alerts (unchanged logic) ────────────────────────────────
+        # ── Telegram alerts DISABLED (per user request) ─────────────────────
         if in_zone and not was_in_zone:
-            print(f"  🟢 {ticker}: ENTERED alert zone → sending entry alert")
-            msg, buttons = build_entry_alert(entry, ltp)
-            if send_telegram(msg, reply_markup=buttons):
-                entry['in_place_order_zone']   = True
-                entry['place_order_entry_at']  = datetime.now().isoformat()
-                entry['place_order_entry_ltp'] = ltp
-                entry['alerted']               = True
-                entry['alert_sent_at']         = entry['place_order_entry_at']
-                entry['alert_ltp']             = ltp
-                entry['alert_dist_pct']        = round(dist_pct, 2)
-                entry_sent += 1
+            print(f"  🟢 {ticker}: ENTERED alert zone (alerts disabled)")
+            # msg, buttons = build_entry_alert(entry, ltp)
+            # if send_telegram(msg, reply_markup=buttons):
+            entry['in_place_order_zone']   = True
+            entry['place_order_entry_at']  = datetime.now().isoformat()
+            entry['place_order_entry_ltp'] = ltp
+            entry['alerted']               = True
+            entry['alert_sent_at']         = entry['place_order_entry_at']
+            entry['alert_ltp']             = ltp
+            entry['alert_dist_pct']        = round(dist_pct, 2)
+            entry_sent += 1
         elif not in_zone and was_in_zone:
-            print(f"  🔴 {ticker}: EXITED alert zone → sending exit alert")
-            msg = build_exit_alert(entry, ltp)
-            if send_telegram(msg):
-                entry['in_place_order_zone'] = False
-                entry['place_order_exit_at'] = datetime.now().isoformat()
-                entry['place_order_exit_ltp'] = ltp
-                exit_sent += 1
+            print(f"  🔴 {ticker}: EXITED alert zone (alerts disabled)")
+            # msg = build_exit_alert(entry, ltp)
+            # if send_telegram(msg):
+            entry['in_place_order_zone'] = False
+            entry['place_order_exit_at'] = datetime.now().isoformat()
+            entry['place_order_exit_ltp'] = ltp
+            exit_sent += 1
         else:
             entry['in_place_order_zone'] = in_zone
 

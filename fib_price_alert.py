@@ -326,79 +326,80 @@ def run():
     def fmt_target(p):
         return f'₹{p:,.2f}' if p else '—'
 
+    # ── Fibonacci alerts DISABLED (per user request) ────────────────────
     for info in critical_alerts:
         sym, price, tl_price, tl_dist, score, label, t1, t2, sl, touches = info
-        msg = (
-            f"🔥 *ULTRA-CONFLUENCE — {sym}* 🔥\n\n"
-            f"📍 CMP: ₹{price:,.2f}\n"
-            f"🎯 Zone: {label}\n"
-            f"📐 Trendline: ₹{tl_price:,.2f} ({tl_dist:+.1f}%) | {touches} touches\n"
-            f"🛑 SL: {fmt_target(sl)}\n"
-            f"✅ T1: {fmt_target(t1)}\n"
-            f"✅ T2: {fmt_target(t2)}\n"
-            f"⭐ Score: {score}/10\n\n"
-            f"[Open Chart](https://in.tradingview.com/chart/?symbol=NSE:{sym}) | "
-            f"[App]({APP_URL}/)"
-        )
-        send_telegram(msg)
+        # msg = (
+        #     f"🔥 *ULTRA-CONFLUENCE — {sym}* 🔥\n\n"
+        #     f"📍 CMP: ₹{price:,.2f}\n"
+        #     f"🎯 Zone: {label}\n"
+        #     f"📐 Trendline: ₹{tl_price:,.2f} ({tl_dist:+.1f}%) | {touches} touches\n"
+        #     f"🛑 SL: {fmt_target(sl)}\n"
+        #     f"✅ T1: {fmt_target(t1)}\n"
+        #     f"✅ T2: {fmt_target(t2)}\n"
+        #     f"⭐ Score: {score}/10\n\n"
+        #     f"[Open Chart](https://in.tradingview.com/chart/?symbol=NSE:{sym}) | "
+        #     f"[App]({APP_URL}/)"
+        # )
+        # send_telegram(msg)
         mark_alerted(alerts, sym, 'ultra')
         total_sent += 1
-        print(f"  🔥 CRITICAL: {sym} ₹{price:.2f} — {label[:40]}")
+        print(f"  🔥 CRITICAL (alerts disabled): {sym} ₹{price:.2f} — {label[:40]}")
 
     for info in high_alerts:
         sym, price, tl_price, tl_dist, score, label, t1, t2, sl, touches = info
-        msg = (
-            f"⚡ *61.8% GOLDEN POCKET — {sym}*\n\n"
-            f"📍 CMP: ₹{price:,.2f}\n"
-            f"🎯 Zone: {label}\n"
-            f"📐 Trendline: ₹{tl_price:,.2f} ({tl_dist:+.1f}%) | {touches} touches\n"
-            f"🛑 SL: {fmt_target(sl)}\n"
-            f"✅ T1: {fmt_target(t1)}\n"
-            f"✅ T2: {fmt_target(t2)}\n"
-            f"⭐ Score: {score}/10\n\n"
-            f"[Open Chart](https://in.tradingview.com/chart/?symbol=NSE:{sym}) | "
-            f"[App]({APP_URL}/)"
-        )
-        send_telegram(msg)
+        # msg = (
+        #     f"⚡ *61.8% GOLDEN POCKET — {sym}*\n\n"
+        #     f"📍 CMP: ₹{price:,.2f}\n"
+        #     f"🎯 Zone: {label}\n"
+        #     f"📐 Trendline: ₹{tl_price:,.2f} ({tl_dist:+.1f}%) | {touches} touches\n"
+        #     f"🛑 SL: {fmt_target(sl)}\n"
+        #     f"✅ T1: {fmt_target(t1)}\n"
+        #     f"✅ T2: {fmt_target(t2)}\n"
+        #     f"⭐ Score: {score}/10\n\n"
+        #     f"[Open Chart](https://in.tradingview.com/chart/?symbol=NSE:{sym}) | "
+        #     f"[App]({APP_URL}/)"
+        # )
+        # send_telegram(msg)
         mark_alerted(alerts, sym, '618')
         total_sent += 1
-        print(f"  ⚡ HIGH:     {sym} ₹{price:.2f} — {label[:40]}")
+        print(f"  ⚡ HIGH (alerts disabled):     {sym} ₹{price:.2f} — {label[:40]}")
 
     for info in medium_alerts:
         sym, price, tl_price, tl_dist, score, label, t1, t2, sl, touches = info
-        msg = (
-            f"📊 *50% POCKET ENTRY — {sym}*\n\n"
-            f"📍 CMP: ₹{price:,.2f}\n"
-            f"🎯 Zone: {label}\n"
-            f"📐 Trendline: ₹{tl_price:,.2f} ({tl_dist:+.1f}%) | {touches} touches\n"
-            f"🛑 SL: {fmt_target(sl)}\n"
-            f"✅ T1: {fmt_target(t1)}\n"
-            f"✅ T2: {fmt_target(t2)}\n"
-            f"⭐ Score: {score}/10\n\n"
-            f"[Open Chart](https://in.tradingview.com/chart/?symbol=NSE:{sym}) | "
-            f"[App]({APP_URL}/)"
-        )
-        send_telegram(msg)
+        # msg = (
+        #     f"📊 *50% POCKET ENTRY — {sym}*\n\n"
+        #     f"📍 CMP: ₹{price:,.2f}\n"
+        #     f"🎯 Zone: {label}\n"
+        #     f"📐 Trendline: ₹{tl_price:,.2f} ({tl_dist:+.1f}%) | {touches} touches\n"
+        #     f"🛑 SL: {fmt_target(sl)}\n"
+        #     f"✅ T1: {fmt_target(t1)}\n"
+        #     f"✅ T2: {fmt_target(t2)}\n"
+        #     f"⭐ Score: {score}/10\n\n"
+        #     f"[Open Chart](https://in.tradingview.com/chart/?symbol=NSE:{sym}) | "
+        #     f"[App]({APP_URL}/)"
+        # )
+        # send_telegram(msg)
         mark_alerted(alerts, sym, '500')
         total_sent += 1
-        print(f"  📊 MEDIUM:  {sym} ₹{price:.2f} — {label[:40]}")
+        print(f"  📊 MEDIUM (alerts disabled):  {sym} ₹{price:.2f} — {label[:40]}")
 
     for info in tl_touch_alerts:
         sym, price, tl_price, tl_dist, score, label, t1, t2, sl, touches = info
-        msg = (
-            f"📈 *TRENDLINE TOUCH — {sym}*\n\n"
-            f"📍 CMP: ₹{price:,.2f}\n"
-            f"📐 Trendline: ₹{tl_price:,.2f} ({tl_dist:+.1f}%) | {touches} touches\n"
-            f"🛑 SL: {fmt_target(sl)}\n"
-            f"✅ T1: {fmt_target(t1)}\n"
-            f"⭐ Score: {score}/10 (no fib pocket)\n\n"
-            f"[Open Chart](https://in.tradingview.com/chart/?symbol=NSE:{sym}) | "
-            f"[App]({APP_URL}/)"
-        )
-        send_telegram(msg)
+        # msg = (
+        #     f"📈 *TRENDLINE TOUCH — {sym}*\n\n"
+        #     f"📍 CMP: ₹{price:,.2f}\n"
+        #     f"📐 Trendline: ₹{tl_price:,.2f} ({tl_dist:+.1f}%) | {touches} touches\n"
+        #     f"🛑 SL: {fmt_target(sl)}\n"
+        #     f"✅ T1: {fmt_target(t1)}\n"
+        #     f"⭐ Score: {score}/10 (no fib pocket)\n\n"
+        #     f"[Open Chart](https://in.tradingview.com/chart/?symbol=NSE:{sym}) | "
+        #     f"[App]({APP_URL}/)"
+        # )
+        # send_telegram(msg)
         mark_alerted(alerts, sym, 'tl')
         total_sent += 1
-        print(f"  📈 TL:      {sym} ₹{price:.2f} — dist {tl_dist:.1f}%")
+        print(f"  📈 TL (alerts disabled):      {sym} ₹{price:.2f} — dist {tl_dist:.1f}%")
 
     # Save updated alert state
     save_alert_state(alerts)

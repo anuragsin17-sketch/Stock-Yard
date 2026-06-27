@@ -268,20 +268,21 @@ def check_once():
         was_in    = prev.get('in_zone', False)
 
         if in_zone and not was_in:
-            msg, buttons = entry_msg(ticker, c['strategy'], ltp, trigger, dist_pct,
-                                     c['target'], c['sl'], c['extra'])
-            if send_telegram(msg, buttons):
-                state[state_key] = {'in_zone': True, 'strategy': c['strategy'],
-                                    'entry_at': _now_ist().isoformat(), 'entry_ltp': ltp}
-                entry_sent += 1
-                print(f"  🟢 ENTRY: {ticker} ({c['strategy']}) dist={dist_pct:+.1f}%")
+            # ENTRY alert DISABLED (per user request)
+            # msg, buttons = entry_msg(ticker, c['strategy'], ltp, trigger, dist_pct,
+            #                          c['target'], c['sl'], c['extra'])
+            # if send_telegram(msg, buttons):
+            state[state_key] = {'in_zone': True, 'strategy': c['strategy'],
+                                'entry_at': _now_ist().isoformat(), 'entry_ltp': ltp}
+            entry_sent += 1
+            print(f"  🟢 ENTRY (alerts disabled): {ticker} ({c['strategy']}) dist={dist_pct:+.1f}%")
 
         elif not in_zone and was_in:
-            # EXIT alert disabled — just update state silently
+            # EXIT alert DISABLED (per user request)
             state[state_key] = {'in_zone': False, 'strategy': c['strategy'],
                                 'exit_at': _now_ist().isoformat(), 'exit_ltp': ltp}
             exit_sent += 1
-            print(f"  🔴 EXIT (silent):  {ticker} ({c['strategy']}) dist={dist_pct:+.1f}%")
+            print(f"  🔴 EXIT (alerts disabled):  {ticker} ({c['strategy']}) dist={dist_pct:+.1f}%")
         else:
             state[state_key] = {**prev, 'in_zone': in_zone, 'last_ltp': ltp,
                                  'last_check': _now_ist().isoformat()}
