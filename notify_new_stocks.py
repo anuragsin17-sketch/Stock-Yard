@@ -116,6 +116,7 @@ def notify_volume_new(prev_volume: set) -> tuple:
 
 def notify_trendline_new(prev_trendline: set) -> tuple:
     """Alert only NEW trendline touch stocks. Returns (sent_count, current_symbols)"""
+    # DISABLED per user request - no trendline notifications
     try:
         with open("trendline_screen.json") as f:
             stocks = json.load(f)
@@ -126,48 +127,8 @@ def notify_trendline_new(prev_trendline: set) -> tuple:
     current_symbols = {s.get("ticker", "") for s in stocks if s.get("ticker")}
     new_symbols = current_symbols - prev_trendline
 
-    print(f"   Trendline: {len(current_symbols)} total, {len(new_symbols)} new → {new_symbols or 'none'}")
-    sent = 0
-
-    for s in stocks:
-        sym = s.get("ticker", "")
-        if sym not in new_symbols:
-            continue
-
-        dist      = s.get("distanceRemaining", 99)
-        price     = s.get("currentPrice", 0)
-        trigger   = s.get("triggerPrice", price)
-        stop      = s.get("positionSizing", {}).get("strictStopLoss", round(trigger * 0.92, 2))
-        target    = s.get("positionSizing", {}).get("pivotTargetExit", round(trigger * 1.20, 2))
-        fib       = s.get("fibLevelMatch", "—")
-        score     = s.get("confluenceScore", "—")
-        wicks     = s.get("wickTouches", "—")
-        is_critical = s.get("notificationTrigger", False)
-
-        status_emoji = "🎯" if is_critical else "📈"
-        status_label = "CRITICAL ENTRY" if is_critical else "NEW SIGNAL"
-        chart_url = f"https://in.tradingview.com/chart/?symbol=NSE:{sym}"
-        confirm_url = (
-            f"{BASE_URL}/?confirm={sym}"
-            f"&price={trigger}&stop={stop}&target={target}&source=Trendline"
-        )
-
-        msg = (
-            f"{status_emoji} *NEW TRENDLINE SIGNAL — {sym}* ({status_label})\n\n"
-            f"💰 Current Price: ₹{price:,.2f}\n"
-            f"📍 Entry Trigger: ₹{trigger:,.2f} _({dist:.2f}% away)_\n"
-            f"🛑 Stop Loss: ₹{stop:,.2f} _(monthly close)_\n"
-            f"✅ Target: ₹{target:,.2f} _(+20%)_\n"
-            f"📐 Fib: {fib} | Score: {score}/10 | Wicks: {wicks}"
-        )
-
-        buttons = None
-        if is_critical:
-            buttons = {
-                'inline_keyboard': [[
-                    {'text': '✅ Confirm Trade', 'url': confirm_url},
-                    {'text': '⏭️ Skip', 'url': f"{BASE_URL}/"}
-                ]]
+    print(f"   Trendline: {len(current_symbols)} total, {len(new_symbols)} new (notifications disabled)")
+    return 0, current_symbols  # Return 0 sent, but keep current symbols for state tracking
             }
         else:
             buttons = {
