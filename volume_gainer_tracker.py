@@ -270,68 +270,15 @@ def save_watchlist(watchlist: list, last_run_info: dict = None):
 
 def cleanup_watchlist(watchlist: list, bhavcopy_df: pd.DataFrame) -> tuple:
     """
-    Remove expired signals from the watchlist using today's bhavcopy prices.
-
-    Expiry rules:
-      1. Target hit  — today's CLOSE >= target_price    → move done, remove
-      2. Stale       — added_date older than 30 days    → too old, remove
-
-    Returns (clean_watchlist, removed_list)
-    Each removed entry gets a 'removed_reason' field for the Telegram summary.
+    DISABLED: Keep all stocks in watchlist indefinitely.
+    
+    User wants stocks to remain in Volume tab regardless of age or price movement.
+    Stocks stay until they reach entry price for a trade opportunity, even if 90+ days old.
+    
+    Returns (clean_watchlist, removed_list) where removed_list is always empty.
     """
-    # Build quick lookup: ticker → {low, close} from today's bhavcopy
-    today_prices = {}
-    if bhavcopy_df is not None and not bhavcopy_df.empty:
-        for _, row in bhavcopy_df.iterrows():
-            sym = str(row.get('SYMBOL', '')).strip().upper()
-            if not sym:
-                continue
-            try:
-                today_prices[sym] = {
-                    'close': float(row['CLOSE']) if 'CLOSE' in row.index and pd.notna(row['CLOSE']) else None,
-                }
-            except Exception:
-                pass
-
-    cutoff = datetime.now().date() - timedelta(days=30)
-    clean   = []
-    removed = []
-
-    for entry in watchlist:
-        ticker     = (entry.get('ticker') or '').upper()
-        target     = float(entry.get('target_price') or 0)
-        added_date = entry.get('added_date', '')
-
-        # Check age
-        try:
-            added = datetime.strptime(added_date, '%Y-%m-%d').date()
-        except Exception:
-            added = datetime.now().date()
-
-        if added < cutoff:
-            entry['removed_reason'] = f'stale (>30d old, added {added_date})'
-            removed.append(entry)
-            print(f"  🗑  {ticker}: removed — stale signal ({added_date})")
-            continue
-
-        prices = today_prices.get(ticker)
-        if not prices:
-            # Stock not in bhavcopy today (maybe suspended/no trade) — keep it
-            clean.append(entry)
-            continue
-
-        today_close = prices['close']
-
-        # Target hit — today's close crossed target
-        if target > 0 and today_close is not None and today_close >= target:
-            entry['removed_reason'] = f'target hit (close ₹{today_close:,.2f} >= target ₹{target:,.2f})'
-            removed.append(entry)
-            print(f"  🎯 {ticker}: removed — target hit (close={today_close:.2f} >= target={target:.2f})")
-            continue
-
-        clean.append(entry)
-
-    return clean, removed
+    # No cleanup — return all stocks as-is
+    return watchlist, []
 
 
 def push_to_dynamodb(new_entries: list):
