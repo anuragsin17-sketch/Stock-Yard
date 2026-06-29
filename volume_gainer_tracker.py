@@ -270,15 +270,39 @@ def save_watchlist(watchlist: list, last_run_info: dict = None):
 
 def cleanup_watchlist(watchlist: list, bhavcopy_df: pd.DataFrame) -> tuple:
     """
-    DISABLED: Keep all stocks in watchlist indefinitely.
+    Remove stocks older than 60 days from the watchlist.
     
-    User wants stocks to remain in Volume tab regardless of age or price movement.
-    Stocks stay until they reach entry price for a trade opportunity, even if 90+ days old.
+    60-day rolling window keeps the watchlist:
+    - Fresh (recent volume spikes only)
+    - Manageable size (~400-500 stocks max)
+    - Fast frontend performance
     
-    Returns (clean_watchlist, removed_list) where removed_list is always empty.
+    Returns (clean_watchlist, removed_list)
+    Each removed entry gets a 'removed_reason' field for the Telegram summary.
     """
-    # No cleanup — return all stocks as-is
-    return watchlist, []
+    cutoff = datetime.now().date() - timedelta(days=60)
+    clean   = []
+    removed = []
+
+    for entry in watchlist:
+        ticker     = (entry.get('ticker') or '').upper()
+        added_date = entry.get('added_date', '')
+
+        # Check age
+        try:
+            added = datetime.strptime(added_date, '%Y-%m-%d').date()
+        except Exception:
+            added = datetime.now().date()
+
+        if added < cutoff:
+            entry['removed_reason'] = f'stale (>60d old, added {added_date})'
+            removed.append(entry)
+            print(f"  🗑  {ticker}: removed — older than 60 days ({added_date})")
+            continue
+
+        clean.append(entry)
+
+    return clean, removed
 
 
 def push_to_dynamodb(new_entries: list):
