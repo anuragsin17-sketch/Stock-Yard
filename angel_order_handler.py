@@ -775,6 +775,42 @@ def get_52w():
         return jsonify({'success': False, 'error': str(e)}), 500
 
 
+@app.route('/api/radar/clear', methods=['POST'])
+def clear_radar_dynamodb():
+    """Manually clear all radar trades from DynamoDB."""
+    try:
+        from dynamodb_helper import get_helper
+        dh = get_helper()
+        if not dh:
+            return jsonify({'success': False, 'error': 'DynamoDB not available'}), 500
+        
+        # Clear all trades
+        from boto3.dynamodb.conditions import Key
+        table = dh._table('RadarTrades')
+        deleted_count = 0
+        
+        for status in ('Open', 'Triggered', 'Closed'):
+            existing = table.query(
+                KeyConditionExpression=Key('status').eq(status),
+                ProjectionExpression='#s, trade_id',
+                ExpressionAttributeNames={'#s': 'status'}
+            )
+            items = existing.get('Items', [])
+            logger.info(f"Deleting {len(items)} trades with status={status}")
+            
+            with table.batch_writer() as batch:
+                for item in items:
+                    batch.delete_item(Key={'status': item['status'], 'trade_id': item['trade_id']})
+                    deleted_count += 1
+        
+        logger.info(f"✅ Cleared {deleted_count} trades from DynamoDB")
+        return jsonify({'success': True, 'deleted': deleted_count}), 200
+        
+    except Exception as e:
+        logger.error(f"Failed to clear DynamoDB: {e}", exc_info=True)
+        return jsonify({'success': False, 'error': str(e)}), 500
+
+
 @app.route('/api/sync-trades', methods=['GET'])
 def sync_trades():
     """Fetch open holdings from Angel One and return them for Radar tab sync.
