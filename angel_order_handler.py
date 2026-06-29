@@ -634,12 +634,19 @@ def get_quote():
                     if close_val <= 0:
                         try:
                             import yfinance as yf
+                            import pandas as pd
+                            from datetime import datetime
                             clean_sym = symbol.replace('-EQ', '').replace('.NS', '').strip().upper()
                             hist_1d = yf.Ticker(clean_sym + '.NS').history(period='5d', interval='1d')
-                            if len(hist_1d) >= 2:
-                                close_val = round(float(hist_1d['Close'].iloc[-2]), 2)
-                                logger.info(f"Enriched prev-close for {symbol} from yfinance: {close_val}")
-                        except Exception:
+                            if not hist_1d.empty:
+                                # Filter out today's partial data to ensure we get yesterday's close
+                                today = datetime.now().date()
+                                hist_1d = hist_1d[hist_1d.index.date < today]
+                                if len(hist_1d) >= 1:
+                                    close_val = round(float(hist_1d['Close'].iloc[-1]), 2)
+                                    logger.info(f"Enriched prev-close for {symbol} from yfinance: {close_val}")
+                        except Exception as e:
+                            logger.warning(f"Failed to fetch prev-close for {symbol}: {e}")
                             pass  # Day P&L will show 0 — acceptable fallback
                     logger.info(f"Quote fetched for {symbol}: LTP={ltp}, PrevClose={close_val}")
                     return jsonify({
@@ -662,6 +669,8 @@ def get_quote():
         # Fallback to yfinance (covers both invalid Angel One response AND exception)
         try:
             import yfinance as yf
+            import pandas as pd
+            from datetime import datetime
             # Normalize: strip any existing .NS / -EQ suffix before adding .NS
             clean_sym = symbol.replace('-EQ', '').replace('.NS', '').replace('.BO', '').strip().upper()
             yf_symbol = clean_sym + '.NS'
@@ -669,12 +678,17 @@ def get_quote():
             # 1m interval = latest intraday price. Fall back to 1d if market closed/weekend
             hist_1m = ticker_obj.history(period='1d', interval='1m')
             hist_1d = ticker_obj.history(period='5d', interval='1d')
-            prev_close = float(hist_1d['Close'].iloc[-2]) if len(hist_1d) >= 2 else 0
+            
+            # Calculate prev_close: filter out today to ensure we get yesterday's close
+            today = datetime.now().date()
+            hist_1d_filtered = hist_1d[hist_1d.index.date < today]
+            prev_close = float(hist_1d_filtered['Close'].iloc[-1]) if len(hist_1d_filtered) >= 1 else 0
+            
             if not hist_1m.empty:
                 last = hist_1m.dropna(subset=['Close']).iloc[-1]
                 ltp_yf = float(last['Close'])
                 if ltp_yf > 0:
-                    logger.info(f"yfinance 1m fallback for {symbol}: LTP={ltp_yf}")
+                    logger.info(f"yfinance 1m fallback for {symbol}: LTP={ltp_yf}, PrevClose={prev_close}")
                     return jsonify({
                         'success': True,
                         'symbol': symbol,
@@ -690,9 +704,8 @@ def get_quote():
             # Outside market hours: fall back to last daily close
             if not hist_1d.empty:
                 ltp_yf = float(hist_1d['Close'].iloc[-1])
-                prev_close = float(hist_1d['Close'].iloc[-2]) if len(hist_1d) >= 2 else ltp_yf
                 if ltp_yf > 0:
-                    logger.info(f"yfinance 1d fallback for {symbol}: LTP={ltp_yf}")
+                    logger.info(f"yfinance 1d fallback for {symbol}: LTP={ltp_yf}, PrevClose={prev_close}")
                     return jsonify({
                         'success': True,
                         'symbol': symbol,
