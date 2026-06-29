@@ -1,44 +1,32 @@
 [
   {
-    "ticker": "IFCI",
-    "entry_price": 75.63,
-    "current_price": 77.05,
-    "target": 94.54,
-    "stop_loss": 70.34,
-    "quantity": 4000,
+    "ticker": "TCS",
+    "entry_price": 2092.07,
+    "current_price": 2097.9,
+    "target": 2615.09,
+    "stop_loss": 1945.63,
+    "quantity": 100,
     "status": "Open",
     "source": "Angel One",
     "is_angel_synced": true,
-    "triggered_at": "2026-06-29T09:04:11.621735"
+    "triggered_at": "2026-06-29T13:52:32.564983"
   },
   {
-    "ticker": "KIRLOSIND",
-    "entry_price": 3903.45,
-    "current_price": 3993.1,
-    "target": 4879.31,
-    "stop_loss": 3630.21,
-    "quantity": 40,
+    "ticker": "BATAINDIA",
+    "entry_price": 707.06,
+    "current_price": 696.3,
+    "target": 883.82,
+    "stop_loss": 657.57,
+    "quantity": 600,
     "status": "Open",
     "source": "Angel One",
     "is_angel_synced": true,
-    "triggered_at": "2026-06-29T09:04:11.621751"
-  },
-  {
-    "ticker": "MAPMYINDIA",
-    "entry_price": 838.54,
-    "current_price": 830.2,
-    "target": 1048.17,
-    "stop_loss": 779.84,
-    "quantity": 300,
-    "status": "Open",
-    "source": "Angel One",
-    "is_angel_synced": true,
-    "triggered_at": "2026-06-29T09:04:11.621759"
+    "triggered_at": "2026-06-29T09:04:11.621777"
   },
   {
     "ticker": "CELLO",
     "entry_price": 375.49,
-    "current_price": 374.45,
+    "current_price": 374.05,
     "target": 469.36,
     "stop_loss": 349.21,
     "quantity": 400,
@@ -50,7 +38,7 @@
   {
     "ticker": "CLEAN",
     "entry_price": 773.41,
-    "current_price": 770.0,
+    "current_price": 767.8,
     "target": 966.76,
     "stop_loss": 719.27,
     "quantity": 300,
@@ -60,16 +48,40 @@
     "triggered_at": "2026-06-29T09:04:11.621771"
   },
   {
-    "ticker": "BATAINDIA",
-    "entry_price": 707.06,
-    "current_price": 697.55,
-    "target": 883.82,
-    "stop_loss": 657.57,
-    "quantity": 600,
+    "ticker": "IFCI",
+    "entry_price": 75.63,
+    "current_price": 77.18,
+    "target": 94.54,
+    "stop_loss": 70.34,
+    "quantity": 4000,
     "status": "Open",
     "source": "Angel One",
     "is_angel_synced": true,
-    "triggered_at": "2026-06-29T09:04:11.621777"
+    "triggered_at": "2026-06-29T09:04:11.621735"
+  },
+  {
+    "ticker": "MAPMYINDIA",
+    "entry_price": 832.57,
+    "current_price": 817.95,
+    "target": 1048.17,
+    "stop_loss": 779.84,
+    "quantity": 400,
+    "status": "Open",
+    "source": "Angel One",
+    "is_angel_synced": true,
+    "triggered_at": "2026-06-29T09:04:11.621759"
+  },
+  {
+    "ticker": "TATAELXSI",
+    "entry_price": 3984.6,
+    "current_price": 3980.4,
+    "target": 4980.75,
+    "stop_loss": 3705.68,
+    "quantity": 100,
+    "status": "Open",
+    "source": "Angel One",
+    "is_angel_synced": true,
+    "triggered_at": "2026-06-29T13:52:32.565039"
   },
   {
     "ticker": "BALKRISIND",
