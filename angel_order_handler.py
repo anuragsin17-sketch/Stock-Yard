@@ -983,6 +983,16 @@ def sync_trades():
             with open('radar_trades.json', 'w') as f:
                 json.dump(updated_radar, f, indent=2)
             logger.info(f"Updated radar_trades.json with {len(updated_radar)} open trades")
+            
+            # ── Update DynamoDB with synced open trades ────────────────────
+            try:
+                from dynamodb_helper import get_helper
+                dh = get_helper()
+                if dh:
+                    dh.write_all_trades(open_trades)
+                    logger.info(f"✅ DynamoDB updated with {len(open_trades)} open trades")
+            except Exception as db_err:
+                logger.warning(f"DynamoDB update failed (non-fatal): {db_err}")
         except Exception as e:
             logger.warning(f"radar_trades.json update failed (non-fatal): {e}")
 
