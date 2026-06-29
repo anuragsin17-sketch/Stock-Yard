@@ -2,9 +2,10 @@ name: Volume Gainer Tracker & Monitor
 
 on:
   schedule:
-    # ── After-close scan: Mon-Fri at 10:10 UTC (3:40 PM IST) ──────────────
+    # ── After-close scan: Mon-Fri at 10:20 UTC (3:50 PM IST) ──────────────
     # Runs once after market closes to fetch top gainers and save watchlist
-    - cron: '10 10 * * 1-5'
+    # Delayed to 10:20 UTC to avoid conflict with 10:00 UTC monitor run
+    - cron: '20 10 * * 1-5'
 
     # ── Intraday monitor: Mon-Fri every 30 min, 3:45-10:00 UTC (9:15-3:30 IST) ──
     - cron: '15,45 3 * * 1-5'
@@ -45,12 +46,12 @@ jobs:
     - name: Determine run mode
       id: mode
       run: |
-        # 10:10 UTC cron = after-close tracker run
-        # Use a ±20-min window so cron delays don't cause missed scans
+        # 10:20 UTC cron = after-close tracker run
+        # Use a ±15-min window so cron delays don't cause missed scans
         HOUR=$(date -u +%H)
         MIN=$(date -u +%M)
         TOTAL_MIN=$((HOUR * 60 + MIN))
-        TARGET_MIN=$((10 * 60 + 10))   # 10:10 UTC = 610 min
+        TARGET_MIN=$((10 * 60 + 20))   # 10:20 UTC = 620 min
         DIFF=$(( TOTAL_MIN - TARGET_MIN ))
         if [ $DIFF -lt 0 ]; then DIFF=$(( -DIFF )); fi
         INPUT_MODE="${{ github.event.inputs.mode }}"
@@ -58,9 +59,9 @@ jobs:
         if [ "$INPUT_MODE" = "track" ]; then
           echo "mode=track" >> $GITHUB_OUTPUT
           echo "Running: AFTER-CLOSE TRACKER (manual)"
-        elif [ "$DIFF" -le 20 ]; then
+        elif [ "$DIFF" -le 15 ]; then
           echo "mode=track" >> $GITHUB_OUTPUT
-          echo "Running: AFTER-CLOSE TRACKER (scheduled, within ±20 min of 10:10 UTC)"
+          echo "Running: AFTER-CLOSE TRACKER (scheduled, within ±15 min of 10:20 UTC)"
         else
           echo "mode=monitor" >> $GITHUB_OUTPUT
           echo "Running: INTRADAY MONITOR (scheduled)"
