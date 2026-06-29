@@ -131,15 +131,21 @@ def write_all_trades(trades: list):
     table = _table('RadarTrades')
 
     # Clear existing
+    deleted_count = 0
     for status in ('Open', 'Triggered', 'Closed'):
         existing = table.query(
             KeyConditionExpression=Key('status').eq(status),
             ProjectionExpression='#s, trade_id',
             ExpressionAttributeNames={'#s': 'status'}
         )
+        items = existing.get('Items', [])
+        print(f"  🗑️  DynamoDB: deleting {len(items)} trades with status={status}")
         with table.batch_writer() as batch:
-            for item in existing.get('Items', []):
+            for item in items:
                 batch.delete_item(Key={'status': item['status'], 'trade_id': item['trade_id']})
+                deleted_count += 1
+
+    print(f"  ✅ DynamoDB: deleted {deleted_count} old trades")
 
     # Write all
     with table.batch_writer() as batch:
@@ -156,7 +162,7 @@ def write_all_trades(trades: list):
             item['updated_at'] = datetime.utcnow().isoformat()
             batch.put_item(Item=item)
 
-    print(f"  ✅ DynamoDB: wrote {len(trades)} trades")
+    print(f"  ✅ DynamoDB: wrote {len(trades)} new trades")
 
 
 def read_trades(status_filter: str = None) -> list:
