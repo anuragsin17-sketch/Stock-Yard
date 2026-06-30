@@ -557,7 +557,7 @@
     "fibonacciLevels": {
       "23.6%": 1387.58,
       "38.2%": 1208.19,
-      "50.0%": 1063.2,
+      "50.0%": 1063.21,
       "61.8%": 918.22,
       "78.6%": 711.8,
       "100.0%": 448.86
@@ -603,47 +603,9 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 42.5755,
+    "trendlineSlope": 42.5756,
     "anchor1Date": "2023-03",
     "anchor2Date": "2025-02"
-  },
-  {
-    "ticker": "MARUTI",
-    "currentPrice": 14115.0,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 12632.87,
-    "distanceRemaining": 0.53,
-    "signalStatus": "CRITICAL_TOUCH",
-    "notificationTrigger": true,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 36,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 17370.0,
-    "week52Low": 12094.1,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 3,
-      "entryPrice": 12632.87,
-      "strictStopLoss": 11622.24,
-      "pivotTargetExit": 15538.43
-    },
-    "fibonacciLevels": {
-      "23.6%": 14167.63,
-      "38.2%": 12186.5,
-      "50.0%": 10585.31,
-      "61.8%": 8984.12,
-      "78.6%": 6704.47,
-      "100.0%": 3800.62
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 106.5389,
-    "anchor1Date": "2021-05",
-    "anchor2Date": "2024-01"
   },
   {
     "ticker": "TORNTPOWER",
@@ -954,7 +916,7 @@
     "currentPrice": 1765.7,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 1714.94,
+    "triggerPrice": 1714.93,
     "distanceRemaining": 0.85,
     "signalStatus": "CRITICAL_TOUCH",
     "notificationTrigger": true,
@@ -968,9 +930,9 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 29,
-      "entryPrice": 1714.94,
+      "entryPrice": 1714.93,
       "strictStopLoss": 1577.74,
-      "pivotTargetExit": 2109.38
+      "pivotTargetExit": 2109.36
     },
     "fibonacciLevels": {
       "23.6%": 1772.85,
@@ -1188,10 +1150,10 @@
     "notificationTrigger": false,
     "confluenceScore": 10,
     "patternZone": "Trendline touch only",
-    "wickTouches": 16,
+    "wickTouches": 17,
     "timeframe": "monthly",
     "signalType": "TRENDLINE",
-    "week52High": 7071.5,
+    "week52High": 7039.45,
     "week52Low": 5636.5,
     "positionSizing": {
       "allocatedAmount": 50000.0,
@@ -1201,11 +1163,11 @@
       "pivotTargetExit": 8024.06
     },
     "fibonacciLevels": {
-      "23.6%": 5819.95,
-      "38.2%": 5045.69,
-      "50.0%": 4419.91,
-      "61.8%": 3794.14,
-      "78.6%": 2903.21,
+      "23.6%": 5795.46,
+      "38.2%": 5025.88,
+      "50.0%": 4403.89,
+      "61.8%": 3781.9,
+      "78.6%": 2896.35,
       "100.0%": 1768.33
     },
     "fibMatchLevel": null,
@@ -1430,8 +1392,8 @@
     },
     "fibonacciLevels": {
       "23.6%": 31171.44,
-      "38.2%": 27880.06,
-      "50.0%": 25219.9,
+      "38.2%": 27880.05,
+      "50.0%": 25219.89,
       "61.8%": 22559.74,
       "78.6%": 18772.39,
       "100.0%": 13948.03
@@ -1518,6 +1480,44 @@
     "trendlineSlope": 33.8446,
     "anchor1Date": "2021-04",
     "anchor2Date": "2026-04"
+  },
+  {
+    "ticker": "MARUTI",
+    "currentPrice": 14115.0,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 12507.66,
+    "distanceRemaining": 1.54,
+    "signalStatus": "WATCHLIST",
+    "notificationTrigger": false,
+    "confluenceScore": 10,
+    "patternZone": "Trendline touch only",
+    "wickTouches": 36,
+    "timeframe": "monthly",
+    "signalType": "TRENDLINE",
+    "week52High": 17370.0,
+    "week52Low": 12136.64,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 3,
+      "entryPrice": 12507.66,
+      "strictStopLoss": 11507.05,
+      "pivotTargetExit": 15384.42
+    },
+    "fibonacciLevels": {
+      "23.6%": 14167.63,
+      "38.2%": 12186.5,
+      "50.0%": 10585.31,
+      "61.8%": 8984.12,
+      "78.6%": 6704.47,
+      "100.0%": 3800.62
+    },
+    "fibMatchLevel": null,
+    "fibMatchPrice": null,
+    "fibMatchDistancePct": null,
+    "trendlineSlope": 102.2213,
+    "anchor1Date": "2024-01",
+    "anchor2Date": "2026-03"
   },
   {
     "ticker": "LUPIN",
@@ -3927,7 +3927,7 @@
     "wickTouches": 15,
     "timeframe": "monthly",
     "signalType": "CONFLUENCE",
-    "week52High": 477.75,
+    "week52High": 471.5,
     "week52Low": 352.49,
     "positionSizing": {
       "allocatedAmount": 50000.0,
@@ -4094,7 +4094,7 @@
       "50.0%": 2308.73,
       "61.8%": 2165.4,
       "78.6%": 1961.34,
-      "100.0%": 1701.41
+      "100.0%": 1701.4
     },
     "fibMatchLevel": "61.8%",
     "fibMatchPrice": 2085.41,
