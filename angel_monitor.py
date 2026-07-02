@@ -226,7 +226,7 @@ def check_gtt_exits():
                 trade['gtt_status'] = 'TRIGGERED'
                 changed = True
 
-                # Telegram exit notification
+                # Telegram exit notification (GTT triggered)
                 msg = (
                     f"{icon} *POSITION CLOSED — {exit_reason}*\n\n"
                     f"Stock: *{ticker}*\n"
@@ -239,6 +239,9 @@ def check_gtt_exits():
                 )
                 send_telegram(msg)
                 print(f"  {icon} GTT triggered: {ticker} | {exit_reason} | P&L {pnl_pct:+.2f}%")
+                
+                # Mark as notified to prevent duplicate in sync_angel_one_positions
+                trade['exit_notified'] = True
 
             elif gtt_status in ('CANCELLED', 'EXPIRED', 'REJECTED'):
                 trade['gtt_status'] = gtt_status
@@ -487,6 +490,11 @@ def sync_angel_one_positions():
                     old_trade = next((t for t in existing
                                       if t.get('ticker', '').upper() == ticker_up), None)
                     if old_trade:
+                        # SKIP notification if already sent by check_gtt_exits()
+                        if old_trade.get('exit_notified'):
+                            print(f"  ⊘ {ticker_up}: Exit already notified (skip duplicate)")
+                            continue
+                        
                         entry  = float(old_trade.get('entry_price', 0) or 0)
                         qty    = int(old_trade.get('quantity', 0) or 0)
                         pnl    = round((exit_price - entry) * qty, 2) if entry > 0 else 0
