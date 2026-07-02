@@ -242,6 +242,20 @@ def check_gtt_exits():
                 
                 # Mark as notified to prevent duplicate in sync_angel_one_positions
                 trade['exit_notified'] = True
+                    f"{icon} *POSITION CLOSED — {exit_reason}*\n\n"
+                    f"Stock: *{ticker}*\n"
+                    f"Entry: ₹{entry_price:,.2f}\n"
+                    f"Exit:  ₹{exit_price:,.2f}\n"
+                    f"P&L:   *{pnl_pct:+.2f}%*\n"
+                    f"Qty:   {quantity} shares\n"
+                    f"GTT:   {gtt_id}\n"
+                    f"Time:  {datetime.now().strftime('%Y-%m-%d %H:%M IST')}"
+                )
+                send_telegram(msg)
+                print(f"  {icon} GTT triggered: {ticker} | {exit_reason} | P&L {pnl_pct:+.2f}%")
+                
+                # Mark as notified to prevent duplicate in sync_angel_one_positions
+                trade['exit_notified'] = True
 
             elif gtt_status in ('CANCELLED', 'EXPIRED', 'REJECTED'):
                 trade['gtt_status'] = gtt_status
