@@ -1,0 +1,57 @@
+name: Daily Volume Scanner (Simplified)
+
+on:
+  schedule:
+    # Run at 10:30 UTC (4:00 PM IST) every weekday - after market close
+    - cron: '30 10 * * 1-5'
+  
+  workflow_dispatch:
+    # Allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: pip install yfinance pandas requests
+      
+      - name: Run volume scanner
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python volume_gainer_tracker.py
+      
+      - name: Commit and push changes
+        run: |
+          git config user.name "Stock Yard Bot"
+          git config user.email "bot@stockyard.io"
+          git add volume_gainer_watchlist.json || true
+          git diff --staged --quiet || git commit -m "data: volume scanner $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git pull --rebase origin main || true
+          git push
+      
+      - name: Push to public repo
+        env:
+          PUBLIC_REPO_TOKEN: ${{ secrets.PUBLIC_REPO_TOKEN }}
+        run: |
+          if [ ! -f volume_gainer_watchlist.json ]; then exit 0; fi
+          git clone https://x-access-token:${PUBLIC_REPO_TOKEN}@github.com/anuragsin17-sketch/Stock-Yard-Public.git public
+          cp volume_gainer_watchlist.json public/
+          cd public
+          git config user.name "Stock Yard Bot"
+          git config user.email "bot@stockyard.io"
+          git add volume_gainer_watchlist.json
+          git diff --staged --quiet || git commit -m "data: volume scanner $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git push
