@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-07-02 22:58 IST",
-    "date": "2026-07-02",
-    "new_stocks": 0,
-    "total": 99
+    "timestamp": "2026-07-03 12:25 IST",
+    "date": "2026-07-03",
+    "new_stocks": 6,
+    "total": 147
   },
   "stocks": [
     {
@@ -3051,6 +3051,108 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-07-03T12:20:31.985874",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "ELGIRUBCO",
+      "company": "ELGIRUBCO",
+      "added_date": "2026-07-03",
+      "gain_pct": 19.99,
+      "close_price": 55.29,
+      "prev_close": 46.08,
+      "prev_day_low": 45.57,
+      "alert_threshold": 47.85,
+      "sl_price": 43.75,
+      "target_price": 52.41,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 90.5,
+      "week_52_low": 32.72
+    },
+    {
+      "ticker": "TPLPLASTEH",
+      "company": "TPLPLASTEH",
+      "added_date": "2026-07-03",
+      "gain_pct": 19.66,
+      "close_price": 87.16,
+      "prev_close": 72.84,
+      "prev_day_low": 70.85,
+      "alert_threshold": 74.39,
+      "sl_price": 68.02,
+      "target_price": 81.48,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 87.4,
+      "week_52_low": 50.01
+    },
+    {
+      "ticker": "DIGITIDE",
+      "company": "DIGITIDE",
+      "added_date": "2026-07-03",
+      "gain_pct": 15.37,
+      "close_price": 102.22,
+      "prev_close": 88.6,
+      "prev_day_low": 87.23,
+      "alert_threshold": 91.59,
+      "sl_price": 83.74,
+      "target_price": 100.31,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 279.69,
+      "week_52_low": 69.9
+    },
+    {
+      "ticker": "SUMICHEM",
+      "company": "SUMICHEM",
+      "added_date": "2026-07-03",
+      "gain_pct": 13.85,
+      "close_price": 502.3,
+      "prev_close": 441.2,
+      "prev_day_low": 433.45,
+      "alert_threshold": 455.12,
+      "sl_price": 416.11,
+      "target_price": 498.47,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 665.0,
+      "week_52_low": 362.6
+    },
+    {
+      "ticker": "SOLARWORLD",
+      "company": "SOLARWORLD",
+      "added_date": "2026-07-03",
+      "gain_pct": 13.02,
+      "close_price": 209.51,
+      "prev_close": 185.38,
+      "prev_day_low": 181.83,
+      "alert_threshold": 190.92,
+      "sl_price": 174.56,
+      "target_price": 209.1,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 388.5,
+      "week_52_low": 139.19
+    },
+    {
+      "ticker": "INDOFARM",
+      "company": "INDOFARM",
+      "added_date": "2026-07-03",
+      "gain_pct": 12.11,
+      "close_price": 163.61,
+      "prev_close": 145.94,
+      "prev_day_low": 143.73,
+      "alert_threshold": 150.92,
+      "sl_price": 137.98,
+      "target_price": 165.29,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 271.69,
+      "week_52_low": 110.7
     }
   ]
 }
