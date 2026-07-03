@@ -80,13 +80,16 @@ def check_nifty_it():
 
     state = load_state()
     today = datetime.now().strftime('%Y-%m-%d')
+    now = datetime.now()
+    current_time = now.strftime('%H:%M')
     
     # Reset state daily
     if state.get('date') != today:
         state = {
             'date': today,
             'day_high': current_price,
-            'alerted_500': False
+            'alerted_500': False,
+            'sent_1pm_update': False
         }
     
     # Track day's high
@@ -100,6 +103,19 @@ def check_nifty_it():
     drop_pct = (drop / day_high * 100) if day_high > 0 else 0
     
     print(f"📊 Nifty IT: ₹{current_price:,.2f} | High: ₹{day_high:,.2f} | Drop: {drop:,.2f} ({drop_pct:.2f}%)")
+    
+    # Send 1 PM IST update on market days (Monday-Friday, excluding weekends)
+    # IST is UTC+5:30, so 1 PM IST = 07:30 UTC
+    if now.weekday() < 5 and current_time >= '07:30' and current_time < '07:40' and not state.get('sent_1pm_update'):
+        send_telegram(
+            f"📊 *NIFTY IT - 1 PM IST Update*\n\n"
+            f"Current Price: ₹{current_price:,.2f}\n"
+            f"Day High: ₹{day_high:,.2f}\n"
+            f"Change from High: {drop:,.2f} points ({drop_pct:.2f}%)\n\n"
+            f"Date: {today}"
+        )
+        state['sent_1pm_update'] = True
+        print(f"📊 1 PM IST UPDATE SENT: Nifty IT at ₹{current_price:,.2f}")
     
     # Alert if dropped 500+ points and not already alerted today
     if drop >= 500 and not state.get('alerted_500'):
@@ -119,10 +135,10 @@ def check_nifty_it():
 def main():
     print("=" * 60)
     print("NIFTY IT MONITOR STARTED")
-    print(f"Checking every {CHECK_INTERVAL}s for 500-point drops")
+    print(f"Checking every {CHECK_INTERVAL}s for 500-point drops and 1 PM IST updates")
     print("=" * 60)
     
-    send_telegram("🟢 *Nifty IT Monitor started* — tracking 500-point drops")
+    send_telegram("🟢 *Nifty IT Monitor started* — tracking 500-point drops + 1 PM IST updates")
     
     while True:
         try:
