@@ -42,7 +42,7 @@
     "currentPrice": 11079.0,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 10510.95,
+    "triggerPrice": 10510.96,
     "distanceRemaining": 0.02,
     "signalStatus": "CRITICAL_TOUCH",
     "notificationTrigger": true,
@@ -56,9 +56,9 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 4,
-      "entryPrice": 10510.95,
-      "strictStopLoss": 9670.07,
-      "pivotTargetExit": 12928.47
+      "entryPrice": 10510.96,
+      "strictStopLoss": 9670.08,
+      "pivotTargetExit": 12928.48
     },
     "fibonacciLevels": {
       "23.6%": 11450.45,
@@ -80,7 +80,7 @@
     "currentPrice": 1230.2,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 1209.5,
+    "triggerPrice": 1209.49,
     "distanceRemaining": 0.1,
     "signalStatus": "CRITICAL_TOUCH",
     "notificationTrigger": true,
@@ -94,9 +94,9 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 41,
-      "entryPrice": 1209.5,
-      "strictStopLoss": 1112.74,
-      "pivotTargetExit": 1487.68
+      "entryPrice": 1209.49,
+      "strictStopLoss": 1112.73,
+      "pivotTargetExit": 1487.67
     },
     "fibonacciLevels": {
       "23.6%": 1043.88,
@@ -147,7 +147,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 110.6244,
+    "trendlineSlope": 110.6245,
     "anchor1Date": "2020-09",
     "anchor2Date": "2024-11"
   },
@@ -342,6 +342,44 @@
     "anchor2Date": "2026-06"
   },
   {
+    "ticker": "M&M",
+    "currentPrice": 3136.9,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 3063.95,
+    "distanceRemaining": 0.78,
+    "signalStatus": "CRITICAL_TOUCH",
+    "notificationTrigger": true,
+    "confluenceScore": 10,
+    "patternZone": "Trendline touch only",
+    "wickTouches": 17,
+    "timeframe": "monthly",
+    "signalType": "TRENDLINE",
+    "week52High": 3799.99,
+    "week52Low": 2865.9,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 16,
+      "entryPrice": 3063.95,
+      "strictStopLoss": 2818.83,
+      "pivotTargetExit": 3768.66
+    },
+    "fibonacciLevels": {
+      "23.6%": 2962.1,
+      "38.2%": 2443.74,
+      "50.0%": 2024.79,
+      "61.8%": 1605.84,
+      "78.6%": 1009.37,
+      "100.0%": 249.58
+    },
+    "fibMatchLevel": null,
+    "fibMatchPrice": null,
+    "fibMatchDistancePct": null,
+    "trendlineSlope": 49.5114,
+    "anchor1Date": "2023-03",
+    "anchor2Date": "2026-03"
+  },
+  {
     "ticker": "MARUTI",
     "currentPrice": 14366.0,
     "ema50": null,
@@ -416,44 +454,6 @@
     "trendlineSlope": 3.5623,
     "anchor1Date": "2022-09",
     "anchor2Date": "2026-06"
-  },
-  {
-    "ticker": "M&M",
-    "currentPrice": 3136.9,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 3063.48,
-    "distanceRemaining": 0.8,
-    "signalStatus": "CRITICAL_TOUCH",
-    "notificationTrigger": true,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 17,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 3799.42,
-    "week52Low": 2865.47,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 16,
-      "entryPrice": 3063.48,
-      "strictStopLoss": 2818.4,
-      "pivotTargetExit": 3768.08
-    },
-    "fibonacciLevels": {
-      "23.6%": 2961.65,
-      "38.2%": 2443.36,
-      "50.0%": 2024.48,
-      "61.8%": 1605.6,
-      "78.6%": 1009.22,
-      "100.0%": 249.55
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 49.5038,
-    "anchor1Date": "2023-03",
-    "anchor2Date": "2026-03"
   },
   {
     "ticker": "TVSMOTOR",
@@ -862,7 +862,7 @@
       "23.6%": 31171.44,
       "38.2%": 27880.05,
       "50.0%": 25219.89,
-      "61.8%": 22559.73,
+      "61.8%": 22559.74,
       "78.6%": 18772.39,
       "100.0%": 13948.03
     },
@@ -1790,8 +1790,8 @@
     "currentPrice": 163.09,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 156.92,
-    "distanceRemaining": 2.98,
+    "triggerPrice": 156.9,
+    "distanceRemaining": 2.99,
     "signalStatus": "WATCHLIST",
     "notificationTrigger": false,
     "confluenceScore": 10,
@@ -1799,27 +1799,27 @@
     "wickTouches": 19,
     "timeframe": "monthly",
     "signalType": "TRENDLINE",
-    "week52High": 199.61,
-    "week52Low": 121.08,
+    "week52High": 199.6,
+    "week52Low": 121.07,
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 318,
-      "entryPrice": 156.92,
-      "strictStopLoss": 144.37,
-      "pivotTargetExit": 193.01
+      "entryPrice": 156.9,
+      "strictStopLoss": 144.35,
+      "pivotTargetExit": 192.99
     },
     "fibonacciLevels": {
-      "23.6%": 156.99,
-      "38.2%": 130.62,
-      "50.0%": 109.31,
-      "61.8%": 88.0,
+      "23.6%": 156.98,
+      "38.2%": 130.61,
+      "50.0%": 109.3,
+      "61.8%": 87.99,
       "78.6%": 57.65,
       "100.0%": 19.0
     },
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 2.5868,
+    "trendlineSlope": 2.5866,
     "anchor1Date": "2023-03",
     "anchor2Date": "2026-05"
   },
@@ -1976,44 +1976,6 @@
     "anchor2Date": "2025-03"
   },
   {
-    "ticker": "TECHM",
-    "currentPrice": 1410.1,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 1403.37,
-    "distanceRemaining": 3.4,
-    "signalStatus": "MONITORING",
-    "notificationTrigger": false,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 25,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 1805.0,
-    "week52Low": 1269.64,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 35,
-      "entryPrice": 1403.37,
-      "strictStopLoss": 1291.1,
-      "pivotTargetExit": 1726.15
-    },
-    "fibonacciLevels": {
-      "23.6%": 1469.26,
-      "38.2%": 1261.55,
-      "50.0%": 1093.68,
-      "61.8%": 925.81,
-      "78.6%": 686.8,
-      "100.0%": 382.36
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 12.3193,
-    "anchor1Date": "2022-06",
-    "anchor2Date": "2024-04"
-  },
-  {
     "ticker": "KALYANKJIL",
     "currentPrice": 382.05,
     "ema50": null,
@@ -2126,6 +2088,44 @@
     "trendlineSlope": 2.0079,
     "anchor1Date": "2022-02",
     "anchor2Date": "2023-06"
+  },
+  {
+    "ticker": "TECHM",
+    "currentPrice": 1410.1,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 1404.95,
+    "distanceRemaining": 3.51,
+    "signalStatus": "MONITORING",
+    "notificationTrigger": false,
+    "confluenceScore": 10,
+    "patternZone": "Trendline touch only",
+    "wickTouches": 25,
+    "timeframe": "monthly",
+    "signalType": "TRENDLINE",
+    "week52High": 1807.04,
+    "week52Low": 1271.07,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 35,
+      "entryPrice": 1404.95,
+      "strictStopLoss": 1292.55,
+      "pivotTargetExit": 1728.09
+    },
+    "fibonacciLevels": {
+      "23.6%": 1470.92,
+      "38.2%": 1262.98,
+      "50.0%": 1094.91,
+      "61.8%": 926.85,
+      "78.6%": 687.58,
+      "100.0%": 382.79
+    },
+    "fibMatchLevel": null,
+    "fibMatchPrice": null,
+    "fibMatchDistancePct": null,
+    "trendlineSlope": 12.3332,
+    "anchor1Date": "2022-06",
+    "anchor2Date": "2024-04"
   },
   {
     "ticker": "ICICIGI",
@@ -3371,7 +3371,7 @@
       "38.2%": 2656.97,
       "50.0%": 2324.51,
       "61.8%": 1992.05,
-      "78.6%": 1518.72,
+      "78.6%": 1518.73,
       "100.0%": 915.8
     },
     "fibMatchLevel": "61.8%",
@@ -3828,7 +3828,7 @@
       "50.0%": 2308.73,
       "61.8%": 2165.4,
       "78.6%": 1961.34,
-      "100.0%": 1701.41
+      "100.0%": 1701.4
     },
     "fibMatchLevel": "50.0%",
     "fibMatchPrice": 2244.01,
