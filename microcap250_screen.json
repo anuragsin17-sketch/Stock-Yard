@@ -223,7 +223,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 222.5532,
+    "trendlineSlope": 222.5533,
     "anchor1Date": "2023-03",
     "anchor2Date": "2024-03"
   },
@@ -2236,7 +2236,7 @@
     },
     "fibMatchLevel": "50.0%",
     "fibMatchPrice": 128.71,
-    "fibMatchDistancePct": 3.32,
+    "fibMatchDistancePct": 3.31,
     "trendlineSlope": 1.3837,
     "anchor1Date": "2020-09",
     "anchor2Date": "2025-03"
@@ -2389,7 +2389,7 @@
     "fibMatchLevel": "78.6%",
     "fibMatchPrice": 516.76,
     "fibMatchDistancePct": 4.43,
-    "trendlineSlope": 0.6292,
+    "trendlineSlope": 0.6291,
     "anchor1Date": "2023-08",
     "anchor2Date": "2026-05"
   },
