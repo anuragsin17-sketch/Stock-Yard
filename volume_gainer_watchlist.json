@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-07-06 10:22 IST",
-    "date": "2026-07-03",
-    "new_stocks": 0,
-    "total": 147
+    "timestamp": "2026-07-06 14:06 IST",
+    "date": "2026-07-06",
+    "new_stocks": 6,
+    "total": 153
   },
   "stocks": [
     {
@@ -3215,6 +3215,108 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-07-06T14:03:14.432091",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "AARTECH",
+      "company": "AARTECH",
+      "added_date": "2026-07-06",
+      "gain_pct": 20.0,
+      "close_price": 57.48,
+      "prev_close": 47.9,
+      "prev_day_low": 46.01,
+      "alert_threshold": 48.31,
+      "sl_price": 44.17,
+      "target_price": 52.91,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 76.24,
+      "week_52_low": 33.51
+    },
+    {
+      "ticker": "KAUSHALYA",
+      "company": "KAUSHALYA",
+      "added_date": "2026-07-06",
+      "gain_pct": 20.0,
+      "close_price": 1208.2,
+      "prev_close": 1006.85,
+      "prev_day_low": 1020.13,
+      "alert_threshold": 1071.14,
+      "sl_price": 979.32,
+      "target_price": 1173.15,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 1841.9,
+      "week_52_low": 750.0
+    },
+    {
+      "ticker": "MAZDA",
+      "company": "MAZDA",
+      "added_date": "2026-07-06",
+      "gain_pct": 19.41,
+      "close_price": 274.03,
+      "prev_close": 229.49,
+      "prev_day_low": 233.03,
+      "alert_threshold": 244.68,
+      "sl_price": 223.71,
+      "target_price": 267.98,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 337.77,
+      "week_52_low": 159.2
+    },
+    {
+      "ticker": "IVP",
+      "company": "IVP",
+      "added_date": "2026-07-06",
+      "gain_pct": 17.33,
+      "close_price": 189.68,
+      "prev_close": 161.67,
+      "prev_day_low": 156.85,
+      "alert_threshold": 164.69,
+      "sl_price": 150.58,
+      "target_price": 180.38,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 202.4,
+      "week_52_low": 110.0
+    },
+    {
+      "ticker": "FERMENTA",
+      "company": "FERMENTA",
+      "added_date": "2026-07-06",
+      "gain_pct": 15.17,
+      "close_price": 395.05,
+      "prev_close": 343.0,
+      "prev_day_low": 338.93,
+      "alert_threshold": 355.88,
+      "sl_price": 325.37,
+      "target_price": 389.77,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 401.0,
+      "week_52_low": 248.85
+    },
+    {
+      "ticker": "OMAXE",
+      "company": "OMAXE",
+      "added_date": "2026-07-06",
+      "gain_pct": 13.08,
+      "close_price": 89.9,
+      "prev_close": 79.5,
+      "prev_day_low": 77.71,
+      "alert_threshold": 81.6,
+      "sl_price": 74.6,
+      "target_price": 89.37,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 110.0,
+      "week_52_low": 62.5
     }
   ]
 }
