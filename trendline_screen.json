@@ -147,7 +147,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 110.6244,
+    "trendlineSlope": 110.6245,
     "anchor1Date": "2020-09",
     "anchor2Date": "2024-11"
   },
@@ -1735,10 +1735,10 @@
     "fibonacciLevels": {
       "23.6%": 137718.03,
       "38.2%": 121710.31,
-      "50.0%": 108772.56,
+      "50.0%": 108772.57,
       "61.8%": 95834.82,
-      "78.6%": 77414.97,
-      "100.0%": 53951.6
+      "78.6%": 77414.98,
+      "100.0%": 53951.61
     },
     "fibMatchLevel": null,
     "fibMatchPrice": null,
@@ -1933,7 +1933,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 28.6596,
+    "trendlineSlope": 28.6597,
     "anchor1Date": "2025-03",
     "anchor2Date": "2025-10"
   },
@@ -2085,7 +2085,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 12.3332,
+    "trendlineSlope": 12.3333,
     "anchor1Date": "2022-06",
     "anchor2Date": "2024-04"
   },
@@ -2161,7 +2161,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 16.2353,
+    "trendlineSlope": 16.2354,
     "anchor1Date": "2023-03",
     "anchor2Date": "2026-04"
   },
@@ -3409,7 +3409,7 @@
       "38.2%": 2656.97,
       "50.0%": 2324.51,
       "61.8%": 1992.05,
-      "78.6%": 1518.73,
+      "78.6%": 1518.72,
       "100.0%": 915.8
     },
     "fibMatchLevel": "61.8%",
@@ -3600,7 +3600,7 @@
       "50.0%": 2308.73,
       "61.8%": 2165.4,
       "78.6%": 1961.34,
-      "100.0%": 1701.4
+      "100.0%": 1701.41
     },
     "fibMatchLevel": "50.0%",
     "fibMatchPrice": 2244.01,
@@ -3634,7 +3634,7 @@
     },
     "fibonacciLevels": {
       "23.6%": 4691.66,
-      "38.2%": 3983.26,
+      "38.2%": 3983.25,
       "50.0%": 3410.7,
       "61.8%": 2838.15,
       "78.6%": 2023.0,

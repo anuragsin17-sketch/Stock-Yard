@@ -299,7 +299,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 222.5533,
+    "trendlineSlope": 222.5532,
     "anchor1Date": "2023-03",
     "anchor2Date": "2024-03"
   },
@@ -2052,44 +2052,6 @@
     "anchor2Date": null
   },
   {
-    "ticker": "JSLL",
-    "currentPrice": 570.4,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 589.31,
-    "distanceRemaining": 3.21,
-    "signalStatus": "WATCHLIST",
-    "notificationTrigger": false,
-    "confluenceScore": 9,
-    "patternZone": "Fib 78.6% support",
-    "wickTouches": null,
-    "timeframe": "monthly",
-    "signalType": "FIBONACCI",
-    "week52High": null,
-    "week52Low": null,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 84,
-      "entryPrice": 589.31,
-      "strictStopLoss": 542.17,
-      "pivotTargetExit": 724.85
-    },
-    "fibonacciLevels": {
-      "23.6%": 1922.97,
-      "38.2%": 1568.94,
-      "50.0%": 1282.81,
-      "61.8%": 996.68,
-      "78.6%": 589.31,
-      "100.0%": 70.39
-    },
-    "fibMatchLevel": "78.6%",
-    "fibMatchPrice": 589.31,
-    "fibMatchDistancePct": 3.21,
-    "trendlineSlope": null,
-    "anchor1Date": null,
-    "anchor2Date": null
-  },
-  {
     "ticker": "IFBIND",
     "currentPrice": 1247.3,
     "ema50": null,
@@ -2541,7 +2503,7 @@
     "fibMatchLevel": "78.6%",
     "fibMatchPrice": 516.76,
     "fibMatchDistancePct": 2.47,
-    "trendlineSlope": 0.6292,
+    "trendlineSlope": 0.6291,
     "anchor1Date": "2023-08",
     "anchor2Date": "2026-05"
   },
@@ -2772,6 +2734,44 @@
     "trendlineSlope": 1.3837,
     "anchor1Date": "2020-09",
     "anchor2Date": "2025-03"
+  },
+  {
+    "ticker": "JSLL",
+    "currentPrice": 570.4,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 534.79,
+    "distanceRemaining": 3.59,
+    "signalStatus": "MONITORING",
+    "notificationTrigger": false,
+    "confluenceScore": 8,
+    "patternZone": "Confluence: Trendline + Fib 78.6% \u2713\u2713",
+    "wickTouches": 4,
+    "timeframe": "monthly",
+    "signalType": "CONFLUENCE",
+    "week52High": 849.5,
+    "week52Low": 492.0,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 93,
+      "entryPrice": 534.79,
+      "strictStopLoss": 492.01,
+      "pivotTargetExit": 657.79
+    },
+    "fibonacciLevels": {
+      "23.6%": 1922.97,
+      "38.2%": 1568.94,
+      "50.0%": 1282.81,
+      "61.8%": 996.68,
+      "78.6%": 589.31,
+      "100.0%": 70.39
+    },
+    "fibMatchLevel": "78.6%",
+    "fibMatchPrice": 589.31,
+    "fibMatchDistancePct": 3.21,
+    "trendlineSlope": 10.3907,
+    "anchor1Date": "2022-11",
+    "anchor2Date": "2025-06"
   },
   {
     "ticker": "SUDARSCHEM",
