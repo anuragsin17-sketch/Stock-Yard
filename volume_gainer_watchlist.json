@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-07-07 10:23 IST",
-    "date": "2026-07-06",
-    "new_stocks": 0,
-    "total": 153
+    "timestamp": "2026-07-07 12:41 IST",
+    "date": "2026-07-07",
+    "new_stocks": 5,
+    "total": 158
   },
   "stocks": [
     {
@@ -3401,6 +3401,91 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-07-07T12:39:14.640035",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "ZSARACOM",
+      "company": "ZSARACOM",
+      "added_date": "2026-07-07",
+      "gain_pct": 20.0,
+      "close_price": 12404.0,
+      "prev_close": 10337.0,
+      "prev_day_low": 10486.0,
+      "alert_threshold": 11010.3,
+      "sl_price": 10066.56,
+      "target_price": 12058.9,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 12404.0,
+      "week_52_low": 9000.0
+    },
+    {
+      "ticker": "SHAREINDIA",
+      "company": "SHAREINDIA",
+      "added_date": "2026-07-07",
+      "gain_pct": 20.0,
+      "close_price": 164.91,
+      "prev_close": 137.43,
+      "prev_day_low": 135.23,
+      "alert_threshold": 141.99,
+      "sl_price": 129.82,
+      "target_price": 155.51,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 211.0,
+      "week_52_low": 115.36
+    },
+    {
+      "ticker": "DBSTOCKBRO",
+      "company": "DBSTOCKBRO",
+      "added_date": "2026-07-07",
+      "gain_pct": 16.96,
+      "close_price": 42.14,
+      "prev_close": 36.03,
+      "prev_day_low": 34.56,
+      "alert_threshold": 36.29,
+      "sl_price": 33.18,
+      "target_price": 39.74,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 43.23,
+      "week_52_low": 23.15
+    },
+    {
+      "ticker": "IOLCP",
+      "company": "IOLCP",
+      "added_date": "2026-07-07",
+      "gain_pct": 14.25,
+      "close_price": 165.04,
+      "prev_close": 144.46,
+      "prev_day_low": 142.34,
+      "alert_threshold": 149.46,
+      "sl_price": 136.65,
+      "target_price": 163.69,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 173.35,
+      "week_52_low": 67.19
+    },
+    {
+      "ticker": "NAUKRI",
+      "company": "NAUKRI",
+      "added_date": "2026-07-07",
+      "gain_pct": 13.1,
+      "close_price": 1159.45,
+      "prev_close": 1025.15,
+      "prev_day_low": 1008.42,
+      "alert_threshold": 1058.84,
+      "sl_price": 968.08,
+      "target_price": 1159.68,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 1489.0,
+      "week_52_low": 908.3
     }
   ]
 }
