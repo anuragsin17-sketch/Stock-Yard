@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-07-08 10:20 IST",
-    "date": "2026-07-07",
-    "new_stocks": 0,
-    "total": 158
+    "timestamp": "2026-07-08 12:03 IST",
+    "date": "2026-07-08",
+    "new_stocks": 3,
+    "total": 161
   },
   "stocks": [
     {
@@ -3583,6 +3583,57 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-07-08T11:58:09.161434",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "UNICHEMLAB",
+      "company": "UNICHEMLAB",
+      "added_date": "2026-07-08",
+      "gain_pct": 20.0,
+      "close_price": 572.7,
+      "prev_close": 477.25,
+      "prev_day_low": 468.15,
+      "alert_threshold": 491.56,
+      "sl_price": 449.42,
+      "target_price": 538.37,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 657.95,
+      "week_52_low": 278.2
+    },
+    {
+      "ticker": "BANARBEADS",
+      "company": "BANARBEADS",
+      "added_date": "2026-07-08",
+      "gain_pct": 15.06,
+      "close_price": 116.82,
+      "prev_close": 101.53,
+      "prev_day_low": 98.98,
+      "alert_threshold": 103.93,
+      "sl_price": 95.02,
+      "target_price": 113.83,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 164.7,
+      "week_52_low": 96.05
+    },
+    {
+      "ticker": "DPABHUSHAN",
+      "company": "DPABHUSHAN",
+      "added_date": "2026-07-08",
+      "gain_pct": 12.25,
+      "close_price": 1076.05,
+      "prev_close": 958.6,
+      "prev_day_low": 927.08,
+      "alert_threshold": 973.43,
+      "sl_price": 890.0,
+      "target_price": 1066.14,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 1729.6,
+      "week_52_low": 866.1
     }
   ]
 }
