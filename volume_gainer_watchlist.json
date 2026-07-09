@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-07-09 10:21 IST",
-    "date": "2026-07-08",
-    "new_stocks": 0,
-    "total": 161
+    "timestamp": "2026-07-09 13:26 IST",
+    "date": "2026-07-09",
+    "new_stocks": 5,
+    "total": 166
   },
   "stocks": [
     {
@@ -3669,6 +3669,91 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-07-09T11:43:20.067266",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "KALYANKJIL",
+      "company": "KALYANKJIL",
+      "added_date": "2026-07-09",
+      "gain_pct": 18.4,
+      "close_price": 443.0,
+      "prev_close": 374.15,
+      "prev_day_low": 370.29,
+      "alert_threshold": 388.8,
+      "sl_price": 355.48,
+      "target_price": 425.83,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 617.7,
+      "week_52_low": 327.05
+    },
+    {
+      "ticker": "TBZ",
+      "company": "TBZ",
+      "added_date": "2026-07-09",
+      "gain_pct": 14.8,
+      "close_price": 231.55,
+      "prev_close": 201.7,
+      "prev_day_low": 199.21,
+      "alert_threshold": 209.17,
+      "sl_price": 191.24,
+      "target_price": 229.09,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 242.04,
+      "week_52_low": 110.5
+    },
+    {
+      "ticker": "MAPMYINDIA",
+      "company": "MAPMYINDIA",
+      "added_date": "2026-07-09",
+      "gain_pct": 14.79,
+      "close_price": 1069.2,
+      "prev_close": 931.45,
+      "prev_day_low": 907.48,
+      "alert_threshold": 952.85,
+      "sl_price": 871.18,
+      "target_price": 1043.6,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 1998.0,
+      "week_52_low": 795.0
+    },
+    {
+      "ticker": "BUILDPRO",
+      "company": "BUILDPRO",
+      "added_date": "2026-07-09",
+      "gain_pct": 13.55,
+      "close_price": 1200.3,
+      "prev_close": 1057.1,
+      "prev_day_low": 1034.19,
+      "alert_threshold": 1085.9,
+      "sl_price": 992.82,
+      "target_price": 1189.32,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 1244.0,
+      "week_52_low": 636.0
+    },
+    {
+      "ticker": "RADHIKAJWE",
+      "company": "RADHIKAJWE",
+      "added_date": "2026-07-09",
+      "gain_pct": 13.1,
+      "close_price": 63.64,
+      "prev_close": 56.27,
+      "prev_day_low": 55.37,
+      "alert_threshold": 58.14,
+      "sl_price": 53.16,
+      "target_price": 63.68,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 111.5,
+      "week_52_low": 50.01
     }
   ]
 }
