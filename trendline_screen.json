@@ -1135,7 +1135,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 29.6808,
+    "trendlineSlope": 29.6807,
     "anchor1Date": "2024-12",
     "anchor2Date": "2025-08"
   },
@@ -1812,7 +1812,7 @@
       "23.6%": 137718.03,
       "38.2%": 121710.31,
       "50.0%": 108772.56,
-      "61.8%": 95834.81,
+      "61.8%": 95834.82,
       "78.6%": 77414.97,
       "100.0%": 53951.6
     },
@@ -2199,7 +2199,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 12.3332,
+    "trendlineSlope": 12.3333,
     "anchor1Date": "2022-06",
     "anchor2Date": "2024-04"
   },
@@ -3752,7 +3752,7 @@
       "50.0%": 2308.73,
       "61.8%": 2165.4,
       "78.6%": 1961.34,
-      "100.0%": 1701.41
+      "100.0%": 1701.4
     },
     "fibMatchLevel": "61.8%",
     "fibMatchPrice": 2085.41,
