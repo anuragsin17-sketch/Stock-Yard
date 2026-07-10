@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-07-10 10:20 IST",
-    "date": "2026-07-09",
-    "new_stocks": 0,
-    "total": 166
+    "timestamp": "2026-07-10 12:40 IST",
+    "date": "2026-07-10",
+    "new_stocks": 6,
+    "total": 172
   },
   "stocks": [
     {
@@ -3791,6 +3791,108 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-07-10T12:37:49.526639",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "SHARDUL",
+      "company": "SHARDUL",
+      "added_date": "2026-07-10",
+      "gain_pct": 20.0,
+      "close_price": 33.6,
+      "prev_close": 28.0,
+      "prev_day_low": 27.45,
+      "alert_threshold": 28.82,
+      "sl_price": 26.35,
+      "target_price": 31.57,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 33.82,
+      "week_52_low": 23.05
+    },
+    {
+      "ticker": "NBIFIN",
+      "company": "NBIFIN",
+      "added_date": "2026-07-10",
+      "gain_pct": 19.76,
+      "close_price": 2301.4,
+      "prev_close": 1921.6,
+      "prev_day_low": 1910.9,
+      "alert_threshold": 2006.45,
+      "sl_price": 1834.46,
+      "target_price": 2197.53,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 3040.9,
+      "week_52_low": 1539.0
+    },
+    {
+      "ticker": "IONEXCHANG",
+      "company": "IONEXCHANG",
+      "added_date": "2026-07-10",
+      "gain_pct": 16.43,
+      "close_price": 468.3,
+      "prev_close": 402.2,
+      "prev_day_low": 396.8,
+      "alert_threshold": 416.64,
+      "sl_price": 380.93,
+      "target_price": 456.32,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 580.75,
+      "week_52_low": 312.7
+    },
+    {
+      "ticker": "GODREJIND",
+      "company": "GODREJIND",
+      "added_date": "2026-07-10",
+      "gain_pct": 16.28,
+      "close_price": 1417.7,
+      "prev_close": 1219.2,
+      "prev_day_low": 1186.19,
+      "alert_threshold": 1245.5,
+      "sl_price": 1138.74,
+      "target_price": 1364.12,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 1443.0,
+      "week_52_low": 744.2
+    },
+    {
+      "ticker": "J&KBANK",
+      "company": "J&KBANK",
+      "added_date": "2026-07-10",
+      "gain_pct": 14.39,
+      "close_price": 192.65,
+      "prev_close": 168.41,
+      "prev_day_low": 165.7,
+      "alert_threshold": 173.98,
+      "sl_price": 159.07,
+      "target_price": 190.55,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 201.75,
+      "week_52_low": 97.35
+    },
+    {
+      "ticker": "STALLION",
+      "company": "STALLION",
+      "added_date": "2026-07-10",
+      "gain_pct": 12.5,
+      "close_price": 204.88,
+      "prev_close": 182.12,
+      "prev_day_low": 180.81,
+      "alert_threshold": 189.85,
+      "sl_price": 173.58,
+      "target_price": 207.93,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 423.8,
+      "week_52_low": 91.0
     }
   ]
 }
