@@ -190,44 +190,6 @@
     "anchor2Date": "2026-01"
   },
   {
-    "ticker": "CMSINFO",
-    "currentPrice": 262.4,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 263.61,
-    "distanceRemaining": 1.64,
-    "signalStatus": "WATCHLIST",
-    "notificationTrigger": false,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 9,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 458.57,
-    "week52Low": 259.3,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 189,
-      "entryPrice": 263.61,
-      "strictStopLoss": 242.52,
-      "pivotTargetExit": 324.24
-    },
-    "fibonacciLevels": {
-      "23.6%": 507.6,
-      "38.2%": 451.1,
-      "50.0%": 405.44,
-      "61.8%": 359.78,
-      "78.6%": 294.76,
-      "100.0%": 211.95
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 0.4285,
-    "anchor1Date": "2023-03",
-    "anchor2Date": "2026-03"
-  },
-  {
     "ticker": "DBL",
     "currentPrice": 426.3,
     "ema50": null,
@@ -557,7 +519,7 @@
     "fibonacciLevels": {
       "23.6%": 949.37,
       "38.2%": 787.17,
-      "50.0%": 656.08,
+      "50.0%": 656.09,
       "61.8%": 525.0,
       "78.6%": 338.36,
       "100.0%": 100.63
@@ -720,6 +682,44 @@
     "trendlineSlope": 2.4394,
     "anchor1Date": "2025-01",
     "anchor2Date": "2026-01"
+  },
+  {
+    "ticker": "CMSINFO",
+    "currentPrice": 262.4,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 263.61,
+    "distanceRemaining": 3.21,
+    "signalStatus": "MONITORING",
+    "notificationTrigger": false,
+    "confluenceScore": 10,
+    "patternZone": "Trendline touch only",
+    "wickTouches": 9,
+    "timeframe": "monthly",
+    "signalType": "TRENDLINE",
+    "week52High": 458.57,
+    "week52Low": 255.15,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 189,
+      "entryPrice": 263.61,
+      "strictStopLoss": 242.52,
+      "pivotTargetExit": 324.24
+    },
+    "fibonacciLevels": {
+      "23.6%": 507.6,
+      "38.2%": 451.1,
+      "50.0%": 405.44,
+      "61.8%": 359.78,
+      "78.6%": 294.76,
+      "100.0%": 211.95
+    },
+    "fibMatchLevel": null,
+    "fibMatchPrice": null,
+    "fibMatchDistancePct": null,
+    "trendlineSlope": 0.4285,
+    "anchor1Date": "2023-03",
+    "anchor2Date": "2026-03"
   },
   {
     "ticker": "TIMETECHNO",
@@ -912,6 +912,44 @@
     "anchor2Date": "2026-03"
   },
   {
+    "ticker": "TARC",
+    "currentPrice": 124.21,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 117.49,
+    "distanceRemaining": 3.62,
+    "signalStatus": "MONITORING",
+    "notificationTrigger": false,
+    "confluenceScore": 10,
+    "patternZone": "Trendline touch only",
+    "wickTouches": 6,
+    "timeframe": "monthly",
+    "signalType": "TRENDLINE",
+    "week52High": 187.9,
+    "week52Low": 109.1,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 425,
+      "entryPrice": 117.49,
+      "strictStopLoss": 108.09,
+      "pivotTargetExit": 144.51
+    },
+    "fibonacciLevels": {
+      "23.6%": 211.13,
+      "38.2%": 174.74,
+      "50.0%": 145.33,
+      "61.8%": 115.91,
+      "78.6%": 74.04,
+      "100.0%": 20.7
+    },
+    "fibMatchLevel": null,
+    "fibMatchPrice": null,
+    "fibMatchDistancePct": null,
+    "trendlineSlope": 2.0986,
+    "anchor1Date": "2023-03",
+    "anchor2Date": "2026-03"
+  },
+  {
     "ticker": "SUDARSCHEM",
     "currentPrice": 999.25,
     "ema50": null,
@@ -948,44 +986,6 @@
     "trendlineSlope": 12.0098,
     "anchor1Date": "2023-02",
     "anchor2Date": "2023-10"
-  },
-  {
-    "ticker": "TARC",
-    "currentPrice": 124.21,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 117.49,
-    "distanceRemaining": 3.78,
-    "signalStatus": "MONITORING",
-    "notificationTrigger": false,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 6,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 187.9,
-    "week52Low": 109.1,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 425,
-      "entryPrice": 117.49,
-      "strictStopLoss": 108.09,
-      "pivotTargetExit": 144.51
-    },
-    "fibonacciLevels": {
-      "23.6%": 211.13,
-      "38.2%": 174.74,
-      "50.0%": 145.33,
-      "61.8%": 115.91,
-      "78.6%": 74.04,
-      "100.0%": 20.7
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 2.0986,
-    "anchor1Date": "2023-03",
-    "anchor2Date": "2026-03"
   },
   {
     "ticker": "KITEX",
@@ -1249,6 +1249,44 @@
     "fibMatchLevel": "61.8%",
     "fibMatchPrice": 1204.64,
     "fibMatchDistancePct": 0.52,
+    "trendlineSlope": null,
+    "anchor1Date": null,
+    "anchor2Date": null
+  },
+  {
+    "ticker": "JSLL",
+    "currentPrice": 593.0,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 589.31,
+    "distanceRemaining": 0.63,
+    "signalStatus": "WATCHLIST",
+    "notificationTrigger": false,
+    "confluenceScore": 9,
+    "patternZone": "Fib 78.6% support",
+    "wickTouches": null,
+    "timeframe": "monthly",
+    "signalType": "FIBONACCI",
+    "week52High": null,
+    "week52Low": null,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 84,
+      "entryPrice": 589.31,
+      "strictStopLoss": 542.17,
+      "pivotTargetExit": 724.85
+    },
+    "fibonacciLevels": {
+      "23.6%": 1922.97,
+      "38.2%": 1568.94,
+      "50.0%": 1282.81,
+      "61.8%": 996.68,
+      "78.6%": 589.31,
+      "100.0%": 70.39
+    },
+    "fibMatchLevel": "78.6%",
+    "fibMatchPrice": 589.31,
+    "fibMatchDistancePct": 0.63,
     "trendlineSlope": null,
     "anchor1Date": null,
     "anchor2Date": null
@@ -1963,7 +2001,7 @@
     "fibonacciLevels": {
       "23.6%": 5403.21,
       "38.2%": 5154.54,
-      "50.0%": 4953.56,
+      "50.0%": 4953.57,
       "61.8%": 4752.59,
       "78.6%": 4466.45,
       "100.0%": 4101.97
@@ -2848,44 +2886,6 @@
     "trendlineSlope": 1.3837,
     "anchor1Date": "2020-09",
     "anchor2Date": "2025-03"
-  },
-  {
-    "ticker": "JSLL",
-    "currentPrice": 593.0,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 534.79,
-    "distanceRemaining": 3.59,
-    "signalStatus": "MONITORING",
-    "notificationTrigger": false,
-    "confluenceScore": 8,
-    "patternZone": "Confluence: Trendline + Fib 78.6% \u2713\u2713",
-    "wickTouches": 4,
-    "timeframe": "monthly",
-    "signalType": "CONFLUENCE",
-    "week52High": 849.5,
-    "week52Low": 492.0,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 93,
-      "entryPrice": 534.79,
-      "strictStopLoss": 492.01,
-      "pivotTargetExit": 657.79
-    },
-    "fibonacciLevels": {
-      "23.6%": 1922.97,
-      "38.2%": 1568.94,
-      "50.0%": 1282.81,
-      "61.8%": 996.68,
-      "78.6%": 589.31,
-      "100.0%": 70.39
-    },
-    "fibMatchLevel": "78.6%",
-    "fibMatchPrice": 589.31,
-    "fibMatchDistancePct": 0.63,
-    "trendlineSlope": 10.3907,
-    "anchor1Date": "2022-11",
-    "anchor2Date": "2025-06"
   },
   {
     "ticker": "HEMIPROP",

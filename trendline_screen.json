@@ -228,6 +228,44 @@
     "anchor2Date": "2026-01"
   },
   {
+    "ticker": "M&M",
+    "currentPrice": 3129.4,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 3063.95,
+    "distanceRemaining": 0.53,
+    "signalStatus": "CRITICAL_TOUCH",
+    "notificationTrigger": true,
+    "confluenceScore": 10,
+    "patternZone": "Trendline touch only",
+    "wickTouches": 17,
+    "timeframe": "monthly",
+    "signalType": "TRENDLINE",
+    "week52High": 3799.99,
+    "week52Low": 2865.9,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 16,
+      "entryPrice": 3063.95,
+      "strictStopLoss": 2818.83,
+      "pivotTargetExit": 3768.66
+    },
+    "fibonacciLevels": {
+      "23.6%": 2962.1,
+      "38.2%": 2443.74,
+      "50.0%": 2024.79,
+      "61.8%": 1605.84,
+      "78.6%": 1009.37,
+      "100.0%": 249.58
+    },
+    "fibMatchLevel": null,
+    "fibMatchPrice": null,
+    "fibMatchDistancePct": null,
+    "trendlineSlope": 49.5114,
+    "anchor1Date": "2023-03",
+    "anchor2Date": "2026-03"
+  },
+  {
     "ticker": "PATANJALI",
     "currentPrice": 413.8,
     "ema50": null,
@@ -378,82 +416,6 @@
     "trendlineSlope": 67.6348,
     "anchor1Date": "2023-03",
     "anchor2Date": "2026-06"
-  },
-  {
-    "ticker": "BEL",
-    "currentPrice": 414.85,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 409.1,
-    "distanceRemaining": 0.76,
-    "signalStatus": "CRITICAL_TOUCH",
-    "notificationTrigger": true,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 6,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 473.45,
-    "week52Low": 359.67,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 122,
-      "entryPrice": 409.1,
-      "strictStopLoss": 376.37,
-      "pivotTargetExit": 503.19
-    },
-    "fibonacciLevels": {
-      "23.6%": 365.83,
-      "38.2%": 299.24,
-      "50.0%": 245.43,
-      "61.8%": 191.62,
-      "78.6%": 115.01,
-      "100.0%": 17.42
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 10.1023,
-    "anchor1Date": "2025-02",
-    "anchor2Date": "2026-06"
-  },
-  {
-    "ticker": "M&M",
-    "currentPrice": 3129.4,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 3063.95,
-    "distanceRemaining": 0.78,
-    "signalStatus": "CRITICAL_TOUCH",
-    "notificationTrigger": true,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 17,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 3799.99,
-    "week52Low": 2865.9,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 16,
-      "entryPrice": 3063.95,
-      "strictStopLoss": 2818.83,
-      "pivotTargetExit": 3768.66
-    },
-    "fibonacciLevels": {
-      "23.6%": 2962.1,
-      "38.2%": 2443.74,
-      "50.0%": 2024.79,
-      "61.8%": 1605.84,
-      "78.6%": 1009.37,
-      "100.0%": 249.58
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 49.5114,
-    "anchor1Date": "2023-03",
-    "anchor2Date": "2026-03"
   },
   {
     "ticker": "IOC",
@@ -988,6 +950,44 @@
     "anchor2Date": "2023-10"
   },
   {
+    "ticker": "BEL",
+    "currentPrice": 414.85,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 409.1,
+    "distanceRemaining": 1.23,
+    "signalStatus": "WATCHLIST",
+    "notificationTrigger": false,
+    "confluenceScore": 10,
+    "patternZone": "Trendline touch only",
+    "wickTouches": 6,
+    "timeframe": "monthly",
+    "signalType": "TRENDLINE",
+    "week52High": 473.45,
+    "week52Low": 359.67,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 122,
+      "entryPrice": 409.1,
+      "strictStopLoss": 376.37,
+      "pivotTargetExit": 503.19
+    },
+    "fibonacciLevels": {
+      "23.6%": 365.83,
+      "38.2%": 299.24,
+      "50.0%": 245.43,
+      "61.8%": 191.62,
+      "78.6%": 115.01,
+      "100.0%": 17.42
+    },
+    "fibMatchLevel": null,
+    "fibMatchPrice": null,
+    "fibMatchDistancePct": null,
+    "trendlineSlope": 10.1023,
+    "anchor1Date": "2025-02",
+    "anchor2Date": "2026-06"
+  },
+  {
     "ticker": "ABBOTINDIA",
     "currentPrice": 27165.0,
     "ema50": null,
@@ -1135,7 +1135,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 29.6807,
+    "trendlineSlope": 29.6808,
     "anchor1Date": "2024-12",
     "anchor2Date": "2025-08"
   },
@@ -1520,44 +1520,6 @@
     "anchor2Date": "2025-10"
   },
   {
-    "ticker": "IRCTC",
-    "currentPrice": 503.25,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 508.04,
-    "distanceRemaining": 2.31,
-    "signalStatus": "WATCHLIST",
-    "notificationTrigger": false,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 9,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 733.61,
-    "week52Low": 492.65,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 98,
-      "entryPrice": 508.04,
-      "strictStopLoss": 467.4,
-      "pivotTargetExit": 624.89
-    },
-    "fibonacciLevels": {
-      "23.6%": 981.35,
-      "38.2%": 831.41,
-      "50.0%": 710.22,
-      "61.8%": 589.04,
-      "78.6%": 416.51,
-      "100.0%": 196.73
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 3.8465,
-    "anchor1Date": "2020-11",
-    "anchor2Date": "2026-03"
-  },
-  {
     "ticker": "GLAXO",
     "currentPrice": 2438.2,
     "ema50": null,
@@ -1632,6 +1594,82 @@
     "trendlineSlope": 11.7634,
     "anchor1Date": "2023-01",
     "anchor2Date": "2026-04"
+  },
+  {
+    "ticker": "SBICARD",
+    "currentPrice": 611.65,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 566.53,
+    "distanceRemaining": 2.36,
+    "signalStatus": "WATCHLIST",
+    "notificationTrigger": false,
+    "confluenceScore": 10,
+    "patternZone": "Trendline touch only",
+    "wickTouches": 4,
+    "timeframe": "monthly",
+    "signalType": "TRENDLINE",
+    "week52High": 961.63,
+    "week52Low": 565.45,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 88,
+      "entryPrice": 566.53,
+      "strictStopLoss": 521.21,
+      "pivotTargetExit": 696.83
+    },
+    "fibonacciLevels": {
+      "23.6%": 990.36,
+      "38.2%": 894.14,
+      "50.0%": 816.38,
+      "61.8%": 738.62,
+      "78.6%": 627.9,
+      "100.0%": 486.88
+    },
+    "fibMatchLevel": null,
+    "fibMatchPrice": null,
+    "fibMatchDistancePct": null,
+    "trendlineSlope": 1.0764,
+    "anchor1Date": "2020-05",
+    "anchor2Date": "2026-06"
+  },
+  {
+    "ticker": "IRCTC",
+    "currentPrice": 503.25,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 508.04,
+    "distanceRemaining": 2.37,
+    "signalStatus": "WATCHLIST",
+    "notificationTrigger": false,
+    "confluenceScore": 10,
+    "patternZone": "Trendline touch only",
+    "wickTouches": 9,
+    "timeframe": "monthly",
+    "signalType": "TRENDLINE",
+    "week52High": 733.61,
+    "week52Low": 492.65,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 98,
+      "entryPrice": 508.04,
+      "strictStopLoss": 467.4,
+      "pivotTargetExit": 624.89
+    },
+    "fibonacciLevels": {
+      "23.6%": 981.35,
+      "38.2%": 831.41,
+      "50.0%": 710.22,
+      "61.8%": 589.04,
+      "78.6%": 416.51,
+      "100.0%": 196.73
+    },
+    "fibMatchLevel": null,
+    "fibMatchPrice": null,
+    "fibMatchDistancePct": null,
+    "trendlineSlope": 3.8465,
+    "anchor1Date": "2020-11",
+    "anchor2Date": "2026-03"
   },
   {
     "ticker": "SBILIFE",
@@ -1746,44 +1784,6 @@
     "trendlineSlope": 3.2095,
     "anchor1Date": "2023-09",
     "anchor2Date": "2026-04"
-  },
-  {
-    "ticker": "SBICARD",
-    "currentPrice": 611.65,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 566.53,
-    "distanceRemaining": 2.8,
-    "signalStatus": "WATCHLIST",
-    "notificationTrigger": false,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 4,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 961.63,
-    "week52Low": 565.45,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 88,
-      "entryPrice": 566.53,
-      "strictStopLoss": 521.21,
-      "pivotTargetExit": 696.83
-    },
-    "fibonacciLevels": {
-      "23.6%": 990.36,
-      "38.2%": 894.14,
-      "50.0%": 816.38,
-      "61.8%": 738.62,
-      "78.6%": 627.9,
-      "100.0%": 486.88
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 1.0764,
-    "anchor1Date": "2020-05",
-    "anchor2Date": "2026-06"
   },
   {
     "ticker": "MRF",
@@ -2199,7 +2199,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 12.3333,
+    "trendlineSlope": 12.3332,
     "anchor1Date": "2022-06",
     "anchor2Date": "2024-04"
   },
@@ -2275,7 +2275,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 16.2354,
+    "trendlineSlope": 16.2353,
     "anchor1Date": "2023-03",
     "anchor2Date": "2026-04"
   },
@@ -2508,6 +2508,44 @@
     "anchor2Date": "2026-04"
   },
   {
+    "ticker": "SCHAEFFLER",
+    "currentPrice": 4085.0,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 3873.86,
+    "distanceRemaining": 4.03,
+    "signalStatus": "MONITORING",
+    "notificationTrigger": false,
+    "confluenceScore": 10,
+    "patternZone": "Trendline touch only",
+    "wickTouches": 10,
+    "timeframe": "monthly",
+    "signalType": "TRENDLINE",
+    "week52High": 4445.0,
+    "week52Low": 3489.69,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 12,
+      "entryPrice": 3873.86,
+      "strictStopLoss": 3563.95,
+      "pivotTargetExit": 4764.85
+    },
+    "fibonacciLevels": {
+      "23.6%": 3855.04,
+      "38.2%": 3227.52,
+      "50.0%": 2720.34,
+      "61.8%": 2213.17,
+      "78.6%": 1491.09,
+      "100.0%": 571.3
+    },
+    "fibMatchLevel": null,
+    "fibMatchPrice": null,
+    "fibMatchDistancePct": null,
+    "trendlineSlope": 64.0294,
+    "anchor1Date": "2025-02",
+    "anchor2Date": "2026-01"
+  },
+  {
     "ticker": "EICHERMOT",
     "currentPrice": 7365.5,
     "ema50": null,
@@ -2582,44 +2620,6 @@
     "trendlineSlope": 11.4864,
     "anchor1Date": "2024-03",
     "anchor2Date": "2024-11"
-  },
-  {
-    "ticker": "SCHAEFFLER",
-    "currentPrice": 4085.0,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 3873.86,
-    "distanceRemaining": 4.47,
-    "signalStatus": "MONITORING",
-    "notificationTrigger": false,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 10,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 4445.0,
-    "week52Low": 3489.69,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 12,
-      "entryPrice": 3873.86,
-      "strictStopLoss": 3563.95,
-      "pivotTargetExit": 4764.85
-    },
-    "fibonacciLevels": {
-      "23.6%": 3855.04,
-      "38.2%": 3227.52,
-      "50.0%": 2720.34,
-      "61.8%": 2213.17,
-      "78.6%": 1491.09,
-      "100.0%": 571.3
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 64.0294,
-    "anchor1Date": "2025-02",
-    "anchor2Date": "2026-01"
   },
   {
     "ticker": "PIDILITIND",
@@ -2799,7 +2799,7 @@
     "fibonacciLevels": {
       "23.6%": 940.89,
       "38.2%": 814.55,
-      "50.0%": 712.44,
+      "50.0%": 712.43,
       "61.8%": 610.32,
       "78.6%": 464.94,
       "100.0%": 279.76
@@ -3295,7 +3295,7 @@
       "38.2%": 2656.97,
       "50.0%": 2324.51,
       "61.8%": 1992.05,
-      "78.6%": 1518.73,
+      "78.6%": 1518.72,
       "100.0%": 915.8
     },
     "fibMatchLevel": "61.8%",
@@ -3648,6 +3648,44 @@
     "anchor2Date": "2026-06"
   },
   {
+    "ticker": "HDFCLIFE",
+    "currentPrice": 567.7,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 543.88,
+    "distanceRemaining": 1.31,
+    "signalStatus": "WATCHLIST",
+    "notificationTrigger": false,
+    "confluenceScore": 8,
+    "patternZone": "Confluence: Trendline + Fib 50.0% \u2713\u2713",
+    "wickTouches": 17,
+    "timeframe": "monthly",
+    "signalType": "CONFLUENCE",
+    "week52High": 812.11,
+    "week52Low": 543.0,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 91,
+      "entryPrice": 543.88,
+      "strictStopLoss": 500.37,
+      "pivotTargetExit": 668.97
+    },
+    "fibonacciLevels": {
+      "23.6%": 721.22,
+      "38.2%": 661.46,
+      "50.0%": 613.15,
+      "61.8%": 564.85,
+      "78.6%": 496.07,
+      "100.0%": 408.47
+    },
+    "fibMatchLevel": "50.0%",
+    "fibMatchPrice": 575.76,
+    "fibMatchDistancePct": 1.4,
+    "trendlineSlope": 0.8798,
+    "anchor1Date": "2022-09",
+    "anchor2Date": "2026-06"
+  },
+  {
     "ticker": "JIOFIN",
     "currentPrice": 241.96,
     "ema50": null,
@@ -3762,44 +3800,6 @@
     "anchor2Date": "2025-03"
   },
   {
-    "ticker": "HDFCLIFE",
-    "currentPrice": 567.7,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 543.88,
-    "distanceRemaining": 1.7,
-    "signalStatus": "WATCHLIST",
-    "notificationTrigger": false,
-    "confluenceScore": 8,
-    "patternZone": "Confluence: Trendline + Fib 50.0% \u2713\u2713",
-    "wickTouches": 17,
-    "timeframe": "monthly",
-    "signalType": "CONFLUENCE",
-    "week52High": 812.11,
-    "week52Low": 543.0,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 91,
-      "entryPrice": 543.88,
-      "strictStopLoss": 500.37,
-      "pivotTargetExit": 668.97
-    },
-    "fibonacciLevels": {
-      "23.6%": 721.22,
-      "38.2%": 661.46,
-      "50.0%": 613.15,
-      "61.8%": 564.85,
-      "78.6%": 496.07,
-      "100.0%": 408.47
-    },
-    "fibMatchLevel": "50.0%",
-    "fibMatchPrice": 575.76,
-    "fibMatchDistancePct": 1.4,
-    "trendlineSlope": 0.8798,
-    "anchor1Date": "2022-09",
-    "anchor2Date": "2026-06"
-  },
-  {
     "ticker": "LTTS",
     "currentPrice": 3278.2,
     "ema50": null,
@@ -3836,6 +3836,44 @@
     "trendlineSlope": 28.4542,
     "anchor1Date": "2020-05",
     "anchor2Date": "2026-03"
+  },
+  {
+    "ticker": "BERGEPAINT",
+    "currentPrice": 497.25,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 475.64,
+    "distanceRemaining": 2.18,
+    "signalStatus": "WATCHLIST",
+    "notificationTrigger": false,
+    "confluenceScore": 8,
+    "patternZone": "Confluence: Trendline + Fib 50.0% \u2713\u2713",
+    "wickTouches": 14,
+    "timeframe": "monthly",
+    "signalType": "CONFLUENCE",
+    "week52High": 594.55,
+    "week52Low": 391.1,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 105,
+      "entryPrice": 475.64,
+      "strictStopLoss": 437.59,
+      "pivotTargetExit": 585.04
+    },
+    "fibonacciLevels": {
+      "23.6%": 624.45,
+      "38.2%": 572.06,
+      "50.0%": 529.72,
+      "61.8%": 487.38,
+      "78.6%": 427.1,
+      "100.0%": 350.31
+    },
+    "fibMatchLevel": "50.0%",
+    "fibMatchPrice": 512.63,
+    "fibMatchDistancePct": 3.0,
+    "trendlineSlope": 1.6938,
+    "anchor1Date": "2020-05",
+    "anchor2Date": "2024-06"
   },
   {
     "ticker": "UBL",
@@ -3914,44 +3952,6 @@
     "anchor2Date": "2025-04"
   },
   {
-    "ticker": "GODFRYPHLP",
-    "currentPrice": 2115.3,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 1996.75,
-    "distanceRemaining": 3.67,
-    "signalStatus": "MONITORING",
-    "notificationTrigger": false,
-    "confluenceScore": 8,
-    "patternZone": "Confluence: Trendline + Fib 50.0% \u2713\u2713",
-    "wickTouches": 7,
-    "timeframe": "monthly",
-    "signalType": "CONFLUENCE",
-    "week52High": 3924.86,
-    "week52Low": 1832.1,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 25,
-      "entryPrice": 1996.75,
-      "strictStopLoss": 1837.01,
-      "pivotTargetExit": 2456.0
-    },
-    "fibonacciLevels": {
-      "23.6%": 3064.51,
-      "38.2%": 2532.25,
-      "50.0%": 2102.08,
-      "61.8%": 1671.9,
-      "78.6%": 1059.45,
-      "100.0%": 279.29
-    },
-    "fibMatchLevel": "50.0%",
-    "fibMatchPrice": 2073.54,
-    "fibMatchDistancePct": 2.01,
-    "trendlineSlope": 41.1614,
-    "anchor1Date": "2023-07",
-    "anchor2Date": "2026-03"
-  },
-  {
     "ticker": "ICICIPRULI",
     "currentPrice": 510.35,
     "ema50": null,
@@ -3990,6 +3990,44 @@
     "anchor2Date": "2026-06"
   },
   {
+    "ticker": "GODFRYPHLP",
+    "currentPrice": 2115.3,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 1991.76,
+    "distanceRemaining": 3.93,
+    "signalStatus": "MONITORING",
+    "notificationTrigger": false,
+    "confluenceScore": 8,
+    "patternZone": "Confluence: Trendline + Fib 50.0% \u2713\u2713",
+    "wickTouches": 9,
+    "timeframe": "monthly",
+    "signalType": "CONFLUENCE",
+    "week52High": 3924.86,
+    "week52Low": 1832.1,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 25,
+      "entryPrice": 1991.76,
+      "strictStopLoss": 1832.42,
+      "pivotTargetExit": 2449.86
+    },
+    "fibonacciLevels": {
+      "23.6%": 3064.51,
+      "38.2%": 2532.25,
+      "50.0%": 2102.08,
+      "61.8%": 1671.9,
+      "78.6%": 1059.45,
+      "100.0%": 279.29
+    },
+    "fibMatchLevel": "50.0%",
+    "fibMatchPrice": 2073.54,
+    "fibMatchDistancePct": 2.01,
+    "trendlineSlope": 39.9141,
+    "anchor1Date": "2023-06",
+    "anchor2Date": "2026-03"
+  },
+  {
     "ticker": "PAYTM",
     "currentPrice": 1341.8,
     "ema50": null,
@@ -4026,43 +4064,5 @@
     "trendlineSlope": 34.15,
     "anchor1Date": "2024-05",
     "anchor2Date": "2025-03"
-  },
-  {
-    "ticker": "BERGEPAINT",
-    "currentPrice": 497.25,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 475.64,
-    "distanceRemaining": 4.12,
-    "signalStatus": "MONITORING",
-    "notificationTrigger": false,
-    "confluenceScore": 8,
-    "patternZone": "Confluence: Trendline + Fib 50.0% \u2713\u2713",
-    "wickTouches": 14,
-    "timeframe": "monthly",
-    "signalType": "CONFLUENCE",
-    "week52High": 594.55,
-    "week52Low": 391.1,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 105,
-      "entryPrice": 475.64,
-      "strictStopLoss": 437.59,
-      "pivotTargetExit": 585.04
-    },
-    "fibonacciLevels": {
-      "23.6%": 624.45,
-      "38.2%": 572.06,
-      "50.0%": 529.72,
-      "61.8%": 487.38,
-      "78.6%": 427.1,
-      "100.0%": 350.31
-    },
-    "fibMatchLevel": "50.0%",
-    "fibMatchPrice": 512.63,
-    "fibMatchDistancePct": 3.0,
-    "trendlineSlope": 1.6938,
-    "anchor1Date": "2020-05",
-    "anchor2Date": "2024-06"
   }
 ]
