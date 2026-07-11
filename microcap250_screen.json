@@ -261,7 +261,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 222.5532,
+    "trendlineSlope": 222.5533,
     "anchor1Date": "2023-03",
     "anchor2Date": "2024-03"
   },
@@ -519,7 +519,7 @@
     "fibonacciLevels": {
       "23.6%": 949.37,
       "38.2%": 787.17,
-      "50.0%": 656.09,
+      "50.0%": 656.08,
       "61.8%": 525.0,
       "78.6%": 338.36,
       "100.0%": 100.63
@@ -1254,44 +1254,6 @@
     "anchor2Date": null
   },
   {
-    "ticker": "JSLL",
-    "currentPrice": 593.0,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 589.31,
-    "distanceRemaining": 0.63,
-    "signalStatus": "WATCHLIST",
-    "notificationTrigger": false,
-    "confluenceScore": 9,
-    "patternZone": "Fib 78.6% support",
-    "wickTouches": null,
-    "timeframe": "monthly",
-    "signalType": "FIBONACCI",
-    "week52High": null,
-    "week52Low": null,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 84,
-      "entryPrice": 589.31,
-      "strictStopLoss": 542.17,
-      "pivotTargetExit": 724.85
-    },
-    "fibonacciLevels": {
-      "23.6%": 1922.97,
-      "38.2%": 1568.94,
-      "50.0%": 1282.81,
-      "61.8%": 996.68,
-      "78.6%": 589.31,
-      "100.0%": 70.39
-    },
-    "fibMatchLevel": "78.6%",
-    "fibMatchPrice": 589.31,
-    "fibMatchDistancePct": 0.63,
-    "trendlineSlope": null,
-    "anchor1Date": null,
-    "anchor2Date": null
-  },
-  {
     "ticker": "ADVENZYMES",
     "currentPrice": 329.85,
     "ema50": null,
@@ -2001,7 +1963,7 @@
     "fibonacciLevels": {
       "23.6%": 5403.21,
       "38.2%": 5154.54,
-      "50.0%": 4953.56,
+      "50.0%": 4953.57,
       "61.8%": 4752.59,
       "78.6%": 4466.45,
       "100.0%": 4101.97
@@ -2845,7 +2807,7 @@
     "fibMatchLevel": "78.6%",
     "fibMatchPrice": 516.76,
     "fibMatchDistancePct": 2.07,
-    "trendlineSlope": 0.6291,
+    "trendlineSlope": 0.6292,
     "anchor1Date": "2023-08",
     "anchor2Date": "2026-05"
   },
@@ -2886,6 +2848,44 @@
     "trendlineSlope": 1.3837,
     "anchor1Date": "2020-09",
     "anchor2Date": "2025-03"
+  },
+  {
+    "ticker": "JSLL",
+    "currentPrice": 593.0,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 534.79,
+    "distanceRemaining": 3.59,
+    "signalStatus": "MONITORING",
+    "notificationTrigger": false,
+    "confluenceScore": 8,
+    "patternZone": "Confluence: Trendline + Fib 78.6% \u2713\u2713",
+    "wickTouches": 4,
+    "timeframe": "monthly",
+    "signalType": "CONFLUENCE",
+    "week52High": 849.5,
+    "week52Low": 492.0,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 93,
+      "entryPrice": 534.79,
+      "strictStopLoss": 492.01,
+      "pivotTargetExit": 657.79
+    },
+    "fibonacciLevels": {
+      "23.6%": 1922.97,
+      "38.2%": 1568.94,
+      "50.0%": 1282.81,
+      "61.8%": 996.68,
+      "78.6%": 589.31,
+      "100.0%": 70.39
+    },
+    "fibMatchLevel": "78.6%",
+    "fibMatchPrice": 589.31,
+    "fibMatchDistancePct": 0.63,
+    "trendlineSlope": 10.3907,
+    "anchor1Date": "2022-11",
+    "anchor2Date": "2025-06"
   },
   {
     "ticker": "HEMIPROP",
