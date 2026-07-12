@@ -4,7 +4,7 @@
     "currentPrice": 26615.0,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 25558.56,
+    "triggerPrice": 25558.55,
     "distanceRemaining": 0.13,
     "signalStatus": "CRITICAL_TOUCH",
     "notificationTrigger": true,
@@ -18,9 +18,9 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 1,
-      "entryPrice": 25558.56,
-      "strictStopLoss": 23513.88,
-      "pivotTargetExit": 31437.03
+      "entryPrice": 25558.55,
+      "strictStopLoss": 23513.87,
+      "pivotTargetExit": 31437.02
     },
     "fibonacciLevels": {
       "23.6%": 28315.23,
@@ -33,7 +33,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 110.6245,
+    "trendlineSlope": 110.6244,
     "anchor1Date": "2020-09",
     "anchor2Date": "2024-11"
   },
@@ -1053,7 +1053,7 @@
       "38.2%": 3515.54,
       "50.0%": 2886.02,
       "61.8%": 2256.51,
-      "78.6%": 1360.24,
+      "78.6%": 1360.25,
       "100.0%": 218.58
     },
     "fibMatchLevel": null,
@@ -2898,7 +2898,7 @@
     "notificationTrigger": false,
     "confluenceScore": 9,
     "patternZone": "Fib 61.8% support",
-    "wickTouches": 9,
+    "wickTouches": null,
     "timeframe": "monthly",
     "signalType": "FIBONACCI",
     "week52High": null,
@@ -2921,9 +2921,9 @@
     "fibMatchLevel": "61.8%",
     "fibMatchPrice": 71.16,
     "fibMatchDistancePct": 0.39,
-    "trendlineSlope": 0.222917,
-    "anchor1Date": "2020-05",
-    "anchor2Date": "2022-05"
+    "trendlineSlope": null,
+    "anchor1Date": null,
+    "anchor2Date": null
   },
   {
     "ticker": "VMM",
@@ -2936,7 +2936,7 @@
     "notificationTrigger": false,
     "confluenceScore": 9,
     "patternZone": "Fib 61.8% support",
-    "wickTouches": 6,
+    "wickTouches": null,
     "timeframe": "monthly",
     "signalType": "FIBONACCI",
     "week52High": null,
@@ -2959,9 +2959,9 @@
     "fibMatchLevel": "61.8%",
     "fibMatchPrice": 119.53,
     "fibMatchDistancePct": 0.61,
-    "trendlineSlope": 0.213846,
-    "anchor1Date": "2025-02",
-    "anchor2Date": "2026-03"
+    "trendlineSlope": null,
+    "anchor1Date": null,
+    "anchor2Date": null
   },
   {
     "ticker": "HDBFS",
@@ -3012,7 +3012,7 @@
     "notificationTrigger": false,
     "confluenceScore": 9,
     "patternZone": "Fib 50.0% support",
-    "wickTouches": 6,
+    "wickTouches": null,
     "timeframe": "monthly",
     "signalType": "FIBONACCI",
     "week52High": null,
@@ -3035,9 +3035,9 @@
     "fibMatchLevel": "50.0%",
     "fibMatchPrice": 448.77,
     "fibMatchDistancePct": 1.27,
-    "trendlineSlope": 2.587162,
-    "anchor1Date": "2023-03",
-    "anchor2Date": "2026-04"
+    "trendlineSlope": null,
+    "anchor1Date": null,
+    "anchor2Date": null
   },
   {
     "ticker": "NYKAA",
@@ -3050,7 +3050,7 @@
     "notificationTrigger": false,
     "confluenceScore": 9,
     "patternZone": "Fib 61.8% support",
-    "wickTouches": 3,
+    "wickTouches": null,
     "timeframe": "monthly",
     "signalType": "FIBONACCI",
     "week52High": null,
@@ -3073,9 +3073,9 @@
     "fibMatchLevel": "61.8%",
     "fibMatchPrice": 325.67,
     "fibMatchDistancePct": 1.36,
-    "trendlineSlope": 1.767391,
-    "anchor1Date": "2023-04",
-    "anchor2Date": "2025-03"
+    "trendlineSlope": null,
+    "anchor1Date": null,
+    "anchor2Date": null
   },
   {
     "ticker": "ANTHEM",
@@ -3140,7 +3140,7 @@
     },
     "fibonacciLevels": {
       "23.6%": 5711.12,
-      "38.2%": 4832.05,
+      "38.2%": 4832.06,
       "50.0%": 4121.58,
       "61.8%": 3411.11,
       "78.6%": 2399.58,
@@ -3202,7 +3202,7 @@
     "notificationTrigger": false,
     "confluenceScore": 9,
     "patternZone": "Fib 78.6% support",
-    "wickTouches": 3,
+    "wickTouches": null,
     "timeframe": "monthly",
     "signalType": "FIBONACCI",
     "week52High": null,
@@ -3225,9 +3225,9 @@
     "fibMatchLevel": "78.6%",
     "fibMatchPrice": 1932.89,
     "fibMatchDistancePct": 2.69,
-    "trendlineSlope": 9.691671,
-    "anchor1Date": "2025-04",
-    "anchor2Date": "2026-04"
+    "trendlineSlope": null,
+    "anchor1Date": null,
+    "anchor2Date": null
   },
   {
     "ticker": "ADANIGREEN",
@@ -3240,7 +3240,7 @@
     "notificationTrigger": false,
     "confluenceScore": 9,
     "patternZone": "Fib 50.0% support",
-    "wickTouches": 5,
+    "wickTouches": null,
     "timeframe": "monthly",
     "signalType": "FIBONACCI",
     "week52High": null,
@@ -3263,9 +3263,9 @@
     "fibMatchLevel": "50.0%",
     "fibMatchPrice": 1580.95,
     "fibMatchDistancePct": 2.81,
-    "trendlineSlope": 9.311428,
-    "anchor1Date": "2023-02",
-    "anchor2Date": "2026-01"
+    "trendlineSlope": null,
+    "anchor1Date": null,
+    "anchor2Date": null
   },
   {
     "ticker": "COLPAL",
@@ -3278,7 +3278,7 @@
     "notificationTrigger": false,
     "confluenceScore": 9,
     "patternZone": "Fib 61.8% support",
-    "wickTouches": 17,
+    "wickTouches": null,
     "timeframe": "monthly",
     "signalType": "FIBONACCI",
     "week52High": null,
@@ -3295,15 +3295,15 @@
       "38.2%": 2656.97,
       "50.0%": 2324.51,
       "61.8%": 1992.05,
-      "78.6%": 1518.73,
+      "78.6%": 1518.72,
       "100.0%": 915.8
     },
     "fibMatchLevel": "61.8%",
     "fibMatchPrice": 1992.05,
     "fibMatchDistancePct": 3.03,
-    "trendlineSlope": 8.128,
-    "anchor1Date": "2022-01",
-    "anchor2Date": "2026-03"
+    "trendlineSlope": null,
+    "anchor1Date": null,
+    "anchor2Date": null
   },
   {
     "ticker": "ADANIENSOL",
@@ -3316,7 +3316,7 @@
     "notificationTrigger": false,
     "confluenceScore": 9,
     "patternZone": "Fib 61.8% support",
-    "wickTouches": 8,
+    "wickTouches": null,
     "timeframe": "monthly",
     "signalType": "FIBONACCI",
     "week52High": null,
@@ -3339,9 +3339,9 @@
     "fibMatchLevel": "61.8%",
     "fibMatchPrice": 1709.59,
     "fibMatchDistancePct": 3.25,
-    "trendlineSlope": 17.575002,
-    "anchor1Date": "2025-03",
-    "anchor2Date": "2025-09"
+    "trendlineSlope": null,
+    "anchor1Date": null,
+    "anchor2Date": null
   },
   {
     "ticker": "ICICIAMC",
@@ -3392,7 +3392,7 @@
     "notificationTrigger": false,
     "confluenceScore": 9,
     "patternZone": "Fib 78.6% support",
-    "wickTouches": 8,
+    "wickTouches": null,
     "timeframe": "monthly",
     "signalType": "FIBONACCI",
     "week52High": null,
@@ -3415,9 +3415,9 @@
     "fibMatchLevel": "78.6%",
     "fibMatchPrice": 23.12,
     "fibMatchDistancePct": 3.53,
-    "trendlineSlope": 0.128372,
-    "anchor1Date": "2021-08",
-    "anchor2Date": "2025-03"
+    "trendlineSlope": null,
+    "anchor1Date": null,
+    "anchor2Date": null
   },
   {
     "ticker": "TATACAP",
@@ -3790,7 +3790,7 @@
       "50.0%": 2308.73,
       "61.8%": 2165.4,
       "78.6%": 1961.34,
-      "100.0%": 1701.4
+      "100.0%": 1701.41
     },
     "fibMatchLevel": "61.8%",
     "fibMatchPrice": 2085.41,
@@ -3824,7 +3824,7 @@
     },
     "fibonacciLevels": {
       "23.6%": 4691.66,
-      "38.2%": 3983.25,
+      "38.2%": 3983.26,
       "50.0%": 3410.7,
       "61.8%": 2838.15,
       "78.6%": 2023.0,
