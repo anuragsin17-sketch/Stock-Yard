@@ -33,7 +33,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 110.6244,
+    "trendlineSlope": 110.6245,
     "anchor1Date": "2020-09",
     "anchor2Date": "2024-11"
   },
@@ -1014,7 +1014,7 @@
       "23.6%": 31171.44,
       "38.2%": 27880.05,
       "50.0%": 25219.89,
-      "61.8%": 22559.74,
+      "61.8%": 22559.73,
       "78.6%": 18772.39,
       "100.0%": 13948.03
     },
@@ -1697,10 +1697,10 @@
     "fibonacciLevels": {
       "23.6%": 137718.03,
       "38.2%": 121710.31,
-      "50.0%": 108772.56,
-      "61.8%": 95834.81,
-      "78.6%": 77414.97,
-      "100.0%": 53951.6
+      "50.0%": 108772.57,
+      "61.8%": 95834.82,
+      "78.6%": 77414.98,
+      "100.0%": 53951.61
     },
     "fibMatchLevel": null,
     "fibMatchPrice": null,
@@ -1895,7 +1895,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 28.6596,
+    "trendlineSlope": 28.6597,
     "anchor1Date": "2025-03",
     "anchor2Date": "2025-10"
   },
@@ -2132,7 +2132,7 @@
     "currentPrice": 10752.0,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 10510.96,
+    "triggerPrice": 10510.95,
     "distanceRemaining": 3.61,
     "signalStatus": "MONITORING",
     "notificationTrigger": false,
@@ -2146,9 +2146,9 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 4,
-      "entryPrice": 10510.96,
-      "strictStopLoss": 9670.08,
-      "pivotTargetExit": 12928.48
+      "entryPrice": 10510.95,
+      "strictStopLoss": 9670.07,
+      "pivotTargetExit": 12928.47
     },
     "fibonacciLevels": {
       "23.6%": 11450.45,
@@ -3676,7 +3676,7 @@
       "50.0%": 2308.73,
       "61.8%": 2165.4,
       "78.6%": 1961.34,
-      "100.0%": 1701.4
+      "100.0%": 1701.41
     },
     "fibMatchLevel": "61.8%",
     "fibMatchPrice": 2085.41,
@@ -3699,7 +3699,7 @@
     "wickTouches": 8,
     "timeframe": "monthly",
     "signalType": "CONFLUENCE",
-    "week52High": 5382.37,
+    "week52High": 5382.38,
     "week52Low": 3686.0,
     "positionSizing": {
       "allocatedAmount": 50000.0,
