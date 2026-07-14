@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-07-14 10:28 IST",
-    "date": "2026-07-13",
-    "new_stocks": 0,
-    "total": 179
+    "timestamp": "2026-07-14 11:53 IST",
+    "date": "2026-07-14",
+    "new_stocks": 4,
+    "total": 183
   },
   "stocks": [
     {
@@ -4101,6 +4101,74 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-07-14T11:45:33.469248",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "SHRADHA",
+      "company": "SHRADHA",
+      "added_date": "2026-07-14",
+      "gain_pct": 19.99,
+      "close_price": 35.54,
+      "prev_close": 29.62,
+      "prev_day_low": 27.83,
+      "alert_threshold": 29.22,
+      "sl_price": 26.72,
+      "target_price": 32.0,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 75.89,
+      "week_52_low": 26.34
+    },
+    {
+      "ticker": "LANDMARK",
+      "company": "LANDMARK",
+      "added_date": "2026-07-14",
+      "gain_pct": 17.38,
+      "close_price": 496.4,
+      "prev_close": 422.9,
+      "prev_day_low": 408.17,
+      "alert_threshold": 428.58,
+      "sl_price": 391.84,
+      "target_price": 469.4,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 662.8,
+      "week_52_low": 339.5
+    },
+    {
+      "ticker": "BALPHARMA",
+      "company": "BALPHARMA",
+      "added_date": "2026-07-14",
+      "gain_pct": 14.97,
+      "close_price": 91.02,
+      "prev_close": 79.17,
+      "prev_day_low": 76.44,
+      "alert_threshold": 80.26,
+      "sl_price": 73.38,
+      "target_price": 87.91,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 103.9,
+      "week_52_low": 60.0
+    },
+    {
+      "ticker": "NURECA",
+      "company": "NURECA",
+      "added_date": "2026-07-14",
+      "gain_pct": 12.01,
+      "close_price": 275.07,
+      "prev_close": 245.57,
+      "prev_day_low": 240.0,
+      "alert_threshold": 252.0,
+      "sl_price": 230.4,
+      "target_price": 276.0,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 343.0,
+      "week_52_low": 204.0
     }
   ]
 }
