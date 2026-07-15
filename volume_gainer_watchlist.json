@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-07-14 11:53 IST",
-    "date": "2026-07-14",
-    "new_stocks": 4,
-    "total": 183
+    "timestamp": "2026-07-15 11:57 IST",
+    "date": "2026-07-15",
+    "new_stocks": 6,
+    "total": 189
   },
   "stocks": [
     {
@@ -4205,6 +4205,108 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-07-15T11:49:52.644981",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "KUSUMGAR",
+      "company": "KUSUMGAR",
+      "added_date": "2026-07-15",
+      "gain_pct": 43.87,
+      "close_price": 602.8,
+      "prev_close": 419.0,
+      "prev_day_low": 556.79,
+      "alert_threshold": 584.63,
+      "sl_price": 534.52,
+      "target_price": 640.31,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 625.9,
+      "week_52_low": 568.15
+    },
+    {
+      "ticker": "BNALTD",
+      "company": "BNALTD",
+      "added_date": "2026-07-15",
+      "gain_pct": 19.92,
+      "close_price": 449.65,
+      "prev_close": 374.95,
+      "prev_day_low": 350.94,
+      "alert_threshold": 368.49,
+      "sl_price": 336.9,
+      "target_price": 403.58,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 465.0,
+      "week_52_low": 310.4
+    },
+    {
+      "ticker": "HIRECT",
+      "company": "HIRECT",
+      "added_date": "2026-07-15",
+      "gain_pct": 19.88,
+      "close_price": 1273.6,
+      "prev_close": 1062.4,
+      "prev_day_low": 1024.1,
+      "alert_threshold": 1075.31,
+      "sl_price": 983.14,
+      "target_price": 1177.71,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 1274.8,
+      "week_52_low": 565.2
+    },
+    {
+      "ticker": "APOLSINHOT",
+      "company": "APOLSINHOT",
+      "added_date": "2026-07-15",
+      "gain_pct": 14.1,
+      "close_price": 1369.2,
+      "prev_close": 1200.0,
+      "prev_day_low": 1177.96,
+      "alert_threshold": 1236.86,
+      "sl_price": 1130.84,
+      "target_price": 1354.65,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 1605.0,
+      "week_52_low": 950.0
+    },
+    {
+      "ticker": "FILATEX",
+      "company": "FILATEX",
+      "added_date": "2026-07-15",
+      "gain_pct": 14.02,
+      "close_price": 70.34,
+      "prev_close": 61.69,
+      "prev_day_low": 61.67,
+      "alert_threshold": 64.75,
+      "sl_price": 59.2,
+      "target_price": 70.92,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 72.45,
+      "week_52_low": 36.26
+    },
+    {
+      "ticker": "ELIN",
+      "company": "ELIN",
+      "added_date": "2026-07-15",
+      "gain_pct": 13.16,
+      "close_price": 114.7,
+      "prev_close": 101.36,
+      "prev_day_low": 99.96,
+      "alert_threshold": 104.96,
+      "sl_price": 95.96,
+      "target_price": 114.95,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 234.0,
+      "week_52_low": 93.65
     }
   ]
 }
