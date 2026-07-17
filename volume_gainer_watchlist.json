@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-07-17 10:28 IST",
-    "date": "2026-07-16",
-    "new_stocks": 0,
-    "total": 197
+    "timestamp": "2026-07-17 11:51 IST",
+    "date": "2026-07-17",
+    "new_stocks": 3,
+    "total": 200
   },
   "stocks": [
     {
@@ -4565,6 +4565,57 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-07-17T11:41:41.764429",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "SUPERHOUSE",
+      "company": "SUPERHOUSE",
+      "added_date": "2026-07-17",
+      "gain_pct": 15.85,
+      "close_price": 179.13,
+      "prev_close": 154.62,
+      "prev_day_low": 150.04,
+      "alert_threshold": 157.54,
+      "sl_price": 144.04,
+      "target_price": 172.55,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 201.95,
+      "week_52_low": 128.55
+    },
+    {
+      "ticker": "RESPONIND",
+      "company": "RESPONIND",
+      "added_date": "2026-07-17",
+      "gain_pct": 15.75,
+      "close_price": 220.6,
+      "prev_close": 190.59,
+      "prev_day_low": 185.16,
+      "alert_threshold": 194.42,
+      "sl_price": 177.75,
+      "target_price": 212.93,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 246.9,
+      "week_52_low": 117.25
+    },
+    {
+      "ticker": "ECLERX",
+      "company": "ECLERX",
+      "added_date": "2026-07-17",
+      "gain_pct": 12.51,
+      "close_price": 1979.8,
+      "prev_close": 1759.7,
+      "prev_day_low": 1709.32,
+      "alert_threshold": 1794.79,
+      "sl_price": 1640.95,
+      "target_price": 1965.72,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 2497.5,
+      "week_52_low": 1320.0
     }
   ]
 }
