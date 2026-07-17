@@ -1,8 +1,20 @@
 [
   {
+    "ticker": "IONEXCHANG",
+    "entry_price": 427.94,
+    "current_price": 435.0,
+    "target": 534.92,
+    "stop_loss": 397.98,
+    "quantity": 300,
+    "status": "Open",
+    "source": "Angel One",
+    "is_angel_synced": true,
+    "triggered_at": "2026-07-17T06:23:51.178688"
+  },
+  {
     "ticker": "KPITTECH",
     "entry_price": 551.46,
-    "current_price": 549.55,
+    "current_price": 553.9,
     "target": 689.33,
     "stop_loss": 512.86,
     "quantity": 500,
@@ -14,7 +26,7 @@
   {
     "ticker": "TATAELXSI",
     "entry_price": 3501.46,
-    "current_price": 3484.4,
+    "current_price": 3507.8,
     "target": 4376.82,
     "stop_loss": 3256.36,
     "quantity": 140,
@@ -22,30 +34,6 @@
     "source": "Angel One",
     "is_angel_synced": true,
     "triggered_at": "2026-07-17T06:23:51.178682"
-  },
-  {
-    "ticker": "IONEXCHANG",
-    "entry_price": 427.94,
-    "current_price": 434.3,
-    "target": 534.92,
-    "stop_loss": 397.98,
-    "quantity": 300,
-    "status": "Open",
-    "source": "Angel One",
-    "is_angel_synced": true,
-    "triggered_at": "2026-07-17T06:23:51.178688"
-  },
-  {
-    "ticker": "WHIRLPOOL",
-    "entry_price": 781.29,
-    "current_price": 774.4,
-    "target": 975.38,
-    "stop_loss": 725.68,
-    "quantity": 400,
-    "status": "Open",
-    "source": "Angel One",
-    "is_angel_synced": true,
-    "triggered_at": "2026-07-15T06:23:02.061629"
   },
   {
     "ticker": "MTARTECH-BE",
@@ -58,6 +46,18 @@
     "source": "Angel One",
     "is_angel_synced": true,
     "triggered_at": "2026-07-15T06:23:02.061604"
+  },
+  {
+    "ticker": "WHIRLPOOL",
+    "entry_price": 781.29,
+    "current_price": 772.85,
+    "target": 975.38,
+    "stop_loss": 725.68,
+    "quantity": 400,
+    "status": "Open",
+    "source": "Angel One",
+    "is_angel_synced": true,
+    "triggered_at": "2026-07-15T06:23:02.061629"
   },
   {
     "ticker": "BALKRISIND",
