@@ -62,16 +62,16 @@
     },
     "fibonacciLevels": {
       "23.6%": 28241.82,
-      "38.2%": 25722.47,
+      "38.2%": 25722.48,
       "50.0%": 23686.29,
-      "61.8%": 21650.1,
+      "61.8%": 21650.11,
       "78.6%": 18751.13,
       "100.0%": 15058.39
     },
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 110.3376,
+    "trendlineSlope": 110.3377,
     "anchor1Date": "2020-09",
     "anchor2Date": "2024-11"
   },
@@ -2123,7 +2123,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 12.3332,
+    "trendlineSlope": 12.3333,
     "anchor1Date": "2022-06",
     "anchor2Date": "2024-04"
   },
@@ -4018,7 +4018,7 @@
       "50.0%": 2308.73,
       "61.8%": 2165.4,
       "78.6%": 1961.34,
-      "100.0%": 1701.41
+      "100.0%": 1701.4
     },
     "fibMatchLevel": "61.8%",
     "fibMatchPrice": 2085.41,
@@ -4026,44 +4026,6 @@
     "trendlineSlope": 4.947,
     "anchor1Date": "2020-09",
     "anchor2Date": "2025-03"
-  },
-  {
-    "ticker": "GODFRYPHLP",
-    "currentPrice": 2109.9,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 1996.75,
-    "distanceRemaining": 3.3,
-    "signalStatus": "MONITORING",
-    "notificationTrigger": false,
-    "confluenceScore": 8,
-    "patternZone": "Confluence: Trendline + Fib 50.0% \u2713\u2713",
-    "wickTouches": 7,
-    "timeframe": "monthly",
-    "signalType": "CONFLUENCE",
-    "week52High": 3924.86,
-    "week52Low": 1832.1,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 25,
-      "entryPrice": 1996.75,
-      "strictStopLoss": 1837.01,
-      "pivotTargetExit": 2456.0
-    },
-    "fibonacciLevels": {
-      "23.6%": 3064.51,
-      "38.2%": 2532.25,
-      "50.0%": 2102.08,
-      "61.8%": 1671.9,
-      "78.6%": 1059.45,
-      "100.0%": 279.29
-    },
-    "fibMatchLevel": "50.0%",
-    "fibMatchPrice": 2073.54,
-    "fibMatchDistancePct": 1.75,
-    "trendlineSlope": 41.1614,
-    "anchor1Date": "2023-07",
-    "anchor2Date": "2026-03"
   },
   {
     "ticker": "DMART",
@@ -4102,6 +4064,44 @@
     "trendlineSlope": 26.1349,
     "anchor1Date": "2020-10",
     "anchor2Date": "2025-03"
+  },
+  {
+    "ticker": "GODFRYPHLP",
+    "currentPrice": 2109.9,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 1991.76,
+    "distanceRemaining": 3.56,
+    "signalStatus": "MONITORING",
+    "notificationTrigger": false,
+    "confluenceScore": 8,
+    "patternZone": "Confluence: Trendline + Fib 50.0% \u2713\u2713",
+    "wickTouches": 9,
+    "timeframe": "monthly",
+    "signalType": "CONFLUENCE",
+    "week52High": 3924.86,
+    "week52Low": 1832.1,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 25,
+      "entryPrice": 1991.76,
+      "strictStopLoss": 1832.42,
+      "pivotTargetExit": 2449.86
+    },
+    "fibonacciLevels": {
+      "23.6%": 3064.51,
+      "38.2%": 2532.25,
+      "50.0%": 2102.08,
+      "61.8%": 1671.9,
+      "78.6%": 1059.45,
+      "100.0%": 279.29
+    },
+    "fibMatchLevel": "50.0%",
+    "fibMatchPrice": 2073.54,
+    "fibMatchDistancePct": 1.75,
+    "trendlineSlope": 39.9141,
+    "anchor1Date": "2023-06",
+    "anchor2Date": "2026-03"
   },
   {
     "ticker": "ICICIPRULI",
