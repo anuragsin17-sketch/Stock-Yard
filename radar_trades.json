@@ -1,17 +1,5 @@
 [
   {
-    "ticker": "MTARTECH-BE",
-    "entry_price": 6441.88,
-    "current_price": 5744.0,
-    "target": 8040.84,
-    "stop_loss": 5982.38,
-    "quantity": 30,
-    "status": "Open",
-    "source": "Angel One",
-    "is_angel_synced": true,
-    "triggered_at": "2026-07-15T06:23:02.061604"
-  },
-  {
     "ticker": "KPITTECH",
     "entry_price": 552.17,
     "current_price": 561.2,
@@ -34,6 +22,18 @@
     "source": "Angel One",
     "is_angel_synced": true,
     "triggered_at": "2026-07-17T06:23:51.178682"
+  },
+  {
+    "ticker": "MTARTECH-BE",
+    "entry_price": 6441.88,
+    "current_price": 5744.0,
+    "target": 8040.84,
+    "stop_loss": 5982.38,
+    "quantity": 30,
+    "status": "Open",
+    "source": "Angel One",
+    "is_angel_synced": true,
+    "triggered_at": "2026-07-15T06:23:02.061604"
   },
   {
     "ticker": "BALKRISIND",
