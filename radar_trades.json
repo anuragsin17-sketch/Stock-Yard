@@ -1,41 +1,5 @@
 [
   {
-    "ticker": "NETWEB",
-    "entry_price": 4259.8,
-    "current_price": 4256.8,
-    "target": 5324.75,
-    "stop_loss": 3961.61,
-    "quantity": 100,
-    "status": "Open",
-    "source": "Angel One",
-    "is_angel_synced": true,
-    "triggered_at": "2026-07-21T06:36:29.610869"
-  },
-  {
-    "ticker": "JPPOWER",
-    "entry_price": 17.71,
-    "current_price": 17.65,
-    "target": 22.14,
-    "stop_loss": 16.47,
-    "quantity": 6000,
-    "status": "Open",
-    "source": "Angel One",
-    "is_angel_synced": true,
-    "triggered_at": "2026-07-21T06:36:29.610891"
-  },
-  {
-    "ticker": "KPITTECH",
-    "entry_price": 552.17,
-    "current_price": 562.35,
-    "target": 689.33,
-    "stop_loss": 512.86,
-    "quantity": 500,
-    "status": "Open",
-    "source": "Angel One",
-    "is_angel_synced": true,
-    "triggered_at": "2026-07-17T06:23:51.178666"
-  },
-  {
     "ticker": "BALKRISIND",
     "order_id": "260608000232881",
     "entry_price": 2140.9,
