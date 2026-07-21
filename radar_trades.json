@@ -1,8 +1,32 @@
 [
   {
+    "ticker": "NETWEB",
+    "entry_price": 4259.8,
+    "current_price": 4256.8,
+    "target": 5324.75,
+    "stop_loss": 3961.61,
+    "quantity": 100,
+    "status": "Open",
+    "source": "Angel One",
+    "is_angel_synced": true,
+    "triggered_at": "2026-07-21T06:36:29.610869"
+  },
+  {
+    "ticker": "JPPOWER",
+    "entry_price": 17.71,
+    "current_price": 17.65,
+    "target": 22.14,
+    "stop_loss": 16.47,
+    "quantity": 6000,
+    "status": "Open",
+    "source": "Angel One",
+    "is_angel_synced": true,
+    "triggered_at": "2026-07-21T06:36:29.610891"
+  },
+  {
     "ticker": "KPITTECH",
     "entry_price": 552.17,
-    "current_price": 561.2,
+    "current_price": 562.35,
     "target": 689.33,
     "stop_loss": 512.86,
     "quantity": 500,
@@ -10,30 +34,6 @@
     "source": "Angel One",
     "is_angel_synced": true,
     "triggered_at": "2026-07-17T06:23:51.178666"
-  },
-  {
-    "ticker": "TATAELXSI",
-    "entry_price": 3505.95,
-    "current_price": 3536.7,
-    "target": 4376.82,
-    "stop_loss": 3256.36,
-    "quantity": 140,
-    "status": "Open",
-    "source": "Angel One",
-    "is_angel_synced": true,
-    "triggered_at": "2026-07-17T06:23:51.178682"
-  },
-  {
-    "ticker": "MTARTECH-BE",
-    "entry_price": 6441.88,
-    "current_price": 5744.0,
-    "target": 8040.84,
-    "stop_loss": 5982.38,
-    "quantity": 30,
-    "status": "Open",
-    "source": "Angel One",
-    "is_angel_synced": true,
-    "triggered_at": "2026-07-15T06:23:02.061604"
   },
   {
     "ticker": "BALKRISIND",
