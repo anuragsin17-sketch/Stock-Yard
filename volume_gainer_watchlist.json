@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-07-22 10:26 IST",
-    "date": "2026-07-21",
-    "new_stocks": 0,
-    "total": 215
+    "timestamp": "2026-07-22 12:11 IST",
+    "date": "2026-07-22",
+    "new_stocks": 6,
+    "total": 221
   },
   "stocks": [
     {
@@ -5023,6 +5023,108 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-07-22T12:04:01.022556",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "EMAMIPAP",
+      "company": "EMAMIPAP",
+      "added_date": "2026-07-22",
+      "gain_pct": 20.0,
+      "close_price": 118.63,
+      "prev_close": 98.86,
+      "prev_day_low": 93.69,
+      "alert_threshold": 98.37,
+      "sl_price": 89.94,
+      "target_price": 107.74,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 122.0,
+      "week_52_low": 55.0
+    },
+    {
+      "ticker": "MPSLTD",
+      "company": "MPSLTD",
+      "added_date": "2026-07-22",
+      "gain_pct": 20.0,
+      "close_price": 2564.5,
+      "prev_close": 2137.1,
+      "prev_day_low": 2319.27,
+      "alert_threshold": 2435.23,
+      "sl_price": 2226.5,
+      "target_price": 2667.16,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 2564.5,
+      "week_52_low": 1336.1
+    },
+    {
+      "ticker": "ARENTERP",
+      "company": "ARENTERP",
+      "added_date": "2026-07-22",
+      "gain_pct": 20.0,
+      "close_price": 41.22,
+      "prev_close": 34.35,
+      "prev_day_low": 35.87,
+      "alert_threshold": 37.66,
+      "sl_price": 34.44,
+      "target_price": 41.25,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 60.79,
+      "week_52_low": 30.01
+    },
+    {
+      "ticker": "MALUPAPER",
+      "company": "MALUPAPER",
+      "added_date": "2026-07-22",
+      "gain_pct": 15.59,
+      "close_price": 34.85,
+      "prev_close": 30.15,
+      "prev_day_low": 28.76,
+      "alert_threshold": 30.2,
+      "sl_price": 27.61,
+      "target_price": 33.07,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 45.57,
+      "week_52_low": 27.0
+    },
+    {
+      "ticker": "DATAPATTNS",
+      "company": "DATAPATTNS",
+      "added_date": "2026-07-22",
+      "gain_pct": 12.7,
+      "close_price": 4782.8,
+      "prev_close": 4243.9,
+      "prev_day_low": 4150.69,
+      "alert_threshold": 4358.22,
+      "sl_price": 3984.66,
+      "target_price": 4773.29,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 4955.9,
+      "week_52_low": 2131.0
+    },
+    {
+      "ticker": "CYIENTDLM",
+      "company": "CYIENTDLM",
+      "added_date": "2026-07-22",
+      "gain_pct": 12.06,
+      "close_price": 698.15,
+      "prev_close": 623.0,
+      "prev_day_low": 608.68,
+      "alert_threshold": 639.11,
+      "sl_price": 584.33,
+      "target_price": 699.98,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 734.95,
+      "week_52_low": 265.2
     }
   ]
 }
