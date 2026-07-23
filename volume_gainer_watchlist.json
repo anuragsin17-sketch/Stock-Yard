@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-07-23 10:24 IST",
-    "date": "2026-07-22",
-    "new_stocks": 0,
-    "total": 221
+    "timestamp": "2026-07-23 12:09 IST",
+    "date": "2026-07-23",
+    "new_stocks": 6,
+    "total": 227
   },
   "stocks": [
     {
@@ -5159,6 +5159,108 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-07-23T12:03:21.388253",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "TECHNVISN",
+      "company": "TECHNVISN",
+      "added_date": "2026-07-23",
+      "gain_pct": 20.0,
+      "close_price": 4429.9,
+      "prev_close": 3691.6,
+      "prev_day_low": 3722.92,
+      "alert_threshold": 3909.07,
+      "sl_price": 3574.0,
+      "target_price": 4281.36,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 6198.0,
+      "week_52_low": 3222.8
+    },
+    {
+      "ticker": "TIPSFILMS",
+      "company": "TIPSFILMS",
+      "added_date": "2026-07-23",
+      "gain_pct": 19.99,
+      "close_price": 375.1,
+      "prev_close": 312.6,
+      "prev_day_low": 309.93,
+      "alert_threshold": 325.43,
+      "sl_price": 297.53,
+      "target_price": 356.42,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 574.1,
+      "week_52_low": 276.75
+    },
+    {
+      "ticker": "ASIANTILES",
+      "company": "ASIANTILES",
+      "added_date": "2026-07-23",
+      "gain_pct": 19.48,
+      "close_price": 51.88,
+      "prev_close": 43.42,
+      "prev_day_low": 42.06,
+      "alert_threshold": 44.16,
+      "sl_price": 40.38,
+      "target_price": 48.37,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 79.06,
+      "week_52_low": 42.5
+    },
+    {
+      "ticker": "GANDHAR",
+      "company": "GANDHAR",
+      "added_date": "2026-07-23",
+      "gain_pct": 19.37,
+      "close_price": 281.95,
+      "prev_close": 236.19,
+      "prev_day_low": 262.86,
+      "alert_threshold": 276.0,
+      "sl_price": 252.35,
+      "target_price": 302.29,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 283.42,
+      "week_52_low": 115.0
+    },
+    {
+      "ticker": "BANK10BETF",
+      "company": "BANK10BETF",
+      "added_date": "2026-07-23",
+      "gain_pct": 18.85,
+      "close_price": 24.9,
+      "prev_close": 20.95,
+      "prev_day_low": 20.12,
+      "alert_threshold": 21.13,
+      "sl_price": 19.32,
+      "target_price": 23.14,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 24.9,
+      "week_52_low": 20.53
+    },
+    {
+      "ticker": "PRAENG",
+      "company": "PRAENG",
+      "added_date": "2026-07-23",
+      "gain_pct": 16.95,
+      "close_price": 22.98,
+      "prev_close": 19.65,
+      "prev_day_low": 19.11,
+      "alert_threshold": 20.07,
+      "sl_price": 18.35,
+      "target_price": 21.98,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 33.88,
+      "week_52_low": 17.0
     }
   ]
 }
