@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-07-24 10:19 IST",
-    "date": "2026-07-23",
-    "new_stocks": 0,
-    "total": 227
+    "timestamp": "2026-07-24 12:00 IST",
+    "date": "2026-07-24",
+    "new_stocks": 4,
+    "total": 231
   },
   "stocks": [
     {
@@ -5305,6 +5305,74 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-07-24T11:56:26.997569",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "CMLL",
+      "company": "CMLL",
+      "added_date": "2026-07-24",
+      "gain_pct": 24.58,
+      "close_price": 528.2,
+      "prev_close": 424.0,
+      "prev_day_low": 454.08,
+      "alert_threshold": 476.78,
+      "sl_price": 435.92,
+      "target_price": 522.19,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 538.75,
+      "week_52_low": 463.35
+    },
+    {
+      "ticker": "AARON",
+      "company": "AARON",
+      "added_date": "2026-07-24",
+      "gain_pct": 20.0,
+      "close_price": 135.25,
+      "prev_close": 112.71,
+      "prev_day_low": 109.27,
+      "alert_threshold": 114.73,
+      "sl_price": 104.9,
+      "target_price": 125.66,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 258.0,
+      "week_52_low": 106.8
+    },
+    {
+      "ticker": "ORIENTLTD",
+      "company": "ORIENTLTD",
+      "added_date": "2026-07-24",
+      "gain_pct": 20.0,
+      "close_price": 89.29,
+      "prev_close": 74.41,
+      "prev_day_low": 71.54,
+      "alert_threshold": 75.12,
+      "sl_price": 68.68,
+      "target_price": 82.27,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 102.0,
+      "week_52_low": 53.72
+    },
+    {
+      "ticker": "AKG",
+      "company": "AKG",
+      "added_date": "2026-07-24",
+      "gain_pct": 12.23,
+      "close_price": 10.46,
+      "prev_close": 9.32,
+      "prev_day_low": 8.83,
+      "alert_threshold": 9.27,
+      "sl_price": 8.48,
+      "target_price": 10.15,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 15.07,
+      "week_52_low": 9.01
     }
   ]
 }
