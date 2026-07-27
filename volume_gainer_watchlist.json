@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-07-24 12:00 IST",
-    "date": "2026-07-24",
+    "timestamp": "2026-07-27 13:24 IST",
+    "date": "2026-07-27",
     "new_stocks": 4,
-    "total": 231
+    "total": 235
   },
   "stocks": [
     {
@@ -5393,6 +5393,74 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-07-27T13:22:33.514108",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "PYRAMID",
+      "company": "PYRAMID",
+      "added_date": "2026-07-27",
+      "gain_pct": 19.33,
+      "close_price": 195.96,
+      "prev_close": 164.21,
+      "prev_day_low": 161.71,
+      "alert_threshold": 169.8,
+      "sl_price": 155.24,
+      "target_price": 185.97,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 197.05,
+      "week_52_low": 131.8
+    },
+    {
+      "ticker": "CAPILLARY",
+      "company": "CAPILLARY",
+      "added_date": "2026-07-27",
+      "gain_pct": 12.4,
+      "close_price": 535.3,
+      "prev_close": 476.25,
+      "prev_day_low": 469.03,
+      "alert_threshold": 492.48,
+      "sl_price": 450.27,
+      "target_price": 539.38,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 798.95,
+      "week_52_low": 464.25
+    },
+    {
+      "ticker": "CARTRADE",
+      "company": "CARTRADE",
+      "added_date": "2026-07-27",
+      "gain_pct": 12.13,
+      "close_price": 2978.5,
+      "prev_close": 2656.4,
+      "prev_day_low": 2623.46,
+      "alert_threshold": 2754.63,
+      "sl_price": 2518.52,
+      "target_price": 3016.98,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 3290.5,
+      "week_52_low": 1600.0
+    },
+    {
+      "ticker": "HGM",
+      "company": "HGM",
+      "added_date": "2026-07-27",
+      "gain_pct": 12.13,
+      "close_price": 52.4,
+      "prev_close": 46.73,
+      "prev_day_low": 44.1,
+      "alert_threshold": 46.31,
+      "sl_price": 42.34,
+      "target_price": 50.71,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 82.4,
+      "week_52_low": 43.6
     }
   ]
 }
