@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-07-27 13:24 IST",
-    "date": "2026-07-27",
-    "new_stocks": 4,
-    "total": 235
+    "timestamp": "2026-07-28 12:20 IST",
+    "date": "2026-07-28",
+    "new_stocks": 1,
+    "total": 236
   },
   "stocks": [
     {
@@ -5493,6 +5493,23 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-07-28T12:15:10.978760",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "ASHIKAG",
+      "company": "ASHIKAG",
+      "added_date": "2026-07-28",
+      "gain_pct": 14.12,
+      "close_price": 490.3,
+      "prev_close": 429.65,
+      "prev_day_low": 422.38,
+      "alert_threshold": 443.5,
+      "sl_price": 405.48,
+      "target_price": 485.74,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 500.0,
+      "week_52_low": 339.95
     }
   ]
 }
