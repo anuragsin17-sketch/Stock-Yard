@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-07-30 10:25 IST",
-    "date": "2026-07-29",
-    "new_stocks": 0,
-    "total": 248
+    "timestamp": "2026-07-30 12:11 IST",
+    "date": "2026-07-30",
+    "new_stocks": 3,
+    "total": 251
   },
   "stocks": [
     {
@@ -5799,6 +5799,57 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-07-30T12:05:10.939033",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "INDOMIM",
+      "company": "INDOMIM",
+      "added_date": "2026-07-30",
+      "gain_pct": 52.94,
+      "close_price": 741.75,
+      "prev_close": 485.0,
+      "prev_day_low": 686.0,
+      "alert_threshold": 720.3,
+      "sl_price": 658.56,
+      "target_price": 788.9,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 757.75,
+      "week_52_low": 700.0
+    },
+    {
+      "ticker": "RSDFIN",
+      "company": "RSDFIN",
+      "added_date": "2026-07-30",
+      "gain_pct": 20.0,
+      "close_price": 92.29,
+      "prev_close": 76.91,
+      "prev_day_low": 75.46,
+      "alert_threshold": 79.23,
+      "sl_price": 72.44,
+      "target_price": 86.78,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 106.9,
+      "week_52_low": 65.6
+    },
+    {
+      "ticker": "LCL",
+      "company": "LCL",
+      "added_date": "2026-07-30",
+      "gain_pct": 16.38,
+      "close_price": 494.6,
+      "prev_close": 425.0,
+      "prev_day_low": 451.78,
+      "alert_threshold": 474.37,
+      "sl_price": 433.71,
+      "target_price": 519.55,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 508.65,
+      "week_52_low": 461.0
     }
   ]
 }
