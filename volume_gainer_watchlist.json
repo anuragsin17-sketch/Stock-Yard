@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-07-30 12:11 IST",
-    "date": "2026-07-30",
-    "new_stocks": 3,
-    "total": 251
+    "timestamp": "2026-07-31 12:26 IST",
+    "date": "2026-07-31",
+    "new_stocks": 4,
+    "total": 255
   },
   "stocks": [
     {
@@ -5887,6 +5887,74 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-07-31T12:18:01.825452",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "TRANSPEK",
+      "company": "TRANSPEK",
+      "added_date": "2026-07-31",
+      "gain_pct": 20.0,
+      "close_price": 1321.3,
+      "prev_close": 1101.1,
+      "prev_day_low": 1101.28,
+      "alert_threshold": 1156.34,
+      "sl_price": 1057.23,
+      "target_price": 1266.47,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 1321.3,
+      "week_52_low": 952.3
+    },
+    {
+      "ticker": "UEL",
+      "company": "UEL",
+      "added_date": "2026-07-31",
+      "gain_pct": 20.0,
+      "close_price": 153.73,
+      "prev_close": 128.11,
+      "prev_day_low": 130.73,
+      "alert_threshold": 137.27,
+      "sl_price": 125.5,
+      "target_price": 150.34,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 220.0,
+      "week_52_low": 92.32
+    },
+    {
+      "ticker": "DCI",
+      "company": "DCI",
+      "added_date": "2026-07-31",
+      "gain_pct": 19.13,
+      "close_price": 329.7,
+      "prev_close": 276.75,
+      "prev_day_low": 268.47,
+      "alert_threshold": 281.89,
+      "sl_price": 257.73,
+      "target_price": 308.74,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 475.0,
+      "week_52_low": 201.35
+    },
+    {
+      "ticker": "BESTAGRO",
+      "company": "BESTAGRO",
+      "added_date": "2026-07-31",
+      "gain_pct": 15.18,
+      "close_price": 19.12,
+      "prev_close": 16.6,
+      "prev_day_low": 17.64,
+      "alert_threshold": 18.52,
+      "sl_price": 16.93,
+      "target_price": 20.29,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 35.58,
+      "week_52_low": 12.3
     }
   ]
 }
