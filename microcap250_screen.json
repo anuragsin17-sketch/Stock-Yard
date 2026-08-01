@@ -494,6 +494,44 @@
     "anchor2Date": "2026-03"
   },
   {
+    "ticker": "PRAJIND",
+    "currentPrice": 311.9,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 292.68,
+    "distanceRemaining": 2.78,
+    "signalStatus": "WATCHLIST",
+    "notificationTrigger": false,
+    "confluenceScore": 10,
+    "patternZone": "Trendline touch only",
+    "wickTouches": 9,
+    "timeframe": "monthly",
+    "signalType": "TRENDLINE",
+    "week52High": 476.8,
+    "week52Low": 273.0,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 170,
+      "entryPrice": 292.68,
+      "strictStopLoss": 269.27,
+      "pivotTargetExit": 360.0
+    },
+    "fibonacciLevels": {
+      "23.6%": 671.75,
+      "38.2%": 552.94,
+      "50.0%": 456.91,
+      "61.8%": 360.88,
+      "78.6%": 224.16,
+      "100.0%": 50.01
+    },
+    "fibMatchLevel": null,
+    "fibMatchPrice": null,
+    "fibMatchDistancePct": null,
+    "trendlineSlope": 3.2792,
+    "anchor1Date": "2020-05",
+    "anchor2Date": "2026-01"
+  },
+  {
     "ticker": "TRANSRAILL",
     "currentPrice": 502.95,
     "ema50": null,
@@ -831,7 +869,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 201.1035,
+    "trendlineSlope": 201.1034,
     "anchor1Date": "2023-03",
     "anchor2Date": "2025-03"
   },
@@ -2964,6 +3002,44 @@
     "anchor2Date": "2026-05"
   },
   {
+    "ticker": "JSLL",
+    "currentPrice": 586.15,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 534.79,
+    "distanceRemaining": 1.72,
+    "signalStatus": "WATCHLIST",
+    "notificationTrigger": false,
+    "confluenceScore": 8,
+    "patternZone": "Confluence: Trendline + Fib 78.6% \u2713\u2713",
+    "wickTouches": 4,
+    "timeframe": "monthly",
+    "signalType": "CONFLUENCE",
+    "week52High": 849.5,
+    "week52Low": 492.0,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 93,
+      "entryPrice": 534.79,
+      "strictStopLoss": 492.01,
+      "pivotTargetExit": 657.79
+    },
+    "fibonacciLevels": {
+      "23.6%": 1922.97,
+      "38.2%": 1568.94,
+      "50.0%": 1282.81,
+      "61.8%": 996.68,
+      "78.6%": 589.31,
+      "100.0%": 70.39
+    },
+    "fibMatchLevel": "78.6%",
+    "fibMatchPrice": 589.31,
+    "fibMatchDistancePct": 3.79,
+    "trendlineSlope": 10.3907,
+    "anchor1Date": "2022-11",
+    "anchor2Date": "2025-06"
+  },
+  {
     "ticker": "CSBBANK",
     "currentPrice": 329.9,
     "ema50": null,
@@ -3304,44 +3380,6 @@
     "trendlineSlope": 1.1685,
     "anchor1Date": "2020-05",
     "anchor2Date": "2026-03"
-  },
-  {
-    "ticker": "JSLL",
-    "currentPrice": 586.15,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 522.03,
-    "distanceRemaining": 4.21,
-    "signalStatus": "MONITORING",
-    "notificationTrigger": false,
-    "confluenceScore": 8,
-    "patternZone": "Confluence: Trendline + Fib 78.6% \u2713\u2713",
-    "wickTouches": 10,
-    "timeframe": "monthly",
-    "signalType": "CONFLUENCE",
-    "week52High": 849.5,
-    "week52Low": 492.0,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 95,
-      "entryPrice": 522.03,
-      "strictStopLoss": 480.27,
-      "pivotTargetExit": 642.1
-    },
-    "fibonacciLevels": {
-      "23.6%": 1922.97,
-      "38.2%": 1568.94,
-      "50.0%": 1282.81,
-      "61.8%": 996.68,
-      "78.6%": 589.31,
-      "100.0%": 70.39
-    },
-    "fibMatchLevel": "78.6%",
-    "fibMatchPrice": 589.31,
-    "fibMatchDistancePct": 3.79,
-    "trendlineSlope": 9.4091,
-    "anchor1Date": "2022-07",
-    "anchor2Date": "2025-06"
   },
   {
     "ticker": "PNGJL",
