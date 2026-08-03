@@ -42,7 +42,7 @@
     "currentPrice": 13937.0,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 12961.67,
+    "triggerPrice": 12961.68,
     "distanceRemaining": 0.4,
     "signalStatus": "CRITICAL_TOUCH",
     "notificationTrigger": true,
@@ -56,9 +56,9 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 3,
-      "entryPrice": 12961.67,
-      "strictStopLoss": 11924.74,
-      "pivotTargetExit": 15942.85
+      "entryPrice": 12961.68,
+      "strictStopLoss": 11924.75,
+      "pivotTargetExit": 15942.87
     },
     "fibonacciLevels": {
       "23.6%": 14476.41,
@@ -71,7 +71,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 222.5532,
+    "trendlineSlope": 222.5533,
     "anchor1Date": "2023-03",
     "anchor2Date": "2024-03"
   },
@@ -530,6 +530,44 @@
     "trendlineSlope": 8.1564,
     "anchor1Date": "2021-04",
     "anchor2Date": "2022-02"
+  },
+  {
+    "ticker": "PRAJIND",
+    "currentPrice": 315.05,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 304.19,
+    "distanceRemaining": 3.04,
+    "signalStatus": "MONITORING",
+    "notificationTrigger": false,
+    "confluenceScore": 10,
+    "patternZone": "Trendline touch only",
+    "wickTouches": 10,
+    "timeframe": "monthly",
+    "signalType": "TRENDLINE",
+    "week52High": 433.0,
+    "week52Low": 273.0,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 164,
+      "entryPrice": 304.19,
+      "strictStopLoss": 279.85,
+      "pivotTargetExit": 374.15
+    },
+    "fibonacciLevels": {
+      "23.6%": 671.75,
+      "38.2%": 552.94,
+      "50.0%": 456.91,
+      "61.8%": 360.88,
+      "78.6%": 224.16,
+      "100.0%": 50.01
+    },
+    "fibMatchLevel": null,
+    "fibMatchPrice": null,
+    "fibMatchDistancePct": null,
+    "trendlineSlope": 3.389,
+    "anchor1Date": "2020-05",
+    "anchor2Date": "2026-07"
   },
   {
     "ticker": "STARCEMENT",
@@ -1583,7 +1621,7 @@
     "fibonacciLevels": {
       "23.6%": 5403.21,
       "38.2%": 5154.54,
-      "50.0%": 4953.57,
+      "50.0%": 4953.56,
       "61.8%": 4752.59,
       "78.6%": 4466.45,
       "100.0%": 4101.97
@@ -2693,7 +2731,7 @@
     "fibMatchLevel": "78.6%",
     "fibMatchPrice": 516.76,
     "fibMatchDistancePct": 3.65,
-    "trendlineSlope": 0.6291,
+    "trendlineSlope": 0.6292,
     "anchor1Date": "2023-08",
     "anchor2Date": "2026-05"
   },
