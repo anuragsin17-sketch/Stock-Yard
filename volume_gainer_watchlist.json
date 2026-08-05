@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-08-05 10:36 IST",
-    "date": "2026-08-04",
-    "new_stocks": 0,
-    "total": 262
+    "timestamp": "2026-08-05 12:22 IST",
+    "date": "2026-08-05",
+    "new_stocks": 6,
+    "total": 268
   },
   "stocks": [
     {
@@ -6141,6 +6141,108 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-08-05T12:17:25.598206",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "ELANTAS",
+      "company": "ELANTAS",
+      "added_date": "2026-08-05",
+      "gain_pct": 20.0,
+      "close_price": 11847.5,
+      "prev_close": 9873.0,
+      "prev_day_low": 10513.44,
+      "alert_threshold": 11039.11,
+      "sl_price": 10092.9,
+      "target_price": 12090.46,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 11847.5,
+      "week_52_low": 8900.0
+    },
+    {
+      "ticker": "OMNI",
+      "company": "OMNI",
+      "added_date": "2026-08-05",
+      "gain_pct": 20.0,
+      "close_price": 732.6,
+      "prev_close": 610.5,
+      "prev_day_low": 581.14,
+      "alert_threshold": 610.2,
+      "sl_price": 557.89,
+      "target_price": 668.31,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 732.6,
+      "week_52_low": 176.25
+    },
+    {
+      "ticker": "CELLO",
+      "company": "CELLO",
+      "added_date": "2026-08-05",
+      "gain_pct": 15.69,
+      "close_price": 398.95,
+      "prev_close": 344.85,
+      "prev_day_low": 344.32,
+      "alert_threshold": 361.54,
+      "sl_price": 330.55,
+      "target_price": 395.97,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 673.8,
+      "week_52_low": 336.6
+    },
+    {
+      "ticker": "ASKAUTOLTD",
+      "company": "ASKAUTOLTD",
+      "added_date": "2026-08-05",
+      "gain_pct": 15.64,
+      "close_price": 637.55,
+      "prev_close": 551.3,
+      "prev_day_low": 535.96,
+      "alert_threshold": 562.76,
+      "sl_price": 514.52,
+      "target_price": 616.35,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 648.0,
+      "week_52_low": 375.3
+    },
+    {
+      "ticker": "MANIPALHOS",
+      "company": "MANIPALHOS",
+      "added_date": "2026-08-05",
+      "gain_pct": 13.04,
+      "close_price": 666.95,
+      "prev_close": 590.0,
+      "prev_day_low": 622.3,
+      "alert_threshold": 653.41,
+      "sl_price": 597.41,
+      "target_price": 715.64,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 675.8,
+      "week_52_low": 635.0
+    },
+    {
+      "ticker": "BATLIBOI",
+      "company": "BATLIBOI",
+      "added_date": "2026-08-05",
+      "gain_pct": 12.24,
+      "close_price": 94.3,
+      "prev_close": 84.02,
+      "prev_day_low": 81.83,
+      "alert_threshold": 85.92,
+      "sl_price": 78.56,
+      "target_price": 94.1,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 97.45,
+      "week_52_low": 15.7
     }
   ]
 }
