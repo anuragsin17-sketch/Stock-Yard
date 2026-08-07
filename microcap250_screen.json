@@ -42,7 +42,7 @@
     "currentPrice": 13818.0,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 12961.68,
+    "triggerPrice": 12961.67,
     "distanceRemaining": 0.4,
     "signalStatus": "CRITICAL_TOUCH",
     "notificationTrigger": true,
@@ -56,9 +56,9 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 3,
-      "entryPrice": 12961.68,
-      "strictStopLoss": 11924.75,
-      "pivotTargetExit": 15942.87
+      "entryPrice": 12961.67,
+      "strictStopLoss": 11924.74,
+      "pivotTargetExit": 15942.85
     },
     "fibonacciLevels": {
       "23.6%": 14476.41,
@@ -570,44 +570,6 @@
     "anchor2Date": "2023-07"
   },
   {
-    "ticker": "PRAJIND",
-    "currentPrice": 325.05,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 300.74,
-    "distanceRemaining": 4.23,
-    "signalStatus": "MONITORING",
-    "notificationTrigger": false,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 10,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 428.09,
-    "week52Low": 269.91,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 166,
-      "entryPrice": 300.74,
-      "strictStopLoss": 276.68,
-      "pivotTargetExit": 369.91
-    },
-    "fibonacciLevels": {
-      "23.6%": 664.14,
-      "38.2%": 546.67,
-      "50.0%": 451.73,
-      "61.8%": 356.79,
-      "78.6%": 221.62,
-      "100.0%": 49.44
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 3.3506,
-    "anchor1Date": "2020-05",
-    "anchor2Date": "2026-07"
-  },
-  {
     "ticker": "TI",
     "currentPrice": 490.75,
     "ema50": null,
@@ -1089,7 +1051,7 @@
     "fibonacciLevels": {
       "23.6%": 5403.21,
       "38.2%": 5154.54,
-      "50.0%": 4953.56,
+      "50.0%": 4953.57,
       "61.8%": 4752.59,
       "78.6%": 4466.45,
       "100.0%": 4101.97
@@ -3263,7 +3225,7 @@
     "fibMatchLevel": "50.0%",
     "fibMatchPrice": 2211.06,
     "fibMatchDistancePct": 0.61,
-    "trendlineSlope": 20.6309,
+    "trendlineSlope": 20.6308,
     "anchor1Date": "2020-05",
     "anchor2Date": "2026-02"
   }
