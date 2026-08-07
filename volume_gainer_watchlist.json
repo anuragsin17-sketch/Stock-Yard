@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-08-06 12:24 IST",
-    "date": "2026-08-06",
-    "new_stocks": 12,
-    "total": 280
+    "timestamp": "2026-08-07 11:20 IST",
+    "date": "2026-08-07",
+    "new_stocks": 6,
+    "total": 286
   },
   "stocks": [
     {
@@ -6567,6 +6567,108 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-08-07T11:08:13.604214",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "SBCL",
+      "company": "SBCL",
+      "added_date": "2026-08-07",
+      "gain_pct": 19.99,
+      "close_price": 920.9,
+      "prev_close": 767.45,
+      "prev_day_low": 813.45,
+      "alert_threshold": 854.12,
+      "sl_price": 780.91,
+      "target_price": 935.47,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 920.9,
+      "week_52_low": 368.6
+    },
+    {
+      "ticker": "AEPL",
+      "company": "AEPL",
+      "added_date": "2026-08-07",
+      "gain_pct": 17.98,
+      "close_price": 17.13,
+      "prev_close": 14.52,
+      "prev_day_low": 13.79,
+      "alert_threshold": 14.48,
+      "sl_price": 13.24,
+      "target_price": 15.86,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 20.25,
+      "week_52_low": 13.25
+    },
+    {
+      "ticker": "VISAKAIND",
+      "company": "VISAKAIND",
+      "added_date": "2026-08-07",
+      "gain_pct": 14.27,
+      "close_price": 98.72,
+      "prev_close": 86.39,
+      "prev_day_low": 86.71,
+      "alert_threshold": 91.05,
+      "sl_price": 83.24,
+      "target_price": 99.72,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 100.97,
+      "week_52_low": 50.2
+    },
+    {
+      "ticker": "ALBERTDAVD",
+      "company": "ALBERTDAVD",
+      "added_date": "2026-08-07",
+      "gain_pct": 12.63,
+      "close_price": 822.85,
+      "prev_close": 730.55,
+      "prev_day_low": 769.35,
+      "alert_threshold": 807.82,
+      "sl_price": 738.58,
+      "target_price": 884.75,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 903.0,
+      "week_52_low": 579.9
+    },
+    {
+      "ticker": "SAPPHIRE",
+      "company": "SAPPHIRE",
+      "added_date": "2026-08-07",
+      "gain_pct": 12.26,
+      "close_price": 224.22,
+      "prev_close": 199.74,
+      "prev_day_low": 193.88,
+      "alert_threshold": 203.57,
+      "sl_price": 186.12,
+      "target_price": 222.96,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 347.9,
+      "week_52_low": 139.91
+    },
+    {
+      "ticker": "ENRIN",
+      "company": "ENRIN",
+      "added_date": "2026-08-07",
+      "gain_pct": 12.19,
+      "close_price": 3648.8,
+      "prev_close": 3252.2,
+      "prev_day_low": 3357.87,
+      "alert_threshold": 3525.76,
+      "sl_price": 3223.56,
+      "target_price": 3861.55,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 3968.0,
+      "week_52_low": 2115.0
     }
   ]
 }
