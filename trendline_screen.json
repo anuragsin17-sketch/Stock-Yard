@@ -898,9 +898,9 @@
     },
     "fibonacciLevels": {
       "23.6%": 28241.82,
-      "38.2%": 25722.47,
+      "38.2%": 25722.48,
       "50.0%": 23686.29,
-      "61.8%": 21650.1,
+      "61.8%": 21650.11,
       "78.6%": 18751.13,
       "100.0%": 15058.39
     },
@@ -983,7 +983,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 132.6548,
+    "trendlineSlope": 132.6547,
     "anchor1Date": "2025-03",
     "anchor2Date": "2025-09"
   },
@@ -2741,7 +2741,7 @@
     "ema50": null,
     "ema200": null,
     "triggerPrice": 343.14,
-    "distanceRemaining": 4.18,
+    "distanceRemaining": 4.19,
     "signalStatus": "WATCHLIST",
     "notificationTrigger": false,
     "confluenceScore": 9,
@@ -2768,7 +2768,7 @@
     },
     "fibMatchLevel": "50.0%",
     "fibMatchPrice": 343.14,
-    "fibMatchDistancePct": 4.18,
+    "fibMatchDistancePct": 4.19,
     "trendlineSlope": null,
     "anchor1Date": null,
     "anchor2Date": null
@@ -3220,7 +3220,7 @@
       "50.0%": 2308.73,
       "61.8%": 2165.4,
       "78.6%": 1961.34,
-      "100.0%": 1701.4
+      "100.0%": 1701.41
     },
     "fibMatchLevel": "61.8%",
     "fibMatchPrice": 2085.41,
