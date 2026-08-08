@@ -983,7 +983,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 132.6548,
+    "trendlineSlope": 132.6547,
     "anchor1Date": "2025-03",
     "anchor2Date": "2025-09"
   },
@@ -1315,7 +1315,7 @@
       "pivotTargetExit": 16564.56
     },
     "fibonacciLevels": {
-      "23.6%": 14026.76,
+      "23.6%": 14026.75,
       "38.2%": 12065.32,
       "50.0%": 10480.06,
       "61.8%": 8894.79,
@@ -2459,7 +2459,7 @@
       "38.2%": 2656.97,
       "50.0%": 2324.51,
       "61.8%": 1992.05,
-      "78.6%": 1518.73,
+      "78.6%": 1518.72,
       "100.0%": 915.8
     },
     "fibMatchLevel": "61.8%",

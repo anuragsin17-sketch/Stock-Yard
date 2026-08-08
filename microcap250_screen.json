@@ -42,7 +42,7 @@
     "currentPrice": 13818.0,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 12961.68,
+    "triggerPrice": 12961.67,
     "distanceRemaining": 0.4,
     "signalStatus": "CRITICAL_TOUCH",
     "notificationTrigger": true,
@@ -56,9 +56,9 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 3,
-      "entryPrice": 12961.68,
-      "strictStopLoss": 11924.75,
-      "pivotTargetExit": 15942.87
+      "entryPrice": 12961.67,
+      "strictStopLoss": 11924.74,
+      "pivotTargetExit": 15942.85
     },
     "fibonacciLevels": {
       "23.6%": 14476.41,
@@ -71,7 +71,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 222.5533,
+    "trendlineSlope": 222.5532,
     "anchor1Date": "2023-03",
     "anchor2Date": "2024-03"
   },
@@ -3263,7 +3263,7 @@
     "fibMatchLevel": "50.0%",
     "fibMatchPrice": 2211.06,
     "fibMatchDistancePct": 0.61,
-    "trendlineSlope": 20.6308,
+    "trendlineSlope": 20.6309,
     "anchor1Date": "2020-05",
     "anchor2Date": "2026-02"
   }
