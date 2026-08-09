@@ -42,7 +42,7 @@
     "currentPrice": 13818.0,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 12961.67,
+    "triggerPrice": 12961.68,
     "distanceRemaining": 0.4,
     "signalStatus": "CRITICAL_TOUCH",
     "notificationTrigger": true,
@@ -56,9 +56,9 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 3,
-      "entryPrice": 12961.67,
-      "strictStopLoss": 11924.74,
-      "pivotTargetExit": 15942.85
+      "entryPrice": 12961.68,
+      "strictStopLoss": 11924.75,
+      "pivotTargetExit": 15942.87
     },
     "fibonacciLevels": {
       "23.6%": 14476.41,
@@ -71,7 +71,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 222.5532,
+    "trendlineSlope": 222.5533,
     "anchor1Date": "2023-03",
     "anchor2Date": "2024-03"
   },
@@ -570,44 +570,6 @@
     "anchor2Date": "2023-07"
   },
   {
-    "ticker": "PRAJIND",
-    "currentPrice": 325.05,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 300.74,
-    "distanceRemaining": 4.23,
-    "signalStatus": "MONITORING",
-    "notificationTrigger": false,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 10,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 428.09,
-    "week52Low": 269.91,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 166,
-      "entryPrice": 300.74,
-      "strictStopLoss": 276.68,
-      "pivotTargetExit": 369.91
-    },
-    "fibonacciLevels": {
-      "23.6%": 664.14,
-      "38.2%": 546.67,
-      "50.0%": 451.73,
-      "61.8%": 356.79,
-      "78.6%": 221.62,
-      "100.0%": 49.44
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 3.3506,
-    "anchor1Date": "2020-05",
-    "anchor2Date": "2026-07"
-  },
-  {
     "ticker": "TI",
     "currentPrice": 490.75,
     "ema50": null,
@@ -656,7 +618,7 @@
     "notificationTrigger": false,
     "confluenceScore": 9,
     "patternZone": "Fib 50.0% support",
-    "wickTouches": 9,
+    "wickTouches": null,
     "timeframe": "monthly",
     "signalType": "FIBONACCI",
     "week52High": null,
@@ -679,9 +641,9 @@
     "fibMatchLevel": "50.0%",
     "fibMatchPrice": 562.38,
     "fibMatchDistancePct": 0.15,
-    "trendlineSlope": 3.227365,
-    "anchor1Date": "2023-03",
-    "anchor2Date": "2026-04"
+    "trendlineSlope": null,
+    "anchor1Date": null,
+    "anchor2Date": null
   },
   {
     "ticker": "AVANTIFEED",
@@ -694,7 +656,7 @@
     "notificationTrigger": false,
     "confluenceScore": 9,
     "patternZone": "Fib 50.0% support",
-    "wickTouches": 9,
+    "wickTouches": null,
     "timeframe": "monthly",
     "signalType": "FIBONACCI",
     "week52High": null,
@@ -717,9 +679,9 @@
     "fibMatchLevel": "50.0%",
     "fibMatchPrice": 904.44,
     "fibMatchDistancePct": 0.23,
-    "trendlineSlope": 10.379546,
-    "anchor1Date": "2023-10",
-    "anchor2Date": "2025-08"
+    "trendlineSlope": null,
+    "anchor1Date": null,
+    "anchor2Date": null
   },
   {
     "ticker": "ORKLAINDIA",
@@ -808,7 +770,7 @@
     "notificationTrigger": false,
     "confluenceScore": 9,
     "patternZone": "Fib 61.8% support",
-    "wickTouches": 4,
+    "wickTouches": null,
     "timeframe": "monthly",
     "signalType": "FIBONACCI",
     "week52High": null,
@@ -831,9 +793,9 @@
     "fibMatchLevel": "61.8%",
     "fibMatchPrice": 687.39,
     "fibMatchDistancePct": 0.6,
-    "trendlineSlope": 2.245455,
-    "anchor1Date": "2020-09",
-    "anchor2Date": "2026-03"
+    "trendlineSlope": null,
+    "anchor1Date": null,
+    "anchor2Date": null
   },
   {
     "ticker": "NFL",
@@ -846,7 +808,7 @@
     "notificationTrigger": false,
     "confluenceScore": 9,
     "patternZone": "Fib 61.8% support",
-    "wickTouches": 6,
+    "wickTouches": null,
     "timeframe": "monthly",
     "signalType": "FIBONACCI",
     "week52High": null,
@@ -869,9 +831,9 @@
     "fibMatchLevel": "61.8%",
     "fibMatchPrice": 72.34,
     "fibMatchDistancePct": 0.6,
-    "trendlineSlope": 0.558889,
-    "anchor1Date": "2022-06",
-    "anchor2Date": "2026-03"
+    "trendlineSlope": null,
+    "anchor1Date": null,
+    "anchor2Date": null
   },
   {
     "ticker": "MASTEK",
@@ -922,7 +884,7 @@
     "notificationTrigger": false,
     "confluenceScore": 9,
     "patternZone": "Fib 61.8% support",
-    "wickTouches": 3,
+    "wickTouches": null,
     "timeframe": "monthly",
     "signalType": "FIBONACCI",
     "week52High": null,
@@ -945,9 +907,9 @@
     "fibMatchLevel": "61.8%",
     "fibMatchPrice": 175.86,
     "fibMatchDistancePct": 0.69,
-    "trendlineSlope": 0.536364,
-    "anchor1Date": "2025-04",
-    "anchor2Date": "2026-03"
+    "trendlineSlope": null,
+    "anchor1Date": null,
+    "anchor2Date": null
   },
   {
     "ticker": "FEDFINA",
@@ -960,7 +922,7 @@
     "notificationTrigger": false,
     "confluenceScore": 9,
     "patternZone": "Fib 61.8% support",
-    "wickTouches": 4,
+    "wickTouches": null,
     "timeframe": "monthly",
     "signalType": "FIBONACCI",
     "week52High": null,
@@ -983,9 +945,9 @@
     "fibMatchLevel": "61.8%",
     "fibMatchPrice": 148.49,
     "fibMatchDistancePct": 0.74,
-    "trendlineSlope": 3.551818,
-    "anchor1Date": "2025-04",
-    "anchor2Date": "2026-03"
+    "trendlineSlope": null,
+    "anchor1Date": null,
+    "anchor2Date": null
   },
   {
     "ticker": "FINPIPE",
@@ -998,7 +960,7 @@
     "notificationTrigger": false,
     "confluenceScore": 9,
     "patternZone": "Fib 61.8% support",
-    "wickTouches": 4,
+    "wickTouches": null,
     "timeframe": "monthly",
     "signalType": "FIBONACCI",
     "week52High": null,
@@ -1021,9 +983,9 @@
     "fibMatchLevel": "61.8%",
     "fibMatchPrice": 165.66,
     "fibMatchDistancePct": 0.74,
-    "trendlineSlope": 1.088286,
-    "anchor1Date": "2020-05",
-    "anchor2Date": "2026-03"
+    "trendlineSlope": null,
+    "anchor1Date": null,
+    "anchor2Date": null
   },
   {
     "ticker": "APLLTD",
@@ -1036,7 +998,7 @@
     "notificationTrigger": false,
     "confluenceScore": 9,
     "patternZone": "Fib 50.0% support",
-    "wickTouches": 4,
+    "wickTouches": null,
     "timeframe": "monthly",
     "signalType": "FIBONACCI",
     "week52High": null,
@@ -1059,9 +1021,9 @@
     "fibMatchLevel": "50.0%",
     "fibMatchPrice": 836.44,
     "fibMatchDistancePct": 0.76,
-    "trendlineSlope": 4.819444,
-    "anchor1Date": "2023-03",
-    "anchor2Date": "2026-03"
+    "trendlineSlope": null,
+    "anchor1Date": null,
+    "anchor2Date": null
   },
   {
     "ticker": "SANOFICONR",
@@ -1150,7 +1112,7 @@
     "notificationTrigger": false,
     "confluenceScore": 9,
     "patternZone": "Fib 50.0% support",
-    "wickTouches": 6,
+    "wickTouches": null,
     "timeframe": "monthly",
     "signalType": "FIBONACCI",
     "week52High": null,
@@ -1173,9 +1135,9 @@
     "fibMatchLevel": "50.0%",
     "fibMatchPrice": 128.71,
     "fibMatchDistancePct": 1.39,
-    "trendlineSlope": 0.975,
-    "anchor1Date": "2020-09",
-    "anchor2Date": "2026-03"
+    "trendlineSlope": null,
+    "anchor1Date": null,
+    "anchor2Date": null
   },
   {
     "ticker": "LOTUSDEV",
@@ -1416,7 +1378,7 @@
     "notificationTrigger": false,
     "confluenceScore": 9,
     "patternZone": "Fib 61.8% support",
-    "wickTouches": 6,
+    "wickTouches": null,
     "timeframe": "monthly",
     "signalType": "FIBONACCI",
     "week52High": null,
@@ -1439,9 +1401,9 @@
     "fibMatchLevel": "61.8%",
     "fibMatchPrice": 8.83,
     "fibMatchDistancePct": 1.73,
-    "trendlineSlope": 0.131111,
-    "anchor1Date": "2023-03",
-    "anchor2Date": "2026-03"
+    "trendlineSlope": null,
+    "anchor1Date": null,
+    "anchor2Date": null
   },
   {
     "ticker": "VIPIND",
@@ -1454,7 +1416,7 @@
     "notificationTrigger": false,
     "confluenceScore": 9,
     "patternZone": "Fib 78.6% support",
-    "wickTouches": 3,
+    "wickTouches": null,
     "timeframe": "monthly",
     "signalType": "FIBONACCI",
     "week52High": null,
@@ -1477,9 +1439,9 @@
     "fibMatchLevel": "78.6%",
     "fibMatchPrice": 309.52,
     "fibMatchDistancePct": 1.77,
-    "trendlineSlope": 1.059028,
-    "anchor1Date": "2020-05",
-    "anchor2Date": "2026-05"
+    "trendlineSlope": null,
+    "anchor1Date": null,
+    "anchor2Date": null
   },
   {
     "ticker": "BIRLACORPN",
@@ -1568,7 +1530,7 @@
     "notificationTrigger": false,
     "confluenceScore": 9,
     "patternZone": "Fib 78.6% support",
-    "wickTouches": 6,
+    "wickTouches": null,
     "timeframe": "monthly",
     "signalType": "FIBONACCI",
     "week52High": null,
@@ -1591,9 +1553,9 @@
     "fibMatchLevel": "78.6%",
     "fibMatchPrice": 516.76,
     "fibMatchDistancePct": 1.96,
-    "trendlineSlope": 7.464999,
-    "anchor1Date": "2025-02",
-    "anchor2Date": "2025-12"
+    "trendlineSlope": null,
+    "anchor1Date": null,
+    "anchor2Date": null
   },
   {
     "ticker": "BALAMINES",
@@ -1720,7 +1682,7 @@
     "notificationTrigger": false,
     "confluenceScore": 9,
     "patternZone": "Fib 50.0% support",
-    "wickTouches": 5,
+    "wickTouches": null,
     "timeframe": "monthly",
     "signalType": "FIBONACCI",
     "week52High": null,
@@ -1743,9 +1705,9 @@
     "fibMatchLevel": "50.0%",
     "fibMatchPrice": 170.12,
     "fibMatchDistancePct": 2.52,
-    "trendlineSlope": 0.685294,
-    "anchor1Date": "2023-03",
-    "anchor2Date": "2026-01"
+    "trendlineSlope": null,
+    "anchor1Date": null,
+    "anchor2Date": null
   },
   {
     "ticker": "ENTERO",
@@ -1948,7 +1910,7 @@
     "notificationTrigger": false,
     "confluenceScore": 9,
     "patternZone": "Fib 50.0% support",
-    "wickTouches": 6,
+    "wickTouches": null,
     "timeframe": "monthly",
     "signalType": "FIBONACCI",
     "week52High": null,
@@ -1971,9 +1933,9 @@
     "fibMatchLevel": "50.0%",
     "fibMatchPrice": 301.43,
     "fibMatchDistancePct": 2.83,
-    "trendlineSlope": 2.7,
-    "anchor1Date": "2022-06",
-    "anchor2Date": "2023-03"
+    "trendlineSlope": null,
+    "anchor1Date": null,
+    "anchor2Date": null
   },
   {
     "ticker": "PNGJL",
@@ -1986,7 +1948,7 @@
     "notificationTrigger": false,
     "confluenceScore": 9,
     "patternZone": "Fib 78.6% support",
-    "wickTouches": 6,
+    "wickTouches": null,
     "timeframe": "monthly",
     "signalType": "FIBONACCI",
     "week52High": null,
@@ -2009,9 +1971,9 @@
     "fibMatchLevel": "78.6%",
     "fibMatchPrice": 661.72,
     "fibMatchDistancePct": 2.85,
-    "trendlineSlope": 2.654547,
-    "anchor1Date": "2025-04",
-    "anchor2Date": "2026-03"
+    "trendlineSlope": null,
+    "anchor1Date": null,
+    "anchor2Date": null
   },
   {
     "ticker": "SAATVIKGL",
@@ -2100,7 +2062,7 @@
     "notificationTrigger": false,
     "confluenceScore": 9,
     "patternZone": "Fib 100.0% support",
-    "wickTouches": 5,
+    "wickTouches": null,
     "timeframe": "monthly",
     "signalType": "FIBONACCI",
     "week52High": null,
@@ -2123,9 +2085,9 @@
     "fibMatchLevel": "100.0%",
     "fibMatchPrice": 721.59,
     "fibMatchDistancePct": 3.35,
-    "trendlineSlope": 0.477776,
-    "anchor1Date": "2025-04",
-    "anchor2Date": "2026-01"
+    "trendlineSlope": null,
+    "anchor1Date": null,
+    "anchor2Date": null
   },
   {
     "ticker": "CRAMC",
@@ -2176,7 +2138,7 @@
     "notificationTrigger": false,
     "confluenceScore": 9,
     "patternZone": "Fib 61.8% support",
-    "wickTouches": 4,
+    "wickTouches": null,
     "timeframe": "monthly",
     "signalType": "FIBONACCI",
     "week52High": null,
@@ -2199,9 +2161,9 @@
     "fibMatchLevel": "61.8%",
     "fibMatchPrice": 403.43,
     "fibMatchDistancePct": 3.63,
-    "trendlineSlope": 2.866667,
-    "anchor1Date": "2023-09",
-    "anchor2Date": "2026-03"
+    "trendlineSlope": null,
+    "anchor1Date": null,
+    "anchor2Date": null
   },
   {
     "ticker": "GSFC",
@@ -2366,7 +2328,7 @@
     "notificationTrigger": false,
     "confluenceScore": 9,
     "patternZone": "Fib 50.0% support",
-    "wickTouches": 6,
+    "wickTouches": null,
     "timeframe": "monthly",
     "signalType": "FIBONACCI",
     "week52High": null,
@@ -2389,9 +2351,9 @@
     "fibMatchLevel": "50.0%",
     "fibMatchPrice": 72.2,
     "fibMatchDistancePct": 4.19,
-    "trendlineSlope": 0.306667,
-    "anchor1Date": "2022-06",
-    "anchor2Date": "2026-03"
+    "trendlineSlope": null,
+    "anchor1Date": null,
+    "anchor2Date": null
   },
   {
     "ticker": "JKLAKSHMI",
@@ -2442,7 +2404,7 @@
     "notificationTrigger": false,
     "confluenceScore": 9,
     "patternZone": "Fib 50.0% support",
-    "wickTouches": 13,
+    "wickTouches": null,
     "timeframe": "monthly",
     "signalType": "FIBONACCI",
     "week52High": null,
@@ -2465,9 +2427,9 @@
     "fibMatchLevel": "50.0%",
     "fibMatchPrice": 10.21,
     "fibMatchDistancePct": 4.33,
-    "trendlineSlope": 0.034118,
-    "anchor1Date": "2020-10",
-    "anchor2Date": "2022-03"
+    "trendlineSlope": null,
+    "anchor1Date": null,
+    "anchor2Date": null
   },
   {
     "ticker": "WAAREERTL",
@@ -2518,7 +2480,7 @@
     "notificationTrigger": false,
     "confluenceScore": 9,
     "patternZone": "Fib 61.8% support",
-    "wickTouches": 6,
+    "wickTouches": null,
     "timeframe": "monthly",
     "signalType": "FIBONACCI",
     "week52High": null,
@@ -2541,9 +2503,9 @@
     "fibMatchLevel": "61.8%",
     "fibMatchPrice": 764.43,
     "fibMatchDistancePct": 4.86,
-    "trendlineSlope": 15.956944,
-    "anchor1Date": "2023-03",
-    "anchor2Date": "2026-03"
+    "trendlineSlope": null,
+    "anchor1Date": null,
+    "anchor2Date": null
   },
   {
     "ticker": "DBREALTY",
@@ -2556,7 +2518,7 @@
     "notificationTrigger": false,
     "confluenceScore": 9,
     "patternZone": "Fib 61.8% support",
-    "wickTouches": 3,
+    "wickTouches": null,
     "timeframe": "monthly",
     "signalType": "FIBONACCI",
     "week52High": null,
@@ -2579,9 +2541,9 @@
     "fibMatchLevel": "61.8%",
     "fibMatchPrice": 111.86,
     "fibMatchDistancePct": 4.88,
-    "trendlineSlope": 1.190769,
-    "anchor1Date": "2020-10",
-    "anchor2Date": "2026-03"
+    "trendlineSlope": null,
+    "anchor1Date": null,
+    "anchor2Date": null
   },
   {
     "ticker": "QUESS",
@@ -2594,7 +2556,7 @@
     "notificationTrigger": false,
     "confluenceScore": 9,
     "patternZone": "Fib 78.6% support",
-    "wickTouches": 3,
+    "wickTouches": null,
     "timeframe": "monthly",
     "signalType": "FIBONACCI",
     "week52High": null,
@@ -2617,9 +2579,9 @@
     "fibMatchLevel": "78.6%",
     "fibMatchPrice": 327.36,
     "fibMatchDistancePct": 4.98,
-    "trendlineSlope": 0.018571,
-    "anchor1Date": "2020-05",
-    "anchor2Date": "2026-03"
+    "trendlineSlope": null,
+    "anchor1Date": null,
+    "anchor2Date": null
   },
   {
     "ticker": "STAR",
