@@ -156,7 +156,7 @@
     "currentPrice": 25510.0,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 25602.63,
+    "triggerPrice": 25602.62,
     "distanceRemaining": 0.6,
     "signalStatus": "CRITICAL_TOUCH",
     "notificationTrigger": true,
@@ -170,22 +170,22 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 1,
-      "entryPrice": 25602.63,
-      "strictStopLoss": 23554.42,
-      "pivotTargetExit": 31491.23
+      "entryPrice": 25602.62,
+      "strictStopLoss": 23554.41,
+      "pivotTargetExit": 31491.22
     },
     "fibonacciLevels": {
       "23.6%": 28241.82,
-      "38.2%": 25722.48,
+      "38.2%": 25722.47,
       "50.0%": 23686.29,
-      "61.8%": 21650.11,
+      "61.8%": 21650.1,
       "78.6%": 18751.13,
-      "100.0%": 15058.39
+      "100.0%": 15058.38
     },
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 110.3377,
+    "trendlineSlope": 110.3376,
     "anchor1Date": "2020-09",
     "anchor2Date": "2024-11"
   },
@@ -1951,7 +1951,7 @@
     "wickTouches": 21,
     "timeframe": "monthly",
     "signalType": "TRENDLINE",
-    "week52High": 163308.49,
+    "week52High": 163308.47,
     "week52Low": 121787.44,
     "positionSizing": {
       "allocatedAmount": 50000.0,
@@ -1961,10 +1961,10 @@
       "pivotTargetExit": 153437.12
     },
     "fibonacciLevels": {
-      "23.6%": 137478.08,
-      "38.2%": 121498.25,
+      "23.6%": 137478.06,
+      "38.2%": 121498.24,
       "50.0%": 108583.04,
-      "61.8%": 95667.84,
+      "61.8%": 95667.83,
       "78.6%": 77280.09,
       "100.0%": 53857.6
     },
@@ -2968,7 +2968,7 @@
     "currentPrice": 37935.0,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 39684.76,
+    "triggerPrice": 39684.75,
     "distanceRemaining": 4.41,
     "signalStatus": "WATCHLIST",
     "notificationTrigger": false,
@@ -2982,20 +2982,20 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 1,
-      "entryPrice": 39684.76,
-      "strictStopLoss": 36509.98,
-      "pivotTargetExit": 48812.25
+      "entryPrice": 39684.75,
+      "strictStopLoss": 36509.97,
+      "pivotTargetExit": 48812.24
     },
     "fibonacciLevels": {
       "23.6%": 50172.84,
       "38.2%": 44372.61,
-      "50.0%": 39684.76,
+      "50.0%": 39684.75,
       "61.8%": 34996.9,
       "78.6%": 28322.66,
       "100.0%": 19820.96
     },
     "fibMatchLevel": "50.0%",
-    "fibMatchPrice": 39684.76,
+    "fibMatchPrice": 39684.75,
     "fibMatchDistancePct": 4.41,
     "trendlineSlope": null,
     "anchor1Date": null,
