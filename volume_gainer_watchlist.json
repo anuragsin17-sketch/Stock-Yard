@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-08-12 11:21 IST",
-    "date": "2026-08-12",
-    "new_stocks": 10,
-    "total": 294
+    "timestamp": "2026-08-13 11:20 IST",
+    "date": "2026-08-13",
+    "new_stocks": 5,
+    "total": 299
   },
   "stocks": [
     {
@@ -6911,6 +6911,91 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-08-13T11:11:47.784411",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "JUBLCPL",
+      "company": "JUBLCPL",
+      "added_date": "2026-08-13",
+      "gain_pct": 20.0,
+      "close_price": 2322.6,
+      "prev_close": 1935.5,
+      "prev_day_low": 1857.59,
+      "alert_threshold": 1950.47,
+      "sl_price": 1783.29,
+      "target_price": 2136.23,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 3013.4,
+      "week_52_low": 1460.0
+    },
+    {
+      "ticker": "TARMAT",
+      "company": "TARMAT",
+      "added_date": "2026-08-13",
+      "gain_pct": 17.41,
+      "close_price": 64.68,
+      "prev_close": 55.09,
+      "prev_day_low": 53.8,
+      "alert_threshold": 56.49,
+      "sl_price": 51.65,
+      "target_price": 61.87,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 73.9,
+      "week_52_low": 46.26
+    },
+    {
+      "ticker": "DICIND",
+      "company": "DICIND",
+      "added_date": "2026-08-13",
+      "gain_pct": 13.78,
+      "close_price": 575.5,
+      "prev_close": 505.8,
+      "prev_day_low": 542.43,
+      "alert_threshold": 569.55,
+      "sl_price": 520.73,
+      "target_price": 623.79,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 617.3,
+      "week_52_low": 450.5
+    },
+    {
+      "ticker": "SURAKSHA",
+      "company": "SURAKSHA",
+      "added_date": "2026-08-13",
+      "gain_pct": 12.61,
+      "close_price": 304.45,
+      "prev_close": 270.35,
+      "prev_day_low": 266.56,
+      "alert_threshold": 279.89,
+      "sl_price": 255.9,
+      "target_price": 306.54,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 333.0,
+      "week_52_low": 224.1
+    },
+    {
+      "ticker": "KANPRPLA",
+      "company": "KANPRPLA",
+      "added_date": "2026-08-13",
+      "gain_pct": 12.02,
+      "close_price": 260.38,
+      "prev_close": 232.45,
+      "prev_day_low": 229.42,
+      "alert_threshold": 240.89,
+      "sl_price": 220.24,
+      "target_price": 263.83,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 264.0,
+      "week_52_low": 151.25
     }
   ]
 }
