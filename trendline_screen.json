@@ -114,44 +114,6 @@
     "anchor2Date": "2023-10"
   },
   {
-    "ticker": "PFC",
-    "currentPrice": 376.0,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 374.63,
-    "distanceRemaining": 0.08,
-    "signalStatus": "CRITICAL_TOUCH",
-    "notificationTrigger": true,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 9,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 481.99,
-    "week52Low": 321.1,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 133,
-      "entryPrice": 374.63,
-      "strictStopLoss": 344.66,
-      "pivotTargetExit": 460.79
-    },
-    "fibonacciLevels": {
-      "23.6%": 417.47,
-      "38.2%": 345.37,
-      "50.0%": 287.1,
-      "61.8%": 228.83,
-      "78.6%": 145.86,
-      "100.0%": 40.18
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 6.6915,
-    "anchor1Date": "2022-10",
-    "anchor2Date": "2025-12"
-  },
-  {
     "ticker": "IRFC",
     "currentPrice": 87.57,
     "ema50": null,
@@ -188,6 +150,44 @@
     "trendlineSlope": 1.5489,
     "anchor1Date": "2023-03",
     "anchor2Date": "2026-07"
+  },
+  {
+    "ticker": "PFC",
+    "currentPrice": 376.0,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 374.63,
+    "distanceRemaining": 0.17,
+    "signalStatus": "CRITICAL_TOUCH",
+    "notificationTrigger": true,
+    "confluenceScore": 10,
+    "patternZone": "Trendline touch only",
+    "wickTouches": 9,
+    "timeframe": "monthly",
+    "signalType": "TRENDLINE",
+    "week52High": 481.99,
+    "week52Low": 321.1,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 133,
+      "entryPrice": 374.63,
+      "strictStopLoss": 344.66,
+      "pivotTargetExit": 460.79
+    },
+    "fibonacciLevels": {
+      "23.6%": 417.47,
+      "38.2%": 345.37,
+      "50.0%": 287.1,
+      "61.8%": 228.83,
+      "78.6%": 145.86,
+      "100.0%": 40.18
+    },
+    "fibMatchLevel": null,
+    "fibMatchPrice": null,
+    "fibMatchDistancePct": null,
+    "trendlineSlope": 6.6915,
+    "anchor1Date": "2022-10",
+    "anchor2Date": "2025-12"
   },
   {
     "ticker": "NTPCGREEN",
@@ -1064,11 +1064,49 @@
     "anchor2Date": "2026-04"
   },
   {
+    "ticker": "PETRONET",
+    "currentPrice": 282.6,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 267.45,
+    "distanceRemaining": 2.08,
+    "signalStatus": "WATCHLIST",
+    "notificationTrigger": false,
+    "confluenceScore": 10,
+    "patternZone": "Trendline touch only",
+    "wickTouches": 25,
+    "timeframe": "monthly",
+    "signalType": "TRENDLINE",
+    "week52High": 322.68,
+    "week52Low": 232.67,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 186,
+      "entryPrice": 267.45,
+      "strictStopLoss": 246.05,
+      "pivotTargetExit": 328.96
+    },
+    "fibonacciLevels": {
+      "23.6%": 308.75,
+      "38.2%": 277.55,
+      "50.0%": 252.33,
+      "61.8%": 227.11,
+      "78.6%": 191.21,
+      "100.0%": 145.47
+    },
+    "fibMatchLevel": null,
+    "fibMatchPrice": null,
+    "fibMatchDistancePct": null,
+    "trendlineSlope": 2.0079,
+    "anchor1Date": "2022-02",
+    "anchor2Date": "2023-06"
+  },
+  {
     "ticker": "MARUTI",
     "currentPrice": 13834.0,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 13467.13,
+    "triggerPrice": 13467.12,
     "distanceRemaining": 2.17,
     "signalStatus": "WATCHLIST",
     "notificationTrigger": false,
@@ -1082,12 +1120,12 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 3,
-      "entryPrice": 13467.13,
-      "strictStopLoss": 12389.76,
-      "pivotTargetExit": 16564.57
+      "entryPrice": 13467.12,
+      "strictStopLoss": 12389.75,
+      "pivotTargetExit": 16564.56
     },
     "fibonacciLevels": {
-      "23.6%": 14026.76,
+      "23.6%": 14026.75,
       "38.2%": 12065.32,
       "50.0%": 10480.06,
       "61.8%": 8894.79,
@@ -1138,44 +1176,6 @@
     "trendlineSlope": 33.9898,
     "anchor1Date": "2023-05",
     "anchor2Date": "2025-02"
-  },
-  {
-    "ticker": "PETRONET",
-    "currentPrice": 282.6,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 267.45,
-    "distanceRemaining": 2.23,
-    "signalStatus": "WATCHLIST",
-    "notificationTrigger": false,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 25,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 322.68,
-    "week52Low": 232.67,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 186,
-      "entryPrice": 267.45,
-      "strictStopLoss": 246.05,
-      "pivotTargetExit": 328.96
-    },
-    "fibonacciLevels": {
-      "23.6%": 308.75,
-      "38.2%": 277.55,
-      "50.0%": 252.33,
-      "61.8%": 227.11,
-      "78.6%": 191.21,
-      "100.0%": 145.47
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 2.0079,
-    "anchor1Date": "2022-02",
-    "anchor2Date": "2023-06"
   },
   {
     "ticker": "BANKINDIA",
@@ -2039,15 +2039,15 @@
     "fibonacciLevels": {
       "23.6%": 137478.08,
       "38.2%": 121498.25,
-      "50.0%": 108583.04,
+      "50.0%": 108583.05,
       "61.8%": 95667.84,
       "78.6%": 77280.09,
-      "100.0%": 53857.6
+      "100.0%": 53857.61
     },
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 986.0646,
+    "trendlineSlope": 986.0645,
     "anchor1Date": "2020-09",
     "anchor2Date": "2026-05"
   },
@@ -2123,7 +2123,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 127.7888,
+    "trendlineSlope": 127.7887,
     "anchor1Date": "2023-10",
     "anchor2Date": "2024-06"
   },
@@ -3410,7 +3410,7 @@
       "50.0%": 2308.73,
       "61.8%": 2165.4,
       "78.6%": 1961.34,
-      "100.0%": 1701.41
+      "100.0%": 1701.4
     },
     "fibMatchLevel": "61.8%",
     "fibMatchPrice": 2085.41,
