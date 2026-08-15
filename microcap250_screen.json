@@ -118,7 +118,7 @@
     "currentPrice": 13330.0,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 12961.67,
+    "triggerPrice": 12961.68,
     "distanceRemaining": 0.4,
     "signalStatus": "CRITICAL_TOUCH",
     "notificationTrigger": true,
@@ -132,9 +132,9 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 3,
-      "entryPrice": 12961.67,
-      "strictStopLoss": 11924.74,
-      "pivotTargetExit": 15942.85
+      "entryPrice": 12961.68,
+      "strictStopLoss": 11924.75,
+      "pivotTargetExit": 15942.87
     },
     "fibonacciLevels": {
       "23.6%": 14476.41,
@@ -147,7 +147,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 222.5532,
+    "trendlineSlope": 222.5533,
     "anchor1Date": "2023-03",
     "anchor2Date": "2024-03"
   },
@@ -2432,6 +2432,44 @@
     "anchor2Date": null
   },
   {
+    "ticker": "PRAJIND",
+    "currentPrice": 335.25,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 351.26,
+    "distanceRemaining": 4.56,
+    "signalStatus": "WATCHLIST",
+    "notificationTrigger": false,
+    "confluenceScore": 9,
+    "patternZone": "Fib 61.8% support",
+    "wickTouches": null,
+    "timeframe": "monthly",
+    "signalType": "FIBONACCI",
+    "week52High": null,
+    "week52Low": null,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 142,
+      "entryPrice": 351.26,
+      "strictStopLoss": 323.16,
+      "pivotTargetExit": 432.05
+    },
+    "fibonacciLevels": {
+      "23.6%": 662.03,
+      "38.2%": 543.25,
+      "50.0%": 447.26,
+      "61.8%": 351.26,
+      "78.6%": 214.59,
+      "100.0%": 40.5
+    },
+    "fibMatchLevel": "61.8%",
+    "fibMatchPrice": 351.26,
+    "fibMatchDistancePct": 4.56,
+    "trendlineSlope": null,
+    "anchor1Date": null,
+    "anchor2Date": null
+  },
+  {
     "ticker": "AVANTIFEED",
     "currentPrice": 861.4,
     "ema50": null,
@@ -2962,43 +3000,5 @@
     "trendlineSlope": 19.1002,
     "anchor1Date": "2022-02",
     "anchor2Date": "2026-05"
-  },
-  {
-    "ticker": "PRAJIND",
-    "currentPrice": 335.25,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 300.74,
-    "distanceRemaining": 4.23,
-    "signalStatus": "MONITORING",
-    "notificationTrigger": false,
-    "confluenceScore": 8,
-    "patternZone": "Confluence: Trendline + Fib 61.8% \u2713\u2713",
-    "wickTouches": 10,
-    "timeframe": "monthly",
-    "signalType": "CONFLUENCE",
-    "week52High": 428.09,
-    "week52Low": 269.91,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 166,
-      "entryPrice": 300.74,
-      "strictStopLoss": 276.68,
-      "pivotTargetExit": 369.91
-    },
-    "fibonacciLevels": {
-      "23.6%": 664.14,
-      "38.2%": 546.67,
-      "50.0%": 451.73,
-      "61.8%": 356.79,
-      "78.6%": 221.62,
-      "100.0%": 49.44
-    },
-    "fibMatchLevel": "61.8%",
-    "fibMatchPrice": 351.26,
-    "fibMatchDistancePct": 4.56,
-    "trendlineSlope": 3.3506,
-    "anchor1Date": "2020-05",
-    "anchor2Date": "2026-07"
   }
 ]
