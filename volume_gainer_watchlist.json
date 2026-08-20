@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-08-19 10:54 IST",
-    "date": "2026-08-18",
-    "new_stocks": 0,
-    "total": 308
+    "timestamp": "2026-08-20 10:24 IST",
+    "date": "2026-08-19",
+    "new_stocks": 6,
+    "total": 314
   },
   "stocks": [
     {
@@ -7255,6 +7255,108 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-08-20T09:56:25.235821",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "BLEL",
+      "company": "BLEL",
+      "added_date": "2026-08-19",
+      "gain_pct": 76.21,
+      "close_price": 502.2,
+      "prev_close": 285.0,
+      "prev_day_low": 449.53,
+      "alert_threshold": 472.01,
+      "sl_price": 431.55,
+      "target_price": 516.96,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 548.0,
+      "week_52_low": 458.7
+    },
+    {
+      "ticker": "SHIPROCKET",
+      "company": "SHIPROCKET",
+      "added_date": "2026-08-19",
+      "gain_pct": 47.89,
+      "close_price": 143.45,
+      "prev_close": 97.0,
+      "prev_day_low": 128.38,
+      "alert_threshold": 134.8,
+      "sl_price": 123.24,
+      "target_price": 147.64,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 156.9,
+      "week_52_low": 131.0
+    },
+    {
+      "ticker": "TECILCHEM",
+      "company": "TECILCHEM",
+      "added_date": "2026-08-19",
+      "gain_pct": 19.91,
+      "close_price": 10.24,
+      "prev_close": 8.54,
+      "prev_day_low": 8.18,
+      "alert_threshold": 8.59,
+      "sl_price": 7.85,
+      "target_price": 9.41,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 22.87,
+      "week_52_low": 8.1
+    },
+    {
+      "ticker": "EXCELINDUS",
+      "company": "EXCELINDUS",
+      "added_date": "2026-08-19",
+      "gain_pct": 15.03,
+      "close_price": 1133.25,
+      "prev_close": 985.2,
+      "prev_day_low": 971.08,
+      "alert_threshold": 1019.63,
+      "sl_price": 932.24,
+      "target_price": 1116.74,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 1348.8,
+      "week_52_low": 800.05
+    },
+    {
+      "ticker": "ZAGGLE",
+      "company": "ZAGGLE",
+      "added_date": "2026-08-19",
+      "gain_pct": 12.15,
+      "close_price": 186.04,
+      "prev_close": 165.88,
+      "prev_day_low": 176.4,
+      "alert_threshold": 185.22,
+      "sl_price": 169.34,
+      "target_price": 202.86,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 413.7,
+      "week_52_low": 154.36
+    },
+    {
+      "ticker": "AHLADA",
+      "company": "AHLADA",
+      "added_date": "2026-08-19",
+      "gain_pct": 12.05,
+      "close_price": 40.82,
+      "prev_close": 36.43,
+      "prev_day_low": 35.44,
+      "alert_threshold": 37.21,
+      "sl_price": 34.02,
+      "target_price": 40.76,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 72.0,
+      "week_52_low": 31.22
     }
   ]
 }
