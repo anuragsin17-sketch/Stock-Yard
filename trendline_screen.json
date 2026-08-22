@@ -228,6 +228,44 @@
     "anchor2Date": "2025-02"
   },
   {
+    "ticker": "NHPC",
+    "currentPrice": 76.15,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 76.28,
+    "distanceRemaining": 0.56,
+    "signalStatus": "CRITICAL_TOUCH",
+    "notificationTrigger": true,
+    "confluenceScore": 10,
+    "patternZone": "Trendline touch only",
+    "wickTouches": 24,
+    "timeframe": "monthly",
+    "signalType": "TRENDLINE",
+    "week52High": 87.4,
+    "week52Low": 71.42,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 655,
+      "entryPrice": 76.28,
+      "strictStopLoss": 70.18,
+      "pivotTargetExit": 93.82
+    },
+    "fibonacciLevels": {
+      "23.6%": 89.49,
+      "38.2%": 75.23,
+      "50.0%": 63.71,
+      "61.8%": 52.19,
+      "78.6%": 35.78,
+      "100.0%": 14.89
+    },
+    "fibMatchLevel": null,
+    "fibMatchPrice": null,
+    "fibMatchDistancePct": null,
+    "trendlineSlope": 0.9701,
+    "anchor1Date": "2022-02",
+    "anchor2Date": "2026-03"
+  },
+  {
     "ticker": "IOC",
     "currentPrice": 135.9,
     "ema50": null,
@@ -266,49 +304,11 @@
     "anchor2Date": "2026-04"
   },
   {
-    "ticker": "NHPC",
-    "currentPrice": 76.15,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 76.38,
-    "distanceRemaining": 0.69,
-    "signalStatus": "CRITICAL_TOUCH",
-    "notificationTrigger": true,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 24,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 87.4,
-    "week52Low": 71.42,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 654,
-      "entryPrice": 76.38,
-      "strictStopLoss": 70.27,
-      "pivotTargetExit": 93.95
-    },
-    "fibonacciLevels": {
-      "23.6%": 89.49,
-      "38.2%": 75.23,
-      "50.0%": 63.71,
-      "61.8%": 52.19,
-      "78.6%": 35.78,
-      "100.0%": 14.89
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 0.9903,
-    "anchor1Date": "2022-03",
-    "anchor2Date": "2026-03"
-  },
-  {
     "ticker": "MARUTI",
     "currentPrice": 13565.0,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 13467.13,
+    "triggerPrice": 13467.12,
     "distanceRemaining": 0.73,
     "signalStatus": "CRITICAL_TOUCH",
     "notificationTrigger": true,
@@ -322,12 +322,12 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 3,
-      "entryPrice": 13467.13,
-      "strictStopLoss": 12389.76,
-      "pivotTargetExit": 16564.57
+      "entryPrice": 13467.12,
+      "strictStopLoss": 12389.75,
+      "pivotTargetExit": 16564.56
     },
     "fibonacciLevels": {
-      "23.6%": 14026.75,
+      "23.6%": 14026.76,
       "38.2%": 12065.32,
       "50.0%": 10480.06,
       "61.8%": 8894.79,
@@ -603,7 +603,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 28.6597,
+    "trendlineSlope": 28.6596,
     "anchor1Date": "2025-03",
     "anchor2Date": "2025-10"
   },
@@ -2237,7 +2237,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 127.7886,
+    "trendlineSlope": 127.7887,
     "anchor1Date": "2023-10",
     "anchor2Date": "2024-06"
   },
@@ -3258,7 +3258,7 @@
       "50.0%": 39684.75,
       "61.8%": 34996.9,
       "78.6%": 28322.66,
-      "100.0%": 19820.96
+      "100.0%": 19820.95
     },
     "fibMatchLevel": "61.8%",
     "fibMatchPrice": 34996.9,
@@ -3334,7 +3334,7 @@
       "50.0%": 2308.73,
       "61.8%": 2165.4,
       "78.6%": 1961.34,
-      "100.0%": 1701.4
+      "100.0%": 1701.41
     },
     "fibMatchLevel": "61.8%",
     "fibMatchPrice": 2085.41,
