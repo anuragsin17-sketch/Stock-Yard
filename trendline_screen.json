@@ -1,7 +1,7 @@
 [
   {
     "ticker": "AUBANK",
-    "currentPrice": 1113.8,
+    "currentPrice": 1114.0,
     "ema50": null,
     "ema200": null,
     "triggerPrice": 1035.53,
@@ -156,7 +156,7 @@
     "currentPrice": 13620.0,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 13467.12,
+    "triggerPrice": 13467.13,
     "distanceRemaining": 0.28,
     "signalStatus": "CRITICAL_TOUCH",
     "notificationTrigger": true,
@@ -170,9 +170,9 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 3,
-      "entryPrice": 13467.12,
-      "strictStopLoss": 12389.75,
-      "pivotTargetExit": 16564.56
+      "entryPrice": 13467.13,
+      "strictStopLoss": 12389.76,
+      "pivotTargetExit": 16564.57
     },
     "fibonacciLevels": {
       "23.6%": 14026.76,
@@ -185,7 +185,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 129.6377,
+    "trendlineSlope": 129.6378,
     "anchor1Date": "2022-12",
     "anchor2Date": "2024-01"
   },
@@ -380,44 +380,6 @@
     "anchor2Date": "2026-06"
   },
   {
-    "ticker": "NHPC",
-    "currentPrice": 76.65,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 76.28,
-    "distanceRemaining": 0.95,
-    "signalStatus": "CRITICAL_TOUCH",
-    "notificationTrigger": true,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 24,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 87.4,
-    "week52Low": 71.42,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 655,
-      "entryPrice": 76.28,
-      "strictStopLoss": 70.18,
-      "pivotTargetExit": 93.82
-    },
-    "fibonacciLevels": {
-      "23.6%": 89.49,
-      "38.2%": 75.23,
-      "50.0%": 63.71,
-      "61.8%": 52.19,
-      "78.6%": 35.78,
-      "100.0%": 14.89
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 0.9701,
-    "anchor1Date": "2022-02",
-    "anchor2Date": "2026-03"
-  },
-  {
     "ticker": "MUTHOOTFIN",
     "currentPrice": 3209.0,
     "ema50": null,
@@ -570,6 +532,44 @@
     "anchor2Date": "2026-07"
   },
   {
+    "ticker": "NHPC",
+    "currentPrice": 76.65,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 76.38,
+    "distanceRemaining": 1.08,
+    "signalStatus": "WATCHLIST",
+    "notificationTrigger": false,
+    "confluenceScore": 10,
+    "patternZone": "Trendline touch only",
+    "wickTouches": 24,
+    "timeframe": "monthly",
+    "signalType": "TRENDLINE",
+    "week52High": 87.4,
+    "week52Low": 71.42,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 654,
+      "entryPrice": 76.38,
+      "strictStopLoss": 70.27,
+      "pivotTargetExit": 93.95
+    },
+    "fibonacciLevels": {
+      "23.6%": 89.49,
+      "38.2%": 75.23,
+      "50.0%": 63.71,
+      "61.8%": 52.19,
+      "78.6%": 35.78,
+      "100.0%": 14.89
+    },
+    "fibMatchLevel": null,
+    "fibMatchPrice": null,
+    "fibMatchDistancePct": null,
+    "trendlineSlope": 0.9903,
+    "anchor1Date": "2022-03",
+    "anchor2Date": "2026-03"
+  },
+  {
     "ticker": "RELIANCE",
     "currentPrice": 1309.8,
     "ema50": null,
@@ -641,7 +641,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 28.6596,
+    "trendlineSlope": 28.6597,
     "anchor1Date": "2025-03",
     "anchor2Date": "2025-10"
   },
@@ -723,7 +723,7 @@
   },
   {
     "ticker": "APLAPOLLO",
-    "currentPrice": 2145.3,
+    "currentPrice": 2145.0,
     "ema50": null,
     "ema200": null,
     "triggerPrice": 1794.47,
@@ -1103,7 +1103,7 @@
   },
   {
     "ticker": "ABBOTINDIA",
-    "currentPrice": 26450.0,
+    "currentPrice": 26420.0,
     "ema50": null,
     "ema200": null,
     "triggerPrice": 25340.97,
@@ -1781,7 +1781,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 124.0147,
+    "trendlineSlope": 124.0148,
     "anchor1Date": "2020-10",
     "anchor2Date": "2024-06"
   },
@@ -1857,7 +1857,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 28.5433,
+    "trendlineSlope": 28.5434,
     "anchor1Date": "2023-02",
     "anchor2Date": "2024-11"
   },
@@ -2217,7 +2217,7 @@
     "wickTouches": 21,
     "timeframe": "monthly",
     "signalType": "TRENDLINE",
-    "week52High": 163308.47,
+    "week52High": 163308.49,
     "week52Low": 121787.44,
     "positionSizing": {
       "allocatedAmount": 50000.0,
@@ -2227,17 +2227,17 @@
       "pivotTargetExit": 153437.12
     },
     "fibonacciLevels": {
-      "23.6%": 137478.06,
-      "38.2%": 121498.24,
-      "50.0%": 108583.03,
-      "61.8%": 95667.83,
-      "78.6%": 77280.08,
+      "23.6%": 137478.08,
+      "38.2%": 121498.25,
+      "50.0%": 108583.04,
+      "61.8%": 95667.84,
+      "78.6%": 77280.09,
       "100.0%": 53857.6
     },
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 986.0646,
+    "trendlineSlope": 986.0647,
     "anchor1Date": "2020-09",
     "anchor2Date": "2026-05"
   },
@@ -3672,9 +3672,9 @@
     },
     "fibonacciLevels": {
       "23.6%": 28241.82,
-      "38.2%": 25722.47,
+      "38.2%": 25722.48,
       "50.0%": 23686.29,
-      "61.8%": 21650.1,
+      "61.8%": 21650.11,
       "78.6%": 18751.13,
       "100.0%": 15058.39
     },
