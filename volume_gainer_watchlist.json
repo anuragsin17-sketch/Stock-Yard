@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-08-25 10:58 IST",
-    "date": "2026-08-24",
-    "new_stocks": 0,
-    "total": 330
+    "timestamp": "2026-08-26 10:05 IST",
+    "date": "2026-08-25",
+    "new_stocks": 2,
+    "total": 332
   },
   "stocks": [
     {
@@ -7739,6 +7739,40 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-08-26T09:29:46.007641",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "GENESYS",
+      "company": "GENESYS",
+      "added_date": "2026-08-25",
+      "gain_pct": 19.99,
+      "close_price": 214.25,
+      "prev_close": 178.55,
+      "prev_day_low": 177.67,
+      "alert_threshold": 186.55,
+      "sl_price": 170.56,
+      "target_price": 204.32,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 647.9,
+      "week_52_low": 168.5
+    },
+    {
+      "ticker": "OPTIFIN",
+      "company": "OPTIFIN",
+      "added_date": "2026-08-25",
+      "gain_pct": 15.37,
+      "close_price": 13.89,
+      "prev_close": 12.04,
+      "prev_day_low": 11.58,
+      "alert_threshold": 12.16,
+      "sl_price": 11.12,
+      "target_price": 13.32,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 14.78,
+      "week_52_low": 11.41
     }
   ]
 }
