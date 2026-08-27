@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-08-26 11:00 IST",
-    "date": "2026-08-25",
-    "new_stocks": 0,
-    "total": 332
+    "timestamp": "2026-08-27 20:39 IST",
+    "date": "2026-08-27",
+    "new_stocks": 6,
+    "total": 338
   },
   "stocks": [
     {
@@ -7811,6 +7811,108 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-08-27T18:03:49.218075",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "IMAGICAA",
+      "company": "IMAGICAA",
+      "added_date": "2026-08-27",
+      "gain_pct": 19.99,
+      "close_price": 60.21,
+      "prev_close": 50.18,
+      "prev_day_low": 49.05,
+      "alert_threshold": 51.5,
+      "sl_price": 47.09,
+      "target_price": 56.41,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 60.21,
+      "week_52_low": 36.84
+    },
+    {
+      "ticker": "ANSALBU",
+      "company": "ANSALBU",
+      "added_date": "2026-08-27",
+      "gain_pct": 19.0,
+      "close_price": 85.69,
+      "prev_close": 72.01,
+      "prev_day_low": 70.57,
+      "alert_threshold": 74.1,
+      "sl_price": 67.75,
+      "target_price": 81.16,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 85.69,
+      "week_52_low": 70.64
+    },
+    {
+      "ticker": "NIRAJISPAT",
+      "company": "NIRAJISPAT",
+      "added_date": "2026-08-27",
+      "gain_pct": 14.16,
+      "close_price": 246.59,
+      "prev_close": 216.0,
+      "prev_day_low": 211.68,
+      "alert_threshold": 222.26,
+      "sl_price": 203.21,
+      "target_price": 243.43,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 485.75,
+      "week_52_low": 155.0
+    },
+    {
+      "ticker": "BBTC",
+      "company": "BBTC",
+      "added_date": "2026-08-27",
+      "gain_pct": 13.14,
+      "close_price": 1613.6,
+      "prev_close": 1426.2,
+      "prev_day_low": 1420.02,
+      "alert_threshold": 1491.02,
+      "sl_price": 1363.22,
+      "target_price": 1633.02,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 2135.0,
+      "week_52_low": 1314.6
+    },
+    {
+      "ticker": "INOXINDIA",
+      "company": "INOXINDIA",
+      "added_date": "2026-08-27",
+      "gain_pct": 13.04,
+      "close_price": 2177.9,
+      "prev_close": 1926.7,
+      "prev_day_low": 1878.56,
+      "alert_threshold": 1972.49,
+      "sl_price": 1803.42,
+      "target_price": 2160.34,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 2224.0,
+      "week_52_low": 1068.2
+    },
+    {
+      "ticker": "SHAHALLOYS",
+      "company": "SHAHALLOYS",
+      "added_date": "2026-08-27",
+      "gain_pct": 13.02,
+      "close_price": 85.96,
+      "prev_close": 76.06,
+      "prev_day_low": 76.44,
+      "alert_threshold": 80.26,
+      "sl_price": 73.38,
+      "target_price": 87.91,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 88.37,
+      "week_52_low": 53.1
     }
   ]
 }
