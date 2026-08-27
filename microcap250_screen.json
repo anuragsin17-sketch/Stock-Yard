@@ -156,7 +156,7 @@
     "currentPrice": 13564.0,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 12961.68,
+    "triggerPrice": 12961.67,
     "distanceRemaining": 0.3,
     "signalStatus": "CRITICAL_TOUCH",
     "notificationTrigger": true,
@@ -170,9 +170,9 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 3,
-      "entryPrice": 12961.68,
-      "strictStopLoss": 11924.75,
-      "pivotTargetExit": 15942.87
+      "entryPrice": 12961.67,
+      "strictStopLoss": 11924.74,
+      "pivotTargetExit": 15942.85
     },
     "fibonacciLevels": {
       "23.6%": 14476.41,
@@ -1279,7 +1279,7 @@
     "fibonacciLevels": {
       "23.6%": 5403.21,
       "38.2%": 5154.54,
-      "50.0%": 4953.56,
+      "50.0%": 4953.57,
       "61.8%": 4752.59,
       "78.6%": 4466.45,
       "100.0%": 4101.97

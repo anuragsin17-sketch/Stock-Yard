@@ -185,7 +185,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 42.5755,
+    "trendlineSlope": 42.5756,
     "anchor1Date": "2023-03",
     "anchor2Date": "2025-02"
   },
@@ -489,7 +489,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 124.0147,
+    "trendlineSlope": 124.0148,
     "anchor1Date": "2020-10",
     "anchor2Date": "2024-06"
   },
@@ -570,6 +570,44 @@
     "anchor2Date": "2026-07"
   },
   {
+    "ticker": "NHPC",
+    "currentPrice": 76.55,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 76.28,
+    "distanceRemaining": 1.36,
+    "signalStatus": "WATCHLIST",
+    "notificationTrigger": false,
+    "confluenceScore": 10,
+    "patternZone": "Trendline touch only",
+    "wickTouches": 24,
+    "timeframe": "monthly",
+    "signalType": "TRENDLINE",
+    "week52High": 87.4,
+    "week52Low": 71.42,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 655,
+      "entryPrice": 76.28,
+      "strictStopLoss": 70.18,
+      "pivotTargetExit": 93.82
+    },
+    "fibonacciLevels": {
+      "23.6%": 89.49,
+      "38.2%": 75.23,
+      "50.0%": 63.71,
+      "61.8%": 52.19,
+      "78.6%": 35.78,
+      "100.0%": 14.89
+    },
+    "fibMatchLevel": null,
+    "fibMatchPrice": null,
+    "fibMatchDistancePct": null,
+    "trendlineSlope": 0.9701,
+    "anchor1Date": "2022-02",
+    "anchor2Date": "2026-03"
+  },
+  {
     "ticker": "APLAPOLLO",
     "currentPrice": 2188.0,
     "ema50": null,
@@ -606,44 +644,6 @@
     "trendlineSlope": 29.2329,
     "anchor1Date": "2025-02",
     "anchor2Date": "2026-06"
-  },
-  {
-    "ticker": "NHPC",
-    "currentPrice": 76.55,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 76.38,
-    "distanceRemaining": 1.49,
-    "signalStatus": "WATCHLIST",
-    "notificationTrigger": false,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 24,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 87.4,
-    "week52Low": 71.42,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 654,
-      "entryPrice": 76.38,
-      "strictStopLoss": 70.27,
-      "pivotTargetExit": 93.95
-    },
-    "fibonacciLevels": {
-      "23.6%": 89.49,
-      "38.2%": 75.23,
-      "50.0%": 63.71,
-      "61.8%": 52.19,
-      "78.6%": 35.78,
-      "100.0%": 14.89
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 0.9903,
-    "anchor1Date": "2022-03",
-    "anchor2Date": "2026-03"
   },
   {
     "ticker": "NATIONALUM",
@@ -977,7 +977,7 @@
       "38.2%": 27242.57,
       "50.0%": 24643.24,
       "61.8%": 22043.9,
-      "78.6%": 18343.15,
+      "78.6%": 18343.16,
       "100.0%": 13629.11
     },
     "fibMatchLevel": null,
@@ -2141,7 +2141,7 @@
     "wickTouches": 21,
     "timeframe": "monthly",
     "signalType": "TRENDLINE",
-    "week52High": 163308.47,
+    "week52High": 163308.49,
     "week52Low": 121787.44,
     "positionSizing": {
       "allocatedAmount": 50000.0,
@@ -2151,17 +2151,17 @@
       "pivotTargetExit": 153437.12
     },
     "fibonacciLevels": {
-      "23.6%": 137478.06,
+      "23.6%": 137478.07,
       "38.2%": 121498.24,
-      "50.0%": 108583.03,
+      "50.0%": 108583.04,
       "61.8%": 95667.83,
       "78.6%": 77280.08,
-      "100.0%": 53857.6
+      "100.0%": 53857.59
     },
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 986.0646,
+    "trendlineSlope": 986.0647,
     "anchor1Date": "2020-09",
     "anchor2Date": "2026-05"
   },
@@ -3296,7 +3296,7 @@
       "50.0%": 2308.73,
       "61.8%": 2165.4,
       "78.6%": 1961.34,
-      "100.0%": 1701.41
+      "100.0%": 1701.4
     },
     "fibMatchLevel": "61.8%",
     "fibMatchPrice": 2085.41,
