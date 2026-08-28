@@ -147,7 +147,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 42.5756,
+    "trendlineSlope": 42.5755,
     "anchor1Date": "2023-03",
     "anchor2Date": "2025-02"
   },
@@ -185,7 +185,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 28.6597,
+    "trendlineSlope": 28.6596,
     "anchor1Date": "2025-03",
     "anchor2Date": "2025-10"
   },
@@ -498,7 +498,7 @@
     "currentPrice": 13376.0,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 13467.13,
+    "triggerPrice": 13467.12,
     "distanceRemaining": 1.11,
     "signalStatus": "WATCHLIST",
     "notificationTrigger": false,
@@ -512,9 +512,9 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 3,
-      "entryPrice": 13467.13,
-      "strictStopLoss": 12389.76,
-      "pivotTargetExit": 16564.57
+      "entryPrice": 13467.12,
+      "strictStopLoss": 12389.75,
+      "pivotTargetExit": 16564.56
     },
     "fibonacciLevels": {
       "23.6%": 14026.76,
@@ -527,7 +527,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 129.6378,
+    "trendlineSlope": 129.6377,
     "anchor1Date": "2022-12",
     "anchor2Date": "2024-01"
   },
@@ -939,7 +939,7 @@
       "38.2%": 27242.57,
       "50.0%": 24643.24,
       "61.8%": 22043.9,
-      "78.6%": 18343.15,
+      "78.6%": 18343.16,
       "100.0%": 13629.11
     },
     "fibMatchLevel": null,
@@ -2141,7 +2141,7 @@
     "wickTouches": 21,
     "timeframe": "monthly",
     "signalType": "TRENDLINE",
-    "week52High": 163308.49,
+    "week52High": 163308.47,
     "week52Low": 121787.44,
     "positionSizing": {
       "allocatedAmount": 50000.0,
@@ -2151,9 +2151,9 @@
       "pivotTargetExit": 153437.12
     },
     "fibonacciLevels": {
-      "23.6%": 137478.08,
-      "38.2%": 121498.25,
-      "50.0%": 108583.05,
+      "23.6%": 137478.07,
+      "38.2%": 121498.24,
+      "50.0%": 108583.04,
       "61.8%": 95667.84,
       "78.6%": 77280.09,
       "100.0%": 53857.61
@@ -2161,7 +2161,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 986.0646,
+    "trendlineSlope": 986.0645,
     "anchor1Date": "2020-09",
     "anchor2Date": "2026-05"
   },
