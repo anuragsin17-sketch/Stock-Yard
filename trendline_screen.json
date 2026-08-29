@@ -185,7 +185,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 28.6596,
+    "trendlineSlope": 28.6597,
     "anchor1Date": "2025-03",
     "anchor2Date": "2025-10"
   },
@@ -489,7 +489,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 124.0148,
+    "trendlineSlope": 124.0147,
     "anchor1Date": "2020-10",
     "anchor2Date": "2024-06"
   },
@@ -498,7 +498,7 @@
     "currentPrice": 13376.0,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 13467.13,
+    "triggerPrice": 13467.12,
     "distanceRemaining": 1.11,
     "signalStatus": "WATCHLIST",
     "notificationTrigger": false,
@@ -512,12 +512,12 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 3,
-      "entryPrice": 13467.13,
-      "strictStopLoss": 12389.76,
-      "pivotTargetExit": 16564.57
+      "entryPrice": 13467.12,
+      "strictStopLoss": 12389.75,
+      "pivotTargetExit": 16564.56
     },
     "fibonacciLevels": {
-      "23.6%": 14026.76,
+      "23.6%": 14026.75,
       "38.2%": 12065.32,
       "50.0%": 10480.06,
       "61.8%": 8894.79,
@@ -2141,7 +2141,7 @@
     "wickTouches": 21,
     "timeframe": "monthly",
     "signalType": "TRENDLINE",
-    "week52High": 163308.47,
+    "week52High": 163308.49,
     "week52Low": 121787.44,
     "positionSizing": {
       "allocatedAmount": 50000.0,
@@ -2151,17 +2151,17 @@
       "pivotTargetExit": 153437.12
     },
     "fibonacciLevels": {
-      "23.6%": 137478.06,
-      "38.2%": 121498.24,
+      "23.6%": 137478.08,
+      "38.2%": 121498.25,
       "50.0%": 108583.04,
-      "61.8%": 95667.83,
+      "61.8%": 95667.84,
       "78.6%": 77280.09,
       "100.0%": 53857.6
     },
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 986.0645,
+    "trendlineSlope": 986.0647,
     "anchor1Date": "2020-09",
     "anchor2Date": "2026-05"
   },
@@ -3710,9 +3710,9 @@
     },
     "fibonacciLevels": {
       "23.6%": 28241.82,
-      "38.2%": 25722.48,
+      "38.2%": 25722.47,
       "50.0%": 23686.29,
-      "61.8%": 21650.11,
+      "61.8%": 21650.1,
       "78.6%": 18751.13,
       "100.0%": 15058.39
     },
