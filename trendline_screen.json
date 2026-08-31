@@ -1092,7 +1092,7 @@
       "50.0%": 2308.73,
       "61.8%": 2165.4,
       "78.6%": 1961.34,
-      "100.0%": 1701.4
+      "100.0%": 1701.41
     },
     "fibMatchLevel": null,
     "fibMatchPrice": null,
@@ -1138,6 +1138,44 @@
     "trendlineSlope": 3.0744,
     "anchor1Date": "2025-01",
     "anchor2Date": "2026-04"
+  },
+  {
+    "ticker": "NHPC",
+    "currentPrice": 76.72,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 76.28,
+    "distanceRemaining": 2.59,
+    "signalStatus": "WATCHLIST",
+    "notificationTrigger": false,
+    "confluenceScore": 10,
+    "patternZone": "Trendline touch only",
+    "wickTouches": 24,
+    "timeframe": "monthly",
+    "signalType": "TRENDLINE",
+    "week52High": 87.4,
+    "week52Low": 71.42,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 655,
+      "entryPrice": 76.28,
+      "strictStopLoss": 70.18,
+      "pivotTargetExit": 93.82
+    },
+    "fibonacciLevels": {
+      "23.6%": 89.49,
+      "38.2%": 75.23,
+      "50.0%": 63.71,
+      "61.8%": 52.19,
+      "78.6%": 35.78,
+      "100.0%": 14.89
+    },
+    "fibMatchLevel": null,
+    "fibMatchPrice": null,
+    "fibMatchDistancePct": null,
+    "trendlineSlope": 0.9701,
+    "anchor1Date": "2022-02",
+    "anchor2Date": "2026-03"
   },
   {
     "ticker": "BHARTIHEXA",
@@ -1254,44 +1292,6 @@
     "anchor2Date": "2025-01"
   },
   {
-    "ticker": "NHPC",
-    "currentPrice": 76.72,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 76.38,
-    "distanceRemaining": 2.72,
-    "signalStatus": "WATCHLIST",
-    "notificationTrigger": false,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 24,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 87.4,
-    "week52Low": 71.42,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 654,
-      "entryPrice": 76.38,
-      "strictStopLoss": 70.27,
-      "pivotTargetExit": 93.95
-    },
-    "fibonacciLevels": {
-      "23.6%": 89.49,
-      "38.2%": 75.23,
-      "50.0%": 63.71,
-      "61.8%": 52.19,
-      "78.6%": 35.78,
-      "100.0%": 14.89
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 0.9903,
-    "anchor1Date": "2022-03",
-    "anchor2Date": "2026-03"
-  },
-  {
     "ticker": "JSWSTEEL",
     "currentPrice": 1307.7,
     "ema50": null,
@@ -1325,7 +1325,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 14.1664,
+    "trendlineSlope": 14.1665,
     "anchor1Date": "2022-05",
     "anchor2Date": "2023-03"
   },
@@ -2141,7 +2141,7 @@
     "wickTouches": 21,
     "timeframe": "monthly",
     "signalType": "TRENDLINE",
-    "week52High": 163308.47,
+    "week52High": 163308.49,
     "week52Low": 121787.44,
     "positionSizing": {
       "allocatedAmount": 50000.0,
@@ -2151,12 +2151,12 @@
       "pivotTargetExit": 153437.12
     },
     "fibonacciLevels": {
-      "23.6%": 137478.07,
-      "38.2%": 121498.24,
+      "23.6%": 137478.08,
+      "38.2%": 121498.25,
       "50.0%": 108583.04,
       "61.8%": 95667.84,
       "78.6%": 77280.09,
-      "100.0%": 53857.61
+      "100.0%": 53857.6
     },
     "fibMatchLevel": null,
     "fibMatchPrice": null,
@@ -3804,13 +3804,13 @@
     "currentPrice": 2104.8,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 2002.38,
-    "distanceRemaining": 3.23,
-    "signalStatus": "MONITORING",
+    "triggerPrice": 2008.53,
+    "distanceRemaining": 2.92,
+    "signalStatus": "WATCHLIST",
     "notificationTrigger": false,
     "confluenceScore": 8,
     "patternZone": "Confluence: Trendline + Fib 50.0% \u2713\u2713",
-    "wickTouches": 10,
+    "wickTouches": 8,
     "timeframe": "monthly",
     "signalType": "CONFLUENCE",
     "week52High": 3868.28,
@@ -3818,9 +3818,9 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 24,
-      "entryPrice": 2002.38,
-      "strictStopLoss": 1842.19,
-      "pivotTargetExit": 2462.93
+      "entryPrice": 2008.53,
+      "strictStopLoss": 1847.85,
+      "pivotTargetExit": 2470.49
     },
     "fibonacciLevels": {
       "23.6%": 3020.33,
@@ -3833,8 +3833,8 @@
     "fibMatchLevel": "50.0%",
     "fibMatchPrice": 2043.64,
     "fibMatchDistancePct": 2.99,
-    "trendlineSlope": 39.3386,
-    "anchor1Date": "2023-06",
+    "trendlineSlope": 40.568,
+    "anchor1Date": "2023-07",
     "anchor2Date": "2026-03"
   },
   {
