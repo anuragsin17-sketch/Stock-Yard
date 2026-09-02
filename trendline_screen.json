@@ -137,7 +137,7 @@
       "pivotTargetExit": 15604.9
     },
     "fibonacciLevels": {
-      "23.6%": 14026.76,
+      "23.6%": 14026.75,
       "38.2%": 12065.32,
       "50.0%": 10480.06,
       "61.8%": 8894.79,
@@ -1249,7 +1249,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 124.0148,
+    "trendlineSlope": 124.0147,
     "anchor1Date": "2020-10",
     "anchor2Date": "2024-06"
   },
@@ -1866,7 +1866,7 @@
     "currentPrice": 11393.0,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 10808.74,
+    "triggerPrice": 10808.75,
     "distanceRemaining": 3.43,
     "signalStatus": "MONITORING",
     "notificationTrigger": false,
@@ -1880,9 +1880,9 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 4,
-      "entryPrice": 10808.74,
-      "strictStopLoss": 9944.04,
-      "pivotTargetExit": 13294.75
+      "entryPrice": 10808.75,
+      "strictStopLoss": 9944.05,
+      "pivotTargetExit": 13294.76
     },
     "fibonacciLevels": {
       "23.6%": 10494.27,
@@ -2153,15 +2153,15 @@
     "fibonacciLevels": {
       "23.6%": 137478.08,
       "38.2%": 121498.25,
-      "50.0%": 108583.05,
+      "50.0%": 108583.04,
       "61.8%": 95667.84,
       "78.6%": 77280.09,
-      "100.0%": 53857.61
+      "100.0%": 53857.6
     },
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 986.0647,
+    "trendlineSlope": 986.0646,
     "anchor1Date": "2020-09",
     "anchor2Date": "2026-05"
   },
@@ -2381,7 +2381,7 @@
     "fibonacciLevels": {
       "23.6%": 50172.84,
       "38.2%": 44372.61,
-      "50.0%": 39684.75,
+      "50.0%": 39684.76,
       "61.8%": 34996.9,
       "78.6%": 28322.66,
       "100.0%": 19820.96
@@ -3605,7 +3605,7 @@
     "fibMatchLevel": "50.0%",
     "fibMatchPrice": 24007.86,
     "fibMatchDistancePct": 1.37,
-    "trendlineSlope": 71.5589,
+    "trendlineSlope": 71.5588,
     "anchor1Date": "2020-09",
     "anchor2Date": "2026-03"
   },

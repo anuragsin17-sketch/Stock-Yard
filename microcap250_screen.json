@@ -831,7 +831,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 222.5532,
+    "trendlineSlope": 222.5533,
     "anchor1Date": "2023-03",
     "anchor2Date": "2024-03"
   },
@@ -1963,7 +1963,7 @@
     "fibonacciLevels": {
       "23.6%": 5403.21,
       "38.2%": 5154.54,
-      "50.0%": 4953.56,
+      "50.0%": 4953.57,
       "61.8%": 4752.59,
       "78.6%": 4466.45,
       "100.0%": 4101.97
@@ -2202,6 +2202,44 @@
     "trendlineSlope": null,
     "anchor1Date": null,
     "anchor2Date": null
+  },
+  {
+    "ticker": "AHLUCONT",
+    "currentPrice": 602.2,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 585.79,
+    "distanceRemaining": 2.8,
+    "signalStatus": "WATCHLIST",
+    "notificationTrigger": false,
+    "confluenceScore": 9,
+    "patternZone": "Fib 78.6% support",
+    "wickTouches": 9,
+    "timeframe": "monthly",
+    "signalType": "FIBONACCI",
+    "week52High": null,
+    "week52Low": null,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 85,
+      "entryPrice": 585.79,
+      "strictStopLoss": 538.93,
+      "pivotTargetExit": 720.52
+    },
+    "fibonacciLevels": {
+      "23.6%": 1254.08,
+      "38.2%": 1076.68,
+      "50.0%": 933.3,
+      "61.8%": 789.92,
+      "78.6%": 585.79,
+      "100.0%": 325.76
+    },
+    "fibMatchLevel": "78.6%",
+    "fibMatchPrice": 585.79,
+    "fibMatchDistancePct": 2.8,
+    "trendlineSlope": 6.218644,
+    "anchor1Date": "2021-04",
+    "anchor2Date": "2026-03"
   },
   {
     "ticker": "INOXGREEN",
@@ -2531,7 +2569,7 @@
       "pivotTargetExit": 2249.34
     },
     "fibonacciLevels": {
-      "23.6%": 2711.56,
+      "23.6%": 2711.55,
       "38.2%": 2223.32,
       "50.0%": 1828.73,
       "61.8%": 1434.13,
@@ -3038,44 +3076,6 @@
     "trendlineSlope": 12.7266,
     "anchor1Date": "2023-03",
     "anchor2Date": "2026-07"
-  },
-  {
-    "ticker": "AHLUCONT",
-    "currentPrice": 602.2,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 591.44,
-    "distanceRemaining": 0.24,
-    "signalStatus": "CRITICAL_TOUCH",
-    "notificationTrigger": true,
-    "confluenceScore": 8,
-    "patternZone": "Confluence: Trendline + Fib 78.6% \u2713\u2713",
-    "wickTouches": 11,
-    "timeframe": "monthly",
-    "signalType": "CONFLUENCE",
-    "week52High": 1077.95,
-    "week52Low": 590.0,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 84,
-      "entryPrice": 591.44,
-      "strictStopLoss": 544.12,
-      "pivotTargetExit": 727.47
-    },
-    "fibonacciLevels": {
-      "23.6%": 1254.08,
-      "38.2%": 1076.68,
-      "50.0%": 933.3,
-      "61.8%": 789.92,
-      "78.6%": 585.79,
-      "100.0%": 325.76
-    },
-    "fibMatchLevel": "78.6%",
-    "fibMatchPrice": 585.79,
-    "fibMatchDistancePct": 2.8,
-    "trendlineSlope": 4.2229,
-    "anchor1Date": "2022-02",
-    "anchor2Date": "2022-10"
   },
   {
     "ticker": "ACI",
