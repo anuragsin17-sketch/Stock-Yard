@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-09-02 14:36 IST",
-    "date": "2026-09-02",
+    "timestamp": "2026-09-03 14:40 IST",
+    "date": "2026-09-03",
     "new_stocks": 6,
-    "total": 305
+    "total": 311
   },
   "stocks": [
     {
@@ -7181,6 +7181,108 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-09-03T14:36:00.572597",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "LUMINO",
+      "company": "LUMINO",
+      "added_date": "2026-09-03",
+      "gain_pct": 34.54,
+      "close_price": 110.32,
+      "prev_close": 82.0,
+      "prev_day_low": 104.41,
+      "alert_threshold": 109.63,
+      "sl_price": 100.23,
+      "target_price": 120.07,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 118.99,
+      "week_52_low": 106.54
+    },
+    {
+      "ticker": "CYBERMEDIA",
+      "company": "CYBERMEDIA",
+      "added_date": "2026-09-03",
+      "gain_pct": 20.0,
+      "close_price": 23.88,
+      "prev_close": 19.9,
+      "prev_day_low": 20.38,
+      "alert_threshold": 21.4,
+      "sl_price": 19.56,
+      "target_price": 23.44,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 23.88,
+      "week_52_low": 11.3
+    },
+    {
+      "ticker": "SVGLOBAL",
+      "company": "SVGLOBAL",
+      "added_date": "2026-09-03",
+      "gain_pct": 20.0,
+      "close_price": 144.01,
+      "prev_close": 120.01,
+      "prev_day_low": 122.49,
+      "alert_threshold": 128.61,
+      "sl_price": 117.59,
+      "target_price": 140.86,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 144.8,
+      "week_52_low": 114.3
+    },
+    {
+      "ticker": "HIKAL",
+      "company": "HIKAL",
+      "added_date": "2026-09-03",
+      "gain_pct": 19.82,
+      "close_price": 240.36,
+      "prev_close": 200.6,
+      "prev_day_low": 197.13,
+      "alert_threshold": 206.99,
+      "sl_price": 189.24,
+      "target_price": 226.7,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 282.7,
+      "week_52_low": 146.25
+    },
+    {
+      "ticker": "RAYMOND",
+      "company": "RAYMOND",
+      "added_date": "2026-09-03",
+      "gain_pct": 13.59,
+      "close_price": 757.9,
+      "prev_close": 667.25,
+      "prev_day_low": 658.76,
+      "alert_threshold": 691.7,
+      "sl_price": 632.41,
+      "target_price": 757.57,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 765.0,
+      "week_52_low": 320.0
+    },
+    {
+      "ticker": "SAICAPI",
+      "company": "SAICAPI",
+      "added_date": "2026-09-03",
+      "gain_pct": 12.18,
+      "close_price": 157.05,
+      "prev_close": 140.0,
+      "prev_day_low": 143.08,
+      "alert_threshold": 150.23,
+      "sl_price": 137.36,
+      "target_price": 164.54,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 170.05,
+      "week_52_low": 140.0
     }
   ]
 }
