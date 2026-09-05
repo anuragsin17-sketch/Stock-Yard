@@ -1,45 +1,7 @@
 [
   {
-    "ticker": "MEDPLUS",
-    "currentPrice": 676.35,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 649.33,
-    "distanceRemaining": 0.13,
-    "signalStatus": "CRITICAL_TOUCH",
-    "notificationTrigger": true,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 13,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 1022.2,
-    "week52Low": 648.0,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 77,
-      "entryPrice": 649.33,
-      "strictStopLoss": 597.38,
-      "pivotTargetExit": 798.68
-    },
-    "fibonacciLevels": {
-      "23.6%": 1243.17,
-      "38.2%": 1181.41,
-      "50.0%": 1131.5,
-      "61.8%": 1081.59,
-      "78.6%": 1010.52,
-      "100.0%": 920.0
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 1.3333,
-    "anchor1Date": "2024-08",
-    "anchor2Date": "2026-08"
-  },
-  {
     "ticker": "ANUP",
-    "currentPrice": 1785.8,
+    "currentPrice": 1784.1,
     "ema50": null,
     "ema200": null,
     "triggerPrice": 1764.81,
@@ -185,7 +147,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 34.7946,
+    "trendlineSlope": 34.7945,
     "anchor1Date": "2022-03",
     "anchor2Date": "2023-02"
   },
@@ -685,7 +647,7 @@
   },
   {
     "ticker": "DBREALTY",
-    "currentPrice": 102.57,
+    "currentPrice": 102.89,
     "ema50": null,
     "ema200": null,
     "triggerPrice": 99.33,
@@ -3083,7 +3045,7 @@
     "ema50": null,
     "ema200": null,
     "triggerPrice": 182.12,
-    "distanceRemaining": 0.16,
+    "distanceRemaining": 0.06,
     "signalStatus": "CRITICAL_TOUCH",
     "notificationTrigger": true,
     "confluenceScore": 8,
