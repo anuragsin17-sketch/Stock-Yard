@@ -33,7 +33,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 193.0249,
+    "trendlineSlope": 193.0248,
     "anchor1Date": "2025-02",
     "anchor2Date": "2026-01"
   },
@@ -897,7 +897,7 @@
       "pivotTargetExit": 15604.9
     },
     "fibonacciLevels": {
-      "23.6%": 14026.75,
+      "23.6%": 14026.76,
       "38.2%": 12065.32,
       "50.0%": 10480.06,
       "61.8%": 8894.79,
@@ -1059,7 +1059,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 124.0147,
+    "trendlineSlope": 124.0148,
     "anchor1Date": "2020-10",
     "anchor2Date": "2024-06"
   },
@@ -1091,7 +1091,7 @@
       "38.2%": 27242.57,
       "50.0%": 24643.24,
       "61.8%": 22043.9,
-      "78.6%": 18343.15,
+      "78.6%": 18343.16,
       "100.0%": 13629.11
     },
     "fibMatchLevel": null,
@@ -1203,10 +1203,10 @@
     "fibonacciLevels": {
       "23.6%": 137478.08,
       "38.2%": 121498.25,
-      "50.0%": 108583.04,
+      "50.0%": 108583.05,
       "61.8%": 95667.84,
       "78.6%": 77280.09,
-      "100.0%": 53857.6
+      "100.0%": 53857.61
     },
     "fibMatchLevel": null,
     "fibMatchPrice": null,
@@ -1862,44 +1862,6 @@
     "anchor2Date": "2026-08"
   },
   {
-    "ticker": "NHPC",
-    "currentPrice": 76.69,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 77.25,
-    "distanceRemaining": 3.04,
-    "signalStatus": "MONITORING",
-    "notificationTrigger": false,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 25,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 86.59,
-    "week52Low": 71.42,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 647,
-      "entryPrice": 77.25,
-      "strictStopLoss": 71.07,
-      "pivotTargetExit": 95.02
-    },
-    "fibonacciLevels": {
-      "23.6%": 89.49,
-      "38.2%": 75.23,
-      "50.0%": 63.71,
-      "61.8%": 52.19,
-      "78.6%": 35.78,
-      "100.0%": 14.89
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 0.9701,
-    "anchor1Date": "2022-02",
-    "anchor2Date": "2026-03"
-  },
-  {
     "ticker": "PNB",
     "currentPrice": 115.61,
     "ema50": null,
@@ -2050,6 +2012,44 @@
     "trendlineSlope": 25.261,
     "anchor1Date": "2023-02",
     "anchor2Date": "2025-04"
+  },
+  {
+    "ticker": "NHPC",
+    "currentPrice": 76.69,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 77.37,
+    "distanceRemaining": 3.19,
+    "signalStatus": "MONITORING",
+    "notificationTrigger": false,
+    "confluenceScore": 10,
+    "patternZone": "Trendline touch only",
+    "wickTouches": 25,
+    "timeframe": "monthly",
+    "signalType": "TRENDLINE",
+    "week52High": 86.59,
+    "week52Low": 71.42,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 646,
+      "entryPrice": 77.37,
+      "strictStopLoss": 71.18,
+      "pivotTargetExit": 95.17
+    },
+    "fibonacciLevels": {
+      "23.6%": 89.49,
+      "38.2%": 75.23,
+      "50.0%": 63.71,
+      "61.8%": 52.19,
+      "78.6%": 35.78,
+      "100.0%": 14.89
+    },
+    "fibMatchLevel": null,
+    "fibMatchPrice": null,
+    "fibMatchDistancePct": null,
+    "trendlineSlope": 0.9903,
+    "anchor1Date": "2022-03",
+    "anchor2Date": "2026-03"
   },
   {
     "ticker": "SCHAEFFLER",
@@ -2951,7 +2951,7 @@
     "fibonacciLevels": {
       "23.6%": 50172.84,
       "38.2%": 44372.61,
-      "50.0%": 39684.76,
+      "50.0%": 39684.75,
       "61.8%": 34996.9,
       "78.6%": 28322.66,
       "100.0%": 19820.96
@@ -3567,7 +3567,7 @@
     "fibMatchLevel": "61.8%",
     "fibMatchPrice": 22047.56,
     "fibMatchDistancePct": 4.09,
-    "trendlineSlope": 71.5589,
+    "trendlineSlope": 71.5588,
     "anchor1Date": "2020-09",
     "anchor2Date": "2026-03"
   },
@@ -4028,44 +4028,6 @@
     "anchor2Date": "2025-03"
   },
   {
-    "ticker": "GODFRYPHLP",
-    "currentPrice": 1978.5,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 2041.72,
-    "distanceRemaining": 3.41,
-    "signalStatus": "MONITORING",
-    "notificationTrigger": false,
-    "confluenceScore": 8,
-    "patternZone": "Confluence: Trendline + Fib 50.0% \u2713\u2713",
-    "wickTouches": 11,
-    "timeframe": "monthly",
-    "signalType": "CONFLUENCE",
-    "week52High": 3416.47,
-    "week52Low": 1805.69,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 24,
-      "entryPrice": 2041.72,
-      "strictStopLoss": 1878.38,
-      "pivotTargetExit": 2511.32
-    },
-    "fibonacciLevels": {
-      "23.6%": 3020.33,
-      "38.2%": 2495.75,
-      "50.0%": 2071.77,
-      "61.8%": 1647.8,
-      "78.6%": 1044.17,
-      "100.0%": 275.27
-    },
-    "fibMatchLevel": "50.0%",
-    "fibMatchPrice": 2043.64,
-    "fibMatchDistancePct": 3.19,
-    "trendlineSlope": 39.3386,
-    "anchor1Date": "2023-06",
-    "anchor2Date": "2026-03"
-  },
-  {
     "ticker": "HDFCLIFE",
     "currentPrice": 514.0,
     "ema50": null,
@@ -4104,6 +4066,44 @@
     "anchor2Date": "2024-06"
   },
   {
+    "ticker": "GODFRYPHLP",
+    "currentPrice": 1978.5,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 2049.09,
+    "distanceRemaining": 3.76,
+    "signalStatus": "MONITORING",
+    "notificationTrigger": false,
+    "confluenceScore": 8,
+    "patternZone": "Confluence: Trendline + Fib 50.0% \u2713\u2713",
+    "wickTouches": 9,
+    "timeframe": "monthly",
+    "signalType": "CONFLUENCE",
+    "week52High": 3416.47,
+    "week52Low": 1805.69,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 24,
+      "entryPrice": 2049.09,
+      "strictStopLoss": 1885.16,
+      "pivotTargetExit": 2520.38
+    },
+    "fibonacciLevels": {
+      "23.6%": 3020.33,
+      "38.2%": 2495.75,
+      "50.0%": 2071.77,
+      "61.8%": 1647.8,
+      "78.6%": 1044.17,
+      "100.0%": 275.27
+    },
+    "fibMatchLevel": "50.0%",
+    "fibMatchPrice": 2043.64,
+    "fibMatchDistancePct": 3.19,
+    "trendlineSlope": 40.568,
+    "anchor1Date": "2023-07",
+    "anchor2Date": "2026-03"
+  },
+  {
     "ticker": "HINDUNILVR",
     "currentPrice": 1945.0,
     "ema50": null,
@@ -4132,7 +4132,7 @@
       "50.0%": 2308.73,
       "61.8%": 2165.4,
       "78.6%": 1961.34,
-      "100.0%": 1701.4
+      "100.0%": 1701.41
     },
     "fibMatchLevel": "78.6%",
     "fibMatchPrice": 1859.6,
