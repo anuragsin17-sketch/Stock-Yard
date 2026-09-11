@@ -194,7 +194,7 @@
     "currentPrice": 11000.0,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 10808.75,
+    "triggerPrice": 10808.74,
     "distanceRemaining": 0.17,
     "signalStatus": "CRITICAL_TOUCH",
     "notificationTrigger": true,
@@ -208,9 +208,9 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 4,
-      "entryPrice": 10808.75,
-      "strictStopLoss": 9944.05,
-      "pivotTargetExit": 13294.76
+      "entryPrice": 10808.74,
+      "strictStopLoss": 9944.04,
+      "pivotTargetExit": 13294.75
     },
     "fibonacciLevels": {
       "23.6%": 10494.27,
@@ -717,7 +717,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 193.0248,
+    "trendlineSlope": 193.0249,
     "anchor1Date": "2025-02",
     "anchor2Date": "2026-01"
   },
@@ -935,17 +935,17 @@
       "pivotTargetExit": 154649.98
     },
     "fibonacciLevels": {
-      "23.6%": 137478.08,
-      "38.2%": 121498.25,
-      "50.0%": 108583.05,
-      "61.8%": 95667.84,
-      "78.6%": 77280.1,
-      "100.0%": 53857.61
+      "23.6%": 137478.07,
+      "38.2%": 121498.24,
+      "50.0%": 108583.04,
+      "61.8%": 95667.83,
+      "78.6%": 77280.08,
+      "100.0%": 53857.59
     },
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 986.0646,
+    "trendlineSlope": 986.0647,
     "anchor1Date": "2020-09",
     "anchor2Date": "2026-05"
   },
@@ -1976,44 +1976,6 @@
     "anchor2Date": "2026-03"
   },
   {
-    "ticker": "NHPC",
-    "currentPrice": 76.38,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 77.25,
-    "distanceRemaining": 3.04,
-    "signalStatus": "MONITORING",
-    "notificationTrigger": false,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 25,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 86.59,
-    "week52Low": 71.42,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 647,
-      "entryPrice": 77.25,
-      "strictStopLoss": 71.07,
-      "pivotTargetExit": 95.02
-    },
-    "fibonacciLevels": {
-      "23.6%": 89.49,
-      "38.2%": 75.23,
-      "50.0%": 63.71,
-      "61.8%": 52.19,
-      "78.6%": 35.78,
-      "100.0%": 14.89
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 0.9701,
-    "anchor1Date": "2022-02",
-    "anchor2Date": "2026-03"
-  },
-  {
     "ticker": "PNB",
     "currentPrice": 116.75,
     "ema50": null,
@@ -2125,6 +2087,44 @@
     "fibMatchDistancePct": null,
     "trendlineSlope": 10.2462,
     "anchor1Date": "2023-03",
+    "anchor2Date": "2026-03"
+  },
+  {
+    "ticker": "NHPC",
+    "currentPrice": 76.38,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 77.37,
+    "distanceRemaining": 3.19,
+    "signalStatus": "MONITORING",
+    "notificationTrigger": false,
+    "confluenceScore": 10,
+    "patternZone": "Trendline touch only",
+    "wickTouches": 25,
+    "timeframe": "monthly",
+    "signalType": "TRENDLINE",
+    "week52High": 86.59,
+    "week52Low": 71.42,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 646,
+      "entryPrice": 77.37,
+      "strictStopLoss": 71.18,
+      "pivotTargetExit": 95.17
+    },
+    "fibonacciLevels": {
+      "23.6%": 89.49,
+      "38.2%": 75.23,
+      "50.0%": 63.71,
+      "61.8%": 52.19,
+      "78.6%": 35.78,
+      "100.0%": 14.89
+    },
+    "fibMatchLevel": null,
+    "fibMatchPrice": null,
+    "fibMatchDistancePct": null,
+    "trendlineSlope": 0.9903,
+    "anchor1Date": "2022-03",
     "anchor2Date": "2026-03"
   },
   {
@@ -3976,9 +3976,9 @@
     },
     "fibonacciLevels": {
       "23.6%": 28241.82,
-      "38.2%": 25722.48,
+      "38.2%": 25722.47,
       "50.0%": 23686.29,
-      "61.8%": 21650.11,
+      "61.8%": 21650.1,
       "78.6%": 18751.13,
       "100.0%": 15058.39
     },
