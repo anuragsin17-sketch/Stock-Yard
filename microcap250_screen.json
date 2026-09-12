@@ -261,7 +261,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 9.9442,
+    "trendlineSlope": 9.9443,
     "anchor1Date": "2023-02",
     "anchor2Date": "2023-10"
   },
@@ -2964,6 +2964,44 @@
     "anchor2Date": "2026-07"
   },
   {
+    "ticker": "AHLUCONT",
+    "currentPrice": 601.0,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 591.44,
+    "distanceRemaining": 1.49,
+    "signalStatus": "WATCHLIST",
+    "notificationTrigger": false,
+    "confluenceScore": 8,
+    "patternZone": "Confluence: Trendline + Fib 78.6% \u2713\u2713",
+    "wickTouches": 11,
+    "timeframe": "monthly",
+    "signalType": "CONFLUENCE",
+    "week52High": 1077.95,
+    "week52Low": 582.65,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 84,
+      "entryPrice": 591.44,
+      "strictStopLoss": 544.12,
+      "pivotTargetExit": 727.47
+    },
+    "fibonacciLevels": {
+      "23.6%": 1254.08,
+      "38.2%": 1076.68,
+      "50.0%": 933.3,
+      "61.8%": 789.92,
+      "78.6%": 585.79,
+      "100.0%": 325.76
+    },
+    "fibMatchLevel": "78.6%",
+    "fibMatchPrice": 585.79,
+    "fibMatchDistancePct": 2.6,
+    "trendlineSlope": 4.2229,
+    "anchor1Date": "2022-02",
+    "anchor2Date": "2022-10"
+  },
+  {
     "ticker": "NFL",
     "currentPrice": 68.49,
     "ema50": null,
@@ -3000,44 +3038,6 @@
     "trendlineSlope": 0.541,
     "anchor1Date": "2020-11",
     "anchor2Date": "2026-03"
-  },
-  {
-    "ticker": "AHLUCONT",
-    "currentPrice": 601.0,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 565.63,
-    "distanceRemaining": 3.01,
-    "signalStatus": "MONITORING",
-    "notificationTrigger": false,
-    "confluenceScore": 8,
-    "patternZone": "Confluence: Trendline + Fib 78.6% \u2713\u2713",
-    "wickTouches": 12,
-    "timeframe": "monthly",
-    "signalType": "CONFLUENCE",
-    "week52High": 1077.95,
-    "week52Low": 582.65,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 88,
-      "entryPrice": 565.63,
-      "strictStopLoss": 520.38,
-      "pivotTargetExit": 695.72
-    },
-    "fibonacciLevels": {
-      "23.6%": 1254.08,
-      "38.2%": 1076.68,
-      "50.0%": 933.3,
-      "61.8%": 789.92,
-      "78.6%": 585.79,
-      "100.0%": 325.76
-    },
-    "fibMatchLevel": "78.6%",
-    "fibMatchPrice": 585.79,
-    "fibMatchDistancePct": 2.6,
-    "trendlineSlope": 3.7537,
-    "anchor1Date": "2022-02",
-    "anchor2Date": "2022-11"
   },
   {
     "ticker": "VIPIND",
