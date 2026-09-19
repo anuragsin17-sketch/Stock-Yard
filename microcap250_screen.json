@@ -1287,7 +1287,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 222.5533,
+    "trendlineSlope": 222.5532,
     "anchor1Date": "2023-03",
     "anchor2Date": "2024-03"
   },
@@ -3065,7 +3065,7 @@
     "fibonacciLevels": {
       "23.6%": 312.81,
       "38.2%": 255.81,
-      "50.0%": 209.74,
+      "50.0%": 209.73,
       "61.8%": 163.66,
       "78.6%": 98.07,
       "100.0%": 14.52
