@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-09-23 15:08 IST",
-    "date": "2026-09-23",
-    "new_stocks": 10,
-    "total": 332
+    "timestamp": "2026-09-24 15:22 IST",
+    "date": "2026-09-24",
+    "new_stocks": 3,
+    "total": 335
   },
   "stocks": [
     {
@@ -7903,6 +7903,57 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-09-24T15:08:15.074512",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "AERONEU",
+      "company": "AERONEU",
+      "added_date": "2026-09-24",
+      "gain_pct": 20.0,
+      "close_price": 80.64,
+      "prev_close": 67.2,
+      "prev_day_low": 66.64,
+      "alert_threshold": 69.97,
+      "sl_price": 63.97,
+      "target_price": 76.64,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 105.5,
+      "week_52_low": 63.21
+    },
+    {
+      "ticker": "RKEC",
+      "company": "RKEC",
+      "added_date": "2026-09-24",
+      "gain_pct": 19.96,
+      "close_price": 22.84,
+      "prev_close": 19.04,
+      "prev_day_low": 18.42,
+      "alert_threshold": 19.34,
+      "sl_price": 17.68,
+      "target_price": 21.18,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 80.95,
+      "week_52_low": 17.4
+    },
+    {
+      "ticker": "INDIAGLYCO",
+      "company": "INDIAGLYCO",
+      "added_date": "2026-09-24",
+      "gain_pct": 18.74,
+      "close_price": 306.0,
+      "prev_close": 257.7,
+      "prev_day_low": 250.29,
+      "alert_threshold": 262.8,
+      "sl_price": 240.28,
+      "target_price": 287.83,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 1222.0,
+      "week_52_low": 217.0
     }
   ]
 }
