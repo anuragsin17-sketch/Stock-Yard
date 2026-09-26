@@ -898,7 +898,7 @@
     },
     "fibonacciLevels": {
       "23.6%": 14307.7,
-      "38.2%": 11879.23,
+      "38.2%": 11879.22,
       "50.0%": 9916.48,
       "61.8%": 7953.74,
       "78.6%": 5159.33,
@@ -1556,6 +1556,44 @@
     "trendlineSlope": null,
     "anchor1Date": null,
     "anchor2Date": null
+  },
+  {
+    "ticker": "AHLUCONT",
+    "currentPrice": 585.55,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 585.08,
+    "distanceRemaining": 0.08,
+    "signalStatus": "WATCHLIST",
+    "notificationTrigger": false,
+    "confluenceScore": 9,
+    "patternZone": "Fib 78.6% support",
+    "wickTouches": 9,
+    "timeframe": "monthly",
+    "signalType": "FIBONACCI",
+    "week52High": null,
+    "week52Low": null,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 85,
+      "entryPrice": 585.08,
+      "strictStopLoss": 538.27,
+      "pivotTargetExit": 719.65
+    },
+    "fibonacciLevels": {
+      "23.6%": 1252.57,
+      "38.2%": 1075.38,
+      "50.0%": 932.18,
+      "61.8%": 788.97,
+      "78.6%": 585.08,
+      "100.0%": 325.36
+    },
+    "fibMatchLevel": "78.6%",
+    "fibMatchPrice": 585.08,
+    "fibMatchDistancePct": 0.08,
+    "trendlineSlope": 6.218644,
+    "anchor1Date": "2021-04",
+    "anchor2Date": "2026-03"
   },
   {
     "ticker": "AKUMS",
@@ -3192,44 +3230,6 @@
     "anchor2Date": "2025-08"
   },
   {
-    "ticker": "AHLUCONT",
-    "currentPrice": 585.55,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 564.95,
-    "distanceRemaining": 1.04,
-    "signalStatus": "WATCHLIST",
-    "notificationTrigger": false,
-    "confluenceScore": 8,
-    "patternZone": "Confluence: Trendline + Fib 78.6% \u2713\u2713",
-    "wickTouches": 12,
-    "timeframe": "monthly",
-    "signalType": "CONFLUENCE",
-    "week52High": 1076.65,
-    "week52Low": 559.1,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 88,
-      "entryPrice": 564.95,
-      "strictStopLoss": 519.75,
-      "pivotTargetExit": 694.89
-    },
-    "fibonacciLevels": {
-      "23.6%": 1252.57,
-      "38.2%": 1075.38,
-      "50.0%": 932.18,
-      "61.8%": 788.97,
-      "78.6%": 585.08,
-      "100.0%": 325.36
-    },
-    "fibMatchLevel": "78.6%",
-    "fibMatchPrice": 585.08,
-    "fibMatchDistancePct": 0.08,
-    "trendlineSlope": 3.7492,
-    "anchor1Date": "2022-02",
-    "anchor2Date": "2022-11"
-  },
-  {
     "ticker": "SAFARI",
     "currentPrice": 1464.2,
     "ema50": null,
@@ -3338,7 +3338,7 @@
     },
     "fibMatchLevel": "78.6%",
     "fibMatchPrice": 273.39,
-    "fibMatchDistancePct": 3.52,
+    "fibMatchDistancePct": 3.51,
     "trendlineSlope": 1.8302,
     "anchor1Date": "2020-05",
     "anchor2Date": "2026-03"
