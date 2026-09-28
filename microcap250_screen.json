@@ -2204,6 +2204,44 @@
     "anchor2Date": "2026-01"
   },
   {
+    "ticker": "AHLUCONT",
+    "currentPrice": 572.4,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 585.08,
+    "distanceRemaining": 2.17,
+    "signalStatus": "WATCHLIST",
+    "notificationTrigger": false,
+    "confluenceScore": 9,
+    "patternZone": "Fib 78.6% support",
+    "wickTouches": 9,
+    "timeframe": "monthly",
+    "signalType": "FIBONACCI",
+    "week52High": null,
+    "week52Low": null,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 85,
+      "entryPrice": 585.08,
+      "strictStopLoss": 538.27,
+      "pivotTargetExit": 719.65
+    },
+    "fibonacciLevels": {
+      "23.6%": 1252.57,
+      "38.2%": 1075.38,
+      "50.0%": 932.18,
+      "61.8%": 788.97,
+      "78.6%": 585.08,
+      "100.0%": 325.36
+    },
+    "fibMatchLevel": "78.6%",
+    "fibMatchPrice": 585.08,
+    "fibMatchDistancePct": 2.17,
+    "trendlineSlope": 6.218644,
+    "anchor1Date": "2021-04",
+    "anchor2Date": "2026-03"
+  },
+  {
     "ticker": "GHCL",
     "currentPrice": 410.6,
     "ema50": null,
@@ -2419,7 +2457,7 @@
     "fibonacciLevels": {
       "23.6%": 5403.21,
       "38.2%": 5154.54,
-      "50.0%": 4953.56,
+      "50.0%": 4953.57,
       "61.8%": 4752.59,
       "78.6%": 4466.45,
       "100.0%": 4101.97
@@ -3418,44 +3456,6 @@
     "trendlineSlope": 1.9914,
     "anchor1Date": "2020-08",
     "anchor2Date": "2026-03"
-  },
-  {
-    "ticker": "AHLUCONT",
-    "currentPrice": 572.4,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 564.95,
-    "distanceRemaining": 1.04,
-    "signalStatus": "WATCHLIST",
-    "notificationTrigger": false,
-    "confluenceScore": 8,
-    "patternZone": "Confluence: Trendline + Fib 78.6% \u2713\u2713",
-    "wickTouches": 12,
-    "timeframe": "monthly",
-    "signalType": "CONFLUENCE",
-    "week52High": 1076.65,
-    "week52Low": 559.1,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 88,
-      "entryPrice": 564.95,
-      "strictStopLoss": 519.75,
-      "pivotTargetExit": 694.89
-    },
-    "fibonacciLevels": {
-      "23.6%": 1252.57,
-      "38.2%": 1075.38,
-      "50.0%": 932.18,
-      "61.8%": 788.97,
-      "78.6%": 585.08,
-      "100.0%": 325.36
-    },
-    "fibMatchLevel": "78.6%",
-    "fibMatchPrice": 585.08,
-    "fibMatchDistancePct": 2.17,
-    "trendlineSlope": 3.7492,
-    "anchor1Date": "2022-02",
-    "anchor2Date": "2022-11"
   },
   {
     "ticker": "JYOTHYLAB",
