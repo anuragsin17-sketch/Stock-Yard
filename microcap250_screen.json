@@ -974,7 +974,7 @@
     },
     "fibonacciLevels": {
       "23.6%": 14307.7,
-      "38.2%": 11879.22,
+      "38.2%": 11879.23,
       "50.0%": 9916.48,
       "61.8%": 7953.74,
       "78.6%": 5159.33,
@@ -1051,7 +1051,7 @@
     "fibonacciLevels": {
       "23.6%": 312.81,
       "38.2%": 255.81,
-      "50.0%": 209.73,
+      "50.0%": 209.74,
       "61.8%": 163.66,
       "78.6%": 98.07,
       "100.0%": 14.52
@@ -3192,44 +3192,6 @@
     "anchor2Date": "2026-07"
   },
   {
-    "ticker": "VGUARD",
-    "currentPrice": 307.05,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 300.57,
-    "distanceRemaining": 0.59,
-    "signalStatus": "CRITICAL_TOUCH",
-    "notificationTrigger": true,
-    "confluenceScore": 8,
-    "patternZone": "Confluence: Trendline + Fib 61.8% \u2713\u2713",
-    "wickTouches": 17,
-    "timeframe": "monthly",
-    "signalType": "CONFLUENCE",
-    "week52High": 382.18,
-    "week52Low": 288.63,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 166,
-      "entryPrice": 300.57,
-      "strictStopLoss": 276.52,
-      "pivotTargetExit": 369.7
-    },
-    "fibonacciLevels": {
-      "23.6%": 472.34,
-      "38.2%": 410.38,
-      "50.0%": 360.3,
-      "61.8%": 310.22,
-      "78.6%": 238.92,
-      "100.0%": 148.09
-    },
-    "fibMatchLevel": "61.8%",
-    "fibMatchPrice": 308.38,
-    "fibMatchDistancePct": 0.43,
-    "trendlineSlope": 1.9914,
-    "anchor1Date": "2020-08",
-    "anchor2Date": "2026-03"
-  },
-  {
     "ticker": "ADVENZYMES",
     "currentPrice": 282.15,
     "ema50": null,
@@ -3266,6 +3228,44 @@
     "trendlineSlope": 1.6211,
     "anchor1Date": "2023-03",
     "anchor2Date": "2025-03"
+  },
+  {
+    "ticker": "VGUARD",
+    "currentPrice": 307.05,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 300.57,
+    "distanceRemaining": 0.74,
+    "signalStatus": "CRITICAL_TOUCH",
+    "notificationTrigger": true,
+    "confluenceScore": 8,
+    "patternZone": "Confluence: Trendline + Fib 61.8% \u2713\u2713",
+    "wickTouches": 17,
+    "timeframe": "monthly",
+    "signalType": "CONFLUENCE",
+    "week52High": 382.18,
+    "week52Low": 288.63,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 166,
+      "entryPrice": 300.57,
+      "strictStopLoss": 276.52,
+      "pivotTargetExit": 369.7
+    },
+    "fibonacciLevels": {
+      "23.6%": 472.34,
+      "38.2%": 410.38,
+      "50.0%": 360.3,
+      "61.8%": 310.22,
+      "78.6%": 238.92,
+      "100.0%": 148.09
+    },
+    "fibMatchLevel": "61.8%",
+    "fibMatchPrice": 308.38,
+    "fibMatchDistancePct": 0.43,
+    "trendlineSlope": 1.9914,
+    "anchor1Date": "2020-08",
+    "anchor2Date": "2026-03"
   },
   {
     "ticker": "ANUP",
