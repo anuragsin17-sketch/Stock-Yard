@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-09-30 16:27 IST",
-    "date": "2026-09-30",
-    "new_stocks": 3,
-    "total": 339
+    "timestamp": "2026-10-01 17:05 IST",
+    "date": "2026-10-01",
+    "new_stocks": 5,
+    "total": 344
   },
   "stocks": [
     {
@@ -8115,6 +8115,91 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-10-01T17:02:42.787047",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "MONEYVIEW",
+      "company": "MONEYVIEW",
+      "added_date": "2026-10-01",
+      "gain_pct": 58.47,
+      "close_price": 53.88,
+      "prev_close": 34.0,
+      "prev_day_low": 49.26,
+      "alert_threshold": 51.72,
+      "sl_price": 47.29,
+      "target_price": 56.65,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 62.0,
+      "week_52_low": 50.27
+    },
+    {
+      "ticker": "SMLT",
+      "company": "SMLT",
+      "added_date": "2026-10-01",
+      "gain_pct": 19.99,
+      "close_price": 74.18,
+      "prev_close": 61.82,
+      "prev_day_low": 64.68,
+      "alert_threshold": 67.91,
+      "sl_price": 62.09,
+      "target_price": 74.38,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 121.0,
+      "week_52_low": 56.61
+    },
+    {
+      "ticker": "RVTH",
+      "company": "RVTH",
+      "added_date": "2026-10-01",
+      "gain_pct": 15.96,
+      "close_price": 776.7,
+      "prev_close": 669.8,
+      "prev_day_low": 666.4,
+      "alert_threshold": 699.72,
+      "sl_price": 639.74,
+      "target_price": 766.36,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 1128.0,
+      "week_52_low": 491.1
+    },
+    {
+      "ticker": "KREBSBIO",
+      "company": "KREBSBIO",
+      "added_date": "2026-10-01",
+      "gain_pct": 13.04,
+      "close_price": 68.05,
+      "prev_close": 60.2,
+      "prev_day_low": 57.82,
+      "alert_threshold": 60.71,
+      "sl_price": 55.51,
+      "target_price": 66.49,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 76.85,
+      "week_52_low": 38.33
+    },
+    {
+      "ticker": "THOMASCOTT",
+      "company": "THOMASCOTT",
+      "added_date": "2026-10-01",
+      "gain_pct": 12.29,
+      "close_price": 300.2,
+      "prev_close": 267.35,
+      "prev_day_low": 259.36,
+      "alert_threshold": 272.33,
+      "sl_price": 248.99,
+      "target_price": 298.26,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 459.8,
+      "week_52_low": 221.8
     }
   ]
 }
