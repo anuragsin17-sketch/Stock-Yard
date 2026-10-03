@@ -874,44 +874,6 @@
     "anchor2Date": "2025-04"
   },
   {
-    "ticker": "SJVN",
-    "currentPrice": 57.91,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 57.52,
-    "distanceRemaining": 1.38,
-    "signalStatus": "WATCHLIST",
-    "notificationTrigger": false,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 9,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 87.01,
-    "week52Low": 56.73,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 869,
-      "entryPrice": 57.52,
-      "strictStopLoss": 52.92,
-      "pivotTargetExit": 70.75
-    },
-    "fibonacciLevels": {
-      "23.6%": 128.68,
-      "38.2%": 107.07,
-      "50.0%": 89.61,
-      "61.8%": 72.15,
-      "78.6%": 47.28,
-      "100.0%": 15.62
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 0.6555,
-    "anchor1Date": "2022-05",
-    "anchor2Date": "2023-02"
-  },
-  {
     "ticker": "GMRAIRPORT",
     "currentPrice": 93.16,
     "ema50": null,
@@ -1889,7 +1851,7 @@
       "38.2%": 27242.57,
       "50.0%": 24643.24,
       "61.8%": 22043.9,
-      "78.6%": 18343.15,
+      "78.6%": 18343.16,
       "100.0%": 13629.11
     },
     "fibMatchLevel": null,
@@ -2313,7 +2275,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 122.4665,
+    "trendlineSlope": 122.4664,
     "anchor1Date": "2020-10",
     "anchor2Date": "2023-10"
   },
@@ -2351,7 +2313,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 1162.9448,
+    "trendlineSlope": 1162.9451,
     "anchor1Date": "2022-02",
     "anchor2Date": "2026-05"
   },
@@ -3519,8 +3481,8 @@
       "pivotTargetExit": 3906.01
     },
     "fibonacciLevels": {
-      "23.6%": 4691.67,
-      "38.2%": 3983.26,
+      "23.6%": 4691.66,
+      "38.2%": 3983.25,
       "50.0%": 3410.7,
       "61.8%": 2838.15,
       "78.6%": 2023.0,
@@ -4018,7 +3980,7 @@
       "50.0%": 2308.73,
       "61.8%": 2165.4,
       "78.6%": 1961.34,
-      "100.0%": 1701.41
+      "100.0%": 1701.4
     },
     "fibMatchLevel": "78.6%",
     "fibMatchPrice": 1859.6,
