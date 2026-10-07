@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-10-07 10:10 IST",
-    "date": "2026-10-06",
-    "new_stocks": 0,
-    "total": 315
+    "timestamp": "2026-10-07 17:29 IST",
+    "date": "2026-10-07",
+    "new_stocks": 6,
+    "total": 321
   },
   "stocks": [
     {
@@ -7511,6 +7511,108 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-10-07T17:26:26.254228",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "ACEVECTOR",
+      "company": "ACEVECTOR",
+      "added_date": "2026-10-07",
+      "gain_pct": 19.98,
+      "close_price": 31.11,
+      "prev_close": 25.93,
+      "prev_day_low": 24.76,
+      "alert_threshold": 26.0,
+      "sl_price": 23.77,
+      "target_price": 28.47,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 31.11,
+      "week_52_low": 23.37
+    },
+    {
+      "ticker": "HTEL",
+      "company": "HTEL",
+      "added_date": "2026-10-07",
+      "gain_pct": 19.14,
+      "close_price": 87.94,
+      "prev_close": 73.81,
+      "prev_day_low": 71.64,
+      "alert_threshold": 75.22,
+      "sl_price": 68.77,
+      "target_price": 82.39,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 88.57,
+      "week_52_low": 62.91
+    },
+    {
+      "ticker": "NELCAST",
+      "company": "NELCAST",
+      "added_date": "2026-10-07",
+      "gain_pct": 17.52,
+      "close_price": 146.29,
+      "prev_close": 124.48,
+      "prev_day_low": 123.21,
+      "alert_threshold": 129.37,
+      "sl_price": 118.28,
+      "target_price": 141.69,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 173.2,
+      "week_52_low": 85.98
+    },
+    {
+      "ticker": "PNGSREVA",
+      "company": "PNGSREVA",
+      "added_date": "2026-10-07",
+      "gain_pct": 15.31,
+      "close_price": 631.0,
+      "prev_close": 547.2,
+      "prev_day_low": 538.9,
+      "alert_threshold": 565.85,
+      "sl_price": 517.34,
+      "target_price": 619.73,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 653.0,
+      "week_52_low": 324.25
+    },
+    {
+      "ticker": "DHANBANK",
+      "company": "DHANBANK",
+      "added_date": "2026-10-07",
+      "gain_pct": 13.87,
+      "close_price": 32.83,
+      "prev_close": 28.83,
+      "prev_day_low": 27.84,
+      "alert_threshold": 29.23,
+      "sl_price": 26.73,
+      "target_price": 32.02,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 36.85,
+      "week_52_low": 19.45
+    },
+    {
+      "ticker": "MBEL",
+      "company": "MBEL",
+      "added_date": "2026-10-07",
+      "gain_pct": 13.78,
+      "close_price": 290.6,
+      "prev_close": 255.41,
+      "prev_day_low": 245.25,
+      "alert_threshold": 257.51,
+      "sl_price": 235.44,
+      "target_price": 282.04,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 535.9,
+      "week_52_low": 223.05
     }
   ]
 }
