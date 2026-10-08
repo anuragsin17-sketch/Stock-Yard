@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-10-08 10:28 IST",
-    "date": "2026-10-07",
-    "new_stocks": 0,
-    "total": 321
+    "timestamp": "2026-10-08 17:28 IST",
+    "date": "2026-10-08",
+    "new_stocks": 5,
+    "total": 326
   },
   "stocks": [
     {
@@ -7677,6 +7677,91 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-10-08T17:24:58.392799",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "TARAPUR",
+      "company": "TARAPUR",
+      "added_date": "2026-10-08",
+      "gain_pct": 19.97,
+      "close_price": 13.82,
+      "prev_close": 11.52,
+      "prev_day_low": 12.15,
+      "alert_threshold": 12.76,
+      "sl_price": 11.66,
+      "target_price": 13.97,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 39.99,
+      "week_52_low": 10.8
+    },
+    {
+      "ticker": "INDOKEM",
+      "company": "INDOKEM",
+      "added_date": "2026-10-08",
+      "gain_pct": 19.25,
+      "close_price": 692.8,
+      "prev_close": 580.95,
+      "prev_day_low": 588.0,
+      "alert_threshold": 617.4,
+      "sl_price": 564.48,
+      "target_price": 676.2,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 697.1,
+      "week_52_low": 555.0
+    },
+    {
+      "ticker": "BROOKS",
+      "company": "BROOKS",
+      "added_date": "2026-10-08",
+      "gain_pct": 18.17,
+      "close_price": 69.46,
+      "prev_close": 58.78,
+      "prev_day_low": 57.83,
+      "alert_threshold": 60.72,
+      "sl_price": 55.52,
+      "target_price": 66.5,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 131.9,
+      "week_52_low": 36.3
+    },
+    {
+      "ticker": "JAIPURKURT",
+      "company": "JAIPURKURT",
+      "added_date": "2026-10-08",
+      "gain_pct": 13.68,
+      "close_price": 32.4,
+      "prev_close": 28.5,
+      "prev_day_low": 28.41,
+      "alert_threshold": 29.83,
+      "sl_price": 27.27,
+      "target_price": 32.67,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 42.74,
+      "week_52_low": 23.91
+    },
+    {
+      "ticker": "FINOPB",
+      "company": "FINOPB",
+      "added_date": "2026-10-08",
+      "gain_pct": 13.02,
+      "close_price": 145.53,
+      "prev_close": 128.76,
+      "prev_day_low": 131.32,
+      "alert_threshold": 137.89,
+      "sl_price": 126.07,
+      "target_price": 151.02,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 339.0,
+      "week_52_low": 110.03
     }
   ]
 }
