@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-10-09 10:27 IST",
-    "date": "2026-10-08",
-    "new_stocks": 0,
-    "total": 326
+    "timestamp": "2026-10-09 17:07 IST",
+    "date": "2026-10-09",
+    "new_stocks": 5,
+    "total": 331
   },
   "stocks": [
     {
@@ -7803,6 +7803,91 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-10-09T17:00:44.060333",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "TERAI",
+      "company": "TERAI",
+      "added_date": "2026-10-09",
+      "gain_pct": 19.99,
+      "close_price": 140.01,
+      "prev_close": 116.68,
+      "prev_day_low": 111.72,
+      "alert_threshold": 117.31,
+      "sl_price": 107.25,
+      "target_price": 128.48,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 140.01,
+      "week_52_low": 100.3
+    },
+    {
+      "ticker": "BMWVENTLTD",
+      "company": "BMWVENTLTD",
+      "added_date": "2026-10-09",
+      "gain_pct": 16.55,
+      "close_price": 57.95,
+      "prev_close": 49.72,
+      "prev_day_low": 49.01,
+      "alert_threshold": 51.46,
+      "sl_price": 47.05,
+      "target_price": 56.36,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 73.2,
+      "week_52_low": 48.0
+    },
+    {
+      "ticker": "TRF",
+      "company": "TRF",
+      "added_date": "2026-10-09",
+      "gain_pct": 13.12,
+      "close_price": 216.94,
+      "prev_close": 191.78,
+      "prev_day_low": 186.2,
+      "alert_threshold": 195.51,
+      "sl_price": 178.75,
+      "target_price": 214.13,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 364.2,
+      "week_52_low": 190.0
+    },
+    {
+      "ticker": "WORTHPERI",
+      "company": "WORTHPERI",
+      "added_date": "2026-10-09",
+      "gain_pct": 12.92,
+      "close_price": 154.9,
+      "prev_close": 137.18,
+      "prev_day_low": 133.28,
+      "alert_threshold": 139.94,
+      "sl_price": 127.95,
+      "target_price": 153.27,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 169.8,
+      "week_52_low": 109.0
+    },
+    {
+      "ticker": "INOXGREEN",
+      "company": "INOXGREEN",
+      "added_date": "2026-10-09",
+      "gain_pct": 12.03,
+      "close_price": 128.92,
+      "prev_close": 115.08,
+      "prev_day_low": 109.76,
+      "alert_threshold": 115.25,
+      "sl_price": 105.37,
+      "target_price": 126.22,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 279.0,
+      "week_52_low": 108.7
     }
   ]
 }
