@@ -25,7 +25,7 @@
       "ltp": 855.5,
       "dist_pct": 14.41,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446760",
+      "ltp_updated_at": "2026-10-09T15:38:22.360534",
       "in_place_order_zone": false
     },
     {
@@ -47,7 +47,7 @@
       "ltp": 3564.3,
       "dist_pct": 42.52,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446769",
+      "ltp_updated_at": "2026-10-09T15:38:22.360547",
       "in_place_order_zone": false
     },
     {
@@ -69,7 +69,7 @@
       "ltp": 1518.8,
       "dist_pct": 3.2,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446774",
+      "ltp_updated_at": "2026-10-09T15:38:22.360552",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-29T09:45:27.761102",
       "place_order_entry_ltp": 1469.0,
@@ -97,7 +97,7 @@
       "ltp": 27.11,
       "dist_pct": -13.55,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.446779",
+      "ltp_updated_at": "2026-10-09T15:38:22.360557",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-28T09:40:52.207960",
       "place_order_entry_ltp": 31.4,
@@ -125,7 +125,7 @@
       "ltp": 1753.3,
       "dist_pct": -2.56,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.446783",
+      "ltp_updated_at": "2026-10-09T15:38:22.360561",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-10-01T10:03:12.269349",
       "place_order_entry_ltp": 1809.3,
@@ -153,7 +153,7 @@
       "ltp": 795.9,
       "dist_pct": 87.41,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446787",
+      "ltp_updated_at": "2026-10-09T15:38:22.360566",
       "in_place_order_zone": false
     },
     {
@@ -175,7 +175,7 @@
       "ltp": 88.43,
       "dist_pct": -5.62,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.446790",
+      "ltp_updated_at": "2026-10-09T15:38:22.360570",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-10-05T11:03:53.215028",
       "place_order_entry_ltp": 91.95,
@@ -203,7 +203,7 @@
       "ltp": 93.27,
       "dist_pct": 9.51,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446798",
+      "ltp_updated_at": "2026-10-09T15:38:22.360578",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-25T08:46:05.835302",
       "place_order_entry_ltp": 86.64,
@@ -231,7 +231,7 @@
       "ltp": 332.7,
       "dist_pct": 23.45,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446802",
+      "ltp_updated_at": "2026-10-09T15:38:22.360583",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-15T09:06:31.082651",
       "place_order_entry_ltp": 271.2,
@@ -259,7 +259,7 @@
       "ltp": 34.7,
       "dist_pct": -9.75,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.446807",
+      "ltp_updated_at": "2026-10-09T15:38:22.360588",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-10T08:33:26.191078",
       "place_order_entry_ltp": 37.8,
@@ -287,7 +287,7 @@
       "ltp": 630.75,
       "dist_pct": 15.74,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446810",
+      "ltp_updated_at": "2026-10-09T15:38:22.360592",
       "in_place_order_zone": false
     },
     {
@@ -309,7 +309,7 @@
       "ltp": 39.5,
       "dist_pct": -16.01,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446814",
+      "ltp_updated_at": "2026-10-09T15:38:22.360595",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-23T08:31:19.672707",
       "place_order_entry_ltp": 47.06,
@@ -337,7 +337,7 @@
       "ltp": 360.9,
       "dist_pct": 44.05,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446818",
+      "ltp_updated_at": "2026-10-09T15:38:22.360599",
       "in_place_order_zone": false
     },
     {
@@ -359,7 +359,7 @@
       "ltp": 23.31,
       "dist_pct": 79.72,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446821",
+      "ltp_updated_at": "2026-10-09T15:38:22.360602",
       "in_place_order_zone": false
     },
     {
@@ -381,7 +381,7 @@
       "ltp": 1827.4,
       "dist_pct": 3.88,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446824",
+      "ltp_updated_at": "2026-10-09T15:38:22.360606",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-10-08T11:04:46.393052",
       "place_order_entry_ltp": 1770.2,
@@ -409,7 +409,7 @@
       "ltp": 33.9,
       "dist_pct": 3.99,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446827",
+      "ltp_updated_at": "2026-10-09T15:38:22.360609",
       "in_place_order_zone": false
     },
     {
@@ -431,7 +431,7 @@
       "ltp": 1487.7,
       "dist_pct": 22.72,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446831",
+      "ltp_updated_at": "2026-10-09T15:38:22.360612",
       "in_place_order_zone": false
     },
     {
@@ -453,7 +453,7 @@
       "ltp": 169.14,
       "dist_pct": 10.82,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446833",
+      "ltp_updated_at": "2026-10-09T15:38:22.360615",
       "in_place_order_zone": false
     },
     {
@@ -475,7 +475,7 @@
       "ltp": 1388.7,
       "dist_pct": 34.62,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446836",
+      "ltp_updated_at": "2026-10-09T15:38:22.360618",
       "in_place_order_zone": false
     },
     {
@@ -497,7 +497,7 @@
       "ltp": 207.0,
       "dist_pct": 36.18,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446839",
+      "ltp_updated_at": "2026-10-09T15:38:22.360621",
       "in_place_order_zone": false
     },
     {
@@ -519,7 +519,7 @@
       "ltp": 221.26,
       "dist_pct": -5.83,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.446843",
+      "ltp_updated_at": "2026-10-09T15:38:22.360624",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-29T09:45:27.761263",
       "place_order_entry_ltp": 235.5,
@@ -547,7 +547,7 @@
       "ltp": 949.2,
       "dist_pct": 19.87,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446846",
+      "ltp_updated_at": "2026-10-09T15:38:22.360628",
       "in_place_order_zone": false
     },
     {
@@ -569,7 +569,7 @@
       "ltp": 47.87,
       "dist_pct": -25.76,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446849",
+      "ltp_updated_at": "2026-10-09T15:38:22.360631",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-08-19T10:47:07.631321",
       "place_order_entry_ltp": 63.38,
@@ -597,7 +597,7 @@
       "ltp": 75.19,
       "dist_pct": 4.13,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446852",
+      "ltp_updated_at": "2026-10-09T15:38:22.360635",
       "in_place_order_zone": false
     },
     {
@@ -619,7 +619,7 @@
       "ltp": 30.83,
       "dist_pct": -9.11,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.446855",
+      "ltp_updated_at": "2026-10-09T15:38:22.360638",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-10-06T10:57:25.740525",
       "place_order_entry_ltp": 33.28,
@@ -647,7 +647,7 @@
       "ltp": 4274.7,
       "dist_pct": 17.86,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446858",
+      "ltp_updated_at": "2026-10-09T15:38:22.360642",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-15T11:13:52.378209",
       "place_order_entry_ltp": 3692.1,
@@ -675,7 +675,7 @@
       "ltp": 66.89,
       "dist_pct": 25.36,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446861",
+      "ltp_updated_at": "2026-10-09T15:38:22.360645",
       "in_place_order_zone": false
     },
     {
@@ -697,7 +697,7 @@
       "ltp": 793.75,
       "dist_pct": -40.37,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446864",
+      "ltp_updated_at": "2026-10-09T15:38:22.360648",
       "in_place_order_zone": false
     },
     {
@@ -719,7 +719,7 @@
       "ltp": 146.39,
       "dist_pct": 29.66,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446867",
+      "ltp_updated_at": "2026-10-09T15:38:22.360652",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-02T07:52:21.177886",
       "place_order_entry_ltp": 114.39,
@@ -747,7 +747,7 @@
       "ltp": 19.28,
       "dist_pct": 11.06,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446870",
+      "ltp_updated_at": "2026-10-09T15:38:22.360655",
       "in_place_order_zone": false
     },
     {
@@ -769,7 +769,7 @@
       "ltp": 640.05,
       "dist_pct": 49.74,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446873",
+      "ltp_updated_at": "2026-10-09T15:38:22.360658",
       "in_place_order_zone": false
     },
     {
@@ -791,7 +791,7 @@
       "ltp": 309.1,
       "dist_pct": 13.68,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446876",
+      "ltp_updated_at": "2026-10-09T15:38:22.360661",
       "in_place_order_zone": false
     },
     {
@@ -813,7 +813,7 @@
       "ltp": 1906.8,
       "dist_pct": 2.65,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446878",
+      "ltp_updated_at": "2026-10-09T15:38:22.360665",
       "in_place_order_zone": false
     },
     {
@@ -835,7 +835,7 @@
       "ltp": 55.84,
       "dist_pct": 3.79,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446881",
+      "ltp_updated_at": "2026-10-09T15:38:22.360668",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-23T09:36:26.939663",
       "place_order_entry_ltp": 54.75,
@@ -863,7 +863,7 @@
       "ltp": 603.1,
       "dist_pct": 11.18,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446884",
+      "ltp_updated_at": "2026-10-09T15:38:22.360671",
       "in_place_order_zone": false
     },
     {
@@ -885,7 +885,7 @@
       "ltp": 316.25,
       "dist_pct": 18.64,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446887",
+      "ltp_updated_at": "2026-10-09T15:38:22.360674",
       "in_place_order_zone": false
     },
     {
@@ -907,7 +907,7 @@
       "ltp": 239.17,
       "dist_pct": 4.25,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446889",
+      "ltp_updated_at": "2026-10-09T15:38:22.360677",
       "in_place_order_zone": false
     },
     {
@@ -929,7 +929,7 @@
       "ltp": 474.15,
       "dist_pct": 70.36,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446891",
+      "ltp_updated_at": "2026-10-09T15:38:22.360680",
       "in_place_order_zone": false
     },
     {
@@ -951,7 +951,7 @@
       "ltp": 2502.2,
       "dist_pct": 6.78,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446894",
+      "ltp_updated_at": "2026-10-09T15:38:22.360683",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-29T10:56:59.875019",
       "place_order_entry_ltp": 2301.2,
@@ -979,7 +979,7 @@
       "ltp": 29.29,
       "dist_pct": 30.12,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446897",
+      "ltp_updated_at": "2026-10-09T15:38:22.360686",
       "in_place_order_zone": false
     },
     {
@@ -1001,7 +1001,7 @@
       "ltp": 11.88,
       "dist_pct": 10.2,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446900",
+      "ltp_updated_at": "2026-10-09T15:38:22.360689",
       "in_place_order_zone": false
     },
     {
@@ -1023,7 +1023,7 @@
       "ltp": 331.3,
       "dist_pct": -16.15,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446903",
+      "ltp_updated_at": "2026-10-09T15:38:22.360692",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-08T08:28:46.236628",
       "place_order_entry_ltp": 387.7,
@@ -1051,7 +1051,7 @@
       "ltp": 69.46,
       "dist_pct": 13.96,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446906",
+      "ltp_updated_at": "2026-10-09T15:38:22.360695",
       "in_place_order_zone": false
     },
     {
@@ -1073,7 +1073,7 @@
       "ltp": 320.95,
       "dist_pct": 5.0,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446909",
+      "ltp_updated_at": "2026-10-09T15:38:22.360698",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-11T08:00:26.630932",
       "place_order_entry_ltp": 308.8,
@@ -1101,7 +1101,7 @@
       "ltp": 287.5,
       "dist_pct": 97.55,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446912",
+      "ltp_updated_at": "2026-10-09T15:38:22.360701",
       "in_place_order_zone": false
     },
     {
@@ -1123,7 +1123,7 @@
       "ltp": 18.06,
       "dist_pct": 27.27,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446915",
+      "ltp_updated_at": "2026-10-09T15:38:22.360704",
       "in_place_order_zone": false
     },
     {
@@ -1145,7 +1145,7 @@
       "ltp": 94.78,
       "dist_pct": 38.36,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446917",
+      "ltp_updated_at": "2026-10-09T15:38:22.360707",
       "in_place_order_zone": false
     },
     {
@@ -1167,7 +1167,7 @@
       "ltp": 118.7,
       "dist_pct": 3.08,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446920",
+      "ltp_updated_at": "2026-10-09T15:38:22.360710",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-10-08T11:04:46.393227",
       "place_order_entry_ltp": 115.31,
@@ -1195,7 +1195,7 @@
       "ltp": 4374.2,
       "dist_pct": 12.71,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446923",
+      "ltp_updated_at": "2026-10-09T15:38:22.360712",
       "in_place_order_zone": false
     },
     {
@@ -1245,7 +1245,7 @@
       "ltp": 27.87,
       "dist_pct": -5.37,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.446950",
+      "ltp_updated_at": "2026-10-09T15:38:22.360740",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-10-07T10:45:14.305002",
       "place_order_entry_ltp": 28.98,
@@ -1273,7 +1273,7 @@
       "ltp": 1447.3,
       "dist_pct": 30.58,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446953",
+      "ltp_updated_at": "2026-10-09T15:38:22.360744",
       "in_place_order_zone": false
     },
     {
@@ -1295,7 +1295,7 @@
       "ltp": 1438.6,
       "dist_pct": 58.47,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446957",
+      "ltp_updated_at": "2026-10-09T15:38:22.360747",
       "in_place_order_zone": false
     },
     {
@@ -1317,7 +1317,7 @@
       "ltp": 70.84,
       "dist_pct": -4.75,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.446960",
+      "ltp_updated_at": "2026-10-09T15:38:22.360750",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-30T10:10:14.681835",
       "place_order_entry_ltp": 72.89,
@@ -1345,7 +1345,7 @@
       "ltp": 388.0,
       "dist_pct": 17.99,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446963",
+      "ltp_updated_at": "2026-10-09T15:38:22.360753",
       "in_place_order_zone": false
     },
     {
@@ -1367,7 +1367,7 @@
       "ltp": 621.7,
       "dist_pct": 16.4,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446966",
+      "ltp_updated_at": "2026-10-09T15:38:22.360756",
       "in_place_order_zone": false
     },
     {
@@ -1411,7 +1411,7 @@
       "ltp": 40.07,
       "dist_pct": 4.84,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446970",
+      "ltp_updated_at": "2026-10-09T15:38:22.360760",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-08T10:42:34.756598",
       "place_order_entry_ltp": 38.72,
@@ -1439,7 +1439,7 @@
       "ltp": 142.32,
       "dist_pct": -10.06,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.446973",
+      "ltp_updated_at": "2026-10-09T15:38:22.360763",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-24T08:23:41.488675",
       "place_order_entry_ltp": 160.43,
@@ -1467,7 +1467,7 @@
       "ltp": 48.13,
       "dist_pct": -5.59,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.446976",
+      "ltp_updated_at": "2026-10-09T15:38:22.360766",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-22T11:04:02.429306",
       "place_order_entry_ltp": 50.02,
@@ -1495,7 +1495,7 @@
       "ltp": 450.1,
       "dist_pct": 23.46,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446979",
+      "ltp_updated_at": "2026-10-09T15:38:22.360769",
       "in_place_order_zone": false
     },
     {
@@ -1517,7 +1517,7 @@
       "ltp": 300.0,
       "dist_pct": 5.27,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446982",
+      "ltp_updated_at": "2026-10-09T15:38:22.360772",
       "in_place_order_zone": false
     },
     {
@@ -1539,7 +1539,7 @@
       "ltp": 20.65,
       "dist_pct": 1.32,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.446985",
+      "ltp_updated_at": "2026-10-09T15:38:22.360775",
       "in_place_order_zone": true,
       "place_order_entry_at": "2026-10-09T11:04:01.739277",
       "place_order_entry_ltp": 20.65,
@@ -1567,7 +1567,7 @@
       "ltp": 115.53,
       "dist_pct": 6.21,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446988",
+      "ltp_updated_at": "2026-10-09T15:38:22.360778",
       "in_place_order_zone": false
     },
     {
@@ -1589,7 +1589,7 @@
       "ltp": 320.4,
       "dist_pct": 98.14,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446991",
+      "ltp_updated_at": "2026-10-09T15:38:22.360781",
       "in_place_order_zone": false
     },
     {
@@ -1611,7 +1611,7 @@
       "ltp": 16.5,
       "dist_pct": 3.64,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446993",
+      "ltp_updated_at": "2026-10-09T15:38:22.360784",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-24T09:36:19.062767",
       "place_order_entry_ltp": 16.21,
@@ -1639,7 +1639,7 @@
       "ltp": 219.22,
       "dist_pct": 37.24,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446996",
+      "ltp_updated_at": "2026-10-09T15:38:22.360787",
       "in_place_order_zone": false
     },
     {
@@ -1661,7 +1661,7 @@
       "ltp": 19.18,
       "dist_pct": 38.99,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.446999",
+      "ltp_updated_at": "2026-10-09T15:38:22.360790",
       "in_place_order_zone": false
     },
     {
@@ -1683,7 +1683,7 @@
       "ltp": 4125.0,
       "dist_pct": -4.33,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447002",
+      "ltp_updated_at": "2026-10-09T15:38:22.360794",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-10-06T10:57:25.740704",
       "place_order_entry_ltp": 4282.8,
@@ -1711,7 +1711,7 @@
       "ltp": 436.3,
       "dist_pct": 15.02,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447005",
+      "ltp_updated_at": "2026-10-09T15:38:22.360797",
       "in_place_order_zone": false
     },
     {
@@ -1733,7 +1733,7 @@
       "ltp": 28.52,
       "dist_pct": 12.33,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447008",
+      "ltp_updated_at": "2026-10-09T15:38:22.360801",
       "in_place_order_zone": false
     },
     {
@@ -1755,7 +1755,7 @@
       "ltp": 495.6,
       "dist_pct": 10.25,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447011",
+      "ltp_updated_at": "2026-10-09T15:38:22.360804",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-24T08:23:41.488803",
       "place_order_entry_ltp": 446.9,
@@ -1783,7 +1783,7 @@
       "ltp": 130.18,
       "dist_pct": 1.4,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447015",
+      "ltp_updated_at": "2026-10-09T15:38:22.360807",
       "in_place_order_zone": true,
       "place_order_entry_at": "2026-10-08T11:04:46.393343",
       "place_order_entry_ltp": 129.1,
@@ -1811,7 +1811,7 @@
       "ltp": 9.32,
       "dist_pct": 13.94,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447018",
+      "ltp_updated_at": "2026-10-09T15:38:22.360810",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-08-26T04:00:56.762661",
       "place_order_entry_ltp": 8.33,
@@ -1839,7 +1839,7 @@
       "ltp": 923.6,
       "dist_pct": -4.89,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447021",
+      "ltp_updated_at": "2026-10-09T15:38:22.360814",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-22T11:04:02.429442",
       "place_order_entry_ltp": 952.6,
@@ -1867,7 +1867,7 @@
       "ltp": 168.3,
       "dist_pct": -4.59,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447024",
+      "ltp_updated_at": "2026-10-09T15:38:22.360817",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-23T09:36:26.940067",
       "place_order_entry_ltp": 179.78,
@@ -1895,7 +1895,7 @@
       "ltp": 37.28,
       "dist_pct": 5.19,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447027",
+      "ltp_updated_at": "2026-10-09T15:38:22.360821",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-16T09:33:57.748532",
       "place_order_entry_ltp": 35.43,
@@ -1923,7 +1923,7 @@
       "ltp": 57.05,
       "dist_pct": -5.95,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447031",
+      "ltp_updated_at": "2026-10-09T15:38:22.360825",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-30T09:37:19.836523",
       "place_order_entry_ltp": 60.0,
@@ -1951,7 +1951,7 @@
       "ltp": 198.28,
       "dist_pct": 30.52,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447034",
+      "ltp_updated_at": "2026-10-09T15:38:22.360828",
       "in_place_order_zone": false
     },
     {
@@ -2023,7 +2023,7 @@
       "ltp": 678.15,
       "dist_pct": 5.64,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447038",
+      "ltp_updated_at": "2026-10-09T15:38:22.360834",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-10-01T10:03:12.269841",
       "place_order_entry_ltp": 649.05,
@@ -2051,7 +2051,7 @@
       "ltp": 3301.4,
       "dist_pct": -7.32,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447041",
+      "ltp_updated_at": "2026-10-09T15:38:22.360837",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-10T08:04:40.315769",
       "place_order_entry_ltp": 3582.4,
@@ -2079,7 +2079,7 @@
       "ltp": 644.35,
       "dist_pct": 19.12,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447044",
+      "ltp_updated_at": "2026-10-09T15:38:22.360841",
       "in_place_order_zone": false
     },
     {
@@ -2101,7 +2101,7 @@
       "ltp": 37.36,
       "dist_pct": 1.0,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447047",
+      "ltp_updated_at": "2026-10-09T15:38:22.360844",
       "in_place_order_zone": true,
       "place_order_entry_at": "2026-10-08T11:04:46.393396",
       "place_order_entry_ltp": 36.91,
@@ -2127,7 +2127,7 @@
       "ltp": 476.2,
       "dist_pct": 12.74,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447049",
+      "ltp_updated_at": "2026-10-09T15:38:22.360847",
       "in_place_order_zone": false
     },
     {
@@ -2149,7 +2149,7 @@
       "ltp": 44.6,
       "dist_pct": -6.56,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447052",
+      "ltp_updated_at": "2026-10-09T15:38:22.360851",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-10-06T10:57:25.740779",
       "place_order_entry_ltp": 46.86,
@@ -2177,7 +2177,7 @@
       "ltp": 20.42,
       "dist_pct": 1.19,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447055",
+      "ltp_updated_at": "2026-10-09T15:38:22.360854",
       "in_place_order_zone": true,
       "place_order_entry_at": "2026-10-08T11:04:46.393444",
       "place_order_entry_ltp": 20.04,
@@ -2205,7 +2205,7 @@
       "ltp": 144.95,
       "dist_pct": 10.75,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447058",
+      "ltp_updated_at": "2026-10-09T15:38:22.360857",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-10-08T11:04:46.393451",
       "place_order_entry_ltp": 133.01,
@@ -2233,7 +2233,7 @@
       "ltp": 130.51,
       "dist_pct": -12.39,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447061",
+      "ltp_updated_at": "2026-10-09T15:38:22.360860",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-10-01T10:03:12.269904",
       "place_order_entry_ltp": 147.24,
@@ -2261,7 +2261,7 @@
       "ltp": 282.75,
       "dist_pct": -13.87,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447064",
+      "ltp_updated_at": "2026-10-09T15:38:22.360863",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-29T09:45:27.761924",
       "place_order_entry_ltp": 324.0,
@@ -2289,7 +2289,7 @@
       "ltp": 511.25,
       "dist_pct": 53.89,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447067",
+      "ltp_updated_at": "2026-10-09T15:38:22.360866",
       "in_place_order_zone": false
     },
     {
@@ -2311,7 +2311,7 @@
       "ltp": 435.4,
       "dist_pct": 34.63,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447096",
+      "ltp_updated_at": "2026-10-09T15:38:22.360894",
       "in_place_order_zone": false
     },
     {
@@ -2333,7 +2333,7 @@
       "ltp": 562.4,
       "dist_pct": 45.29,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447102",
+      "ltp_updated_at": "2026-10-09T15:38:22.360897",
       "in_place_order_zone": false
     },
     {
@@ -2355,7 +2355,7 @@
       "ltp": 57.85,
       "dist_pct": 1.6,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447107",
+      "ltp_updated_at": "2026-10-09T15:38:22.360900",
       "in_place_order_zone": true,
       "place_order_entry_at": "2026-10-08T11:04:46.393481",
       "place_order_entry_ltp": 57.0,
@@ -2383,7 +2383,7 @@
       "ltp": 10.53,
       "dist_pct": 2.63,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447111",
+      "ltp_updated_at": "2026-10-09T15:38:22.360903",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-10-07T10:45:14.305261",
       "place_order_entry_ltp": 10.28,
@@ -2411,7 +2411,7 @@
       "ltp": 2640.4,
       "dist_pct": 26.31,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447116",
+      "ltp_updated_at": "2026-10-09T15:38:22.360907",
       "in_place_order_zone": false
     },
     {
@@ -2433,7 +2433,7 @@
       "ltp": 55.2,
       "dist_pct": 47.71,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447120",
+      "ltp_updated_at": "2026-10-09T15:38:22.360910",
       "in_place_order_zone": false
     },
     {
@@ -2455,7 +2455,7 @@
       "ltp": 382.6,
       "dist_pct": 59.74,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447124",
+      "ltp_updated_at": "2026-10-09T15:38:22.360914",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-08-26T09:29:46.007521",
       "place_order_entry_ltp": 243.82,
@@ -2483,7 +2483,7 @@
       "ltp": 357.45,
       "dist_pct": 101.69,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447129",
+      "ltp_updated_at": "2026-10-09T15:38:22.360918",
       "in_place_order_zone": false
     },
     {
@@ -2505,7 +2505,7 @@
       "ltp": 128.24,
       "dist_pct": 9.5,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447133",
+      "ltp_updated_at": "2026-10-09T15:38:22.360921",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-22T08:28:53.606169",
       "place_order_entry_ltp": 117.55,
@@ -2533,7 +2533,7 @@
       "ltp": 353.65,
       "dist_pct": -0.2,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447138",
+      "ltp_updated_at": "2026-10-09T15:38:22.360925",
       "in_place_order_zone": true,
       "place_order_entry_at": "2026-10-08T11:04:46.393524",
       "place_order_entry_ltp": 361.2,
@@ -2559,7 +2559,7 @@
       "ltp": 8.52,
       "dist_pct": -5.23,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447143",
+      "ltp_updated_at": "2026-10-09T15:38:22.360929",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-10-08T11:04:46.393535",
       "place_order_entry_ltp": 8.89,
@@ -2587,7 +2587,7 @@
       "ltp": 32.67,
       "dist_pct": 16.18,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447147",
+      "ltp_updated_at": "2026-10-09T15:38:22.360932",
       "in_place_order_zone": false
     },
     {
@@ -2609,7 +2609,7 @@
       "ltp": 177.07,
       "dist_pct": -4.65,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447152",
+      "ltp_updated_at": "2026-10-09T15:38:22.360936",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-10-06T10:57:25.740862",
       "place_order_entry_ltp": 183.0,
@@ -2637,7 +2637,7 @@
       "ltp": 25.8,
       "dist_pct": -22.48,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447156",
+      "ltp_updated_at": "2026-10-09T15:38:22.360939",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-08-31T09:40:08.622208",
       "place_order_entry_ltp": 32.97,
@@ -2665,7 +2665,7 @@
       "ltp": 127.29,
       "dist_pct": 3.25,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447160",
+      "ltp_updated_at": "2026-10-09T15:38:22.360941",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-10-08T11:04:46.393561",
       "place_order_entry_ltp": 125.25,
@@ -2693,7 +2693,7 @@
       "ltp": 2523.6,
       "dist_pct": 10.85,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447164",
+      "ltp_updated_at": "2026-10-09T15:38:22.360945",
       "in_place_order_zone": false
     },
     {
@@ -2715,7 +2715,7 @@
       "ltp": 7.03,
       "dist_pct": -23.0,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447169",
+      "ltp_updated_at": "2026-10-09T15:38:22.360948",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-02T09:09:07.466843",
       "place_order_entry_ltp": 9.0,
@@ -2743,7 +2743,7 @@
       "ltp": 481.2,
       "dist_pct": -13.55,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447173",
+      "ltp_updated_at": "2026-10-09T15:38:22.360951",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-09T08:31:29.690073",
       "place_order_entry_ltp": 545.55,
@@ -2771,7 +2771,7 @@
       "ltp": 108.57,
       "dist_pct": 5.79,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447178",
+      "ltp_updated_at": "2026-10-09T15:38:22.360956",
       "in_place_order_zone": false
     },
     {
@@ -2793,7 +2793,7 @@
       "ltp": 99.75,
       "dist_pct": 6.81,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447182",
+      "ltp_updated_at": "2026-10-09T15:38:22.360965",
       "in_place_order_zone": false
     },
     {
@@ -2815,7 +2815,7 @@
       "ltp": 364.4,
       "dist_pct": 13.99,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447186",
+      "ltp_updated_at": "2026-10-09T15:38:22.360970",
       "in_place_order_zone": false
     },
     {
@@ -2837,7 +2837,7 @@
       "ltp": 276.05,
       "dist_pct": 55.37,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447190",
+      "ltp_updated_at": "2026-10-09T15:38:22.360974",
       "in_place_order_zone": false
     },
     {
@@ -2859,7 +2859,7 @@
       "ltp": 14.17,
       "dist_pct": 22.37,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447194",
+      "ltp_updated_at": "2026-10-09T15:38:22.360978",
       "in_place_order_zone": false
     },
     {
@@ -2881,7 +2881,7 @@
       "ltp": 46.86,
       "dist_pct": -4.46,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447198",
+      "ltp_updated_at": "2026-10-09T15:38:22.360983",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-10-05T11:03:53.215923",
       "place_order_entry_ltp": 48.76,
@@ -2909,7 +2909,7 @@
       "ltp": 81.49,
       "dist_pct": 15.47,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447203",
+      "ltp_updated_at": "2026-10-09T15:38:22.360988",
       "in_place_order_zone": false
     },
     {
@@ -2953,7 +2953,7 @@
       "ltp": 1222.1,
       "dist_pct": -13.94,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447209",
+      "ltp_updated_at": "2026-10-09T15:38:22.360993",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-24T08:23:41.489090",
       "place_order_entry_ltp": 1430.9,
@@ -2981,7 +2981,7 @@
       "ltp": 2056.9,
       "dist_pct": 9.49,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447213",
+      "ltp_updated_at": "2026-10-09T15:38:22.360998",
       "in_place_order_zone": false
     },
     {
@@ -3003,7 +3003,7 @@
       "ltp": 78.62,
       "dist_pct": 2.85,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447217",
+      "ltp_updated_at": "2026-10-09T15:38:22.361002",
       "in_place_order_zone": false
     },
     {
@@ -3025,7 +3025,7 @@
       "ltp": 576.4,
       "dist_pct": 6.72,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447222",
+      "ltp_updated_at": "2026-10-09T15:38:22.361008",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-25T09:53:15.535239",
       "place_order_entry_ltp": 531.9,
@@ -3053,7 +3053,7 @@
       "ltp": 482.7,
       "dist_pct": 16.8,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447227",
+      "ltp_updated_at": "2026-10-09T15:38:22.361012",
       "in_place_order_zone": false
     },
     {
@@ -3075,7 +3075,7 @@
       "ltp": 149.52,
       "dist_pct": 18.46,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447231",
+      "ltp_updated_at": "2026-10-09T15:38:22.361017",
       "in_place_order_zone": false
     },
     {
@@ -3097,7 +3097,7 @@
       "ltp": 1679.9,
       "dist_pct": 6.14,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447235",
+      "ltp_updated_at": "2026-10-09T15:38:22.361023",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-30T09:37:19.836880",
       "place_order_entry_ltp": 1563.1,
@@ -3125,7 +3125,7 @@
       "ltp": 440.2,
       "dist_pct": 21.73,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447237",
+      "ltp_updated_at": "2026-10-09T15:38:22.361028",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-16T08:31:26.672442",
       "place_order_entry_ltp": 358.3,
@@ -3153,7 +3153,7 @@
       "ltp": 70.97,
       "dist_pct": 13.86,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447240",
+      "ltp_updated_at": "2026-10-09T15:38:22.361033",
       "in_place_order_zone": false
     },
     {
@@ -3175,7 +3175,7 @@
       "ltp": 518.0,
       "dist_pct": 24.66,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447243",
+      "ltp_updated_at": "2026-10-09T15:38:22.361037",
       "in_place_order_zone": false
     },
     {
@@ -3197,7 +3197,7 @@
       "ltp": 8.81,
       "dist_pct": -7.56,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447246",
+      "ltp_updated_at": "2026-10-09T15:38:22.361042",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-29T09:45:27.762269",
       "place_order_entry_ltp": 9.34,
@@ -3225,7 +3225,7 @@
       "ltp": 23.28,
       "dist_pct": 37.67,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447249",
+      "ltp_updated_at": "2026-10-09T15:38:22.361047",
       "in_place_order_zone": false
     },
     {
@@ -3247,7 +3247,7 @@
       "ltp": 172.59,
       "dist_pct": 65.51,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447251",
+      "ltp_updated_at": "2026-10-09T15:38:22.361052",
       "in_place_order_zone": false
     },
     {
@@ -3269,7 +3269,7 @@
       "ltp": 860.95,
       "dist_pct": 18.48,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447254",
+      "ltp_updated_at": "2026-10-09T15:38:22.361058",
       "in_place_order_zone": false
     },
     {
@@ -3291,7 +3291,7 @@
       "ltp": 428.25,
       "dist_pct": 5.26,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447257",
+      "ltp_updated_at": "2026-10-09T15:38:22.361063",
       "in_place_order_zone": false
     },
     {
@@ -3313,7 +3313,7 @@
       "ltp": 117.1,
       "dist_pct": 19.19,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447260",
+      "ltp_updated_at": "2026-10-09T15:38:22.361067",
       "in_place_order_zone": false
     },
     {
@@ -3335,7 +3335,7 @@
       "ltp": 334.4,
       "dist_pct": 10.09,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447263",
+      "ltp_updated_at": "2026-10-09T15:38:22.361072",
       "in_place_order_zone": false
     },
     {
@@ -3357,7 +3357,7 @@
       "ltp": 1337.8,
       "dist_pct": 51.68,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447266",
+      "ltp_updated_at": "2026-10-09T15:38:22.361076",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-25T08:46:05.836116",
       "place_order_entry_ltp": 874.0,
@@ -3385,7 +3385,7 @@
       "ltp": 11.02,
       "dist_pct": -8.17,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447269",
+      "ltp_updated_at": "2026-10-09T15:38:22.361082",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-24T09:36:19.063067",
       "place_order_entry_ltp": 11.78,
@@ -3413,7 +3413,7 @@
       "ltp": 101.46,
       "dist_pct": 19.99,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447271",
+      "ltp_updated_at": "2026-10-09T15:38:22.361086",
       "in_place_order_zone": false
     },
     {
@@ -3435,7 +3435,7 @@
       "ltp": 287.2,
       "dist_pct": 16.3,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447274",
+      "ltp_updated_at": "2026-10-09T15:38:22.361092",
       "in_place_order_zone": false
     },
     {
@@ -3457,7 +3457,7 @@
       "ltp": 41.89,
       "dist_pct": 8.19,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447277",
+      "ltp_updated_at": "2026-10-09T15:38:22.361097",
       "in_place_order_zone": false
     },
     {
@@ -3479,7 +3479,7 @@
       "ltp": 23.82,
       "dist_pct": 15.02,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447280",
+      "ltp_updated_at": "2026-10-09T15:38:22.361103",
       "in_place_order_zone": false
     },
     {
@@ -3501,7 +3501,7 @@
       "ltp": 406.8,
       "dist_pct": 36.73,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447282",
+      "ltp_updated_at": "2026-10-09T15:38:22.361109",
       "in_place_order_zone": false
     },
     {
@@ -3523,7 +3523,7 @@
       "ltp": 678.65,
       "dist_pct": 13.44,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447284",
+      "ltp_updated_at": "2026-10-09T15:38:22.361115",
       "in_place_order_zone": false
     },
     {
@@ -3545,7 +3545,7 @@
       "ltp": 140.9,
       "dist_pct": -4.34,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447287",
+      "ltp_updated_at": "2026-10-09T15:38:22.361121",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-10-07T10:45:14.305720",
       "place_order_entry_ltp": 144.94,
@@ -3573,7 +3573,7 @@
       "ltp": 190.63,
       "dist_pct": 21.58,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447290",
+      "ltp_updated_at": "2026-10-09T15:38:22.361127",
       "in_place_order_zone": false
     },
     {
@@ -3595,7 +3595,7 @@
       "ltp": 1101.5,
       "dist_pct": 39.26,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447292",
+      "ltp_updated_at": "2026-10-09T15:38:22.361132",
       "in_place_order_zone": false
     },
     {
@@ -3617,7 +3617,7 @@
       "ltp": 77.12,
       "dist_pct": -1.63,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447296",
+      "ltp_updated_at": "2026-10-09T15:38:22.361139",
       "in_place_order_zone": true,
       "place_order_entry_at": "2026-10-08T11:04:46.393865",
       "place_order_entry_ltp": 77.91,
@@ -3645,7 +3645,7 @@
       "ltp": 150.47,
       "dist_pct": 32.03,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447298",
+      "ltp_updated_at": "2026-10-09T15:38:22.361144",
       "in_place_order_zone": false
     },
     {
@@ -3667,7 +3667,7 @@
       "ltp": 1095.0,
       "dist_pct": 0.66,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447302",
+      "ltp_updated_at": "2026-10-09T15:38:22.361150",
       "in_place_order_zone": true,
       "place_order_entry_at": "2026-10-08T11:04:46.393884",
       "place_order_entry_ltp": 1088.1,
@@ -3693,7 +3693,7 @@
       "ltp": 67.35,
       "dist_pct": -21.02,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447304",
+      "ltp_updated_at": "2026-10-09T15:38:22.361155",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-10T08:04:40.316408",
       "place_order_entry_ltp": 85.68,
@@ -3721,7 +3721,7 @@
       "ltp": 230.7,
       "dist_pct": -2.46,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447307",
+      "ltp_updated_at": "2026-10-09T15:38:22.361160",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-10-08T11:04:46.393904",
       "place_order_entry_ltp": 236.9,
@@ -3749,7 +3749,7 @@
       "ltp": 101.17,
       "dist_pct": -3.1,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447310",
+      "ltp_updated_at": "2026-10-09T15:38:22.361165",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-25T08:46:05.836221",
       "place_order_entry_ltp": 105.01,
@@ -3777,7 +3777,7 @@
       "ltp": 17.52,
       "dist_pct": -14.03,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447312",
+      "ltp_updated_at": "2026-10-09T15:38:22.361170",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-21T08:51:48.830318",
       "place_order_entry_ltp": 20.15,
@@ -3805,7 +3805,7 @@
       "ltp": 135.98,
       "dist_pct": 11.01,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447315",
+      "ltp_updated_at": "2026-10-09T15:38:22.361175",
       "in_place_order_zone": false
     },
     {
@@ -3827,7 +3827,7 @@
       "ltp": 213.66,
       "dist_pct": 8.39,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447318",
+      "ltp_updated_at": "2026-10-09T15:38:22.361181",
       "in_place_order_zone": false
     },
     {
@@ -3849,7 +3849,7 @@
       "ltp": 1186.6,
       "dist_pct": 80.13,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447321",
+      "ltp_updated_at": "2026-10-09T15:38:22.361187",
       "in_place_order_zone": false
     },
     {
@@ -3871,7 +3871,7 @@
       "ltp": 150.98,
       "dist_pct": 5.52,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447324",
+      "ltp_updated_at": "2026-10-09T15:38:22.361192",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-10-08T11:04:46.393949",
       "place_order_entry_ltp": 143.05,
@@ -3899,7 +3899,7 @@
       "ltp": 1498.2,
       "dist_pct": 102.22,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447327",
+      "ltp_updated_at": "2026-10-09T15:38:22.361197",
       "in_place_order_zone": false
     },
     {
@@ -3921,7 +3921,7 @@
       "ltp": 92.19,
       "dist_pct": 65.69,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447329",
+      "ltp_updated_at": "2026-10-09T15:38:22.361202",
       "in_place_order_zone": false
     },
     {
@@ -3943,7 +3943,7 @@
       "ltp": 636.15,
       "dist_pct": 30.86,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447332",
+      "ltp_updated_at": "2026-10-09T15:38:22.361207",
       "in_place_order_zone": false
     },
     {
@@ -3965,7 +3965,7 @@
       "ltp": 162.23,
       "dist_pct": -15.75,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447335",
+      "ltp_updated_at": "2026-10-09T15:38:22.361213",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-23T08:31:19.674164",
       "place_order_entry_ltp": 190.99,
@@ -3993,7 +3993,7 @@
       "ltp": 29.18,
       "dist_pct": -12.97,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447337",
+      "ltp_updated_at": "2026-10-09T15:38:22.361219",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-29T09:45:27.762623",
       "place_order_entry_ltp": 33.6,
@@ -4021,7 +4021,7 @@
       "ltp": 1285.2,
       "dist_pct": 16.56,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447340",
+      "ltp_updated_at": "2026-10-09T15:38:22.361227",
       "in_place_order_zone": false
     },
     {
@@ -4043,7 +4043,7 @@
       "ltp": 21.03,
       "dist_pct": 3.14,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447343",
+      "ltp_updated_at": "2026-10-09T15:38:22.361233",
       "in_place_order_zone": false
     },
     {
@@ -4065,7 +4065,7 @@
       "ltp": 14.81,
       "dist_pct": 43.79,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447346",
+      "ltp_updated_at": "2026-10-09T15:38:22.361238",
       "in_place_order_zone": false
     },
     {
@@ -4087,7 +4087,7 @@
       "ltp": 89.43,
       "dist_pct": 34.2,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447349",
+      "ltp_updated_at": "2026-10-09T15:38:22.361244",
       "in_place_order_zone": false
     },
     {
@@ -4109,7 +4109,7 @@
       "ltp": 207.87,
       "dist_pct": 17.19,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447351",
+      "ltp_updated_at": "2026-10-09T15:38:22.361250",
       "in_place_order_zone": false
     },
     {
@@ -4131,7 +4131,7 @@
       "ltp": 899.0,
       "dist_pct": 13.53,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447354",
+      "ltp_updated_at": "2026-10-09T15:38:22.361255",
       "in_place_order_zone": false
     },
     {
@@ -4153,7 +4153,7 @@
       "ltp": 51.21,
       "dist_pct": 10.6,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447356",
+      "ltp_updated_at": "2026-10-09T15:38:22.361259",
       "in_place_order_zone": false
     },
     {
@@ -4175,7 +4175,7 @@
       "ltp": 181.76,
       "dist_pct": 25.32,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447359",
+      "ltp_updated_at": "2026-10-09T15:38:22.361265",
       "in_place_order_zone": false
     },
     {
@@ -4197,7 +4197,7 @@
       "ltp": 4076.7,
       "dist_pct": 10.1,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447361",
+      "ltp_updated_at": "2026-10-09T15:38:22.361270",
       "in_place_order_zone": false
     },
     {
@@ -4219,7 +4219,7 @@
       "ltp": 252.03,
       "dist_pct": 80.84,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447364",
+      "ltp_updated_at": "2026-10-09T15:38:22.361276",
       "in_place_order_zone": false
     },
     {
@@ -4241,7 +4241,7 @@
       "ltp": 95.78,
       "dist_pct": -2.27,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447367",
+      "ltp_updated_at": "2026-10-09T15:38:22.361281",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-28T09:40:52.209536",
       "place_order_entry_ltp": 98.81,
@@ -4269,7 +4269,7 @@
       "ltp": 174.12,
       "dist_pct": 1.5,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447369",
+      "ltp_updated_at": "2026-10-09T15:38:22.361286",
       "in_place_order_zone": true,
       "place_order_entry_at": "2026-10-08T11:04:46.394092",
       "place_order_entry_ltp": 173.34,
@@ -4297,7 +4297,7 @@
       "ltp": 1719.9,
       "dist_pct": 20.35,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447372",
+      "ltp_updated_at": "2026-10-09T15:38:22.361291",
       "in_place_order_zone": false
     },
     {
@@ -4319,7 +4319,7 @@
       "ltp": 67.21,
       "dist_pct": 10.63,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447375",
+      "ltp_updated_at": "2026-10-09T15:38:22.361297",
       "in_place_order_zone": false
     },
     {
@@ -4341,7 +4341,7 @@
       "ltp": 729.3,
       "dist_pct": 35.01,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447377",
+      "ltp_updated_at": "2026-10-09T15:38:22.361302",
       "in_place_order_zone": false
     },
     {
@@ -4363,7 +4363,7 @@
       "ltp": 2207.2,
       "dist_pct": 27.9,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447380",
+      "ltp_updated_at": "2026-10-09T15:38:22.361310",
       "in_place_order_zone": false
     },
     {
@@ -4385,7 +4385,7 @@
       "ltp": 91.99,
       "dist_pct": -1.19,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447384",
+      "ltp_updated_at": "2026-10-09T15:38:22.361317",
       "in_place_order_zone": true,
       "place_order_entry_at": "2026-09-29T10:56:59.876035",
       "place_order_entry_ltp": 94.86,
@@ -4413,7 +4413,7 @@
       "ltp": 43.93,
       "dist_pct": 13.87,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447386",
+      "ltp_updated_at": "2026-10-09T15:38:22.361322",
       "in_place_order_zone": false
     },
     {
@@ -4435,7 +4435,7 @@
       "ltp": 12.24,
       "dist_pct": -7.83,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447390",
+      "ltp_updated_at": "2026-10-09T15:38:22.361328",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-28T09:40:52.209610",
       "place_order_entry_ltp": 13.2,
@@ -4463,7 +4463,7 @@
       "ltp": 440.5,
       "dist_pct": 6.77,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447392",
+      "ltp_updated_at": "2026-10-09T15:38:22.361335",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-25T09:15:23.850218",
       "place_order_entry_ltp": 406.0,
@@ -4491,7 +4491,7 @@
       "ltp": 115.11,
       "dist_pct": 38.19,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447395",
+      "ltp_updated_at": "2026-10-09T15:38:22.361352",
       "in_place_order_zone": false
     },
     {
@@ -4513,7 +4513,7 @@
       "ltp": 12.19,
       "dist_pct": 24.39,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447397",
+      "ltp_updated_at": "2026-10-09T15:38:22.361357",
       "in_place_order_zone": false
     },
     {
@@ -4535,7 +4535,7 @@
       "ltp": 255.6,
       "dist_pct": -6.85,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447409",
+      "ltp_updated_at": "2026-10-09T15:38:22.361376",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-24T08:54:48.162708",
       "place_order_entry_ltp": 276.0,
@@ -4563,7 +4563,7 @@
       "ltp": 401.8,
       "dist_pct": 2.5,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447414",
+      "ltp_updated_at": "2026-10-09T15:38:22.361383",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-10-08T11:04:46.394185",
       "place_order_entry_ltp": 394.8,
@@ -4591,7 +4591,7 @@
       "ltp": 2049.0,
       "dist_pct": 12.96,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447419",
+      "ltp_updated_at": "2026-10-09T15:38:22.361389",
       "in_place_order_zone": false
     },
     {
@@ -4613,7 +4613,7 @@
       "ltp": 349.45,
       "dist_pct": 12.03,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447423",
+      "ltp_updated_at": "2026-10-09T15:38:22.361395",
       "in_place_order_zone": false
     },
     {
@@ -4635,7 +4635,7 @@
       "ltp": 276.15,
       "dist_pct": -1.99,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447428",
+      "ltp_updated_at": "2026-10-09T15:38:22.361402",
       "in_place_order_zone": true,
       "place_order_entry_at": "2026-10-06T10:57:25.741274",
       "place_order_entry_ltp": 286.85,
@@ -4663,7 +4663,7 @@
       "ltp": 43.8,
       "dist_pct": 39.45,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447433",
+      "ltp_updated_at": "2026-10-09T15:38:22.361408",
       "in_place_order_zone": false
     },
     {
@@ -4685,7 +4685,7 @@
       "ltp": 25.5,
       "dist_pct": -3.59,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447437",
+      "ltp_updated_at": "2026-10-09T15:38:22.361413",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-10-01T10:03:12.270679",
       "place_order_entry_ltp": 26.05,
@@ -4713,7 +4713,7 @@
       "ltp": 1042.1,
       "dist_pct": 16.2,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447442",
+      "ltp_updated_at": "2026-10-09T15:38:22.361419",
       "in_place_order_zone": false
     },
     {
@@ -4735,7 +4735,7 @@
       "ltp": 1188.0,
       "dist_pct": 9.09,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447447",
+      "ltp_updated_at": "2026-10-09T15:38:22.361424",
       "in_place_order_zone": false
     },
     {
@@ -4757,7 +4757,7 @@
       "ltp": 51.62,
       "dist_pct": -0.62,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447453",
+      "ltp_updated_at": "2026-10-09T15:38:22.361429",
       "in_place_order_zone": true,
       "place_order_entry_at": "2026-10-09T11:04:01.740362",
       "place_order_entry_ltp": 51.62,
@@ -4785,7 +4785,7 @@
       "ltp": 806.6,
       "dist_pct": 6.2,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447457",
+      "ltp_updated_at": "2026-10-09T15:38:22.361435",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-30T09:37:19.837285",
       "place_order_entry_ltp": 762.8,
@@ -4813,7 +4813,7 @@
       "ltp": 49.8,
       "dist_pct": 10.84,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447460",
+      "ltp_updated_at": "2026-10-09T15:38:22.361440",
       "in_place_order_zone": false
     },
     {
@@ -4835,7 +4835,7 @@
       "ltp": 30.61,
       "dist_pct": 9.01,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447463",
+      "ltp_updated_at": "2026-10-09T15:38:22.361445",
       "in_place_order_zone": false
     },
     {
@@ -4857,7 +4857,7 @@
       "ltp": 23.19,
       "dist_pct": 27.84,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447466",
+      "ltp_updated_at": "2026-10-09T15:38:22.361450",
       "in_place_order_zone": false
     },
     {
@@ -4879,7 +4879,7 @@
       "ltp": 47.55,
       "dist_pct": -8.4,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447469",
+      "ltp_updated_at": "2026-10-09T15:38:22.361455",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-28T09:40:52.209826",
       "place_order_entry_ltp": 51.68,
@@ -4907,7 +4907,7 @@
       "ltp": 30.15,
       "dist_pct": -2.21,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447472",
+      "ltp_updated_at": "2026-10-09T15:38:22.361460",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-10-07T10:45:14.306174",
       "place_order_entry_ltp": 30.43,
@@ -4935,7 +4935,7 @@
       "ltp": 22.0,
       "dist_pct": 20.02,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447475",
+      "ltp_updated_at": "2026-10-09T15:38:22.361466",
       "in_place_order_zone": false
     },
     {
@@ -4957,7 +4957,7 @@
       "ltp": 14.44,
       "dist_pct": 5.17,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447477",
+      "ltp_updated_at": "2026-10-09T15:38:22.361471",
       "in_place_order_zone": false
     },
     {
@@ -4979,7 +4979,7 @@
       "ltp": 247.03,
       "dist_pct": 3.26,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447481",
+      "ltp_updated_at": "2026-10-09T15:38:22.361477",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-10-08T11:04:46.394310",
       "place_order_entry_ltp": 238.12,
@@ -5007,7 +5007,7 @@
       "ltp": 163.07,
       "dist_pct": -2.67,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447484",
+      "ltp_updated_at": "2026-10-09T15:38:22.361482",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-10-08T11:04:46.394321",
       "place_order_entry_ltp": 169.79,
@@ -5035,7 +5035,7 @@
       "ltp": 62.44,
       "dist_pct": 16.64,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447486",
+      "ltp_updated_at": "2026-10-09T15:38:22.361487",
       "in_place_order_zone": false
     },
     {
@@ -5057,7 +5057,7 @@
       "ltp": 49.29,
       "dist_pct": -9.39,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447491",
+      "ltp_updated_at": "2026-10-09T15:38:22.361492",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-29T09:45:27.763028",
       "place_order_entry_ltp": 54.01,
@@ -5085,7 +5085,7 @@
       "ltp": 40.87,
       "dist_pct": 3.97,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447496",
+      "ltp_updated_at": "2026-10-09T15:38:22.361498",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-10-07T10:45:14.306237",
       "place_order_entry_ltp": 39.03,
@@ -5113,7 +5113,7 @@
       "ltp": 109.06,
       "dist_pct": 49.85,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447501",
+      "ltp_updated_at": "2026-10-09T15:38:22.361503",
       "in_place_order_zone": false
     },
     {
@@ -5135,7 +5135,7 @@
       "ltp": 570.15,
       "dist_pct": 9.56,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447505",
+      "ltp_updated_at": "2026-10-09T15:38:22.361509",
       "in_place_order_zone": false
     },
     {
@@ -5157,7 +5157,7 @@
       "ltp": 53.21,
       "dist_pct": 32.43,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447509",
+      "ltp_updated_at": "2026-10-09T15:38:22.361515",
       "in_place_order_zone": false
     },
     {
@@ -5179,7 +5179,7 @@
       "ltp": 589.75,
       "dist_pct": -18.11,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447513",
+      "ltp_updated_at": "2026-10-09T15:38:22.361522",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-17T09:04:48.513397",
       "place_order_entry_ltp": 731.9,
@@ -5207,7 +5207,7 @@
       "ltp": 23.28,
       "dist_pct": 18.84,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447518",
+      "ltp_updated_at": "2026-10-09T15:38:22.361529",
       "in_place_order_zone": false
     },
     {
@@ -5229,7 +5229,7 @@
       "ltp": 268.1,
       "dist_pct": 9.36,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447522",
+      "ltp_updated_at": "2026-10-09T15:38:22.361535",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-29T09:45:27.763104",
       "place_order_entry_ltp": 248.2,
@@ -5257,7 +5257,7 @@
       "ltp": 1137.3,
       "dist_pct": 69.39,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447526",
+      "ltp_updated_at": "2026-10-09T15:38:22.361541",
       "in_place_order_zone": false
     },
     {
@@ -5279,7 +5279,7 @@
       "ltp": 267.6,
       "dist_pct": 47.44,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447531",
+      "ltp_updated_at": "2026-10-09T15:38:22.361546",
       "in_place_order_zone": false
     },
     {
@@ -5301,7 +5301,7 @@
       "ltp": 37.89,
       "dist_pct": -1.25,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447535",
+      "ltp_updated_at": "2026-10-09T15:38:22.361552",
       "in_place_order_zone": true,
       "place_order_entry_at": "2026-10-09T11:04:01.740590",
       "place_order_entry_ltp": 37.89,
@@ -5329,7 +5329,7 @@
       "ltp": 54.05,
       "dist_pct": 4.22,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447540",
+      "ltp_updated_at": "2026-10-09T15:38:22.361557",
       "in_place_order_zone": false
     },
     {
@@ -5351,7 +5351,7 @@
       "ltp": 405.9,
       "dist_pct": 29.43,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447544",
+      "ltp_updated_at": "2026-10-09T15:38:22.361563",
       "in_place_order_zone": false
     },
     {
@@ -5373,7 +5373,7 @@
       "ltp": 590.35,
       "dist_pct": 24.86,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447548",
+      "ltp_updated_at": "2026-10-09T15:38:22.361568",
       "in_place_order_zone": false
     },
     {
@@ -5395,7 +5395,7 @@
       "ltp": 127.9,
       "dist_pct": 42.48,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447552",
+      "ltp_updated_at": "2026-10-09T15:38:22.361575",
       "in_place_order_zone": false
     },
     {
@@ -5417,7 +5417,7 @@
       "ltp": 604.75,
       "dist_pct": 3.2,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447557",
+      "ltp_updated_at": "2026-10-09T15:38:22.361581",
       "in_place_order_zone": false
     },
     {
@@ -5439,7 +5439,7 @@
       "ltp": 100.05,
       "dist_pct": 33.74,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447561",
+      "ltp_updated_at": "2026-10-09T15:38:22.361587",
       "in_place_order_zone": false
     },
     {
@@ -5461,7 +5461,7 @@
       "ltp": 22.2,
       "dist_pct": -1.46,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447566",
+      "ltp_updated_at": "2026-10-09T15:38:22.361593",
       "in_place_order_zone": true,
       "place_order_entry_at": "2026-10-06T10:57:25.741442",
       "place_order_entry_ltp": 22.78,
@@ -5489,7 +5489,7 @@
       "ltp": 143.86,
       "dist_pct": -13.7,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447569",
+      "ltp_updated_at": "2026-10-09T15:38:22.361599",
       "in_place_order_zone": false
     },
     {
@@ -5511,7 +5511,7 @@
       "ltp": 201.37,
       "dist_pct": 14.1,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447572",
+      "ltp_updated_at": "2026-10-09T15:38:22.361605",
       "in_place_order_zone": false
     },
     {
@@ -5533,7 +5533,7 @@
       "ltp": 18.0,
       "dist_pct": 9.96,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447576",
+      "ltp_updated_at": "2026-10-09T15:38:22.361611",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-10-05T11:03:53.216769",
       "place_order_entry_ltp": 16.67,
@@ -5561,7 +5561,7 @@
       "ltp": 15.59,
       "dist_pct": 5.77,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447578",
+      "ltp_updated_at": "2026-10-09T15:38:22.361617",
       "in_place_order_zone": false
     },
     {
@@ -5583,7 +5583,7 @@
       "ltp": 724.4,
       "dist_pct": 20.57,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447581",
+      "ltp_updated_at": "2026-10-09T15:38:22.361622",
       "in_place_order_zone": false
     },
     {
@@ -5605,7 +5605,7 @@
       "ltp": 160.41,
       "dist_pct": 26.81,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447584",
+      "ltp_updated_at": "2026-10-09T15:38:22.361627",
       "in_place_order_zone": false
     },
     {
@@ -5627,7 +5627,7 @@
       "ltp": 19.63,
       "dist_pct": 8.87,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447586",
+      "ltp_updated_at": "2026-10-09T15:38:22.361632",
       "in_place_order_zone": false
     },
     {
@@ -5649,7 +5649,7 @@
       "ltp": 2300.5,
       "dist_pct": 5.82,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447589",
+      "ltp_updated_at": "2026-10-09T15:38:22.361637",
       "in_place_order_zone": false
     },
     {
@@ -5671,7 +5671,7 @@
       "ltp": 563.45,
       "dist_pct": -2.12,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447592",
+      "ltp_updated_at": "2026-10-09T15:38:22.361642",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-10-07T10:45:14.306456",
       "place_order_entry_ltp": 581.9,
@@ -5699,7 +5699,7 @@
       "ltp": 640.65,
       "dist_pct": 33.01,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447594",
+      "ltp_updated_at": "2026-10-09T15:38:22.361647",
       "in_place_order_zone": false
     },
     {
@@ -5721,7 +5721,7 @@
       "ltp": 533.85,
       "dist_pct": 4.8,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447597",
+      "ltp_updated_at": "2026-10-09T15:38:22.361652",
       "in_place_order_zone": false
     },
     {
@@ -5743,7 +5743,7 @@
       "ltp": 325.9,
       "dist_pct": 24.86,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447600",
+      "ltp_updated_at": "2026-10-09T15:38:22.361657",
       "in_place_order_zone": false
     },
     {
@@ -5765,7 +5765,7 @@
       "ltp": 59.78,
       "dist_pct": 12.96,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447602",
+      "ltp_updated_at": "2026-10-09T15:38:22.361661",
       "in_place_order_zone": false
     },
     {
@@ -5787,7 +5787,7 @@
       "ltp": 28.11,
       "dist_pct": 23.89,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447604",
+      "ltp_updated_at": "2026-10-09T15:38:22.361666",
       "in_place_order_zone": false
     },
     {
@@ -5809,7 +5809,7 @@
       "ltp": 372.55,
       "dist_pct": 6.92,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447610",
+      "ltp_updated_at": "2026-10-09T15:38:22.361671",
       "in_place_order_zone": false
     },
     {
@@ -5831,7 +5831,7 @@
       "ltp": 147.07,
       "dist_pct": 6.06,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447615",
+      "ltp_updated_at": "2026-10-09T15:38:22.361676",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-09-28T11:17:34.600640",
       "place_order_entry_ltp": 140.93,
@@ -5859,7 +5859,7 @@
       "ltp": 325.3,
       "dist_pct": 16.92,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447619",
+      "ltp_updated_at": "2026-10-09T15:38:22.361681",
       "in_place_order_zone": false
     },
     {
@@ -5881,7 +5881,7 @@
       "ltp": 202.34,
       "dist_pct": 6.98,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447623",
+      "ltp_updated_at": "2026-10-09T15:38:22.361685",
       "in_place_order_zone": false
     },
     {
@@ -5903,7 +5903,7 @@
       "ltp": 1324.1,
       "dist_pct": 18.63,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447628",
+      "ltp_updated_at": "2026-10-09T15:38:22.361691",
       "in_place_order_zone": false
     },
     {
@@ -5925,7 +5925,7 @@
       "ltp": 230.5,
       "dist_pct": 38.61,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447631",
+      "ltp_updated_at": "2026-10-09T15:38:22.361695",
       "in_place_order_zone": false
     },
     {
@@ -5947,7 +5947,7 @@
       "ltp": 153.38,
       "dist_pct": 15.93,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447635",
+      "ltp_updated_at": "2026-10-09T15:38:22.361700",
       "in_place_order_zone": false
     },
     {
@@ -5969,7 +5969,7 @@
       "ltp": 815.85,
       "dist_pct": 41.1,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447639",
+      "ltp_updated_at": "2026-10-09T15:38:22.361705",
       "in_place_order_zone": false
     },
     {
@@ -5991,7 +5991,7 @@
       "ltp": 21.0,
       "dist_pct": 32.16,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447643",
+      "ltp_updated_at": "2026-10-09T15:38:22.361709",
       "in_place_order_zone": false
     },
     {
@@ -6013,7 +6013,7 @@
       "ltp": 173.53,
       "dist_pct": 101.43,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447647",
+      "ltp_updated_at": "2026-10-09T15:38:22.361714",
       "in_place_order_zone": false
     },
     {
@@ -6035,7 +6035,7 @@
       "ltp": 103.4,
       "dist_pct": 5.57,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447651",
+      "ltp_updated_at": "2026-10-09T15:38:22.361718",
       "in_place_order_zone": false
     },
     {
@@ -6057,7 +6057,7 @@
       "ltp": 84.09,
       "dist_pct": 3.88,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447655",
+      "ltp_updated_at": "2026-10-09T15:38:22.361723",
       "in_place_order_zone": false
     },
     {
@@ -6079,7 +6079,7 @@
       "ltp": 464.65,
       "dist_pct": 12.89,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447659",
+      "ltp_updated_at": "2026-10-09T15:38:22.361728",
       "in_place_order_zone": false
     },
     {
@@ -6101,7 +6101,7 @@
       "ltp": 1362.2,
       "dist_pct": 7.64,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447663",
+      "ltp_updated_at": "2026-10-09T15:38:22.361733",
       "in_place_order_zone": false
     },
     {
@@ -6123,7 +6123,7 @@
       "ltp": 503.25,
       "dist_pct": 11.36,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447667",
+      "ltp_updated_at": "2026-10-09T15:38:22.361738",
       "in_place_order_zone": false
     },
     {
@@ -6145,7 +6145,7 @@
       "ltp": 705.85,
       "dist_pct": 19.44,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447671",
+      "ltp_updated_at": "2026-10-09T15:38:22.361743",
       "in_place_order_zone": false
     },
     {
@@ -6167,7 +6167,7 @@
       "ltp": 1378.0,
       "dist_pct": 19.63,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447675",
+      "ltp_updated_at": "2026-10-09T15:38:22.361748",
       "in_place_order_zone": false
     },
     {
@@ -6189,7 +6189,7 @@
       "ltp": 816.75,
       "dist_pct": 15.4,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447679",
+      "ltp_updated_at": "2026-10-09T15:38:22.361754",
       "in_place_order_zone": false
     },
     {
@@ -6211,7 +6211,7 @@
       "ltp": 78.33,
       "dist_pct": 17.49,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447683",
+      "ltp_updated_at": "2026-10-09T15:38:22.361759",
       "in_place_order_zone": false
     },
     {
@@ -6233,7 +6233,7 @@
       "ltp": 102.85,
       "dist_pct": 29.34,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447687",
+      "ltp_updated_at": "2026-10-09T15:38:22.361764",
       "in_place_order_zone": false
     },
     {
@@ -6255,7 +6255,7 @@
       "ltp": 325.55,
       "dist_pct": 48.44,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447691",
+      "ltp_updated_at": "2026-10-09T15:38:22.361769",
       "in_place_order_zone": false
     },
     {
@@ -6277,7 +6277,7 @@
       "ltp": 158.48,
       "dist_pct": 100.89,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447695",
+      "ltp_updated_at": "2026-10-09T15:38:22.361774",
       "in_place_order_zone": false
     },
     {
@@ -6299,7 +6299,7 @@
       "ltp": 867.9,
       "dist_pct": 2.24,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447700",
+      "ltp_updated_at": "2026-10-09T15:38:22.361779",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-10-08T11:04:46.394738",
       "place_order_entry_ltp": 857.85,
@@ -6327,7 +6327,7 @@
       "ltp": 698.2,
       "dist_pct": 20.55,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447704",
+      "ltp_updated_at": "2026-10-09T15:38:22.361784",
       "in_place_order_zone": false
     },
     {
@@ -6349,7 +6349,7 @@
       "ltp": 102.88,
       "dist_pct": 4.05,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447709",
+      "ltp_updated_at": "2026-10-09T15:38:22.361789",
       "in_place_order_zone": false
     },
     {
@@ -6371,7 +6371,7 @@
       "ltp": 69.52,
       "dist_pct": 4.32,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447713",
+      "ltp_updated_at": "2026-10-09T15:38:22.361794",
       "in_place_order_zone": false
     },
     {
@@ -6393,7 +6393,7 @@
       "ltp": 19.87,
       "dist_pct": 7.87,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447717",
+      "ltp_updated_at": "2026-10-09T15:38:22.361800",
       "in_place_order_zone": false
     },
     {
@@ -6415,7 +6415,7 @@
       "ltp": 329.6,
       "dist_pct": 31.69,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447721",
+      "ltp_updated_at": "2026-10-09T15:38:22.361805",
       "in_place_order_zone": false
     },
     {
@@ -6437,7 +6437,7 @@
       "ltp": 109.97,
       "dist_pct": 15.68,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447725",
+      "ltp_updated_at": "2026-10-09T15:38:22.361811",
       "in_place_order_zone": false
     },
     {
@@ -6459,7 +6459,7 @@
       "ltp": 1864.0,
       "dist_pct": 21.14,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447729",
+      "ltp_updated_at": "2026-10-09T15:38:22.361816",
       "in_place_order_zone": false
     },
     {
@@ -6481,7 +6481,7 @@
       "ltp": 119.33,
       "dist_pct": 35.29,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447733",
+      "ltp_updated_at": "2026-10-09T15:38:22.361821",
       "in_place_order_zone": false
     },
     {
@@ -6503,7 +6503,7 @@
       "ltp": 87.94,
       "dist_pct": 19.48,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447736",
+      "ltp_updated_at": "2026-10-09T15:38:22.361825",
       "in_place_order_zone": false
     },
     {
@@ -6525,7 +6525,7 @@
       "ltp": 28.45,
       "dist_pct": 77.48,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447740",
+      "ltp_updated_at": "2026-10-09T15:38:22.361830",
       "in_place_order_zone": false
     },
     {
@@ -6547,7 +6547,7 @@
       "ltp": 380.55,
       "dist_pct": 34.37,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447744",
+      "ltp_updated_at": "2026-10-09T15:38:22.361835",
       "in_place_order_zone": false
     },
     {
@@ -6569,7 +6569,7 @@
       "ltp": 54.84,
       "dist_pct": 2.28,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447748",
+      "ltp_updated_at": "2026-10-09T15:38:22.361840",
       "in_place_order_zone": false
     },
     {
@@ -6591,7 +6591,7 @@
       "ltp": 146.44,
       "dist_pct": 14.95,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447751",
+      "ltp_updated_at": "2026-10-09T15:38:22.361845",
       "in_place_order_zone": false
     },
     {
@@ -6613,7 +6613,7 @@
       "ltp": 121.4,
       "dist_pct": 12.5,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447755",
+      "ltp_updated_at": "2026-10-09T15:38:22.361850",
       "in_place_order_zone": false
     },
     {
@@ -6635,7 +6635,7 @@
       "ltp": 26.3,
       "dist_pct": 18.47,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447759",
+      "ltp_updated_at": "2026-10-09T15:38:22.361854",
       "in_place_order_zone": false
     },
     {
@@ -6657,7 +6657,7 @@
       "ltp": 298.05,
       "dist_pct": 16.97,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447764",
+      "ltp_updated_at": "2026-10-09T15:38:22.361859",
       "in_place_order_zone": false
     },
     {
@@ -6679,7 +6679,7 @@
       "ltp": 9.9,
       "dist_pct": 5.21,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447777",
+      "ltp_updated_at": "2026-10-09T15:38:22.361868",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-10-08T11:04:46.394877",
       "place_order_entry_ltp": 9.44,
@@ -6707,7 +6707,7 @@
       "ltp": 257.75,
       "dist_pct": 0.41,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447782",
+      "ltp_updated_at": "2026-10-09T15:38:22.361873",
       "in_place_order_zone": true,
       "place_order_entry_at": "2026-10-09T11:04:01.741120",
       "place_order_entry_ltp": 257.75,
@@ -6733,7 +6733,7 @@
       "ltp": 35.97,
       "dist_pct": 6.99,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447786",
+      "ltp_updated_at": "2026-10-09T15:38:22.361878",
       "in_place_order_zone": false
     },
     {
@@ -6755,7 +6755,7 @@
       "ltp": 274.3,
       "dist_pct": 14.04,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447791",
+      "ltp_updated_at": "2026-10-09T15:38:22.361883",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-10-08T11:04:46.394903",
       "place_order_entry_ltp": 242.85,
@@ -6783,7 +6783,7 @@
       "ltp": 294.0,
       "dist_pct": -0.33,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447795",
+      "ltp_updated_at": "2026-10-09T15:38:22.361888",
       "in_place_order_zone": true,
       "place_order_entry_at": "2026-10-05T11:03:53.217217",
       "place_order_entry_ltp": 294.25,
@@ -6809,7 +6809,7 @@
       "ltp": 143.45,
       "dist_pct": 6.29,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447799",
+      "ltp_updated_at": "2026-10-09T15:38:22.361893",
       "in_place_order_zone": false
     },
     {
@@ -6831,7 +6831,7 @@
       "ltp": 115.95,
       "dist_pct": 39.43,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447804",
+      "ltp_updated_at": "2026-10-09T15:38:22.361899",
       "in_place_order_zone": false
     },
     {
@@ -6853,7 +6853,7 @@
       "ltp": 2363.8,
       "dist_pct": 75.24,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447808",
+      "ltp_updated_at": "2026-10-09T15:38:22.361904",
       "in_place_order_zone": false
     },
     {
@@ -6875,7 +6875,7 @@
       "ltp": 69.09,
       "dist_pct": -6.75,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447812",
+      "ltp_updated_at": "2026-10-09T15:38:22.361909",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-10-05T11:03:53.217242",
       "place_order_entry_ltp": 74.03,
@@ -6903,7 +6903,7 @@
       "ltp": 9.55,
       "dist_pct": 13.56,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447817",
+      "ltp_updated_at": "2026-10-09T15:38:22.361915",
       "in_place_order_zone": false
     },
     {
@@ -6925,7 +6925,7 @@
       "ltp": 246.05,
       "dist_pct": 11.53,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447822",
+      "ltp_updated_at": "2026-10-09T15:38:22.361919",
       "in_place_order_zone": false
     },
     {
@@ -6947,7 +6947,7 @@
       "ltp": 517.55,
       "dist_pct": 6.39,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447826",
+      "ltp_updated_at": "2026-10-09T15:38:22.361924",
       "in_place_order_zone": false
     },
     {
@@ -6969,7 +6969,7 @@
       "ltp": 215.56,
       "dist_pct": -5.19,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447831",
+      "ltp_updated_at": "2026-10-09T15:38:22.361930",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-10-07T10:45:14.306906",
       "place_order_entry_ltp": 229.68,
@@ -6997,7 +6997,7 @@
       "ltp": 2210.4,
       "dist_pct": 6.18,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447835",
+      "ltp_updated_at": "2026-10-09T15:38:22.361935",
       "in_place_order_zone": false
     },
     {
@@ -7019,7 +7019,7 @@
       "ltp": 861.7,
       "dist_pct": 21.11,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447839",
+      "ltp_updated_at": "2026-10-09T15:38:22.361940",
       "in_place_order_zone": false
     },
     {
@@ -7041,7 +7041,7 @@
       "ltp": 104.56,
       "dist_pct": 3.79,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447844",
+      "ltp_updated_at": "2026-10-09T15:38:22.361945",
       "in_place_order_zone": false
     },
     {
@@ -7063,7 +7063,7 @@
       "ltp": 467.7,
       "dist_pct": 17.26,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447848",
+      "ltp_updated_at": "2026-10-09T15:38:22.361950",
       "in_place_order_zone": false
     },
     {
@@ -7085,7 +7085,7 @@
       "ltp": 62.39,
       "dist_pct": 26.65,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447852",
+      "ltp_updated_at": "2026-10-09T15:38:22.361955",
       "in_place_order_zone": false
     },
     {
@@ -7107,7 +7107,7 @@
       "ltp": 77.36,
       "dist_pct": 19.6,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447856",
+      "ltp_updated_at": "2026-10-09T15:38:22.361960",
       "in_place_order_zone": false
     },
     {
@@ -7129,7 +7129,7 @@
       "ltp": 737.4,
       "dist_pct": 10.65,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447859",
+      "ltp_updated_at": "2026-10-09T15:38:22.361965",
       "in_place_order_zone": false
     },
     {
@@ -7151,7 +7151,7 @@
       "ltp": 56.0,
       "dist_pct": -3.15,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447863",
+      "ltp_updated_at": "2026-10-09T15:38:22.361971",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-10-08T11:04:46.395031",
       "place_order_entry_ltp": 57.96,
@@ -7179,7 +7179,7 @@
       "ltp": 269.7,
       "dist_pct": 3.99,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447868",
+      "ltp_updated_at": "2026-10-09T15:38:22.361976",
       "in_place_order_zone": false
     },
     {
@@ -7201,7 +7201,7 @@
       "ltp": 380.8,
       "dist_pct": -4.06,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-10-09T15:02:27.447872",
+      "ltp_updated_at": "2026-10-09T15:38:22.361981",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-10-06T10:57:25.741820",
       "place_order_entry_ltp": 396.4,
@@ -7229,7 +7229,7 @@
       "ltp": 224.88,
       "dist_pct": 38.24,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447876",
+      "ltp_updated_at": "2026-10-09T15:38:22.361987",
       "in_place_order_zone": false
     },
     {
@@ -7251,7 +7251,7 @@
       "ltp": 74.43,
       "dist_pct": 15.07,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447879",
+      "ltp_updated_at": "2026-10-09T15:38:22.361992",
       "in_place_order_zone": false
     },
     {
@@ -7273,7 +7273,7 @@
       "ltp": 1230.3,
       "dist_pct": 24.69,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447883",
+      "ltp_updated_at": "2026-10-09T15:38:22.361997",
       "in_place_order_zone": false
     },
     {
@@ -7295,7 +7295,7 @@
       "ltp": 81.31,
       "dist_pct": 16.47,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447887",
+      "ltp_updated_at": "2026-10-09T15:38:22.362002",
       "in_place_order_zone": false
     },
     {
@@ -7317,7 +7317,7 @@
       "ltp": 955.55,
       "dist_pct": 7.08,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447891",
+      "ltp_updated_at": "2026-10-09T15:38:22.362006",
       "in_place_order_zone": false
     },
     {
@@ -7339,7 +7339,7 @@
       "ltp": 339.55,
       "dist_pct": 7.97,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447896",
+      "ltp_updated_at": "2026-10-09T15:38:22.362011",
       "in_place_order_zone": false
     },
     {
@@ -7361,7 +7361,7 @@
       "ltp": 66.94,
       "dist_pct": 9.29,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447900",
+      "ltp_updated_at": "2026-10-09T15:38:22.362016",
       "in_place_order_zone": false
     },
     {
@@ -7383,7 +7383,7 @@
       "ltp": 245.49,
       "dist_pct": 23.97,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447903",
+      "ltp_updated_at": "2026-10-09T15:38:22.362020",
       "in_place_order_zone": false
     },
     {
@@ -7405,7 +7405,7 @@
       "ltp": 54.21,
       "dist_pct": 30.0,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447907",
+      "ltp_updated_at": "2026-10-09T15:38:22.362025",
       "in_place_order_zone": false
     },
     {
@@ -7427,7 +7427,7 @@
       "ltp": 1018.4,
       "dist_pct": 13.75,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447911",
+      "ltp_updated_at": "2026-10-09T15:38:22.362030",
       "in_place_order_zone": false
     },
     {
@@ -7449,7 +7449,7 @@
       "ltp": 2040.8,
       "dist_pct": 6.19,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447915",
+      "ltp_updated_at": "2026-10-09T15:38:22.362035",
       "in_place_order_zone": false
     },
     {
@@ -7471,7 +7471,7 @@
       "ltp": 174.75,
       "dist_pct": 10.76,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447919",
+      "ltp_updated_at": "2026-10-09T15:38:22.362040",
       "in_place_order_zone": false
     },
     {
@@ -7493,7 +7493,7 @@
       "ltp": 635.35,
       "dist_pct": 36.49,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447923",
+      "ltp_updated_at": "2026-10-09T15:38:22.362045",
       "in_place_order_zone": false
     },
     {
@@ -7515,7 +7515,7 @@
       "ltp": 1807.6,
       "dist_pct": 6.59,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447927",
+      "ltp_updated_at": "2026-10-09T15:38:22.362051",
       "in_place_order_zone": false
     },
     {
@@ -7537,7 +7537,7 @@
       "ltp": 2918.2,
       "dist_pct": 7.03,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447931",
+      "ltp_updated_at": "2026-10-09T15:38:22.362056",
       "in_place_order_zone": false
     },
     {
@@ -7559,7 +7559,7 @@
       "ltp": 157.72,
       "dist_pct": 10.46,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447935",
+      "ltp_updated_at": "2026-10-09T15:38:22.362061",
       "in_place_order_zone": false
     },
     {
@@ -7581,7 +7581,7 @@
       "ltp": 30.58,
       "dist_pct": 23.51,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447940",
+      "ltp_updated_at": "2026-10-09T15:38:22.362066",
       "in_place_order_zone": false
     },
     {
@@ -7603,7 +7603,7 @@
       "ltp": 90.37,
       "dist_pct": 26.14,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447944",
+      "ltp_updated_at": "2026-10-09T15:38:22.362071",
       "in_place_order_zone": false
     },
     {
@@ -7625,7 +7625,7 @@
       "ltp": 142.48,
       "dist_pct": 15.64,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447948",
+      "ltp_updated_at": "2026-10-09T15:38:22.362076",
       "in_place_order_zone": false
     },
     {
@@ -7647,7 +7647,7 @@
       "ltp": 687.75,
       "dist_pct": 27.62,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447952",
+      "ltp_updated_at": "2026-10-09T15:38:22.362081",
       "in_place_order_zone": false
     },
     {
@@ -7669,7 +7669,7 @@
       "ltp": 33.96,
       "dist_pct": 21.98,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447956",
+      "ltp_updated_at": "2026-10-09T15:38:22.362085",
       "in_place_order_zone": false
     },
     {
@@ -7691,7 +7691,7 @@
       "ltp": 266.61,
       "dist_pct": 8.71,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447960",
+      "ltp_updated_at": "2026-10-09T15:38:22.362090",
       "in_place_order_zone": false
     },
     {
@@ -7713,7 +7713,7 @@
       "ltp": 16.58,
       "dist_pct": 36.46,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447964",
+      "ltp_updated_at": "2026-10-09T15:38:22.362095",
       "in_place_order_zone": false
     },
     {
@@ -7735,7 +7735,7 @@
       "ltp": 619.1,
       "dist_pct": 5.29,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447968",
+      "ltp_updated_at": "2026-10-09T15:38:22.362100",
       "in_place_order_zone": false
     },
     {
@@ -7757,7 +7757,7 @@
       "ltp": 70.13,
       "dist_pct": 21.27,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447971",
+      "ltp_updated_at": "2026-10-09T15:38:22.362104",
       "in_place_order_zone": false
     },
     {
@@ -7779,7 +7779,7 @@
       "ltp": 29.59,
       "dist_pct": 4.15,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447975",
+      "ltp_updated_at": "2026-10-09T15:38:22.362109",
       "in_place_order_zone": false
     },
     {
@@ -7801,7 +7801,7 @@
       "ltp": 139.42,
       "dist_pct": 6.17,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-10-09T15:02:27.447979",
+      "ltp_updated_at": "2026-10-09T15:38:22.362114",
       "in_place_order_zone": false
     }
   ]
