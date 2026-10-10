@@ -80,7 +80,7 @@
     "currentPrice": 122090.0,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 121973.09,
+    "triggerPrice": 121973.08,
     "distanceRemaining": 0.08,
     "signalStatus": "CRITICAL_TOUCH",
     "notificationTrigger": true,
@@ -94,14 +94,14 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 1,
-      "entryPrice": 121973.09,
-      "strictStopLoss": 112215.24,
-      "pivotTargetExit": 150026.9
+      "entryPrice": 121973.08,
+      "strictStopLoss": 112215.23,
+      "pivotTargetExit": 150026.89
     },
     "fibonacciLevels": {
-      "23.6%": 137478.08,
-      "38.2%": 121498.25,
-      "50.0%": 108583.05,
+      "23.6%": 137478.07,
+      "38.2%": 121498.24,
+      "50.0%": 108583.04,
       "61.8%": 95667.84,
       "78.6%": 77280.09,
       "100.0%": 53857.61
@@ -109,7 +109,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 1062.4259,
+    "trendlineSlope": 1062.4256,
     "anchor1Date": "2022-02",
     "anchor2Date": "2025-03"
   },
@@ -185,7 +185,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 80.8114,
+    "trendlineSlope": 80.8115,
     "anchor1Date": "2022-05",
     "anchor2Date": "2023-10"
   },
@@ -375,7 +375,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 45.0204,
+    "trendlineSlope": 45.0205,
     "anchor1Date": "2022-05",
     "anchor2Date": "2026-09"
   },
@@ -722,6 +722,44 @@
     "anchor2Date": "2026-01"
   },
   {
+    "ticker": "SJVN",
+    "currentPrice": 55.27,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 54.05,
+    "distanceRemaining": 0.72,
+    "signalStatus": "CRITICAL_TOUCH",
+    "notificationTrigger": true,
+    "confluenceScore": 10,
+    "patternZone": "Trendline touch only",
+    "wickTouches": 8,
+    "timeframe": "monthly",
+    "signalType": "TRENDLINE",
+    "week52High": 87.01,
+    "week52Low": 53.66,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 925,
+      "entryPrice": 54.05,
+      "strictStopLoss": 49.73,
+      "pivotTargetExit": 66.48
+    },
+    "fibonacciLevels": {
+      "23.6%": 128.68,
+      "38.2%": 107.07,
+      "50.0%": 89.61,
+      "61.8%": 72.15,
+      "78.6%": 47.28,
+      "100.0%": 15.62
+    },
+    "fibMatchLevel": null,
+    "fibMatchPrice": null,
+    "fibMatchDistancePct": null,
+    "trendlineSlope": 0.59,
+    "anchor1Date": "2022-05",
+    "anchor2Date": "2023-03"
+  },
+  {
     "ticker": "ITC",
     "currentPrice": 266.0,
     "ema50": null,
@@ -900,8 +938,8 @@
       "23.6%": 30458.7,
       "38.2%": 27242.57,
       "50.0%": 24643.24,
-      "61.8%": 22043.91,
-      "78.6%": 18343.16,
+      "61.8%": 22043.9,
+      "78.6%": 18343.15,
       "100.0%": 13629.11
     },
     "fibMatchLevel": null,
@@ -1477,7 +1515,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 76.3833,
+    "trendlineSlope": 76.3834,
     "anchor1Date": "2023-02",
     "anchor2Date": "2023-10"
   },
@@ -2687,7 +2725,7 @@
       "38.2%": 25968.15,
       "50.0%": 24007.86,
       "61.8%": 22047.56,
-      "78.6%": 19256.64,
+      "78.6%": 19256.63,
       "100.0%": 15701.52
     },
     "fibMatchLevel": "61.8%",
@@ -2950,7 +2988,7 @@
     },
     "fibonacciLevels": {
       "23.6%": 5711.12,
-      "38.2%": 4832.05,
+      "38.2%": 4832.06,
       "50.0%": 4121.58,
       "61.8%": 3411.11,
       "78.6%": 2399.58,
@@ -4018,7 +4056,7 @@
       "50.0%": 2308.73,
       "61.8%": 2165.4,
       "78.6%": 1961.34,
-      "100.0%": 1701.4
+      "100.0%": 1701.41
     },
     "fibMatchLevel": "78.6%",
     "fibMatchPrice": 1859.6,
