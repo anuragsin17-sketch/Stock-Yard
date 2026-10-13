@@ -156,7 +156,7 @@
     "currentPrice": 122510.0,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 121973.09,
+    "triggerPrice": 121973.08,
     "distanceRemaining": 0.14,
     "signalStatus": "CRITICAL_TOUCH",
     "notificationTrigger": true,
@@ -170,22 +170,22 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 1,
-      "entryPrice": 121973.09,
-      "strictStopLoss": 112215.24,
-      "pivotTargetExit": 150026.9
+      "entryPrice": 121973.08,
+      "strictStopLoss": 112215.23,
+      "pivotTargetExit": 150026.89
     },
     "fibonacciLevels": {
       "23.6%": 137478.08,
       "38.2%": 121498.25,
-      "50.0%": 108583.05,
+      "50.0%": 108583.04,
       "61.8%": 95667.84,
       "78.6%": 77280.09,
-      "100.0%": 53857.61
+      "100.0%": 53857.6
     },
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 1062.4257,
+    "trendlineSlope": 1062.4256,
     "anchor1Date": "2022-02",
     "anchor2Date": "2025-03"
   },
@@ -684,6 +684,44 @@
     "anchor2Date": "2026-01"
   },
   {
+    "ticker": "SJVN",
+    "currentPrice": 56.07,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 54.05,
+    "distanceRemaining": 0.72,
+    "signalStatus": "CRITICAL_TOUCH",
+    "notificationTrigger": true,
+    "confluenceScore": 10,
+    "patternZone": "Trendline touch only",
+    "wickTouches": 8,
+    "timeframe": "monthly",
+    "signalType": "TRENDLINE",
+    "week52High": 87.01,
+    "week52Low": 53.66,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 925,
+      "entryPrice": 54.05,
+      "strictStopLoss": 49.73,
+      "pivotTargetExit": 66.48
+    },
+    "fibonacciLevels": {
+      "23.6%": 128.68,
+      "38.2%": 107.07,
+      "50.0%": 89.61,
+      "61.8%": 72.15,
+      "78.6%": 47.28,
+      "100.0%": 15.62
+    },
+    "fibMatchLevel": null,
+    "fibMatchPrice": null,
+    "fibMatchDistancePct": null,
+    "trendlineSlope": 0.59,
+    "anchor1Date": "2022-05",
+    "anchor2Date": "2023-03"
+  },
+  {
     "ticker": "ITC",
     "currentPrice": 261.0,
     "ema50": null,
@@ -825,7 +863,7 @@
       "38.2%": 27242.57,
       "50.0%": 24643.24,
       "61.8%": 22043.9,
-      "78.6%": 18343.15,
+      "78.6%": 18343.16,
       "100.0%": 13629.11
     },
     "fibMatchLevel": null,
@@ -1439,7 +1477,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 76.3834,
+    "trendlineSlope": 76.3833,
     "anchor1Date": "2023-02",
     "anchor2Date": "2023-10"
   },
@@ -2237,7 +2275,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 122.4664,
+    "trendlineSlope": 122.4665,
     "anchor1Date": "2020-10",
     "anchor2Date": "2023-10"
   },
