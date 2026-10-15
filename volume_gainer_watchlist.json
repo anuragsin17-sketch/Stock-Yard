@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-10-14 15:20 IST",
-    "date": "2026-10-14",
-    "new_stocks": 12,
-    "total": 310
+    "timestamp": "2026-10-15 15:11 IST",
+    "date": "2026-10-15",
+    "new_stocks": 4,
+    "total": 314
   },
   "stocks": [
     {
@@ -7385,6 +7385,74 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-10-15T15:03:06.309129",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "BIGBLOC",
+      "company": "BIGBLOC",
+      "added_date": "2026-10-15",
+      "gain_pct": 19.5,
+      "close_price": 40.38,
+      "prev_close": 33.79,
+      "prev_day_low": 32.39,
+      "alert_threshold": 34.01,
+      "sl_price": 31.09,
+      "target_price": 37.25,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 80.0,
+      "week_52_low": 32.4
+    },
+    {
+      "ticker": "SHREERAMA",
+      "company": "SHREERAMA",
+      "added_date": "2026-10-15",
+      "gain_pct": 18.49,
+      "close_price": 50.75,
+      "prev_close": 42.83,
+      "prev_day_low": 40.99,
+      "alert_threshold": 43.04,
+      "sl_price": 39.35,
+      "target_price": 47.14,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 71.99,
+      "week_52_low": 37.62
+    },
+    {
+      "ticker": "MODINATUR",
+      "company": "MODINATUR",
+      "added_date": "2026-10-15",
+      "gain_pct": 15.02,
+      "close_price": 374.4,
+      "prev_close": 325.5,
+      "prev_day_low": 347.95,
+      "alert_threshold": 365.35,
+      "sl_price": 334.03,
+      "target_price": 400.14,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 524.8,
+      "week_52_low": 252.3
+    },
+    {
+      "ticker": "ORIENTELEC",
+      "company": "ORIENTELEC",
+      "added_date": "2026-10-15",
+      "gain_pct": 13.39,
+      "close_price": 197.14,
+      "prev_close": 173.86,
+      "prev_day_low": 169.54,
+      "alert_threshold": 178.02,
+      "sl_price": 162.76,
+      "target_price": 194.97,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 217.51,
+      "week_52_low": 149.05
     }
   ]
 }
