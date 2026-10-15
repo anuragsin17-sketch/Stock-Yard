@@ -71,7 +71,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 12.3332,
+    "trendlineSlope": 12.3333,
     "anchor1Date": "2022-06",
     "anchor2Date": "2024-04"
   },
@@ -327,8 +327,8 @@
       "pivotTargetExit": 3906.01
     },
     "fibonacciLevels": {
-      "23.6%": 4691.66,
-      "38.2%": 3983.25,
+      "23.6%": 4691.67,
+      "38.2%": 3983.26,
       "50.0%": 3410.7,
       "61.8%": 2838.15,
       "78.6%": 2023.0,
@@ -555,10 +555,10 @@
       "pivotTargetExit": 150026.9
     },
     "fibonacciLevels": {
-      "23.6%": 137478.06,
-      "38.2%": 121498.24,
+      "23.6%": 137478.08,
+      "38.2%": 121498.25,
       "50.0%": 108583.04,
-      "61.8%": 95667.83,
+      "61.8%": 95667.84,
       "78.6%": 77280.09,
       "100.0%": 53857.6
     },
@@ -718,44 +718,6 @@
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
     "trendlineSlope": 9.4986,
-    "anchor1Date": "2022-05",
-    "anchor2Date": "2023-03"
-  },
-  {
-    "ticker": "SJVN",
-    "currentPrice": 55.39,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 54.05,
-    "distanceRemaining": 0.72,
-    "signalStatus": "CRITICAL_TOUCH",
-    "notificationTrigger": true,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 8,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 87.01,
-    "week52Low": 53.66,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 925,
-      "entryPrice": 54.05,
-      "strictStopLoss": 49.73,
-      "pivotTargetExit": 66.48
-    },
-    "fibonacciLevels": {
-      "23.6%": 128.68,
-      "38.2%": 107.07,
-      "50.0%": 89.61,
-      "61.8%": 72.15,
-      "78.6%": 47.28,
-      "100.0%": 15.62
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 0.59,
     "anchor1Date": "2022-05",
     "anchor2Date": "2023-03"
   },
@@ -939,7 +901,7 @@
       "38.2%": 27242.57,
       "50.0%": 24643.24,
       "61.8%": 22043.9,
-      "78.6%": 18343.15,
+      "78.6%": 18343.16,
       "100.0%": 13629.11
     },
     "fibMatchLevel": null,
