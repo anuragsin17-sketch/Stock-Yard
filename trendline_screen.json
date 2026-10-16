@@ -71,7 +71,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 12.3333,
+    "trendlineSlope": 12.3332,
     "anchor1Date": "2022-06",
     "anchor2Date": "2024-04"
   },
@@ -156,7 +156,7 @@
     "currentPrice": 7890.0,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 7599.33,
+    "triggerPrice": 7599.34,
     "distanceRemaining": 0.11,
     "signalStatus": "CRITICAL_TOUCH",
     "notificationTrigger": true,
@@ -170,9 +170,9 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 6,
-      "entryPrice": 7599.33,
-      "strictStopLoss": 6991.38,
-      "pivotTargetExit": 9347.18
+      "entryPrice": 7599.34,
+      "strictStopLoss": 6991.39,
+      "pivotTargetExit": 9347.19
     },
     "fibonacciLevels": {
       "23.6%": 7180.76,
@@ -185,7 +185,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 80.8114,
+    "trendlineSlope": 80.8115,
     "anchor1Date": "2022-05",
     "anchor2Date": "2023-10"
   },
@@ -536,7 +536,7 @@
     "currentPrice": 122790.0,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 121973.08,
+    "triggerPrice": 121973.1,
     "distanceRemaining": 0.54,
     "signalStatus": "CRITICAL_TOUCH",
     "notificationTrigger": true,
@@ -550,9 +550,9 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 1,
-      "entryPrice": 121973.08,
-      "strictStopLoss": 112215.23,
-      "pivotTargetExit": 150026.89
+      "entryPrice": 121973.1,
+      "strictStopLoss": 112215.25,
+      "pivotTargetExit": 150026.91
     },
     "fibonacciLevels": {
       "23.6%": 137478.08,
@@ -565,7 +565,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 1062.4257,
+    "trendlineSlope": 1062.4259,
     "anchor1Date": "2022-02",
     "anchor2Date": "2025-03"
   },
@@ -1591,7 +1591,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 76.3834,
+    "trendlineSlope": 76.3833,
     "anchor1Date": "2023-02",
     "anchor2Date": "2023-10"
   },
@@ -4211,7 +4211,7 @@
       "100.0%": 121.9
     },
     "fibMatchLevel": "50.0%",
-    "fibMatchPrice": 365.65,
+    "fibMatchPrice": 365.66,
     "fibMatchDistancePct": 1.45,
     "trendlineSlope": 4.376,
     "anchor1Date": "2022-06",
@@ -4246,7 +4246,7 @@
       "50.0%": 2308.73,
       "61.8%": 2165.4,
       "78.6%": 1961.34,
-      "100.0%": 1701.4
+      "100.0%": 1701.41
     },
     "fibMatchLevel": "78.6%",
     "fibMatchPrice": 1859.6,
