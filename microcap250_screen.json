@@ -878,7 +878,7 @@
     "currentPrice": 526.45,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 527.58,
+    "triggerPrice": 527.59,
     "distanceRemaining": 2.95,
     "signalStatus": "WATCHLIST",
     "notificationTrigger": false,
@@ -892,9 +892,9 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 94,
-      "entryPrice": 527.58,
-      "strictStopLoss": 485.37,
-      "pivotTargetExit": 648.92
+      "entryPrice": 527.59,
+      "strictStopLoss": 485.38,
+      "pivotTargetExit": 648.94
     },
     "fibonacciLevels": {
       "23.6%": 511.8,
