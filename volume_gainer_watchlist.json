@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-10-19 10:21 IST",
-    "date": "2026-10-16",
-    "new_stocks": 0,
-    "total": 294
+    "timestamp": "2026-10-19 17:04 IST",
+    "date": "2026-10-19",
+    "new_stocks": 4,
+    "total": 298
   },
   "stocks": [
     {
@@ -7013,6 +7013,74 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-10-19T16:59:53.036422",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "DCMSRIND",
+      "company": "DCMSRIND",
+      "added_date": "2026-10-19",
+      "gain_pct": 19.99,
+      "close_price": 47.9,
+      "prev_close": 39.92,
+      "prev_day_low": 37.44,
+      "alert_threshold": 39.31,
+      "sl_price": 35.94,
+      "target_price": 43.06,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 179.9,
+      "week_52_low": 31.9
+    },
+    {
+      "ticker": "LAGNAM",
+      "company": "LAGNAM",
+      "added_date": "2026-10-19",
+      "gain_pct": 19.99,
+      "close_price": 90.2,
+      "prev_close": 75.17,
+      "prev_day_low": 88.4,
+      "alert_threshold": 92.82,
+      "sl_price": 84.86,
+      "target_price": 101.66,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 95.9,
+      "week_52_low": 58.6
+    },
+    {
+      "ticker": "SWARNSAR",
+      "company": "SWARNSAR",
+      "added_date": "2026-10-19",
+      "gain_pct": 19.98,
+      "close_price": 46.35,
+      "prev_close": 38.63,
+      "prev_day_low": 38.95,
+      "alert_threshold": 40.9,
+      "sl_price": 37.39,
+      "target_price": 44.79,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 46.35,
+      "week_52_low": 32.0
+    },
+    {
+      "ticker": "SMARTLINK",
+      "company": "SMARTLINK",
+      "added_date": "2026-10-19",
+      "gain_pct": 19.63,
+      "close_price": 256.98,
+      "prev_close": 214.82,
+      "prev_day_low": 213.44,
+      "alert_threshold": 224.11,
+      "sl_price": 204.9,
+      "target_price": 245.46,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 257.78,
+      "week_52_low": 103.5
     }
   ]
 }
