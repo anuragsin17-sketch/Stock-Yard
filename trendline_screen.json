@@ -289,8 +289,8 @@
       "pivotTargetExit": 3906.01
     },
     "fibonacciLevels": {
-      "23.6%": 4691.67,
-      "38.2%": 3983.26,
+      "23.6%": 4691.66,
+      "38.2%": 3983.25,
       "50.0%": 3410.7,
       "61.8%": 2838.15,
       "78.6%": 2023.0,
@@ -517,17 +517,17 @@
       "pivotTargetExit": 150026.89
     },
     "fibonacciLevels": {
-      "23.6%": 137478.06,
+      "23.6%": 137478.07,
       "38.2%": 121498.24,
-      "50.0%": 108583.03,
+      "50.0%": 108583.04,
       "61.8%": 95667.83,
       "78.6%": 77280.08,
-      "100.0%": 53857.6
+      "100.0%": 53857.59
     },
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 1062.4256,
+    "trendlineSlope": 1062.4255,
     "anchor1Date": "2022-02",
     "anchor2Date": "2025-03"
   },
@@ -2237,7 +2237,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 122.4664,
+    "trendlineSlope": 122.4665,
     "anchor1Date": "2020-10",
     "anchor2Date": "2023-10"
   },
@@ -4284,7 +4284,7 @@
       "50.0%": 2308.73,
       "61.8%": 2165.4,
       "78.6%": 1961.34,
-      "100.0%": 1701.4
+      "100.0%": 1701.41
     },
     "fibMatchLevel": "78.6%",
     "fibMatchPrice": 1859.6,
