@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-10-21 15:28 IST",
-    "date": "2026-10-21",
-    "new_stocks": 6,
-    "total": 283
+    "timestamp": "2026-10-22 15:27 IST",
+    "date": "2026-10-22",
+    "new_stocks": 3,
+    "total": 286
   },
   "stocks": [
     {
@@ -6889,6 +6889,57 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-10-22T15:18:24.921067",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "TTML",
+      "company": "TTML",
+      "added_date": "2026-10-22",
+      "gain_pct": 18.56,
+      "close_price": 38.01,
+      "prev_close": 32.06,
+      "prev_day_low": 31.02,
+      "alert_threshold": 32.57,
+      "sl_price": 29.78,
+      "target_price": 35.67,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 58.25,
+      "week_52_low": 31.22
+    },
+    {
+      "ticker": "BETA",
+      "company": "BETA",
+      "added_date": "2026-10-22",
+      "gain_pct": 18.4,
+      "close_price": 1971.0,
+      "prev_close": 1664.7,
+      "prev_day_low": 1583.68,
+      "alert_threshold": 1662.86,
+      "sl_price": 1520.33,
+      "target_price": 1821.23,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 2807.9,
+      "week_52_low": 990.1
+    },
+    {
+      "ticker": "OMNI",
+      "company": "OMNI",
+      "added_date": "2026-10-22",
+      "gain_pct": 15.54,
+      "close_price": 685.2,
+      "prev_close": 593.05,
+      "prev_day_low": 583.74,
+      "alert_threshold": 612.93,
+      "sl_price": 560.39,
+      "target_price": 671.3,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 764.85,
+      "week_52_low": 176.25
     }
   ]
 }
