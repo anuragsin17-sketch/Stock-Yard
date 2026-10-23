@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-10-22 15:27 IST",
-    "date": "2026-10-22",
+    "timestamp": "2026-10-23 15:20 IST",
+    "date": "2026-10-23",
     "new_stocks": 3,
-    "total": 286
+    "total": 289
   },
   "stocks": [
     {
@@ -7097,6 +7097,57 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-10-23T15:06:00.541584",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "TONBO",
+      "company": "TONBO",
+      "added_date": "2026-10-23",
+      "gain_pct": 61.97,
+      "close_price": 1133.8,
+      "prev_close": 700.0,
+      "prev_day_low": 993.43,
+      "alert_threshold": 1043.1,
+      "sl_price": 953.69,
+      "target_price": 1142.44,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 1211.0,
+      "week_52_low": 1013.7
+    },
+    {
+      "ticker": "LINC",
+      "company": "LINC",
+      "added_date": "2026-10-23",
+      "gain_pct": 17.35,
+      "close_price": 89.67,
+      "prev_close": 76.41,
+      "prev_day_low": 74.29,
+      "alert_threshold": 78.0,
+      "sl_price": 71.32,
+      "target_price": 85.43,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 133.38,
+      "week_52_low": 75.81
+    },
+    {
+      "ticker": "PRUDMOULI",
+      "company": "PRUDMOULI",
+      "added_date": "2026-10-23",
+      "gain_pct": 14.97,
+      "close_price": 15.59,
+      "prev_close": 13.56,
+      "prev_day_low": 12.85,
+      "alert_threshold": 13.49,
+      "sl_price": 12.34,
+      "target_price": 14.78,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 29.25,
+      "week_52_low": 11.26
     }
   ]
 }
