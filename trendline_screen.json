@@ -175,7 +175,7 @@
       "pivotTargetExit": 3906.01
     },
     "fibonacciLevels": {
-      "23.6%": 4691.67,
+      "23.6%": 4691.66,
       "38.2%": 3983.26,
       "50.0%": 3410.7,
       "61.8%": 2838.15,
@@ -413,7 +413,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 10.8114,
+    "trendlineSlope": 10.8115,
     "anchor1Date": "2023-03",
     "anchor2Date": "2024-03"
   },
@@ -976,7 +976,7 @@
       "23.6%": 1840.26,
       "38.2%": 1542.65,
       "50.0%": 1302.11,
-      "61.8%": 1061.58,
+      "61.8%": 1061.57,
       "78.6%": 719.12,
       "100.0%": 282.89
     },
@@ -992,7 +992,7 @@
     "currentPrice": 117915.0,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 118294.88,
+    "triggerPrice": 118294.91,
     "distanceRemaining": 1.35,
     "signalStatus": "WATCHLIST",
     "notificationTrigger": false,
@@ -1006,22 +1006,22 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 1,
-      "entryPrice": 118294.88,
-      "strictStopLoss": 108831.29,
-      "pivotTargetExit": 145502.7
+      "entryPrice": 118294.91,
+      "strictStopLoss": 108831.32,
+      "pivotTargetExit": 145502.74
     },
     "fibonacciLevels": {
-      "23.6%": 137478.08,
-      "38.2%": 121498.25,
-      "50.0%": 108583.04,
-      "61.8%": 95667.84,
-      "78.6%": 77280.09,
+      "23.6%": 137478.06,
+      "38.2%": 121498.24,
+      "50.0%": 108583.03,
+      "61.8%": 95667.83,
+      "78.6%": 77280.08,
       "100.0%": 53857.6
     },
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 870.6827,
+    "trendlineSlope": 870.6831,
     "anchor1Date": "2020-09",
     "anchor2Date": "2023-03"
   },
@@ -1258,7 +1258,7 @@
     "currentPrice": 7730.0,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 7599.33,
+    "triggerPrice": 7599.34,
     "distanceRemaining": 1.77,
     "signalStatus": "WATCHLIST",
     "notificationTrigger": false,
@@ -1272,9 +1272,9 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 6,
-      "entryPrice": 7599.33,
-      "strictStopLoss": 6991.38,
-      "pivotTargetExit": 9347.18
+      "entryPrice": 7599.34,
+      "strictStopLoss": 6991.39,
+      "pivotTargetExit": 9347.19
     },
     "fibonacciLevels": {
       "23.6%": 7180.76,
@@ -1477,7 +1477,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 76.3833,
+    "trendlineSlope": 76.3834,
     "anchor1Date": "2023-02",
     "anchor2Date": "2023-10"
   },
@@ -2123,7 +2123,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 122.4665,
+    "trendlineSlope": 122.4664,
     "anchor1Date": "2020-10",
     "anchor2Date": "2023-10"
   },
@@ -2421,7 +2421,7 @@
       "38.2%": 27242.57,
       "50.0%": 24643.24,
       "61.8%": 22043.9,
-      "78.6%": 18343.16,
+      "78.6%": 18343.15,
       "100.0%": 13629.11
     },
     "fibMatchLevel": null,
@@ -2949,12 +2949,12 @@
       "pivotTargetExit": 40924.33
     },
     "fibonacciLevels": {
-      "23.6%": 42875.15,
-      "38.2%": 37564.21,
+      "23.6%": 42875.16,
+      "38.2%": 37564.22,
       "50.0%": 33271.81,
       "61.8%": 28979.41,
       "78.6%": 22868.19,
-      "100.0%": 15083.66
+      "100.0%": 15083.67
     },
     "fibMatchLevel": "50.0%",
     "fibMatchPrice": 33271.81,
@@ -4066,44 +4066,6 @@
     "anchor2Date": "2025-03"
   },
   {
-    "ticker": "SJVN",
-    "currentPrice": 47.4,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 46.1,
-    "distanceRemaining": 0.04,
-    "signalStatus": "CRITICAL_TOUCH",
-    "notificationTrigger": true,
-    "confluenceScore": 8,
-    "patternZone": "Confluence: Trendline + Fib 78.6% \u2713\u2713",
-    "wickTouches": 25,
-    "timeframe": "monthly",
-    "signalType": "CONFLUENCE",
-    "week52High": 87.01,
-    "week52Low": 46.08,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 1084,
-      "entryPrice": 46.1,
-      "strictStopLoss": 42.41,
-      "pivotTargetExit": 56.7
-    },
-    "fibonacciLevels": {
-      "23.6%": 128.68,
-      "38.2%": 107.07,
-      "50.0%": 89.61,
-      "61.8%": 72.15,
-      "78.6%": 47.28,
-      "100.0%": 15.62
-    },
-    "fibMatchLevel": "78.6%",
-    "fibMatchPrice": 45.54,
-    "fibMatchDistancePct": 4.07,
-    "trendlineSlope": 0.3959,
-    "anchor1Date": "2020-05",
-    "anchor2Date": "2023-02"
-  },
-  {
     "ticker": "THERMAX",
     "currentPrice": 3096.0,
     "ema50": null,
@@ -4254,6 +4216,44 @@
     "trendlineSlope": 0.2534,
     "anchor1Date": "2024-06",
     "anchor2Date": "2024-12"
+  },
+  {
+    "ticker": "SJVN",
+    "currentPrice": 47.4,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 45.2,
+    "distanceRemaining": 1.95,
+    "signalStatus": "WATCHLIST",
+    "notificationTrigger": false,
+    "confluenceScore": 8,
+    "patternZone": "Confluence: Trendline + Fib 78.6% \u2713\u2713",
+    "wickTouches": 22,
+    "timeframe": "monthly",
+    "signalType": "CONFLUENCE",
+    "week52High": 87.01,
+    "week52Low": 46.08,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 1106,
+      "entryPrice": 45.2,
+      "strictStopLoss": 41.58,
+      "pivotTargetExit": 55.6
+    },
+    "fibonacciLevels": {
+      "23.6%": 128.68,
+      "38.2%": 107.07,
+      "50.0%": 89.61,
+      "61.8%": 72.15,
+      "78.6%": 47.28,
+      "100.0%": 15.62
+    },
+    "fibMatchLevel": "78.6%",
+    "fibMatchPrice": 45.54,
+    "fibMatchDistancePct": 4.07,
+    "trendlineSlope": 0.3842,
+    "anchor1Date": "2020-05",
+    "anchor2Date": "2023-03"
   },
   {
     "ticker": "ASIANPAINT",
