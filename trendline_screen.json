@@ -375,7 +375,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 29.2353,
+    "trendlineSlope": 29.2354,
     "anchor1Date": "2023-05",
     "anchor2Date": "2023-11"
   },
@@ -1012,7 +1012,7 @@
     },
     "fibonacciLevels": {
       "23.6%": 1022.06,
-      "38.2%": 858.45,
+      "38.2%": 858.44,
       "50.0%": 726.21,
       "61.8%": 593.97,
       "78.6%": 405.71,
@@ -1030,7 +1030,7 @@
     "currentPrice": 117380.0,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 118294.91,
+    "triggerPrice": 118294.9,
     "distanceRemaining": 1.35,
     "signalStatus": "WATCHLIST",
     "notificationTrigger": false,
@@ -1044,22 +1044,22 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 1,
-      "entryPrice": 118294.91,
-      "strictStopLoss": 108831.32,
-      "pivotTargetExit": 145502.74
+      "entryPrice": 118294.9,
+      "strictStopLoss": 108831.31,
+      "pivotTargetExit": 145502.73
     },
     "fibonacciLevels": {
-      "23.6%": 137478.06,
-      "38.2%": 121498.24,
-      "50.0%": 108583.03,
-      "61.8%": 95667.83,
-      "78.6%": 77280.08,
+      "23.6%": 137478.08,
+      "38.2%": 121498.25,
+      "50.0%": 108583.04,
+      "61.8%": 95667.84,
+      "78.6%": 77280.09,
       "100.0%": 53857.6
     },
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 870.6831,
+    "trendlineSlope": 870.683,
     "anchor1Date": "2020-09",
     "anchor2Date": "2023-03"
   },
@@ -1515,7 +1515,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 76.3833,
+    "trendlineSlope": 76.3834,
     "anchor1Date": "2023-02",
     "anchor2Date": "2023-10"
   },
@@ -2085,7 +2085,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 182.8984,
+    "trendlineSlope": 182.8985,
     "anchor1Date": "2020-05",
     "anchor2Date": "2026-04"
   },
@@ -2459,8 +2459,8 @@
       "38.2%": 27242.57,
       "50.0%": 24643.24,
       "61.8%": 22043.9,
-      "78.6%": 18343.16,
-      "100.0%": 13629.11
+      "78.6%": 18343.15,
+      "100.0%": 13629.1
     },
     "fibMatchLevel": null,
     "fibMatchPrice": null,
@@ -3064,7 +3064,7 @@
     },
     "fibonacciLevels": {
       "23.6%": 3303.68,
-      "38.2%": 3146.26,
+      "38.2%": 3146.25,
       "50.0%": 3019.02,
       "61.8%": 2891.78,
       "78.6%": 2710.63,
@@ -3158,7 +3158,7 @@
     "currentPrice": 33910.0,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 33271.81,
+    "triggerPrice": 33271.82,
     "distanceRemaining": 1.92,
     "signalStatus": "WATCHLIST",
     "notificationTrigger": false,
@@ -3172,20 +3172,20 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 1,
-      "entryPrice": 33271.81,
+      "entryPrice": 33271.82,
       "strictStopLoss": 30610.07,
-      "pivotTargetExit": 40924.33
+      "pivotTargetExit": 40924.34
     },
     "fibonacciLevels": {
-      "23.6%": 42875.15,
-      "38.2%": 37564.21,
-      "50.0%": 33271.81,
-      "61.8%": 28979.41,
-      "78.6%": 22868.19,
-      "100.0%": 15083.66
+      "23.6%": 42875.16,
+      "38.2%": 37564.22,
+      "50.0%": 33271.82,
+      "61.8%": 28979.42,
+      "78.6%": 22868.2,
+      "100.0%": 15083.67
     },
     "fibMatchLevel": "50.0%",
-    "fibMatchPrice": 33271.81,
+    "fibMatchPrice": 33271.82,
     "fibMatchDistancePct": 1.92,
     "trendlineSlope": null,
     "anchor1Date": null,
@@ -3674,7 +3674,7 @@
       "23.6%": 1908.84,
       "38.2%": 1690.97,
       "50.0%": 1514.88,
-      "61.8%": 1338.79,
+      "61.8%": 1338.8,
       "78.6%": 1088.09,
       "100.0%": 768.75
     },
