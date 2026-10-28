@@ -190,44 +190,6 @@
     "anchor2Date": "2026-03"
   },
   {
-    "ticker": "MAHSCOOTER",
-    "currentPrice": 11701.0,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 11718.34,
-    "distanceRemaining": 0.72,
-    "signalStatus": "CRITICAL_TOUCH",
-    "notificationTrigger": true,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 19,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 15491.03,
-    "week52Low": 10721.76,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 4,
-      "entryPrice": 11718.34,
-      "strictStopLoss": 10780.87,
-      "pivotTargetExit": 14413.56
-    },
-    "fibonacciLevels": {
-      "23.6%": 14307.7,
-      "38.2%": 11879.22,
-      "50.0%": 9916.48,
-      "61.8%": 7953.74,
-      "78.6%": 5159.33,
-      "100.0%": 1599.78
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 166.0961,
-    "anchor1Date": "2025-03",
-    "anchor2Date": "2026-04"
-  },
-  {
     "ticker": "PURVA",
     "currentPrice": 194.11,
     "ema50": null,
@@ -302,6 +264,44 @@
     "trendlineSlope": 3.0511,
     "anchor1Date": "2020-05",
     "anchor2Date": "2026-03"
+  },
+  {
+    "ticker": "MAHSCOOTER",
+    "currentPrice": 11701.0,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 11718.34,
+    "distanceRemaining": 1.31,
+    "signalStatus": "WATCHLIST",
+    "notificationTrigger": false,
+    "confluenceScore": 10,
+    "patternZone": "Trendline touch only",
+    "wickTouches": 19,
+    "timeframe": "monthly",
+    "signalType": "TRENDLINE",
+    "week52High": 15491.03,
+    "week52Low": 10721.76,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 4,
+      "entryPrice": 11718.34,
+      "strictStopLoss": 10780.87,
+      "pivotTargetExit": 14413.56
+    },
+    "fibonacciLevels": {
+      "23.6%": 14307.7,
+      "38.2%": 11879.22,
+      "50.0%": 9916.48,
+      "61.8%": 7953.74,
+      "78.6%": 5159.33,
+      "100.0%": 1599.78
+    },
+    "fibMatchLevel": null,
+    "fibMatchPrice": null,
+    "fibMatchDistancePct": null,
+    "trendlineSlope": 166.0962,
+    "anchor1Date": "2025-03",
+    "anchor2Date": "2026-04"
   },
   {
     "ticker": "NFL",
@@ -1662,7 +1662,7 @@
       "50.0%": 1440.87,
       "61.8%": 1242.58,
       "78.6%": 960.27,
-      "100.0%": 600.65
+      "100.0%": 600.66
     },
     "fibMatchLevel": "61.8%",
     "fibMatchPrice": 1242.58,
@@ -1961,7 +1961,7 @@
       "pivotTargetExit": 1763.98
     },
     "fibonacciLevels": {
-      "23.6%": 2711.55,
+      "23.6%": 2711.56,
       "38.2%": 2223.32,
       "50.0%": 1828.73,
       "61.8%": 1434.13,
@@ -2000,7 +2000,7 @@
     },
     "fibonacciLevels": {
       "23.6%": 2652.46,
-      "38.2%": 2201.69,
+      "38.2%": 2201.7,
       "50.0%": 1837.37,
       "61.8%": 1473.05,
       "78.6%": 954.36,
@@ -2769,7 +2769,7 @@
     "fibMatchLevel": "50.0%",
     "fibMatchPrice": 687.69,
     "fibMatchDistancePct": 0.65,
-    "trendlineSlope": 10.3566,
+    "trendlineSlope": 10.3565,
     "anchor1Date": "2024-03",
     "anchor2Date": "2025-04"
   },
