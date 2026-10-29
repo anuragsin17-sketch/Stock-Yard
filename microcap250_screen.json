@@ -404,7 +404,7 @@
     },
     "fibonacciLevels": {
       "23.6%": 14307.7,
-      "38.2%": 11879.23,
+      "38.2%": 11879.22,
       "50.0%": 9916.48,
       "61.8%": 7953.74,
       "78.6%": 5159.33,
@@ -413,7 +413,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 166.0962,
+    "trendlineSlope": 166.0961,
     "anchor1Date": "2025-03",
     "anchor2Date": "2026-04"
   },
