@@ -266,6 +266,44 @@
     "anchor2Date": "2026-08"
   },
   {
+    "ticker": "GREAVESCOT",
+    "currentPrice": 199.4,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 173.1,
+    "distanceRemaining": 0.91,
+    "signalStatus": "CRITICAL_TOUCH",
+    "notificationTrigger": true,
+    "confluenceScore": 10,
+    "patternZone": "Trendline touch only",
+    "wickTouches": 10,
+    "timeframe": "monthly",
+    "signalType": "TRENDLINE",
+    "week52High": 271.9,
+    "week52Low": 119.01,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 288,
+      "entryPrice": 173.1,
+      "strictStopLoss": 159.25,
+      "pivotTargetExit": 212.91
+    },
+    "fibonacciLevels": {
+      "23.6%": 254.74,
+      "38.2%": 218.21,
+      "50.0%": 188.68,
+      "61.8%": 159.15,
+      "78.6%": 117.12,
+      "100.0%": 63.57
+    },
+    "fibMatchLevel": null,
+    "fibMatchPrice": null,
+    "fibMatchDistancePct": null,
+    "trendlineSlope": 1.5435,
+    "anchor1Date": "2020-11",
+    "anchor2Date": "2023-10"
+  },
+  {
     "ticker": "PURVA",
     "currentPrice": 191.8,
     "ema50": null,
@@ -346,7 +384,7 @@
     "currentPrice": 11601.0,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 11718.33,
+    "triggerPrice": 11718.34,
     "distanceRemaining": 1.31,
     "signalStatus": "WATCHLIST",
     "notificationTrigger": false,
@@ -360,13 +398,13 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 4,
-      "entryPrice": 11718.33,
-      "strictStopLoss": 10780.86,
-      "pivotTargetExit": 14413.55
+      "entryPrice": 11718.34,
+      "strictStopLoss": 10780.87,
+      "pivotTargetExit": 14413.56
     },
     "fibonacciLevels": {
       "23.6%": 14307.7,
-      "38.2%": 11879.23,
+      "38.2%": 11879.22,
       "50.0%": 9916.48,
       "61.8%": 7953.74,
       "78.6%": 5159.33,
@@ -608,6 +646,44 @@
     "anchor2Date": "2026-03"
   },
   {
+    "ticker": "FIEMIND",
+    "currentPrice": 1692.4,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 1611.75,
+    "distanceRemaining": 1.88,
+    "signalStatus": "WATCHLIST",
+    "notificationTrigger": false,
+    "confluenceScore": 10,
+    "patternZone": "Trendline touch only",
+    "wickTouches": 9,
+    "timeframe": "monthly",
+    "signalType": "TRENDLINE",
+    "week52High": 2674.8,
+    "week52Low": 1642.0,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 31,
+      "entryPrice": 1611.75,
+      "strictStopLoss": 1482.81,
+      "pivotTargetExit": 1982.45
+    },
+    "fibonacciLevels": {
+      "23.6%": 2069.82,
+      "38.2%": 1695.56,
+      "50.0%": 1393.07,
+      "61.8%": 1090.58,
+      "78.6%": 659.92,
+      "100.0%": 111.34
+    },
+    "fibMatchLevel": null,
+    "fibMatchPrice": null,
+    "fibMatchDistancePct": null,
+    "trendlineSlope": 22.0214,
+    "anchor1Date": "2023-03",
+    "anchor2Date": "2025-04"
+  },
+  {
     "ticker": "ELECTCAST",
     "currentPrice": 63.56,
     "ema50": null,
@@ -720,44 +796,6 @@
     "trendlineSlope": 3.7306,
     "anchor1Date": "2022-06",
     "anchor2Date": "2026-03"
-  },
-  {
-    "ticker": "FIEMIND",
-    "currentPrice": 1692.4,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 1611.75,
-    "distanceRemaining": 2.12,
-    "signalStatus": "WATCHLIST",
-    "notificationTrigger": false,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 9,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 2674.8,
-    "week52Low": 1645.9,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 31,
-      "entryPrice": 1611.75,
-      "strictStopLoss": 1482.81,
-      "pivotTargetExit": 1982.45
-    },
-    "fibonacciLevels": {
-      "23.6%": 2069.82,
-      "38.2%": 1695.56,
-      "50.0%": 1393.07,
-      "61.8%": 1090.58,
-      "78.6%": 659.92,
-      "100.0%": 111.34
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 22.0214,
-    "anchor1Date": "2023-03",
-    "anchor2Date": "2025-04"
   },
   {
     "ticker": "RATNAMANI",
@@ -874,6 +912,44 @@
     "anchor2Date": "2026-01"
   },
   {
+    "ticker": "VGUARD",
+    "currentPrice": 280.2,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 245.36,
+    "distanceRemaining": 2.89,
+    "signalStatus": "WATCHLIST",
+    "notificationTrigger": false,
+    "confluenceScore": 10,
+    "patternZone": "Trendline touch only",
+    "wickTouches": 8,
+    "timeframe": "monthly",
+    "signalType": "TRENDLINE",
+    "week52High": 379.0,
+    "week52Low": 252.45,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 203,
+      "entryPrice": 245.36,
+      "strictStopLoss": 225.73,
+      "pivotTargetExit": 301.79
+    },
+    "fibonacciLevels": {
+      "23.6%": 472.34,
+      "38.2%": 410.38,
+      "50.0%": 360.3,
+      "61.8%": 310.22,
+      "78.6%": 238.92,
+      "100.0%": 148.09
+    },
+    "fibMatchLevel": null,
+    "fibMatchPrice": null,
+    "fibMatchDistancePct": null,
+    "trendlineSlope": 1.2184,
+    "anchor1Date": "2020-08",
+    "anchor2Date": "2022-02"
+  },
+  {
     "ticker": "GPPL",
     "currentPrice": 159.09,
     "ema50": null,
@@ -910,6 +986,44 @@
     "trendlineSlope": 1.8244,
     "anchor1Date": "2022-06",
     "anchor2Date": "2026-03"
+  },
+  {
+    "ticker": "EPL",
+    "currentPrice": 216.73,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 205.32,
+    "distanceRemaining": 3.06,
+    "signalStatus": "MONITORING",
+    "notificationTrigger": false,
+    "confluenceScore": 10,
+    "patternZone": "Trendline touch only",
+    "wickTouches": 16,
+    "timeframe": "monthly",
+    "signalType": "TRENDLINE",
+    "week52High": 274.03,
+    "week52Low": 176.4,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 243,
+      "entryPrice": 205.32,
+      "strictStopLoss": 188.89,
+      "pivotTargetExit": 252.54
+    },
+    "fibonacciLevels": {
+      "23.6%": 246.94,
+      "38.2%": 224.48,
+      "50.0%": 206.33,
+      "61.8%": 188.18,
+      "78.6%": 162.35,
+      "100.0%": 129.43
+    },
+    "fibMatchLevel": null,
+    "fibMatchPrice": null,
+    "fibMatchDistancePct": null,
+    "trendlineSlope": 1.5366,
+    "anchor1Date": "2023-02",
+    "anchor2Date": "2024-06"
   },
   {
     "ticker": "BALUFORGE",
@@ -1064,44 +1178,6 @@
     "anchor2Date": "2026-03"
   },
   {
-    "ticker": "EPL",
-    "currentPrice": 216.73,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 205.32,
-    "distanceRemaining": 3.79,
-    "signalStatus": "MONITORING",
-    "notificationTrigger": false,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 16,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 274.03,
-    "week52Low": 176.4,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 243,
-      "entryPrice": 205.32,
-      "strictStopLoss": 188.89,
-      "pivotTargetExit": 252.54
-    },
-    "fibonacciLevels": {
-      "23.6%": 246.94,
-      "38.2%": 224.48,
-      "50.0%": 206.33,
-      "61.8%": 188.18,
-      "78.6%": 162.35,
-      "100.0%": 129.43
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 1.5366,
-    "anchor1Date": "2023-02",
-    "anchor2Date": "2024-06"
-  },
-  {
     "ticker": "PNGJL",
     "currentPrice": 558.55,
     "ema50": null,
@@ -1138,44 +1214,6 @@
     "trendlineSlope": 2.6545,
     "anchor1Date": "2025-04",
     "anchor2Date": "2026-03"
-  },
-  {
-    "ticker": "GREAVESCOT",
-    "currentPrice": 199.4,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 173.1,
-    "distanceRemaining": 4.07,
-    "signalStatus": "MONITORING",
-    "notificationTrigger": false,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 10,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 271.9,
-    "week52Low": 119.01,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 288,
-      "entryPrice": 173.1,
-      "strictStopLoss": 159.25,
-      "pivotTargetExit": 212.91
-    },
-    "fibonacciLevels": {
-      "23.6%": 254.74,
-      "38.2%": 218.21,
-      "50.0%": 188.68,
-      "61.8%": 159.15,
-      "78.6%": 117.12,
-      "100.0%": 63.57
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 1.5435,
-    "anchor1Date": "2020-11",
-    "anchor2Date": "2023-10"
   },
   {
     "ticker": "JKPAPER",
@@ -1229,7 +1267,7 @@
     "wickTouches": 7,
     "timeframe": "monthly",
     "signalType": "TRENDLINE",
-    "week52High": 799.0,
+    "week52High": 808.8,
     "week52Low": 474.41,
     "positionSizing": {
       "allocatedAmount": 50000.0,
@@ -1543,7 +1581,7 @@
       "pivotTargetExit": 1763.98
     },
     "fibonacciLevels": {
-      "23.6%": 2711.55,
+      "23.6%": 2711.56,
       "38.2%": 2223.32,
       "50.0%": 1828.73,
       "61.8%": 1434.13,
