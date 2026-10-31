@@ -38,44 +38,6 @@
     "anchor2Date": "2023-10"
   },
   {
-    "ticker": "SJVN",
-    "currentPrice": 53.39,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 46.1,
-    "distanceRemaining": 0.04,
-    "signalStatus": "CRITICAL_TOUCH",
-    "notificationTrigger": true,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 25,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 87.01,
-    "week52Low": 46.08,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 1084,
-      "entryPrice": 46.1,
-      "strictStopLoss": 42.41,
-      "pivotTargetExit": 56.7
-    },
-    "fibonacciLevels": {
-      "23.6%": 128.68,
-      "38.2%": 107.07,
-      "50.0%": 89.61,
-      "61.8%": 72.15,
-      "78.6%": 47.28,
-      "100.0%": 15.62
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 0.3959,
-    "anchor1Date": "2020-05",
-    "anchor2Date": "2023-02"
-  },
-  {
     "ticker": "UNIONBANK",
     "currentPrice": 186.0,
     "ema50": null,
@@ -1166,7 +1128,7 @@
       "23.6%": 1840.26,
       "38.2%": 1542.65,
       "50.0%": 1302.11,
-      "61.8%": 1061.57,
+      "61.8%": 1061.58,
       "78.6%": 719.12,
       "100.0%": 282.89
     },
@@ -1287,7 +1249,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 80.8114,
+    "trendlineSlope": 80.8115,
     "anchor1Date": "2022-05",
     "anchor2Date": "2023-10"
   },
@@ -1328,6 +1290,44 @@
     "trendlineSlope": 60.4698,
     "anchor1Date": "2023-01",
     "anchor2Date": "2024-04"
+  },
+  {
+    "ticker": "SJVN",
+    "currentPrice": 53.39,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 45.2,
+    "distanceRemaining": 1.95,
+    "signalStatus": "WATCHLIST",
+    "notificationTrigger": false,
+    "confluenceScore": 10,
+    "patternZone": "Trendline touch only",
+    "wickTouches": 22,
+    "timeframe": "monthly",
+    "signalType": "TRENDLINE",
+    "week52High": 87.01,
+    "week52Low": 46.08,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 1106,
+      "entryPrice": 45.2,
+      "strictStopLoss": 41.58,
+      "pivotTargetExit": 55.6
+    },
+    "fibonacciLevels": {
+      "23.6%": 128.68,
+      "38.2%": 107.07,
+      "50.0%": 89.61,
+      "61.8%": 72.15,
+      "78.6%": 47.28,
+      "100.0%": 15.62
+    },
+    "fibMatchLevel": null,
+    "fibMatchPrice": null,
+    "fibMatchDistancePct": null,
+    "trendlineSlope": 0.3842,
+    "anchor1Date": "2020-05",
+    "anchor2Date": "2023-03"
   },
   {
     "ticker": "360ONE",
@@ -1401,7 +1401,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 76.3834,
+    "trendlineSlope": 76.3833,
     "anchor1Date": "2023-02",
     "anchor2Date": "2023-10"
   },
@@ -1638,7 +1638,7 @@
     "currentPrice": 116775.0,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 118294.88,
+    "triggerPrice": 118294.91,
     "distanceRemaining": 2.62,
     "signalStatus": "WATCHLIST",
     "notificationTrigger": false,
@@ -1652,9 +1652,9 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 1,
-      "entryPrice": 118294.88,
-      "strictStopLoss": 108831.29,
-      "pivotTargetExit": 145502.7
+      "entryPrice": 118294.91,
+      "strictStopLoss": 108831.32,
+      "pivotTargetExit": 145502.74
     },
     "fibonacciLevels": {
       "23.6%": 137478.08,
@@ -1667,7 +1667,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 870.6827,
+    "trendlineSlope": 870.6831,
     "anchor1Date": "2020-09",
     "anchor2Date": "2023-03"
   },
@@ -2646,7 +2646,7 @@
     },
     "fibonacciLevels": {
       "23.6%": 3303.68,
-      "38.2%": 3146.26,
+      "38.2%": 3146.25,
       "50.0%": 3019.02,
       "61.8%": 2891.78,
       "78.6%": 2710.63,
@@ -3559,7 +3559,7 @@
     "fibonacciLevels": {
       "23.6%": 50172.84,
       "38.2%": 44372.61,
-      "50.0%": 39684.76,
+      "50.0%": 39684.75,
       "61.8%": 34996.9,
       "78.6%": 28322.66,
       "100.0%": 19820.96
