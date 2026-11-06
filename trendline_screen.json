@@ -897,12 +897,12 @@
       "pivotTargetExit": 142665.83
     },
     "fibonacciLevels": {
-      "23.6%": 137478.08,
-      "38.2%": 121498.25,
-      "50.0%": 108583.05,
-      "61.8%": 95667.84,
-      "78.6%": 77280.1,
-      "100.0%": 53857.61
+      "23.6%": 137478.06,
+      "38.2%": 121498.24,
+      "50.0%": 108583.03,
+      "61.8%": 95667.83,
+      "78.6%": 77280.08,
+      "100.0%": 53857.6
     },
     "fibMatchLevel": null,
     "fibMatchPrice": null,
@@ -1140,44 +1140,6 @@
     "anchor2Date": "2026-10"
   },
   {
-    "ticker": "GODFRYPHLP",
-    "currentPrice": 1790.0,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 1670.27,
-    "distanceRemaining": 0.73,
-    "signalStatus": "CRITICAL_TOUCH",
-    "notificationTrigger": true,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 7,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 2895.64,
-    "week52Low": 1641.2,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 29,
-      "entryPrice": 1670.27,
-      "strictStopLoss": 1536.65,
-      "pivotTargetExit": 2054.43
-    },
-    "fibonacciLevels": {
-      "23.6%": 3020.33,
-      "38.2%": 2495.75,
-      "50.0%": 2071.77,
-      "61.8%": 1647.8,
-      "78.6%": 1044.17,
-      "100.0%": 275.27
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 29.0689,
-    "anchor1Date": "2023-07",
-    "anchor2Date": "2026-10"
-  },
-  {
     "ticker": "TATAINVEST",
     "currentPrice": 572.2,
     "ema50": null,
@@ -1213,6 +1175,44 @@
     "fibMatchDistancePct": null,
     "trendlineSlope": 8.1445,
     "anchor1Date": "2022-06",
+    "anchor2Date": "2026-10"
+  },
+  {
+    "ticker": "GODFRYPHLP",
+    "currentPrice": 1790.0,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 1669.54,
+    "distanceRemaining": 0.78,
+    "signalStatus": "CRITICAL_TOUCH",
+    "notificationTrigger": true,
+    "confluenceScore": 10,
+    "patternZone": "Trendline touch only",
+    "wickTouches": 7,
+    "timeframe": "monthly",
+    "signalType": "TRENDLINE",
+    "week52High": 2895.64,
+    "week52Low": 1641.2,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 29,
+      "entryPrice": 1669.54,
+      "strictStopLoss": 1535.98,
+      "pivotTargetExit": 2053.53
+    },
+    "fibonacciLevels": {
+      "23.6%": 3020.33,
+      "38.2%": 2495.75,
+      "50.0%": 2071.77,
+      "61.8%": 1647.8,
+      "78.6%": 1044.17,
+      "100.0%": 275.27
+    },
+    "fibMatchLevel": null,
+    "fibMatchPrice": null,
+    "fibMatchDistancePct": null,
+    "trendlineSlope": 28.3422,
+    "anchor1Date": "2023-06",
     "anchor2Date": "2026-10"
   },
   {
@@ -1622,7 +1622,7 @@
       "23.6%": 30458.7,
       "38.2%": 27242.57,
       "50.0%": 24643.24,
-      "61.8%": 22043.91,
+      "61.8%": 22043.9,
       "78.6%": 18343.16,
       "100.0%": 13629.11
     },
@@ -2266,7 +2266,7 @@
     },
     "fibonacciLevels": {
       "23.6%": 1022.06,
-      "38.2%": 858.44,
+      "38.2%": 858.45,
       "50.0%": 726.21,
       "61.8%": 593.97,
       "78.6%": 405.71,
@@ -2838,7 +2838,7 @@
       "23.6%": 1840.26,
       "38.2%": 1542.65,
       "50.0%": 1302.11,
-      "61.8%": 1061.57,
+      "61.8%": 1061.58,
       "78.6%": 719.12,
       "100.0%": 282.89
     },
@@ -3291,7 +3291,7 @@
       "pivotTargetExit": 14690.79
     },
     "fibonacciLevels": {
-      "23.6%": 14026.76,
+      "23.6%": 14026.75,
       "38.2%": 12065.32,
       "50.0%": 10480.06,
       "61.8%": 8894.79,
@@ -3585,7 +3585,7 @@
     "wickTouches": 11,
     "timeframe": "monthly",
     "signalType": "TRENDLINE",
-    "week52High": 186.66,
+    "week52High": 188.9,
     "week52Low": 133.97,
     "positionSizing": {
       "allocatedAmount": 50000.0,
@@ -4522,6 +4522,44 @@
     "anchor2Date": "2026-03"
   },
   {
+    "ticker": "LGEINDIA",
+    "currentPrice": 1754.1,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 1672.95,
+    "distanceRemaining": 4.85,
+    "signalStatus": "WATCHLIST",
+    "notificationTrigger": false,
+    "confluenceScore": 9,
+    "patternZone": "Fib 50.0% support",
+    "wickTouches": null,
+    "timeframe": "monthly",
+    "signalType": "FIBONACCI",
+    "week52High": null,
+    "week52Low": null,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 29,
+      "entryPrice": 1672.95,
+      "strictStopLoss": 1539.11,
+      "pivotTargetExit": 2057.73
+    },
+    "fibonacciLevels": {
+      "23.6%": 1759.04,
+      "38.2%": 1711.43,
+      "50.0%": 1672.95,
+      "61.8%": 1634.47,
+      "78.6%": 1579.69,
+      "100.0%": 1509.9
+    },
+    "fibMatchLevel": "50.0%",
+    "fibMatchPrice": 1672.95,
+    "fibMatchDistancePct": 4.85,
+    "trendlineSlope": null,
+    "anchor1Date": null,
+    "anchor2Date": null
+  },
+  {
     "ticker": "MAZDOCK",
     "currentPrice": 1840.0,
     "ema50": null,
@@ -4622,16 +4660,16 @@
     },
     "fibonacciLevels": {
       "23.6%": 28241.82,
-      "38.2%": 25722.48,
+      "38.2%": 25722.47,
       "50.0%": 23686.29,
-      "61.8%": 21650.11,
+      "61.8%": 21650.1,
       "78.6%": 18751.13,
       "100.0%": 15058.39
     },
     "fibMatchLevel": "50.0%",
     "fibMatchPrice": 24007.86,
     "fibMatchDistancePct": 4.55,
-    "trendlineSlope": 71.5588,
+    "trendlineSlope": 71.5589,
     "anchor1Date": "2020-09",
     "anchor2Date": "2026-03"
   },
@@ -4778,7 +4816,7 @@
       "50.0%": 2308.73,
       "61.8%": 2165.4,
       "78.6%": 1961.34,
-      "100.0%": 1701.4
+      "100.0%": 1701.41
     },
     "fibMatchLevel": "61.8%",
     "fibMatchPrice": 2085.41,
@@ -5125,7 +5163,7 @@
     "fibMatchLevel": "50.0%",
     "fibMatchPrice": 26985.13,
     "fibMatchDistancePct": 2.17,
-    "trendlineSlope": 152.4424,
+    "trendlineSlope": 152.4423,
     "anchor1Date": "2020-05",
     "anchor2Date": "2023-01"
   },
@@ -5231,7 +5269,7 @@
     "fibonacciLevels": {
       "23.6%": 1238.13,
       "38.2%": 1088.87,
-      "50.0%": 968.23,
+      "50.0%": 968.22,
       "61.8%": 847.58,
       "78.6%": 675.82,
       "100.0%": 457.04

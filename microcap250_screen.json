@@ -418,44 +418,6 @@
     "anchor2Date": "2026-10"
   },
   {
-    "ticker": "SAFARI",
-    "currentPrice": 1254.4,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 1186.01,
-    "distanceRemaining": 0.51,
-    "signalStatus": "CRITICAL_TOUCH",
-    "notificationTrigger": true,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 6,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 2451.88,
-    "week52Low": 1172.0,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 42,
-      "entryPrice": 1186.01,
-      "strictStopLoss": 1091.13,
-      "pivotTargetExit": 1458.79
-    },
-    "fibonacciLevels": {
-      "23.6%": 2127.89,
-      "38.2%": 1751.05,
-      "50.0%": 1446.47,
-      "61.8%": 1141.9,
-      "78.6%": 708.27,
-      "100.0%": 155.91
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 14.0123,
-    "anchor1Date": "2022-02",
-    "anchor2Date": "2026-10"
-  },
-  {
     "ticker": "MIDHANI",
     "currentPrice": 379.4,
     "ema50": null,
@@ -3253,7 +3215,7 @@
       "pivotTargetExit": 1763.98
     },
     "fibonacciLevels": {
-      "23.6%": 2711.55,
+      "23.6%": 2711.56,
       "38.2%": 2223.32,
       "50.0%": 1828.73,
       "61.8%": 1434.13,
@@ -4213,7 +4175,7 @@
     "fibMatchLevel": "50.0%",
     "fibMatchPrice": 687.69,
     "fibMatchDistancePct": 0.3,
-    "trendlineSlope": 10.3565,
+    "trendlineSlope": 10.3566,
     "anchor1Date": "2024-03",
     "anchor2Date": "2025-04"
   },
@@ -4223,7 +4185,7 @@
     "ema50": null,
     "ema200": null,
     "triggerPrice": 533.15,
-    "distanceRemaining": 3.35,
+    "distanceRemaining": 3.54,
     "signalStatus": "MONITORING",
     "notificationTrigger": false,
     "confluenceScore": 8,
