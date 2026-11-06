@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-11-05 18:10 IST",
-    "date": "2026-11-05",
-    "new_stocks": 7,
-    "total": 306
+    "timestamp": "2026-11-06 17:37 IST",
+    "date": "2026-11-06",
+    "new_stocks": 6,
+    "total": 312
   },
   "stocks": [
     {
@@ -7505,6 +7505,108 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-11-06T17:30:57.552843",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "MMFL",
+      "company": "MMFL",
+      "added_date": "2026-11-06",
+      "gain_pct": 19.95,
+      "close_price": 629.4,
+      "prev_close": 524.7,
+      "prev_day_low": 550.27,
+      "alert_threshold": 577.78,
+      "sl_price": 528.26,
+      "target_price": 632.81,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 687.95,
+      "week_52_low": 295.2
+    },
+    {
+      "ticker": "SYMBIOTEC",
+      "company": "SYMBIOTEC",
+      "added_date": "2026-11-06",
+      "gain_pct": 19.04,
+      "close_price": 1513.6,
+      "prev_close": 1271.5,
+      "prev_day_low": 1293.6,
+      "alert_threshold": 1358.28,
+      "sl_price": 1241.86,
+      "target_price": 1487.64,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 1525.8,
+      "week_52_low": 934.2
+    },
+    {
+      "ticker": "LAL",
+      "company": "LAL",
+      "added_date": "2026-11-06",
+      "gain_pct": 18.13,
+      "close_price": 11.47,
+      "prev_close": 9.71,
+      "prev_day_low": 9.24,
+      "alert_threshold": 9.7,
+      "sl_price": 8.87,
+      "target_price": 10.63,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 11.65,
+      "week_52_low": 5.56
+    },
+    {
+      "ticker": "IVALUE",
+      "company": "IVALUE",
+      "added_date": "2026-11-06",
+      "gain_pct": 13.65,
+      "close_price": 221.04,
+      "prev_close": 194.49,
+      "prev_day_low": 181.3,
+      "alert_threshold": 190.37,
+      "sl_price": 174.05,
+      "target_price": 208.5,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 340.0,
+      "week_52_low": 182.35
+    },
+    {
+      "ticker": "IKIO",
+      "company": "IKIO",
+      "added_date": "2026-11-06",
+      "gain_pct": 13.11,
+      "close_price": 196.69,
+      "prev_close": 173.9,
+      "prev_day_low": 170.42,
+      "alert_threshold": 178.94,
+      "sl_price": 163.6,
+      "target_price": 195.98,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 238.8,
+      "week_52_low": 103.53
+    },
+    {
+      "ticker": "ABMKNO",
+      "company": "ABMKNO",
+      "added_date": "2026-11-06",
+      "gain_pct": 12.21,
+      "close_price": 168.84,
+      "prev_close": 150.47,
+      "prev_day_low": 146.51,
+      "alert_threshold": 153.84,
+      "sl_price": 140.65,
+      "target_price": 168.49,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 200.0,
+      "week_52_low": 122.32
     }
   ]
 }
