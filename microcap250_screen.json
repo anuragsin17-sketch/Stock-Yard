@@ -1102,44 +1102,6 @@
     "anchor2Date": "2026-03"
   },
   {
-    "ticker": "PRAJIND",
-    "currentPrice": 250.11,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 242.58,
-    "distanceRemaining": 1.41,
-    "signalStatus": "WATCHLIST",
-    "notificationTrigger": false,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 6,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 422.8,
-    "week52Low": 240.1,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 206,
-      "entryPrice": 242.58,
-      "strictStopLoss": 223.17,
-      "pivotTargetExit": 298.37
-    },
-    "fibonacciLevels": {
-      "23.6%": 664.14,
-      "38.2%": 546.67,
-      "50.0%": 451.73,
-      "61.8%": 356.79,
-      "78.6%": 221.62,
-      "100.0%": 49.44
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 2.476,
-    "anchor1Date": "2020-05",
-    "anchor2Date": "2026-10"
-  },
-  {
     "ticker": "TIMETECHNO",
     "currentPrice": 170.65,
     "ema50": null,
@@ -4175,7 +4137,7 @@
     "fibMatchLevel": "50.0%",
     "fibMatchPrice": 687.69,
     "fibMatchDistancePct": 0.3,
-    "trendlineSlope": 10.3566,
+    "trendlineSlope": 10.3565,
     "anchor1Date": "2024-03",
     "anchor2Date": "2025-04"
   },
