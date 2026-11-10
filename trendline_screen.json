@@ -536,7 +536,7 @@
     "currentPrice": 1146.0,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 1056.35,
+    "triggerPrice": 1056.34,
     "distanceRemaining": 0.35,
     "signalStatus": "CRITICAL_TOUCH",
     "notificationTrigger": true,
@@ -550,9 +550,9 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 47,
-      "entryPrice": 1056.35,
-      "strictStopLoss": 971.84,
-      "pivotTargetExit": 1299.31
+      "entryPrice": 1056.34,
+      "strictStopLoss": 971.83,
+      "pivotTargetExit": 1299.3
     },
     "fibonacciLevels": {
       "23.6%": 1010.56,
@@ -897,12 +897,12 @@
       "pivotTargetExit": 142665.83
     },
     "fibonacciLevels": {
-      "23.6%": 137478.07,
-      "38.2%": 121498.24,
+      "23.6%": 137478.08,
+      "38.2%": 121498.25,
       "50.0%": 108583.04,
-      "61.8%": 95667.83,
-      "78.6%": 77280.08,
-      "100.0%": 53857.59
+      "61.8%": 95667.84,
+      "78.6%": 77280.09,
+      "100.0%": 53857.6
     },
     "fibMatchLevel": null,
     "fibMatchPrice": null,
@@ -1515,7 +1515,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 14.1665,
+    "trendlineSlope": 14.1664,
     "anchor1Date": "2022-05",
     "anchor2Date": "2023-03"
   },
@@ -1661,7 +1661,7 @@
       "38.2%": 27242.57,
       "50.0%": 24643.24,
       "61.8%": 22043.9,
-      "78.6%": 18343.16,
+      "78.6%": 18343.15,
       "100.0%": 13629.11
     },
     "fibMatchLevel": null,
@@ -2876,7 +2876,7 @@
       "23.6%": 1840.26,
       "38.2%": 1542.65,
       "50.0%": 1302.11,
-      "61.8%": 1061.58,
+      "61.8%": 1061.57,
       "78.6%": 719.12,
       "100.0%": 282.89
     },
@@ -3377,7 +3377,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 88.9503,
+    "trendlineSlope": 88.9502,
     "anchor1Date": "2021-05",
     "anchor2Date": "2022-12"
   },
@@ -4662,9 +4662,9 @@
       "23.6%": 28241.82,
       "38.2%": 25722.48,
       "50.0%": 23686.29,
-      "61.8%": 21650.1,
+      "61.8%": 21650.11,
       "78.6%": 18751.13,
-      "100.0%": 15058.38
+      "100.0%": 15058.39
     },
     "fibMatchLevel": "50.0%",
     "fibMatchPrice": 24007.86,
@@ -5231,7 +5231,7 @@
     "fibonacciLevels": {
       "23.6%": 1238.13,
       "38.2%": 1088.87,
-      "50.0%": 968.23,
+      "50.0%": 968.22,
       "61.8%": 847.58,
       "78.6%": 675.82,
       "100.0%": 457.04
