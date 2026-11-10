@@ -536,7 +536,7 @@
     "currentPrice": 1146.0,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 1056.34,
+    "triggerPrice": 1056.35,
     "distanceRemaining": 0.35,
     "signalStatus": "CRITICAL_TOUCH",
     "notificationTrigger": true,
@@ -550,9 +550,9 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 47,
-      "entryPrice": 1056.34,
-      "strictStopLoss": 971.83,
-      "pivotTargetExit": 1299.3
+      "entryPrice": 1056.35,
+      "strictStopLoss": 971.84,
+      "pivotTargetExit": 1299.31
     },
     "fibonacciLevels": {
       "23.6%": 1010.56,
@@ -899,10 +899,10 @@
     "fibonacciLevels": {
       "23.6%": 137478.08,
       "38.2%": 121498.25,
-      "50.0%": 108583.04,
+      "50.0%": 108583.05,
       "61.8%": 95667.84,
       "78.6%": 77280.09,
-      "100.0%": 53857.6
+      "100.0%": 53857.61
     },
     "fibMatchLevel": null,
     "fibMatchPrice": null,
@@ -1140,6 +1140,44 @@
     "anchor2Date": "2026-10"
   },
   {
+    "ticker": "GODFRYPHLP",
+    "currentPrice": 1774.8,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 1670.27,
+    "distanceRemaining": 0.73,
+    "signalStatus": "CRITICAL_TOUCH",
+    "notificationTrigger": true,
+    "confluenceScore": 10,
+    "patternZone": "Trendline touch only",
+    "wickTouches": 7,
+    "timeframe": "monthly",
+    "signalType": "TRENDLINE",
+    "week52High": 2895.64,
+    "week52Low": 1641.2,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 29,
+      "entryPrice": 1670.27,
+      "strictStopLoss": 1536.65,
+      "pivotTargetExit": 2054.43
+    },
+    "fibonacciLevels": {
+      "23.6%": 3020.33,
+      "38.2%": 2495.75,
+      "50.0%": 2071.77,
+      "61.8%": 1647.8,
+      "78.6%": 1044.17,
+      "100.0%": 275.27
+    },
+    "fibMatchLevel": null,
+    "fibMatchPrice": null,
+    "fibMatchDistancePct": null,
+    "trendlineSlope": 29.0689,
+    "anchor1Date": "2023-07",
+    "anchor2Date": "2026-10"
+  },
+  {
     "ticker": "TATAINVEST",
     "currentPrice": 577.25,
     "ema50": null,
@@ -1175,44 +1213,6 @@
     "fibMatchDistancePct": null,
     "trendlineSlope": 8.1445,
     "anchor1Date": "2022-06",
-    "anchor2Date": "2026-10"
-  },
-  {
-    "ticker": "GODFRYPHLP",
-    "currentPrice": 1774.8,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 1669.54,
-    "distanceRemaining": 0.78,
-    "signalStatus": "CRITICAL_TOUCH",
-    "notificationTrigger": true,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 7,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 2895.64,
-    "week52Low": 1641.2,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 29,
-      "entryPrice": 1669.54,
-      "strictStopLoss": 1535.98,
-      "pivotTargetExit": 2053.53
-    },
-    "fibonacciLevels": {
-      "23.6%": 3020.33,
-      "38.2%": 2495.75,
-      "50.0%": 2071.77,
-      "61.8%": 1647.8,
-      "78.6%": 1044.17,
-      "100.0%": 275.27
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 28.3422,
-    "anchor1Date": "2023-06",
     "anchor2Date": "2026-10"
   },
   {
@@ -1515,7 +1515,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 14.1664,
+    "trendlineSlope": 14.1665,
     "anchor1Date": "2022-05",
     "anchor2Date": "2023-03"
   },
@@ -1661,7 +1661,7 @@
       "38.2%": 27242.57,
       "50.0%": 24643.24,
       "61.8%": 22043.9,
-      "78.6%": 18343.15,
+      "78.6%": 18343.16,
       "100.0%": 13629.11
     },
     "fibMatchLevel": null,
@@ -2228,7 +2228,7 @@
     },
     "fibonacciLevels": {
       "23.6%": 1022.06,
-      "38.2%": 858.45,
+      "38.2%": 858.44,
       "50.0%": 726.21,
       "61.8%": 593.97,
       "78.6%": 405.71,
@@ -3377,7 +3377,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 88.9502,
+    "trendlineSlope": 88.9503,
     "anchor1Date": "2021-05",
     "anchor2Date": "2022-12"
   },
@@ -5231,7 +5231,7 @@
     "fibonacciLevels": {
       "23.6%": 1238.13,
       "38.2%": 1088.87,
-      "50.0%": 968.22,
+      "50.0%": 968.23,
       "61.8%": 847.58,
       "78.6%": 675.82,
       "100.0%": 457.04
