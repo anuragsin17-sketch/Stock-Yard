@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-11-12 18:29 IST",
-    "date": "2026-11-12",
-    "new_stocks": 8,
-    "total": 290
+    "timestamp": "2026-11-13 17:57 IST",
+    "date": "2026-11-13",
+    "new_stocks": 6,
+    "total": 296
   },
   "stocks": [
     {
@@ -6981,6 +6981,108 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-11-13T17:45:39.318385",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "MSTCLTD",
+      "company": "MSTCLTD",
+      "added_date": "2026-11-13",
+      "gain_pct": 20.0,
+      "close_price": 783.35,
+      "prev_close": 652.8,
+      "prev_day_low": 676.2,
+      "alert_threshold": 710.01,
+      "sl_price": 649.15,
+      "target_price": 777.63,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 805.0,
+      "week_52_low": 362.15
+    },
+    {
+      "ticker": "ANUP",
+      "company": "ANUP",
+      "added_date": "2026-11-13",
+      "gain_pct": 20.0,
+      "close_price": 1725.0,
+      "prev_close": 1437.5,
+      "prev_day_low": 1412.77,
+      "alert_threshold": 1483.41,
+      "sl_price": 1356.26,
+      "target_price": 1624.69,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 2479.9,
+      "week_52_low": 1262.3
+    },
+    {
+      "ticker": "BONLON",
+      "company": "BONLON",
+      "added_date": "2026-11-13",
+      "gain_pct": 15.3,
+      "close_price": 39.56,
+      "prev_close": 34.31,
+      "prev_day_low": 32.93,
+      "alert_threshold": 34.58,
+      "sl_price": 31.61,
+      "target_price": 37.87,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 57.0,
+      "week_52_low": 31.12
+    },
+    {
+      "ticker": "KENNAMET",
+      "company": "KENNAMET",
+      "added_date": "2026-11-13",
+      "gain_pct": 13.94,
+      "close_price": 3954.8,
+      "prev_close": 3471.1,
+      "prev_day_low": 3802.4,
+      "alert_threshold": 3992.52,
+      "sl_price": 3650.3,
+      "target_price": 4372.76,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 5136.0,
+      "week_52_low": 2405.2
+    },
+    {
+      "ticker": "SHALPAINTS",
+      "company": "SHALPAINTS",
+      "added_date": "2026-11-13",
+      "gain_pct": 12.59,
+      "close_price": 95.93,
+      "prev_close": 85.2,
+      "prev_day_low": 82.35,
+      "alert_threshold": 86.47,
+      "sl_price": 79.06,
+      "target_price": 94.7,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 97.48,
+      "week_52_low": 35.21
+    },
+    {
+      "ticker": "PRECOT",
+      "company": "PRECOT",
+      "added_date": "2026-11-13",
+      "gain_pct": 12.39,
+      "close_price": 706.8,
+      "prev_close": 628.9,
+      "prev_day_low": 593.59,
+      "alert_threshold": 623.27,
+      "sl_price": 569.85,
+      "target_price": 682.63,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 899.0,
+      "week_52_low": 300.05
     }
   ]
 }
