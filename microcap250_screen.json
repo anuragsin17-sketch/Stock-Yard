@@ -418,6 +418,44 @@
     "anchor2Date": "2026-10"
   },
   {
+    "ticker": "STAR",
+    "currentPrice": 1014.6,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 980.1,
+    "distanceRemaining": 0.51,
+    "signalStatus": "CRITICAL_TOUCH",
+    "notificationTrigger": true,
+    "confluenceScore": 10,
+    "patternZone": "Trendline touch only",
+    "wickTouches": 10,
+    "timeframe": "monthly",
+    "signalType": "TRENDLINE",
+    "week52High": 1260.9,
+    "week52Low": 765.07,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 51,
+      "entryPrice": 980.1,
+      "strictStopLoss": 901.69,
+      "pivotTargetExit": 1205.52
+    },
+    "fibonacciLevels": {
+      "23.6%": 1337.97,
+      "38.2%": 1138.95,
+      "50.0%": 978.09,
+      "61.8%": 817.23,
+      "78.6%": 588.21,
+      "100.0%": 296.48
+    },
+    "fibMatchLevel": null,
+    "fibMatchPrice": null,
+    "fibMatchDistancePct": null,
+    "trendlineSlope": 16.2679,
+    "anchor1Date": "2023-03",
+    "anchor2Date": "2026-08"
+  },
+  {
     "ticker": "MIDHANI",
     "currentPrice": 403.5,
     "ema50": null,
@@ -606,44 +644,6 @@
     "trendlineSlope": 1.1823,
     "anchor1Date": "2021-11",
     "anchor2Date": "2026-10"
-  },
-  {
-    "ticker": "STAR",
-    "currentPrice": 1014.6,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 980.1,
-    "distanceRemaining": 0.81,
-    "signalStatus": "CRITICAL_TOUCH",
-    "notificationTrigger": true,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 10,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 1260.9,
-    "week52Low": 765.07,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 51,
-      "entryPrice": 980.1,
-      "strictStopLoss": 901.69,
-      "pivotTargetExit": 1205.52
-    },
-    "fibonacciLevels": {
-      "23.6%": 1337.97,
-      "38.2%": 1138.95,
-      "50.0%": 978.09,
-      "61.8%": 817.23,
-      "78.6%": 588.21,
-      "100.0%": 296.48
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 16.2679,
-    "anchor1Date": "2023-03",
-    "anchor2Date": "2026-08"
   },
   {
     "ticker": "GAEL",
@@ -985,44 +985,6 @@
     "fibMatchDistancePct": null,
     "trendlineSlope": 1.0184,
     "anchor1Date": "2025-03",
-    "anchor2Date": "2026-10"
-  },
-  {
-    "ticker": "PRAJIND",
-    "currentPrice": 254.41,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 242.58,
-    "distanceRemaining": 1.41,
-    "signalStatus": "WATCHLIST",
-    "notificationTrigger": false,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 6,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 422.8,
-    "week52Low": 240.1,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 206,
-      "entryPrice": 242.58,
-      "strictStopLoss": 223.17,
-      "pivotTargetExit": 298.37
-    },
-    "fibonacciLevels": {
-      "23.6%": 664.14,
-      "38.2%": 546.67,
-      "50.0%": 451.73,
-      "61.8%": 356.79,
-      "78.6%": 221.62,
-      "100.0%": 49.44
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 2.476,
-    "anchor1Date": "2020-05",
     "anchor2Date": "2026-10"
   },
   {
@@ -2047,7 +2009,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 10.3566,
+    "trendlineSlope": 10.3565,
     "anchor1Date": "2024-03",
     "anchor2Date": "2025-04"
   },
@@ -2498,7 +2460,7 @@
       "50.0%": 1440.87,
       "61.8%": 1242.58,
       "78.6%": 960.27,
-      "100.0%": 600.66
+      "100.0%": 600.65
     },
     "fibMatchLevel": "61.8%",
     "fibMatchPrice": 1242.58,
