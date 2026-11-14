@@ -498,7 +498,7 @@
     "currentPrice": 1157.8,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 1056.34,
+    "triggerPrice": 1056.35,
     "distanceRemaining": 0.35,
     "signalStatus": "CRITICAL_TOUCH",
     "notificationTrigger": true,
@@ -512,9 +512,9 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 47,
-      "entryPrice": 1056.34,
-      "strictStopLoss": 971.83,
-      "pivotTargetExit": 1299.3
+      "entryPrice": 1056.35,
+      "strictStopLoss": 971.84,
+      "pivotTargetExit": 1299.31
     },
     "fibonacciLevels": {
       "23.6%": 1010.56,
@@ -907,7 +907,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 798.4763,
+    "trendlineSlope": 798.4765,
     "anchor1Date": "2023-03",
     "anchor2Date": "2026-10"
   },
@@ -1509,7 +1509,7 @@
       "38.2%": 27242.57,
       "50.0%": 24643.24,
       "61.8%": 22043.9,
-      "78.6%": 18343.16,
+      "78.6%": 18343.15,
       "100.0%": 13629.11
     },
     "fibMatchLevel": null,
@@ -1710,44 +1710,6 @@
     "anchor2Date": "2026-10"
   },
   {
-    "ticker": "GODFRYPHLP",
-    "currentPrice": 1807.0,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 1661.09,
-    "distanceRemaining": 1.29,
-    "signalStatus": "WATCHLIST",
-    "notificationTrigger": false,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 7,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 2879.74,
-    "week52Low": 1632.18,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 30,
-      "entryPrice": 1661.09,
-      "strictStopLoss": 1528.2,
-      "pivotTargetExit": 2043.14
-    },
-    "fibonacciLevels": {
-      "23.6%": 3003.74,
-      "38.2%": 2482.04,
-      "50.0%": 2060.39,
-      "61.8%": 1638.75,
-      "78.6%": 1038.44,
-      "100.0%": 273.75
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 28.9092,
-    "anchor1Date": "2023-07",
-    "anchor2Date": "2026-10"
-  },
-  {
     "ticker": "JSWENERGY",
     "currentPrice": 514.55,
     "ema50": null,
@@ -1822,6 +1784,44 @@
     "trendlineSlope": 3.4595,
     "anchor1Date": "2022-10",
     "anchor2Date": "2026-04"
+  },
+  {
+    "ticker": "GODFRYPHLP",
+    "currentPrice": 1807.0,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 1660.37,
+    "distanceRemaining": 1.33,
+    "signalStatus": "WATCHLIST",
+    "notificationTrigger": false,
+    "confluenceScore": 10,
+    "patternZone": "Trendline touch only",
+    "wickTouches": 7,
+    "timeframe": "monthly",
+    "signalType": "TRENDLINE",
+    "week52High": 2879.74,
+    "week52Low": 1632.18,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 30,
+      "entryPrice": 1660.37,
+      "strictStopLoss": 1527.54,
+      "pivotTargetExit": 2042.26
+    },
+    "fibonacciLevels": {
+      "23.6%": 3003.74,
+      "38.2%": 2482.04,
+      "50.0%": 2060.39,
+      "61.8%": 1638.75,
+      "78.6%": 1038.44,
+      "100.0%": 273.75
+    },
+    "fibMatchLevel": null,
+    "fibMatchPrice": null,
+    "fibMatchDistancePct": null,
+    "trendlineSlope": 28.1865,
+    "anchor1Date": "2023-06",
+    "anchor2Date": "2026-10"
   },
   {
     "ticker": "SBIN",
@@ -3196,7 +3196,7 @@
     "currentPrice": 12854.0,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 11943.73,
+    "triggerPrice": 11943.72,
     "distanceRemaining": 3.34,
     "signalStatus": "MONITORING",
     "notificationTrigger": false,
@@ -3210,9 +3210,9 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 4,
-      "entryPrice": 11943.73,
-      "strictStopLoss": 10988.23,
-      "pivotTargetExit": 14690.79
+      "entryPrice": 11943.72,
+      "strictStopLoss": 10988.22,
+      "pivotTargetExit": 14690.78
     },
     "fibonacciLevels": {
       "23.6%": 14026.76,
@@ -3225,7 +3225,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 88.9503,
+    "trendlineSlope": 88.9502,
     "anchor1Date": "2021-05",
     "anchor2Date": "2022-12"
   },
@@ -3605,7 +3605,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 10.8115,
+    "trendlineSlope": 10.8114,
     "anchor1Date": "2023-03",
     "anchor2Date": "2024-03"
   },
@@ -3719,47 +3719,9 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 76.3834,
+    "trendlineSlope": 76.3833,
     "anchor1Date": "2023-02",
     "anchor2Date": "2023-10"
-  },
-  {
-    "ticker": "NHPC",
-    "currentPrice": 75.83,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 79.19,
-    "distanceRemaining": 4.49,
-    "signalStatus": "MONITORING",
-    "notificationTrigger": false,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 25,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 86.59,
-    "week52Low": 68.79,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 631,
-      "entryPrice": 79.19,
-      "strictStopLoss": 72.85,
-      "pivotTargetExit": 97.4
-    },
-    "fibonacciLevels": {
-      "23.6%": 89.49,
-      "38.2%": 75.23,
-      "50.0%": 63.71,
-      "61.8%": 52.19,
-      "78.6%": 35.78,
-      "100.0%": 14.89
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 0.9701,
-    "anchor1Date": "2022-02",
-    "anchor2Date": "2026-03"
   },
   {
     "ticker": "ADANIENT",
@@ -3798,6 +3760,44 @@
     "trendlineSlope": 29.919,
     "anchor1Date": "2020-05",
     "anchor2Date": "2026-10"
+  },
+  {
+    "ticker": "NHPC",
+    "currentPrice": 75.83,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 79.35,
+    "distanceRemaining": 4.68,
+    "signalStatus": "MONITORING",
+    "notificationTrigger": false,
+    "confluenceScore": 10,
+    "patternZone": "Trendline touch only",
+    "wickTouches": 25,
+    "timeframe": "monthly",
+    "signalType": "TRENDLINE",
+    "week52High": 86.59,
+    "week52Low": 68.79,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 630,
+      "entryPrice": 79.35,
+      "strictStopLoss": 73.0,
+      "pivotTargetExit": 97.6
+    },
+    "fibonacciLevels": {
+      "23.6%": 89.49,
+      "38.2%": 75.23,
+      "50.0%": 63.71,
+      "61.8%": 52.19,
+      "78.6%": 35.78,
+      "100.0%": 14.89
+    },
+    "fibMatchLevel": null,
+    "fibMatchPrice": null,
+    "fibMatchDistancePct": null,
+    "trendlineSlope": 0.9903,
+    "anchor1Date": "2022-03",
+    "anchor2Date": "2026-03"
   },
   {
     "ticker": "POWERGRID",
@@ -4850,16 +4850,16 @@
     },
     "fibonacciLevels": {
       "23.6%": 28241.82,
-      "38.2%": 25722.48,
+      "38.2%": 25722.47,
       "50.0%": 23686.29,
-      "61.8%": 21650.11,
+      "61.8%": 21650.1,
       "78.6%": 18751.13,
-      "100.0%": 15058.39
+      "100.0%": 15058.38
     },
     "fibMatchLevel": "50.0%",
     "fibMatchPrice": 24007.86,
     "fibMatchDistancePct": 2.7,
-    "trendlineSlope": 71.5589,
+    "trendlineSlope": 71.5588,
     "anchor1Date": "2020-09",
     "anchor2Date": "2026-03"
   },
