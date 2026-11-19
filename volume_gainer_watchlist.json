@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-11-18 18:57 IST",
-    "date": "2026-11-18",
-    "new_stocks": 3,
-    "total": 286
+    "timestamp": "2026-11-19 19:05 IST",
+    "date": "2026-11-19",
+    "new_stocks": 6,
+    "total": 292
   },
   "stocks": [
     {
@@ -6879,6 +6879,108 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-11-19T17:48:15.893768",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "VEEFIN",
+      "company": "VEEFIN",
+      "added_date": "2026-11-19",
+      "gain_pct": 20.0,
+      "close_price": 298.05,
+      "prev_close": 248.38,
+      "prev_day_low": 240.09,
+      "alert_threshold": 252.09,
+      "sl_price": 230.49,
+      "target_price": 276.1,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 298.05,
+      "week_52_low": 214.18
+    },
+    {
+      "ticker": "TINNARUBR",
+      "company": "TINNARUBR",
+      "added_date": "2026-11-19",
+      "gain_pct": 19.63,
+      "close_price": 990.2,
+      "prev_close": 827.75,
+      "prev_day_low": 808.11,
+      "alert_threshold": 848.52,
+      "sl_price": 775.79,
+      "target_price": 929.33,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 1322.0,
+      "week_52_low": 527.45
+    },
+    {
+      "ticker": "LIBERTSHOE",
+      "company": "LIBERTSHOE",
+      "added_date": "2026-11-19",
+      "gain_pct": 15.68,
+      "close_price": 248.06,
+      "prev_close": 214.43,
+      "prev_day_low": 207.78,
+      "alert_threshold": 218.17,
+      "sl_price": 199.47,
+      "target_price": 238.95,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 308.0,
+      "week_52_low": 179.0
+    },
+    {
+      "ticker": "GLOBUSSPR",
+      "company": "GLOBUSSPR",
+      "added_date": "2026-11-19",
+      "gain_pct": 14.15,
+      "close_price": 810.4,
+      "prev_close": 709.95,
+      "prev_day_low": 688.94,
+      "alert_threshold": 723.39,
+      "sl_price": 661.38,
+      "target_price": 792.28,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 1204.8,
+      "week_52_low": 656.0
+    },
+    {
+      "ticker": "BLKASHYAP",
+      "company": "BLKASHYAP",
+      "added_date": "2026-11-19",
+      "gain_pct": 12.14,
+      "close_price": 58.82,
+      "prev_close": 52.45,
+      "prev_day_low": 50.8,
+      "alert_threshold": 53.34,
+      "sl_price": 48.77,
+      "target_price": 58.42,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 63.36,
+      "week_52_low": 40.32
+    },
+    {
+      "ticker": "KOHINOOR",
+      "company": "KOHINOOR",
+      "added_date": "2026-11-19",
+      "gain_pct": 12.09,
+      "close_price": 30.31,
+      "prev_close": 27.04,
+      "prev_day_low": 25.97,
+      "alert_threshold": 27.27,
+      "sl_price": 24.93,
+      "target_price": 29.87,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 38.47,
+      "week_52_low": 19.2
     }
   ]
 }
