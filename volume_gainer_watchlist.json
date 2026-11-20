@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-11-19 19:05 IST",
-    "date": "2026-11-19",
-    "new_stocks": 6,
-    "total": 292
+    "timestamp": "2026-11-20 18:42 IST",
+    "date": "2026-11-20",
+    "new_stocks": 5,
+    "total": 297
   },
   "stocks": [
     {
@@ -7037,6 +7037,91 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-11-20T18:14:41.365807",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "OAL",
+      "company": "OAL",
+      "added_date": "2026-11-20",
+      "gain_pct": 20.0,
+      "close_price": 516.7,
+      "prev_close": 430.6,
+      "prev_day_low": 415.27,
+      "alert_threshold": 436.03,
+      "sl_price": 398.66,
+      "target_price": 477.56,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 645.0,
+      "week_52_low": 228.0
+    },
+    {
+      "ticker": "HMAAGRO",
+      "company": "HMAAGRO",
+      "added_date": "2026-11-20",
+      "gain_pct": 15.58,
+      "close_price": 33.91,
+      "prev_close": 29.34,
+      "prev_day_low": 27.94,
+      "alert_threshold": 29.34,
+      "sl_price": 26.82,
+      "target_price": 32.13,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 34.62,
+      "week_52_low": 19.09
+    },
+    {
+      "ticker": "JLHL",
+      "company": "JLHL",
+      "added_date": "2026-11-20",
+      "gain_pct": 12.87,
+      "close_price": 317.4,
+      "prev_close": 281.2,
+      "prev_day_low": 274.15,
+      "alert_threshold": 287.86,
+      "sl_price": 263.18,
+      "target_price": 315.27,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 340.0,
+      "week_52_low": 233.4
+    },
+    {
+      "ticker": "RRIL",
+      "company": "RRIL",
+      "added_date": "2026-11-20",
+      "gain_pct": 12.72,
+      "close_price": 18.88,
+      "prev_close": 16.75,
+      "prev_day_low": 15.88,
+      "alert_threshold": 16.67,
+      "sl_price": 15.24,
+      "target_price": 18.26,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 19.5,
+      "week_52_low": 13.52
+    },
+    {
+      "ticker": "WELINV",
+      "company": "WELINV",
+      "added_date": "2026-11-20",
+      "gain_pct": 12.1,
+      "close_price": 2294.9,
+      "prev_close": 2047.1,
+      "prev_day_low": 2009.98,
+      "alert_threshold": 2110.48,
+      "sl_price": 1929.58,
+      "target_price": 2311.48,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 2500.0,
+      "week_52_low": 1152.3
     }
   ]
 }
