@@ -1,9 +1,9 @@
 {
   "last_scan_run": {
-    "timestamp": "2026-11-25 20:01 IST",
-    "date": "2026-11-25",
-    "new_stocks": 7,
-    "total": 264
+    "timestamp": "2026-11-26 19:44 IST",
+    "date": "2026-11-26",
+    "new_stocks": 4,
+    "total": 268
   },
   "stocks": [
     {
@@ -6407,6 +6407,74 @@
       "in_entry_zone": false,
       "ltp_updated_at": "2026-11-26T18:11:36.733339",
       "in_place_order_zone": false
+    },
+    {
+      "ticker": "SHAILY",
+      "company": "SHAILY",
+      "added_date": "2026-11-26",
+      "gain_pct": 16.33,
+      "close_price": 3379.6,
+      "prev_close": 2905.1,
+      "prev_day_low": 2861.01,
+      "alert_threshold": 3004.06,
+      "sl_price": 2746.57,
+      "target_price": 3290.16,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 3615.2,
+      "week_52_low": 1770.9
+    },
+    {
+      "ticker": "BONDADA",
+      "company": "BONDADA",
+      "added_date": "2026-11-26",
+      "gain_pct": 15.82,
+      "close_price": 269.75,
+      "prev_close": 232.9,
+      "prev_day_low": 226.92,
+      "alert_threshold": 238.27,
+      "sl_price": 217.84,
+      "target_price": 260.96,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 308.0,
+      "week_52_low": 228.05
+    },
+    {
+      "ticker": "OLIL",
+      "company": "OLIL",
+      "added_date": "2026-11-26",
+      "gain_pct": 13.42,
+      "close_price": 441.6,
+      "prev_close": 389.35,
+      "prev_day_low": 384.16,
+      "alert_threshold": 403.37,
+      "sl_price": 368.79,
+      "target_price": 441.78,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 479.9,
+      "week_52_low": 271.7
+    },
+    {
+      "ticker": "DHAMPURSUG",
+      "company": "DHAMPURSUG",
+      "added_date": "2026-11-26",
+      "gain_pct": 13.21,
+      "close_price": 180.01,
+      "prev_close": 159.0,
+      "prev_day_low": 159.74,
+      "alert_threshold": 167.73,
+      "sl_price": 153.35,
+      "target_price": 183.7,
+      "vol_ratio": 0.0,
+      "alerted": false,
+      "alert_sent_at": null,
+      "week_52_high": 219.7,
+      "week_52_low": 110.0
     }
   ]
 }
