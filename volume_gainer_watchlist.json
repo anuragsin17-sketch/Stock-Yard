@@ -1701,7 +1701,7 @@
       "ltp": 41.22,
       "dist_pct": -3.15,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-11-26T18:42:12.769735",
+      "ltp_updated_at": "2026-11-26T19:23:47.750493",
       "in_place_order_zone": false,
       "place_order_entry_at": "2026-11-06T10:46:35.968225",
       "place_order_entry_ltp": 42.72,
@@ -2345,7 +2345,7 @@
       "ltp": 89.48,
       "dist_pct": 21.39,
       "in_entry_zone": false,
-      "ltp_updated_at": "2026-11-26T18:42:12.769770",
+      "ltp_updated_at": "2026-11-26T19:23:47.750528",
       "in_place_order_zone": false
     },
     {
@@ -3665,7 +3665,7 @@
       "ltp": 194.86,
       "dist_pct": 1.97,
       "in_entry_zone": true,
-      "ltp_updated_at": "2026-11-26T18:42:12.769851",
+      "ltp_updated_at": "2026-11-26T19:23:47.750610",
       "in_place_order_zone": true,
       "place_order_entry_at": "2026-11-26T12:20:01.337973",
       "place_order_entry_ltp": 194.86,
