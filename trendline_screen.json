@@ -498,7 +498,7 @@
     "currentPrice": 1114.8,
     "ema50": null,
     "ema200": null,
-    "triggerPrice": 1056.35,
+    "triggerPrice": 1056.34,
     "distanceRemaining": 0.35,
     "signalStatus": "CRITICAL_TOUCH",
     "notificationTrigger": true,
@@ -512,9 +512,9 @@
     "positionSizing": {
       "allocatedAmount": 50000.0,
       "sharesToBuy": 47,
-      "entryPrice": 1056.35,
-      "strictStopLoss": 971.84,
-      "pivotTargetExit": 1299.31
+      "entryPrice": 1056.34,
+      "strictStopLoss": 971.83,
+      "pivotTargetExit": 1299.3
     },
     "fibonacciLevels": {
       "23.6%": 1010.56,
@@ -899,15 +899,15 @@
     "fibonacciLevels": {
       "23.6%": 137474.85,
       "38.2%": 121495.4,
-      "50.0%": 108580.5,
+      "50.0%": 108580.49,
       "61.8%": 95665.59,
-      "78.6%": 77278.28,
-      "100.0%": 53856.34
+      "78.6%": 77278.27,
+      "100.0%": 53856.33
     },
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 798.4576,
+    "trendlineSlope": 798.4574,
     "anchor1Date": "2023-03",
     "anchor2Date": "2026-10"
   },
@@ -1824,44 +1824,6 @@
     "anchor2Date": "2026-10"
   },
   {
-    "ticker": "GODFRYPHLP",
-    "currentPrice": 1764.9,
-    "ema50": null,
-    "ema200": null,
-    "triggerPrice": 1661.09,
-    "distanceRemaining": 1.29,
-    "signalStatus": "WATCHLIST",
-    "notificationTrigger": false,
-    "confluenceScore": 10,
-    "patternZone": "Trendline touch only",
-    "wickTouches": 7,
-    "timeframe": "monthly",
-    "signalType": "TRENDLINE",
-    "week52High": 2879.74,
-    "week52Low": 1632.18,
-    "positionSizing": {
-      "allocatedAmount": 50000.0,
-      "sharesToBuy": 30,
-      "entryPrice": 1661.09,
-      "strictStopLoss": 1528.2,
-      "pivotTargetExit": 2043.14
-    },
-    "fibonacciLevels": {
-      "23.6%": 3003.74,
-      "38.2%": 2482.04,
-      "50.0%": 2060.39,
-      "61.8%": 1638.75,
-      "78.6%": 1038.44,
-      "100.0%": 273.75
-    },
-    "fibMatchLevel": null,
-    "fibMatchPrice": null,
-    "fibMatchDistancePct": null,
-    "trendlineSlope": 28.9092,
-    "anchor1Date": "2023-07",
-    "anchor2Date": "2026-10"
-  },
-  {
     "ticker": "BPCL",
     "currentPrice": 307.65,
     "ema50": null,
@@ -1898,6 +1860,44 @@
     "trendlineSlope": 3.4595,
     "anchor1Date": "2022-10",
     "anchor2Date": "2026-04"
+  },
+  {
+    "ticker": "GODFRYPHLP",
+    "currentPrice": 1764.9,
+    "ema50": null,
+    "ema200": null,
+    "triggerPrice": 1660.37,
+    "distanceRemaining": 1.33,
+    "signalStatus": "WATCHLIST",
+    "notificationTrigger": false,
+    "confluenceScore": 10,
+    "patternZone": "Trendline touch only",
+    "wickTouches": 7,
+    "timeframe": "monthly",
+    "signalType": "TRENDLINE",
+    "week52High": 2879.74,
+    "week52Low": 1632.18,
+    "positionSizing": {
+      "allocatedAmount": 50000.0,
+      "sharesToBuy": 30,
+      "entryPrice": 1660.37,
+      "strictStopLoss": 1527.54,
+      "pivotTargetExit": 2042.26
+    },
+    "fibonacciLevels": {
+      "23.6%": 3003.74,
+      "38.2%": 2482.04,
+      "50.0%": 2060.39,
+      "61.8%": 1638.75,
+      "78.6%": 1038.44,
+      "100.0%": 273.75
+    },
+    "fibMatchLevel": null,
+    "fibMatchPrice": null,
+    "fibMatchDistancePct": null,
+    "trendlineSlope": 28.1865,
+    "anchor1Date": "2023-06",
+    "anchor2Date": "2026-10"
   },
   {
     "ticker": "SBIN",
@@ -2655,7 +2655,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 76.3834,
+    "trendlineSlope": 76.3833,
     "anchor1Date": "2023-02",
     "anchor2Date": "2023-10"
   },
@@ -2876,7 +2876,7 @@
       "23.6%": 1840.26,
       "38.2%": 1542.65,
       "50.0%": 1302.11,
-      "61.8%": 1061.57,
+      "61.8%": 1061.58,
       "78.6%": 719.12,
       "100.0%": 282.89
     },
@@ -3415,7 +3415,7 @@
     "fibMatchLevel": null,
     "fibMatchPrice": null,
     "fibMatchDistancePct": null,
-    "trendlineSlope": 88.9503,
+    "trendlineSlope": 88.9502,
     "anchor1Date": "2021-05",
     "anchor2Date": "2022-12"
   },
